@@ -39,7 +39,7 @@ Landscape two panes. L / R cycle. English, Latin, KJV, Notes. Settings enable wh
 More Fathers as you upload. Search by father, work, keyword. Same Liber “whole book” rule.
 
 ### 5. Store listing
-Icon, 6.7" and 6.1" screenshots, privacy nutrition, support URL (piblia.com), App Store copy, submit.
+Icon, 6.7" and 6.1" screenshots, privacy nutrition, support URL (patrista.com), App Store copy, submit.
 
 Recommended order: **1 → 2 → 5 (soft launch) → 3 → 4**.
 Ship a thin reader first. Parallel is the hard UI. Search wants a real corpus.

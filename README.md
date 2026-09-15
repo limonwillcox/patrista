@@ -1,4 +1,4 @@
-# Piblia
+# Patrista
 
 A searchable public-domain Church Fathers library, laid out like [Bible Gateway](https://www.biblegateway.com/): search bar, writings list, a reading column, and page options.
 
@@ -6,15 +6,15 @@ The live work is Augustine’s *Confessions*: E. B. Pusey’s English (Project G
 
 ## Live site
 
-Public repo: [limonwillcox/piblia](https://github.com/limonwillcox/piblia). GitHub Pages deploys from `main` via `pnpm build` → `dist/`.
+Public repo: [limonwillcox/piblia](https://github.com/limonwillcox/piblia) (repo name unchanged; product domain is **patrista.com**). GitHub Pages deploys from `main` via `pnpm build` → `dist/`.
 
 Until DNS is pointed, the site is at **https://limonwillcox.github.io/piblia/**.
 
 Phone visitors are sent to **`get-app.html`** (App Store mock-up). The old web phone shell is archived in **`archive/ios-web/`**. Native SwiftUI app: **`PibliaIOS/`** — plan and goals in `PibliaIOS/docs/PLAN.md`. Feature parking lot: **`docs/FEATURES.md`**.
 
-Custom domain **piblia.com** is already set in `CNAME`. At your registrar, use:
+Custom domain **patrista.com** is set in `CNAME`. At your registrar, use:
 
-**Apex `piblia.com` (A records)**
+**Apex `patrista.com` (A records)**
 
 | Type | Name | Value |
 | --- | --- | --- |
@@ -23,7 +23,7 @@ Custom domain **piblia.com** is already set in `CNAME`. At your registrar, use:
 | A | `@` | `185.199.110.153` |
 | A | `@` | `185.199.111.153` |
 
-**`www.piblia.com` (CNAME)**
+**`www.patrista.com` (CNAME)**
 
 | Type | Name | Value |
 | --- | --- | --- |
@@ -31,7 +31,9 @@ Custom domain **piblia.com** is already set in `CNAME`. At your registrar, use:
 
 Optional IPv6 AAAA records: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`.
 
-After DNS propagates, GitHub will issue HTTPS for `piblia.com`. Enforce HTTPS in **Settings → Pages**.
+After DNS propagates, GitHub will issue HTTPS for `patrista.com`. Enforce HTTPS in **Settings → Pages**.
+
+Keep **piblia.com** registered and set a registrar **301 URL forward** from `piblia.com` → `https://patrista.com` so old links keep working.
 
 ## Run it locally
 

@@ -96,7 +96,7 @@ export function GivePage() {
 
   return (
     <div className={"give-page" + (thanks || canceled ? " give-page-static" : "")}>
-      <section className="give-hero" ref={heroRef} aria-label="Piblia funding">
+      <section className="give-hero" ref={heroRef} aria-label="Patrista funding">
         <h1 className={quoteClass}>
           This site has 0 ads.
           <br />
@@ -223,7 +223,7 @@ export function GivePage() {
           </div>
 
           <p className="fineprint give-legal">
-            Donations keep Piblia ad-free and paywall-free. This is not a registered charity, so gifts are not tax-deductible.
+            Donations keep Patrista ad-free and paywall-free. This is not a registered charity, so gifts are not tax-deductible.
             You will finish on Stripe’s secure checkout.
           </p>
         </form>

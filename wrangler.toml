@@ -6,4 +6,4 @@ compatibility_date = "2025-09-01"
 workers_dev = true
 
 [vars]
-DONATE_PUBLIC_ORIGIN = "https://piblia.com"
+DONATE_PUBLIC_ORIGIN = "https://patrista.com"

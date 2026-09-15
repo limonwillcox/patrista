@@ -106,7 +106,7 @@ async function createStripeCheckout(opts: {
   amountCents: number;
   interval: DonateInterval;
 }): Promise<{ url: string } | { error: string }> {
-  const origin = opts.publicOrigin || "https://piblia.com";
+  const origin = opts.publicOrigin || "https://patrista.com";
   const params = new URLSearchParams();
   const once = opts.interval === "once";
   params.set("mode", once ? "payment" : "subscription");
@@ -117,11 +117,11 @@ async function createStripeCheckout(opts: {
   params.set("line_items[0][quantity]", "1");
   params.set("line_items[0][price_data][currency]", "usd");
   params.set("line_items[0][price_data][unit_amount]", String(opts.amountCents));
-  params.set("line_items[0][price_data][product_data][name]", "Donation to Piblia");
+  params.set("line_items[0][price_data][product_data][name]", "Donation to Patrista");
   if (!once) {
     params.set("line_items[0][price_data][recurring][interval]", opts.interval);
   }
-  params.set("metadata[source]", "piblia-give");
+  params.set("metadata[source]", "patrista-give");
   params.set("metadata[interval]", opts.interval);
 
   const res = await fetch("https://api.stripe.com/v1/checkout/sessions", {
@@ -154,7 +154,7 @@ export type DonateEnv = {
 };
 
 function publicOrigin(request: Request, env: DonateEnv): string {
-  return env.DONATE_PUBLIC_ORIGIN || request.headers.get("origin") || "https://piblia.com";
+  return env.DONATE_PUBLIC_ORIGIN || request.headers.get("origin") || "https://patrista.com";
 }
 
 /** Web Fetch adapter for Vite-adjacent tests and Cloudflare Workers. */

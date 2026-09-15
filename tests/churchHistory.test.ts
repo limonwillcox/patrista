@@ -157,7 +157,7 @@ describe("church history cinematic prerender", () => {
 
 describe("church history JSON-LD", () => {
   it("describes the article, breadcrumbs and every era", () => {
-    const ld = churchHistoryJsonLd("https://piblia.com") as {
+    const ld = churchHistoryJsonLd("https://patrista.com") as {
       "@graph": { "@type": string; itemListElement?: unknown[]; numberOfItems?: number }[];
     };
     const types = ld["@graph"].map((n) => n["@type"]);
@@ -167,7 +167,7 @@ describe("church history JSON-LD", () => {
     const list = ld["@graph"].find((n) => n["@type"] === "ItemList");
     expect(list?.numberOfItems).toBe(ERAS.length);
     expect(list?.itemListElement).toHaveLength(ERAS.length);
-    expect(JSON.stringify(ld)).toContain("https://piblia.com/church-history/timeline");
+    expect(JSON.stringify(ld)).toContain("https://patrista.com/church-history/timeline");
   });
 
   it("keeps the SEO title and description within sensible lengths", () => {

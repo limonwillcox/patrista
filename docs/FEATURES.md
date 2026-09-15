@@ -1,4 +1,4 @@
-# Piblia feature list
+# Patrista feature list
 
 Logged ideas. Not scheduled. Not built. Pick one later.
 

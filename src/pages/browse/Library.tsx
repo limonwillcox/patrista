@@ -111,7 +111,7 @@ function centuryLabel(n: number): string {
   return n + "th";
 }
 
-/** Gold Chi-Rho from the Piblia logo (no red plate). Square box + PNG so it never squashes. */
+/** Gold Chi-Rho from the Patrista logo (no red plate). Square box + PNG so it never squashes. */
 function SpineMark() {
   return (
     <img

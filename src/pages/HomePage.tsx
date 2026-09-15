@@ -115,7 +115,7 @@ export function HomePage() {
         <div className="landing-hero-bg" role="img" aria-label="The Council of Nicaea" />
         <div className="landing-hero-shade" />
         <div className="landing-hero-inner">
-          <p className="landing-kicker">Piblia</p>
+          <p className="landing-kicker">Patrista</p>
           <blockquote className="landing-quote">
             <p>Knowing this first, that no prophecy of the scripture is of any private interpretation.</p>
             <p>

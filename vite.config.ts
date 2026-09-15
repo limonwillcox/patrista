@@ -44,7 +44,7 @@ const MIME: Record<string, string> = {
   ".ico": "image/x-icon"
 };
 
-const SITE_ORIGIN = "https://piblia.com";
+const SITE_ORIGIN = "https://patrista.com";
 
 /**
  * Emit dist/church-history/index.html (cinematic shell) and
@@ -261,8 +261,9 @@ function extrasPlugin() {
             : "";
         const title = escapeHtml(w.title + " — " + (author?.name || w.author));
         const desc = escapeHtml(
-          "Public-domain English text of " + w.title + " by " + (author?.name || w.author) + ". Read on Piblia."
+          "Public-domain English text of " + w.title + " by " + (author?.name || w.author) + ". Read on Patrista."
         );
+        const fatherUrl = SITE_ORIGIN + "/fathers/" + w.author + "/" + w.id + ".html";
         writeFileSync(
           pagePath,
           [
@@ -273,11 +274,11 @@ function extrasPlugin() {
             '  <meta name="viewport" content="width=device-width, initial-scale=1" />',
             "  <title>" + title + "</title>",
             '  <meta name="description" content="' + desc + '" />',
-            '  <link rel="canonical" href="https://piblia.com/fathers/' + w.author + "/" + w.id + '.html" />',
+            '  <link rel="canonical" href="' + fatherUrl + '" />',
             "  <style>body{font-family:Georgia,serif;max-width:42rem;margin:1.5rem auto;padding:0 1rem;line-height:1.55;color:#1a1a1a}h1,h2{font-family:system-ui,sans-serif}a{color:#952004}</style>",
             "</head>",
             "<body>",
-            "  <p><a href=\"/\">Piblia</a> · <a href=\"/church-fathers\">Browse</a> · <a href=\"/read?work=" +
+            "  <p><a href=\"/\">Patrista</a> · <a href=\"/church-fathers\">Browse</a> · <a href=\"/read?work=" +
               encodeURIComponent(w.id) +
               '">Open in reader</a></p>',
             "  <h1>" + escapeHtml(w.title) + "</h1>",
@@ -289,7 +290,7 @@ function extrasPlugin() {
             ""
           ].join("\n")
         );
-        sitemapUrls.push("https://piblia.com/fathers/" + w.author + "/" + w.id + ".html");
+        sitemapUrls.push(fatherUrl);
       }
 
       redirectLines.push(...writeStaticBibleApi(dist));
@@ -310,7 +311,7 @@ function extrasPlugin() {
       );
       writeFileSync(
         join(dist, "robots.txt"),
-        ["User-agent: *", "Allow: /", "Sitemap: https://piblia.com/sitemap.xml", ""].join("\n")
+        ["User-agent: *", "Allow: /", "Sitemap: " + SITE_ORIGIN + "/sitemap.xml", ""].join("\n")
       );
     }
   };

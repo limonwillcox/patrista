@@ -113,7 +113,7 @@ export function ChurchHistoryPage() {
     return () => io.disconnect();
   }, [navigate]);
 
-  const origin = typeof window === "undefined" ? "https://piblia.com" : window.location.origin;
+  const origin = typeof window === "undefined" ? "https://patrista.com" : window.location.origin;
   useDocumentMeta(CHURCH_HISTORY_TITLE, CHURCH_HISTORY_DESCRIPTION, origin + CHURCH_HISTORY_CANONICAL_PATH);
 
   return (

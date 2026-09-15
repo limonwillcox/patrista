@@ -71,7 +71,7 @@ export function TimelinePage() {
     }
   }, [location.hash, catalog]);
 
-  const origin = typeof window === "undefined" ? "https://piblia.com" : window.location.origin;
+  const origin = typeof window === "undefined" ? "https://patrista.com" : window.location.origin;
   useDocumentMeta(CHURCH_HISTORY_TITLE, CHURCH_HISTORY_DESCRIPTION, origin + CHURCH_HISTORY_TIMELINE_PATH);
 
   return (

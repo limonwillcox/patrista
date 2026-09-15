@@ -7,9 +7,9 @@ import { ICONS } from "./Icons";
 
 function Brand() {
   return (
-    <Link className="brand" to="/" aria-label="Piblia">
-      <img className="logo" src="/assets/piblia-logo.jpg" alt="" width={34} height={34} />
-      <span className="brand-name">Piblia</span>
+    <Link className="brand" to="/" aria-label="Patrista">
+      <img className="logo" src="/assets/patrista-logo.jpg" alt="" width={34} height={34} />
+      <span className="brand-name">Patrista</span>
     </Link>
   );
 }

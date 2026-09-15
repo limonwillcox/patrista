@@ -71,15 +71,15 @@ describe("donate checkout handler", () => {
 
   it("answers CORS preflight on the Worker adapter", async () => {
     const res = await handleDonateFetch(
-      new Request("https://piblia.com/api/donate/checkout", { method: "OPTIONS" }),
-      { DONATE_PUBLIC_ORIGIN: "https://piblia.com" }
+      new Request("https://patrista.com/api/donate/checkout", { method: "OPTIONS" }),
+      { DONATE_PUBLIC_ORIGIN: "https://patrista.com" }
     );
     expect(res).not.toBeNull();
     expect(res?.status).toBe(204);
   });
 
   it("ignores non-donate Worker paths", async () => {
-    const res = await handleDonateFetch(new Request("https://piblia.com/api/catalog"));
+    const res = await handleDonateFetch(new Request("https://patrista.com/api/catalog"));
     expect(res).toBeNull();
   });
 });

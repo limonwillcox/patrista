@@ -537,13 +537,13 @@ export function churchHistoryJsonLd(origin: string): unknown {
         description: CHURCH_HISTORY_DESCRIPTION,
         mainEntityOfPage: url,
         inLanguage: "en",
-        publisher: { "@type": "Organization", name: "Piblia", url: origin + "/" }
+        publisher: { "@type": "Organization", name: "Patrista", url: origin + "/" }
       },
       {
         "@type": "BreadcrumbList",
         "@id": url + "#breadcrumbs",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Piblia", item: origin + "/" },
+          { "@type": "ListItem", position: 1, name: "Patrista", item: origin + "/" },
           { "@type": "ListItem", position: 2, name: CHURCH_HISTORY_HEADING, item: url }
         ]
       },

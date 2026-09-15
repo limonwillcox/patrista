@@ -13,9 +13,9 @@ export function AboutPage() {
 
   return (
     <div className="prose">
-      <h1>About Piblia</h1>
+      <h1>About Patrista</h1>
       <p>
-        Piblia is a free, searchable library of the Church Fathers — the public-domain English of the Ante-Nicene Fathers and
+        Patrista is a free, searchable library of the Church Fathers — the public-domain English of the Ante-Nicene Fathers and
         Nicene and Post-Nicene Fathers series, with Latin originals where we have them. Read a whole work as one scroll, flip
         between Translation and Original, or open Split to keep both columns on the page.
       </p>

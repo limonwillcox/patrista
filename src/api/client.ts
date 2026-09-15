@@ -1,11 +1,18 @@
 import { parseQuery, searchKeyword } from "../../server/query";
 import type { Catalog, Passage, SearchHit, Query, WorkPayload } from "../../server/types";
 
+export function jsonFallbackPath(path: string): string | null {
+  const bare = path.split("?")[0];
+  if (bare.endsWith(".json")) return null;
+  return bare + ".json";
+}
+
 async function getJson<T>(path: string): Promise<T> {
   const res = await fetch(path);
   if (res.ok) return res.json() as Promise<T>;
-  if (!path.endsWith(".json") && !path.includes("?")) {
-    const fallback = await fetch(path + ".json");
+  const fallbackPath = jsonFallbackPath(path);
+  if (fallbackPath) {
+    const fallback = await fetch(fallbackPath);
     if (fallback.ok) return fallback.json() as Promise<T>;
   }
   throw new Error(path + " failed: " + res.status);

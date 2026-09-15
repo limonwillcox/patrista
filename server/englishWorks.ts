@@ -344,10 +344,22 @@ function detectChunk(raw: string): ChunkMode | "blob" {
   return "blob";
 }
 
+const specsByRoot = new Map<string, EnglishWorkSpec[]>();
+
+export function clearEnglishWorkSpecCache(): void {
+  specsByRoot.clear();
+}
+
 /** Discover every Fathers/English/*_English/*.txt extract as an app work. */
 export function discoverEnglishWorkSpecs(root: string): EnglishWorkSpec[] {
+  const hit = specsByRoot.get(root);
+  if (hit) return hit;
   const englishRoot = join(root, "Fathers", "English");
-  if (!existsSync(englishRoot)) return [];
+  if (!existsSync(englishRoot)) {
+    const empty: EnglishWorkSpec[] = [];
+    specsByRoot.set(root, empty);
+    return empty;
+  }
   const specs: EnglishWorkSpec[] = [];
   const usedIds = new Set<string>();
 
@@ -384,6 +396,7 @@ export function discoverEnglishWorkSpecs(root: string): EnglishWorkSpec[] {
       specs.push(over ? { ...base, ...over, id, path, author, title: over.title || title } : base);
     }
   }
+  specsByRoot.set(root, specs);
   return specs;
 }
 

@@ -220,3 +220,13 @@ describe("parseEnglishWork cleanup integration", () => {
     expect(last).toMatch(/Watch for your life/i);
   }, 60_000);
 });
+
+describe("discoverEnglishWorkSpecs cache", () => {
+  it("returns the same array instance for the same root", () => {
+    const a = discoverEnglishWorkSpecs(ROOT);
+    const b = discoverEnglishWorkSpecs(ROOT);
+    expect(a).toBe(b);
+    expect(a.length).toBeGreaterThan(0);
+  }, 60_000);
+});
+

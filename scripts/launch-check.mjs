@@ -23,6 +23,19 @@ if (!home.text.includes("id=\"root\"") && !home.text.includes("id='root'")) fail
 if (!home.text.includes("/src/main.tsx") && !home.text.includes("/assets/index-")) fail("home is not the Vite/React entry");
 if (home.text.includes("FG.boot") || home.text.includes("js/app.js")) fail("old FG.boot frontend still served");
 
+const bibleManifest = await get("/api/bible/manifest");
+if (bibleManifest.status !== 200 || !Array.isArray(bibleManifest.json)) {
+  fail("bible manifest missing");
+} else if (!bibleManifest.json.some((b) => b.id === "jo")) {
+  fail("bible manifest missing John");
+}
+
+const john1 = await get("/api/bible/jo/1");
+if (john1.status !== 200 || !john1.json) fail("John 1 missing");
+else if (!/In the beginning was the Word/i.test((john1.json.verses || []).join(" "))) {
+  fail("John 1 KJV missing");
+}
+
 const catalog = await get("/api/catalog");
 if (catalog.status !== 200 || !catalog.json) fail("catalog missing");
 else {

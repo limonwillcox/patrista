@@ -1,13 +1,12 @@
 export type LangMode = "translation" | "original";
 export type Theme = "day" | "night";
-export type ReadOptId = "nums" | "head" | "fn" | "xref";
+export type ReadOptId = "nums" | "head" | "fn";
 
 const OPT_DEFAULT: Record<ReadOptId, boolean> = {
   nums: true,
   head: true,
-  // Notes / refs start off so Read opens as a clean column.
-  fn: false,
-  xref: false
+  // Notes start off so Read opens as a clean column.
+  fn: false
 };
 
 export function storedOpt(id: ReadOptId, fallback = OPT_DEFAULT[id]): boolean {
@@ -82,5 +81,51 @@ export function applyReadOptionClasses(opts: Record<ReadOptId, boolean>): void {
   document.body.classList.toggle("hide-nums", !opts.nums);
   document.body.classList.toggle("hide-head", !opts.head);
   document.body.classList.toggle("hide-fn", !opts.fn);
-  document.body.classList.toggle("hide-xref", !opts.xref);
 }
+
+export function storedRailAutoFocus(): boolean {
+  if (typeof localStorage === "undefined") return true;
+  const v = localStorage.getItem("fg-scrollrail-autofocus") ?? localStorage.getItem("scrollRail.autoFocus");
+  if (v == null) return true;
+  return v === "on" || v === "true";
+}
+
+export function setStoredRailAutoFocus(on: boolean): void {
+  if (typeof localStorage === "undefined") return;
+  localStorage.setItem("fg-scrollrail-autofocus", on ? "on" : "off");
+  localStorage.setItem("scrollRail.autoFocus", on ? "true" : "false");
+}
+
+export function storedRailAutoCollapse(): boolean {
+  if (typeof localStorage === "undefined") return true;
+  const v = localStorage.getItem("fg-scrollrail-autocollapse") ?? localStorage.getItem("scrollRail.autoCollapse");
+  if (v == null) return true;
+  return v === "on" || v === "true";
+}
+
+export function setStoredRailAutoCollapse(on: boolean): void {
+  if (typeof localStorage === "undefined") return;
+  localStorage.setItem("fg-scrollrail-autocollapse", on ? "on" : "off");
+  localStorage.setItem("scrollRail.autoCollapse", on ? "true" : "false");
+}
+
+export function storedBibleSplitView(): boolean {
+  if (typeof localStorage === "undefined") return false;
+  return localStorage.getItem("fg-bible-split") === "on";
+}
+
+export function setStoredBibleSplitView(on: boolean): void {
+  if (typeof localStorage === "undefined") return;
+  localStorage.setItem("fg-bible-split", on ? "on" : "off");
+}
+
+export function storedScrollDark(): boolean {
+  if (typeof localStorage === "undefined") return false;
+  return localStorage.getItem("fg-scroll-dark") === "on";
+}
+
+export function setStoredScrollDark(on: boolean): void {
+  if (typeof localStorage === "undefined") return;
+  localStorage.setItem("fg-scroll-dark", on ? "on" : "off");
+}
+

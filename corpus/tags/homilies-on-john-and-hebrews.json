@@ -1,0 +1,126 @@
+{
+  "work": "homilies-on-john-and-hebrews",
+  "note": "John Chrysostom Homilies on John (units 1–88). Hebrews starts at unit 89. Snippets kept to 1–2 sentences.",
+  "tags": [
+    {
+      "id": "chrys-john-hom2-word-beginning",
+      "work": "homilies-on-john-and-hebrews",
+      "chapter": 2,
+      "snippet": "Were John about to converse with us, and to say to us words of his own, we needs must describe his family, his country, and his education. But since it is not he, but God by him, that speaks to mankind, it seems to me superfluous and distracting to enquire into these matters.",
+      "topics": ["scripture-inspiration", "logos", "apostles"],
+      "verses": [{ "book": "jo", "chapter": 1, "verse": 1, "endVerse": 5, "relation": "comments" }],
+      "sections": ["jo.1.prologue"],
+      "blocks": ["jo.1.1-3", "jo.1.4-6"]
+    },
+    {
+      "id": "chrys-john-hom2-galilee-poor",
+      "work": "homilies-on-john-and-hebrews",
+      "chapter": 2,
+      "snippet": "This fisherman then, whose business was about lakes, and nets, and fish; this native of Bethsaida of Galilee; this son of a poor fisherman, yes, and poor to the last degree; this man ignorant, and to the last degree of ignorance too, who never learned letters either before or after he undertook the preaching.",
+      "topics": ["humility", "apostles", "scripture-inspiration"],
+      "verses": [{ "book": "jo", "chapter": 1, "verse": 1, "endVerse": 5, "relation": "comments" }],
+      "sections": ["jo.1.prologue"],
+      "blocks": ["jo.1.1-3"]
+    },
+    {
+      "id": "chrys-john-hom3-children-seal",
+      "work": "homilies-on-john-and-hebrews",
+      "chapter": 3,
+      "snippet": "It is this very age that most of all needs the hearing these things; for from its tenderness it readily stores up what is said; and what children hear is impressed as a seal on the wax of their minds.",
+      "topics": ["children-formation", "scripture-hearing", "education", "parenting"],
+      "verses": [{ "book": "jo", "chapter": 1, "verse": 1, "endVerse": 5, "relation": "comments" }],
+      "sections": ["jo.1.prologue"],
+      "blocks": ["jo.1.1-3"]
+    },
+    {
+      "id": "chrys-john-hom4-with-god",
+      "work": "homilies-on-john-and-hebrews",
+      "chapter": 4,
+      "snippet": "Why, when all the other Evangelists had begun with the Dispensation; (for Matthew says, \"The Book of the generation of Jesus Christ, the Son of David\"; and Luke too relates to us in the beginning of his Gospel the events relating to Mary,) did John briefly and in a later place speak of the Word having become Flesh?",
+      "topics": ["logos", "christology", "gospel-harmony", "incarnation"],
+      "verses": [{ "book": "jo", "chapter": 1, "verse": 1, "endVerse": 5, "relation": "comments" }],
+      "sections": ["jo.1.prologue"],
+      "blocks": ["jo.1.1-3"]
+    },
+    {
+      "id": "chrys-john-hom4-fear-flesh-only",
+      "work": "homilies-on-john-and-hebrews",
+      "chapter": 4,
+      "snippet": "Because the other Evangelists had dwelt most on the accounts of His coming in the flesh, there was fear lest some, being of grovelling minds, might for this reason rest in these doctrines alone.",
+      "topics": ["incarnation", "christology", "heresy"],
+      "verses": [{ "book": "jo", "chapter": 1, "verse": 1, "endVerse": 14, "relation": "comments" }],
+      "sections": ["jo.1.prologue"],
+      "blocks": ["jo.1.1-3", "jo.1.4-6", "jo.1.7-9", "jo.1.10-12", "jo.1.13-15"]
+    },
+    {
+      "id": "chrys-john-hom5-all-things-made",
+      "work": "homilies-on-john-and-hebrews",
+      "chapter": 5,
+      "snippet": "All things were made by Him; and without Him was not anything made that was made.",
+      "topics": ["creation", "logos", "christology"],
+      "verses": [{ "book": "jo", "chapter": 1, "verse": 3, "endVerse": 5, "relation": "cites" }],
+      "sections": ["jo.1.prologue"],
+      "blocks": ["jo.1.1-3", "jo.1.4-6"]
+    },
+    {
+      "id": "chrys-john-hom5-against-created-spirit",
+      "work": "homilies-on-john-and-hebrews",
+      "chapter": 5,
+      "snippet": "For we will not put the full stop after \"not anything,\" as the heretics do. They, because they wish to make the Spirit created, say, \"What was made, in Him was Life\"; yet so what is said becomes unintelligible.",
+      "topics": ["holy-spirit", "heresy", "trinity", "creation"],
+      "verses": [{ "book": "jo", "chapter": 1, "verse": 3, "endVerse": 5, "relation": "comments" }],
+      "sections": ["jo.1.prologue"],
+      "blocks": ["jo.1.1-3", "jo.1.4-6"]
+    },
+    {
+      "id": "chrys-john-hom6-john-sent",
+      "work": "homilies-on-john-and-hebrews",
+      "chapter": 6,
+      "snippet": "There was a man sent from God, whose name was John.",
+      "topics": ["apostles", "scripture-inspiration"],
+      "verses": [{ "book": "jo", "chapter": 1, "verse": 6, "endVerse": 8, "relation": "cites" }],
+      "sections": ["jo.1.prologue"],
+      "blocks": ["jo.1.4-6", "jo.1.7-9"]
+    },
+    {
+      "id": "chrys-john-hom16-priests-ask",
+      "work": "homilies-on-john-and-hebrews",
+      "chapter": 16,
+      "snippet": "And this is the record of John, when the Jews sent priests and Levites from Jerusalem to ask him, Who art thou?",
+      "topics": ["jews-gentiles", "faith"],
+      "verses": [{ "book": "jo", "chapter": 1, "verse": 19, "endVerse": 23, "relation": "cites" }],
+      "sections": ["jo.1.johns-witness"],
+      "blocks": ["jo.1.19-21", "jo.1.22-24"]
+    },
+    {
+      "id": "chrys-john-hom17-lamb",
+      "work": "homilies-on-john-and-hebrews",
+      "chapter": 17,
+      "snippet": "The next day John seeth Jesus coming unto him, and saith, Behold the Lamb of God, which taketh away the sin of the world.",
+      "topics": ["salvation", "christology", "forgiveness"],
+      "verses": [{ "book": "jo", "chapter": 1, "verse": 29, "endVerse": 34, "relation": "cites" }],
+      "sections": ["jo.1.lamb-of-god"],
+      "blocks": ["jo.1.29-31", "jo.1.32-34"]
+    },
+    {
+      "id": "chrys-john-hom18-follow-me",
+      "work": "homilies-on-john-and-hebrews",
+      "chapter": 18,
+      "snippet": "Again the next day after John stood, and two of his disciples; and looking upon Jesus as he walked, he saith, Behold the Lamb of God!",
+      "topics": ["apostles", "faith", "discipleship"],
+      "verses": [{ "book": "jo", "chapter": 1, "verse": 35, "endVerse": 42, "relation": "cites" }],
+      "sections": ["jo.1.first-disciples"],
+      "blocks": ["jo.1.35-37", "jo.1.38-42"]
+    },
+    {
+      "id": "chrys-john-hom22-cana-hour",
+      "work": "homilies-on-john-and-hebrews",
+      "chapter": 22,
+      "snippet": "Jesus saith unto her, Woman, what have I to do with thee? mine hour is not yet come.",
+      "topics": ["parenting", "christology", "incarnation"],
+      "verses": [{ "book": "jo", "chapter": 2, "verse": 1, "endVerse": 11, "relation": "comments" }],
+      "sections": ["jo.2.cana"],
+      "blocks": ["jo.2.1-3", "jo.2.4-6", "jo.2.7-9", "jo.2.10-12"]
+    }
+  ]
+}

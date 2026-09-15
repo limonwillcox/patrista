@@ -23,6 +23,47 @@ export function fetchChapter(workId: string, chapter: number): Promise<Passage> 
   return getJson<Passage>("/api/works/" + encodeURIComponent(workId) + "/chapters/" + chapter);
 }
 
+export type BibleManifestBook = { id: string; name: string; chapters: number };
+
+export type BibleCommentaryHit = {
+  authorId: string;
+  authorName: string;
+  workTitle: string;
+  tag: {
+    id: string;
+    work: string;
+    chapter: number;
+    snippet: string;
+  };
+};
+
+export type BibleChapterPayload = {
+  book: BibleManifestBook;
+  chapter: number;
+  verses: string[];
+  sections?: { id: string; label: string; verses: { start: number; end: number } }[];
+  comments: BibleCommentaryHit[];
+};
+
+export function fetchBibleManifest(): Promise<BibleManifestBook[]> {
+  return getJson<BibleManifestBook[]>("/api/bible/manifest");
+}
+
+export function fetchBibleChapter(
+  book: string,
+  chapter: number,
+  opts?: { section?: string; from?: number; to?: number }
+): Promise<BibleChapterPayload> {
+  const q = new URLSearchParams();
+  if (opts?.section) q.set("section", opts.section);
+  if (opts?.from != null) q.set("from", String(opts.from));
+  if (opts?.to != null) q.set("to", String(opts.to));
+  const qs = q.toString();
+  return getJson<BibleChapterPayload>(
+    "/api/bible/" + encodeURIComponent(book) + "/" + chapter + (qs ? "?" + qs : "")
+  );
+}
+
 export async function fetchSearch(q: string): Promise<{ query: Query; hits: SearchHit[] }> {
   const res = await fetch("/api/search?q=" + encodeURIComponent(q));
   if (res.ok) return res.json() as Promise<{ query: Query; hits: SearchHit[] }>;

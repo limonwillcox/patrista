@@ -55,16 +55,17 @@ export const ICONS = {
       <path d="M12 4v16M6 8l12 8M6 16l12-8" />
     </svg>
   ),
-  xref: (
-    <svg viewBox="0 0 24 24">
-      <path d="M10 13a4.5 4.5 0 0 0 6.4 0l1.6-1.6a4.5 4.5 0 0 0-6.4-6.4L10.5 6" />
-      <path d="M14 11a4.5 4.5 0 0 0-6.4 0L6 12.6a4.5 4.5 0 0 0 6.4 6.4l1.1-1.1" />
-    </svg>
-  ),
   parallel: (
     <svg viewBox="0 0 24 24">
       <rect x="4" y="5" width="7" height="14" rx="1" />
       <rect x="13" y="5" width="7" height="14" rx="1" />
+    </svg>
+  ),
+  bible: (
+    <svg viewBox="0 0 24 24">
+      <path d="M6 4h10a2 2 0 0 1 2 2v14H8a2 2 0 0 0-2 2V4z" />
+      <path d="M6 4a2 2 0 0 0-2 2v14" />
+      <path d="M11 8v8M9 10h4" />
     </svg>
   )
 };

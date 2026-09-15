@@ -50,6 +50,43 @@ export type Passage = {
   heading: string;
   versions: Record<string, string[]>;
   footnotes: Footnote[];
+  /** Cross-ref tags attached at library load (optional). */
+  tags?: QuoteTag[];
+};
+
+export type VerseRelation = "cites" | "alludes" | "comments";
+
+/** Bible verse span. Prefer ≥5 verses when the Father treats a whole unit. */
+export type VerseRef = {
+  book: string;
+  chapter: number;
+  verse: number;
+  endVerse?: number;
+  relation: VerseRelation;
+};
+
+export type Topic = {
+  id: string;
+  label: string;
+  parent?: string;
+};
+
+/**
+ * A short Father quote tagged to Bible passage(s) and topic(s).
+ * `snippet` stays 1–2 sentences; the reader can open the homily for more.
+ */
+export type QuoteTag = {
+  id: string;
+  work: string;
+  /** Father work unit (homily / chapter number in our Passage model). */
+  chapter: number;
+  snippet: string;
+  topics: string[];
+  verses: VerseRef[];
+  /** Known section ids, e.g. jo.1.prologue */
+  sections: string[];
+  /** 3-verse block ids, e.g. jo.1.1-3 */
+  blocks?: string[];
 };
 
 export type Catalog = {

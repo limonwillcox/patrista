@@ -61,16 +61,6 @@ export function AboutPage() {
         </li>
       </ul>
 
-      <h2 id="privacy">Privacy &amp; accounts</h2>
-      <p>
-        Display name, font size, night mode, and highlights live in <code>localStorage</code> on this device. Sign-in is a local
-        mock for now; OAuth buttons are placeholders and do not call a provider. Personal notes will require an account when login
-        ships — footnotes from the editions stay readable without one.
-      </p>
-      <p className="fineprint">
-        “Bible Gateway” is a trademark of its owner; this project is an independent library and is not affiliated with HarperCollins
-        Christian Publishing.
-      </p>
     </div>
   );
 }

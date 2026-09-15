@@ -18,6 +18,10 @@ import {
   storedTheme,
   storedUser,
   storedVersion,
+  storedRailAutoFocus,
+  setStoredRailAutoFocus,
+  storedRailAutoCollapse,
+  setStoredRailAutoCollapse,
   type LangMode,
   type ReadOptId,
   type Theme
@@ -42,12 +46,16 @@ type AppState = {
   loginTab: "signin" | "create";
   toast: string | null;
   activePassage: Passage | null;
+  railAutoFocus: boolean;
+  railAutoCollapse: boolean;
   setMode: (mode: LangMode) => void;
   setVersion: (id: string) => void;
   setTheme: (theme: Theme) => void;
   setFont: (n: number) => void;
   setParallel: (on: boolean) => void;
   toggleOpt: (id: ReadOptId) => void;
+  setRailAutoFocus: (on: boolean) => void;
+  setRailAutoCollapse: (on: boolean) => void;
   setUser: (name: string | null) => void;
   setNavOpen: (open: boolean) => void;
   setBooklistOpen: (open: boolean) => void;
@@ -70,8 +78,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [opts, setOpts] = useState<ReadOpts>(() => ({
     nums: typeof localStorage === "undefined" ? true : storedOpt("nums"),
     head: typeof localStorage === "undefined" ? true : storedOpt("head"),
-    fn: typeof localStorage === "undefined" ? false : storedOpt("fn"),
-    xref: typeof localStorage === "undefined" ? false : storedOpt("xref")
+    fn: typeof localStorage === "undefined" ? false : storedOpt("fn")
   }));
   const [user, setUserState] = useState<string | null>(() => (typeof localStorage === "undefined" ? null : storedUser()));
   const [navOpen, setNavOpen] = useState(false);
@@ -80,6 +87,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [loginTab, setLoginTab] = useState<"signin" | "create">("signin");
   const [toast, setToast] = useState<string | null>(null);
   const [activePassage, setActivePassage] = useState<Passage | null>(null);
+  const [railAutoFocus, setRailAutoFocusState] = useState(() =>
+    typeof localStorage === "undefined" ? true : storedRailAutoFocus()
+  );
+  const [railAutoCollapse, setRailAutoCollapseState] = useState(() =>
+    typeof localStorage === "undefined" ? true : storedRailAutoCollapse()
+  );
 
   useEffect(() => {
     fetchCatalog()
@@ -116,6 +129,16 @@ export function AppProvider({ children }: { children: ReactNode }) {
       loginTab,
       toast,
       activePassage,
+      railAutoFocus,
+      railAutoCollapse,
+      setRailAutoFocus: (on) => {
+        setStoredRailAutoFocus(on);
+        setRailAutoFocusState(on);
+      },
+      setRailAutoCollapse: (on) => {
+        setStoredRailAutoCollapse(on);
+        setRailAutoCollapseState(on);
+      },
       setMode: (next) => {
         setStoredMode(next);
         setModeState(next);
@@ -160,7 +183,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       },
       setActivePassage
     }),
-    [catalog, catalogError, mode, version, theme, font, parallel, opts, user, navOpen, booklistOpen, loginOpen, loginTab, toast, activePassage]
+    [catalog, catalogError, mode, version, theme, font, parallel, opts, user, navOpen, booklistOpen, loginOpen, loginTab, toast, activePassage, railAutoFocus, railAutoCollapse]
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

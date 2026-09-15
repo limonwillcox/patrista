@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link, NavLink, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { parseQuery } from "../../server/query";
 import { useApp } from "../context/AppContext";
@@ -18,12 +18,11 @@ function Rail() {
   const { navOpen, opts, parallel, toggleOpt, setParallel, setNavOpen } = useApp();
   const location = useLocation();
   const readActive = location.pathname === "/read";
+  const bibleActive = location.pathname === "/bible";
   const writingsActive = location.pathname === "/church-fathers" || location.pathname === "/browse";
-  const historyActive = location.pathname === "/church-history" || location.pathname === "/church-history/";
   const timelineActive = location.pathname.startsWith("/church-history/timeline");
   const tools: { id: ReadOptId | "parallel"; label: string; title: string; on: boolean }[] = [
     { id: "fn", label: "Notes", title: "Footnotes", on: opts.fn },
-    { id: "xref", label: "Refs", title: "Scripture references", on: opts.xref },
     { id: "parallel", label: "Split", title: "Parallel original on the right", on: parallel }
   ];
   return (
@@ -32,6 +31,10 @@ function Rail() {
         <NavLink to="/read" className={() => (readActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.read}
           <span>Read</span>
+        </NavLink>
+        <NavLink to="/bible" className={() => (bibleActive ? "active" : "")} onClick={() => setNavOpen(false)}>
+          {ICONS.bible}
+          <span>Bible</span>
         </NavLink>
         <NavLink to="/study" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.study}
@@ -44,14 +47,6 @@ function Rail() {
         >
           {ICONS.browse}
           <span>Browse</span>
-        </NavLink>
-        <NavLink
-          to="/church-history/"
-          className={() => (historyActive ? "active" : "")}
-          onClick={() => setNavOpen(false)}
-        >
-          {ICONS.history}
-          <span>History</span>
         </NavLink>
         <NavLink
           to="/church-history/timeline#nativity"
@@ -98,12 +93,9 @@ function Header() {
     theme,
     setTheme,
     setNavOpen,
-    setLoginOpen,
     setUser,
     navOpen,
     catalog,
-    mode,
-    setMode,
     font,
     setFont,
     booklistOpen,
@@ -113,20 +105,10 @@ function Header() {
   const [q, setQ] = useState(params.get("q") || "");
   const navigate = useNavigate();
   const location = useLocation();
-  const onRead = location.pathname === "/read";
 
   useEffect(() => {
     setQ(params.get("q") || "");
   }, [params]);
-
-  function applyMode(next: "translation" | "original") {
-    setMode(next);
-    if (onRead) {
-      const nextParams = new URLSearchParams(params);
-      nextParams.set("mode", next);
-      setParams(nextParams, { replace: true });
-    }
-  }
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -173,27 +155,6 @@ function Header() {
           aria-label="Search writings"
           onChange={(e) => setQ(e.target.value)}
         />
-        <div className="lang-toggle" role="group" aria-label="Text language">
-          <button
-            type="button"
-            data-mode="translation"
-            className={mode === "translation" ? "active" : ""}
-            onClick={() => applyMode("translation")}
-          >
-            Translation
-          </button>
-          <button
-            type="button"
-            data-mode="original"
-            className={mode === "original" ? "active" : ""}
-            onClick={() => applyMode("original")}
-          >
-            Original
-          </button>
-        </div>
-        <button className="btn-search" type="submit">
-          Find
-        </button>
       </form>
       <div className="header-actions">
         <div className="font-ctrl">
@@ -216,6 +177,7 @@ function Header() {
             <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z" />
           </svg>
         </button>
+        {location.pathname === "/bible" ? <RailSettings /> : null}
         {user ? (
           <>
             <span style={{ fontSize: 15, fontWeight: 600 }}>{user}</span>
@@ -223,13 +185,67 @@ function Header() {
               Sign out
             </button>
           </>
-        ) : (
-          <button className="linkish" id="loginBtn" onClick={() => setLoginOpen(true, "signin")}>
-            Log In
-          </button>
-        )}
+        ) : null}
       </div>
     </header>
+  );
+}
+
+function RailSettings() {
+  const { railAutoFocus, railAutoCollapse, setRailAutoFocus, setRailAutoCollapse } = useApp();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onDocClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    if (open) document.addEventListener("click", onDocClick);
+    return () => document.removeEventListener("click", onDocClick);
+  }, [open]);
+
+  return (
+    <div className="rail-settings-wrap" ref={ref}>
+      <button
+        type="button"
+        className={"icon-btn" + (open ? " active" : "")}
+        id="railSettingsBtn"
+        title="Commentary scroll settings"
+        aria-label="Commentary scroll settings"
+        aria-expanded={open}
+        onClick={() => setOpen(!open)}
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+      </button>
+      {open ? (
+        <div className="rail-settings-popover" role="dialog" aria-label="Commentary scroll settings">
+          <p className="rail-settings-heading">Scroll Rail</p>
+          <label className="rail-setting-item">
+            <input
+              type="checkbox"
+              id="pref-rail-autofocus"
+              checked={railAutoFocus}
+              onChange={(e) => setRailAutoFocus(e.target.checked)}
+            />
+            <span>Auto-focus active section</span>
+          </label>
+          <label className="rail-setting-item">
+            <input
+              type="checkbox"
+              id="pref-rail-autocollapse"
+              checked={railAutoCollapse}
+              onChange={(e) => setRailAutoCollapse(e.target.checked)}
+            />
+            <span>Auto-collapse rail on section change</span>
+          </label>
+        </div>
+      ) : null}
+    </div>
   );
 }
 
@@ -291,56 +307,6 @@ function Booklist() {
         ) : null}
       </div>
     </div>
-  );
-}
-
-function Footer() {
-  const { setLoginOpen, user } = useApp();
-  return (
-    <footer className="site-footer">
-      <div className="footer-grid">
-        <div>
-          <h4>Read</h4>
-          <Link to="/read?work=confessions">The Confessions</Link>
-          <Link to="/read?work=confessions&chapter=1">Book I</Link>
-          <Link to="/read?work=confessions&chapter=8">Book VIII</Link>
-          <Link to="/church-fathers">Browse</Link>
-        </div>
-        <div>
-          <h4>Study</h4>
-          <Link to="/study">Study desk</Link>
-          <Link to="/search?q=incarnation">Keyword search</Link>
-          <Link to="/church-history/">Church history</Link>
-          <Link to="/church-history/timeline#nativity">Timeline</Link>
-          <Link to="/church-history/timeline#pre-nicene">Before Nicaea</Link>
-          <Link to="/church-history/timeline#post-nicene">After Nicaea</Link>
-          <Link to="/about#editions">Editions</Link>
-        </div>
-        <div>
-          <h4>Account</h4>
-          {user ? (
-            <span>{user}</span>
-          ) : (
-            <a
-              href="#"
-              id="footerLogin"
-              onClick={(e) => {
-                e.preventDefault();
-                setLoginOpen(true, "signin");
-              }}
-            >
-              Sign in
-            </a>
-          )}
-          <Link to="/about#privacy">Privacy</Link>
-          <Link to="/give">Give</Link>
-        </div>
-      </div>
-      <p className="legal">
-        Piblia is a searchable library of public-domain Church Father writings. Texts come from the Ante-Nicene Fathers and Nicene
-        and Post-Nicene Fathers series (ed. Roberts, Donaldson, Schaff) and related 19th-century editions.
-      </p>
-    </footer>
   );
 }
 
@@ -493,7 +459,6 @@ export function Layout({ children }: { children: ReactNode }) {
       >
         {children}
       </main>
-      {!isHistoryCinematic ? <Footer /> : null}
       <AuthModal />
       <div className={"toast" + (toast ? " open" : "")} id="toast">
         {toast}

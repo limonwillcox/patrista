@@ -389,7 +389,7 @@ html[data-theme="night"] .heading { color: #e07a55; }
   font-family: var(--sans); font-size: 11px; color: var(--muted); font-weight: 700;
   vertical-align: super; margin-right: 4px;
 }
-.fn, .xref {
+.fn {
   font-family: var(--sans); font-size: 11px; color: var(--burgundy); font-weight: 700;
   vertical-align: super; cursor: pointer; margin-left: 1px;
 }
@@ -405,23 +405,20 @@ html[data-theme="night"] .w.hl-blue { background: #7eb6ff; color: #0a1624; }
 html[data-theme="night"] .w.hl-pink { background: #f09ab8; color: #2a0a14; }
 .hide-nums .pnum,
 .hide-fn .fn,
-.hide-head .heading,
-.hide-xref .xref { display: none; }
+.hide-head .heading { display: none; }
 .hide-fn #footnotes,
-.hide-fn .footnotes,
-.hide-xref #crossrefs,
-.hide-xref .crossrefs { display: none; }
+.hide-fn .footnotes { display: none; }
 
 .orig-line {
   display: none; font-size: 0.92em; color: var(--muted); font-style: italic; margin-top: 4px;
 }
 .show-orig .orig-line { display: block; }
 
-.crossrefs, .footnotes {
+.footnotes {
   margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border);
   font-size: 14px;
 }
-.crossrefs h4, .footnotes h4 { margin: 0 0 8px; font-size: 15px; }
+.footnotes h4 { margin: 0 0 8px; font-size: 15px; }
 .copyright {
   margin-top: 24px; font-size: 13px; color: var(--muted);
 }

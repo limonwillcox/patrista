@@ -12,7 +12,12 @@
     "test": "NODE_OPTIONS=--max-old-space-size=8192 vitest run",
     "parse-confessions": "node scripts/parse-confessions.mjs",
     "latin-library": "node scripts/latin-library/scrape.mjs --all",
-    "latin-library:dry": "node scripts/latin-library/scrape.mjs --dry-run"
+    "latin-library:dry": "node scripts/latin-library/scrape.mjs --dry-run",
+    "links:ingest": "node scripts/links/ingest-fixture.mjs",
+    "links:ingest-hcf": "node scripts/links/ingest-hcf.mjs",
+    "links:ingest-ecatena": "node scripts/links/ingest-ecana.mjs",
+    "links:report": "node scripts/links/report.mjs",
+    "links:pack": "node scripts/links/pack-sqlite.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

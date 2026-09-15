@@ -1,0 +1,103 @@
+{
+  "book": "jo",
+  "name": "John",
+  "chapters": {
+    "1": [
+      { "id": "jo.1.prologue", "label": "Prologue: the Word", "verses": { "start": 1, "end": 18 } },
+      { "id": "jo.1.johns-witness", "label": "John's witness to the priests", "verses": { "start": 19, "end": 28 } },
+      { "id": "jo.1.lamb-of-god", "label": "Behold the Lamb of God", "verses": { "start": 29, "end": 34 } },
+      { "id": "jo.1.first-disciples", "label": "First disciples", "verses": { "start": 35, "end": 42 } },
+      { "id": "jo.1.philip-nathanael", "label": "Philip and Nathanael", "verses": { "start": 43, "end": 51 } }
+    ],
+    "2": [
+      { "id": "jo.2.cana", "label": "Wedding at Cana", "verses": { "start": 1, "end": 12 } },
+      { "id": "jo.2.temple", "label": "Cleansing the temple", "verses": { "start": 13, "end": 25 } }
+    ],
+    "3": [
+      { "id": "jo.3.nicodemus", "label": "Nicodemus and new birth", "verses": { "start": 1, "end": 21 } },
+      { "id": "jo.3.john-again", "label": "John and Jesus baptizing", "verses": { "start": 22, "end": 36 } }
+    ],
+    "4": [
+      { "id": "jo.4.samaritan-woman", "label": "Woman at the well", "verses": { "start": 1, "end": 26 } },
+      { "id": "jo.4.harvest", "label": "Fields white to harvest", "verses": { "start": 27, "end": 42 } },
+      { "id": "jo.4.officials-son", "label": "Official's son healed", "verses": { "start": 43, "end": 54 } }
+    ],
+    "5": [
+      { "id": "jo.5.bethesda", "label": "Pool of Bethesda", "verses": { "start": 1, "end": 18 } },
+      { "id": "jo.5.fathers-works", "label": "The Father's works and witnesses", "verses": { "start": 19, "end": 47 } }
+    ],
+    "6": [
+      { "id": "jo.6.feeding", "label": "Feeding the five thousand", "verses": { "start": 1, "end": 15 } },
+      { "id": "jo.6.walking-water", "label": "Walking on the water", "verses": { "start": 16, "end": 21 } },
+      { "id": "jo.6.bread-of-life", "label": "Bread of life discourse", "verses": { "start": 22, "end": 59 } },
+      { "id": "jo.6.reaction", "label": "Many turn back; Peter's confession", "verses": { "start": 60, "end": 71 } }
+    ],
+    "7": [
+      { "id": "jo.7.feast", "label": "At the Feast of Tabernacles", "verses": { "start": 1, "end": 24 } },
+      { "id": "jo.7.division", "label": "Is this the Christ?", "verses": { "start": 25, "end": 36 } },
+      { "id": "jo.7.living-water", "label": "Rivers of living water", "verses": { "start": 37, "end": 53 } }
+    ],
+    "8": [
+      { "id": "jo.8.adulteress", "label": "Woman caught in adultery", "verses": { "start": 1, "end": 11 } },
+      { "id": "jo.8.light", "label": "Light of the world", "verses": { "start": 12, "end": 30 } },
+      { "id": "jo.8.abraham", "label": "Abraham's children; before Abraham", "verses": { "start": 31, "end": 59 } }
+    ],
+    "9": [
+      { "id": "jo.9.blind-man", "label": "Man born blind", "verses": { "start": 1, "end": 41 } }
+    ],
+    "10": [
+      { "id": "jo.10.shepherd", "label": "Good Shepherd", "verses": { "start": 1, "end": 21 } },
+      { "id": "jo.10.dedication", "label": "At the Feast of Dedication", "verses": { "start": 22, "end": 42 } }
+    ],
+    "11": [
+      { "id": "jo.11.lazarus", "label": "Raising of Lazarus", "verses": { "start": 1, "end": 44 } },
+      { "id": "jo.11.plot", "label": "Plot to kill Jesus", "verses": { "start": 45, "end": 57 } }
+    ],
+    "12": [
+      { "id": "jo.12.anointing", "label": "Mary anoints Jesus", "verses": { "start": 1, "end": 11 } },
+      { "id": "jo.12.triumphal", "label": "Triumphal entry", "verses": { "start": 12, "end": 19 } },
+      { "id": "jo.12.greeks", "label": "Greeks seek Jesus; hour of glory", "verses": { "start": 20, "end": 36 } },
+      { "id": "jo.12.unbelief", "label": "Unbelief and Jesus' summary", "verses": { "start": 37, "end": 50 } }
+    ],
+    "13": [
+      { "id": "jo.13.footwashing", "label": "Foot washing", "verses": { "start": 1, "end": 20 } },
+      { "id": "jo.13.betrayal", "label": "Betrayal foretold", "verses": { "start": 21, "end": 30 } },
+      { "id": "jo.13.new-commandment", "label": "New commandment; Peter's denial", "verses": { "start": 31, "end": 38 } }
+    ],
+    "14": [
+      { "id": "jo.14.way-truth-life", "label": "Way, truth, and life", "verses": { "start": 1, "end": 14 } },
+      { "id": "jo.14.paraclete", "label": "Promise of the Spirit", "verses": { "start": 15, "end": 31 } }
+    ],
+    "15": [
+      { "id": "jo.15.vine", "label": "True vine", "verses": { "start": 1, "end": 17 } },
+      { "id": "jo.15.hatred", "label": "Hatred of the world", "verses": { "start": 18, "end": 27 } }
+    ],
+    "16": [
+      { "id": "jo.16.persecution", "label": "Coming persecution", "verses": { "start": 1, "end": 15 } },
+      { "id": "jo.16.sorrow-joy", "label": "Sorrow to joy; plain speech", "verses": { "start": 16, "end": 33 } }
+    ],
+    "17": [
+      { "id": "jo.17.high-priestly", "label": "High-priestly prayer", "verses": { "start": 1, "end": 26 } }
+    ],
+    "18": [
+      { "id": "jo.18.arrest", "label": "Arrest in the garden", "verses": { "start": 1, "end": 14 } },
+      { "id": "jo.18.peter-annas", "label": "Peter's denial; before Annas", "verses": { "start": 15, "end": 27 } },
+      { "id": "jo.18.pilate", "label": "Before Pilate", "verses": { "start": 28, "end": 40 } }
+    ],
+    "19": [
+      { "id": "jo.19.condemnation", "label": "Condemnation and crucifixion", "verses": { "start": 1, "end": 16 } },
+      { "id": "jo.19.cross", "label": "At the cross", "verses": { "start": 17, "end": 30 } },
+      { "id": "jo.19.burial", "label": "Burial", "verses": { "start": 31, "end": 42 } }
+    ],
+    "20": [
+      { "id": "jo.20.empty-tomb", "label": "Empty tomb", "verses": { "start": 1, "end": 10 } },
+      { "id": "jo.20.mary", "label": "Mary Magdalene", "verses": { "start": 11, "end": 18 } },
+      { "id": "jo.20.disciples", "label": "Appearance to the disciples", "verses": { "start": 19, "end": 23 } },
+      { "id": "jo.20.thomas", "label": "Thomas", "verses": { "start": 24, "end": 31 } }
+    ],
+    "21": [
+      { "id": "jo.21.catch", "label": "Catch of fish", "verses": { "start": 1, "end": 14 } },
+      { "id": "jo.21.peter", "label": "Peter restored; beloved disciple", "verses": { "start": 15, "end": 25 } }
+    ]
+  }
+}

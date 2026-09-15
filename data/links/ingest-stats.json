@@ -1,0 +1,1377 @@
+{
+  "hcf": {
+    "ingested": 16350,
+    "orphans": [
+      {
+        "name": "Thomas Aquinas",
+        "count": 7359
+      },
+      {
+        "name": "Bede",
+        "count": 7087
+      },
+      {
+        "name": "Theophylact of Ohrid",
+        "count": 6645
+      },
+      {
+        "name": "Bonaventure",
+        "count": 4814
+      },
+      {
+        "name": "Cyril of Alexandria",
+        "count": 2241
+      },
+      {
+        "name": "Oecumenius",
+        "count": 1828
+      },
+      {
+        "name": "CS Lewis",
+        "count": 1173
+      },
+      {
+        "name": "Ambrosiaster",
+        "count": 1046
+      },
+      {
+        "name": "Rabanus Maurus",
+        "count": 951
+      },
+      {
+        "name": "GK Chesterton",
+        "count": 714
+      },
+      {
+        "name": "Philoxenus of Mabbug",
+        "count": 504
+      },
+      {
+        "name": "Theodore of Mopsuestia",
+        "count": 493
+      },
+      {
+        "name": "Pelagius",
+        "count": 467
+      },
+      {
+        "name": "Cassiodorus",
+        "count": 458
+      },
+      {
+        "name": "Caesarius of Arles",
+        "count": 451
+      },
+      {
+        "name": "Andreas of Caesarea",
+        "count": 424
+      },
+      {
+        "name": "Glossa Ordinaria",
+        "count": 384
+      },
+      {
+        "name": "Alcuin of York",
+        "count": 378
+      },
+      {
+        "name": "Pseudo-Chrysostom",
+        "count": 373
+      },
+      {
+        "name": "Cosmas Indicopleustes",
+        "count": 337
+      },
+      {
+        "name": "Didymus the Blind",
+        "count": 322
+      },
+      {
+        "name": "Remigius of Rheims",
+        "count": 309
+      },
+      {
+        "name": "Bernard of Clairvaux",
+        "count": 289
+      },
+      {
+        "name": "Desert Fathers",
+        "count": 276
+      },
+      {
+        "name": "Gaius Marius Victorinus",
+        "count": 220
+      },
+      {
+        "name": "Pseudo-Jerome",
+        "count": 202
+      },
+      {
+        "name": "Primasius of Hadrumetum",
+        "count": 175
+      },
+      {
+        "name": "Ishodad of Merv",
+        "count": 173
+      },
+      {
+        "name": "Pseudo-Clement",
+        "count": 173
+      },
+      {
+        "name": "Hilary of Arles",
+        "count": 166
+      },
+      {
+        "name": "Fulgentius of Ruspe",
+        "count": 165
+      },
+      {
+        "name": "Peter Chrysologus",
+        "count": 160
+      },
+      {
+        "name": "Victorinus of Pettau",
+        "count": 146
+      },
+      {
+        "name": "Severian of Gabala",
+        "count": 143
+      },
+      {
+        "name": "Diodorus of Tarsus",
+        "count": 133
+      },
+      {
+        "name": "Chromatius of Aquileia",
+        "count": 120
+      },
+      {
+        "name": "Maximus of Turin",
+        "count": 117
+      },
+      {
+        "name": "Evagrius Ponticus",
+        "count": 115
+      },
+      {
+        "name": "Robert of Tombelaine",
+        "count": 113
+      },
+      {
+        "name": "Apringius of Beja",
+        "count": 109
+      },
+      {
+        "name": "Ticonius",
+        "count": 95
+      },
+      {
+        "name": "Olympiodorus of Alexandria",
+        "count": 94
+      },
+      {
+        "name": "Ancient Greek Expositor",
+        "count": 89
+      },
+      {
+        "name": "Titus of Bostra",
+        "count": 88
+      },
+      {
+        "name": "Apollinaris of Laodicea",
+        "count": 74
+      },
+      {
+        "name": "Arnobius the Younger",
+        "count": 73
+      },
+      {
+        "name": "Ammonius of Alexandria",
+        "count": 70
+      },
+      {
+        "name": "Julian of Eclanum",
+        "count": 68
+      },
+      {
+        "name": "Salvian the Presbyter",
+        "count": 65
+      },
+      {
+        "name": "Isaac of Nineveh",
+        "count": 64
+      },
+      {
+        "name": "Hesychius of Jerusalem",
+        "count": 62
+      },
+      {
+        "name": "Symeon the New Theologian",
+        "count": 61
+      },
+      {
+        "name": "Prudentius",
+        "count": 59
+      },
+      {
+        "name": "Pseudo-Augustine",
+        "count": 59
+      },
+      {
+        "name": "Romans",
+        "count": 56
+      },
+      {
+        "name": "Gennadius of Constantinople",
+        "count": 53
+      },
+      {
+        "name": "Theodore of Heraclea",
+        "count": 52
+      },
+      {
+        "name": "Arator",
+        "count": 45
+      },
+      {
+        "name": "Epiphanius of Salamis",
+        "count": 45
+      },
+      {
+        "name": "Photios I of Constantinople",
+        "count": 42
+      },
+      {
+        "name": "Matthew",
+        "count": 41
+      },
+      {
+        "name": "Pacian of Barcelona",
+        "count": 41
+      },
+      {
+        "name": "Paterius",
+        "count": 41
+      },
+      {
+        "name": "Nicholas of Lyra",
+        "count": 40
+      },
+      {
+        "name": "Procopius of Gaza",
+        "count": 40
+      },
+      {
+        "name": "Severus of Antioch",
+        "count": 38
+      },
+      {
+        "name": "Pachomius the Great",
+        "count": 36
+      },
+      {
+        "name": "Isidore of Seville",
+        "count": 35
+      },
+      {
+        "name": "Acts",
+        "count": 34
+      },
+      {
+        "name": "Alexander of Alexandria",
+        "count": 34
+      },
+      {
+        "name": "Hebrews",
+        "count": 33
+      },
+      {
+        "name": "Romanos the Melodist",
+        "count": 31
+      },
+      {
+        "name": "Pseudo-Athanasius",
+        "count": 28
+      },
+      {
+        "name": "Quodvultdeus",
+        "count": 28
+      },
+      {
+        "name": "Haimo of Auxerre",
+        "count": 27
+      },
+      {
+        "name": "Peter of Alexandria",
+        "count": 27
+      },
+      {
+        "name": "Vigilius of Thapsus",
+        "count": 27
+      },
+      {
+        "name": "Nilus of Sinai",
+        "count": 25
+      },
+      {
+        "name": "Nicetas of Remesiana",
+        "count": 24
+      },
+      {
+        "name": "Philo of Alexandria",
+        "count": 24
+      },
+      {
+        "name": "Thietland of Einsiedeln",
+        "count": 24
+      },
+      {
+        "name": "Epiphanius Scholasticus",
+        "count": 23
+      },
+      {
+        "name": "Mark",
+        "count": 23
+      },
+      {
+        "name": "Maximus the Confessor",
+        "count": 23
+      },
+      {
+        "name": "Paulinus of Nola",
+        "count": 23
+      },
+      {
+        "name": "Gregory of Elvira",
+        "count": 22
+      },
+      {
+        "name": "Aponius",
+        "count": 21
+      },
+      {
+        "name": "Luke",
+        "count": 21
+      },
+      {
+        "name": "Sahdona the Syrian",
+        "count": 20
+      },
+      {
+        "name": "Erasmus of Rotterdam",
+        "count": 19
+      },
+      {
+        "name": "Valerian of Cimiez",
+        "count": 19
+      },
+      {
+        "name": "1 Corinthians",
+        "count": 18
+      },
+      {
+        "name": "Leander of Seville",
+        "count": 18
+      },
+      {
+        "name": "Fabian of Rome",
+        "count": 17
+      },
+      {
+        "name": "Prosper of Aquitaine",
+        "count": 17
+      },
+      {
+        "name": "Douglas Wilson",
+        "count": 16
+      },
+      {
+        "name": "1 Peter",
+        "count": 15
+      },
+      {
+        "name": "Gaudentius of Brescia",
+        "count": 15
+      },
+      {
+        "name": "John",
+        "count": 14
+      },
+      {
+        "name": "Pseudo-Dionysius the Areopagite",
+        "count": 14
+      },
+      {
+        "name": "2 Corinthians",
+        "count": 13
+      },
+      {
+        "name": "Asterius of Cappadocia",
+        "count": 13
+      },
+      {
+        "name": "Callistus I of Rome",
+        "count": 13
+      },
+      {
+        "name": "Martin of Braga",
+        "count": 12
+      },
+      {
+        "name": "Oresiesis-Heru-sa Ast",
+        "count": 12
+      },
+      {
+        "name": "Pseudo-Origen",
+        "count": 12
+      },
+      {
+        "name": "Braulio of Zaragoza",
+        "count": 11
+      },
+      {
+        "name": "Eusebius of Emesa",
+        "count": 11
+      },
+      {
+        "name": "Galatians",
+        "count": 11
+      },
+      {
+        "name": "Isidore of Pelusium",
+        "count": 11
+      },
+      {
+        "name": "JRR Tolkien",
+        "count": 11
+      },
+      {
+        "name": "Haymo of Halberstadt",
+        "count": 10
+      },
+      {
+        "name": "Nerses of Lambron",
+        "count": 10
+      },
+      {
+        "name": "Benedict of Nursia",
+        "count": 9
+      },
+      {
+        "name": "Pope Anterus",
+        "count": 9
+      },
+      {
+        "name": "Pope Urban I",
+        "count": 9
+      },
+      {
+        "name": "Verecundus of Junca",
+        "count": 9
+      },
+      {
+        "name": "Hegesippus",
+        "count": 8
+      },
+      {
+        "name": "Pseudo-Ambrose",
+        "count": 8
+      },
+      {
+        "name": "Pseudo-Basil",
+        "count": 8
+      },
+      {
+        "name": "Theonas of Alexandria",
+        "count": 8
+      },
+      {
+        "name": "Ephesians",
+        "count": 7
+      },
+      {
+        "name": "Eznik of Kolb",
+        "count": 7
+      },
+      {
+        "name": "Fructuosus of Braga",
+        "count": 7
+      },
+      {
+        "name": "John Calvin",
+        "count": 7
+      },
+      {
+        "name": "Paulus Orosius",
+        "count": 7
+      },
+      {
+        "name": "Pseudo-Macarius",
+        "count": 7
+      },
+      {
+        "name": "Revelation",
+        "count": 7
+      },
+      {
+        "name": "Theophilus of Alexandria",
+        "count": 7
+      },
+      {
+        "name": "Book of Enoch",
+        "count": 6
+      },
+      {
+        "name": "Didascalia Apostolorum",
+        "count": 6
+      },
+      {
+        "name": "Gregory Palamas",
+        "count": 6
+      },
+      {
+        "name": "Hugh of Saint-Cher",
+        "count": 6
+      },
+      {
+        "name": "Macarius of Egypt",
+        "count": 6
+      },
+      {
+        "name": "Martin Luther",
+        "count": 6
+      },
+      {
+        "name": "Nemesius of Emesa",
+        "count": 6
+      },
+      {
+        "name": "Palladius of Galatia",
+        "count": 6
+      },
+      {
+        "name": "Venerable Barsanuphius and John the Prophet",
+        "count": 6
+      },
+      {
+        "name": "Abba Poemen",
+        "count": 5
+      },
+      {
+        "name": "Andrew of Crete",
+        "count": 5
+      },
+      {
+        "name": "Basil of Seleucia",
+        "count": 5
+      },
+      {
+        "name": "Dorotheos of Gaza",
+        "count": 5
+      },
+      {
+        "name": "Jacob Bar-Salibi",
+        "count": 5
+      },
+      {
+        "name": "Julius Africanus",
+        "count": 5
+      },
+      {
+        "name": "Melito of Sardis",
+        "count": 5
+      },
+      {
+        "name": "Paschasius of Dumium",
+        "count": 5
+      },
+      {
+        "name": "Polycrates Of Ephesus",
+        "count": 5
+      },
+      {
+        "name": "Pope Zephyrinus",
+        "count": 5
+      },
+      {
+        "name": "Shenoute the Archimandrite",
+        "count": 5
+      },
+      {
+        "name": "Sophronius of Jerusalem",
+        "count": 5
+      },
+      {
+        "name": "Anastasius of Sinai",
+        "count": 4
+      },
+      {
+        "name": "Eucherius of Lyon",
+        "count": 4
+      },
+      {
+        "name": "Gaudentius of Rimini",
+        "count": 4
+      },
+      {
+        "name": "JB Lightfoot",
+        "count": 4
+      },
+      {
+        "name": "Jacob of Serugh",
+        "count": 4
+      },
+      {
+        "name": "John Wesley",
+        "count": 4
+      },
+      {
+        "name": "John of Cressy",
+        "count": 4
+      },
+      {
+        "name": "Liturgy of Saint Mark",
+        "count": 4
+      },
+      {
+        "name": "Macrina the Younger",
+        "count": 4
+      },
+      {
+        "name": "Odes of Solomon",
+        "count": 4
+      },
+      {
+        "name": "Paulinus of Milan",
+        "count": 4
+      },
+      {
+        "name": "Potamius of Lisbon",
+        "count": 4
+      },
+      {
+        "name": "The Passion of Saints Perpetua and Felicity",
+        "count": 4
+      },
+      {
+        "name": "Theodotus of Ancyra",
+        "count": 4
+      },
+      {
+        "name": "Acacius of Caesarea",
+        "count": 3
+      },
+      {
+        "name": "Dhuoda of Septimania",
+        "count": 3
+      },
+      {
+        "name": "Diadochos of Photiki",
+        "count": 3
+      },
+      {
+        "name": "Faustus of Riez",
+        "count": 3
+      },
+      {
+        "name": "Gospel of the Hebrews",
+        "count": 3
+      },
+      {
+        "name": "Hegemonius",
+        "count": 3
+      },
+      {
+        "name": "James",
+        "count": 3
+      },
+      {
+        "name": "John of Dalyatha",
+        "count": 3
+      },
+      {
+        "name": "Marcus Eremita",
+        "count": 3
+      },
+      {
+        "name": "Martyrdom of Colluthus",
+        "count": 3
+      },
+      {
+        "name": "Nicholas of Gorran",
+        "count": 3
+      },
+      {
+        "name": "Papias the Lexicographer",
+        "count": 3
+      },
+      {
+        "name": "Patrick of Ireland",
+        "count": 3
+      },
+      {
+        "name": "Proclus of Constantinople",
+        "count": 3
+      },
+      {
+        "name": "Pseudo-Cyprian",
+        "count": 3
+      },
+      {
+        "name": "Pseudo-Ignatius",
+        "count": 3
+      },
+      {
+        "name": "Pseudo-Tertullian",
+        "count": 3
+      },
+      {
+        "name": "The Liturgy Of The Blessed Apostles",
+        "count": 3
+      },
+      {
+        "name": "Theodorus of Tabennese",
+        "count": 3
+      },
+      {
+        "name": "Ulrich Zwingli",
+        "count": 3
+      },
+      {
+        "name": "Abraham of Nathpar",
+        "count": 2
+      },
+      {
+        "name": "Acts of Peter",
+        "count": 2
+      },
+      {
+        "name": "Acts of Peter and Paul",
+        "count": 2
+      },
+      {
+        "name": "Amphilochius of Iconium",
+        "count": 2
+      },
+      {
+        "name": "Anselm of Laon",
+        "count": 2
+      },
+      {
+        "name": "Anthony the Great",
+        "count": 2
+      },
+      {
+        "name": "Besa The Copt",
+        "count": 2
+      },
+      {
+        "name": "Book of Jubilees",
+        "count": 2
+      },
+      {
+        "name": "Cosmas of Maiuma",
+        "count": 2
+      },
+      {
+        "name": "Eugippius",
+        "count": 2
+      },
+      {
+        "name": "Eusebius of Vercelli",
+        "count": 2
+      },
+      {
+        "name": "Eustathius of Antioch",
+        "count": 2
+      },
+      {
+        "name": "Fastidius",
+        "count": 2
+      },
+      {
+        "name": "Gennadius of Massilia",
+        "count": 2
+      },
+      {
+        "name": "Heracleon",
+        "count": 2
+      },
+      {
+        "name": "John of the Cross",
+        "count": 2
+      },
+      {
+        "name": "Julian of Toledo",
+        "count": 2
+      },
+      {
+        "name": "Julianus Pomerius",
+        "count": 2
+      },
+      {
+        "name": "Magnus Felix Ennodius",
+        "count": 2
+      },
+      {
+        "name": "Pamphilus of Caesarea",
+        "count": 2
+      },
+      {
+        "name": "Philastrius of Brescia",
+        "count": 2
+      },
+      {
+        "name": "Phileas of Thmuis",
+        "count": 2
+      },
+      {
+        "name": "Pope Dionysius",
+        "count": 2
+      },
+      {
+        "name": "Protoevangelium of James",
+        "count": 2
+      },
+      {
+        "name": "Pseudo-Barnabas",
+        "count": 2
+      },
+      {
+        "name": "Second Council of Constantinople",
+        "count": 2
+      },
+      {
+        "name": "Syncletica of Alexandria",
+        "count": 2
+      },
+      {
+        "name": "Victor Vitensis",
+        "count": 2
+      },
+      {
+        "name": "1 Timothy",
+        "count": 1
+      },
+      {
+        "name": "2 Peter",
+        "count": 1
+      },
+      {
+        "name": "Abercius",
+        "count": 1
+      },
+      {
+        "name": "Acacius of Beroea",
+        "count": 1
+      },
+      {
+        "name": "Adamantius",
+        "count": 1
+      },
+      {
+        "name": "Adamnán of Iona",
+        "count": 1
+      },
+      {
+        "name": "Agapius of Hierapolis",
+        "count": 1
+      },
+      {
+        "name": "Alexander of Jerusalem",
+        "count": 1
+      },
+      {
+        "name": "Ambrosian Hymn Writer",
+        "count": 1
+      },
+      {
+        "name": "Ammon of Hadrianopolis",
+        "count": 1
+      },
+      {
+        "name": "Ammonas of Egypt",
+        "count": 1
+      },
+      {
+        "name": "Anselm of Canterbury",
+        "count": 1
+      },
+      {
+        "name": "Archelaus of Carrhae",
+        "count": 1
+      },
+      {
+        "name": "Arethas of Caesarea",
+        "count": 1
+      },
+      {
+        "name": "Arius",
+        "count": 1
+      },
+      {
+        "name": "Berengaudus",
+        "count": 1
+      },
+      {
+        "name": "Book of Biblical Antiquities",
+        "count": 1
+      },
+      {
+        "name": "Book of Steps",
+        "count": 1
+      },
+      {
+        "name": "Cerealis of Castellum Ripense",
+        "count": 1
+      },
+      {
+        "name": "Eusebius of Gaul",
+        "count": 1
+      },
+      {
+        "name": "Facundus of Hermiane",
+        "count": 1
+      },
+      {
+        "name": "Faustinus of Lyon",
+        "count": 1
+      },
+      {
+        "name": "Ildefonsus of Toledo",
+        "count": 1
+      },
+      {
+        "name": "Isaiah the Solitary",
+        "count": 1
+      },
+      {
+        "name": "Jacob of Edessa",
+        "count": 1
+      },
+      {
+        "name": "John I of Antioch",
+        "count": 1
+      },
+      {
+        "name": "John of Karpathos",
+        "count": 1
+      },
+      {
+        "name": "John the Solitary",
+        "count": 1
+      },
+      {
+        "name": "Jude",
+        "count": 1
+      },
+      {
+        "name": "Julius Firmicus Maternus",
+        "count": 1
+      },
+      {
+        "name": "Lanfranc of Canterbury",
+        "count": 1
+      },
+      {
+        "name": "Lateran Council of 649",
+        "count": 1
+      },
+      {
+        "name": "Liturgy of Addai and Mari",
+        "count": 1
+      },
+      {
+        "name": "Lucifer of Cagliari",
+        "count": 1
+      },
+      {
+        "name": "Malchion",
+        "count": 1
+      },
+      {
+        "name": "Muratorian fragment",
+        "count": 1
+      },
+      {
+        "name": "Optatus of Milevis",
+        "count": 1
+      },
+      {
+        "name": "Palladius of Antioch",
+        "count": 1
+      },
+      {
+        "name": "Paschasius Radbertus",
+        "count": 1
+      },
+      {
+        "name": "Peter Olivi",
+        "count": 1
+      },
+      {
+        "name": "Petrus Alphonsi",
+        "count": 1
+      },
+      {
+        "name": "Philippians",
+        "count": 1
+      },
+      {
+        "name": "Pope Pontian",
+        "count": 1
+      },
+      {
+        "name": "Possidius",
+        "count": 1
+      },
+      {
+        "name": "Pseudo-Cyril",
+        "count": 1
+      },
+      {
+        "name": "Pseudo-Ephrem",
+        "count": 1
+      },
+      {
+        "name": "Pseudo-Hegesippus",
+        "count": 1
+      },
+      {
+        "name": "Pseudo-Hippolytus",
+        "count": 1
+      },
+      {
+        "name": "Pseudo-Justin",
+        "count": 1
+      },
+      {
+        "name": "Richard of Saint Victor",
+        "count": 1
+      },
+      {
+        "name": "Sibylline Oracles",
+        "count": 1
+      },
+      {
+        "name": "The Passing of Mary",
+        "count": 1
+      },
+      {
+        "name": "Theognostus Of Alexandria",
+        "count": 1
+      },
+      {
+        "name": "Theophanes of Nicaea",
+        "count": 1
+      },
+      {
+        "name": "Valentinus",
+        "count": 1
+      },
+      {
+        "name": "Victor of Cartenna",
+        "count": 1
+      },
+      {
+        "name": "Walafrid Strabo",
+        "count": 1
+      }
+    ],
+    "remainingBooks": [
+      {
+        "book": "psalms",
+        "count": 4970
+      },
+      {
+        "book": "isaiah",
+        "count": 2346
+      },
+      {
+        "book": "acts",
+        "count": 1843
+      },
+      {
+        "book": "1corinthians",
+        "count": 1811
+      },
+      {
+        "book": "genesis",
+        "count": 1654
+      },
+      {
+        "book": "job",
+        "count": 1269
+      },
+      {
+        "book": "jeremiah",
+        "count": 1231
+      },
+      {
+        "book": "ezekiel",
+        "count": 1173
+      },
+      {
+        "book": "hebrews",
+        "count": 908
+      },
+      {
+        "book": "daniel",
+        "count": 907
+      },
+      {
+        "book": "2corinthians",
+        "count": 808
+      },
+      {
+        "book": "galatians",
+        "count": 776
+      },
+      {
+        "book": "ephesians",
+        "count": 758
+      },
+      {
+        "book": "1samuel",
+        "count": 700
+      },
+      {
+        "book": "1timothy",
+        "count": 652
+      },
+      {
+        "book": "exodus",
+        "count": 549
+      },
+      {
+        "book": "proverbs",
+        "count": 540
+      },
+      {
+        "book": "1john",
+        "count": 429
+      },
+      {
+        "book": "ecclesiastes",
+        "count": 419
+      },
+      {
+        "book": "revelation",
+        "count": 374
+      },
+      {
+        "book": "colossians",
+        "count": 361
+      },
+      {
+        "book": "philippians",
+        "count": 358
+      },
+      {
+        "book": "songofsolomon",
+        "count": 346
+      },
+      {
+        "book": "2timothy",
+        "count": 315
+      },
+      {
+        "book": "numbers",
+        "count": 304
+      },
+      {
+        "book": "1peter",
+        "count": 277
+      },
+      {
+        "book": "joshua",
+        "count": 248
+      },
+      {
+        "book": "hosea",
+        "count": 246
+      },
+      {
+        "book": "1thessalonians",
+        "count": 238
+      },
+      {
+        "book": "judges",
+        "count": 210
+      },
+      {
+        "book": "leviticus",
+        "count": 206
+      },
+      {
+        "book": "zechariah",
+        "count": 193
+      },
+      {
+        "book": "titus",
+        "count": 181
+      },
+      {
+        "book": "wisdom",
+        "count": 181
+      },
+      {
+        "book": "deuteronomy",
+        "count": 180
+      },
+      {
+        "book": "2thessalonians",
+        "count": 164
+      },
+      {
+        "book": "1kings",
+        "count": 156
+      },
+      {
+        "book": "sirach",
+        "count": 154
+      },
+      {
+        "book": "amos",
+        "count": 132
+      },
+      {
+        "book": "2kings",
+        "count": 123
+      },
+      {
+        "book": "2samuel",
+        "count": 109
+      },
+      {
+        "book": "jonah",
+        "count": 109
+      },
+      {
+        "book": "james",
+        "count": 108
+      },
+      {
+        "book": "malachi",
+        "count": 96
+      },
+      {
+        "book": "micah",
+        "count": 92
+      },
+      {
+        "book": "philemon",
+        "count": 81
+      },
+      {
+        "book": "joel",
+        "count": 80
+      },
+      {
+        "book": "habakkuk",
+        "count": 78
+      },
+      {
+        "book": "2peter",
+        "count": 63
+      },
+      {
+        "book": "lamentations",
+        "count": 52
+      },
+      {
+        "book": "prayerofazariah",
+        "count": 46
+      },
+      {
+        "book": "jude",
+        "count": 39
+      },
+      {
+        "book": "haggai",
+        "count": 38
+      },
+      {
+        "book": "nahum",
+        "count": 37
+      },
+      {
+        "book": "zephaniah",
+        "count": 37
+      },
+      {
+        "book": "2chronicles",
+        "count": 35
+      },
+      {
+        "book": "1chronicles",
+        "count": 33
+      },
+      {
+        "book": "obadiah",
+        "count": 32
+      },
+      {
+        "book": "baruch",
+        "count": 28
+      },
+      {
+        "book": "tobit",
+        "count": 20
+      },
+      {
+        "book": "ruth",
+        "count": 18
+      },
+      {
+        "book": "ezra",
+        "count": 16
+      },
+      {
+        "book": "2john",
+        "count": 14
+      },
+      {
+        "book": "esther",
+        "count": 13
+      },
+      {
+        "book": "2maccabees",
+        "count": 10
+      },
+      {
+        "book": "3john",
+        "count": 3
+      },
+      {
+        "book": "nehemiah",
+        "count": 3
+      },
+      {
+        "book": "1maccabees",
+        "count": 2
+      }
+    ],
+    "books": [
+      "mt",
+      "mk",
+      "lk",
+      "jo",
+      "rm"
+    ],
+    "source": "/Users/lemonwillcox/Projects/Git/piblia/data/links/cache/commentaries.sqlite"
+  },
+  "ecatena": {
+    "ingested": 5947,
+    "books": [
+      "mt",
+      "mk",
+      "lk",
+      "jo",
+      "rm"
+    ],
+    "htmlDir": "/Users/lemonwillcox/Projects/Git/piblia/data/links/cache/ecatena/html",
+    "note": "Access e-catena.mdb is a linked-table shell (no rows). Parsed the public HTML index instead."
+  }
+}

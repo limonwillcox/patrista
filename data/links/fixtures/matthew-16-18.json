@@ -1,0 +1,374 @@
+{
+  "note": "Golden fixture for Mt 16:18. Handmade excerpts from Fathers/ ANF/NPNF. Not CatenaBible, not ACCS, not invented.",
+  "section": {
+    "id": "mt.16.peters-confession",
+    "label": "Peter's confession",
+    "verses": { "start": 13, "end": 20 }
+  },
+  "links": [
+    {
+      "id": "origen-comm-matt-12-10",
+      "sectionId": "mt.16.peters-confession",
+      "workId": "commentary-on-matthew",
+      "fatherId": "origen",
+      "workTitle": "Commentary on Matthew",
+      "excerpt": "And if we too have said like Peter, \"Thou art the Christ, the Son of the living God,\" not as if flesh and blood had revealed it unto us, but by light from the Father in heaven having shone in our heart, we become a Peter, and to us there might be said by the Word, \"Thou art Peter,\" etc. For a rock is every disciple of Christ of whom those drank who drank of the spiritual rock which followed them, and upon every such rock is built every word of the church.",
+      "sourceUrl": "https://www.ccel.org/ccel/schaff/anf09.html",
+      "sourceWork": "ANF9 Origen Commentary on Matthew Book XII.10",
+      "deathYear": 254,
+      "century": 3,
+      "provenance": "anf-fn",
+      "confidence": 1,
+      "status": "verified",
+      "refs": [
+        {
+          "bookId": "mt",
+          "bookNum": 40,
+          "canon": "nt",
+          "chapter": 16,
+          "verseStart": 16,
+          "verseEnd": 18,
+          "locStart": 16000016,
+          "locEnd": 16000018
+        }
+      ]
+    },
+    {
+      "id": "origen-comm-matt-12-11",
+      "sectionId": "mt.16.peters-confession",
+      "workId": "commentary-on-matthew",
+      "fatherId": "origen",
+      "workTitle": "Commentary on Matthew",
+      "excerpt": "But if you suppose that upon that one Peter only the whole church is built by God, what would you say about John the son of thunder or each one of the Apostles? Shall we otherwise dare to say, that against Peter in particular the gates of Hades shall not prevail, but that they shall prevail against the other Apostles and the perfect? And also the saying, \"Upon this rock I will build My church\"?",
+      "sourceUrl": "https://www.ccel.org/ccel/schaff/anf09.html",
+      "sourceWork": "ANF9 Origen Commentary on Matthew Book XII.11",
+      "deathYear": 254,
+      "century": 3,
+      "provenance": "anf-fn",
+      "confidence": 1,
+      "status": "verified",
+      "refs": [
+        {
+          "bookId": "mt",
+          "bookNum": 40,
+          "canon": "nt",
+          "chapter": 16,
+          "verseStart": 18,
+          "verseEnd": 18,
+          "locStart": 16000018,
+          "locEnd": 16000018
+        }
+      ]
+    },
+    {
+      "id": "origen-comm-john-cephas",
+      "sectionId": null,
+      "workId": "commentary-on-john",
+      "fatherId": "origen",
+      "workTitle": "Commentary on John",
+      "excerpt": "If he was seen by Jesus when walking by the sea of Galilee, it would scarcely be on a later occasion that he was addressed, \"Thou art Peter and upon this rock I will build My church.\"",
+      "sourceUrl": "https://www.ccel.org/ccel/schaff/anf09.html",
+      "sourceWork": "ANF9 Origen Commentary on John (call of Peter / Capernaum)",
+      "deathYear": 254,
+      "century": 3,
+      "provenance": "anf-fn",
+      "confidence": 1,
+      "status": "verified",
+      "refs": [
+        {
+          "bookId": "mt",
+          "bookNum": 40,
+          "canon": "nt",
+          "chapter": 16,
+          "verseStart": 18,
+          "verseEnd": 18,
+          "locStart": 16000018,
+          "locEnd": 16000018
+        }
+      ]
+    },
+    {
+      "id": "cyprian-unity-4",
+      "sectionId": "mt.16.peters-confession",
+      "workId": "treatises-of-cyprian",
+      "fatherId": "cyprian",
+      "workTitle": "The Treatises of Cyprian",
+      "excerpt": "The Lord speaks to Peter, saying, \"I say unto thee, that thou art Peter; and upon this rock I will build my Church, and the gates of hell shall not prevail against it. And I will give unto thee the keys of the kingdom of heaven.\" And again to the same He says, after His resurrection, \"Feed my sheep.\" Yet, that He might set forth unity, He arranged by His authority the origin of that unity, as beginning from one. Which one Church, also, the Holy Spirit in the Song of Songs designated in the person of our Lord, and says, \"My dove, my spotless one, is but one.\"",
+      "sourceUrl": "https://www.ccel.org/ccel/schaff/anf05.html",
+      "sourceWork": "ANF5 Cyprian Treatise I.4 (On the Unity of the Church)",
+      "deathYear": 258,
+      "century": 3,
+      "provenance": "anf-fn",
+      "confidence": 1,
+      "status": "verified",
+      "refs": [
+        {
+          "bookId": "mt",
+          "bookNum": 40,
+          "canon": "nt",
+          "chapter": 16,
+          "verseStart": 18,
+          "verseEnd": 19,
+          "locStart": 16000018,
+          "locEnd": 16000019
+        },
+        {
+          "bookId": "jo",
+          "bookNum": 43,
+          "canon": "nt",
+          "chapter": 21,
+          "verseStart": 17,
+          "verseEnd": 17,
+          "locStart": 21000017,
+          "locEnd": 21000017
+        },
+        {
+          "bookId": "so",
+          "bookNum": 22,
+          "canon": "ot",
+          "chapter": 6,
+          "verseStart": 9,
+          "verseEnd": 9,
+          "locStart": 6000009,
+          "locEnd": 6000009
+        }
+      ]
+    },
+    {
+      "id": "cyprian-epistle-26",
+      "sectionId": "mt.16.peters-confession",
+      "workId": "epistles-of-cyprian",
+      "fatherId": "cyprian",
+      "workTitle": "The Epistles of Cyprian",
+      "excerpt": "Our Lord, whose precepts and admonitions we ought to observe, describing the honour of a bishop and the order of His Church, speaks in the Gospel, and says to Peter: \"I say unto thee, That thou art Peter, and upon this rock will I build my Church; and the gates of hell shall not prevail against it.\" Thence, through the changes of times and successions, the ordering of bishops and the plan of the Church flow onwards; so that the Church is founded upon the bishops, and every act of the Church is controlled by these same rulers.",
+      "sourceUrl": "https://www.ccel.org/ccel/schaff/anf05.html",
+      "sourceWork": "ANF5 Cyprian Epistle XXVI.1 (to the Lapsed)",
+      "deathYear": 258,
+      "century": 3,
+      "provenance": "anf-fn",
+      "confidence": 1,
+      "status": "verified",
+      "refs": [
+        {
+          "bookId": "mt",
+          "bookNum": 40,
+          "canon": "nt",
+          "chapter": 16,
+          "verseStart": 18,
+          "verseEnd": 19,
+          "locStart": 16000018,
+          "locEnd": 16000019
+        }
+      ]
+    },
+    {
+      "id": "cyril-cat-18-25",
+      "sectionId": "mt.16.peters-confession",
+      "workId": "catechetical-lectures",
+      "fatherId": "cyril_jerusalem",
+      "workTitle": "Catechetical Lectures",
+      "excerpt": "But after the Jews for the plots which they made against the Saviour were cast away from His grace, the Saviour built out of the Gentiles a second Holy Church, the Church of us Christians, concerning which he said to Peter, And upon this rock I will build My Church, and the gates of hell shall not prevail against it.",
+      "sourceUrl": "https://www.ccel.org/ccel/schaff/npnf207.html",
+      "sourceWork": "NPNF2 VII Cyril of Jerusalem Catechetical Lecture 18.25",
+      "deathYear": 386,
+      "century": 4,
+      "provenance": "anf-fn",
+      "confidence": 1,
+      "status": "verified",
+      "refs": [
+        {
+          "bookId": "mt",
+          "bookNum": 40,
+          "canon": "nt",
+          "chapter": 16,
+          "verseStart": 18,
+          "verseEnd": 18,
+          "locStart": 16000018,
+          "locEnd": 16000018
+        }
+      ]
+    },
+    {
+      "id": "chrysostom-matt-hom-54",
+      "sectionId": "mt.16.peters-confession",
+      "workId": "homilies-on-matthew",
+      "fatherId": "chrysostom",
+      "workTitle": "Homilies on Matthew",
+      "excerpt": "And I say unto thee, Thou art Peter, and upon this rock will I build my Church; that is, on the faith of his confession. Hereby He signifies that many were now on the point of believing, and raises his spirit, and makes him a shepherd. And the gates of hell shall not prevail against it.",
+      "sourceUrl": "https://www.ccel.org/ccel/schaff/npnf110.html",
+      "sourceWork": "NPNF1 X Chrysostom Homily 54 on Matthew",
+      "deathYear": 407,
+      "century": 5,
+      "provenance": "anf-fn",
+      "confidence": 1,
+      "status": "verified",
+      "refs": [
+        {
+          "bookId": "mt",
+          "bookNum": 40,
+          "canon": "nt",
+          "chapter": 16,
+          "verseStart": 18,
+          "verseEnd": 18,
+          "locStart": 16000018,
+          "locEnd": 16000018
+        }
+      ]
+    },
+    {
+      "id": "augustine-trinitate-2",
+      "sectionId": "mt.16.peters-confession",
+      "workId": "on-the-holy-trinity",
+      "fatherId": "augustine",
+      "workTitle": "On the Holy Trinity",
+      "excerpt": "We ought to see the back parts of Christ, that is His flesh, by that very faith, that is, standing on the solid foundation of faith, which the rock signifies, and beholding it from such a safe watch-tower, namely in the Catholic Church, of which it is said, \"And upon this rock I will build my Church.\"",
+      "sourceUrl": "https://www.ccel.org/ccel/schaff/npnf103.html",
+      "sourceWork": "NPNF1 III Augustine On the Holy Trinity Book II",
+      "deathYear": 430,
+      "century": 5,
+      "provenance": "anf-fn",
+      "confidence": 1,
+      "status": "verified",
+      "refs": [
+        {
+          "bookId": "mt",
+          "bookNum": 40,
+          "canon": "nt",
+          "chapter": 16,
+          "verseStart": 18,
+          "verseEnd": 18,
+          "locStart": 16000018,
+          "locEnd": 16000018
+        }
+      ]
+    },
+    {
+      "id": "augustine-1john-rock-faith",
+      "sectionId": "mt.16.peters-confession",
+      "workId": "homilies-on-the-first-epistle-of-john",
+      "fatherId": "augustine",
+      "workTitle": "Homilies on the First Epistle of John",
+      "excerpt": "See what praises follow this faith. \"Thou art Peter, and upon this rock I will build my Church.\" What meaneth, \"Upon this rock I will build my Church\"? Upon this faith; upon this that has been said, \"Thou art the Christ, the Son of the Living God. Upon this rock,\" saith He, \"I will build my Church.\"",
+      "sourceUrl": "https://www.ccel.org/ccel/schaff/npnf107.html",
+      "sourceWork": "NPNF1 VII Augustine Homilies on the First Epistle of John",
+      "deathYear": 430,
+      "century": 5,
+      "provenance": "anf-fn",
+      "confidence": 1,
+      "status": "verified",
+      "refs": [
+        {
+          "bookId": "mt",
+          "bookNum": 40,
+          "canon": "nt",
+          "chapter": 16,
+          "verseStart": 16,
+          "verseEnd": 18,
+          "locStart": 16000016,
+          "locEnd": 16000018
+        }
+      ]
+    },
+    {
+      "id": "leo-sermon-3",
+      "sectionId": "mt.16.peters-confession",
+      "workId": "sermons",
+      "fatherId": "leo",
+      "workTitle": "Sermons",
+      "excerpt": "For the solidity of that faith which was praised in the chief of the Apostles is perpetual: and as that remains which Peter believed in Christ, so that remains which Christ instituted in Peter. And I say to thee, that thou art Peter, and upon this rock will I build My church, and the gates of Hades shall not prevail against it.",
+      "sourceUrl": "https://www.ccel.org/ccel/schaff/npnf212.html",
+      "sourceWork": "NPNF2 XII Leo the Great Sermon III",
+      "deathYear": 461,
+      "century": 5,
+      "provenance": "anf-fn",
+      "confidence": 1,
+      "status": "verified",
+      "refs": [
+        {
+          "bookId": "mt",
+          "bookNum": 40,
+          "canon": "nt",
+          "chapter": 16,
+          "verseStart": 16,
+          "verseEnd": 18,
+          "locStart": 16000016,
+          "locEnd": 16000018
+        }
+      ]
+    },
+    {
+      "id": "leo-sermon-62",
+      "sectionId": "mt.16.peters-confession",
+      "workId": "sermons",
+      "fatherId": "leo",
+      "workTitle": "Sermons",
+      "excerpt": "And rightly was the blessed Apostle Peter praised for confessing this union, who when the Lord was inquiring what the disciples knew of Him, quickly anticipated the rest and said, \"Thou art Christ, the Son of the living God.\" And this assuredly he saw, not by the revelation of flesh or blood, but by the very Spirit of the Father working in his believing heart, that he might receive the assurance, \"Thou art Peter, and upon this rock I will build My Church, and the gates of hell shall not prevail against it.\"",
+      "sourceUrl": "https://www.ccel.org/ccel/schaff/npnf212.html",
+      "sourceWork": "NPNF2 XII Leo the Great Sermon LXII (On the Passion, XI)",
+      "deathYear": 461,
+      "century": 5,
+      "provenance": "anf-fn",
+      "confidence": 1,
+      "status": "verified",
+      "refs": [
+        {
+          "bookId": "mt",
+          "bookNum": 40,
+          "canon": "nt",
+          "chapter": 16,
+          "verseStart": 16,
+          "verseEnd": 18,
+          "locStart": 16000016,
+          "locEnd": 16000018
+        }
+      ]
+    },
+    {
+      "id": "gregory-register-peter-care",
+      "sectionId": "mt.16.peters-confession",
+      "workId": "book-of-pastoral-rule",
+      "fatherId": "gregory",
+      "workTitle": "The Book of Pastoral Rule",
+      "excerpt": "For to all who know the Gospel it is apparent that by the Lord's voice the care of the whole Church was committed to the holy Apostle and Prince of all the Apostles, Peter. For to him it is said, Peter, lovest thou Me? Feed My sheep (John xxi. 17). To him it is said, Behold Satan hath desired to sift you as wheat; and I have prayed for thee, Peter, that thy faith fail not (Luke xxii. 31). To him it is said, Thou art Peter, and upon this rock I will build My Church, and the gates of hell shall not prevail against it (Matth. xvi. 18).",
+      "sourceUrl": "https://www.ccel.org/ccel/schaff/npnf212.html",
+      "sourceWork": "NPNF2 XII Gregory the Great, Register of the Epistles (in Pastoral Rule extract)",
+      "deathYear": 604,
+      "century": 6,
+      "provenance": "anf-fn",
+      "confidence": 1,
+      "status": "verified",
+      "refs": [
+        {
+          "bookId": "mt",
+          "bookNum": 40,
+          "canon": "nt",
+          "chapter": 16,
+          "verseStart": 18,
+          "verseEnd": 18,
+          "locStart": 16000018,
+          "locEnd": 16000018
+        },
+        {
+          "bookId": "jo",
+          "bookNum": 43,
+          "canon": "nt",
+          "chapter": 21,
+          "verseStart": 17,
+          "verseEnd": 17,
+          "locStart": 21000017,
+          "locEnd": 21000017
+        },
+        {
+          "bookId": "lk",
+          "bookNum": 42,
+          "canon": "nt",
+          "chapter": 22,
+          "verseStart": 31,
+          "verseEnd": 31,
+          "locStart": 22000031,
+          "locEnd": 22000031
+        }
+      ]
+    }
+  ]
+}

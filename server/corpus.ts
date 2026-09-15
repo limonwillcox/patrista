@@ -45,7 +45,7 @@ export type Library = {
   sources: { english: string; latin: string };
 };
 
-function repoRoot(): string {
+export function repoRoot(): string {
   const fromMeta = join(dirname(fileURLToPath(import.meta.url)), "..");
   if (existsSync(join(fromMeta, "Fathers"))) return fromMeta;
   return process.cwd();

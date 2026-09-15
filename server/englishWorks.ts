@@ -14,12 +14,53 @@ export type EnglishWorkSpec = {
   chunk: ChunkMode | "auto" | "blob";
   expectUnits?: number;
   authorshipDisputed?: boolean;
+  /** Slice the extract before this heading (Word-Check: drop glued-on works / elucidations). */
+  endAt?: RegExp;
 };
 
 /** Hand overrides for works that need a fixed chunk mode / unit count. */
 const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
   "city-of-god": { chunk: "book", expectUnits: 22 },
   "concerning-virgins": { chunk: "chapter" },
+  "teaching-of-the-twelve-apostles": {
+    chunk: "chapter",
+    expectUnits: 16,
+    endAt: /^\s*Elucidations\.?\s*$/im
+  },
+  "pastor-of-hermas": { chunk: "book", expectUnits: 3 },
+  "clementine-homilies": { chunk: "homily" },
+  "martyrdom-of-justin": {
+    chunk: "chapter",
+    expectUnits: 5,
+    endAt: /Introductory Note to Iren/i
+  },
+  "fragments-on-the-resurrection": {
+    chunk: "chapter",
+    endAt: /Introductory Note to the Martyrdom/i
+  },
+  "epistle-of-barnabas": { chunk: "chapter", endAt: /^\s*Papias\s*$/im },
+  "first-epistle-of-clement": { chunk: "chapter", endAt: /^\s*Mathetes\s*$/im },
+  "epistle-to-diognetus": { chunk: "chapter", endAt: /^\s*Polycarp\s*$/im },
+  "epistle-to-the-philippians": {
+    chunk: "chapter",
+    endAt: /Introductory Note to the Epistle Concerning the Martyrdom of Polycarp/i
+  },
+  "martyrdom-of-polycarp": { chunk: "chapter", endAt: /^\s*Ignatius\s*$/im },
+  "fragments-of-papias": { chunk: "chapter", endAt: /^\s*Justin Martyr\s*$/im },
+  "first-apology": { chunk: "chapter", endAt: /^\s*justin_martyr second_apology/im },
+  "second-apology": { chunk: "chapter", endAt: /^\s*justin_martyr dialog_with_trypho/im },
+  "dialogue-with-trypho": { chunk: "chapter", endAt: /^\s*justin_martyr discourse_to_the_greeks/im },
+  "martyrdom-of-ignatius": { chunk: "chapter", endAt: /^\s*Barnabas\s*$/im },
+  "epistles-of-ignatius": {
+    endAt: /^\s*Introductory Note to the Syriac Version of the Ignatian Epistles\s*$/im
+  },
+  // Column-0 "Appendix I." only — indented "See / Appendix I." mid-notes must not cut early.
+  commonitory: { chunk: "chapter", endAt: /^Appendix I\.\s*$/m },
+  "institutes-and-conferences": { endAt: /^\s*THE SEVEN BOOKS OF JOHN CASSIAN\s*$/im },
+  "book-of-pastoral-rule": { endAt: /^\s*Register of the Epistles of Saint Gregory/im },
+  sermons: { chunk: "sermon", endAt: /^\s*Prolegomena\.?\s*$/im },
+  "ecclesiastical-history": { chunk: "book", expectUnits: 7, endAt: /^\s*Memoir of Sozomen\.?\s*$/im },
+  "ecclesiastical-history-and-dialogues": { endAt: /^\s*Jerome and Gennadius\.?\s*$/im },
   // Josephus (Whiston): single-blob for now; book/chapter polish later.
   "antiquities-of-the-jews": { chunk: "blob" },
   "wars-of-the-jews": { chunk: "blob" },
@@ -99,7 +140,8 @@ const AUTHOR_META: Record<string, AuthorMeta> = {
   unknown: { name: "Unknown / Collected", dates: "", era: "ante-nicene", region: "Various", deathYear: 150, bio: "" }
 };
 
-const BOOK_RE = /^\s*Book\s+([IVXLCDM]+|\d+)\s*\.(?:\s*\[\d+\])?\s*$/im;
+const BOOK_NUM = "([IVXLCDM]+|\\d+|First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth)";
+const BOOK_RE = new RegExp("^\\s*Book\\s+" + BOOK_NUM + "\\s*[\\.\\—\\-.]", "im");
 const CHAPTER_RE = /^\s*Chapter\s+([IVXLCDM]+|\d+)\s*[\.—\-.]/im;
 const SERMON_RE = /^\s*Sermon\s+([IVXLCDM]+|\d+)\s*\./im;
 const LETTER_RE = /^\s*Letter\s+([IVXLCDM]+|\d+)\s*[\.\:\-]/im;
@@ -146,9 +188,10 @@ function stripMetaHeaders(src: string): string {
 
 const RULE_LINE_RE = /^\s*[_\-]{5,}\s*$/;
 const STRUCTURAL_HEADING_RE =
-  /^\s*(Book|Chapter|Sermon|Letter|Homily)\s+([IVXLCDM]+|\d+)\b/i;
+  /^\s*(Book|Chapter|Sermon|Letter|Homily)\s+([IVXLCDM]+|\d+|First|Second|Third|Fourth|Fifth)\b/i;
 const EDITORIAL_HEADING_RE =
-  /^\s*(?:(?:The\s+following\s+is\s+(?:Dr\.?\s+\w+(?:'s)?\s+)?(?:the\s+)?(?:original\s+)?)?Introductory\s+Notice\b.*|Translator'?s?\s+Introductory\s+Notice\.?|Translator'?s?\s+Preface\.?|Prefatory\s+Note\.?|Prolegomena\.?|Elucidations?\.?|General\s+Note\.?)\s*$/i;
+  /^\s*(?:(?:The\s+following\s+is\s+(?:Dr\.?\s+\w+(?:'s)?\s+)?(?:the\s+)?(?:original\s+)?)?Introductory\s+Not(?:ice|e)s?\b.*|Translator'?s?\s+Introductory\s+Not(?:ice|e)\.?|Translator'?s?\s+Preface\.?|Prefatory\s+Note\.?|Prolegomena\.?|Elucidations?\.?|General\s+Note\.?)\s*$/i;
+const TERMINAL_EDITORIAL_RE = /^\s*(Elucidations?|General\s+Note)\b/i;
 const FOOTNOTE_BODY_RE = /^\[(\d+)\]\s+(?!--|—)(.+)$/;
 const FOOTNOTE_MARK_RE = /\[(\d+)\]/g;
 
@@ -156,14 +199,17 @@ const FOOTNOTE_MARK_RE = /\[(\d+)\]/g;
 export function stripEditorialSections(block: string): string {
   const lines = block.replace(/\r\n/g, "\n").split("\n");
   const out: string[] = [];
-  let skipping = false;
+  let skipping: false | "until" | "end" = false;
   for (const line of lines) {
     if (RULE_LINE_RE.test(line)) continue;
+    if (/ccel\.org/i.test(line)) continue;
+    if (/^\s*[a-z0-9_]+(?:[ _-][a-z0-9_]+)+\s+anf\d+\b/i.test(line)) continue;
     if (EDITORIAL_HEADING_RE.test(line)) {
-      skipping = true;
+      skipping = TERMINAL_EDITORIAL_RE.test(line) ? "end" : "until";
       continue;
     }
-    if (skipping) {
+    if (skipping === "end") continue;
+    if (skipping === "until") {
       if (STRUCTURAL_HEADING_RE.test(line)) {
         skipping = false;
         out.push(line);
@@ -420,7 +466,11 @@ export function authorsFromSpecs(specs: EnglishWorkSpec[]): Author[] {
 export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: Work; passages: Passage[] } {
   const file = join(root, spec.path);
   if (!existsSync(file)) throw new Error("Missing English work file: " + spec.path);
-  const raw = stripMetaHeaders(readFileSync(file, "utf8"));
+  let raw = stripMetaHeaders(readFileSync(file, "utf8"));
+  if (spec.endAt) {
+    const cut = raw.search(spec.endAt);
+    if (cut >= 0) raw = raw.slice(0, cut);
+  }
 
   let mode: ChunkMode | "blob" = spec.chunk === "auto" ? detectChunk(raw) : spec.chunk;
 

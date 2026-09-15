@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   CHURCH_HISTORY_DESCRIPTION,
@@ -53,6 +53,7 @@ function useDocumentMeta(title: string, description: string, canonical: string):
 export function TimelinePage() {
   const { setActivePassage, catalog } = useApp();
   const location = useLocation();
+  const jumpedHashRef = useRef<string | null>(null);
 
   useEffect(() => {
     setActivePassage(null);
@@ -61,8 +62,10 @@ export function TimelinePage() {
   useEffect(() => {
     const id = location.hash.replace(/^#/, "");
     if (!id) return;
+    if (jumpedHashRef.current === id) return;
     const el = document.getElementById(id);
     if (el) {
+      jumpedHashRef.current = id;
       const t = window.setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
       return () => window.clearTimeout(t);
     }
@@ -80,9 +83,6 @@ export function TimelinePage() {
 
       <h1>Church history timeline</h1>
       <p className="ch-lede">{CHURCH_HISTORY_DESCRIPTION}</p>
-      <p className="ch-lede">
-        Prefer the sequence? <Link to="/church-history/">Open the cinematic</Link>.
-      </p>
 
       {PERIODS.map((period) => (
         <section className="ch-period" key={period} aria-labelledby={period}>

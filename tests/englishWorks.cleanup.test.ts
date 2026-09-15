@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  discoverEnglishWorkSpecs,
   extractSchaffNotes,
   parseEnglishWork,
   stripEditorialSections,
@@ -43,6 +44,25 @@ describe("stripEditorialSections", () => {
     expect(out).toMatch(/Father text remains/);
     expect(out).not.toMatch(/Elucidations/i);
     expect(out).not.toMatch(/Editor talks/);
+  });
+
+  it("does not resume Elucidations at the next Book of a glued-on work", () => {
+    const raw = [
+      "   Then shall the world see the Lord coming upon the clouds of heaven.",
+      "",
+      "  Elucidations.",
+      "",
+      "   (Thus baptize ye.)",
+      "",
+      "  Book I.",
+      "",
+      "   Concerning the Laity."
+    ].join("\n");
+    const out = stripEditorialSections(raw);
+    expect(out).toMatch(/clouds of heaven/);
+    expect(out).not.toMatch(/Elucidations/i);
+    expect(out).not.toMatch(/Concerning the Laity/);
+    expect(out).not.toMatch(/Book I/);
   });
 });
 
@@ -118,7 +138,9 @@ describe("parseEnglishWork cleanup integration", () => {
       short: "Didache",
       series: "ANF",
       path: "Fathers/English/Didache_English/Teaching of the Twelve Apostles.txt",
-      chunk: "chapter"
+      chunk: "chapter",
+      expectUnits: 16,
+      endAt: /^\s*Elucidations\.?\s*$/im
     };
     const { passages } = parseEnglishWork(spec, ROOT);
     expect(passages.length).toBeGreaterThan(3);
@@ -129,5 +151,72 @@ describe("parseEnglishWork cleanup integration", () => {
     expect(opening).not.toMatch(/Bryennios/i);
     expect(opening).not.toMatch(/Introductory Notice/i);
     expect(opening).toMatch(/two ways|way of life|first commandment/i);
+  }, 60_000);
+
+  it("Word-Check: Hermas drops Coxe intro and opens on the Visions", () => {
+    const spec = discoverEnglishWorkSpecs(ROOT).find((s) => s.id === "pastor-of-hermas");
+    const { passages } = parseEnglishWork(spec!, ROOT);
+    expect(passages).toHaveLength(3);
+    const opening = (passages[0]!.versions.schaff || []).join(" ");
+    expect(opening).not.toMatch(/Muratorian Canon/i);
+    expect(opening).not.toMatch(/Introductory Note/i);
+    expect(opening).toMatch(/Rhode|Tiber|Hermas/i);
+  }, 60_000);
+
+  it("Word-Check: Martyrdom of Justin is 5 chapters and does not swallow Irenaeus", () => {
+    const spec = discoverEnglishWorkSpecs(ROOT).find((s) => s.id === "martyrdom-of-justin");
+    const { passages } = parseEnglishWork(spec!, ROOT);
+    expect(passages).toHaveLength(5);
+    const body = passages.flatMap((p) => p.versions.schaff || []).join("\n");
+    expect(body).not.toMatch(/Against Heresies/i);
+    expect(body).toMatch(/Rusticus/i);
+  }, 60_000);
+
+  it("Word-Check: Clementine Homilies open on Homily I, not the editor's edition history", () => {
+    const spec = discoverEnglishWorkSpecs(ROOT).find((s) => s.id === "clementine-homilies");
+    const { passages } = parseEnglishWork(spec!, ROOT);
+    expect(passages.length).toBeGreaterThan(10);
+    const opening = (passages[0]!.versions.schaff || []).join(" ");
+    expect(opening).not.toMatch(/Cotelerius/i);
+    expect(opening).toMatch(/Clement/i);
+  }, 60_000);
+
+  it("Word-Check: Justin First Apology does not trail into the Second via CCEL slug", () => {
+    const spec = discoverEnglishWorkSpecs(ROOT).find((s) => s.id === "first-apology");
+    const { passages } = parseEnglishWork(spec!, ROOT);
+    const body = passages.flatMap((p) => p.versions.schaff || []).join("\n");
+    expect(body).not.toMatch(/ccel\.org/i);
+    expect(body).not.toMatch(/second_apology/i);
+    expect(body).toMatch(/Antoninus|Marcus Aurelius|Christians/i);
+  }, 60_000);
+
+  it("Word-Check: Apostolic extracts do not swallow the next Father's intro", () => {
+    const cases = [
+      ["epistle-of-barnabas", /Papias|Fragments of Papias/i, /Amen|children of love/i],
+      ["first-epistle-of-clement", /Mathetes|Diognetus/i, /Clement|grace/i],
+      ["epistle-to-diognetus", /Polycarp/i, /Amen|Diognetus/i]
+    ] as const;
+    for (const [id, extra, keep] of cases) {
+      const spec = discoverEnglishWorkSpecs(ROOT).find((s) => s.id === id);
+      expect(spec, id).toBeTruthy();
+      const { passages } = parseEnglishWork(spec!, ROOT);
+      const body = passages.flatMap((p) => p.versions.schaff || []).join("\n");
+      expect(body, id + " extra").not.toMatch(extra);
+      expect(body, id + " keep").toMatch(keep);
+    }
+  }, 60_000);
+
+  it("Word-Check: Didache is 16 chapters and does not swallow Constitutions", () => {
+    const spec = discoverEnglishWorkSpecs(ROOT).find((s) => s.id === "teaching-of-the-twelve-apostles");
+    expect(spec).toBeTruthy();
+    const { passages } = parseEnglishWork(spec!, ROOT);
+    expect(passages).toHaveLength(16);
+    const body = passages.flatMap((p) => p.versions.schaff || []).join("\n");
+    expect(body).not.toMatch(/Concerning the Laity/i);
+    expect(body).not.toMatch(/Constitutions of the Holy Apostles/i);
+    expect(body).not.toMatch(/Philip Schaff/i);
+    const last = (passages[15]!.versions.schaff || []).join(" ");
+    expect(last).toMatch(/clouds of heaven/i);
+    expect(last).toMatch(/Watch for your life/i);
   }, 60_000);
 });

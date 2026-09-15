@@ -24,7 +24,7 @@ const ERAS: EraGroup[] = [
     range: "33–150",
     works: [
       { id: "didache", title: "The Didache", author: "Teaching of the Twelve Apostles", workId: "teaching-of-the-twelve-apostles" },
-      { id: "ignatius-romans", title: "Letter to the Romans", author: "Ignatius of Antioch" },
+      { id: "ignatius-epistles", title: "Epistles of Ignatius", author: "Ignatius of Antioch", workId: "epistles-of-ignatius" },
       { id: "polycarp-martyrdom", title: "The Martyrdom of Polycarp", author: "Polycarp of Smyrna", workId: "martyrdom-of-polycarp" },
       { id: "1-clement", title: "First Epistle of Clement", author: "Clement of Rome", workId: "first-epistle-of-clement" }
     ]
@@ -53,7 +53,7 @@ const ERAS: EraGroup[] = [
       { id: "confessions", title: "The Confessions", author: "Augustine of Hippo", workId: "confessions" },
       { id: "eusebius-history", title: "Church History", author: "Eusebius of Caesarea", workId: "church-history" },
       { id: "chrysostom-matthew", title: "Homilies on Matthew", author: "John Chrysostom", workId: "homilies-on-matthew" },
-      { id: "athanasius-incarnation", title: "On the Incarnation", author: "Athanasius of Alexandria" }
+      { id: "athanasius-incarnation", title: "On the Incarnation of the Word", author: "Athanasius of Alexandria", workId: "on-the-incarnation-of-the-word" }
     ]
   },
   {
@@ -62,8 +62,8 @@ const ERAS: EraGroup[] = [
     range: "500–modern day",
     works: [
       { id: "gregory-pastoral", title: "The Book of Pastoral Rule", author: "Gregory the Great", workId: "book-of-pastoral-rule" },
-      { id: "damascus-fount", title: "The Fount of Knowledge", author: "John of Damascus" },
-      { id: "bede-history", title: "Ecclesiastical History of the English People", author: "Bede" }
+      { id: "damascus-orthodox-faith", title: "Exposition of the Orthodox Faith", author: "John of Damascus", workId: "exposition-of-the-orthodox-faith" },
+      { id: "councils-seven", title: "The Seven Ecumenical Councils", author: "Ecumenical Councils", workId: "seven-ecumenical-councils" }
     ]
   }
 ];
@@ -139,7 +139,7 @@ export function HomePage() {
         <div className="landing-starters-inner">
           <h2 id="great-places-title">Great places to start</h2>
           <p className="landing-starters-lede">
-            Four eras, a few trustworthy first reads. Open a title when it is in the library; the rest are marked for later.
+            Four eras, a few trustworthy first reads to begin exploring the library.
           </p>
           <div className="starter-eras">
             {ERAS.map((era) => (

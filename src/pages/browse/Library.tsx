@@ -111,12 +111,12 @@ function centuryLabel(n: number): string {
   return n + "th";
 }
 
-/** Gold Chi-Rho from the Piblia logo (no red plate). */
+/** Gold Chi-Rho from the Piblia logo (no red plate). Square box + PNG so it never squashes. */
 function SpineMark() {
   return (
     <img
       className="lib-spine-mark"
-      src="/assets/chi-rho-gold.svg"
+      src="/assets/chi-rho-gold.png"
       alt=""
       width={16}
       height={16}
@@ -312,6 +312,7 @@ export function Library({ catalog }: LibraryProps) {
             </button>
           ))}
         </div>
+        <p className="lib-century-caption">Century AD</p>
       </div>
       <div className="lib-track" ref={trackRef}>
         {byCentury.map(([century, blocks]) => (
@@ -457,7 +458,8 @@ function BookSpine({
       data-bin={book.bin}
       style={{
         width: binW,
-        ["--spine-size" as string]: spineFontPx(binW, work.title) + "px"
+        ["--spine-size" as string]: spineFontPx(binW, work.title) + "px",
+        ["--spine-mark" as string]: Math.max(10, Math.min(16, Math.round(binW * 0.48))) + "px"
       }}
       aria-label={work.title + " — " + author.name}
       onMouseEnter={onSelect}

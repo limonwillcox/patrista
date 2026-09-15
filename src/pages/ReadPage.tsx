@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { originalOf, translationsOf } from "../../server/query";
 import type { Passage, WorkPayload } from "../../server/types";
 import { fetchWork } from "../api/client";
@@ -16,8 +16,9 @@ function renderParas(passage: Passage, version: string) {
   return paras.map((text, i) => {
     const notes = (passage.footnotes || []).filter((f) => f.para === i);
     const key = passage.work + "-" + passage.chapter + "-" + version + "-" + i;
+    const section = `${passage.work}:${passage.chapter}:p${i}`;
     return (
-      <p className="para" data-key={key} key={key}>
+      <p className="para" data-key={key} data-section={section} key={key}>
         <span className="pnum">{i + 1}</span> {text}
         {notes.map((f) => (
           <sup className="fn" key={f.n}>
@@ -83,13 +84,14 @@ function ChapterBody({
       </div>
     ) : (
       <div className="trans-pane">
+        <p className="pane-label">{versionLabel(orig.id, versions)} · original</p>
         <div className="passage">{renderParas(passage, orig.id)}</div>
       </div>
     );
     return (
       <div className="chapter-row">
-        <Notes passage={passage} />
         {main}
+        <Notes passage={passage} />
       </div>
     );
   }
@@ -97,13 +99,15 @@ function ChapterBody({
   if (split && orig && trans) {
     return (
       <div className="chapter-row has-orig">
-        <Notes passage={passage} />
         <div className="trans-pane">
+          <p className="pane-label">{versionLabel(trans.id, versions)}</p>
           <div className="passage">{renderParas(passage, trans.id)}</div>
         </div>
         <div className="orig-pane">
+          <p className="pane-label">{versionLabel(orig.id, versions)} · original</p>
           <div className="passage">{renderParas(passage, orig.id)}</div>
         </div>
+        <Notes passage={passage} />
       </div>
     );
   }
@@ -111,18 +115,19 @@ function ChapterBody({
   if (trans) {
     return (
       <div className="chapter-row">
-        <Notes passage={passage} />
         <div className="trans-pane">
+          <p className="pane-label">{versionLabel(trans.id, versions)}</p>
           <div className="passage">{renderParas(passage, trans.id)}</div>
         </div>
+        <Notes passage={passage} />
       </div>
     );
   }
 
   return (
     <div className="chapter-row">
-      <Notes passage={passage} />
       <p className="empty">No text available.</p>
+      <Notes passage={passage} />
     </div>
   );
 }
@@ -209,8 +214,10 @@ export function ReadPage() {
   const jumpChapter = params.get("chapter") || "";
   const [payload, setPayload] = useState<WorkPayload | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [ready, setReady] = useState<Set<number>>(new Set());
   const pageRef = useRef<HTMLDivElement>(null);
   const [hl, setHl] = useState<{ x: number; y: number; para: HTMLElement; range: Range } | null>(null);
+  const jumpedRef = useRef<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -248,14 +255,67 @@ export function ReadPage() {
     return () => setActivePassage(null);
   }, [first, setActivePassage]);
 
-  // Jump via ?chapter=N once the work body is mounted. Hash TOC links (#ch-N) are handled by the browser.
   useEffect(() => {
-    if (!jumpChapter || !payload) return;
-    const el = document.getElementById("ch-" + jumpChapter);
-    if (!el) return;
-    const id = window.setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
-    return () => window.clearTimeout(id);
-  }, [jumpChapter, payload]);
+    setReady(new Set());
+    jumpedRef.current = null;
+  }, [workId]);
+
+  useEffect(() => {
+    if (!payload) return;
+    const hashTarget = location.hash.replace(/^#ch-/, "");
+    const target = hashTarget || jumpChapter;
+    const openCh = Number(target) || payload.chapters[0]?.chapter || 1;
+    setReady((prev) => {
+      const next = new Set(prev);
+      next.add(openCh);
+      if (payload.chapters.some((c) => c.chapter === openCh - 1)) next.add(openCh - 1);
+      if (payload.chapters.some((c) => c.chapter === openCh + 1)) next.add(openCh + 1);
+      return next;
+    });
+  }, [payload, jumpChapter, location.hash]);
+
+  useEffect(() => {
+    if (!payload || !pageRef.current) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          const ch = Number((en.target as HTMLElement).dataset.ch);
+          if (ch) {
+            setReady((prev) => {
+              if (prev.has(ch)) return prev;
+              const next = new Set(prev);
+              next.add(ch);
+              return next;
+            });
+          }
+        });
+      },
+      { rootMargin: "900px 0px" }
+    );
+    pageRef.current.querySelectorAll(".book-chapter").forEach((sec) => io.observe(sec));
+    return () => io.disconnect();
+  }, [payload]);
+
+  useEffect(() => {
+    const hashTarget = location.hash.replace(/^#ch-/, "");
+    const target = hashTarget || jumpChapter;
+    if (!target) return;
+    const jumpKey = `${workId}:${target}`;
+    if (jumpedRef.current === jumpKey) return;
+
+    const targetNum = Number(target);
+    if (targetNum && !ready.has(targetNum)) return;
+
+    const el = document.getElementById("ch-" + target);
+    if (el) {
+      jumpedRef.current = jumpKey;
+      const t = window.setTimeout(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+      return () => window.clearTimeout(t);
+    }
+  }, [jumpChapter, location.hash, workId, payload, ready]);
 
   function onMouseUp(e: React.MouseEvent) {
     if ((e.target as HTMLElement).closest("#hlBar")) return;
@@ -337,30 +397,42 @@ export function ReadPage() {
         </span>
         <div>
           <h1 className="read-title">{payload.work.title}</h1>
-          <div className="version-name">{payload.author.name}</div>
-          {editionNote ? <p className="edition-label">{editionNote}</p> : null}
-          <details className="chapter-index">
-            <summary>
-              {payload.chapters.length} {unitLabel}
-            </summary>
-            <nav className="chapter-index-list" aria-label="Chapters">
-              {payload.chapters.map((p) => {
-                const label = (p.heading || "").replace(/^Book\s+/i, "") || String(p.chapter);
-                return (
-                  <a key={p.chapter} href={"#ch-" + p.chapter}>
-                    {label}
-                  </a>
-                );
-              })}
-            </nav>
-          </details>
+          <div className="version-name">
+            {payload.author.name} · {payload.chapters.length} {unitLabel}
+          </div>
         </div>
       </div>
+      <nav className="book-toc" aria-label="Chapters">
+        {payload.chapters.map((p) => {
+          const label = (p.heading || "").replace(/^Book\s+/i, "") || String(p.chapter);
+          return (
+            <a
+              key={p.chapter}
+              href={"#ch-" + p.chapter}
+              onClick={() => {
+                setReady((prev) => {
+                  if (prev.has(p.chapter)) return prev;
+                  const next = new Set(prev);
+                  next.add(p.chapter);
+                  return next;
+                });
+                jumpedRef.current = `${workId}:${p.chapter}`;
+                const el = document.getElementById("ch-" + p.chapter);
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+            >
+              {label}
+            </a>
+          );
+        })}
+      </nav>
       {payload.chapters.map((p) => (
         <section className="book-chapter" id={"ch-" + p.chapter} data-ch={p.chapter} key={p.chapter}>
           <h2 className="heading">{p.heading}</h2>
           <ChapterMount workId={payload.work.id}>
-            <ChapterBody passage={p} mode={mode} preferred={preferred} split={showParallelOrig} versions={versions} />
+            {ready.has(p.chapter) ? (
+              <ChapterBody passage={p} mode={mode} preferred={preferred} split={showParallelOrig} versions={versions} />
+            ) : null}
           </ChapterMount>
         </section>
       ))}

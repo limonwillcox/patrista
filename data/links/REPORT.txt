@@ -1,0 +1,130 @@
+links: 22309
+
+counts by book:
+  mt	7203
+  jo	6165
+  lk	5020
+  rm	2588
+  mk	1342
+  so	1
+
+orphan fathers (HCF names with no catalog id):
+  7359	Thomas Aquinas
+  7087	Bede
+  6645	Theophylact of Ohrid
+  4814	Bonaventure
+  2241	Cyril of Alexandria
+  1828	Oecumenius
+  1173	CS Lewis
+  1046	Ambrosiaster
+  951	Rabanus Maurus
+  714	GK Chesterton
+  504	Philoxenus of Mabbug
+  493	Theodore of Mopsuestia
+  467	Pelagius
+  458	Cassiodorus
+  451	Caesarius of Arles
+  424	Andreas of Caesarea
+  384	Glossa Ordinaria
+  378	Alcuin of York
+  373	Pseudo-Chrysostom
+  337	Cosmas Indicopleustes
+  322	Didymus the Blind
+  309	Remigius of Rheims
+  289	Bernard of Clairvaux
+  276	Desert Fathers
+  220	Gaius Marius Victorinus
+  202	Pseudo-Jerome
+  175	Primasius of Hadrumetum
+  173	Ishodad of Merv
+  173	Pseudo-Clement
+  166	Hilary of Arles
+  165	Fulgentius of Ruspe
+  160	Peter Chrysologus
+  146	Victorinus of Pettau
+  143	Severian of Gabala
+  133	Diodorus of Tarsus
+  120	Chromatius of Aquileia
+  117	Maximus of Turin
+  115	Evagrius Ponticus
+  113	Robert of Tombelaine
+  109	Apringius of Beja
+  … 229 more
+
+empty vs dense verses (dense = 5+ links):
+  mt	linked 1067/1068	empty 1	dense 872
+  jo	linked 878/879	empty 1	dense 566
+  so	linked 1/117	empty 116	dense 0
+  lk	linked 1093/1151	empty 58	dense 587
+  mk	linked 471/675	empty 204	dense 93
+  rm	linked 433/433	empty 0	dense 241
+
+remaining mapped HCF books (not ingested this pass):
+  psalms	4970
+  isaiah	2346
+  acts	1843
+  1corinthians	1811
+  genesis	1654
+  job	1269
+  jeremiah	1231
+  ezekiel	1173
+  hebrews	908
+  daniel	907
+  2corinthians	808
+  galatians	776
+  ephesians	758
+  1samuel	700
+  1timothy	652
+  exodus	549
+  proverbs	540
+  1john	429
+  ecclesiastes	419
+  revelation	374
+  colossians	361
+  philippians	358
+  songofsolomon	346
+  2timothy	315
+  numbers	304
+  1peter	277
+  joshua	248
+  hosea	246
+  1thessalonians	238
+  judges	210
+  leviticus	206
+  zechariah	193
+  titus	181
+  wisdom	181
+  deuteronomy	180
+  2thessalonians	164
+  1kings	156
+  sirach	154
+  amos	132
+  2kings	123
+  2samuel	109
+  jonah	109
+  james	108
+  malachi	96
+  micah	92
+  philemon	81
+  joel	80
+  habakkuk	78
+  2peter	63
+  lamentations	52
+  prayerofazariah	46
+  jude	39
+  haggai	38
+  nahum	37
+  zephaniah	37
+  2chronicles	35
+  1chronicles	33
+  obadiah	32
+  baruch	28
+  tobit	20
+  ruth	18
+  ezra	16
+  2john	14
+  esther	13
+  2maccabees	10
+  3john	3
+  nehemiah	3
+  1maccabees	2

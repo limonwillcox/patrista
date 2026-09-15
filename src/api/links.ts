@@ -10,6 +10,7 @@ import type {
   WorkNode,
   BookNode
 } from "../links/types";
+import { verseResponseFromPack, type ChapterLinksPack } from "../links/pack";
 
 export type {
   BibleRef,
@@ -54,15 +55,48 @@ export type SectionLinksResponse = {
 };
 
 export const linksCache = new Map<string, Promise<unknown>>();
+const packCache = new Map<string, Promise<ChapterLinksPack | null>>();
 
 export function clearLinksCache(): void {
   linksCache.clear();
+  packCache.clear();
+}
+
+function apiBase(): string {
+  return String(import.meta.env.VITE_API_BASE || "").replace(/\/+$/, "");
+}
+
+function apiUrl(path: string): string {
+  return apiBase() + path;
 }
 
 async function getJson<T>(path: string): Promise<T> {
   const res = await fetch(path);
   if (res.ok) return (await res.json()) as T;
   throw new Error(`${path} failed: ${res.status}`);
+}
+
+async function tryJson<T>(path: string): Promise<T | null> {
+  const res = await fetch(path);
+  if (!res.ok) return null;
+  return (await res.json()) as T;
+}
+
+function loadChapterPack(book: string, chapter: number): Promise<ChapterLinksPack | null> {
+  const clean = book.trim().toLowerCase();
+  const key = clean + ":" + chapter;
+  const cached = packCache.get(key);
+  if (cached) return cached;
+
+  const promise = (async () => {
+    const path = apiUrl(`/api/links/chapter/${encodeURIComponent(clean)}/${chapter}.json`);
+    const pack = await tryJson<ChapterLinksPack>(path);
+    if (!pack) packCache.delete(key);
+    return pack;
+  })();
+
+  packCache.set(key, promise);
+  return promise;
 }
 
 export function verseCacheKey(book: string, chapter: number, verse: number): string {
@@ -102,12 +136,17 @@ export function fetchVerseLinks(
   if (cached) return cached as Promise<VerseLinksResponse>;
 
   const cleanBook = book.trim().toLowerCase();
-  const q = new URLSearchParams({
-    book: cleanBook,
-    chapter: String(chapter),
-    verse: String(verse)
-  });
-  const promise = getJson<VerseLinksResponse>(`/api/links/verse?${q.toString()}`);
+  const promise = (async () => {
+    const pack = await loadChapterPack(cleanBook, chapter);
+    if (pack) return verseResponseFromPack(pack, verse);
+    const q = new URLSearchParams({
+      book: cleanBook,
+      chapter: String(chapter),
+      verse: String(verse)
+    });
+    return getJson<VerseLinksResponse>(apiUrl(`/api/links/verse?${q.toString()}`));
+  })();
+
   promise.catch(() => {
     linksCache.delete(key);
   });
@@ -129,8 +168,16 @@ export function fetchSectionLinks(
   const cached = linksCache.get(key);
   if (cached) return cached as Promise<SectionLinksResponse>;
 
-  const q = new URLSearchParams({ sectionId });
-  const promise = getJson<SectionLinksResponse>(`/api/links/section?${q.toString()}`);
+  const promise = (async () => {
+    const staticPath = apiUrl(
+      `/api/links/section/${encodeURIComponent(sectionId.trim())}.json`
+    );
+    const fromPack = await tryJson<SectionLinksResponse>(staticPath);
+    if (fromPack) return fromPack;
+    const q = new URLSearchParams({ sectionId });
+    return getJson<SectionLinksResponse>(apiUrl(`/api/links/section?${q.toString()}`));
+  })();
+
   promise.catch(() => {
     linksCache.delete(key);
   });
@@ -147,7 +194,13 @@ export function fetchExcerpt(idOrParams: string | { id: string }): Promise<Link>
   const cached = linksCache.get(key);
   if (cached) return cached as Promise<Link>;
 
-  const promise = getJson<Link>(`/api/links/excerpt/${encodeURIComponent(id)}`);
+  const promise = (async () => {
+    const encoded = encodeURIComponent(id.trim());
+    const fromStatic = await tryJson<Link>(apiUrl(`/api/links/excerpt/${encoded}.json`));
+    if (fromStatic) return fromStatic;
+    return getJson<Link>(apiUrl(`/api/links/excerpt/${encoded}`));
+  })();
+
   promise.catch(() => {
     linksCache.delete(key);
   });

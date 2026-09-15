@@ -36,6 +36,12 @@ else if (!/In the beginning was the Word/i.test((john1.json.verses || []).join("
   fail("John 1 KJV missing");
 }
 
+const linksVerse = await get("/api/links/verse?book=mt&chapter=16&verse=18");
+if (linksVerse.status !== 200 || !linksVerse.json) fail("links verse Mt 16:18 missing");
+else if (!Array.isArray(linksVerse.json.tree) || linksVerse.json.tree.length < 1) {
+  fail("links verse Mt 16:18 empty tree");
+}
+
 const catalog = await get("/api/catalog");
 if (catalog.status !== 200 || !catalog.json) fail("catalog missing");
 else {

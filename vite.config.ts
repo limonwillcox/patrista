@@ -23,6 +23,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { fathersApiPlugin } from "./server/plugin";
 import { writeStaticBibleApi } from "./server/staticBible";
+import { writeStaticLinksApi } from "./server/staticLinks";
 
 const root = dirname(fileURLToPath(import.meta.url));
 
@@ -292,6 +293,7 @@ function extrasPlugin() {
       }
 
       redirectLines.push(...writeStaticBibleApi(dist));
+      redirectLines.push(...writeStaticLinksApi(dist));
       redirectLines.push("/*    /index.html   200", "");
       writeFileSync(join(dist, "_redirects"), redirectLines.join("\n"));
       writeFileSync(

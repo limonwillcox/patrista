@@ -24,8 +24,8 @@ export function StudyPage() {
     <div className="prose">
       <h1>Study desk</h1>
       <p>
-        A short map of the library: how to open a Father, how search and Split work, and a few first paths worth taking. Nothing
-        here replaces reading the texts themselves — it only points you in.
+        A short map of the library: how to open a Father, how search works, and a few first paths worth taking. Nothing here
+        replaces reading the texts themselves — it only points you in.
       </p>
       <div className="stat-row">
         <Stat n={authorCount != null ? String(authorCount) : "…"} label="Fathers" />
@@ -38,9 +38,8 @@ export function StudyPage() {
       <p>
         Open any title from <Link to="/church-fathers">Browse</Link> or the Writings list in the header. The whole work sits on
         one page; use the chapter strip to jump. <strong>Translation</strong> shows the English edition; <strong>Original</strong>{" "}
-        shows Latin (or Greek) when we have it. Turn on <strong>Split</strong> in the rail to keep both columns.{" "}
-        <strong>Notes</strong> reveal edition footnotes — they start off so the page stays a clean reading column. Scripture
-        links will live in a right-hand scroll rail later, not as inline tags in the Father text.
+        shows Latin (or Greek) when we have it. Scripture commentary lives in the right-hand scroll on the Bible reader, not as
+        inline tags in the Father text.
       </p>
       <p>
         Search accepts a keyword (<em>incarnation</em>, <em>restless</em>), a work and chapter (<em>Confessions 8</em>), or a

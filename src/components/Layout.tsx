@@ -2,7 +2,6 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "rea
 import { Link, NavLink, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { parseQuery } from "../../server/query";
 import { useApp } from "../context/AppContext";
-import type { ReadOptId } from "../lib/prefs";
 import { ICONS } from "./Icons";
 
 function Brand() {
@@ -15,16 +14,12 @@ function Brand() {
 }
 
 function Rail() {
-  const { navOpen, opts, parallel, toggleOpt, setParallel, setNavOpen } = useApp();
+  const { navOpen, setNavOpen } = useApp();
   const location = useLocation();
   const readActive = location.pathname === "/read";
   const bibleActive = location.pathname === "/bible";
   const writingsActive = location.pathname === "/church-fathers" || location.pathname === "/browse";
   const timelineActive = location.pathname.startsWith("/church-history/timeline");
-  const tools: { id: ReadOptId | "parallel"; label: string; title: string; on: boolean }[] = [
-    { id: "fn", label: "Notes", title: "Footnotes", on: opts.fn },
-    { id: "parallel", label: "Split", title: "Parallel original on the right", on: parallel }
-  ];
   return (
     <nav className={"rail" + (navOpen ? " open" : "")} id="rail" aria-label="Primary">
       <div className="rail-pages">
@@ -64,24 +59,6 @@ function Rail() {
           {ICONS.give}
           <span>Give</span>
         </NavLink>
-      </div>
-      <div className="rail-tools" aria-label="Reading options">
-        {tools.map((t) => (
-          <button
-            key={t.id}
-            type="button"
-            className={"rail-tool" + (t.on ? " active" : "")}
-            data-readopt={t.id}
-            title={t.title}
-            onClick={() => {
-              if (t.id === "parallel") setParallel(!parallel);
-              else toggleOpt(t.id);
-            }}
-          >
-            {ICONS[t.id]}
-            <span>{t.label}</span>
-          </button>
-        ))}
       </div>
     </nav>
   );

@@ -16,8 +16,8 @@ export function AboutPage() {
       <h1>About Patrista</h1>
       <p>
         Patrista is a free, searchable library of the Church Fathers — the public-domain English of the Ante-Nicene Fathers and
-        Nicene and Post-Nicene Fathers series, with Latin originals where we have them. Read a whole work as one scroll, flip
-        between Translation and Original, or open Split to keep both columns on the page.
+        Nicene and Post-Nicene Fathers series, with Latin originals where we have them. Read a whole work as one scroll, and flip
+        between Translation and Original when both are present.
       </p>
 
       <h2>What is here</h2>
@@ -29,7 +29,7 @@ export function AboutPage() {
           </>
         ) : null}
         Augustine&apos;s <em>Confessions</em> ships with Pusey&apos;s English beside the Latin <em>Confessiones</em>. Many other
-        titles are English-only for now; Original and Split light up when a source text is present.
+        titles are English-only for now; Original lights up when a source text is present.
       </p>
       <p>
         <Link to="/church-fathers">Browse the writings</Link> · <Link to="/read?work=confessions">Open the Confessions</Link> ·{" "}

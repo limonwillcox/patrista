@@ -4,6 +4,7 @@ package-lock.json
 scripts/shots/
 scripts/latin-library/cache/
 data/links/cache/
+data/fixes/
 data/confessions.json
 *.local
 .env

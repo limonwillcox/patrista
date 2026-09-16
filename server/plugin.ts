@@ -2,12 +2,15 @@ import type { IncomingMessage, ServerResponse } from "http";
 import { loadEnv, type Plugin } from "vite";
 import { handleApiRequest } from "./api";
 import { donateCorsHeaders, handleDonateCheckout, isDonateCheckoutPath } from "./donate";
+import { fixesCorsHeaders, handleFixesSubmit, isFixesPath } from "./fixes";
+import { writeLocalFix } from "./fixesLocal";
+import { repoRoot } from "./corpus";
 
 function apiMiddleware(req: IncomingMessage, res: ServerResponse, next: () => void) {
   const url = req.url || "";
   if (!url.startsWith("/api/")) return next();
   const path = url.split("?")[0].replace(/\/+$/, "") || "/";
-  if (isDonateCheckoutPath(path)) return next();
+  if (isDonateCheckoutPath(path) || isFixesPath(path)) return next();
   try {
     const result = handleApiRequest(url);
     res.statusCode = result.status;
@@ -76,17 +79,65 @@ function donateMiddleware(env: Record<string, string>) {
   };
 }
 
+function fixesMiddleware(env: Record<string, string>) {
+  return async (req: IncomingMessage, res: ServerResponse, next: () => void) => {
+    const path = (req.url || "").split("?")[0].replace(/\/+$/, "") || "/";
+    if (!isFixesPath(path)) return next();
+
+    const origin =
+      (typeof req.headers.origin === "string" && req.headers.origin) ||
+      env.DONATE_PUBLIC_ORIGIN ||
+      "http://127.0.0.1:5173";
+    const cors = fixesCorsHeaders(origin);
+    for (const [k, v] of Object.entries(cors)) res.setHeader(k, v);
+    res.setHeader("Cache-Control", "no-store");
+
+    if (req.method === "OPTIONS") {
+      res.statusCode = 204;
+      res.end();
+      return;
+    }
+    if (req.method !== "POST") {
+      res.statusCode = 405;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.end(JSON.stringify({ error: "Method not allowed" }));
+      return;
+    }
+
+    let body: unknown = null;
+    try {
+      const raw = await readBody(req);
+      body = raw ? JSON.parse(raw) : null;
+    } catch {
+      res.statusCode = 400;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.end(JSON.stringify({ error: "Invalid JSON" }));
+      return;
+    }
+
+    const result = await handleFixesSubmit(body, {
+      githubToken: env.GITHUB_TOKEN,
+      writeLocal: (data) => writeLocalFix(repoRoot(), data)
+    });
+    res.statusCode = result.status;
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    res.end(JSON.stringify(result.json));
+  };
+}
+
 export function fathersApiPlugin(): Plugin {
   return {
     name: "fathers-api",
     configureServer(server) {
       const env = loadEnv(server.config.mode, server.config.root, "");
       server.middlewares.use(donateMiddleware(env));
+      server.middlewares.use(fixesMiddleware(env));
       server.middlewares.use(apiMiddleware);
     },
     configurePreviewServer(server) {
       const env = loadEnv(server.config.mode, server.config.root, "");
       server.middlewares.use(donateMiddleware(env));
+      server.middlewares.use(fixesMiddleware(env));
       server.middlewares.use(apiMiddleware);
     }
   };

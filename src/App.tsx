@@ -5,6 +5,7 @@ import { AboutPage } from "./pages/AboutPage";
 import { BiblePage } from "./pages/BiblePage";
 import { BrowsePage } from "./pages/BrowsePage";
 import { ChurchHistoryPage } from "./pages/ChurchHistoryPage";
+import { FixesPage } from "./pages/FixesPage";
 import { GivePage } from "./pages/GivePage";
 import { HomePage } from "./pages/HomePage";
 import { ReadPage } from "./pages/ReadPage";
@@ -28,6 +29,7 @@ export function App() {
           <Route path="/study" element={<StudyPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/give" element={<GivePage />} />
+          <Route path="/fixes" element={<FixesPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </ErrorBoundary>

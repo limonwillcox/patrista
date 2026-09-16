@@ -19,3 +19,4 @@ data/confessions.json
 /*.jpeg
 CONTEXT.md
 WHAT-I-DID.md
+.wrangler/

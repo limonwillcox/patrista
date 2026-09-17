@@ -125,7 +125,7 @@ export function HomePage() {
             <cite>2 Peter 1:20–21</cite>
           </blockquote>
           <div className="landing-ctas">
-            <Link className="landing-cta landing-cta--primary" to="/church-history/">
+            <Link className="landing-cta landing-cta--primary" to="/church-history/timeline#nativity">
               Church History
             </Link>
             <Link className="landing-cta landing-cta--ghost" to="/church-fathers">

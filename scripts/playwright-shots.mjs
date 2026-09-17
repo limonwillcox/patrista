@@ -15,7 +15,7 @@ page.on("console", (msg) => {
 
 await page.goto(base + "/", { waitUntil: "networkidle" });
 if (!(await page.locator(".landing-hero").count())) errors.push("Home missing landing hero");
-if (!(await page.locator('a[href="/church-history/"]').count())) errors.push("Missing Church History button");
+if (!(await page.locator('a[href="/church-history/timeline#nativity"]').count())) errors.push("Missing Church History button");
 if (!(await page.locator('a[href="/church-fathers"]').count())) errors.push("Missing Church Writings button");
 if (!(await page.locator("#great-places").count())) errors.push("Missing Great places to start section");
 await page.screenshot({ path: out + "/home.png", fullPage: true });

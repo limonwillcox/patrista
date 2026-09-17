@@ -1,6 +1,8 @@
-# Donate checkout + Fixes → GitHub Issues. The public site stays on GitHub Pages.
+# Donate checkout + Fixes → GitHub Issues + API.Bible chapter proxy.
+# The public site stays on GitHub Pages.
 # Do not attach dist/ as assets: Cloudflare rejects the SPA _redirects file.
-# Secrets: STRIPE_SECRET_KEY, GITHUB_TOKEN (issues + contents:write on limonwillcox/piblia)
+# Secrets: STRIPE_SECRET_KEY, GITHUB_TOKEN (issues + contents:write on limonwillcox/piblia),
+#          BIBLE_API_KEY (API.Bible — keep server-side; never VITE_)
 name = "piblia"
 main = "server/donate-worker.ts"
 compatibility_date = "2025-09-01"

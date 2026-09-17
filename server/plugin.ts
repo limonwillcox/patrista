@@ -1,6 +1,11 @@
 import type { IncomingMessage, ServerResponse } from "http";
 import { loadEnv, type Plugin } from "vite";
 import { handleApiRequest } from "./api";
+import {
+  bibleRemoteCorsHeaders,
+  handleBibleRemoteChapter,
+  isBibleRemotePath
+} from "./bibleRemote";
 import { donateCorsHeaders, handleDonateCheckout, isDonateCheckoutPath } from "./donate";
 import { fixesCorsHeaders, handleFixesSubmit, isFixesPath } from "./fixes";
 import { writeLocalFix } from "./fixesLocal";
@@ -10,7 +15,7 @@ function apiMiddleware(req: IncomingMessage, res: ServerResponse, next: () => vo
   const url = req.url || "";
   if (!url.startsWith("/api/")) return next();
   const path = url.split("?")[0].replace(/\/+$/, "") || "/";
-  if (isDonateCheckoutPath(path) || isFixesPath(path)) return next();
+  if (isDonateCheckoutPath(path) || isFixesPath(path) || isBibleRemotePath(path)) return next();
   try {
     const result = handleApiRequest(url);
     res.statusCode = result.status;
@@ -125,6 +130,42 @@ function fixesMiddleware(env: Record<string, string>) {
   };
 }
 
+function bibleRemoteMiddleware(env: Record<string, string>) {
+  return async (req: IncomingMessage, res: ServerResponse, next: () => void) => {
+    const rawUrl = req.url || "";
+    const path = rawUrl.split("?")[0].replace(/\/+$/, "") || "/";
+    if (!isBibleRemotePath(path)) return next();
+
+    const origin =
+      (typeof req.headers.origin === "string" && req.headers.origin) ||
+      env.DONATE_PUBLIC_ORIGIN ||
+      "http://127.0.0.1:5173";
+    const cors = bibleRemoteCorsHeaders(origin);
+    for (const [k, v] of Object.entries(cors)) res.setHeader(k, v);
+    res.setHeader("Cache-Control", "no-store");
+
+    if (req.method === "OPTIONS") {
+      res.statusCode = 204;
+      res.end();
+      return;
+    }
+    if (req.method !== "GET") {
+      res.statusCode = 405;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.end(JSON.stringify({ error: "Method not allowed" }));
+      return;
+    }
+
+    const qs = new URL(rawUrl, "http://127.0.0.1").searchParams;
+    const result = await handleBibleRemoteChapter(qs.get("bibleId") || "", qs.get("chapterId") || "", {
+      apiKey: env.BIBLE_API_KEY || env.VITE_BIBLE_API_KEY
+    });
+    res.statusCode = result.status;
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    res.end(JSON.stringify(result.json));
+  };
+}
+
 export function fathersApiPlugin(): Plugin {
   return {
     name: "fathers-api",
@@ -132,12 +173,14 @@ export function fathersApiPlugin(): Plugin {
       const env = loadEnv(server.config.mode, server.config.root, "");
       server.middlewares.use(donateMiddleware(env));
       server.middlewares.use(fixesMiddleware(env));
+      server.middlewares.use(bibleRemoteMiddleware(env));
       server.middlewares.use(apiMiddleware);
     },
     configurePreviewServer(server) {
       const env = loadEnv(server.config.mode, server.config.root, "");
       server.middlewares.use(donateMiddleware(env));
       server.middlewares.use(fixesMiddleware(env));
+      server.middlewares.use(bibleRemoteMiddleware(env));
       server.middlewares.use(apiMiddleware);
     }
   };

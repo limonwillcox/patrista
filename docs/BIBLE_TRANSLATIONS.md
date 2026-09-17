@@ -72,13 +72,16 @@ To add a new translation:
 
 ## Production Deployment Checklist
 
-1. **API Key Setup**:
-   - In Cloudflare Pages / deployment environment variables, add:
-     ```env
-     VITE_BIBLE_API_KEY=your_api_bible_key_here
-     ```
+1. **API Key Setup** (server-side — do **not** use `VITE_BIBLE_API_KEY` on Pages):
+   ```bash
+   npx wrangler secret put BIBLE_API_KEY
+   npx wrangler deploy
+   ```
+   The site calls `GET {VITE_DONATE_API_BASE}/api/bible/remote?bibleId=…&chapterId=JHN.1`.
+   Local Vite uses the same path via middleware and reads `VITE_BIBLE_API_KEY` / `BIBLE_API_KEY` from `.env`.
 2. **Build Verification**:
-   - Run `pnpm test` (all 155 tests pass).
+   - Run `pnpm test`.
    - Run `pnpm build` (tsc and vite production build succeed).
 3. **Deploy**:
-   - Trigger deployment via Git push or Cloudflare Pages pipeline.
+   - Worker: `npx wrangler deploy`
+   - Site: Git push to `main` (GitHub Pages). Ensure `VITE_DONATE_API_BASE` is set as a repo Actions variable.

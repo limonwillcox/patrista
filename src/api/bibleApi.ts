@@ -179,31 +179,46 @@ export async function fetchRemoteBibleVerses(
     }
   }
 
-  const apiKey = getBibleApiKey();
-  if (!apiKey) {
-    throw new Error(
-      "API.Bible key missing. Add VITE_BIBLE_API_KEY in your .env or configure your key in Settings."
-    );
-  }
-
-  // 2. Fetch from API.Bible
+  // 2. Fetch: direct API.Bible if the browser has a key; otherwise Worker proxy
+  //    (BIBLE_API_KEY stays server-side on Cloudflare).
   const chapterId = `${usfm}.${chapter}`;
-  const url = `${BIBLE_API_URL}/bibles/${encodeURIComponent(bibleId)}/chapters/${encodeURIComponent(
-    chapterId
-  )}?content-type=json&include-verse-numbers=true`;
+  const apiKey = getBibleApiKey();
+  let json: { data?: { content?: unknown } };
 
-  const res = await fetch(url, {
-    headers: {
-      "api-key": apiKey
+  if (apiKey) {
+    const url = `${BIBLE_API_URL}/bibles/${encodeURIComponent(bibleId)}/chapters/${encodeURIComponent(
+      chapterId
+    )}?content-type=json&include-verse-numbers=true`;
+    const res = await fetch(url, { headers: { "api-key": apiKey } });
+    if (!res.ok) {
+      const errText = await res.text().catch(() => "");
+      throw new Error(`API.Bible request failed (${res.status}): ${errText || res.statusText}`);
     }
-  });
-
-  if (!res.ok) {
-    const errText = await res.text().catch(() => "");
-    throw new Error(`API.Bible request failed (${res.status}): ${errText || res.statusText}`);
+    json = await res.json();
+  } else {
+    const base = (import.meta.env.VITE_DONATE_API_BASE || "").replace(/\/+$/, "");
+    const proxyUrl =
+      `${base}/api/bible/remote?bibleId=${encodeURIComponent(bibleId)}` +
+      `&chapterId=${encodeURIComponent(chapterId)}`;
+    const res = await fetch(proxyUrl);
+    if (!res.ok) {
+      let errMsg = "";
+      try {
+        const errJson = (await res.json()) as { error?: string };
+        errMsg = errJson.error || "";
+      } catch {
+        errMsg = await res.text().catch(() => "");
+      }
+      if (res.status === 503) {
+        throw new Error(
+          "API.Bible key missing. Add BIBLE_API_KEY on the Worker, or VITE_BIBLE_API_KEY locally."
+        );
+      }
+      throw new Error(`API.Bible request failed (${res.status}): ${errMsg || res.statusText}`);
+    }
+    json = await res.json();
   }
 
-  const json = await res.json();
   const rawContent = json?.data?.content;
 
   let verses: string[] = [];

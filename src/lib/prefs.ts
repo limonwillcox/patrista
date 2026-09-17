@@ -35,6 +35,16 @@ export function setStoredVersion(id: string): void {
   if (id) localStorage.setItem("fg-version", id);
 }
 
+export function storedBibleTranslation(): string {
+  if (typeof localStorage === "undefined") return "kjv";
+  return localStorage.getItem("fg-bible-translation") || "kjv";
+}
+
+export function setStoredBibleTranslation(id: string): void {
+  if (typeof localStorage === "undefined") return;
+  if (id) localStorage.setItem("fg-bible-translation", id);
+}
+
 export function storedParallel(): boolean {
   // Split off by default; only on when the user has explicitly enabled it.
   return localStorage.getItem("fg-orig-parallel") === "on";

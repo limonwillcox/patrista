@@ -1,5 +1,6 @@
 import { parseQuery, searchKeyword } from "../../server/query";
 import type { Catalog, Passage, SearchHit, Query, WorkPayload } from "../../server/types";
+import { fetchRemoteBibleVerses } from "./bibleApi";
 
 export function jsonFallbackPath(path: string): string | null {
   const bare = path.split("?")[0];
@@ -56,19 +57,36 @@ export function fetchBibleManifest(): Promise<BibleManifestBook[]> {
   return getJson<BibleManifestBook[]>("/api/bible/manifest");
 }
 
-export function fetchBibleChapter(
+export async function fetchBibleChapter(
   book: string,
   chapter: number,
-  opts?: { section?: string; from?: number; to?: number }
+  opts?: { section?: string; from?: number; to?: number; translation?: string }
 ): Promise<BibleChapterPayload> {
   const q = new URLSearchParams();
   if (opts?.section) q.set("section", opts.section);
   if (opts?.from != null) q.set("from", String(opts.from));
   if (opts?.to != null) q.set("to", String(opts.to));
   const qs = q.toString();
-  return getJson<BibleChapterPayload>(
+
+  const basePayload = await getJson<BibleChapterPayload>(
     "/api/bible/" + encodeURIComponent(book) + "/" + chapter + (qs ? "?" + qs : "")
   );
+
+  const translation = opts?.translation || "kjv";
+  if (translation === "kjv") {
+    return basePayload;
+  }
+
+  try {
+    const remoteVerses = await fetchRemoteBibleVerses(translation, book, chapter);
+    return {
+      ...basePayload,
+      verses: remoteVerses
+    };
+  } catch (err) {
+    console.error("Failed to load translation:", err);
+    throw err;
+  }
 }
 
 export async function fetchSearch(q: string): Promise<{ query: Query; hits: SearchHit[] }> {

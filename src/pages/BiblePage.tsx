@@ -6,14 +6,21 @@ import {
   type BibleChapterPayload,
   type BibleManifestBook
 } from "../api/client";
+import { BIBLE_TRANSLATIONS, type BibleTranslation } from "../api/bibleTranslations";
 import { ScrollRail } from "../components/ScrollRail";
-import { setStoredBibleSplitView, storedBibleSplitView } from "../lib/prefs";
+import {
+  setStoredBibleSplitView,
+  storedBibleSplitView,
+  storedBibleTranslation,
+  setStoredBibleTranslation
+} from "../lib/prefs";
 
 export function BiblePage() {
   const [params, setParams] = useSearchParams();
   const book = params.get("book") || "jo";
   const chapter = Math.max(1, Number(params.get("chapter") || 1));
   const section = params.get("section") || "";
+  const translation = params.get("version") || storedBibleTranslation() || "kjv";
 
   const [manifest, setManifest] = useState<BibleManifestBook[] | null>(null);
   const [payload, setPayload] = useState<BibleChapterPayload | null>(null);
@@ -123,7 +130,10 @@ export function BiblePage() {
     let cancelled = false;
     setPayload(null);
     setError(null);
-    fetchBibleChapter(book, chapter, section ? { section } : undefined)
+    fetchBibleChapter(book, chapter, {
+      section: section || undefined,
+      translation
+    })
       .then((p) => {
         if (!cancelled) setPayload(p);
       })
@@ -133,7 +143,7 @@ export function BiblePage() {
     return () => {
       cancelled = true;
     };
-  }, [book, chapter, section]);
+  }, [book, chapter, section, translation]);
 
   const bookMeta = useMemo(
     () => manifest?.find((b) => b.id === book) || payload?.book,
@@ -141,31 +151,97 @@ export function BiblePage() {
   );
   const chapterCount = bookMeta?.chapters || payload?.verses.length || 1;
 
+  const activeTranslation = useMemo(
+    () =>
+      BIBLE_TRANSLATIONS.find((t) => t.id === translation) || {
+        id: translation,
+        name: translation,
+        abbreviation: translation.toUpperCase().slice(0, 4),
+        isLocal: false
+      },
+    [translation]
+  );
+
   function setBook(id: string) {
-    setParams({ book: id, chapter: "1" });
+    const next: Record<string, string> = { book: id, chapter: "1" };
+    if (translation && translation !== "kjv") next.version = translation;
+    setParams(next);
   }
 
   function setChapter(n: number) {
     const next: Record<string, string> = { book, chapter: String(n) };
+    if (translation && translation !== "kjv") next.version = translation;
     setParams(next);
   }
 
   function setSection(id: string) {
     const next: Record<string, string> = { book, chapter: String(chapter) };
     if (id) next.section = id;
+    if (translation && translation !== "kjv") next.version = translation;
     setParams(next);
   }
 
-  if (error) return <p className="empty">{error}</p>;
+  function setTranslation(id: string) {
+    setStoredBibleTranslation(id);
+    const next: Record<string, string> = { book, chapter: String(chapter) };
+    if (section) next.section = section;
+    if (id && id !== "kjv") next.version = id;
+    setParams(next, { replace: true });
+  }
+
+  if (error) {
+    return (
+      <div className="bible-page">
+        <p className="empty" style={{ color: "var(--burgundy, #b3261e)", marginBottom: 16 }}>
+          {error}
+        </p>
+        {translation !== "kjv" && (
+          <button
+            type="button"
+            className="btn"
+            style={{
+              padding: "8px 16px",
+              borderRadius: "8px",
+              background: "var(--burgundy, #6b1d2a)",
+              color: "#fff",
+              border: "none",
+              cursor: "pointer"
+            }}
+            onClick={() => setTranslation("kjv")}
+          >
+            Switch back to King James Version (KJV)
+          </button>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className={"bible-page" + (splitView ? " is-split" : "")}>
       <div className="bible-toolbar">
         <label className="bible-pick">
+          <span className="sr-only">Translation</span>
+          <select
+            value={translation}
+            onChange={(e) => setTranslation(e.target.value)}
+            aria-label="Translation"
+          >
+            {BIBLE_TRANSLATIONS.map((t) => (
+              <option key={t.id} value={t.id}>
+                {t.abbreviation} - {t.name}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="bible-pick">
           <span className="sr-only">Book</span>
           <select
             value={book}
-            onChange={(e) => setParams({ book: e.target.value, chapter: "1" }, { replace: true })}
+            onChange={(e) => {
+              const next: Record<string, string> = { book: e.target.value, chapter: "1" };
+              if (translation && translation !== "kjv") next.version = translation;
+              setParams(next, { replace: true });
+            }}
             aria-label="Book"
           >
             {manifest?.map((b) => (
@@ -179,7 +255,11 @@ export function BiblePage() {
           <span className="sr-only">Chapter</span>
           <select
             value={String(chapter)}
-            onChange={(e) => setParams({ book, chapter: e.target.value }, { replace: true })}
+            onChange={(e) => {
+              const next: Record<string, string> = { book, chapter: e.target.value };
+              if (translation && translation !== "kjv") next.version = translation;
+              setParams(next, { replace: true });
+            }}
             aria-label="Chapter"
           >
             {Array.from({ length: chapterCount }, (_, i) => i + 1).map((n) => (
@@ -208,7 +288,7 @@ export function BiblePage() {
         ) : null}
         <h1 className="bible-title">
           {bookMeta?.name || book} {chapter}
-          <span className="bible-edition">KJV</span>
+          <span className="bible-edition">{activeTranslation.abbreviation}</span>
         </h1>
       </div>
 

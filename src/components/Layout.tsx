@@ -31,10 +31,6 @@ function Rail() {
           {ICONS.bible}
           <span>Bible</span>
         </NavLink>
-        <NavLink to="/study" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
-          {ICONS.study}
-          <span>Study</span>
-        </NavLink>
         <NavLink
           to="/church-fathers"
           className={() => (writingsActive ? "active" : "")}

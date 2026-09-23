@@ -1480,6 +1480,20 @@
       "content_sha256": "2686cb869ceecb956fef9b8819c5b40b03a31670bc94efcf5209489ccf585f7e",
       "byte_size": 6169,
       "plan_note": null
+    },
+    {
+      "work_id": "84D990F10C594432B98F2B7720BC8D75",
+      "title": "First Instruction to Catechumens",
+      "title_latin": "Ad illuminandos catechesis 1",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4460"
+      ],
+      "source_path": "data/clavis/bodies/84D990F10C594432B98F2B7720BC8D75/english.txt",
+      "r2_key": "clavis/texts/84D990F10C594432B98F2B7720BC8D75/english.txt",
+      "content_sha256": "0c063da13b5c0e8824e16f8095103471e8ae12e16fd485eeca63199cfac489b3",
+      "byte_size": 28572,
+      "plan_note": "Issue #160 staged body (CCEL npnf109.ix.ii). Not the NPNF collection file."
     }
   ],
   "skipped": [

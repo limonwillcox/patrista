@@ -91,6 +91,8 @@ pnpm clavis:attach-english -- --dry-run
 
 Re-running attach upserts the same `(work_id, language)` rows. Board label moves are not part of this import.
 
+Issue #160 is one extra ready row, attached with `attach-text` from a staged body rather than a `Fathers/English` volume: Chrysostom, *Ad illuminandos catechesis 1* (`84D990F10C594432B98F2B7720BC8D75`), title "First Instruction to Catechumens". sha256 `0c063da13b5c0e8824e16f8095103471e8ae12e16fd485eeca63199cfac489b3`, 28572 bytes. The body stays gitignored; the seed line is the committed record.
+
 ## Formatting English board
 
 The Formatting English board may treat a work as having English only when both are true on `work_texts`:

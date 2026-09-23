@@ -472,6 +472,22 @@ describe("clavis spine and English tranche", () => {
     }
   });
 
+  it("records the issue 160 catechesis as a ready seed row", () => {
+    const lines = readFileSync(join(ROOT, "data/clavis/seeds/work-texts.jsonl"), "utf8")
+      .trim()
+      .split("\n")
+      .map((line) => JSON.parse(line));
+    const row = lines.find((item) => item.work_id === "84D990F10C594432B98F2B7720BC8D75");
+    expect(row).toMatchObject({
+      language: "english",
+      title: "First Instruction to Catechumens",
+      status: "ready",
+      r2_key: "clavis/texts/84D990F10C594432B98F2B7720BC8D75/english.txt",
+      content_sha256: "0c063da13b5c0e8824e16f8095103471e8ae12e16fd485eeca63199cfac489b3",
+      byte_size: 28572
+    });
+  });
+
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {
     const dump = Array.from({ length: 40 }, (_, i) => i + ". file:///ccel/s/schaff/anf03/cache/x.html").join("\n");
     const trimmed = trimCcelIndex("Of Patience.\nChapter I.\n" + dump + "\n");

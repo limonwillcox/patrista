@@ -1,0 +1,112 @@
+# Clavis relational text store
+
+English and original texts hang off Clavis works by foreign key. Clavis scrape sources stay read-only. This store is a mirror: import a JSONL export, attach a text by `work_id`, serve metadata from D1 and bodies from R2.
+
+GitHub Pages stays the static UI. No AWS.
+
+## Nesting
+
+```
+authors 1—* works 1—* work_texts
+```
+
+`works.parent_work_id` is a nullable self-FK for Clavis tree nodes that are themselves works (a book under a collection). `work_texts` identifies a body by the composite primary key `(work_id, language)`.
+
+| Table | Role |
+| --- | --- |
+| `authors` | `author_id`, Latin name, optional detail URL, `letter_bucket` (A–Z from the first Latin letter, else `#`), `imported_at` |
+| `works` | `work_id`, `author_id` FK, nullable `parent_work_id` FK, Latin title, optional designated title, `clavis_codes` JSON, `path_json` JSON, detail URL, `kind`, `imported_at` |
+| `work_texts` | `(work_id, language)` PK, `language` `english` \| `original`, title, `status` default `draft`, `r2_key`, `source_path`, `content_sha256`, `byte_size`, `updated_at` |
+
+Schema: `data/clavis/schema.sql`.
+
+A Clavis export row looks like:
+
+```json
+{"author_id":"553436765CE645E3BBE5B69EBC2B87D1","authorNameLatin":"Acacius Constantinopolitanus","work_id":"6F4F6BC373DE46C0B5C6093B651B0EAE","titleLatin":"Epistula ad Petrum Alexandriae","clavis":["CPG-5991","CPG-9123"],"parent_id":"3AA7F34816089C4AAD0899479D8FD2EE","path":["Genuina"],"detailUrl":"https://clavis.brepols.net/clacla/OA/Details.aspx?id=6F4F6BC373DE46C0B5C6093B651B0EAE","kind":"work"}
+```
+
+Import upserts authors and works. It does not write scrape files. `parent_work_id` is set only when that parent row exists in `works`. A grouping id that was not exported (the Acacius `Genuina` node in the fixture) stays `NULL`. `path_json` still keeps `["Genuina"]`. Re-import is safe: the same `author_id` / `work_id` updates in place and does not delete `work_texts`.
+
+Augustine example: `work_id` `E84EBB53FD524B8F8CD332CC55C805D1`, title `Retractationes`, author `Augustinus episcopus Hipponensis`. The fixture author id is synthetic. The work id is the Clavis id.
+
+## D1 vs R2
+
+| | D1 `CLAVIS_DB` | R2 `CLAVIS_TEXTS` |
+| --- | --- | --- |
+| Holds | authors, works, work_texts metadata | UTF-8 body bytes |
+| Key | SQL primary keys | `clavis/texts/{work_id}/{language}.txt` |
+| Does not hold | multi-MB bodies | Clavis catalogue rows |
+
+Local sqlite (gitignored): `data/clavis/clavis.sqlite`.
+
+Local body mirror (gitignored): `data/clavis/bodies/{work_id}/{language}.txt`.
+
+`work_texts.r2_key` points at the R2 object. The sqlite file never contains the body.
+
+## Pack and import
+
+```bash
+pnpm clavis:import
+pnpm clavis:import -- path/to/works.jsonl data/clavis/clavis.sqlite
+pnpm clavis:pack
+pnpm clavis:pack -- path/to/works.jsonl data/clavis/clavis.sqlite
+node scripts/clavis/attach-text.mjs \
+  --work E84EBB53FD524B8F8CD332CC55C805D1 \
+  --language english \
+  --status ready \
+  --title Retractations \
+  --file data/clavis/fixtures/retractationes-english.txt
+```
+
+`clavis:import` and `clavis:pack` both apply `data/clavis/schema.sql` and upsert JSONL (one object per line, `#` comments allowed, or a JSON array). Pack does not drop `work_texts`. Attach refuses a `work_id` that is not already in `works`.
+
+Tiny fixture: `data/clavis/fixtures/works.jsonl` and `data/clavis/fixtures/retractationes-english.txt`.
+
+Scripts use `node:sqlite` `DatabaseSync`, same as `scripts/links/pack-sqlite.mjs`.
+
+## Formatting English board
+
+The Formatting English board may treat a work as having English only when both are true on `work_texts`:
+
+1. `language = 'english'`
+2. `status = 'ready'`
+
+`isEnglishReady` in `server/clavis-api.ts` is that check. `GET /api/clavis/works/:id` and `GET /api/clavis/authors/:id/works` include `english_ready`, computed only from those rows.
+
+A file under `Fathers/English/` does not open the gate. Flat English folders are the legacy corpus. They are not a `work_texts` row and they are not `status = ready`. Draft English stays off the board. `language = original` never satisfies the English gate. `source_path` is provenance, not a substitute for the gate.
+
+## Worker API
+
+Wired from `server/clavis-api.ts` into `server/donate-worker.ts`. Bindings in `wrangler.toml` are comments until the resources exist. Donate, fixes, and the Bible proxy are unchanged.
+
+| Method | Path | Body |
+| --- | --- | --- |
+| GET | `/api/clavis/authors` | `{ authors: [...] }` |
+| GET | `/api/clavis/authors/:id/works` | `{ author, works }` with `texts` and `english_ready` |
+| GET | `/api/clavis/works/:id` | `{ work }` |
+| GET | `/api/clavis/works/:id/text?language=english` | `text/plain` body from R2. `language` defaults to `english`. |
+
+Missing `CLAVIS_DB`: **503** JSON `{ "error": "Clavis database is not connected. Bind D1 CLAVIS_DB." }`.
+
+Missing `CLAVIS_TEXTS` on the text GET (database is bound, metadata row exists): **501** JSON `{ "error": "Clavis text bucket is not connected. Bind R2 CLAVIS_TEXTS." }`.
+
+## Cache
+
+Ready text GET sets `Cache-Control: public, max-age=86400` plus an `ETag` of `content_sha256`. Draft text GET sets `Cache-Control: private, no-store`. Metadata JSON sets `Cache-Control: public, max-age=300`. Errors are `no-store`.
+
+The browser and Cloudflare cache the Worker response. GitHub Pages does not serve these bodies. D1 is not a body cache.
+
+## Create the Cloudflare resources later
+
+Do not run these as part of a code change. After they succeed, uncomment the matching blocks in `wrangler.toml` and fill `database_id`.
+
+```bash
+npx wrangler d1 create patrista-clavis
+npx wrangler d1 execute patrista-clavis --remote --file=data/clavis/schema.sql
+npx wrangler r2 bucket create patrista-clavis-texts
+```
+
+Upload a body to the key stored on the row, for example `clavis/texts/E84EBB53FD524B8F8CD332CC55C805D1/english.txt`. D1 should keep foreign keys enabled (D1 default).
+
+Out of scope: bulk English migration, rewriting `englishWorks.ts`, board label rollback, creating the live D1 database or R2 bucket from this repo change.

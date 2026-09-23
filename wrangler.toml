@@ -15,3 +15,16 @@ DONATE_PUBLIC_ORIGIN = "https://patrista.com"
 binding = "FIXES_KV"
 id = "49d0718051434b8791afc06d9aa96ef1"
 preview_id = "8c8de87185c443fb8f44eff727765922"
+
+# Clavis catalogue (D1). Uncomment after: npx wrangler d1 create patrista-clavis
+# Bodies do not go in this database. Apply data/clavis/schema.sql with wrangler d1 execute.
+# [[d1_databases]]
+# binding = "CLAVIS_DB"
+# database_name = "patrista-clavis"
+# database_id = ""
+
+# Clavis text bodies (R2). Uncomment after: npx wrangler r2 bucket create patrista-clavis-texts
+# Object key: clavis/texts/{work_id}/{language}.txt
+# [[r2_buckets]]
+# binding = "CLAVIS_TEXTS"
+# bucket_name = "patrista-clavis-texts"

@@ -1494,6 +1494,20 @@
       "content_sha256": "0c063da13b5c0e8824e16f8095103471e8ae12e16fd485eeca63199cfac489b3",
       "byte_size": 28572,
       "plan_note": "Issue #160 staged body (CCEL npnf109.ix.ii). Not the NPNF collection file."
+    },
+    {
+      "work_id": "CBEB3672B73940E4ABEFFB72CF7F80C5",
+      "title": "Second Instruction to Catechumens",
+      "title_latin": "Ad illuminandos catechesis 2",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4464"
+      ],
+      "source_path": "data/clavis/bodies/CBEB3672B73940E4ABEFFB72CF7F80C5/english.txt",
+      "r2_key": "clavis/texts/CBEB3672B73940E4ABEFFB72CF7F80C5/english.txt",
+      "content_sha256": "295bb627c982b69522fe3d1aa37321fbb4f3d618fc75995ac2e1b53fe3968a05",
+      "byte_size": 32575,
+      "plan_note": "Issue #150 staged body (CCEL npnf109.ix.iii). Not the NPNF collection file."
     }
   ],
   "skipped": [

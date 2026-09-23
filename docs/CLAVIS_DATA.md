@@ -91,7 +91,10 @@ pnpm clavis:attach-english -- --dry-run
 
 Re-running attach upserts the same `(work_id, language)` rows. Board label moves are not part of this import.
 
-Issue #160 is one extra ready row, attached with `attach-text` from a staged body rather than a `Fathers/English` volume: Chrysostom, *Ad illuminandos catechesis 1* (`84D990F10C594432B98F2B7720BC8D75`), title "First Instruction to Catechumens". sha256 `0c063da13b5c0e8824e16f8095103471e8ae12e16fd485eeca63199cfac489b3`, 28572 bytes. The body stays gitignored; the seed line is the committed record.
+Two extra ready rows are attached with `attach-text` from staged bodies rather than a `Fathers/English` volume. The bodies stay gitignored; the seed lines are the committed record.
+
+- Issue #160: Chrysostom, *Ad illuminandos catechesis 1* (`84D990F10C594432B98F2B7720BC8D75`), "First Instruction to Catechumens". sha256 `0c063da13b5c0e8824e16f8095103471e8ae12e16fd485eeca63199cfac489b3`, 28572 bytes.
+- Issue #150: Chrysostom, *Ad illuminandos catechesis 2* (`CBEB3672B73940E4ABEFFB72CF7F80C5`), "Second Instruction to Catechumens". sha256 `295bb627c982b69522fe3d1aa37321fbb4f3d618fc75995ac2e1b53fe3968a05`, 32575 bytes.
 
 ## Formatting English board
 

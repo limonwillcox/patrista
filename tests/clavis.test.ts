@@ -472,19 +472,28 @@ describe("clavis spine and English tranche", () => {
     }
   });
 
-  it("records the issue 160 catechesis as a ready seed row", () => {
+  it("records the staged catecheses as ready seed rows", () => {
     const lines = readFileSync(join(ROOT, "data/clavis/seeds/work-texts.jsonl"), "utf8")
       .trim()
       .split("\n")
       .map((line) => JSON.parse(line));
-    const row = lines.find((item) => item.work_id === "84D990F10C594432B98F2B7720BC8D75");
-    expect(row).toMatchObject({
+    const first = lines.find((item) => item.work_id === "84D990F10C594432B98F2B7720BC8D75");
+    const second = lines.find((item) => item.work_id === "CBEB3672B73940E4ABEFFB72CF7F80C5");
+    expect(first).toMatchObject({
       language: "english",
       title: "First Instruction to Catechumens",
       status: "ready",
       r2_key: "clavis/texts/84D990F10C594432B98F2B7720BC8D75/english.txt",
       content_sha256: "0c063da13b5c0e8824e16f8095103471e8ae12e16fd485eeca63199cfac489b3",
       byte_size: 28572
+    });
+    expect(second).toMatchObject({
+      language: "english",
+      title: "Second Instruction to Catechumens",
+      status: "ready",
+      r2_key: "clavis/texts/CBEB3672B73940E4ABEFFB72CF7F80C5/english.txt",
+      content_sha256: "295bb627c982b69522fe3d1aa37321fbb4f3d618fc75995ac2e1b53fe3968a05",
+      byte_size: 32575
     });
   });
 

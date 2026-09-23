@@ -1550,6 +1550,20 @@
       "content_sha256": "fe720e82d48b0c43f479959348e40ab9f28dc66f1a069b12fca144c130bcad54",
       "byte_size": 83654,
       "plan_note": "Issue #116 staged body (CCEL npnf207.iii.xxiii)."
+    },
+    {
+      "work_id": "12E4B8193BDC4A8C97B8549A3CF39F68",
+      "title": "The Correction of the Donatists",
+      "title_latin": "Ad Donatistas post collationem siue Contra partem Donati post gesta",
+      "author": "Augustinus episcopus Hipponensis",
+      "clavis": [
+        "CPL-338"
+      ],
+      "source_path": "data/clavis/bodies/12E4B8193BDC4A8C97B8549A3CF39F68/english.txt",
+      "r2_key": "clavis/texts/12E4B8193BDC4A8C97B8549A3CF39F68/english.txt",
+      "content_sha256": "71650f991da761e2fd95640c5b8d5516ec5fb76a17a7f74b975c8f6685219083",
+      "byte_size": 89982,
+      "plan_note": "Issue #8 staged body (CCEL npnf104.v.vi.ii)."
     }
   ],
   "skipped": [

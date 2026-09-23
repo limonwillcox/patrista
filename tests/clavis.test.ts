@@ -522,6 +522,15 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "fe720e82d48b0c43f479959348e40ab9f28dc66f1a069b12fca144c130bcad54",
       byte_size: 83654
     });
+    const donatists = lines.find((item) => item.work_id === "12E4B8193BDC4A8C97B8549A3CF39F68");
+    expect(donatists).toMatchObject({
+      language: "english",
+      title: "The Correction of the Donatists",
+      status: "ready",
+      r2_key: "clavis/texts/12E4B8193BDC4A8C97B8549A3CF39F68/english.txt",
+      content_sha256: "71650f991da761e2fd95640c5b8d5516ec5fb76a17a7f74b975c8f6685219083",
+      byte_size: 89982
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

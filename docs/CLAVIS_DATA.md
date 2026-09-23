@@ -91,11 +91,12 @@ pnpm clavis:attach-english -- --dry-run
 
 Re-running attach upserts the same `(work_id, language)` rows. Board label moves are not part of this import.
 
-Three extra ready rows are attached with `attach-text` from staged bodies rather than a `Fathers/English` volume. The bodies stay gitignored; the seed lines are the committed record.
+Staged bodies attached with `attach-text`, rather than a `Fathers/English` volume, are listed below. The bodies stay gitignored; the seed lines are the committed record.
 
 - Issue #160: Chrysostom, *Ad illuminandos catechesis 1* (`84D990F10C594432B98F2B7720BC8D75`), "First Instruction to Catechumens". sha256 `0c063da13b5c0e8824e16f8095103471e8ae12e16fd485eeca63199cfac489b3`, 28572 bytes.
 - Issue #150: Chrysostom, *Ad illuminandos catechesis 2* (`CBEB3672B73940E4ABEFFB72CF7F80C5`), "Second Instruction to Catechumens". sha256 `295bb627c982b69522fe3d1aa37321fbb4f3d618fc75995ac2e1b53fe3968a05`, 32575 bytes.
 - Issue #124: Gregory Nazianzen, *De XIV luminibus iuxta Nazianzeni recensionem* (`99397283D8804F49A9F053C06D79114C`, CPG-3094), "Oration on the Holy Lights". sha256 `0059129718395301566f35d33716ad800cc4a78732f227ef7a34078d3fb6dc2b`, 33159 bytes.
+- Issue #105: Gregory Nazianzen, *Ad Aegyptum in aduentu domini in Hierosolymas* (`9A4671890F0F4D17B10501321F88E559`, CPG-3115.1), "On the Arrival of the Egyptians". sha256 `5c361a2282d481528202a02a8f85cf90d1de227300f8e27cf5bada21fd450396`, 17887 bytes.
 
 ## Formatting English board
 

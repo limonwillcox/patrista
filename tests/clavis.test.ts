@@ -504,6 +504,15 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "0059129718395301566f35d33716ad800cc4a78732f227ef7a34078d3fb6dc2b",
       byte_size: 33159
     });
+    const egyptians = lines.find((item) => item.work_id === "9A4671890F0F4D17B10501321F88E559");
+    expect(egyptians).toMatchObject({
+      language: "english",
+      title: "On the Arrival of the Egyptians",
+      status: "ready",
+      r2_key: "clavis/texts/9A4671890F0F4D17B10501321F88E559/english.txt",
+      content_sha256: "5c361a2282d481528202a02a8f85cf90d1de227300f8e27cf5bada21fd450396",
+      byte_size: 17887
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

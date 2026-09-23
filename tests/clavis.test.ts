@@ -5,8 +5,22 @@ import { join } from "path";
 import { DatabaseSync } from "node:sqlite";
 import { afterEach, describe, expect, it } from "vitest";
 import { attachTextFile } from "../scripts/clavis/attach-text.mjs";
-import { importWorks, openDatabase, readWorkRows } from "../scripts/clavis/import-works.mjs";
+import {
+  applyAuthorDetails,
+  importWorks,
+  importWorksFile,
+  openDatabase,
+  readAuthorDetails,
+  readWorkRows
+} from "../scripts/clavis/import-works.mjs";
 import { packClavisSqlite } from "../scripts/clavis/pack-sqlite.mjs";
+import {
+  attachReadyBatch,
+  listEnglishFiles,
+  loadWorks,
+  planEnglishAttaches,
+  trimCcelIndex
+} from "../scripts/clavis/attach-english.mjs";
 import worker from "../server/donate-worker";
 import {
   CLAVIS_DRAFT_CACHE_CONTROL,
@@ -88,7 +102,7 @@ describe("schema → import fixture → attach english → author works text", (
     const sqlitePath = join(dir, "clavis.sqlite");
     const bodies = join(dir, "bodies");
     const packed = packClavisSqlite(FIXTURE, sqlitePath);
-    expect(packed).toEqual({ authors: 2, works: 3, rows: 3 });
+    expect(packed).toMatchObject({ authors: 2, works: 3, rows: 3, duplicateRows: 0 });
 
     const again = packClavisSqlite(FIXTURE, sqlitePath);
     expect(again.works).toBe(3);
@@ -370,6 +384,100 @@ describe("clavis worker", () => {
     } finally {
       db.close();
     }
+  });
+});
+
+describe("clavis spine and English tranche", () => {
+  const spine = join(ROOT, "data/clavis/imports/works-by-author.jsonl");
+  const authors = join(ROOT, "data/clavis/imports/authors-expanded.jsonl");
+  const planPath = join(ROOT, "data/clavis/imports/batch-001-promote-plan.json");
+  const faustusId = "ED338925AEC5413192EB2FC79F806212";
+
+  it("imports the multi-work Clavis spine idempotently", () => {
+    const dir = tempDir();
+    const sqlitePath = join(dir, "clavis.sqlite");
+    const rows = readWorkRows(spine);
+    expect(rows.length).toBeGreaterThan(5000);
+    const counts = importWorksFile(spine, sqlitePath);
+    expect(counts.rows).toBe(rows.length);
+    expect(counts.works).toBe(new Set(rows.map((row) => row.work_id)).size);
+    expect(counts.authors).toBeGreaterThan(200);
+    expect(counts.duplicateRows).toBe(rows.length - counts.works);
+    const again = importWorksFile(spine, sqlitePath);
+    expect(again.works).toBe(counts.works);
+    expect(again.authors).toBe(counts.authors);
+
+    const db = openDatabase(sqlitePath);
+    try {
+      const urls = applyAuthorDetails(db, readAuthorDetails(authors));
+      expect(urls.updated).toBeGreaterThan(200);
+      const retract = db.prepare("SELECT title_latin FROM works WHERE work_id = ?").get(AUGUSTINE);
+      expect(retract.title_latin).toBe("Retractationes");
+      const acacius = db.prepare("SELECT detail_url FROM authors WHERE author_id = ?").get("553436765CE645E3BBE5B69EBC2B87D1");
+      expect(String(acacius.detail_url)).toMatch(/^https:\/\/clavis\.brepols\.net\//);
+    } finally {
+      db.close();
+    }
+  });
+
+  it("attaches a real Fathers/English file only when english is ready", () => {
+    const dir = tempDir();
+    const sqlitePath = join(dir, "clavis.sqlite");
+    importWorksFile(spine, sqlitePath);
+    const db = openDatabase(sqlitePath);
+    try {
+      const before = db.prepare("SELECT COUNT(*) AS n FROM work_texts").get();
+      expect(before.n).toBe(0);
+      expect(isEnglishReady([])).toBe(false);
+
+      const files = listEnglishFiles(join(ROOT, "Fathers/English"));
+      const plan = JSON.parse(readFileSync(planPath, "utf8"));
+      const planned = planEnglishAttaches(loadWorks(db), files, plan);
+      const faustus = planned.ready.find((row) => row.source_path.endsWith("Reply to Faustus the Manichaean.txt"));
+      expect(faustus).toMatchObject({
+        work_id: faustusId,
+        language: "english",
+        status: "ready",
+        title_latin: "Contra Faustum Manichaeum"
+      });
+      expect(planned.ready.some((row) => row.source_path.endsWith("/Letters.txt"))).toBe(false);
+      expect(planned.skipped).toContainEqual(expect.objectContaining({
+        source_path: "Fathers/English/Athanasius_English/On the Incarnation of the Word.txt",
+        reason: "collection"
+      }));
+      expect(planned.skipped).toContainEqual(expect.objectContaining({
+        source_path: "Fathers/English/Augustine_English/The Confessions of St. Augustine. Augustine.txt",
+        reason: "duplicate_file"
+      }));
+
+      attachReadyBatch({
+        db,
+        ready: [faustus],
+        repoRoot: ROOT,
+        bodiesRoot: join(dir, "bodies")
+      });
+      const text = db.prepare("SELECT language, status, r2_key FROM work_texts WHERE work_id = ?").get(faustusId);
+      expect(text).toMatchObject({
+        language: "english",
+        status: "ready",
+        r2_key: "clavis/texts/" + faustusId + "/english.txt"
+      });
+      expect(isEnglishReady([text])).toBe(true);
+      expect(isEnglishReady([{ language: "english", status: "draft" }])).toBe(false);
+      const letters = db.prepare("SELECT COUNT(*) AS n FROM work_texts WHERE source_path LIKE '%Letters.txt'").get();
+      expect(letters.n).toBe(0);
+      expect(Object.keys(db.prepare("SELECT * FROM work_texts").get())).not.toContain("body");
+    } finally {
+      db.close();
+    }
+  });
+
+  it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {
+    const dump = Array.from({ length: 40 }, (_, i) => i + ". file:///ccel/s/schaff/anf03/cache/x.html").join("\n");
+    const trimmed = trimCcelIndex("Of Patience.\nChapter I.\n" + dump + "\n");
+    expect(trimmed).toBe("Of Patience.\nChapter I.\n");
+    expect(trimmed).not.toContain("file:///ccel/");
+    expect(trimCcelIndex("Chapter I.\nfile:///ccel/only-one\n")).toContain("file:///ccel/only-one");
   });
 });
 

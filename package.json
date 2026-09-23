@@ -19,7 +19,8 @@
     "links:report": "node scripts/links/report.mjs",
     "links:pack": "node scripts/links/pack-sqlite.mjs",
     "clavis:import": "node scripts/clavis/import-works.mjs",
-    "clavis:pack": "node scripts/clavis/pack-sqlite.mjs"
+    "clavis:pack": "node scripts/clavis/pack-sqlite.mjs",
+    "clavis:attach-english": "node scripts/clavis/attach-english.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

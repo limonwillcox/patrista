@@ -46,11 +46,11 @@ Local body mirror (gitignored): `data/clavis/bodies/{work_id}/{language}.txt`.
 
 ## Pack and import
 
+The catalogue spine checked into git is `data/clavis/imports/works-by-author.jsonl` (one Clavis work per line). `data/clavis/imports/authors-expanded.jsonl` fills `authors.detail_url`. Neither file is a scrape source; import only reads them.
+
 ```bash
-pnpm clavis:import
-pnpm clavis:import -- path/to/works.jsonl data/clavis/clavis.sqlite
+pnpm clavis:import -- data/clavis/imports/works-by-author.jsonl data/clavis/clavis.sqlite --authors data/clavis/imports/authors-expanded.jsonl
 pnpm clavis:pack
-pnpm clavis:pack -- path/to/works.jsonl data/clavis/clavis.sqlite
 node scripts/clavis/attach-text.mjs \
   --work E84EBB53FD524B8F8CD332CC55C805D1 \
   --language english \
@@ -61,9 +61,35 @@ node scripts/clavis/attach-text.mjs \
 
 `clavis:import` and `clavis:pack` both apply `data/clavis/schema.sql` and upsert JSONL (one object per line, `#` comments allowed, or a JSON array). Pack does not drop `work_texts`. Attach refuses a `work_id` that is not already in `works`.
 
+The same `work_id` sometimes appears under two authors in the export. Upsert keeps the last row. That cross-listing is why a title can sit on an unexpected author after import.
+
 Tiny fixture: `data/clavis/fixtures/works.jsonl` and `data/clavis/fixtures/retractationes-english.txt`.
 
 Scripts use `node:sqlite` `DatabaseSync`, same as `scripts/links/pack-sqlite.mjs`.
+
+## First English tranche
+
+`scripts/clavis/attach-english.mjs` maps `Fathers/English/**/*.txt` onto imported works. A row becomes `status=ready` only when the folder's author tokens and the Latin title hit exactly one work, and exactly one file claims that work. A reviewed standalone row in `data/clavis/imports/batch-001-promote-plan.json` may choose between two files of the same work (the Pilkington Confessions file is the one kept).
+
+These stay off `ready`:
+
+- two or more Clavis works share the title
+- two files claim one work and the plan does not pick one
+- the extract contains more than one work (volume dumps, shorter-and-longer Ignatius, catechetical lectures that continue into the mystagogic lectures)
+- the plan marks the path as a collection section (`match: collection`)
+- the title exists, but the stored author is a cross-list (Novatian, *De cibis iudaicis*, is stored under Tertullian)
+
+A trailing block of `file:///ccel/` cache lines is stripped before the body is hashed. The bytes are still not stored in D1. Local copies go to `data/clavis/bodies/` (gitignored). The committed record is:
+
+- `data/clavis/seeds/work-texts.jsonl` — `work_texts` metadata for the ready rows
+- `data/clavis/reports/english-attach.json` — ready rows and every skip, with a reason
+
+```bash
+pnpm clavis:attach-english -- --report data/clavis/reports/english-attach.json --seed data/clavis/seeds/work-texts.jsonl
+pnpm clavis:attach-english -- --dry-run
+```
+
+Re-running attach upserts the same `(work_id, language)` rows. Board label moves are not part of this import.
 
 ## Formatting English board
 
@@ -109,4 +135,4 @@ npx wrangler r2 bucket create patrista-clavis-texts
 
 Upload a body to the key stored on the row, for example `clavis/texts/E84EBB53FD524B8F8CD332CC55C805D1/english.txt`. D1 should keep foreign keys enabled (D1 default).
 
-Out of scope: bulk English migration, rewriting `englishWorks.ts`, board label rollback, creating the live D1 database or R2 bucket from this repo change.
+Still out of scope here: rewriting `englishWorks.ts`, moving board labels, and creating the live D1 database or R2 bucket. The English attach above is the first ready tranche, not every file under `Fathers/English/`.

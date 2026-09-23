@@ -160,11 +160,62 @@ export function importWorks(db, rows, importedAt = new Date().toISOString()) {
       setParent.run(row.parent_id, row.work_id);
     }
     db.exec("COMMIT");
-    return { authors: authors.size, works: works.size, rows: rows.length };
+    return {
+      authors: authors.size,
+      works: works.size,
+      rows: rows.length,
+      duplicateRows: rows.length - works.size
+    };
   } catch (err) {
     db.exec("ROLLBACK");
     throw err;
   }
+}
+
+export function readAuthorDetails(filePath) {
+  const text = readFileSync(filePath, "utf8").replace(/^\uFEFF/, "");
+  const details = [];
+  const lines = text.split(/\r?\n/);
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line || line.startsWith("#")) continue;
+    let obj;
+    try {
+      obj = JSON.parse(line);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      throw new Error(filePath + ":" + (i + 1) + ": " + message);
+    }
+    const authorId = required(obj, ["author_id", "authorId"], filePath + ":" + (i + 1)).toUpperCase();
+    const detail = obj.detailUrl ?? obj.detail_url ?? null;
+    details.push({
+      author_id: authorId,
+      detail_url: detail == null || String(detail).trim() === "" ? null : String(detail)
+    });
+  }
+  return details;
+}
+
+export function applyAuthorDetails(db, details) {
+  const update = db.prepare(`
+    UPDATE authors
+    SET detail_url = ?
+    WHERE author_id = ?
+  `);
+  let updated = 0;
+  db.exec("BEGIN");
+  try {
+    for (const row of details) {
+      if (!row.detail_url) continue;
+      const result = update.run(row.detail_url, row.author_id);
+      updated += result.changes || 0;
+    }
+    db.exec("COMMIT");
+  } catch (err) {
+    db.exec("ROLLBACK");
+    throw err;
+  }
+  return { updated };
 }
 
 export function importWorksFile(jsonlPath, sqlitePath, schemaPath = defaultSchemaPath) {
@@ -185,10 +236,47 @@ export function assertLanguage(language) {
   return language;
 }
 
+function parseArgs(argv) {
+  const out = { _: [] };
+  for (let i = 0; i < argv.length; i++) {
+    const arg = argv[i];
+    if (arg.startsWith("--")) {
+      const key = arg.slice(2);
+      const next = argv[i + 1];
+      if (next == null || next.startsWith("--")) out[key] = true;
+      else {
+        out[key] = next;
+        i++;
+      }
+    } else out._.push(arg);
+  }
+  return out;
+}
+
 const isMain = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 if (isMain) {
-  const jsonlPath = resolve(root, process.argv[2] || "data/clavis/fixtures/works.jsonl");
-  const sqlitePath = resolve(root, process.argv[3] || "data/clavis/clavis.sqlite");
+  const args = parseArgs(process.argv.slice(2));
+  const jsonlPath = resolve(root, args._[0] || "data/clavis/imports/works-by-author.jsonl");
+  const sqlitePath = resolve(root, args._[1] || "data/clavis/clavis.sqlite");
   const counts = importWorksFile(jsonlPath, sqlitePath);
-  console.log("imported", counts.works, "works,", counts.authors, "authors →", sqlitePath);
+  let authorDetails = null;
+  if (args.authors && args.authors !== "none") {
+    const db = openDatabase(sqlitePath);
+    try {
+      authorDetails = applyAuthorDetails(db, readAuthorDetails(resolve(root, args.authors)));
+    } finally {
+      db.close();
+    }
+  }
+  console.log(
+    "imported",
+    counts.works,
+    "works,",
+    counts.authors,
+    "authors,",
+    counts.duplicateRows,
+    "cross-listed rows →",
+    sqlitePath,
+    authorDetails ? "(" + authorDetails.updated + " author urls)" : ""
+  );
 }

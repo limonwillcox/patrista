@@ -1536,6 +1536,20 @@
       "content_sha256": "5c361a2282d481528202a02a8f85cf90d1de227300f8e27cf5bada21fd450396",
       "byte_size": 17887,
       "plan_note": "Issue #105 staged body (CCEL npnf207.iii.xix)."
+    },
+    {
+      "work_id": "852554E9B5584DDBA5FCBF0FE2023387",
+      "title": "The Oration on Holy Baptism",
+      "title_latin": "De baptismate et de puritate",
+      "author": "Gregorius Nazianzenus",
+      "clavis": [
+        "CPG-3113.2"
+      ],
+      "source_path": "data/clavis/bodies/852554E9B5584DDBA5FCBF0FE2023387/english.txt",
+      "r2_key": "clavis/texts/852554E9B5584DDBA5FCBF0FE2023387/english.txt",
+      "content_sha256": "fe720e82d48b0c43f479959348e40ab9f28dc66f1a069b12fca144c130bcad54",
+      "byte_size": 83654,
+      "plan_note": "Issue #116 staged body (CCEL npnf207.iii.xxiii)."
     }
   ],
   "skipped": [

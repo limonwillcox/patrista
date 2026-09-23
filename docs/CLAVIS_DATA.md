@@ -97,6 +97,7 @@ Staged bodies attached with `attach-text`, rather than a `Fathers/English` volum
 - Issue #150: Chrysostom, *Ad illuminandos catechesis 2* (`CBEB3672B73940E4ABEFFB72CF7F80C5`), "Second Instruction to Catechumens". sha256 `295bb627c982b69522fe3d1aa37321fbb4f3d618fc75995ac2e1b53fe3968a05`, 32575 bytes.
 - Issue #124: Gregory Nazianzen, *De XIV luminibus iuxta Nazianzeni recensionem* (`99397283D8804F49A9F053C06D79114C`, CPG-3094), "Oration on the Holy Lights". sha256 `0059129718395301566f35d33716ad800cc4a78732f227ef7a34078d3fb6dc2b`, 33159 bytes.
 - Issue #105: Gregory Nazianzen, *Ad Aegyptum in aduentu domini in Hierosolymas* (`9A4671890F0F4D17B10501321F88E559`, CPG-3115.1), "On the Arrival of the Egyptians". sha256 `5c361a2282d481528202a02a8f85cf90d1de227300f8e27cf5bada21fd450396`, 17887 bytes.
+- Issue #116: Gregory Nazianzen, *De baptismate et de puritate* (`852554E9B5584DDBA5FCBF0FE2023387`, CPG-3113.2), "The Oration on Holy Baptism". sha256 `fe720e82d48b0c43f479959348e40ab9f28dc66f1a069b12fca144c130bcad54`, 83654 bytes.
 
 ## Formatting English board
 

@@ -513,6 +513,15 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "5c361a2282d481528202a02a8f85cf90d1de227300f8e27cf5bada21fd450396",
       byte_size: 17887
     });
+    const baptism = lines.find((item) => item.work_id === "852554E9B5584DDBA5FCBF0FE2023387");
+    expect(baptism).toMatchObject({
+      language: "english",
+      title: "The Oration on Holy Baptism",
+      status: "ready",
+      r2_key: "clavis/texts/852554E9B5584DDBA5FCBF0FE2023387/english.txt",
+      content_sha256: "fe720e82d48b0c43f479959348e40ab9f28dc66f1a069b12fca144c130bcad54",
+      byte_size: 83654
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

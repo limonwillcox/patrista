@@ -1508,6 +1508,20 @@
       "content_sha256": "295bb627c982b69522fe3d1aa37321fbb4f3d618fc75995ac2e1b53fe3968a05",
       "byte_size": 32575,
       "plan_note": "Issue #150 staged body (CCEL npnf109.ix.iii). Not the NPNF collection file."
+    },
+    {
+      "work_id": "99397283D8804F49A9F053C06D79114C",
+      "title": "Oration on the Holy Lights",
+      "title_latin": "De XIV luminibus iuxta Nazianzeni recensionem",
+      "author": "Gregorius Nazianzenus",
+      "clavis": [
+        "CPG-3094"
+      ],
+      "source_path": "data/clavis/bodies/99397283D8804F49A9F053C06D79114C/english.txt",
+      "r2_key": "clavis/texts/99397283D8804F49A9F053C06D79114C/english.txt",
+      "content_sha256": "0059129718395301566f35d33716ad800cc4a78732f227ef7a34078d3fb6dc2b",
+      "byte_size": 33159,
+      "plan_note": "Issue #124 staged body (CCEL npnf207.iii.xxii)."
     }
   ],
   "skipped": [

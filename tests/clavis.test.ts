@@ -495,6 +495,15 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "295bb627c982b69522fe3d1aa37321fbb4f3d618fc75995ac2e1b53fe3968a05",
       byte_size: 32575
     });
+    const lights = lines.find((item) => item.work_id === "99397283D8804F49A9F053C06D79114C");
+    expect(lights).toMatchObject({
+      language: "english",
+      title: "Oration on the Holy Lights",
+      status: "ready",
+      r2_key: "clavis/texts/99397283D8804F49A9F053C06D79114C/english.txt",
+      content_sha256: "0059129718395301566f35d33716ad800cc4a78732f227ef7a34078d3fb6dc2b",
+      byte_size: 33159
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

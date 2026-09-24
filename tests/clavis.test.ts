@@ -611,6 +611,22 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "8bfaaf255d7a208bee4f57e97eb62955ee3f02b498246c870561aeda8d2dc1d2",
       byte_size: 90514
     });
+    expect(lines.find((item) => item.work_id === "CE5CA020C8584E04B7A71F73083F1B70")).toMatchObject({
+      language: "english",
+      title: "First Book on Compunction (to Demetrius)",
+      status: "ready",
+      r2_key: "clavis/texts/CE5CA020C8584E04B7A71F73083F1B70/english.txt",
+      content_sha256: "d6c20e948e8c09e71f4b168d786cd0dba703b022dcda166f78ecf247c883a487",
+      byte_size: 69223
+    });
+    expect(lines.find((item) => item.work_id === "1F5F2DE50EE14B21940358C8FCDCF127")).toMatchObject({
+      language: "english",
+      title: "Second Book on Compunction (to Stelechius)",
+      status: "ready",
+      r2_key: "clavis/texts/1F5F2DE50EE14B21940358C8FCDCF127/english.txt",
+      content_sha256: "4f473d4cb33a93cf0dfaf6570c9e404a8b30f89b8084f139dad8406a210aaf5a",
+      byte_size: 50131
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

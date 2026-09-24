@@ -555,6 +555,22 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "c0ebd9e2a271b2a11f9f95f71faabded991fb2a6bd6a95d0cf6052a8977ab44d",
       byte_size: 61743
     });
+    expect(lines.find((item) => item.work_id === "C5D1DDB3C8924055B1EF983A824B2789")).toMatchObject({
+      language: "english",
+      title: "Apology Against Rufinus",
+      status: "ready",
+      r2_key: "clavis/texts/C5D1DDB3C8924055B1EF983A824B2789/english.txt",
+      content_sha256: "735a7550fdda539aea326296c3f87f92f4c887a8bb80cd49f3a11b7ef25870a9",
+      byte_size: 289625
+    });
+    expect(lines.find((item) => item.work_id === "E6EEE603DF9D4278A69D23BB929A5E23")).toMatchObject({
+      language: "english",
+      title: "To his Brother Gregory, concerning the difference between ουσία and υπόστασις",
+      status: "ready",
+      r2_key: "clavis/texts/E6EEE603DF9D4278A69D23BB929A5E23/english.txt",
+      content_sha256: "41d30637b2c73c9e7d84ed2cd624d6d9ab6ed9683c4ca84e1204a5fab741fc76",
+      byte_size: 21538
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

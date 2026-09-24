@@ -1606,6 +1606,34 @@
       "content_sha256": "c0ebd9e2a271b2a11f9f95f71faabded991fb2a6bd6a95d0cf6052a8977ab44d",
       "byte_size": 61743,
       "plan_note": "Issue #69 staged body."
+    },
+    {
+      "work_id": "C5D1DDB3C8924055B1EF983A824B2789",
+      "title": "Apology Against Rufinus",
+      "title_latin": "Apologia aduersus libros Rufini seu Epistula Hieronymi aduersus Rufinum",
+      "author": "Hieronymus presbyter",
+      "clavis": [
+        "CPL-613"
+      ],
+      "source_path": "data/clavis/bodies/C5D1DDB3C8924055B1EF983A824B2789/english.txt",
+      "r2_key": "clavis/texts/C5D1DDB3C8924055B1EF983A824B2789/english.txt",
+      "content_sha256": "735a7550fdda539aea326296c3f87f92f4c887a8bb80cd49f3a11b7ef25870a9",
+      "byte_size": 289625,
+      "plan_note": "Issue #185 staged body."
+    },
+    {
+      "work_id": "E6EEE603DF9D4278A69D23BB929A5E23",
+      "title": "To his Brother Gregory, concerning the difference between ουσία and υπόστασις",
+      "title_latin": "Ad Petrum fratrem de differentia essentiae et hypostaseos",
+      "author": "Gregorius Nyssenus",
+      "clavis": [
+        "CPG-3196"
+      ],
+      "source_path": "data/clavis/bodies/E6EEE603DF9D4278A69D23BB929A5E23/english.txt",
+      "r2_key": "clavis/texts/E6EEE603DF9D4278A69D23BB929A5E23/english.txt",
+      "content_sha256": "41d30637b2c73c9e7d84ed2cd624d6d9ab6ed9683c4ca84e1204a5fab741fc76",
+      "byte_size": 21538,
+      "plan_note": "Issue #77 staged body. Same work_id is also listed under Basilius Caesariensis; last import row keeps Gregory of Nyssa."
     }
   ],
   "skipped": [

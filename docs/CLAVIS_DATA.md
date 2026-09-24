@@ -102,6 +102,8 @@ Staged bodies attached with `attach-text`, rather than a `Fathers/English` volum
 - Issue #60: Athanasius, *Apologia contra Arianos (seu Apologia secunda)* (`3C5F838B863641D3B49601A7ED110890`, CPG-2123), "Defence Against the Arians". sha256 `e51dbcc1ff1006519c1a9ac08b9d885ac6688c1f84b2dc943f56e303650c4a04`, 212419 bytes.
 - Issue #66: Athanasius, *Apologia de fuga sua* (`F447B660730E4BE2B4BFDB414FA24551`, CPG-2122), "Defence of His Flight". sha256 `60eba8953545a645473fcb1ed97b1f5b4198599e5b37fef956d59bc05ef0b270`, 38189 bytes.
 - Issue #69: Athanasius, *Apologia ad Constantium* (`B6538F071CEA4C239332B00E7C9B7296`, CPG-2129), "Apology to the Emperor". sha256 `c0ebd9e2a271b2a11f9f95f71faabded991fb2a6bd6a95d0cf6052a8977ab44d`, 61743 bytes.
+- Issue #185: Jerome, *Apologia aduersus libros Rufini seu Epistula Hieronymi aduersus Rufinum* (`C5D1DDB3C8924055B1EF983A824B2789`, CPL-613), "Apology Against Rufinus". sha256 `735a7550fdda539aea326296c3f87f92f4c887a8bb80cd49f3a11b7ef25870a9`, 289625 bytes.
+- Issue #77: *Ad Petrum fratrem de differentia essentiae et hypostaseos* (`E6EEE603DF9D4278A69D23BB929A5E23`, CPG-3196), "To his Brother Gregory, concerning the difference between ουσία and υπόστασις". The export lists this `work_id` under both Basil and Gregory of Nyssa; the mirror keeps Gregory of Nyssa. sha256 `41d30637b2c73c9e7d84ed2cd624d6d9ab6ed9683c4ca84e1204a5fab741fc76`, 21538 bytes.
 
 ## Formatting English board
 

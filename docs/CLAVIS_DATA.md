@@ -111,6 +111,8 @@ Staged bodies attached with `attach-text`, rather than a `Fathers/English` volum
 - Issue #198: *Commentarii in Apocalypsim Ioannis* (`EB66B24E69C74E3895C20EC7A567BC40`, CPL-80), "Commentary on the Apocalypse of the Blessed John". sha256 `8bfaaf255d7a208bee4f57e97eb62955ee3f02b498246c870561aeda8d2dc1d2`, 90514 bytes.
 - Issue #155: Chrysostom, *Ad Demetrium de compunctione liber 1* (`CE5CA020C8584E04B7A71F73083F1B70`, CPG-4308), "First Book on Compunction (to Demetrius)". sha256 `d6c20e948e8c09e71f4b168d786cd0dba703b022dcda166f78ecf247c883a487`, 69223 bytes.
 - Issue #163: Chrysostom, *Ad Stelechium de compunctione liber 2* (`1F5F2DE50EE14B21940358C8FCDCF127`, CPG-4309), "Second Book on Compunction (to Stelechius)". sha256 `4f473d4cb33a93cf0dfaf6570c9e404a8b30f89b8084f139dad8406a210aaf5a`, 50131 bytes.
+- Issue #38: Ambrose, *De Helia et ieiunio* (`52A399A65F674619AC6B8185E6F3C52B`, CPL-137), "On Elias and Fasting". sha256 `f0b149b3cf11725875d85e0c6881da80526816a9d9cc5c2a68e21d1cd84a3a2f`, 77651 bytes.
+- Issue #55: Ambrose, *De bono mortis* (`2B1F6A2E09E741F58E1A4070E2F01A7E`, CPL-129), "Of the Happiness of Death". sha256 `377f3e857274136c92c805de1c07a2bf49a84f63466b7d82b5b2d0a4a967377d`, 62920 bytes.
 
 ## Formatting English board
 

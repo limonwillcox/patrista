@@ -627,6 +627,22 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "4f473d4cb33a93cf0dfaf6570c9e404a8b30f89b8084f139dad8406a210aaf5a",
       byte_size: 50131
     });
+    expect(lines.find((item) => item.work_id === "52A399A65F674619AC6B8185E6F3C52B")).toMatchObject({
+      language: "english",
+      title: "On Elias and Fasting",
+      status: "ready",
+      r2_key: "clavis/texts/52A399A65F674619AC6B8185E6F3C52B/english.txt",
+      content_sha256: "f0b149b3cf11725875d85e0c6881da80526816a9d9cc5c2a68e21d1cd84a3a2f",
+      byte_size: 77651
+    });
+    expect(lines.find((item) => item.work_id === "2B1F6A2E09E741F58E1A4070E2F01A7E")).toMatchObject({
+      language: "english",
+      title: "Of the Happiness of Death",
+      status: "ready",
+      r2_key: "clavis/texts/2B1F6A2E09E741F58E1A4070E2F01A7E/english.txt",
+      content_sha256: "377f3e857274136c92c805de1c07a2bf49a84f63466b7d82b5b2d0a4a967377d",
+      byte_size: 62920
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

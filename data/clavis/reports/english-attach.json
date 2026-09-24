@@ -1734,6 +1734,34 @@
       "content_sha256": "4f473d4cb33a93cf0dfaf6570c9e404a8b30f89b8084f139dad8406a210aaf5a",
       "byte_size": 50131,
       "plan_note": "Issue #163 staged body."
+    },
+    {
+      "work_id": "52A399A65F674619AC6B8185E6F3C52B",
+      "title": "On Elias and Fasting",
+      "r2_key": "clavis/texts/52A399A65F674619AC6B8185E6F3C52B/english.txt",
+      "source_path": "data/clavis/bodies/52A399A65F674619AC6B8185E6F3C52B/english.txt",
+      "content_sha256": "f0b149b3cf11725875d85e0c6881da80526816a9d9cc5c2a68e21d1cd84a3a2f",
+      "byte_size": 77651,
+      "title_latin": "De Helia et ieiunio",
+      "author": "Ambrosius episcopus Mediolanensis",
+      "clavis": [
+        "CPL-137"
+      ],
+      "plan_note": "Issue #38 staged body."
+    },
+    {
+      "work_id": "2B1F6A2E09E741F58E1A4070E2F01A7E",
+      "title": "Of the Happiness of Death",
+      "r2_key": "clavis/texts/2B1F6A2E09E741F58E1A4070E2F01A7E/english.txt",
+      "source_path": "data/clavis/bodies/2B1F6A2E09E741F58E1A4070E2F01A7E/english.txt",
+      "content_sha256": "377f3e857274136c92c805de1c07a2bf49a84f63466b7d82b5b2d0a4a967377d",
+      "byte_size": 62920,
+      "title_latin": "De bono mortis",
+      "author": "Ambrosius episcopus Mediolanensis",
+      "clavis": [
+        "CPL-129"
+      ],
+      "plan_note": "Issue #55 staged body."
     }
   ],
   "skipped": [

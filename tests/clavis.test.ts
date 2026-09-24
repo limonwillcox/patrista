@@ -571,6 +571,22 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "41d30637b2c73c9e7d84ed2cd624d6d9ab6ed9683c4ca84e1204a5fab741fc76",
       byte_size: 21538
     });
+    expect(lines.find((item) => item.work_id === "773B6E43A8464983BA3DFE7CF9E5CE3E")).toMatchObject({
+      language: "english",
+      title: "On the Temple, Schools, and Theatres in Athens",
+      status: "ready",
+      r2_key: "clavis/texts/773B6E43A8464983BA3DFE7CF9E5CE3E/english.txt",
+      content_sha256: "7ccc12e51a708fce1a181451274b988103a02b028bcc884d778d172e3144dcb6",
+      byte_size: 6162
+    });
+    expect(lines.find((item) => item.work_id === "ECD449066BF24006A0571686398CD252")).toMatchObject({
+      language: "english",
+      title: "On Naboth",
+      status: "ready",
+      r2_key: "clavis/texts/ECD449066BF24006A0571686398CD252/english.txt",
+      content_sha256: "89aa3b96992fb67ae80c5cb8dbe54a5b230bfcdd1d5107ce28497d1e9fc33583",
+      byte_size: 69026
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

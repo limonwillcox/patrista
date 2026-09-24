@@ -1634,6 +1634,34 @@
       "content_sha256": "41d30637b2c73c9e7d84ed2cd624d6d9ab6ed9683c4ca84e1204a5fab741fc76",
       "byte_size": 21538,
       "plan_note": "Issue #77 staged body. Same work_id is also listed under Basilius Caesariensis; last import row keeps Gregory of Nyssa."
+    },
+    {
+      "work_id": "773B6E43A8464983BA3DFE7CF9E5CE3E",
+      "title": "On the Temple, Schools, and Theatres in Athens",
+      "title_latin": "Commentarius de templo Athenarum",
+      "author": "Athanasius Alexandrinus",
+      "clavis": [
+        "CPG-2289"
+      ],
+      "source_path": "data/clavis/bodies/773B6E43A8464983BA3DFE7CF9E5CE3E/english.txt",
+      "r2_key": "clavis/texts/773B6E43A8464983BA3DFE7CF9E5CE3E/english.txt",
+      "content_sha256": "7ccc12e51a708fce1a181451274b988103a02b028bcc884d778d172e3144dcb6",
+      "byte_size": 6162,
+      "plan_note": "Issue #84 staged body."
+    },
+    {
+      "work_id": "ECD449066BF24006A0571686398CD252",
+      "title": "On Naboth",
+      "title_latin": "De Nabuthae",
+      "author": "Ambrosius episcopus Mediolanensis",
+      "clavis": [
+        "CPL-138"
+      ],
+      "source_path": "data/clavis/bodies/ECD449066BF24006A0571686398CD252/english.txt",
+      "r2_key": "clavis/texts/ECD449066BF24006A0571686398CD252/english.txt",
+      "content_sha256": "89aa3b96992fb67ae80c5cb8dbe54a5b230bfcdd1d5107ce28497d1e9fc33583",
+      "byte_size": 69026,
+      "plan_note": "Issue #49 staged body."
     }
   ],
   "skipped": [

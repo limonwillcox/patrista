@@ -104,6 +104,8 @@ Staged bodies attached with `attach-text`, rather than a `Fathers/English` volum
 - Issue #69: Athanasius, *Apologia ad Constantium* (`B6538F071CEA4C239332B00E7C9B7296`, CPG-2129), "Apology to the Emperor". sha256 `c0ebd9e2a271b2a11f9f95f71faabded991fb2a6bd6a95d0cf6052a8977ab44d`, 61743 bytes.
 - Issue #185: Jerome, *Apologia aduersus libros Rufini seu Epistula Hieronymi aduersus Rufinum* (`C5D1DDB3C8924055B1EF983A824B2789`, CPL-613), "Apology Against Rufinus". sha256 `735a7550fdda539aea326296c3f87f92f4c887a8bb80cd49f3a11b7ef25870a9`, 289625 bytes.
 - Issue #77: *Ad Petrum fratrem de differentia essentiae et hypostaseos* (`E6EEE603DF9D4278A69D23BB929A5E23`, CPG-3196), "To his Brother Gregory, concerning the difference between ουσία and υπόστασις". The export lists this `work_id` under both Basil and Gregory of Nyssa; the mirror keeps Gregory of Nyssa. sha256 `41d30637b2c73c9e7d84ed2cd624d6d9ab6ed9683c4ca84e1204a5fab741fc76`, 21538 bytes.
+- Issue #84: Athanasius, *Commentarius de templo Athenarum* (`773B6E43A8464983BA3DFE7CF9E5CE3E`, CPG-2289), "On the Temple, Schools, and Theatres in Athens". sha256 `7ccc12e51a708fce1a181451274b988103a02b028bcc884d778d172e3144dcb6`, 6162 bytes.
+- Issue #49: Ambrose, *De Nabuthae* (`ECD449066BF24006A0571686398CD252`, CPL-138), "On Naboth". sha256 `89aa3b96992fb67ae80c5cb8dbe54a5b230bfcdd1d5107ce28497d1e9fc33583`, 69026 bytes.
 
 ## Formatting English board
 

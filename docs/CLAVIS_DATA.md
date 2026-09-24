@@ -99,6 +99,9 @@ Staged bodies attached with `attach-text`, rather than a `Fathers/English` volum
 - Issue #105: Gregory Nazianzen, *Ad Aegyptum in aduentu domini in Hierosolymas* (`9A4671890F0F4D17B10501321F88E559`, CPG-3115.1), "On the Arrival of the Egyptians". sha256 `5c361a2282d481528202a02a8f85cf90d1de227300f8e27cf5bada21fd450396`, 17887 bytes.
 - Issue #116: Gregory Nazianzen, *De baptismate et de puritate* (`852554E9B5584DDBA5FCBF0FE2023387`, CPG-3113.2), "The Oration on Holy Baptism". sha256 `fe720e82d48b0c43f479959348e40ab9f28dc66f1a069b12fca144c130bcad54`, 83654 bytes.
 - Issue #8: Augustine, *Ad Donatistas post collationem siue Contra partem Donati post gesta* (`12E4B8193BDC4A8C97B8549A3CF39F68`, CPL-338), "The Correction of the Donatists". sha256 `71650f991da761e2fd95640c5b8d5516ec5fb76a17a7f74b975c8f6685219083`, 89982 bytes.
+- Issue #60: Athanasius, *Apologia contra Arianos (seu Apologia secunda)* (`3C5F838B863641D3B49601A7ED110890`, CPG-2123), "Defence Against the Arians". sha256 `e51dbcc1ff1006519c1a9ac08b9d885ac6688c1f84b2dc943f56e303650c4a04`, 212419 bytes.
+- Issue #66: Athanasius, *Apologia de fuga sua* (`F447B660730E4BE2B4BFDB414FA24551`, CPG-2122), "Defence of His Flight". sha256 `60eba8953545a645473fcb1ed97b1f5b4198599e5b37fef956d59bc05ef0b270`, 38189 bytes.
+- Issue #69: Athanasius, *Apologia ad Constantium* (`B6538F071CEA4C239332B00E7C9B7296`, CPG-2129), "Apology to the Emperor". sha256 `c0ebd9e2a271b2a11f9f95f71faabded991fb2a6bd6a95d0cf6052a8977ab44d`, 61743 bytes.
 
 ## Formatting English board
 

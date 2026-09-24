@@ -531,6 +531,30 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "71650f991da761e2fd95640c5b8d5516ec5fb76a17a7f74b975c8f6685219083",
       byte_size: 89982
     });
+    expect(lines.find((item) => item.work_id === "3C5F838B863641D3B49601A7ED110890")).toMatchObject({
+      language: "english",
+      title: "Defence Against the Arians",
+      status: "ready",
+      r2_key: "clavis/texts/3C5F838B863641D3B49601A7ED110890/english.txt",
+      content_sha256: "e51dbcc1ff1006519c1a9ac08b9d885ac6688c1f84b2dc943f56e303650c4a04",
+      byte_size: 212419
+    });
+    expect(lines.find((item) => item.work_id === "F447B660730E4BE2B4BFDB414FA24551")).toMatchObject({
+      language: "english",
+      title: "Defence of His Flight",
+      status: "ready",
+      r2_key: "clavis/texts/F447B660730E4BE2B4BFDB414FA24551/english.txt",
+      content_sha256: "60eba8953545a645473fcb1ed97b1f5b4198599e5b37fef956d59bc05ef0b270",
+      byte_size: 38189
+    });
+    expect(lines.find((item) => item.work_id === "B6538F071CEA4C239332B00E7C9B7296")).toMatchObject({
+      language: "english",
+      title: "Apology to the Emperor",
+      status: "ready",
+      r2_key: "clavis/texts/B6538F071CEA4C239332B00E7C9B7296/english.txt",
+      content_sha256: "c0ebd9e2a271b2a11f9f95f71faabded991fb2a6bd6a95d0cf6052a8977ab44d",
+      byte_size: 61743
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

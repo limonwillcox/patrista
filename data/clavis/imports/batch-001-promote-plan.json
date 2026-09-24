@@ -1,0 +1,618 @@
+[
+  {
+    "n": 23,
+    "match": "standalone",
+    "path": "Fathers/English/Augustine_English/Reply to Faustus the Manichaean.txt",
+    "extract": "whole-file",
+    "notes": "none",
+    "clavis": "CPL-321",
+    "work_id": "ED338925AEC5413192EB2FC79F806212",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Augustinus \u2014 Contra Faustum Manichaeum",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:standalone"
+    ],
+    "comment": "Text already in repo.\nmatch: standalone\npath: Fathers/English/Augustine_English/Reply to Faustus the Manichaean.txt\nextract: whole-file\nclavis: CPL-321\nwork_id: ED338925AEC5413192EB2FC79F806212\nnext: formatting\nnotes: none"
+  },
+  {
+    "n": 24,
+    "match": "standalone",
+    "path": "Fathers/English/Augustine_English/The Confessions (NPNF Pilkington).txt",
+    "extract": "whole-file",
+    "notes": "none",
+    "clavis": "CPL-251",
+    "work_id": "9A3A739CC27A474ABE5AFDC35A612935",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Augustinus \u2014 Confessiones",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:standalone"
+    ],
+    "comment": "Text already in repo.\nmatch: standalone\npath: Fathers/English/Augustine_English/The Confessions (NPNF Pilkington).txt\nextract: whole-file\nclavis: CPL-251\nwork_id: 9A3A739CC27A474ABE5AFDC35A612935\nnext: formatting\nnotes: none"
+  },
+  {
+    "n": 31,
+    "match": "standalone",
+    "path": "Fathers/English/Augustine_English/Against Fortunatus.txt",
+    "extract": "whole-file",
+    "notes": "none",
+    "clavis": "CPL-318",
+    "work_id": "A375161E12364B19846287C259E774D3",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Augustinus \u2014 Contra Fortunatum Manichaeum",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:standalone"
+    ],
+    "comment": "Text already in repo.\nmatch: standalone\npath: Fathers/English/Augustine_English/Against Fortunatus.txt\nextract: whole-file\nclavis: CPL-318\nwork_id: A375161E12364B19846287C259E774D3\nnext: formatting\nnotes: none"
+  },
+  {
+    "n": 45,
+    "match": "standalone",
+    "path": "Fathers/English/Ambrose_English/Exposition of the Christian Faith.txt",
+    "extract": "whole-file",
+    "notes": "none",
+    "clavis": "CPL-150",
+    "work_id": "5803C26E941F4F4E9DE6DAF85EC26B3E",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Ambrosius \u2014 De fide",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:standalone"
+    ],
+    "comment": "Text already in repo.\nmatch: standalone\npath: Fathers/English/Ambrose_English/Exposition of the Christian Faith.txt\nextract: whole-file\nclavis: CPL-150\nwork_id: 5803C26E941F4F4E9DE6DAF85EC26B3E\nnext: formatting\nnotes: none"
+  },
+  {
+    "n": 52,
+    "match": "standalone",
+    "path": "Fathers/English/Ambrose_English/On the Holy Spirit.txt",
+    "extract": "whole-file",
+    "notes": "none",
+    "clavis": "CPL-151",
+    "work_id": "38374BC367594DC7BB208FD21B3EE14D",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Ambrosius \u2014 De Spiritu Sancto",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:standalone"
+    ],
+    "comment": "Text already in repo.\nmatch: standalone\npath: Fathers/English/Ambrose_English/On the Holy Spirit.txt\nextract: whole-file\nclavis: CPL-151\nwork_id: 38374BC367594DC7BB208FD21B3EE14D\nnext: formatting\nnotes: none"
+  },
+  {
+    "n": 72,
+    "match": "standalone",
+    "path": "Fathers/English/Cyril_Jerusalem_English/Catechetical Lectures.txt",
+    "extract": "whole-file",
+    "notes": "WRONG AUTHOR: Cyril of Jerusalem, not Athanasius; Cyril Catechetical Lectures present.",
+    "clavis": "CPG-3585.2",
+    "work_id": "13B657FAE9DF43BA88966098B9BBA85E",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Athanasius \u2014 Catecheses ad illuminandos 1-18",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:standalone"
+    ],
+    "comment": "Text already in repo.\nmatch: standalone\npath: Fathers/English/Cyril_Jerusalem_English/Catechetical Lectures.txt\nextract: whole-file\nclavis: CPG-3585.2\nwork_id: 13B657FAE9DF43BA88966098B9BBA85E\nnext: formatting\nnotes: WRONG AUTHOR: Cyril of Jerusalem, not Athanasius; Cyril Catechetical Lectures present."
+  },
+  {
+    "n": 56,
+    "match": "collection",
+    "path": "Fathers/English/Ambrose_English/On the Holy Spirit.txt",
+    "extract": "section-needed",
+    "notes": "may be the same NPNF text as De Spiritu Sancto; do not split unless a distinct libellus is clearly marked in the file.",
+    "clavis": "CPL-172; CPPM2-30",
+    "work_id": "090B1CF4CDA5491BA0C20A67063E1D13",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Ambrosius \u2014 De Spiritu Sancto libellus",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Ambrose_English/On the Holy Spirit.txt\nextract: section-needed\nclavis: CPL-172; CPPM2-30\nwork_id: 090B1CF4CDA5491BA0C20A67063E1D13\nnext: formatting\nnotes: may be the same NPNF text as De Spiritu Sancto; do not split unless a distinct libellus is clearly marked in the file."
+  },
+  {
+    "n": 75,
+    "match": "collection",
+    "path": "Fathers/English/Athanasius_English/Letters.txt",
+    "extract": "section-needed",
+    "notes": "heading: Letter LVI.--To the Emperor Jovian.",
+    "clavis": "CPG-2253",
+    "work_id": "1BE9BF41246F45F19809C602D41F082C",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Athanasius \u2014 Ad imperatorem Iouianum",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Athanasius_English/Letters.txt\nextract: section-needed\nclavis: CPG-2253\nwork_id: 1BE9BF41246F45F19809C602D41F082C\nnext: formatting\nnotes: heading: Letter LVI.--To the Emperor Jovian."
+  },
+  {
+    "n": 138,
+    "match": "collection",
+    "path": "Fathers/English/Gregory_Nyssa_English/Dogmatic Treatises and Select Writings.txt",
+    "extract": "section-needed",
+    "notes": "heading: On \"Not Three Gods.\"",
+    "clavis": "CPG-3139",
+    "work_id": "8403C5890607412DB09F54121D1C0882",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Gregorius \u2014 Ad Ablabium quod non sint tres dei",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Gregory_Nyssa_English/Dogmatic Treatises and Select Writings.txt\nextract: section-needed\nclavis: CPG-3139\nwork_id: 8403C5890607412DB09F54121D1C0882\nnext: formatting\nnotes: heading: On \"Not Three Gods.\""
+  },
+  {
+    "n": 142,
+    "match": "collection",
+    "path": "Fathers/English/Gregory_Nyssa_English/Dogmatic Treatises and Select Writings.txt",
+    "extract": "section-needed",
+    "notes": "heading: Gregory of Nyssa Against Eunomius / Against Eunomius.",
+    "clavis": "CPG-3135",
+    "work_id": "8C5F722EA3A0488D80A0B94D4101F5DD",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Gregorius \u2014 Contra Eunomium libri",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Gregory_Nyssa_English/Dogmatic Treatises and Select Writings.txt\nextract: section-needed\nclavis: CPG-3135\nwork_id: 8C5F722EA3A0488D80A0B94D4101F5DD\nnext: formatting\nnotes: heading: Gregory of Nyssa Against Eunomius / Against Eunomius."
+  },
+  {
+    "n": 161,
+    "match": "collection",
+    "path": "Fathers/English/Gregory_Nyssa_English/Dogmatic Treatises and Select Writings.txt",
+    "extract": "section-needed",
+    "notes": "heading: On Infants' Early Deaths.",
+    "clavis": "CPG-3145",
+    "work_id": "5C26BD3257764681AE46790FF9F1140A",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Gregorius \u2014 De infantibus praemature abreptis",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Gregory_Nyssa_English/Dogmatic Treatises and Select Writings.txt\nextract: section-needed\nclavis: CPG-3145\nwork_id: 5C26BD3257764681AE46790FF9F1140A\nnext: formatting\nnotes: heading: On Infants' Early Deaths."
+  },
+  {
+    "n": 137,
+    "match": "collection",
+    "path": "Fathers/English/Gregory_Nyssa_English/Dogmatic Treatises and Select Writings.txt",
+    "extract": "section-needed",
+    "notes": "heading: On the Holy Trinity... To Eustathius.",
+    "clavis": "CPG-3137",
+    "work_id": "6BBF6C5F3ED64531A84EBEB7CEAF085C",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Gregorius \u2014 Ad Eustathium de sancta trinitate",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Gregory_Nyssa_English/Dogmatic Treatises and Select Writings.txt\nextract: section-needed\nclavis: CPG-3137\nwork_id: 6BBF6C5F3ED64531A84EBEB7CEAF085C\nnext: formatting\nnotes: heading: On the Holy Trinity... To Eustathius."
+  },
+  {
+    "n": 126,
+    "match": "collection",
+    "path": "Fathers/English/Gregory_Nyssa_English/Dogmatic Treatises and Select Writings.txt",
+    "extract": "section-needed",
+    "notes": "heading: On the Holy Spirit / Against the Followers of Macedonius.",
+    "clavis": "CPG-3142",
+    "work_id": "29CD75317DC2477094C9F4D25EB5C629",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Gregorius \u2014 Aduersus Macedonianos de spiritu sancto",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Gregory_Nyssa_English/Dogmatic Treatises and Select Writings.txt\nextract: section-needed\nclavis: CPG-3142\nwork_id: 29CD75317DC2477094C9F4D25EB5C629\nnext: formatting\nnotes: heading: On the Holy Spirit / Against the Followers of Macedonius."
+  },
+  {
+    "n": 143,
+    "match": "collection",
+    "path": "Fathers/English/Gregory_Nyssa_English/Dogmatic Treatises and Select Writings.txt",
+    "extract": "section-needed",
+    "notes": "heading: On the Faith. To Simplicius.",
+    "clavis": "CPG-3140",
+    "work_id": "37944672F45E480781E8E9A73E29A85D",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Gregorius \u2014 Ad Simplicium de fide",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Gregory_Nyssa_English/Dogmatic Treatises and Select Writings.txt\nextract: section-needed\nclavis: CPG-3140\nwork_id: 37944672F45E480781E8E9A73E29A85D\nnext: formatting\nnotes: heading: On the Faith. To Simplicius."
+  },
+  {
+    "n": 152,
+    "match": "collection",
+    "path": "Fathers/English/Chrysostom_English/On the Priesthood and Selected Treatises.txt",
+    "extract": "section-needed",
+    "notes": "heading: an exhortation to theodore after his fall.",
+    "clavis": "CPG-4305",
+    "work_id": "13CEA531516C45DA95FF4735A9C904FD",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Iohannes Chrysostomus \u2014 Ad Theodorum lapsum libri 1-2",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Chrysostom_English/On the Priesthood and Selected Treatises.txt\nextract: section-needed\nclavis: CPG-4305\nwork_id: 13CEA531516C45DA95FF4735A9C904FD\nnext: formatting\nnotes: heading: an exhortation to theodore after his fall."
+  },
+  {
+    "n": 180,
+    "match": "collection",
+    "path": "Fathers/English/Chrysostom_English/On the Priesthood and Selected Treatises.txt",
+    "extract": "section-needed",
+    "notes": "heading: the Homilies on the statues to the people of antioch.",
+    "clavis": "CPG-4330",
+    "work_id": "1300AF5DFA5B46CB9ACEC80C4F6F931B",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Iohannes Chrysostomus \u2014 Ad populum Antiochenum homiliae 1-21 (De statuis)",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Chrysostom_English/On the Priesthood and Selected Treatises.txt\nextract: section-needed\nclavis: CPG-4330\nwork_id: 1300AF5DFA5B46CB9ACEC80C4F6F931B\nnext: formatting\nnotes: heading: the Homilies on the statues to the people of antioch."
+  },
+  {
+    "n": 172,
+    "match": "collection",
+    "path": "Fathers/English/Chrysostom_English/On the Priesthood and Selected Treatises.txt",
+    "extract": "section-needed",
+    "notes": "heading: letter to a young widow.",
+    "clavis": "CPG-4314",
+    "work_id": "2C4A6FF2AF8E49BA97E66130037BE656",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Iohannes Chrysostomus \u2014 Ad uiduam iuniorem",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Chrysostom_English/On the Priesthood and Selected Treatises.txt\nextract: section-needed\nclavis: CPG-4314\nwork_id: 2C4A6FF2AF8E49BA97E66130037BE656\nnext: formatting\nnotes: heading: letter to a young widow."
+  },
+  {
+    "n": 162,
+    "match": "collection",
+    "path": "Fathers/English/Chrysostom_English/On the Priesthood and Selected Treatises.txt",
+    "extract": "section-needed",
+    "notes": "heading: instructions to catechumens (first/second instruction).",
+    "clavis": "CPG-4331",
+    "work_id": "4C1757AD1A594469808D076673C1FBCF",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Iohannes Chrysostomus \u2014 Ad illuminandos catecheses 1-2",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Chrysostom_English/On the Priesthood and Selected Treatises.txt\nextract: section-needed\nclavis: CPG-4331\nwork_id: 4C1757AD1A594469808D076673C1FBCF\nnext: formatting\nnotes: heading: instructions to catechumens (first/second instruction)."
+  },
+  {
+    "n": 169,
+    "match": "collection",
+    "path": "Fathers/English/Jerome_English/Select Works (NPNF2 VI remainder).txt",
+    "extract": "section-needed",
+    "notes": "heading: Against Jovinianus.",
+    "clavis": "CPL-610",
+    "work_id": "BD2877DB7FEA476AA9E6DB70A9B53A78",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Hieronymus \u2014 Aduersus Iovinianum",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Jerome_English/Select Works (NPNF2 VI remainder).txt\nextract: section-needed\nclavis: CPL-610\nwork_id: BD2877DB7FEA476AA9E6DB70A9B53A78\nnext: formatting\nnotes: heading: Against Jovinianus."
+  },
+  {
+    "n": 178,
+    "match": "collection",
+    "path": "Fathers/English/Jerome_English/Select Works (NPNF2 VI remainder).txt",
+    "extract": "section-needed",
+    "notes": "heading: Against Helvidius / The Perpetual Virginity of Blessed Mary.",
+    "clavis": "CPL-609",
+    "work_id": "6A8B944C932040B49BAC7974DB6188B5",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Hieronymus \u2014 Aduersus Helvidium de Mariae uirginitate perpetua",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Jerome_English/Select Works (NPNF2 VI remainder).txt\nextract: section-needed\nclavis: CPL-609\nwork_id: 6A8B944C932040B49BAC7974DB6188B5\nnext: formatting\nnotes: heading: Against Helvidius / The Perpetual Virginity of Blessed Mary."
+  },
+  {
+    "n": 204,
+    "match": "collection",
+    "path": "Fathers/English/Jerome_English/Select Works (NPNF2 VI remainder).txt",
+    "extract": "section-needed",
+    "notes": "heading: Against Vigilantius.",
+    "clavis": "CPL-611",
+    "work_id": "8D17CCB137F74C5CBBAAA34620DBE189",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Hieronymus \u2014 Contra Vigilantium",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Jerome_English/Select Works (NPNF2 VI remainder).txt\nextract: section-needed\nclavis: CPL-611\nwork_id: 8D17CCB137F74C5CBBAAA34620DBE189\nnext: formatting\nnotes: heading: Against Vigilantius."
+  },
+  {
+    "n": 170,
+    "match": "collection",
+    "path": "Fathers/English/Jerome_English/Select Works (NPNF2 VI remainder).txt",
+    "extract": "section-needed",
+    "notes": "heading: The Dialogue Against the Luciferians.",
+    "clavis": "CPL-608",
+    "work_id": "23244DB62A0E4C76A3E56D8ADC6EEC35",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Hieronymus \u2014 Altercatio Luciferiani et Orthodoxi",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Jerome_English/Select Works (NPNF2 VI remainder).txt\nextract: section-needed\nclavis: CPL-608\nwork_id: 23244DB62A0E4C76A3E56D8ADC6EEC35\nnext: formatting\nnotes: heading: The Dialogue Against the Luciferians."
+  },
+  {
+    "n": 188,
+    "match": "collection",
+    "path": "Fathers/English/Jerome_English/Select Works (NPNF2 VI remainder).txt",
+    "extract": "section-needed",
+    "notes": "heading: To Pammachius Against John of Jerusalem.",
+    "clavis": "CPL-612",
+    "work_id": "3CD5D41BE4B44E4E9FF14DD222C8CE2C",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Hieronymus \u2014 Contra Ioannem Hierosolymitanum",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Jerome_English/Select Works (NPNF2 VI remainder).txt\nextract: section-needed\nclavis: CPL-612\nwork_id: 3CD5D41BE4B44E4E9FF14DD222C8CE2C\nnext: formatting\nnotes: heading: To Pammachius Against John of Jerusalem."
+  },
+  {
+    "n": 175,
+    "match": "collection",
+    "path": "Fathers/English/Jerome_English/Select Works (NPNF2 VI remainder).txt",
+    "extract": "section-needed",
+    "notes": "heading: Prefaces (Vulgate/scriptural prologues section).",
+    "clavis": "CPL-591a",
+    "work_id": "2E282F375A59410BBCA5C0D2DA4AAC93",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Hieronymus \u2014 A-V Prologi in libros Sacrae Scripturae",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Jerome_English/Select Works (NPNF2 VI remainder).txt\nextract: section-needed\nclavis: CPL-591a\nwork_id: 2E282F375A59410BBCA5C0D2DA4AAC93\nnext: formatting\nnotes: heading: Prefaces (Vulgate/scriptural prologues section)."
+  },
+  {
+    "n": 120,
+    "match": "collection",
+    "path": "Fathers/English/Gregory_Nazianzen_English/Select Orations.txt",
+    "extract": "section-needed",
+    "notes": "heading: Oration II \u2014 In Defence of His Flight to Pontus...",
+    "clavis": "BHL-3666t",
+    "work_id": "FA1860C60A8B4DDFBFB197327CF153E7",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Gregorius \u2014 Apologeticus pro fuga sua",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Gregory_Nazianzen_English/Select Orations.txt\nextract: section-needed\nclavis: BHL-3666t\nwork_id: FA1860C60A8B4DDFBFB197327CF153E7\nnext: formatting\nnotes: heading: Oration II \u2014 In Defence of His Flight to Pontus..."
+  },
+  {
+    "n": 132,
+    "match": "collection",
+    "path": "Fathers/English/Gregory_Nazianzen_English/Select Orations.txt",
+    "extract": "section-needed",
+    "notes": "heading: Oration II (same flight/priesthood oration as Apologeticus).",
+    "clavis": "CPG-3010.2; BHG-730c",
+    "work_id": "FEF2D27310904C7397FA7076B372444C",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Gregorius \u2014 De fuga uel Apologetica uel De sacerdotio",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Gregory_Nazianzen_English/Select Orations.txt\nextract: section-needed\nclavis: CPG-3010.2; BHG-730c\nwork_id: FEF2D27310904C7397FA7076B372444C\nnext: formatting\nnotes: heading: Oration II (same flight/priesthood oration as Apologeticus)."
+  },
+  {
+    "n": 115,
+    "match": "collection",
+    "path": "Fathers/English/Gregory_Nazianzen_English/Select Orations.txt",
+    "extract": "section-needed",
+    "notes": "heading: Oration XL \u2014 The Oration on Holy Baptism.",
+    "clavis": "CPG-3111",
+    "work_id": "D0650655D18C489BB7D83A51F8A61AD3",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Gregorius \u2014 De baptismate",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Gregory_Nazianzen_English/Select Orations.txt\nextract: section-needed\nclavis: CPG-3111\nwork_id: D0650655D18C489BB7D83A51F8A61AD3\nnext: formatting\nnotes: heading: Oration XL \u2014 The Oration on Holy Baptism."
+  },
+  {
+    "n": 135,
+    "match": "collection",
+    "path": "Fathers/English/Gregory_Nazianzen_English/Select Orations.txt",
+    "extract": "section-needed",
+    "notes": "heading: Oration XXXVIII \u2014 On the Theophany, or Birthday of Christ.",
+    "clavis": "CPG-3115.2",
+    "work_id": "C0AD296CB60B4311B0B40096AFF41A44",
+    "labels": [
+      "pipeline:english",
+      "status:getting-texts",
+      "batch:001"
+    ],
+    "title": "Gregorius \u2014 De natiuitate domini",
+    "new_labels": [
+      "pipeline:english",
+      "batch:001",
+      "status:formatting",
+      "match:collection"
+    ],
+    "comment": "Text already in repo.\nmatch: collection\npath: Fathers/English/Gregory_Nazianzen_English/Select Orations.txt\nextract: section-needed\nclavis: CPG-3115.2\nwork_id: C0AD296CB60B4311B0B40096AFF41A44\nnext: formatting\nnotes: heading: Oration XXXVIII \u2014 On the Theophany, or Birthday of Christ."
+  }
+]

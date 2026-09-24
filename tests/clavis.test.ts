@@ -1,0 +1,675 @@
+// @ts-nocheck
+import { mkdtempSync, readFileSync, rmSync } from "fs";
+import { tmpdir } from "os";
+import { join } from "path";
+import { DatabaseSync } from "node:sqlite";
+import { afterEach, describe, expect, it } from "vitest";
+import { attachTextFile } from "../scripts/clavis/attach-text.mjs";
+import {
+  applyAuthorDetails,
+  importWorks,
+  importWorksFile,
+  openDatabase,
+  readAuthorDetails,
+  readWorkRows
+} from "../scripts/clavis/import-works.mjs";
+import { packClavisSqlite } from "../scripts/clavis/pack-sqlite.mjs";
+import {
+  attachReadyBatch,
+  listEnglishFiles,
+  loadWorks,
+  planEnglishAttaches,
+  trimCcelIndex
+} from "../scripts/clavis/attach-english.mjs";
+import worker from "../server/donate-worker";
+import {
+  CLAVIS_DRAFT_CACHE_CONTROL,
+  CLAVIS_TEXT_CACHE_CONTROL,
+  handleClavisFetch,
+  isEnglishReady
+} from "../server/clavis-api";
+
+const ROOT = join(import.meta.dirname, "..");
+const FIXTURE = join(ROOT, "data/clavis/fixtures/works.jsonl");
+const ENGLISH = join(ROOT, "data/clavis/fixtures/retractationes-english.txt");
+const SCHEMA = join(ROOT, "data/clavis/schema.sql");
+const AUGUSTINE = "E84EBB53FD524B8F8CD332CC55C805D1";
+const AUGUSTINE_AUTHOR = "A4300000000000000000000000000001";
+const ACACIUS_WORK = "6F4F6BC373DE46C0B5C6093B651B0EAE";
+
+const dirs = [];
+
+function tempDir() {
+  const dir = mkdtempSync(join(tmpdir(), "clavis-"));
+  dirs.push(dir);
+  return dir;
+}
+
+afterEach(() => {
+  while (dirs.length) rmSync(dirs.pop(), { recursive: true, force: true });
+});
+
+function sqliteD1(db) {
+  return {
+    prepare(sql) {
+      const stmt = db.prepare(sql);
+      let params = [];
+      const api = {
+        bind(...values) {
+          params = values;
+          return api;
+        },
+        async all() {
+          return { results: stmt.all(...params) };
+        },
+        async first() {
+          return stmt.get(...params) ?? null;
+        }
+      };
+      return api;
+    }
+  };
+}
+
+function fileBucket(root) {
+  return {
+    async get(key) {
+      const match = /^clavis\/texts\/([A-F0-9]{32})\/(english|original)\.txt$/.exec(key);
+      if (!match) return null;
+      try {
+        const body = readFileSync(join(root, match[1], match[2] + ".txt"));
+        return { body, size: body.byteLength };
+      } catch {
+        return null;
+      }
+    }
+  };
+}
+
+describe("Formatting English gate", () => {
+  it("requires language=english and status=ready", () => {
+    expect(isEnglishReady([])).toBe(false);
+    expect(isEnglishReady([{ language: "english", status: "draft" }])).toBe(false);
+    expect(isEnglishReady([{ language: "original", status: "ready" }])).toBe(false);
+    expect(isEnglishReady([{ language: "english", status: "ready" }])).toBe(true);
+    expect(isEnglishReady([{ language: "english", status: "ready", source_path: "Fathers/English/Augustine_English/retractations.txt" }])).toBe(true);
+  });
+});
+
+describe("schema → import fixture → attach english → author works text", () => {
+  it("nests a ready English body under Retractationes without storing the body in sqlite", () => {
+    const dir = tempDir();
+    const sqlitePath = join(dir, "clavis.sqlite");
+    const bodies = join(dir, "bodies");
+    const packed = packClavisSqlite(FIXTURE, sqlitePath);
+    expect(packed).toMatchObject({ authors: 2, works: 3, rows: 3, duplicateRows: 0 });
+
+    const again = packClavisSqlite(FIXTURE, sqlitePath);
+    expect(again.works).toBe(3);
+
+    const db = openDatabase(sqlitePath);
+    try {
+      const tables = db.prepare("SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name").all();
+      expect(tables.map((row) => row.name)).toEqual(["authors", "work_texts", "works"]);
+
+      const pk = db.prepare("SELECT sql FROM sqlite_master WHERE name = 'work_texts'").get();
+      expect(String(pk.sql)).toMatch(/PRIMARY KEY \(work_id, language\)/);
+      expect(String(pk.sql)).not.toMatch(/\bbody\b/i);
+
+      const author = db.prepare("SELECT name_latin, letter_bucket FROM authors WHERE author_id = ?").get(AUGUSTINE_AUTHOR);
+      expect(author).toMatchObject({
+        name_latin: "Augustinus episcopus Hipponensis",
+        letter_bucket: "A"
+      });
+
+      const child = db.prepare("SELECT parent_work_id, title_latin FROM works WHERE work_id = ?").get("A4300000000000000000000000000002");
+      expect(child).toMatchObject({ parent_work_id: AUGUSTINE, title_latin: "Retractationes liber I" });
+
+      const acacius = db.prepare("SELECT parent_work_id, clavis_codes, path_json FROM works WHERE work_id = ?").get(ACACIUS_WORK);
+      expect(acacius.parent_work_id).toBeNull();
+      expect(JSON.parse(acacius.clavis_codes)).toEqual(["CPG-5991", "CPG-9123"]);
+      expect(JSON.parse(acacius.path_json)).toEqual(["Genuina"]);
+
+      expect(() => {
+        db.prepare("INSERT INTO work_texts (work_id, language, status) VALUES (?, 'french', 'draft')").run(AUGUSTINE);
+      }).toThrow(/CHECK constraint failed/);
+    } finally {
+      db.close();
+    }
+
+    const draft = attachTextFile({
+      sqlitePath,
+      filePath: ENGLISH,
+      workId: AUGUSTINE,
+      language: "english",
+      title: "Retractations",
+      status: "draft",
+      sourcePath: "data/clavis/fixtures/retractationes-english.txt",
+      bodiesRoot: bodies
+    });
+    expect(draft.r2_key).toBe("clavis/texts/" + AUGUSTINE + "/english.txt");
+    expect(draft.status).toBe("draft");
+
+    const ready = attachTextFile({
+      sqlitePath,
+      filePath: ENGLISH,
+      workId: AUGUSTINE,
+      language: "english",
+      title: "Retractations",
+      status: "ready",
+      sourcePath: "data/clavis/fixtures/retractationes-english.txt",
+      bodiesRoot: bodies
+    });
+    expect(ready.content_sha256).toBe(draft.content_sha256);
+    expect(ready.byte_size).toBeGreaterThan(0);
+
+    const original = attachTextFile({
+      sqlitePath,
+      filePath: ENGLISH,
+      workId: AUGUSTINE,
+      language: "original",
+      title: "Retractationes",
+      status: "draft",
+      sourcePath: "data/clavis/fixtures/retractationes-english.txt",
+      bodiesRoot: bodies
+    });
+    expect(original.language).toBe("original");
+
+    const check = openDatabase(sqlitePath);
+    try {
+      const texts = check.prepare("SELECT language, status FROM work_texts WHERE work_id = ? ORDER BY language").all(AUGUSTINE);
+      expect(texts).toEqual([
+        { language: "english", status: "ready" },
+        { language: "original", status: "draft" }
+      ]);
+      const nested = check.prepare(`
+        SELECT a.name_latin AS author, w.title_latin AS title, t.language, t.status, t.r2_key, t.title AS text_title
+        FROM authors a
+        JOIN works w ON w.author_id = a.author_id
+        JOIN work_texts t ON t.work_id = w.work_id
+        WHERE w.work_id = ? AND t.language = 'english'
+      `).get(AUGUSTINE);
+      expect(nested).toMatchObject({
+        author: "Augustinus episcopus Hipponensis",
+        title: "Retractationes",
+        language: "english",
+        status: "ready",
+        r2_key: "clavis/texts/" + AUGUSTINE + "/english.txt",
+        text_title: "Retractations"
+      });
+      const stored = JSON.stringify(check.prepare("SELECT * FROM work_texts").all());
+      expect(stored).not.toContain("It is not a Fathers/English file");
+      expect(readFileSync(join(bodies, AUGUSTINE, "english.txt"), "utf8")).toContain("Fixture English body");
+    } finally {
+      check.close();
+    }
+
+    const renamed = readWorkRows(FIXTURE).map((row) =>
+      row.author_id === AUGUSTINE_AUTHOR ? { ...row, name_latin: "Augustinus Hipponensis" } : row
+    );
+    const live = openDatabase(sqlitePath);
+    try {
+      importWorks(live, renamed, "2026-09-23T00:00:00.000Z");
+      const count = live.prepare("SELECT COUNT(*) AS n FROM authors").get();
+      expect(count.n).toBe(2);
+      const name = live.prepare("SELECT name_latin FROM authors WHERE author_id = ?").get(AUGUSTINE_AUTHOR);
+      expect(name.name_latin).toBe("Augustinus Hipponensis");
+      const still = live.prepare("SELECT status FROM work_texts WHERE work_id = ? AND language = 'english'").get(AUGUSTINE);
+      expect(still.status).toBe("ready");
+    } finally {
+      live.close();
+    }
+  });
+
+  it("refuses to attach a work that was not imported", () => {
+    const dir = tempDir();
+    const sqlitePath = join(dir, "clavis.sqlite");
+    packClavisSqlite(FIXTURE, sqlitePath);
+    expect(() =>
+      attachTextFile({
+        sqlitePath,
+        filePath: ENGLISH,
+        workId: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        language: "english",
+        bodiesRoot: join(dir, "bodies")
+      })
+    ).toThrow(/not in works/);
+  });
+});
+
+describe("clavis worker", () => {
+  it("returns 503 without CLAVIS_DB and leaves donate on its own path", async () => {
+    const authors = await handleClavisFetch(new Request("https://patrista.com/api/clavis/authors"));
+    expect(authors?.status).toBe(503);
+    expect(await authors.json()).toEqual({
+      error: "Clavis database is not connected. Bind D1 CLAVIS_DB."
+    });
+
+    const donate = await worker.fetch(
+      new Request("https://patrista.com/api/donate/checkout", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ amountCents: 500, interval: "once", feeCover: false })
+      })
+    );
+    expect(donate.status).toBe(503);
+    expect(String((await donate.json()).error)).toMatch(/not connected/i);
+
+    const viaWorker = await worker.fetch(new Request("https://patrista.com/api/clavis/authors"));
+    expect(viaWorker.status).toBe(503);
+
+    const other = await worker.fetch(new Request("https://patrista.com/api/catalog"));
+    expect(other.status).toBe(404);
+
+    const ignored = await handleClavisFetch(new Request("https://patrista.com/api/donate/checkout"));
+    expect(ignored).toBeNull();
+  });
+
+  it("reads author → works → ready English text from D1 and R2", async () => {
+    const dir = tempDir();
+    const sqlitePath = join(dir, "clavis.sqlite");
+    const bodies = join(dir, "bodies");
+    packClavisSqlite(FIXTURE, sqlitePath);
+    attachTextFile({
+      sqlitePath,
+      filePath: ENGLISH,
+      workId: AUGUSTINE,
+      language: "english",
+      title: "Retractations",
+      status: "ready",
+      sourcePath: "data/clavis/fixtures/retractationes-english.txt",
+      bodiesRoot: bodies
+    });
+
+    const db = new DatabaseSync(sqlitePath, { readOnly: true, enableForeignKeyConstraints: true });
+    try {
+      const env = { CLAVIS_DB: sqliteD1(db), CLAVIS_TEXTS: fileBucket(bodies) };
+      const authors = await handleClavisFetch(new Request("https://patrista.com/api/clavis/authors"), env);
+      expect(authors.status).toBe(200);
+      expect(authors.headers.get("cache-control")).toBe("public, max-age=300");
+      const authorJson = await authors.json();
+      expect(authorJson.authors.map((row) => row.name_latin)).toEqual([
+        "Acacius Constantinopolitanus",
+        "Augustinus episcopus Hipponensis"
+      ]);
+
+      const worksRes = await handleClavisFetch(
+        new Request("https://patrista.com/api/clavis/authors/" + AUGUSTINE_AUTHOR + "/works"),
+        env
+      );
+      expect(worksRes.status).toBe(200);
+      const worksJson = await worksRes.json();
+      expect(worksJson.author.name_latin).toBe("Augustinus episcopus Hipponensis");
+      const retract = worksJson.works.find((work) => work.work_id === AUGUSTINE);
+      expect(retract.title_latin).toBe("Retractationes");
+      expect(retract.english_ready).toBe(true);
+      expect(retract.texts).toEqual([
+        expect.objectContaining({
+          language: "english",
+          status: "ready",
+          title: "Retractations",
+          r2_key: "clavis/texts/" + AUGUSTINE + "/english.txt"
+        })
+      ]);
+      const child = worksJson.works.find((work) => work.work_id === "A4300000000000000000000000000002");
+      expect(child.parent_work_id).toBe(AUGUSTINE);
+      expect(child.english_ready).toBe(false);
+
+      const one = await handleClavisFetch(new Request("https://patrista.com/api/clavis/works/" + AUGUSTINE), env);
+      expect((await one.json()).work.clavis).toEqual(["CPL-250"]);
+
+      const text = await handleClavisFetch(
+        new Request("https://patrista.com/api/clavis/works/" + AUGUSTINE + "/text?language=english"),
+        env
+      );
+      expect(text.status).toBe(200);
+      expect(text.headers.get("content-type")).toContain("text/plain");
+      expect(text.headers.get("cache-control")).toBe(CLAVIS_TEXT_CACHE_CONTROL);
+      expect(text.headers.get("x-clavis-text-status")).toBe("ready");
+      expect(await text.text()).toContain("Fixture English body");
+
+      const noBucket = await handleClavisFetch(
+        new Request("https://patrista.com/api/clavis/works/" + AUGUSTINE + "/text?language=english"),
+        { CLAVIS_DB: sqliteD1(db) }
+      );
+      expect(noBucket.status).toBe(501);
+      expect(await noBucket.json()).toEqual({
+        error: "Clavis text bucket is not connected. Bind R2 CLAVIS_TEXTS."
+      });
+    } finally {
+      db.close();
+    }
+  });
+
+  it("does not cache a draft English body as public", async () => {
+    const dir = tempDir();
+    const sqlitePath = join(dir, "clavis.sqlite");
+    const bodies = join(dir, "bodies");
+    packClavisSqlite(FIXTURE, sqlitePath);
+    attachTextFile({
+      sqlitePath,
+      filePath: ENGLISH,
+      workId: AUGUSTINE,
+      language: "english",
+      status: "draft",
+      bodiesRoot: bodies
+    });
+    const db = new DatabaseSync(sqlitePath, { readOnly: true });
+    try {
+      const env = { CLAVIS_DB: sqliteD1(db), CLAVIS_TEXTS: fileBucket(bodies) };
+      const work = await handleClavisFetch(new Request("https://patrista.com/api/clavis/works/" + AUGUSTINE), env);
+      expect((await work.json()).work.english_ready).toBe(false);
+      const text = await handleClavisFetch(
+        new Request("https://patrista.com/api/clavis/works/" + AUGUSTINE + "/text?language=english"),
+        env
+      );
+      expect(text.headers.get("cache-control")).toBe(CLAVIS_DRAFT_CACHE_CONTROL);
+      expect(text.headers.get("x-clavis-text-status")).toBe("draft");
+    } finally {
+      db.close();
+    }
+  });
+
+  it("rejects an unknown language", async () => {
+    const dir = tempDir();
+    const sqlitePath = join(dir, "clavis.sqlite");
+    packClavisSqlite(FIXTURE, sqlitePath);
+    const db = new DatabaseSync(sqlitePath, { readOnly: true });
+    try {
+      const res = await handleClavisFetch(
+        new Request("https://patrista.com/api/clavis/works/" + AUGUSTINE + "/text?language=french"),
+        { CLAVIS_DB: sqliteD1(db), CLAVIS_TEXTS: fileBucket(join(dir, "bodies")) }
+      );
+      expect(res.status).toBe(400);
+    } finally {
+      db.close();
+    }
+  });
+});
+
+describe("clavis spine and English tranche", () => {
+  const spine = join(ROOT, "data/clavis/imports/works-by-author.jsonl");
+  const authors = join(ROOT, "data/clavis/imports/authors-expanded.jsonl");
+  const planPath = join(ROOT, "data/clavis/imports/batch-001-promote-plan.json");
+  const faustusId = "ED338925AEC5413192EB2FC79F806212";
+
+  it("imports the multi-work Clavis spine idempotently", () => {
+    const dir = tempDir();
+    const sqlitePath = join(dir, "clavis.sqlite");
+    const rows = readWorkRows(spine);
+    expect(rows.length).toBeGreaterThan(5000);
+    const counts = importWorksFile(spine, sqlitePath);
+    expect(counts.rows).toBe(rows.length);
+    expect(counts.works).toBe(new Set(rows.map((row) => row.work_id)).size);
+    expect(counts.authors).toBeGreaterThan(200);
+    expect(counts.duplicateRows).toBe(rows.length - counts.works);
+    const again = importWorksFile(spine, sqlitePath);
+    expect(again.works).toBe(counts.works);
+    expect(again.authors).toBe(counts.authors);
+
+    const db = openDatabase(sqlitePath);
+    try {
+      const urls = applyAuthorDetails(db, readAuthorDetails(authors));
+      expect(urls.updated).toBeGreaterThan(200);
+      const retract = db.prepare("SELECT title_latin FROM works WHERE work_id = ?").get(AUGUSTINE);
+      expect(retract.title_latin).toBe("Retractationes");
+      const acacius = db.prepare("SELECT detail_url FROM authors WHERE author_id = ?").get("553436765CE645E3BBE5B69EBC2B87D1");
+      expect(String(acacius.detail_url)).toMatch(/^https:\/\/clavis\.brepols\.net\//);
+    } finally {
+      db.close();
+    }
+  });
+
+  it("attaches a real Fathers/English file only when english is ready", () => {
+    const dir = tempDir();
+    const sqlitePath = join(dir, "clavis.sqlite");
+    importWorksFile(spine, sqlitePath);
+    const db = openDatabase(sqlitePath);
+    try {
+      const before = db.prepare("SELECT COUNT(*) AS n FROM work_texts").get();
+      expect(before.n).toBe(0);
+      expect(isEnglishReady([])).toBe(false);
+
+      const files = listEnglishFiles(join(ROOT, "Fathers/English"));
+      const plan = JSON.parse(readFileSync(planPath, "utf8"));
+      const planned = planEnglishAttaches(loadWorks(db), files, plan);
+      const faustus = planned.ready.find((row) => row.source_path.endsWith("Reply to Faustus the Manichaean.txt"));
+      expect(faustus).toMatchObject({
+        work_id: faustusId,
+        language: "english",
+        status: "ready",
+        title_latin: "Contra Faustum Manichaeum"
+      });
+      expect(planned.ready.some((row) => row.source_path.endsWith("/Letters.txt"))).toBe(false);
+      expect(planned.skipped).toContainEqual(expect.objectContaining({
+        source_path: "Fathers/English/Athanasius_English/On the Incarnation of the Word.txt",
+        reason: "collection"
+      }));
+      expect(planned.skipped).toContainEqual(expect.objectContaining({
+        source_path: "Fathers/English/Augustine_English/The Confessions of St. Augustine. Augustine.txt",
+        reason: "duplicate_file"
+      }));
+
+      attachReadyBatch({
+        db,
+        ready: [faustus],
+        repoRoot: ROOT,
+        bodiesRoot: join(dir, "bodies")
+      });
+      const text = db.prepare("SELECT language, status, r2_key FROM work_texts WHERE work_id = ?").get(faustusId);
+      expect(text).toMatchObject({
+        language: "english",
+        status: "ready",
+        r2_key: "clavis/texts/" + faustusId + "/english.txt"
+      });
+      expect(isEnglishReady([text])).toBe(true);
+      expect(isEnglishReady([{ language: "english", status: "draft" }])).toBe(false);
+      const letters = db.prepare("SELECT COUNT(*) AS n FROM work_texts WHERE source_path LIKE '%Letters.txt'").get();
+      expect(letters.n).toBe(0);
+      expect(Object.keys(db.prepare("SELECT * FROM work_texts").get())).not.toContain("body");
+    } finally {
+      db.close();
+    }
+  });
+
+  it("records the staged catecheses as ready seed rows", () => {
+    const lines = readFileSync(join(ROOT, "data/clavis/seeds/work-texts.jsonl"), "utf8")
+      .trim()
+      .split("\n")
+      .map((line) => JSON.parse(line));
+    const first = lines.find((item) => item.work_id === "84D990F10C594432B98F2B7720BC8D75");
+    const second = lines.find((item) => item.work_id === "CBEB3672B73940E4ABEFFB72CF7F80C5");
+    expect(first).toMatchObject({
+      language: "english",
+      title: "First Instruction to Catechumens",
+      status: "ready",
+      r2_key: "clavis/texts/84D990F10C594432B98F2B7720BC8D75/english.txt",
+      content_sha256: "0c063da13b5c0e8824e16f8095103471e8ae12e16fd485eeca63199cfac489b3",
+      byte_size: 28572
+    });
+    expect(second).toMatchObject({
+      language: "english",
+      title: "Second Instruction to Catechumens",
+      status: "ready",
+      r2_key: "clavis/texts/CBEB3672B73940E4ABEFFB72CF7F80C5/english.txt",
+      content_sha256: "295bb627c982b69522fe3d1aa37321fbb4f3d618fc75995ac2e1b53fe3968a05",
+      byte_size: 32575
+    });
+    const lights = lines.find((item) => item.work_id === "99397283D8804F49A9F053C06D79114C");
+    expect(lights).toMatchObject({
+      language: "english",
+      title: "Oration on the Holy Lights",
+      status: "ready",
+      r2_key: "clavis/texts/99397283D8804F49A9F053C06D79114C/english.txt",
+      content_sha256: "0059129718395301566f35d33716ad800cc4a78732f227ef7a34078d3fb6dc2b",
+      byte_size: 33159
+    });
+    const egyptians = lines.find((item) => item.work_id === "9A4671890F0F4D17B10501321F88E559");
+    expect(egyptians).toMatchObject({
+      language: "english",
+      title: "On the Arrival of the Egyptians",
+      status: "ready",
+      r2_key: "clavis/texts/9A4671890F0F4D17B10501321F88E559/english.txt",
+      content_sha256: "5c361a2282d481528202a02a8f85cf90d1de227300f8e27cf5bada21fd450396",
+      byte_size: 17887
+    });
+    const baptism = lines.find((item) => item.work_id === "852554E9B5584DDBA5FCBF0FE2023387");
+    expect(baptism).toMatchObject({
+      language: "english",
+      title: "The Oration on Holy Baptism",
+      status: "ready",
+      r2_key: "clavis/texts/852554E9B5584DDBA5FCBF0FE2023387/english.txt",
+      content_sha256: "fe720e82d48b0c43f479959348e40ab9f28dc66f1a069b12fca144c130bcad54",
+      byte_size: 83654
+    });
+    const donatists = lines.find((item) => item.work_id === "12E4B8193BDC4A8C97B8549A3CF39F68");
+    expect(donatists).toMatchObject({
+      language: "english",
+      title: "The Correction of the Donatists",
+      status: "ready",
+      r2_key: "clavis/texts/12E4B8193BDC4A8C97B8549A3CF39F68/english.txt",
+      content_sha256: "71650f991da761e2fd95640c5b8d5516ec5fb76a17a7f74b975c8f6685219083",
+      byte_size: 89982
+    });
+    expect(lines.find((item) => item.work_id === "3C5F838B863641D3B49601A7ED110890")).toMatchObject({
+      language: "english",
+      title: "Defence Against the Arians",
+      status: "ready",
+      r2_key: "clavis/texts/3C5F838B863641D3B49601A7ED110890/english.txt",
+      content_sha256: "e51dbcc1ff1006519c1a9ac08b9d885ac6688c1f84b2dc943f56e303650c4a04",
+      byte_size: 212419
+    });
+    expect(lines.find((item) => item.work_id === "F447B660730E4BE2B4BFDB414FA24551")).toMatchObject({
+      language: "english",
+      title: "Defence of His Flight",
+      status: "ready",
+      r2_key: "clavis/texts/F447B660730E4BE2B4BFDB414FA24551/english.txt",
+      content_sha256: "60eba8953545a645473fcb1ed97b1f5b4198599e5b37fef956d59bc05ef0b270",
+      byte_size: 38189
+    });
+    expect(lines.find((item) => item.work_id === "B6538F071CEA4C239332B00E7C9B7296")).toMatchObject({
+      language: "english",
+      title: "Apology to the Emperor",
+      status: "ready",
+      r2_key: "clavis/texts/B6538F071CEA4C239332B00E7C9B7296/english.txt",
+      content_sha256: "c0ebd9e2a271b2a11f9f95f71faabded991fb2a6bd6a95d0cf6052a8977ab44d",
+      byte_size: 61743
+    });
+    expect(lines.find((item) => item.work_id === "C5D1DDB3C8924055B1EF983A824B2789")).toMatchObject({
+      language: "english",
+      title: "Apology Against Rufinus",
+      status: "ready",
+      r2_key: "clavis/texts/C5D1DDB3C8924055B1EF983A824B2789/english.txt",
+      content_sha256: "735a7550fdda539aea326296c3f87f92f4c887a8bb80cd49f3a11b7ef25870a9",
+      byte_size: 289625
+    });
+    expect(lines.find((item) => item.work_id === "E6EEE603DF9D4278A69D23BB929A5E23")).toMatchObject({
+      language: "english",
+      title: "To his Brother Gregory, concerning the difference between ουσία and υπόστασις",
+      status: "ready",
+      r2_key: "clavis/texts/E6EEE603DF9D4278A69D23BB929A5E23/english.txt",
+      content_sha256: "41d30637b2c73c9e7d84ed2cd624d6d9ab6ed9683c4ca84e1204a5fab741fc76",
+      byte_size: 21538
+    });
+    expect(lines.find((item) => item.work_id === "773B6E43A8464983BA3DFE7CF9E5CE3E")).toMatchObject({
+      language: "english",
+      title: "On the Temple, Schools, and Theatres in Athens",
+      status: "ready",
+      r2_key: "clavis/texts/773B6E43A8464983BA3DFE7CF9E5CE3E/english.txt",
+      content_sha256: "7ccc12e51a708fce1a181451274b988103a02b028bcc884d778d172e3144dcb6",
+      byte_size: 6162
+    });
+    expect(lines.find((item) => item.work_id === "ECD449066BF24006A0571686398CD252")).toMatchObject({
+      language: "english",
+      title: "On Naboth",
+      status: "ready",
+      r2_key: "clavis/texts/ECD449066BF24006A0571686398CD252/english.txt",
+      content_sha256: "89aa3b96992fb67ae80c5cb8dbe54a5b230bfcdd1d5107ce28497d1e9fc33583",
+      byte_size: 69026
+    });
+    expect(lines.find((item) => item.work_id === "87978F5DD3F84B62A7A05D83E01B3E46")).toMatchObject({
+      language: "english",
+      title: "The First Canonical Epistle of St. Basil to Amphilochius (Canons I–XVI)",
+      status: "ready",
+      r2_key: "clavis/texts/87978F5DD3F84B62A7A05D83E01B3E46/english.txt",
+      content_sha256: "4d8a4043833e06db398e32a82159f4cedde423c068b23588c7ab6f6d9175c35d",
+      byte_size: 6595
+    });
+    expect(lines.find((item) => item.work_id === "449E4FAE1FFA41F1BE26941388BC1A10")).toMatchObject({
+      language: "english",
+      title: "The Apology of Rufinus",
+      status: "ready",
+      r2_key: "clavis/texts/449E4FAE1FFA41F1BE26941388BC1A10/english.txt",
+      content_sha256: "91830a81fc68afd5be0f09f11b1d7dce4dc1d71878d0dcd70774c4c40313a692",
+      byte_size: 278290
+    });
+    expect(lines.find((item) => item.work_id === "EB66B24E69C74E3895C20EC7A567BC40")).toMatchObject({
+      language: "english",
+      title: "Commentary on the Apocalypse of the Blessed John",
+      status: "ready",
+      r2_key: "clavis/texts/EB66B24E69C74E3895C20EC7A567BC40/english.txt",
+      content_sha256: "8bfaaf255d7a208bee4f57e97eb62955ee3f02b498246c870561aeda8d2dc1d2",
+      byte_size: 90514
+    });
+    expect(lines.find((item) => item.work_id === "CE5CA020C8584E04B7A71F73083F1B70")).toMatchObject({
+      language: "english",
+      title: "First Book on Compunction (to Demetrius)",
+      status: "ready",
+      r2_key: "clavis/texts/CE5CA020C8584E04B7A71F73083F1B70/english.txt",
+      content_sha256: "d6c20e948e8c09e71f4b168d786cd0dba703b022dcda166f78ecf247c883a487",
+      byte_size: 69223
+    });
+    expect(lines.find((item) => item.work_id === "1F5F2DE50EE14B21940358C8FCDCF127")).toMatchObject({
+      language: "english",
+      title: "Second Book on Compunction (to Stelechius)",
+      status: "ready",
+      r2_key: "clavis/texts/1F5F2DE50EE14B21940358C8FCDCF127/english.txt",
+      content_sha256: "4f473d4cb33a93cf0dfaf6570c9e404a8b30f89b8084f139dad8406a210aaf5a",
+      byte_size: 50131
+    });
+    expect(lines.find((item) => item.work_id === "52A399A65F674619AC6B8185E6F3C52B")).toMatchObject({
+      language: "english",
+      title: "On Elias and Fasting",
+      status: "ready",
+      r2_key: "clavis/texts/52A399A65F674619AC6B8185E6F3C52B/english.txt",
+      content_sha256: "f0b149b3cf11725875d85e0c6881da80526816a9d9cc5c2a68e21d1cd84a3a2f",
+      byte_size: 77651
+    });
+    expect(lines.find((item) => item.work_id === "2B1F6A2E09E741F58E1A4070E2F01A7E")).toMatchObject({
+      language: "english",
+      title: "Of the Happiness of Death",
+      status: "ready",
+      r2_key: "clavis/texts/2B1F6A2E09E741F58E1A4070E2F01A7E/english.txt",
+      content_sha256: "377f3e857274136c92c805de1c07a2bf49a84f63466b7d82b5b2d0a4a967377d",
+      byte_size: 62920
+    });
+    expect(lines.find((item) => item.work_id === "625C765E8FB845EC91632AE01F33DD04")).toMatchObject({
+      language: "english",
+      title: "Letter CLXXXIX. To Eustathius the physician",
+      status: "ready",
+      r2_key: "clavis/texts/625C765E8FB845EC91632AE01F33DD04/english.txt",
+      content_sha256: "22943df5cb9dbda1cc53998e6746338b336806f558fb58f6e413086b9ed143d9",
+      byte_size: 15835
+    });
+  });
+
+  it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {
+    const dump = Array.from({ length: 40 }, (_, i) => i + ". file:///ccel/s/schaff/anf03/cache/x.html").join("\n");
+    const trimmed = trimCcelIndex("Of Patience.\nChapter I.\n" + dump + "\n");
+    expect(trimmed).toBe("Of Patience.\nChapter I.\n");
+    expect(trimmed).not.toContain("file:///ccel/");
+    expect(trimCcelIndex("Chapter I.\nfile:///ccel/only-one\n")).toContain("file:///ccel/only-one");
+  });
+});
+
+describe("schema file", () => {
+  it("declares the three mirror tables and the composite text key", () => {
+    const sql = readFileSync(SCHEMA, "utf8");
+    expect(sql).toMatch(/CREATE TABLE IF NOT EXISTS authors/);
+    expect(sql).toMatch(/CREATE TABLE IF NOT EXISTS works/);
+    expect(sql).toMatch(/CREATE TABLE IF NOT EXISTS work_texts/);
+    expect(sql).toMatch(/PRIMARY KEY \(work_id, language\)/);
+    expect(sql).toMatch(/CHECK \(language IN \('english', 'original'\)\)/);
+    expect(sql).not.toMatch(/\bbody\b/i);
+  });
+});

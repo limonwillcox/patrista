@@ -17,7 +17,10 @@
     "links:ingest-hcf": "node scripts/links/ingest-hcf.mjs",
     "links:ingest-ecatena": "node scripts/links/ingest-ecana.mjs",
     "links:report": "node scripts/links/report.mjs",
-    "links:pack": "node scripts/links/pack-sqlite.mjs"
+    "links:pack": "node scripts/links/pack-sqlite.mjs",
+    "clavis:import": "node scripts/clavis/import-works.mjs",
+    "clavis:pack": "node scripts/clavis/pack-sqlite.mjs",
+    "clavis:attach-english": "node scripts/clavis/attach-english.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

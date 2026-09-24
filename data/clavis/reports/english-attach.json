@@ -3474,6 +3474,367 @@
         "CPG-1811"
       ],
       "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "161926EE9AF54FC89BC0B2FDD2EBD5E3",
+      "title": "The Life of St. Severinus",
+      "r2_key": "clavis/texts/161926EE9AF54FC89BC0B2FDD2EBD5E3/english.txt",
+      "source_path": "data/clavis/bodies/161926EE9AF54FC89BC0B2FDD2EBD5E3/english.txt",
+      "content_sha256": "fc669f747481d11bbe0fc8d1da3ed7fd0954439ce7c35646781ce212f0a810ca",
+      "byte_size": 157702,
+      "title_latin": "Commemoratorium de uita Sancti Seuerini cum epistulis amoebaeis Eugippii et Paschasii diaconi",
+      "author": "Eugippius abbas",
+      "clavis": [
+        "CPL-678",
+        "BHL-7655",
+        "BHL-7656",
+        "BHL-7657"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "162BDDB115E04CC6ABD2889194583274",
+      "title": "Against Hierocles",
+      "r2_key": "clavis/texts/162BDDB115E04CC6ABD2889194583274/english.txt",
+      "source_path": "data/clavis/bodies/162BDDB115E04CC6ABD2889194583274/english.txt",
+      "content_sha256": "718228cdaf7aa7c17e471aaf8e2c912db79584ef734bf9cd5aaca490720d9cf5",
+      "byte_size": 96691,
+      "title_latin": "Contra Hieroclem",
+      "author": "Eusebius Caesariensis",
+      "clavis": [
+        "CPG-3485"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "3A412CD85B6C40919973BE9057FA131B",
+      "title": "On Virginity",
+      "r2_key": "clavis/texts/3A412CD85B6C40919973BE9057FA131B/english.txt",
+      "source_path": "data/clavis/bodies/3A412CD85B6C40919973BE9057FA131B/english.txt",
+      "content_sha256": "b479c923c843b533d8d73b2b42d2c10cacef441f1694d4796b17ccfe3d0dc5ac",
+      "byte_size": 155816,
+      "title_latin": "De uirginitate",
+      "author": "Gregorius Nyssenus",
+      "clavis": [
+        "CPG-3165"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "E7ED39666E20450AB37D07C8DD4AD0E5",
+      "title": "On the Baptism of Christ (In diem luminum)",
+      "r2_key": "clavis/texts/E7ED39666E20450AB37D07C8DD4AD0E5/english.txt",
+      "source_path": "data/clavis/bodies/E7ED39666E20450AB37D07C8DD4AD0E5/english.txt",
+      "content_sha256": "471d09f191097e055c0a3542463f043c2d530fad9bab6811de1747147aea5eed",
+      "byte_size": 36641,
+      "title_latin": "In diem luminum",
+      "author": "Gregorius Nyssenus",
+      "clavis": [
+        "BHG-1934",
+        "CPG-3173"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "4070CFFFF97949C3A3EE3C2D11355265",
+      "title": "Funeral Oration on Meletius",
+      "r2_key": "clavis/texts/4070CFFFF97949C3A3EE3C2D11355265/english.txt",
+      "source_path": "data/clavis/bodies/4070CFFFF97949C3A3EE3C2D11355265/english.txt",
+      "content_sha256": "61469b719b792bcaaeb00500447ca30b935b5bbf1f74c0102496ffb3cfa5c457",
+      "byte_size": 28790,
+      "title_latin": "Oratio funebris in Meletium episcopum",
+      "author": "Gregorius Nyssenus",
+      "clavis": [
+        "CPG-3180",
+        "NBHG-Meletius Anti 1",
+        "BHG-1243",
+        "BHG-1243b"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "504F5E8FF22540219ECE1BA9B7AFEAB4",
+      "title": "A Sectional Confession of Faith",
+      "r2_key": "clavis/texts/504F5E8FF22540219ECE1BA9B7AFEAB4/english.txt",
+      "source_path": "data/clavis/bodies/504F5E8FF22540219ECE1BA9B7AFEAB4/english.txt",
+      "content_sha256": "df96c448e04df042120afad959620ac1ebe3eb88d0bd3e3589eeb770ad2869fc",
+      "byte_size": 37942,
+      "title_latin": "De fide capitula duodecim (Liber de Dei Verbi incarnatione)",
+      "author": "Gregorius episcopus Neocaesariensis thaumaturgus",
+      "clavis": [
+        "CPG-1772"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "C853D73DF5E44DB0802ED23E5E6E0ECB",
+      "title": "On the Seventy Apostles",
+      "r2_key": "clavis/texts/C853D73DF5E44DB0802ED23E5E6E0ECB/english.txt",
+      "source_path": "data/clavis/bodies/C853D73DF5E44DB0802ED23E5E6E0ECB/english.txt",
+      "content_sha256": "51f54d06cd3629cac935d96267793b0b93540763bd939dca973f604b2986cb65",
+      "byte_size": 14703,
+      "title_latin": "Index apostolorum et discipulorum",
+      "author": "Hippolytus Romanus",
+      "clavis": [
+        "CPG-1911",
+        "BHG-153a",
+        "BHG-153b"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "B45104619E7048E9BF18E42B3A3FB4C0",
+      "title": "A Discourse on the End of the World, and on Antichrist, and on the Second Coming of Our Lord",
+      "r2_key": "clavis/texts/B45104619E7048E9BF18E42B3A3FB4C0/english.txt",
+      "source_path": "data/clavis/bodies/B45104619E7048E9BF18E42B3A3FB4C0/english.txt",
+      "content_sha256": "5040805dba1be6b978514d520bb21e72b05d1ab4122ace5b64a424bd153f7a24",
+      "byte_size": 65819,
+      "title_latin": "Oratio de consummatione mundi et Antichristo et altero Christi adventu",
+      "author": "Hippolytus Romanus",
+      "clavis": [
+        "BHG-812z",
+        "CPG-1910"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "0CB230F34E754E2197104128D5DA7657",
+      "title": "Discourse on the Holy Theophany",
+      "r2_key": "clavis/texts/0CB230F34E754E2197104128D5DA7657/english.txt",
+      "source_path": "data/clavis/bodies/0CB230F34E754E2197104128D5DA7657/english.txt",
+      "content_sha256": "f1c97696765ac7d79a07633cb370fd9fa0dfb1bf325e07c57a4dc42f4a9a76cb",
+      "byte_size": 16840,
+      "title_latin": "Sermo in sancta Theophania",
+      "author": "Hippolytus Romanus",
+      "clavis": [
+        "BHG-1940",
+        "CPG-1917"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "4C1757AD1A594469808D076673C1FBCF",
+      "title": "Instructions to Catechumens (First and Second)",
+      "r2_key": "clavis/texts/4C1757AD1A594469808D076673C1FBCF/english.txt",
+      "source_path": "data/clavis/bodies/4C1757AD1A594469808D076673C1FBCF/english.txt",
+      "content_sha256": "28b495220aaabb8b768848cf6c04c7d0fbef8f1c7520fa938e659cf9d0f22f34",
+      "byte_size": 63774,
+      "title_latin": "Ad illuminandos catecheses 1-2",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4331"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "A326058D3F874AFD8E7099A092E1AF95",
+      "title": "Homily on Matt. xxvi. 19 (“Father if it be possible…”) and against Marcionists and Manichæans",
+      "r2_key": "clavis/texts/A326058D3F874AFD8E7099A092E1AF95/english.txt",
+      "source_path": "data/clavis/bodies/A326058D3F874AFD8E7099A092E1AF95/english.txt",
+      "content_sha256": "294ce6f0caa26604702c9df2c1b4c6ac6e3029fb3719a190cadb40449c30d46d",
+      "byte_size": 31321,
+      "title_latin": "De Christi precibus",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4323"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "20DFB5397DD34C2BAF88CAB710E91379",
+      "title": "Three Homilies Concerning the Power of Demons",
+      "r2_key": "clavis/texts/20DFB5397DD34C2BAF88CAB710E91379/english.txt",
+      "source_path": "data/clavis/bodies/20DFB5397DD34C2BAF88CAB710E91379/english.txt",
+      "content_sha256": "03964b8034b487b4bfa698c6eb9a714b3945679c29e48b9e47ebe4aa0aeff8f9",
+      "byte_size": 100996,
+      "title_latin": "De diabolo tentatore homiliae 1-3",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4332",
+        "BHG-939q",
+        "BHG-939r",
+        "BHG-939s"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "9F8F904CCA234681984E119C854342FC",
+      "title": "Homily Concerning Lowliness of Mind (Phil. i. 18)",
+      "r2_key": "clavis/texts/9F8F904CCA234681984E119C854342FC/english.txt",
+      "source_path": "data/clavis/bodies/9F8F904CCA234681984E119C854342FC/english.txt",
+      "content_sha256": "2dd5a3e4ac0a76713c2b501f6b9e3483ba7cb9512801c8cbd26f1d0433789028",
+      "byte_size": 44954,
+      "title_latin": "De profectu euangelii",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4385"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "2285537B145044A0ACC951603F191F8B",
+      "title": "Dialogue on the Life of St. John Chrysostom",
+      "r2_key": "clavis/texts/2285537B145044A0ACC951603F191F8B/english.txt",
+      "source_path": "data/clavis/bodies/2285537B145044A0ACC951603F191F8B/english.txt",
+      "content_sha256": "eebbcd6e45b674a6ce16508784007410c218ba80ea1a51f93bc5b728d409c120",
+      "byte_size": 296024,
+      "title_latin": "Dialogus de vita Iohannis Chrysostomi",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-6037",
+        "NBHG-Ioannes Chry 1",
+        "BHG-870",
+        "BHG-870e",
+        "BHG-870f"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "FD3E42D7895E4DE0B66E4353981B134E",
+      "title": "Letter from St. John Chrysostom to Innocent, Bishop of Rome (first letter, Easter 404)",
+      "r2_key": "clavis/texts/FD3E42D7895E4DE0B66E4353981B134E/english.txt",
+      "source_path": "data/clavis/bodies/FD3E42D7895E4DE0B66E4353981B134E/english.txt",
+      "content_sha256": "634ff5f326ffadc877fe63fd7379a31c6d9d6a05b3beb28b6b151c2682a2cba2",
+      "byte_size": 15955,
+      "title_latin": "Epistula Iohannis Chrysostomi ad Innocentium papam",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4402",
+        "CPL-1641.4"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "04E3176013F84194B93F64D83FD3F907",
+      "title": "Letter from St. John Chrysostom to Innocent, Bishop of Rome (second letter, from exile)",
+      "r2_key": "clavis/texts/04E3176013F84194B93F64D83FD3F907/english.txt",
+      "source_path": "data/clavis/bodies/04E3176013F84194B93F64D83FD3F907/english.txt",
+      "content_sha256": "fc975d8d0831b3d898ce787ee3cb3eacd320a23324e1629a83d8abd3d59d7f80",
+      "byte_size": 4272,
+      "title_latin": "Epistula Iohannis Chrysostomi ad Innocentium papam",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4403",
+        "CPL-1641.11"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "E589B526D82644D98E99BC43CAAB1E33",
+      "title": "No One Can Harm the Man Who Does Not Injure Himself",
+      "r2_key": "clavis/texts/E589B526D82644D98E99BC43CAAB1E33/english.txt",
+      "source_path": "data/clavis/bodies/E589B526D82644D98E99BC43CAAB1E33/english.txt",
+      "content_sha256": "458f2d11e43be669a859503ed26a7384aa77737b03f3eba7dbe4b2d19d54a731",
+      "byte_size": 72387,
+      "title_latin": "Epistula seu libellus \"Quod nemo laeditur nisi a seipso\"",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4400",
+        "NBHG-Daniel Prop 11",
+        "BHG-488d"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "E8DF4CCC2D27478CAA8A7F479054E649",
+      "title": "Homily on the Holy Martyr Saint Babylas",
+      "r2_key": "clavis/texts/E8DF4CCC2D27478CAA8A7F479054E649/english.txt",
+      "source_path": "data/clavis/bodies/E8DF4CCC2D27478CAA8A7F479054E649/english.txt",
+      "content_sha256": "58ecd21eee31134b1d2e417093aef5cb700af8f322c190a993243d74f32c934f",
+      "byte_size": 15101,
+      "title_latin": "Homilia de S. Babyla ep. Antiocheno m.",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4347",
+        "NBHG-Babylas Anti 3",
+        "BHG-207"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "974E6635A2814A87B2568A6E2A662CE4",
+      "title": "Two Homilies on Eutropius",
+      "r2_key": "clavis/texts/974E6635A2814A87B2568A6E2A662CE4/english.txt",
+      "source_path": "data/clavis/bodies/974E6635A2814A87B2568A6E2A662CE4/english.txt",
+      "content_sha256": "b961da5eb7f09cf87180ca6f1a394decae4bb683ecf430e478648cfb778eb575",
+      "byte_size": 93835,
+      "title_latin": "In Eutropium",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4392"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "1AC9653AD1CB4F8F894E74C9F1B4028F",
+      "title": "Homily to Those Who Had Not Attended the Assembly (Rom. xii. 20)",
+      "r2_key": "clavis/texts/1AC9653AD1CB4F8F894E74C9F1B4028F/english.txt",
+      "source_path": "data/clavis/bodies/1AC9653AD1CB4F8F894E74C9F1B4028F/english.txt",
+      "content_sha256": "655d69beb0b3f2c313a63dbc32b2f752f4602664be5eef9db8ec32e6d77c02fe",
+      "byte_size": 48962,
+      "title_latin": "In illud: Si esurierit inimicus (Rom. 12, 20)",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4375"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "3CD66F4D4EC94BEAABC401FC580F8C4D",
+      "title": "Homily on the Paralytic Let Down Through the Roof",
+      "r2_key": "clavis/texts/3CD66F4D4EC94BEAABC401FC580F8C4D/english.txt",
+      "source_path": "data/clavis/bodies/3CD66F4D4EC94BEAABC401FC580F8C4D/english.txt",
+      "content_sha256": "dcaa58d52adfa01a1475a31f0ec9948c92b416d5244f69d9c0600e4ecff818bc",
+      "byte_size": 50868,
+      "title_latin": "In paralyticum demissum per tectum",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4370"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "75C9E198F70F4D928E0CF4B6F04B9587",
+      "title": "Homily Against Publishing the Errors of the Brethren",
+      "r2_key": "clavis/texts/75C9E198F70F4D928E0CF4B6F04B9587/english.txt",
+      "source_path": "data/clavis/bodies/75C9E198F70F4D928E0CF4B6F04B9587/english.txt",
+      "content_sha256": "aa2ba13659a0556407ce708093d499fe65cd6119520fdf0ce87bed8af8f52b67",
+      "byte_size": 37739,
+      "title_latin": "Peccata fratrum non euulganda",
+      "author": "Iohannes Chrysostomus",
+      "clavis": [
+        "CPG-4389"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "910FBBACBECD4735AF15D6C719150402",
+      "title": "Oration Concerning Simeon and Anna",
+      "r2_key": "clavis/texts/910FBBACBECD4735AF15D6C719150402/english.txt",
+      "source_path": "data/clavis/bodies/910FBBACBECD4735AF15D6C719150402/english.txt",
+      "content_sha256": "79a911b89464373c96de408be088fdae8a8ca5ca8cc561b7799f42127b2e7381",
+      "byte_size": 57063,
+      "title_latin": "Sermo de Simeone et Anna",
+      "author": "Methodius Olympius",
+      "clavis": [
+        "BHG-1961",
+        "CPG-1827"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "DC9BEEC40FA740F78C9ACF8893B4BB68",
+      "title": "Oration on the Palms",
+      "r2_key": "clavis/texts/DC9BEEC40FA740F78C9ACF8893B4BB68/english.txt",
+      "source_path": "data/clavis/bodies/DC9BEEC40FA740F78C9ACF8893B4BB68/english.txt",
+      "content_sha256": "834546f6642836e6b309aaa9ebe4affddbe22e10828dd2d16afc8c98330c3671",
+      "byte_size": 21680,
+      "title_latin": "Sermo in ramos palmarum",
+      "author": "Methodius Olympius",
+      "clavis": [
+        "CPG-1828"
+      ],
+      "plan_note": "Dewey FOUND staged body."
     }
   ],
   "skipped": [

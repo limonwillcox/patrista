@@ -1611,6 +1611,198 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "ee28f438e7a104c1dc60972dfcbd33c20bc06969661230bd600ab6054ea7a057",
       byte_size: 37907
     });
+    expect(lines.find((item) => item.work_id === "161926EE9AF54FC89BC0B2FDD2EBD5E3")).toMatchObject({
+      language: "english",
+      title: "The Life of St. Severinus",
+      status: "ready",
+      r2_key: "clavis/texts/161926EE9AF54FC89BC0B2FDD2EBD5E3/english.txt",
+      content_sha256: "fc669f747481d11bbe0fc8d1da3ed7fd0954439ce7c35646781ce212f0a810ca",
+      byte_size: 157702
+    });
+    expect(lines.find((item) => item.work_id === "162BDDB115E04CC6ABD2889194583274")).toMatchObject({
+      language: "english",
+      title: "Against Hierocles",
+      status: "ready",
+      r2_key: "clavis/texts/162BDDB115E04CC6ABD2889194583274/english.txt",
+      content_sha256: "718228cdaf7aa7c17e471aaf8e2c912db79584ef734bf9cd5aaca490720d9cf5",
+      byte_size: 96691
+    });
+    expect(lines.find((item) => item.work_id === "3A412CD85B6C40919973BE9057FA131B")).toMatchObject({
+      language: "english",
+      title: "On Virginity",
+      status: "ready",
+      r2_key: "clavis/texts/3A412CD85B6C40919973BE9057FA131B/english.txt",
+      content_sha256: "b479c923c843b533d8d73b2b42d2c10cacef441f1694d4796b17ccfe3d0dc5ac",
+      byte_size: 155816
+    });
+    expect(lines.find((item) => item.work_id === "E7ED39666E20450AB37D07C8DD4AD0E5")).toMatchObject({
+      language: "english",
+      title: "On the Baptism of Christ (In diem luminum)",
+      status: "ready",
+      r2_key: "clavis/texts/E7ED39666E20450AB37D07C8DD4AD0E5/english.txt",
+      content_sha256: "471d09f191097e055c0a3542463f043c2d530fad9bab6811de1747147aea5eed",
+      byte_size: 36641
+    });
+    expect(lines.find((item) => item.work_id === "4070CFFFF97949C3A3EE3C2D11355265")).toMatchObject({
+      language: "english",
+      title: "Funeral Oration on Meletius",
+      status: "ready",
+      r2_key: "clavis/texts/4070CFFFF97949C3A3EE3C2D11355265/english.txt",
+      content_sha256: "61469b719b792bcaaeb00500447ca30b935b5bbf1f74c0102496ffb3cfa5c457",
+      byte_size: 28790
+    });
+    expect(lines.find((item) => item.work_id === "504F5E8FF22540219ECE1BA9B7AFEAB4")).toMatchObject({
+      language: "english",
+      title: "A Sectional Confession of Faith",
+      status: "ready",
+      r2_key: "clavis/texts/504F5E8FF22540219ECE1BA9B7AFEAB4/english.txt",
+      content_sha256: "df96c448e04df042120afad959620ac1ebe3eb88d0bd3e3589eeb770ad2869fc",
+      byte_size: 37942
+    });
+    expect(lines.find((item) => item.work_id === "C853D73DF5E44DB0802ED23E5E6E0ECB")).toMatchObject({
+      language: "english",
+      title: "On the Seventy Apostles",
+      status: "ready",
+      r2_key: "clavis/texts/C853D73DF5E44DB0802ED23E5E6E0ECB/english.txt",
+      content_sha256: "51f54d06cd3629cac935d96267793b0b93540763bd939dca973f604b2986cb65",
+      byte_size: 14703
+    });
+    expect(lines.find((item) => item.work_id === "B45104619E7048E9BF18E42B3A3FB4C0")).toMatchObject({
+      language: "english",
+      title: "A Discourse on the End of the World, and on Antichrist, and on the Second Coming of Our Lord",
+      status: "ready",
+      r2_key: "clavis/texts/B45104619E7048E9BF18E42B3A3FB4C0/english.txt",
+      content_sha256: "5040805dba1be6b978514d520bb21e72b05d1ab4122ace5b64a424bd153f7a24",
+      byte_size: 65819
+    });
+    expect(lines.find((item) => item.work_id === "0CB230F34E754E2197104128D5DA7657")).toMatchObject({
+      language: "english",
+      title: "Discourse on the Holy Theophany",
+      status: "ready",
+      r2_key: "clavis/texts/0CB230F34E754E2197104128D5DA7657/english.txt",
+      content_sha256: "f1c97696765ac7d79a07633cb370fd9fa0dfb1bf325e07c57a4dc42f4a9a76cb",
+      byte_size: 16840
+    });
+    expect(lines.find((item) => item.work_id === "4C1757AD1A594469808D076673C1FBCF")).toMatchObject({
+      language: "english",
+      title: "Instructions to Catechumens (First and Second)",
+      status: "ready",
+      r2_key: "clavis/texts/4C1757AD1A594469808D076673C1FBCF/english.txt",
+      content_sha256: "28b495220aaabb8b768848cf6c04c7d0fbef8f1c7520fa938e659cf9d0f22f34",
+      byte_size: 63774
+    });
+    expect(lines.find((item) => item.work_id === "A326058D3F874AFD8E7099A092E1AF95")).toMatchObject({
+      language: "english",
+      title: "Homily on Matt. xxvi. 19 (“Father if it be possible…”) and against Marcionists and Manichæans",
+      status: "ready",
+      r2_key: "clavis/texts/A326058D3F874AFD8E7099A092E1AF95/english.txt",
+      content_sha256: "294ce6f0caa26604702c9df2c1b4c6ac6e3029fb3719a190cadb40449c30d46d",
+      byte_size: 31321
+    });
+    expect(lines.find((item) => item.work_id === "20DFB5397DD34C2BAF88CAB710E91379")).toMatchObject({
+      language: "english",
+      title: "Three Homilies Concerning the Power of Demons",
+      status: "ready",
+      r2_key: "clavis/texts/20DFB5397DD34C2BAF88CAB710E91379/english.txt",
+      content_sha256: "03964b8034b487b4bfa698c6eb9a714b3945679c29e48b9e47ebe4aa0aeff8f9",
+      byte_size: 100996
+    });
+    expect(lines.find((item) => item.work_id === "9F8F904CCA234681984E119C854342FC")).toMatchObject({
+      language: "english",
+      title: "Homily Concerning Lowliness of Mind (Phil. i. 18)",
+      status: "ready",
+      r2_key: "clavis/texts/9F8F904CCA234681984E119C854342FC/english.txt",
+      content_sha256: "2dd5a3e4ac0a76713c2b501f6b9e3483ba7cb9512801c8cbd26f1d0433789028",
+      byte_size: 44954
+    });
+    expect(lines.find((item) => item.work_id === "2285537B145044A0ACC951603F191F8B")).toMatchObject({
+      language: "english",
+      title: "Dialogue on the Life of St. John Chrysostom",
+      status: "ready",
+      r2_key: "clavis/texts/2285537B145044A0ACC951603F191F8B/english.txt",
+      content_sha256: "eebbcd6e45b674a6ce16508784007410c218ba80ea1a51f93bc5b728d409c120",
+      byte_size: 296024
+    });
+    expect(lines.find((item) => item.work_id === "FD3E42D7895E4DE0B66E4353981B134E")).toMatchObject({
+      language: "english",
+      title: "Letter from St. John Chrysostom to Innocent, Bishop of Rome (first letter, Easter 404)",
+      status: "ready",
+      r2_key: "clavis/texts/FD3E42D7895E4DE0B66E4353981B134E/english.txt",
+      content_sha256: "634ff5f326ffadc877fe63fd7379a31c6d9d6a05b3beb28b6b151c2682a2cba2",
+      byte_size: 15955
+    });
+    expect(lines.find((item) => item.work_id === "04E3176013F84194B93F64D83FD3F907")).toMatchObject({
+      language: "english",
+      title: "Letter from St. John Chrysostom to Innocent, Bishop of Rome (second letter, from exile)",
+      status: "ready",
+      r2_key: "clavis/texts/04E3176013F84194B93F64D83FD3F907/english.txt",
+      content_sha256: "fc975d8d0831b3d898ce787ee3cb3eacd320a23324e1629a83d8abd3d59d7f80",
+      byte_size: 4272
+    });
+    expect(lines.find((item) => item.work_id === "E589B526D82644D98E99BC43CAAB1E33")).toMatchObject({
+      language: "english",
+      title: "No One Can Harm the Man Who Does Not Injure Himself",
+      status: "ready",
+      r2_key: "clavis/texts/E589B526D82644D98E99BC43CAAB1E33/english.txt",
+      content_sha256: "458f2d11e43be669a859503ed26a7384aa77737b03f3eba7dbe4b2d19d54a731",
+      byte_size: 72387
+    });
+    expect(lines.find((item) => item.work_id === "E8DF4CCC2D27478CAA8A7F479054E649")).toMatchObject({
+      language: "english",
+      title: "Homily on the Holy Martyr Saint Babylas",
+      status: "ready",
+      r2_key: "clavis/texts/E8DF4CCC2D27478CAA8A7F479054E649/english.txt",
+      content_sha256: "58ecd21eee31134b1d2e417093aef5cb700af8f322c190a993243d74f32c934f",
+      byte_size: 15101
+    });
+    expect(lines.find((item) => item.work_id === "974E6635A2814A87B2568A6E2A662CE4")).toMatchObject({
+      language: "english",
+      title: "Two Homilies on Eutropius",
+      status: "ready",
+      r2_key: "clavis/texts/974E6635A2814A87B2568A6E2A662CE4/english.txt",
+      content_sha256: "b961da5eb7f09cf87180ca6f1a394decae4bb683ecf430e478648cfb778eb575",
+      byte_size: 93835
+    });
+    expect(lines.find((item) => item.work_id === "1AC9653AD1CB4F8F894E74C9F1B4028F")).toMatchObject({
+      language: "english",
+      title: "Homily to Those Who Had Not Attended the Assembly (Rom. xii. 20)",
+      status: "ready",
+      r2_key: "clavis/texts/1AC9653AD1CB4F8F894E74C9F1B4028F/english.txt",
+      content_sha256: "655d69beb0b3f2c313a63dbc32b2f752f4602664be5eef9db8ec32e6d77c02fe",
+      byte_size: 48962
+    });
+    expect(lines.find((item) => item.work_id === "3CD66F4D4EC94BEAABC401FC580F8C4D")).toMatchObject({
+      language: "english",
+      title: "Homily on the Paralytic Let Down Through the Roof",
+      status: "ready",
+      r2_key: "clavis/texts/3CD66F4D4EC94BEAABC401FC580F8C4D/english.txt",
+      content_sha256: "dcaa58d52adfa01a1475a31f0ec9948c92b416d5244f69d9c0600e4ecff818bc",
+      byte_size: 50868
+    });
+    expect(lines.find((item) => item.work_id === "75C9E198F70F4D928E0CF4B6F04B9587")).toMatchObject({
+      language: "english",
+      title: "Homily Against Publishing the Errors of the Brethren",
+      status: "ready",
+      r2_key: "clavis/texts/75C9E198F70F4D928E0CF4B6F04B9587/english.txt",
+      content_sha256: "aa2ba13659a0556407ce708093d499fe65cd6119520fdf0ce87bed8af8f52b67",
+      byte_size: 37739
+    });
+    expect(lines.find((item) => item.work_id === "910FBBACBECD4735AF15D6C719150402")).toMatchObject({
+      language: "english",
+      title: "Oration Concerning Simeon and Anna",
+      status: "ready",
+      r2_key: "clavis/texts/910FBBACBECD4735AF15D6C719150402/english.txt",
+      content_sha256: "79a911b89464373c96de408be088fdae8a8ca5ca8cc561b7799f42127b2e7381",
+      byte_size: 57063
+    });
+    expect(lines.find((item) => item.work_id === "DC9BEEC40FA740F78C9ACF8893B4BB68")).toMatchObject({
+      language: "english",
+      title: "Oration on the Palms",
+      status: "ready",
+      r2_key: "clavis/texts/DC9BEEC40FA740F78C9ACF8893B4BB68/english.txt",
+      content_sha256: "834546f6642836e6b309aaa9ebe4affddbe22e10828dd2d16afc8c98330c3671",
+      byte_size: 21680
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

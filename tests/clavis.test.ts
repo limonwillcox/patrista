@@ -979,6 +979,94 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "66f55c1f17ac0fa0dab715549302396893c849a45f969e25514e15f4131d0c92",
       byte_size: 424417
     });
+    expect(lines.find((item) => item.work_id === "2A947A2E95874A89A893959ED14B1C5B")).toMatchObject({
+      language: "english",
+      title: "On the Resurrection of the Dead",
+      status: "ready",
+      r2_key: "clavis/texts/2A947A2E95874A89A893959ED14B1C5B/english.txt",
+      content_sha256: "4961193d3d1290987f4450fc6f7b0048cc6a7ef3f090a96a37e5545358e5fc15",
+      byte_size: 94526
+    });
+    expect(lines.find((item) => item.work_id === "F3520F5C5F734F9BB2BB3FA2FFCD49FE")).toMatchObject({
+      language: "english",
+      title: "A Plea for the Christians (Embassy)",
+      status: "ready",
+      r2_key: "clavis/texts/F3520F5C5F734F9BB2BB3FA2FFCD49FE/english.txt",
+      content_sha256: "6dac8919067d48cbdf485ad9d3122be32d20acae70f684ba59d5b16aec59df19",
+      byte_size: 104157
+    });
+    expect(lines.find((item) => item.work_id === "EE96887038474C85B2971FBF906B14E6")).toMatchObject({
+      language: "english",
+      title: "The Book of the Laws of Various Countries",
+      status: "ready",
+      r2_key: "clavis/texts/EE96887038474C85B2971FBF906B14E6/english.txt",
+      content_sha256: "c7dd2ce5df22d8537690c5676d9bb4df56a3f1abd403225c902451dc85da4568",
+      byte_size: 54038
+    });
+    expect(lines.find((item) => item.work_id === "2B3338894E6F417BA8EE5FC0C6066C8E")).toMatchObject({
+      language: "english",
+      title: "Bede's Ecclesiastical History of England",
+      status: "ready",
+      r2_key: "clavis/texts/2B3338894E6F417BA8EE5FC0C6066C8E/english.txt",
+      content_sha256: "8a90d82801828f8e6095b79aa5bb063ff349c5f1de5aff965d12ae8feccfc035",
+      byte_size: 629345
+    });
+    expect(lines.find((item) => item.work_id === "92454D22E91440C98A18D0BA6C792F51")).toMatchObject({
+      language: "english",
+      title: "The Seven Genuine Epistles of Ignatius (ANF shorter and longer versions)",
+      status: "ready",
+      r2_key: "clavis/texts/92454D22E91440C98A18D0BA6C792F51/english.txt",
+      content_sha256: "f1b2a99858480705adf5e385101c8d213868b2d8a02bc81334ff407aa6fea976",
+      byte_size: 277645
+    });
+    expect(lines.find((item) => item.work_id === "4A3837A44C424F69855C4DFD68035502")).toMatchObject({
+      language: "english",
+      title: "Address of Tatian to the Greeks",
+      status: "ready",
+      r2_key: "clavis/texts/4A3837A44C424F69855C4DFD68035502/english.txt",
+      content_sha256: "dcea9410b41fbe606d2262965950fc0fdd30cb5575fd88f7eee84f3c44ef869b",
+      byte_size: 99399
+    });
+    expect(lines.find((item) => item.work_id === "BF9173970E214EEF8830F1CB42880CFA")).toMatchObject({
+      language: "english",
+      title: "The Instructions of Commodianus",
+      status: "ready",
+      r2_key: "clavis/texts/BF9173970E214EEF8830F1CB42880CFA/english.txt",
+      content_sha256: "c2bf7c34ea598775e3ae9b253ac7fc14529b4e312a7fd07be8e0fb01cb354e11",
+      byte_size: 80254
+    });
+    expect(lines.find((item) => item.work_id === "C5CAD272624D4A07B4A99D40FA464907")).toMatchObject({
+      language: "english",
+      title: "On the Jewish Meats",
+      status: "ready",
+      r2_key: "clavis/texts/C5CAD272624D4A07B4A99D40FA464907/english.txt",
+      content_sha256: "f4f0e19aa1defa5517f2f300e4c0a8069cabd0e50b166c708678321024032de0",
+      byte_size: 29535
+    });
+    expect(lines.find((item) => item.work_id === "2366A8A732974E638039A9594F74DADC")).toMatchObject({
+      language: "english",
+      title: "The Ecclesiastical History of Theodoret",
+      status: "ready",
+      r2_key: "clavis/texts/2366A8A732974E638039A9594F74DADC/english.txt",
+      content_sha256: "bd9d02f6f5efbe5770a53bb2952c298599d25a4961baaacfd018adfe108a51ef",
+      byte_size: 697496
+    });
+    expect(lines.find((item) => item.work_id === "B2037578EC314E579A2F9D09E45E0D38")).toMatchObject({
+      language: "english",
+      title: "The Consolation of Philosophy",
+      status: "ready",
+      r2_key: "clavis/texts/B2037578EC314E579A2F9D09E45E0D38/english.txt",
+      content_sha256: "d02c98b93f8c734e27f8b5746e21434ab716a6eb04f2395b99e5a0cf3eb02628",
+      byte_size: 249385
+    });
+    expect(lines.find((item) => item.work_id === "DBA8ED30B4CF4E4891B31036C5029B05")).toMatchObject({
+      language: "english",
+      title: "The Sacred History (Chronicles), Books I–II",
+      status: "ready",
+      r2_key: "clavis/texts/DBA8ED30B4CF4E4891B31036C5029B05/english.txt",
+      content_sha256: "cd0a22c6ffa7bb47ff9d1d58b6a00bd7f4f8c7ed4bbc05769bfc0135bcede379",
+      byte_size: 265833
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

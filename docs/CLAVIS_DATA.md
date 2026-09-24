@@ -155,6 +155,17 @@ Staged bodies attached with `attach-text`, rather than a `Fathers/English` volum
 - Dewey FOUND: Athanasius Alexandrinus, *Orationes contra Arianos III* (`23B12A4DF60F4DE98D7E8380625BBD3F`, CPG-2093), "Four Discourses Against the Arians (Orations/Discourses I–III)". sha256 `0e3fba817c9622eb4a70b872f4be8145974f3224465f6a7a3fa0e20fcf8727a5`, 746344 bytes.
 - Dewey FOUND: Athanasius Alexandrinus, *Vita S. Antonii ab. in Thebaide* (`0FBB951E609D4F0AAEEE0B515DE99B1A`, CPG-2101, NBHG-Antonius Theb 1, BHG-140, BHG-140b, BHG-140c, BHG-140d, BHG-140e), "Life of Antony". sha256 `ccc06f698a0e596a29281264c1c2b8e8e2c122e5f30e0c723e9371dc73152b05`, 550787 bytes.
 - Dewey FOUND: Augustinus episcopus Hipponensis, *Enchiridion ad Laurentium, seu de fide, spe et caritate* (`B56F7AFF65E04094A4FC0A43E8FF6C45`, CPL-295), "The Enchiridion". sha256 `66f55c1f17ac0fa0dab715549302396893c849a45f969e25514e15f4131d0c92`, 424417 bytes.
+- Dewey FOUND: Athenagoras, *De resurrectione mortuorum* (`2A947A2E95874A89A893959ED14B1C5B`, CPG-1071), "On the Resurrection of the Dead". sha256 `4961193d3d1290987f4450fc6f7b0048cc6a7ef3f090a96a37e5545358e5fc15`, 94526 bytes.
+- Dewey FOUND: Athenagoras, *Supplicatio pro Christianis* (`F3520F5C5F734F9BB2BB3FA2FFCD49FE`, CPG-1070), "A Plea for the Christians (Embassy)". sha256 `6dac8919067d48cbdf485ad9d3122be32d20acae70f684ba59d5b16aec59df19`, 104157 bytes.
+- Dewey FOUND: Bardesanes, *Liber legum regionum* (`EE96887038474C85B2971FBF906B14E6`, CPG-1152), "The Book of the Laws of Various Countries". sha256 `c7dd2ce5df22d8537690c5676d9bb4df56a3f1abd403225c902451dc85da4568`, 54038 bytes.
+- Dewey FOUND: Beda Venerabilis monachus in Anglia, *Historia ecclesiastica gentis Anglorum* (`2B3338894E6F417BA8EE5FC0C6066C8E`, CPL-1375), "Bede's Ecclesiastical History of England". sha256 `8a90d82801828f8e6095b79aa5bb063ff349c5f1de5aff965d12ae8feccfc035`, 629345 bytes.
+- Dewey FOUND: Ignatius episcopus Antiochenus martyr, *Epistulae vii genuinae* (`92454D22E91440C98A18D0BA6C792F51`, CPG-1025), "The Seven Genuine Epistles of Ignatius (ANF shorter and longer versions)". sha256 `f1b2a99858480705adf5e385101c8d213868b2d8a02bc81334ff407aa6fea976`, 277645 bytes.
+- Dewey FOUND: Tatianus, *Oratio ad Graecos* (`4A3837A44C424F69855C4DFD68035502`, CPG-1104), "Address of Tatian to the Greeks". sha256 `dcea9410b41fbe606d2262965950fc0fdd30cb5575fd88f7eee84f3c44ef869b`, 99399 bytes.
+- Dewey FOUND: Commodianus, *Instructiones* (`BF9173970E214EEF8830F1CB42880CFA`, CPL-1470), "The Instructions of Commodianus". sha256 `c2bf7c34ea598775e3ae9b253ac7fc14529b4e312a7fd07be8e0fb01cb354e11`, 80254 bytes.
+- Dewey FOUND: Tertullianus, *De cibis iudaicis* (`C5CAD272624D4A07B4A99D40FA464907`, CPL-68, CPPM2-1627), "On the Jewish Meats". sha256 `f4f0e19aa1defa5517f2f300e4c0a8069cabd0e50b166c708678321024032de0`, 29535 bytes.
+- Dewey FOUND: Theodoretus episcopus Cyri, *Historia ecclesiastica* (`2366A8A732974E638039A9594F74DADC`, CPG-6222), "The Ecclesiastical History of Theodoret". sha256 `bd9d02f6f5efbe5770a53bb2952c298599d25a4961baaacfd018adfe108a51ef`, 697496 bytes.
+- Dewey FOUND: Boethius, *Philosophiae consolatio* (`B2037578EC314E579A2F9D09E45E0D38`, CPL-878), "The Consolation of Philosophy". sha256 `d02c98b93f8c734e27f8b5746e21434ab716a6eb04f2395b99e5a0cf3eb02628`, 249385 bytes.
+- Dewey FOUND: Sulpicius Severus, *Chronicorum l. ii* (`DBA8ED30B4CF4E4891B31036C5029B05`), "The Sacred History (Chronicles), Books I–II". sha256 `cd0a22c6ffa7bb47ff9d1d58b6a00bd7f4f8c7ed4bbc05769bfc0135bcede379`, 265833 bytes.
 
 ## Formatting English board
 

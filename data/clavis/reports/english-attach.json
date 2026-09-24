@@ -2357,6 +2357,159 @@
         "CPL-295"
       ],
       "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "2A947A2E95874A89A893959ED14B1C5B",
+      "title": "On the Resurrection of the Dead",
+      "r2_key": "clavis/texts/2A947A2E95874A89A893959ED14B1C5B/english.txt",
+      "source_path": "data/clavis/bodies/2A947A2E95874A89A893959ED14B1C5B/english.txt",
+      "content_sha256": "4961193d3d1290987f4450fc6f7b0048cc6a7ef3f090a96a37e5545358e5fc15",
+      "byte_size": 94526,
+      "title_latin": "De resurrectione mortuorum",
+      "author": "Athenagoras",
+      "clavis": [
+        "CPG-1071"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "F3520F5C5F734F9BB2BB3FA2FFCD49FE",
+      "title": "A Plea for the Christians (Embassy)",
+      "r2_key": "clavis/texts/F3520F5C5F734F9BB2BB3FA2FFCD49FE/english.txt",
+      "source_path": "data/clavis/bodies/F3520F5C5F734F9BB2BB3FA2FFCD49FE/english.txt",
+      "content_sha256": "6dac8919067d48cbdf485ad9d3122be32d20acae70f684ba59d5b16aec59df19",
+      "byte_size": 104157,
+      "title_latin": "Supplicatio pro Christianis",
+      "author": "Athenagoras",
+      "clavis": [
+        "CPG-1070"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "EE96887038474C85B2971FBF906B14E6",
+      "title": "The Book of the Laws of Various Countries",
+      "r2_key": "clavis/texts/EE96887038474C85B2971FBF906B14E6/english.txt",
+      "source_path": "data/clavis/bodies/EE96887038474C85B2971FBF906B14E6/english.txt",
+      "content_sha256": "c7dd2ce5df22d8537690c5676d9bb4df56a3f1abd403225c902451dc85da4568",
+      "byte_size": 54038,
+      "title_latin": "Liber legum regionum",
+      "author": "Bardesanes",
+      "clavis": [
+        "CPG-1152"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "2B3338894E6F417BA8EE5FC0C6066C8E",
+      "title": "Bede's Ecclesiastical History of England",
+      "r2_key": "clavis/texts/2B3338894E6F417BA8EE5FC0C6066C8E/english.txt",
+      "source_path": "data/clavis/bodies/2B3338894E6F417BA8EE5FC0C6066C8E/english.txt",
+      "content_sha256": "8a90d82801828f8e6095b79aa5bb063ff349c5f1de5aff965d12ae8feccfc035",
+      "byte_size": 629345,
+      "title_latin": "Historia ecclesiastica gentis Anglorum",
+      "author": "Beda Venerabilis monachus in Anglia",
+      "clavis": [
+        "CPL-1375"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "92454D22E91440C98A18D0BA6C792F51",
+      "title": "The Seven Genuine Epistles of Ignatius (ANF shorter and longer versions)",
+      "r2_key": "clavis/texts/92454D22E91440C98A18D0BA6C792F51/english.txt",
+      "source_path": "data/clavis/bodies/92454D22E91440C98A18D0BA6C792F51/english.txt",
+      "content_sha256": "f1b2a99858480705adf5e385101c8d213868b2d8a02bc81334ff407aa6fea976",
+      "byte_size": 277645,
+      "title_latin": "Epistulae vii genuinae",
+      "author": "Ignatius episcopus Antiochenus martyr",
+      "clavis": [
+        "CPG-1025"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "4A3837A44C424F69855C4DFD68035502",
+      "title": "Address of Tatian to the Greeks",
+      "r2_key": "clavis/texts/4A3837A44C424F69855C4DFD68035502/english.txt",
+      "source_path": "data/clavis/bodies/4A3837A44C424F69855C4DFD68035502/english.txt",
+      "content_sha256": "dcea9410b41fbe606d2262965950fc0fdd30cb5575fd88f7eee84f3c44ef869b",
+      "byte_size": 99399,
+      "title_latin": "Oratio ad Graecos",
+      "author": "Tatianus",
+      "clavis": [
+        "CPG-1104"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "BF9173970E214EEF8830F1CB42880CFA",
+      "title": "The Instructions of Commodianus",
+      "r2_key": "clavis/texts/BF9173970E214EEF8830F1CB42880CFA/english.txt",
+      "source_path": "data/clavis/bodies/BF9173970E214EEF8830F1CB42880CFA/english.txt",
+      "content_sha256": "c2bf7c34ea598775e3ae9b253ac7fc14529b4e312a7fd07be8e0fb01cb354e11",
+      "byte_size": 80254,
+      "title_latin": "Instructiones",
+      "author": "Commodianus",
+      "clavis": [
+        "CPL-1470"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "C5CAD272624D4A07B4A99D40FA464907",
+      "title": "On the Jewish Meats",
+      "r2_key": "clavis/texts/C5CAD272624D4A07B4A99D40FA464907/english.txt",
+      "source_path": "data/clavis/bodies/C5CAD272624D4A07B4A99D40FA464907/english.txt",
+      "content_sha256": "f4f0e19aa1defa5517f2f300e4c0a8069cabd0e50b166c708678321024032de0",
+      "byte_size": 29535,
+      "title_latin": "De cibis iudaicis",
+      "author": "Tertullianus",
+      "clavis": [
+        "CPL-68",
+        "CPPM2-1627"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "2366A8A732974E638039A9594F74DADC",
+      "title": "The Ecclesiastical History of Theodoret",
+      "r2_key": "clavis/texts/2366A8A732974E638039A9594F74DADC/english.txt",
+      "source_path": "data/clavis/bodies/2366A8A732974E638039A9594F74DADC/english.txt",
+      "content_sha256": "bd9d02f6f5efbe5770a53bb2952c298599d25a4961baaacfd018adfe108a51ef",
+      "byte_size": 697496,
+      "title_latin": "Historia ecclesiastica",
+      "author": "Theodoretus episcopus Cyri",
+      "clavis": [
+        "CPG-6222"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "B2037578EC314E579A2F9D09E45E0D38",
+      "title": "The Consolation of Philosophy",
+      "r2_key": "clavis/texts/B2037578EC314E579A2F9D09E45E0D38/english.txt",
+      "source_path": "data/clavis/bodies/B2037578EC314E579A2F9D09E45E0D38/english.txt",
+      "content_sha256": "d02c98b93f8c734e27f8b5746e21434ab716a6eb04f2395b99e5a0cf3eb02628",
+      "byte_size": 249385,
+      "title_latin": "Philosophiae consolatio",
+      "author": "Boethius",
+      "clavis": [
+        "CPL-878"
+      ],
+      "plan_note": "Dewey FOUND staged body."
+    },
+    {
+      "work_id": "DBA8ED30B4CF4E4891B31036C5029B05",
+      "title": "The Sacred History (Chronicles), Books I–II",
+      "r2_key": "clavis/texts/DBA8ED30B4CF4E4891B31036C5029B05/english.txt",
+      "source_path": "data/clavis/bodies/DBA8ED30B4CF4E4891B31036C5029B05/english.txt",
+      "content_sha256": "cd0a22c6ffa7bb47ff9d1d58b6a00bd7f4f8c7ed4bbc05769bfc0135bcede379",
+      "byte_size": 265833,
+      "title_latin": "Chronicorum l. ii",
+      "author": "Sulpicius Severus",
+      "clavis": [],
+      "plan_note": "Dewey FOUND staged body."
     }
   ],
   "skipped": [

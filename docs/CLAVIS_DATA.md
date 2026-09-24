@@ -113,6 +113,7 @@ Staged bodies attached with `attach-text`, rather than a `Fathers/English` volum
 - Issue #163: Chrysostom, *Ad Stelechium de compunctione liber 2* (`1F5F2DE50EE14B21940358C8FCDCF127`, CPG-4309), "Second Book on Compunction (to Stelechius)". sha256 `4f473d4cb33a93cf0dfaf6570c9e404a8b30f89b8084f139dad8406a210aaf5a`, 50131 bytes.
 - Issue #38: Ambrose, *De Helia et ieiunio* (`52A399A65F674619AC6B8185E6F3C52B`, CPL-137), "On Elias and Fasting". sha256 `f0b149b3cf11725875d85e0c6881da80526816a9d9cc5c2a68e21d1cd84a3a2f`, 77651 bytes.
 - Issue #55: Ambrose, *De bono mortis* (`2B1F6A2E09E741F58E1A4070E2F01A7E`, CPL-129), "Of the Happiness of Death". sha256 `377f3e857274136c92c805de1c07a2bf49a84f63466b7d82b5b2d0a4a967377d`, 62920 bytes.
+- Issue #82: Basil, *Aduersus eos qui per calumniam dicunt dici a nobis tres deos* (`625C765E8FB845EC91632AE01F33DD04`, CPG-2914), "Letter CLXXXIX. To Eustathius the physician". sha256 `22943df5cb9dbda1cc53998e6746338b336806f558fb58f6e413086b9ed143d9`, 15835 bytes.
 
 ## Formatting English board
 

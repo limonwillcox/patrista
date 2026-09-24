@@ -1762,6 +1762,20 @@
         "CPL-129"
       ],
       "plan_note": "Issue #55 staged body."
+    },
+    {
+      "work_id": "625C765E8FB845EC91632AE01F33DD04",
+      "title": "Letter CLXXXIX. To Eustathius the physician",
+      "r2_key": "clavis/texts/625C765E8FB845EC91632AE01F33DD04/english.txt",
+      "source_path": "data/clavis/bodies/625C765E8FB845EC91632AE01F33DD04/english.txt",
+      "content_sha256": "22943df5cb9dbda1cc53998e6746338b336806f558fb58f6e413086b9ed143d9",
+      "byte_size": 15835,
+      "title_latin": "Aduersus eos qui per calumniam dicunt dici a nobis tres deos",
+      "author": "Basilius Caesariensis",
+      "clavis": [
+        "CPG-2914"
+      ],
+      "plan_note": "Issue #82 staged body."
     }
   ],
   "skipped": [

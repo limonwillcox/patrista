@@ -643,6 +643,14 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "377f3e857274136c92c805de1c07a2bf49a84f63466b7d82b5b2d0a4a967377d",
       byte_size: 62920
     });
+    expect(lines.find((item) => item.work_id === "625C765E8FB845EC91632AE01F33DD04")).toMatchObject({
+      language: "english",
+      title: "Letter CLXXXIX. To Eustathius the physician",
+      status: "ready",
+      r2_key: "clavis/texts/625C765E8FB845EC91632AE01F33DD04/english.txt",
+      content_sha256: "22943df5cb9dbda1cc53998e6746338b336806f558fb58f6e413086b9ed143d9",
+      byte_size: 15835
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

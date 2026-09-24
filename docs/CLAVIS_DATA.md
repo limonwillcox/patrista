@@ -107,6 +107,8 @@ Staged bodies attached with `attach-text`, rather than a `Fathers/English` volum
 - Issue #84: Athanasius, *Commentarius de templo Athenarum* (`773B6E43A8464983BA3DFE7CF9E5CE3E`, CPG-2289), "On the Temple, Schools, and Theatres in Athens". sha256 `7ccc12e51a708fce1a181451274b988103a02b028bcc884d778d172e3144dcb6`, 6162 bytes.
 - Issue #49: Ambrose, *De Nabuthae* (`ECD449066BF24006A0571686398CD252`, CPL-138), "On Naboth". sha256 `89aa3b96992fb67ae80c5cb8dbe54a5b230bfcdd1d5107ce28497d1e9fc33583`, 69026 bytes.
 - Issue #89: Basil, *Canones XVI* (`87978F5DD3F84B62A7A05D83E01B3E46`, CPG-8510), "The First Canonical Epistle of St. Basil to Amphilochius (Canons I–XVI)". sha256 `4d8a4043833e06db398e32a82159f4cedde423c068b23588c7ab6f6d9175c35d`, 6595 bytes.
+- Issue #192: *Apologia (contra Hieronymum)* (`449E4FAE1FFA41F1BE26941388BC1A10`, CPL-197), "The Apology of Rufinus". sha256 `91830a81fc68afd5be0f09f11b1d7dce4dc1d71878d0dcd70774c4c40313a692`, 278290 bytes.
+- Issue #198: *Commentarii in Apocalypsim Ioannis* (`EB66B24E69C74E3895C20EC7A567BC40`, CPL-80), "Commentary on the Apocalypse of the Blessed John". sha256 `8bfaaf255d7a208bee4f57e97eb62955ee3f02b498246c870561aeda8d2dc1d2`, 90514 bytes.
 
 ## Formatting English board
 

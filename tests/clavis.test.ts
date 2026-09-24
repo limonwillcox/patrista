@@ -595,6 +595,22 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "4d8a4043833e06db398e32a82159f4cedde423c068b23588c7ab6f6d9175c35d",
       byte_size: 6595
     });
+    expect(lines.find((item) => item.work_id === "449E4FAE1FFA41F1BE26941388BC1A10")).toMatchObject({
+      language: "english",
+      title: "The Apology of Rufinus",
+      status: "ready",
+      r2_key: "clavis/texts/449E4FAE1FFA41F1BE26941388BC1A10/english.txt",
+      content_sha256: "91830a81fc68afd5be0f09f11b1d7dce4dc1d71878d0dcd70774c4c40313a692",
+      byte_size: 278290
+    });
+    expect(lines.find((item) => item.work_id === "EB66B24E69C74E3895C20EC7A567BC40")).toMatchObject({
+      language: "english",
+      title: "Commentary on the Apocalypse of the Blessed John",
+      status: "ready",
+      r2_key: "clavis/texts/EB66B24E69C74E3895C20EC7A567BC40/english.txt",
+      content_sha256: "8bfaaf255d7a208bee4f57e97eb62955ee3f02b498246c870561aeda8d2dc1d2",
+      byte_size: 90514
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

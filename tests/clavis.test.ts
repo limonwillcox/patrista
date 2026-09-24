@@ -587,6 +587,14 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "89aa3b96992fb67ae80c5cb8dbe54a5b230bfcdd1d5107ce28497d1e9fc33583",
       byte_size: 69026
     });
+    expect(lines.find((item) => item.work_id === "87978F5DD3F84B62A7A05D83E01B3E46")).toMatchObject({
+      language: "english",
+      title: "The First Canonical Epistle of St. Basil to Amphilochius (Canons I–XVI)",
+      status: "ready",
+      r2_key: "clavis/texts/87978F5DD3F84B62A7A05D83E01B3E46/english.txt",
+      content_sha256: "4d8a4043833e06db398e32a82159f4cedde423c068b23588c7ab6f6d9175c35d",
+      byte_size: 6595
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

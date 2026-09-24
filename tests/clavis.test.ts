@@ -651,6 +651,334 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "22943df5cb9dbda1cc53998e6746338b336806f558fb58f6e413086b9ed143d9",
       byte_size: 15835
     });
+    expect(lines.find((item) => item.work_id === "700F6347743C4F79985FCC247EB1C789")).toMatchObject({
+      language: "english",
+      title: "Catechetical Lectures (Procatechesis and Lectures I–XVIII)",
+      status: "ready",
+      r2_key: "clavis/texts/700F6347743C4F79985FCC247EB1C789/english.txt",
+      content_sha256: "d4c5b8ecc26364a04eaf0a9e2ec2f039d3d74ec137c604b9242e75217483d0ce",
+      byte_size: 774399
+    });
+    expect(lines.find((item) => item.work_id === "7ADD1965B8FE433385C0A33D8DEF1981")).toMatchObject({
+      language: "english",
+      title: "The Conferences of John Cassian",
+      status: "ready",
+      r2_key: "clavis/texts/7ADD1965B8FE433385C0A33D8DEF1981/english.txt",
+      content_sha256: "7ce300172a90415aa19ac7a053932fc21e17b8cf6c6e5bdcbc757469b855d446",
+      byte_size: 1166121
+    });
+    expect(lines.find((item) => item.work_id === "CF46D0EA186A441BB1F4C5FCF6557677")).toMatchObject({
+      language: "english",
+      title: "The Demonstration of the Apostolic Preaching",
+      status: "ready",
+      r2_key: "clavis/texts/CF46D0EA186A441BB1F4C5FCF6557677/english.txt",
+      content_sha256: "1e095d515077e9f3f0144d34d766f354a60d0f888659b2fce58ef5ca6ed718b9",
+      byte_size: 150581
+    });
+    expect(lines.find((item) => item.work_id === "7C1D229E0AB24F3B9659C216C92B5E15")).toMatchObject({
+      language: "english",
+      title: "Epistle I. To Donatus",
+      status: "ready",
+      r2_key: "clavis/texts/7C1D229E0AB24F3B9659C216C92B5E15/english.txt",
+      content_sha256: "662c37cbe76f8ce98f9da2f4c88607105940ebacf28bb941c36b31c445ca6f2c",
+      byte_size: 28875
+    });
+    expect(lines.find((item) => item.work_id === "7B2888F4BDD1433E9F58A2E1D247464B")).toMatchObject({
+      language: "english",
+      title: "The Epitome of the Divine Institutes",
+      status: "ready",
+      r2_key: "clavis/texts/7B2888F4BDD1433E9F58A2E1D247464B/english.txt",
+      content_sha256: "e86dd99e9db225aa8c5ff8b44fe4c0962936bef0e16e52e97c51dc7c7813e555",
+      byte_size: 396045
+    });
+    expect(lines.find((item) => item.work_id === "13CEA531516C45DA95FF4735A9C904FD")).toMatchObject({
+      language: "english",
+      title: "An Exhortation to Theodore After His Fall",
+      status: "ready",
+      r2_key: "clavis/texts/13CEA531516C45DA95FF4735A9C904FD/english.txt",
+      content_sha256: "09889e7fc648557ab0496dafc7c08c5e6f87f7529f74c8b9fd63c80cc57f4195",
+      byte_size: 132272
+    });
+    expect(lines.find((item) => item.work_id === "8C5F722EA3A0488D80A0B94D4101F5DD")).toMatchObject({
+      language: "english",
+      title: "Against Eunomius (Books I–XII)",
+      status: "ready",
+      r2_key: "clavis/texts/8C5F722EA3A0488D80A0B94D4101F5DD/english.txt",
+      content_sha256: "93100e049c38b0f27dadaf36ba704d2d66743cdfbd20b91ab00eabfdba3e3e10",
+      byte_size: 1155551
+    });
+    expect(lines.find((item) => item.work_id === "04B64425F4C74D5EA8591B2BE09DC275")).toMatchObject({
+      language: "english",
+      title: "Mystagogic Catechetical Lectures (Lectures XIX–XXIII)",
+      status: "ready",
+      r2_key: "clavis/texts/04B64425F4C74D5EA8591B2BE09DC275/english.txt",
+      content_sha256: "c7cbd448ce324a8bbc98f1176b236989e5a736b31e8a67a2ed02c46c6dc6ac9c",
+      byte_size: 77344
+    });
+    expect(lines.find((item) => item.work_id === "47A887850794412E9AC961924EB0A9C2")).toMatchObject({
+      language: "english",
+      title: "The Twelve Books on the Institutes of the Coenobia",
+      status: "ready",
+      r2_key: "clavis/texts/47A887850794412E9AC961924EB0A9C2/english.txt",
+      content_sha256: "26136ef50369595bcc45beba6033072bb595a77a42a739af0ec36eeae60bb7be",
+      byte_size: 438408
+    });
+    expect(lines.find((item) => item.work_id === "6359B395B9A1499D8F039ADCC60A2A3E")).toMatchObject({
+      language: "english",
+      title: "Treatise XII. Three Books of Testimonies Against the Jews",
+      status: "ready",
+      r2_key: "clavis/texts/6359B395B9A1499D8F039ADCC60A2A3E/english.txt",
+      content_sha256: "497fc5af2896c87fd1adb332c59a1c850f8e54d9e201037fadc96803e3f05d70",
+      byte_size: 269729
+    });
+    expect(lines.find((item) => item.work_id === "F36CC64FB9E04D5B8D78AEF3B7C39E74")).toMatchObject({
+      language: "english",
+      title: "The Discourse to the Greeks",
+      status: "ready",
+      r2_key: "clavis/texts/F36CC64FB9E04D5B8D78AEF3B7C39E74/english.txt",
+      content_sha256: "cae1e72085f037b6be84f732964d040f3773a426a0d1aeeb5c5f667e6609990f",
+      byte_size: 9947
+    });
+    expect(lines.find((item) => item.work_id === "8EAC5D05D03C4088B8826FEEA37215F7")).toMatchObject({
+      language: "english",
+      title: "The Phoenix",
+      status: "ready",
+      r2_key: "clavis/texts/8EAC5D05D03C4088B8826FEEA37215F7/english.txt",
+      content_sha256: "a85209e7b568bb13d83c7a0c60d73fe1f1645f525a7b0fce17db44bb5adb6840",
+      byte_size: 12624
+    });
+    expect(lines.find((item) => item.work_id === "0363964018C743C3A595768B63C575AF")).toMatchObject({
+      language: "english",
+      title: "Seven Books on the Incarnation of the Lord, Against Nestorius",
+      status: "ready",
+      r2_key: "clavis/texts/0363964018C743C3A595768B63C575AF/english.txt",
+      content_sha256: "f95cd26386cc1c07ffac674bb22b0e9b24b7685b6e5217686421d3454a75a05d",
+      byte_size: 624335
+    });
+    expect(lines.find((item) => item.work_id === "28AB3BB867454A7CB71B1A6AAFE3725B")).toMatchObject({
+      language: "english",
+      title: "Treatise II. On the Dress of Virgins",
+      status: "ready",
+      r2_key: "clavis/texts/28AB3BB867454A7CB71B1A6AAFE3725B/english.txt",
+      content_sha256: "c9eb98763561a9fce61f5caddee09a3bd578767ddb49116d6c7e12bc302242d6",
+      byte_size: 37901
+    });
+    expect(lines.find((item) => item.work_id === "59B86508830044119B7BA2E74F7B1FA5")).toMatchObject({
+      language: "english",
+      title: "Hortatory Address to the Greeks",
+      status: "ready",
+      r2_key: "clavis/texts/59B86508830044119B7BA2E74F7B1FA5/english.txt",
+      content_sha256: "4dedf533f0cca228afe36835331e2ba97cc4eb24a3d521114bab1b8746b6b946",
+      byte_size: 90265
+    });
+    expect(lines.find((item) => item.work_id === "F3AAE8F52F7044FDAF5C3920C1E79B20")).toMatchObject({
+      language: "english",
+      title: "On the Holy Spirit (De Spiritu Sancto)",
+      status: "ready",
+      r2_key: "clavis/texts/F3AAE8F52F7044FDAF5C3920C1E79B20/english.txt",
+      content_sha256: "3cfd111ec84d37c74bd9f01ca60a4e6261bfbacf97ed6f589f6eae970de55e65",
+      byte_size: 293447
+    });
+    expect(lines.find((item) => item.work_id === "6BBF6C5F3ED64531A84EBEB7CEAF085C")).toMatchObject({
+      language: "english",
+      title: "On the Holy Trinity, and of the Godhead of the Holy Spirit (To Eustathius)",
+      status: "ready",
+      r2_key: "clavis/texts/6BBF6C5F3ED64531A84EBEB7CEAF085C/english.txt",
+      content_sha256: "bab448fa355ec6c7f0f9cca8e564429230e1fe62ce837836ab495d48aef8e458",
+      byte_size: 22204
+    });
+    expect(lines.find((item) => item.work_id === "D3C6B0011C424D1F81888A9DE9A65BED")).toMatchObject({
+      language: "english",
+      title: "Treatise I. On the Unity of the Church",
+      status: "ready",
+      r2_key: "clavis/texts/D3C6B0011C424D1F81888A9DE9A65BED/english.txt",
+      content_sha256: "3c721d943a9236e6ba6bef24a4786da2bb1261d0facd3c1e58c03d9bdb65bf22",
+      byte_size: 48269
+    });
+    expect(lines.find((item) => item.work_id === "6CC1F72BEF4B49929EF37D6CE3F58A7E")).toMatchObject({
+      language: "english",
+      title: "On the Sole Government of God",
+      status: "ready",
+      r2_key: "clavis/texts/6CC1F72BEF4B49929EF37D6CE3F58A7E/english.txt",
+      content_sha256: "34645732f718c22f1663f6ed3aadcf5e21254c5eeaf20a9c3136a8e39e536f79",
+      byte_size: 17883
+    });
+    expect(lines.find((item) => item.work_id === "8403C5890607412DB09F54121D1C0882")).toMatchObject({
+      language: "english",
+      title: "On \"Not Three Gods\" (To Ablabius)",
+      status: "ready",
+      r2_key: "clavis/texts/8403C5890607412DB09F54121D1C0882/english.txt",
+      content_sha256: "be0dbe4c66a12831a96fe2b11c98c217e17785a251e8c5d4af9ae8f6315044f3",
+      byte_size: 31308
+    });
+    expect(lines.find((item) => item.work_id === "F5B7BE76FA304C1B881525CAD062557D")).toMatchObject({
+      language: "english",
+      title: "The Book of Pastoral Rule",
+      status: "ready",
+      r2_key: "clavis/texts/F5B7BE76FA304C1B881525CAD062557D/english.txt",
+      content_sha256: "fb38f647887496337b19b269dceb5323294e1226d0347643e62168bc820138dd",
+      byte_size: 377677
+    });
+    expect(lines.find((item) => item.work_id === "CB40644F575B4F33B78F2FA1FD6E510D")).toMatchObject({
+      language: "english",
+      title: "Treatise III. On the Lapsed",
+      status: "ready",
+      r2_key: "clavis/texts/CB40644F575B4F33B78F2FA1FD6E510D/english.txt",
+      content_sha256: "79f2d2b413880855ec115ce337dd26a4ecf5302964a47e8620452a7ed7ab1b70",
+      byte_size: 58377
+    });
+    expect(lines.find((item) => item.work_id === "2C4A6FF2AF8E49BA97E66130037BE656")).toMatchObject({
+      language: "english",
+      title: "Letter to a Young Widow",
+      status: "ready",
+      r2_key: "clavis/texts/2C4A6FF2AF8E49BA97E66130037BE656/english.txt",
+      content_sha256: "68c83c5f133ddaaedb2aef45b3c8a6876403d392b2ad37d542ec60fa4de17203",
+      byte_size: 25242
+    });
+    expect(lines.find((item) => item.work_id === "37944672F45E480781E8E9A73E29A85D")).toMatchObject({
+      language: "english",
+      title: "On the Faith (To Simplicius)",
+      status: "ready",
+      r2_key: "clavis/texts/37944672F45E480781E8E9A73E29A85D/english.txt",
+      content_sha256: "c54fa550a3f8c47fde97c03620546559a3539e1d54bfa8e6db9105cdfeb6d325",
+      byte_size: 15438
+    });
+    expect(lines.find((item) => item.work_id === "AE784095FFA740BDB688F37F7295DAFE")).toMatchObject({
+      language: "english",
+      title: "Treatise IV. On the Lord's Prayer",
+      status: "ready",
+      r2_key: "clavis/texts/AE784095FFA740BDB688F37F7295DAFE/english.txt",
+      content_sha256: "4002e3639a02748e4dc9ded2c35c7591783e67f5e5ba7e5119d4efc5613f17e9",
+      byte_size: 54285
+    });
+    expect(lines.find((item) => item.work_id === "90E9F6BF787F432B889E19DFEB7ABC82")).toMatchObject({
+      language: "english",
+      title: "On the Trinity",
+      status: "ready",
+      r2_key: "clavis/texts/90E9F6BF787F432B889E19DFEB7ABC82/english.txt",
+      content_sha256: "5504f9a9862b7bba37d2a916418729fd6f79dadd9f2d530e8cc521fde3761919",
+      byte_size: 974704
+    });
+    expect(lines.find((item) => item.work_id === "7548BCE2E40046089D8ECE090D024E28")).toMatchObject({
+      language: "english",
+      title: "The Passion of the Holy Martyrs Perpetua and Felicitas",
+      status: "ready",
+      r2_key: "clavis/texts/7548BCE2E40046089D8ECE090D024E28/english.txt",
+      content_sha256: "946a76972cf29f14dbc55c1f2b58bfb0f9717fc626c79a533e26e98cfa5d119b",
+      byte_size: 36146
+    });
+    expect(lines.find((item) => item.work_id === "F279A6267CD64CB8AAB5BAFF2669904C")).toMatchObject({
+      language: "english",
+      title: "Treatise VII. On the Mortality",
+      status: "ready",
+      r2_key: "clavis/texts/F279A6267CD64CB8AAB5BAFF2669904C/english.txt",
+      content_sha256: "d593b825348d4948c704926d5fc45e13bbee1a05b3210ec7e43eaad3c8157078",
+      byte_size: 37428
+    });
+    expect(lines.find((item) => item.work_id === "6B1A9AEBAAC54D1987FE56EF753E051F")).toMatchObject({
+      language: "english",
+      title: "On the Priesthood (Six Books)",
+      status: "ready",
+      r2_key: "clavis/texts/6B1A9AEBAAC54D1987FE56EF753E051F/english.txt",
+      content_sha256: "c2fe26bf461f013b6267a485e76c7e2a41ae0ea3d195b0cf81446da99b373bf1",
+      byte_size: 250429
+    });
+    expect(lines.find((item) => item.work_id === "29CD75317DC2477094C9F4D25EB5C629")).toMatchObject({
+      language: "english",
+      title: "On the Holy Spirit Against the Followers of Macedonius",
+      status: "ready",
+      r2_key: "clavis/texts/29CD75317DC2477094C9F4D25EB5C629/english.txt",
+      content_sha256: "b25f137c85b9e7ef46fd129128632df88bdbf6089cbe9d678e65d52b8f5728da",
+      byte_size: 60798
+    });
+    expect(lines.find((item) => item.work_id === "C73C999C6D954D46874BC30F8D7AF1DA")).toMatchObject({
+      language: "english",
+      title: "On the Councils, or, The Faith of the Easterns (De Synodis)",
+      status: "ready",
+      r2_key: "clavis/texts/C73C999C6D954D46874BC30F8D7AF1DA/english.txt",
+      content_sha256: "448c0674988ec42f2286e76ad1daa6ac291e28cdd3cb18da4d68d64ab28137a6",
+      byte_size: 165389
+    });
+    expect(lines.find((item) => item.work_id === "EE9356C4C4CC4561A4A5547E82CF1C6A")).toMatchObject({
+      language: "english",
+      title: "Treatise XI. Exhortation to Martyrdom, Addressed to Fortunatus",
+      status: "ready",
+      r2_key: "clavis/texts/EE9356C4C4CC4561A4A5547E82CF1C6A/english.txt",
+      content_sha256: "c9fa09b11be3db82c1cba4cb64edb6dc6d340a69172cd11875de4c25551d7852",
+      byte_size: 56943
+    });
+    expect(lines.find((item) => item.work_id === "5C26BD3257764681AE46790FF9F1140A")).toMatchObject({
+      language: "english",
+      title: "On Infants' Early Deaths",
+      status: "ready",
+      r2_key: "clavis/texts/5C26BD3257764681AE46790FF9F1140A/english.txt",
+      content_sha256: "fcd5b95669a2a241443d75e578e484c080045736c6de0731f987910e1bf84ef0",
+      byte_size: 43703
+    });
+    expect(lines.find((item) => item.work_id === "13060EC8AAF245F2A8323AF18278D94B")).toMatchObject({
+      language: "english",
+      title: "Treatise V. An Address to Demetrianus",
+      status: "ready",
+      r2_key: "clavis/texts/13060EC8AAF245F2A8323AF18278D94B/english.txt",
+      content_sha256: "a85dba9cb82e04d2f4e5d0810edc5405bde2aea5a7896c696cf042bc43154d40",
+      byte_size: 43179
+    });
+    expect(lines.find((item) => item.work_id === "0D11ECFDA83849CFB1370F81BB81A4DA")).toMatchObject({
+      language: "english",
+      title: "On the Morals of the Catholic Church; and On the Morals of the Manichaeans",
+      status: "ready",
+      r2_key: "clavis/texts/0D11ECFDA83849CFB1370F81BB81A4DA/english.txt",
+      content_sha256: "764a33c03e2173283943de14d5d8c4f3eb044efbf200c505e8dda36a222b24e3",
+      byte_size: 292373
+    });
+    expect(lines.find((item) => item.work_id === "81BDAC3BF41249EEA4B9FB083543F52F")).toMatchObject({
+      language: "english",
+      title: "Two Books Concerning Repentance",
+      status: "ready",
+      r2_key: "clavis/texts/81BDAC3BF41249EEA4B9FB083543F52F/english.txt",
+      content_sha256: "e296b2217621ec570d1918e8258af0c555ab735d08259040d9cf7d413db19a74",
+      byte_size: 265155
+    });
+    expect(lines.find((item) => item.work_id === "6A7B4E542150445E933F8DE559994112")).toMatchObject({
+      language: "english",
+      title: "The Epistle of Mathetes to Diognetus",
+      status: "ready",
+      r2_key: "clavis/texts/6A7B4E542150445E933F8DE559994112/english.txt",
+      content_sha256: "5238dc391145b2bc4630c5015ab225e77e5ccea0d36ce8376c65915658ee4b2d",
+      byte_size: 28309
+    });
+    expect(lines.find((item) => item.work_id === "4D43DDE8311F44EBB1751FEDF9AC3DA0")).toMatchObject({
+      language: "english",
+      title: "On the Incarnation of the Word",
+      status: "ready",
+      r2_key: "clavis/texts/4D43DDE8311F44EBB1751FEDF9AC3DA0/english.txt",
+      content_sha256: "891e657183836b8e536e319a06d740ca6d7dce041221ef7e09e4827dd8011650",
+      byte_size: 304267
+    });
+    expect(lines.find((item) => item.work_id === "23B12A4DF60F4DE98D7E8380625BBD3F")).toMatchObject({
+      language: "english",
+      title: "Four Discourses Against the Arians (Orations/Discourses I–III)",
+      status: "ready",
+      r2_key: "clavis/texts/23B12A4DF60F4DE98D7E8380625BBD3F/english.txt",
+      content_sha256: "0e3fba817c9622eb4a70b872f4be8145974f3224465f6a7a3fa0e20fcf8727a5",
+      byte_size: 746344
+    });
+    expect(lines.find((item) => item.work_id === "0FBB951E609D4F0AAEEE0B515DE99B1A")).toMatchObject({
+      language: "english",
+      title: "Life of Antony",
+      status: "ready",
+      r2_key: "clavis/texts/0FBB951E609D4F0AAEEE0B515DE99B1A/english.txt",
+      content_sha256: "ccc06f698a0e596a29281264c1c2b8e8e2c122e5f30e0c723e9371dc73152b05",
+      byte_size: 550787
+    });
+    expect(lines.find((item) => item.work_id === "B56F7AFF65E04094A4FC0A43E8FF6C45")).toMatchObject({
+      language: "english",
+      title: "The Enchiridion",
+      status: "ready",
+      r2_key: "clavis/texts/B56F7AFF65E04094A4FC0A43E8FF6C45/english.txt",
+      content_sha256: "66f55c1f17ac0fa0dab715549302396893c849a45f969e25514e15f4131d0c92",
+      byte_size: 424417
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

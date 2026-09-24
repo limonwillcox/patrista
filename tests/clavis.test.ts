@@ -1067,6 +1067,198 @@ describe("clavis spine and English tranche", () => {
       content_sha256: "cd0a22c6ffa7bb47ff9d1d58b6a00bd7f4f8c7ed4bbc05769bfc0135bcede379",
       byte_size: 265833
     });
+    expect(lines.find((item) => item.work_id === "63FDDF09CBB8498B9E487B74BA48191D")).toMatchObject({
+      language: "english",
+      title: "On the Vanity of Idols",
+      status: "ready",
+      r2_key: "clavis/texts/63FDDF09CBB8498B9E487B74BA48191D/english.txt",
+      content_sha256: "33334646014de77840d0e0f4faa49388478c89a36bc3d50779831427b37dd613",
+      byte_size: 19232
+    });
+    expect(lines.find((item) => item.work_id === "711655E399F449C2A518D421511E52C3")).toMatchObject({
+      language: "english",
+      title: "On Works and Alms",
+      status: "ready",
+      r2_key: "clavis/texts/711655E399F449C2A518D421511E52C3/english.txt",
+      content_sha256: "45369bffe2358a083d05610b6361dd50a64d25b00950c636334667cc6c10aa43",
+      byte_size: 44225
+    });
+    expect(lines.find((item) => item.work_id === "DD4CAB9392EF4EABBAE72588A4C78F20")).toMatchObject({
+      language: "english",
+      title: "On the Advantage of Patience",
+      status: "ready",
+      r2_key: "clavis/texts/DD4CAB9392EF4EABBAE72588A4C78F20/english.txt",
+      content_sha256: "bacba21cd8b3c42ef03fb54f10161e22e887062cbdf6b68618e1b58f1fc492f8",
+      byte_size: 39709
+    });
+    expect(lines.find((item) => item.work_id === "731530545A7E42D89D244AA8C1BEFBEA")).toMatchObject({
+      language: "english",
+      title: "On Jealousy and Envy",
+      status: "ready",
+      r2_key: "clavis/texts/731530545A7E42D89D244AA8C1BEFBEA/english.txt",
+      content_sha256: "35064224c84f6907d04ded8418415a15b887821bd3f21ef63978edd4d1c2eecc",
+      byte_size: 28967
+    });
+    expect(lines.find((item) => item.work_id === "3DF9DF3CCA8D43E5A3214D58B714FF15")).toMatchObject({
+      language: "english",
+      title: "Lives of Illustrious Men (Jerome)",
+      status: "ready",
+      r2_key: "clavis/texts/3DF9DF3CCA8D43E5A3214D58B714FF15/english.txt",
+      content_sha256: "3079acd3ae0a2d01647a3e273e7d16fb538701aab3159d1b69543f1d5a84a398",
+      byte_size: 114923
+    });
+    expect(lines.find((item) => item.work_id === "ED3101DA1ED14286914EEA361E11A9D7")).toMatchObject({
+      language: "english",
+      title: "Against the Pelagians (Three Books)",
+      status: "ready",
+      r2_key: "clavis/texts/ED3101DA1ED14286914EEA361E11A9D7/english.txt",
+      content_sha256: "4d4215b931ccefb5e81c368e9a1aaceb4212e29c0ab75192e29380f031cd2062",
+      byte_size: 283082
+    });
+    expect(lines.find((item) => item.work_id === "60A606A7A5284FB19B5D271AE70D6297")).toMatchObject({
+      language: "english",
+      title: "The Life of St. Hilarion",
+      status: "ready",
+      r2_key: "clavis/texts/60A606A7A5284FB19B5D271AE70D6297/english.txt",
+      content_sha256: "00d16a6df3bf420c84cf24dd605f2840ca328272b62debdc27145f0215a8aa62",
+      byte_size: 62999
+    });
+    expect(lines.find((item) => item.work_id === "8D17CCB137F74C5CBBAAA34620DBE189")).toMatchObject({
+      language: "english",
+      title: "Against Vigilantius",
+      status: "ready",
+      r2_key: "clavis/texts/8D17CCB137F74C5CBBAAA34620DBE189/english.txt",
+      content_sha256: "c40294830f93edf9145a50600b559fcf27f1d5fa1ad43369f8b3701a198829ba",
+      byte_size: 36547
+    });
+    expect(lines.find((item) => item.work_id === "BD2877DB7FEA476AA9E6DB70A9B53A78")).toMatchObject({
+      language: "english",
+      title: "Against Jovinianus",
+      status: "ready",
+      r2_key: "clavis/texts/BD2877DB7FEA476AA9E6DB70A9B53A78/english.txt",
+      content_sha256: "b242d7d934f20bbf3688983c9acac7e5a8d7aa6b711c90b9ba0b7e0affb57f8b",
+      byte_size: 384023
+    });
+    expect(lines.find((item) => item.work_id === "5967D46223AB4C7C8E510FC98114F83C")).toMatchObject({
+      language: "english",
+      title: "Eranistes, or Dialogues",
+      status: "ready",
+      r2_key: "clavis/texts/5967D46223AB4C7C8E510FC98114F83C/english.txt",
+      content_sha256: "a69e4598bca7c2a66452da3b27844abe27db851a8bc0faf1930c0e6e435a6d78",
+      byte_size: 423748
+    });
+    expect(lines.find((item) => item.work_id === "F7C69DF39D6D49359A6D9D15EDB9DD4E")).toMatchObject({
+      language: "english",
+      title: "The Life of Constantine",
+      status: "ready",
+      r2_key: "clavis/texts/F7C69DF39D6D49359A6D9D15EDB9DD4E/english.txt",
+      content_sha256: "4d76bb9b279e7af3fdc0f9ef6313be2a9f1b287ca8a6b614a74df4e08192cd08",
+      byte_size: 388448
+    });
+    expect(lines.find((item) => item.work_id === "71CD2CB84BD646769CCEAA2AD26AD977")).toMatchObject({
+      language: "english",
+      title: "Oration of Constantine to the Assembly of the Saints",
+      status: "ready",
+      r2_key: "clavis/texts/71CD2CB84BD646769CCEAA2AD26AD977/english.txt",
+      content_sha256: "1f985abe47b576fb064b6f2bdeef548f3249eaad3bd56c0b47d95d881a790217",
+      byte_size: 114269
+    });
+    expect(lines.find((item) => item.work_id === "FD3FF75A9E3243A4B864B42DA97BCC75")).toMatchObject({
+      language: "english",
+      title: "Oration in Praise of Constantine",
+      status: "ready",
+      r2_key: "clavis/texts/FD3FF75A9E3243A4B864B42DA97BCC75/english.txt",
+      content_sha256: "49b90921d300c94d7d2c5300119115c4a47f8289431e80b7a5ddf0454a05340c",
+      byte_size: 166878
+    });
+    expect(lines.find((item) => item.work_id === "A52F6CCD2C574571B5ECF856B4383E9D")).toMatchObject({
+      language: "english",
+      title: "The Martyrs of Palestine",
+      status: "ready",
+      r2_key: "clavis/texts/A52F6CCD2C574571B5ECF856B4383E9D/english.txt",
+      content_sha256: "d4bc3ce665905e1a22cd474499fe4dc14c0dfabbdee1faffa0324cbf11819841",
+      byte_size: 90396
+    });
+    expect(lines.find((item) => item.work_id === "FA1860C60A8B4DDFBFB197327CF153E7")).toMatchObject({
+      language: "english",
+      title: "Oration II. In Defence of His Flight to Pontus",
+      status: "ready",
+      r2_key: "clavis/texts/FA1860C60A8B4DDFBFB197327CF153E7/english.txt",
+      content_sha256: "a9bd4095d78d4006703518845eb99745e655265d939a1249d93f30c171a16c17",
+      byte_size: 123403
+    });
+    expect(lines.find((item) => item.work_id === "F61A9F25FEA242218C768ED8BDB1927A")).toMatchObject({
+      language: "english",
+      title: "Preparation for the Gospel (Praeparatio Evangelica)",
+      status: "ready",
+      r2_key: "clavis/texts/F61A9F25FEA242218C768ED8BDB1927A/english.txt",
+      content_sha256: "d29872d8c1da25f35624f2a93ac57af3665d7282c95907125034f91ea099cf19",
+      byte_size: 1875216
+    });
+    expect(lines.find((item) => item.work_id === "9D52EDC1A40C448694B3DA344628C442")).toMatchObject({
+      language: "english",
+      title: "The Proof of the Gospel (Demonstratio Evangelica)",
+      status: "ready",
+      r2_key: "clavis/texts/9D52EDC1A40C448694B3DA344628C442/english.txt",
+      content_sha256: "1278d3d363e740a8e09d845c503729009af8cb57dddd26febb87524ed81b2acf",
+      byte_size: 1027488
+    });
+    expect(lines.find((item) => item.work_id === "0859C0FC73A6458F90C81E74A013B0A0")).toMatchObject({
+      language: "english",
+      title: "On the Making of Man",
+      status: "ready",
+      r2_key: "clavis/texts/0859C0FC73A6458F90C81E74A013B0A0/english.txt",
+      content_sha256: "2a4b3bfd6dcf6f5d30252360ffe91ce068b3519cbc7e52042a5174bfb20d22ba",
+      byte_size: 217980
+    });
+    expect(lines.find((item) => item.work_id === "EACC5779D7264A28AE2620484A55F55E")).toMatchObject({
+      language: "english",
+      title: "On the Soul and the Resurrection",
+      status: "ready",
+      r2_key: "clavis/texts/EACC5779D7264A28AE2620484A55F55E/english.txt",
+      content_sha256: "2c0224b5a2cc6b919bcc1804319b8c5d6104b9681745a971371e6c0c15f2054f",
+      byte_size: 240696
+    });
+    expect(lines.find((item) => item.work_id === "31F34E757644436CBF7CCB5C9D6FA343")).toMatchObject({
+      language: "english",
+      title: "The Great Catechism",
+      status: "ready",
+      r2_key: "clavis/texts/31F34E757644436CBF7CCB5C9D6FA343/english.txt",
+      content_sha256: "b60399b19708617a8ae2a1fcdabccd0ccabc33d5ce4a9cb2d3247636f0d7763c",
+      byte_size: 250834
+    });
+    expect(lines.find((item) => item.work_id === "DEBCD85163E24E65AB7C88ADE4617167")).toMatchObject({
+      language: "english",
+      title: "Treatise on Christ and Antichrist",
+      status: "ready",
+      r2_key: "clavis/texts/DEBCD85163E24E65AB7C88ADE4617167/english.txt",
+      content_sha256: "7ec90bba7af878a1c9b43ffb3bb44d86b33c7c41019cf5e26aeded258311dc7e",
+      byte_size: 83372
+    });
+    expect(lines.find((item) => item.work_id === "CF819A315C2D4B5385F6AD6F00DE4C42")).toMatchObject({
+      language: "english",
+      title: "Expository Treatise Against the Jews",
+      status: "ready",
+      r2_key: "clavis/texts/CF819A315C2D4B5385F6AD6F00DE4C42/english.txt",
+      content_sha256: "a4bf2d0f17534ff6d3dbfb5bcc9837469257ffcebe55900de19c716d493b98f8",
+      byte_size: 10455
+    });
+    expect(lines.find((item) => item.work_id === "C9BD5522D88F42DCAB06472370E5254C")).toMatchObject({
+      language: "english",
+      title: "Against the Heresy of One Noetus",
+      status: "ready",
+      r2_key: "clavis/texts/C9BD5522D88F42DCAB06472370E5254C/english.txt",
+      content_sha256: "fa4d56d05101766f6e36e09b4cf35f80d8a77d722a720d554f3f03af850f40c3",
+      byte_size: 45516
+    });
+    expect(lines.find((item) => item.work_id === "6952B2B123924032B8A92206A1FBF705")).toMatchObject({
+      language: "english",
+      title: "Oration XLII. The Last Farewell",
+      status: "ready",
+      r2_key: "clavis/texts/6952B2B123924032B8A92206A1FBF705/english.txt",
+      content_sha256: "0ad79025d1c7c336bc90a34551918a1671297af73073969819267646107ede45",
+      byte_size: 48237
+    });
   });
 
   it("drops a trailing CCEL cache index and leaves a short file unchanged", () => {

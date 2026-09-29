@@ -317,8 +317,19 @@ function extrasPlugin() {
   };
 }
 
+function stripCliShebang() {
+  return {
+    name: "strip-cli-shebang",
+    enforce: "pre" as const,
+    transform(code: string) {
+      if (!code.startsWith("#!")) return null;
+      return code.slice(code.indexOf("\n") + 1);
+    }
+  };
+}
+
 export default defineConfig({
-  plugins: [react(), fathersApiPlugin(), extrasPlugin()],
+  plugins: [stripCliShebang(), react(), fathersApiPlugin(), extrasPlugin()],
   resolve: {
     alias: {
       "@": resolve(root, "src")

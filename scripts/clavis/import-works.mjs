@@ -3,6 +3,7 @@ import { mkdirSync, readFileSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { DatabaseSync } from "node:sqlite";
+import { applyMigrations, defaultMigrationsDir } from "./migrate.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 export const root = resolve(here, "../..");
@@ -93,8 +94,9 @@ export function openDatabase(sqlitePath) {
   return new DatabaseSync(sqlitePath, { enableForeignKeyConstraints: true });
 }
 
-export function applySchema(db, schemaPath = defaultSchemaPath) {
+export function applySchema(db, schemaPath = defaultSchemaPath, migrationsDir = defaultMigrationsDir) {
   db.exec(readFileSync(schemaPath, "utf8"));
+  applyMigrations(db, migrationsDir);
 }
 
 export function importWorks(db, rows, importedAt = new Date().toISOString()) {

@@ -110,7 +110,7 @@ describe("schema → import fixture → attach english → author works text", (
     const db = openDatabase(sqlitePath);
     try {
       const tables = db.prepare("SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name").all();
-      expect(tables.map((row) => row.name)).toEqual(["authors", "work_texts", "works"]);
+      expect(tables.map((row) => row.name)).toEqual(["authors", "schema_migrations", "work_texts", "works"]);
 
       const pk = db.prepare("SELECT sql FROM sqlite_master WHERE name = 'work_texts'").get();
       expect(String(pk.sql)).toMatch(/PRIMARY KEY \(work_id, language\)/);
@@ -158,7 +158,12 @@ describe("schema → import fixture → attach english → author works text", (
       title: "Retractations",
       status: "ready",
       sourcePath: "data/clavis/fixtures/retractationes-english.txt",
-      bodiesRoot: bodies
+      bodiesRoot: bodies,
+      translator: "X",
+      edition: "Schaff",
+      editionYear: 1889,
+      sourceUrl: "https://example.test/retractationes",
+      license: "us-public-domain"
     });
     expect(ready.content_sha256).toBe(draft.content_sha256);
     expect(ready.byte_size).toBeGreaterThan(0);
@@ -278,7 +283,12 @@ describe("clavis worker", () => {
       title: "Retractations",
       status: "ready",
       sourcePath: "data/clavis/fixtures/retractationes-english.txt",
-      bodiesRoot: bodies
+      bodiesRoot: bodies,
+      translator: "X",
+      edition: "Schaff",
+      editionYear: 1889,
+      sourceUrl: "https://example.test/retractationes",
+      license: "us-public-domain"
     });
 
     const db = new DatabaseSync(sqlitePath, { readOnly: true, enableForeignKeyConstraints: true });
@@ -308,7 +318,14 @@ describe("clavis worker", () => {
           language: "english",
           status: "ready",
           title: "Retractations",
-          r2_key: "clavis/texts/" + AUGUSTINE + "/english.txt"
+          r2_key: "clavis/texts/" + AUGUSTINE + "/english.txt",
+          translator: "X",
+          edition: "Schaff",
+          edition_year: 1889,
+          source_url: "https://example.test/retractationes",
+          license: "us-public-domain",
+          quality: "needs-cleanup",
+          attribution: "Public domain. Translated by X (Schaff, 1889)"
         })
       ]);
       const child = worksJson.works.find((work) => work.work_id === "A4300000000000000000000000000002");
@@ -452,7 +469,14 @@ describe("clavis spine and English tranche", () => {
 
       attachReadyBatch({
         db,
-        ready: [faustus],
+        ready: [{
+          ...faustus,
+          translator: "Richard Stothert",
+          edition: "NPNF1",
+          edition_year: 1887,
+          source_url: "https://example.test/faustus",
+          license: "us-public-domain"
+        }],
         repoRoot: ROOT,
         bodiesRoot: join(dir, "bodies")
       });
@@ -668,8 +692,10 @@ describe("schema file", () => {
     expect(sql).toMatch(/CREATE TABLE IF NOT EXISTS authors/);
     expect(sql).toMatch(/CREATE TABLE IF NOT EXISTS works/);
     expect(sql).toMatch(/CREATE TABLE IF NOT EXISTS work_texts/);
+    expect(sql).toMatch(/CREATE TABLE IF NOT EXISTS schema_migrations/);
     expect(sql).toMatch(/PRIMARY KEY \(work_id, language\)/);
     expect(sql).toMatch(/CHECK \(language IN \('english', 'original'\)\)/);
+    expect(sql).toMatch(/quality TEXT NOT NULL DEFAULT 'needs-cleanup'/);
     expect(sql).not.toMatch(/\bbody\b/i);
   });
 });

@@ -35,7 +35,7 @@ export function parseBibleRemoteQuery(
 ): { ok: true; bibleId: string; chapterId: string } | { ok: false; error: string } {
   const bid = (bibleId || "").trim().toLowerCase();
   const cid = (chapterId || "").trim().toUpperCase();
-  if (!bid) {
+  if (bid !== "esv" && !BIBLE_ID_RE.test(bid)) {
     return { ok: false, error: "Invalid or missing bibleId" };
   }
   if (!cid || !CHAPTER_ID_RE.test(cid)) {

@@ -1,0 +1,3 @@
+# Keep CLI hashbangs compatible with Vite's SSR transform on Windows.
+scripts/clavis/*.mjs text eol=lf
+scripts/links/*.mjs text eol=lf

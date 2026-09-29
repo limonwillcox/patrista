@@ -1,3 +1,4 @@
+import { load } from "cheerio";
 import { describe, expect, it } from "vitest";
 import { getLibrary } from "../server/corpus";
 import {
@@ -270,9 +271,12 @@ describe("catalog shelf fields", () => {
     const html = renderChurchFathersHtml(lib.catalog);
     expect(html).toContain("Apostolic era");
     expect(html).toContain("The Golden Age");
+    const $ = load(html);
     for (const w of lib.catalog.works) {
       expect(html).toContain("/fathers/" + w.author + "/" + w.id + ".html");
-      expect(html).toContain(w.title);
+      const link = $('a[href="/fathers/' + w.author + '/' + w.id + '.html"]');
+      expect(link).toHaveLength(1);
+      expect(link.text()).toBe(w.title);
     }
   }, 120_000);
 });

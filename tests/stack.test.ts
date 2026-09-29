@@ -9,7 +9,7 @@ describe("shipped app stack", () => {
     };
     expect(pkg.packageManager?.startsWith("pnpm")).toBe(true);
     expect(pkg.scripts.dev).toMatch(/\bvite\b/);
-    expect(pkg.scripts.build).toMatch(/\bvite build\b/);
+    expect(pkg.scripts.build).toMatch(/\bvite(?:\.js)? build\b/);
     expect(pkg.scripts.preview).toMatch(/\bvite preview\b/);
     expect(JSON.stringify(pkg.scripts)).not.toMatch(/http-server/);
     expect(existsSync("package-lock.json")).toBe(false);

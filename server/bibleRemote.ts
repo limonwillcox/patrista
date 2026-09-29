@@ -7,6 +7,7 @@ const CHAPTER_ID_RE = /^[0-9A-Z]{1,4}\.\d{1,3}$/;
 
 export type BibleRemoteEnv = {
   BIBLE_API_KEY?: string;
+  ESV_API_KEY?: string;
   DONATE_PUBLIC_ORIGIN?: string;
 };
 
@@ -32,9 +33,9 @@ export function parseBibleRemoteQuery(
   bibleId: string | null,
   chapterId: string | null
 ): { ok: true; bibleId: string; chapterId: string } | { ok: false; error: string } {
-  const bid = (bibleId || "").trim();
+  const bid = (bibleId || "").trim().toLowerCase();
   const cid = (chapterId || "").trim().toUpperCase();
-  if (!bid || !BIBLE_ID_RE.test(bid)) {
+  if (!bid) {
     return { ok: false, error: "Invalid or missing bibleId" };
   }
   if (!cid || !CHAPTER_ID_RE.test(cid)) {
@@ -46,8 +47,47 @@ export function parseBibleRemoteQuery(
 export async function handleBibleRemoteChapter(
   bibleId: string,
   chapterId: string,
-  options: { apiKey: string | undefined }
+  options: { apiKey?: string; esvKey?: string }
 ): Promise<BibleRemoteHandlerResult> {
+  const bid = (bibleId || "").trim().toLowerCase();
+  const cid = (chapterId || "").trim().toUpperCase();
+  if (!bid) return { status: 400, json: { error: "Missing bibleId" } };
+
+  // Handle ESV translation via Worker proxy
+  if (bid === "esv") {
+    const key = options.esvKey?.trim() || options.apiKey?.trim();
+    if (!key) {
+      return {
+        status: 503,
+        json: {
+          error: "ESV translation is not connected yet. Please add ESV_API_KEY on the Cloudflare Worker, or enter an ESV API key in Settings."
+        }
+      };
+    }
+
+    const [usfm, chapStr] = cid.split(".");
+    const query = `${usfm} ${chapStr || "1"}`;
+    const url = `https://api.esv.org/v3/passage/text/?q=${encodeURIComponent(query)}&include-passage-references=false&include-verse-numbers=true&include-first-verse-numbers=true&include-footnotes=false&include-headings=false`;
+    
+    try {
+      const res = await fetch(url, {
+        headers: { Authorization: `Token ${key}` }
+      });
+      const text = await res.text();
+      let body: unknown = null;
+      try { body = JSON.parse(text); } catch { body = null; }
+      if (!res.ok) {
+        return {
+          status: res.status,
+          json: { error: `ESV API request failed (${res.status}): ${text.slice(0, 200)}` }
+        };
+      }
+      return { status: 200, json: (body as Record<string, unknown>) || {} };
+    } catch (err) {
+      return { status: 502, json: { error: "ESV proxy fetch failed" } };
+    }
+  }
+
   const parsed = parseBibleRemoteQuery(bibleId, chapterId);
   if (!parsed.ok) return { status: 400, json: { error: parsed.error } };
 
@@ -121,7 +161,8 @@ export async function handleBibleRemoteFetch(
     });
   }
   const result = await handleBibleRemoteChapter(url.searchParams.get("bibleId") || "", url.searchParams.get("chapterId") || "", {
-    apiKey: env.BIBLE_API_KEY
+    apiKey: env.BIBLE_API_KEY,
+    esvKey: env.ESV_API_KEY
   });
   return new Response(JSON.stringify(result.json), {
     status: result.status,

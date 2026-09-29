@@ -1,0 +1,50 @@
+# source: Fathers/English/NPNF2/Volume IV.   Athanasius - Select Writings and Letters
+# series: NPNF2
+# volume: Volume IV.
+# father: athanasius
+# work: Letter to Diodorus
+# latin_match_candidate: Epistula ad Diodorum
+# clavis: CPG-2164
+# extracted: 2026-09-24
+# note: Public-domain Schaff/Robertson English extract. Volume archives retained under ANF/NPNF1/NPNF2.
+   Letter LXIV.--To Diodorus (fragment).
+
+   To my lord, son, and most beloved fellow-minister Diodorus [bishop of
+   Tyre] [4805] , Athanasius greeting in the Lord.
+
+   I thank my Lord, Who is everywhere establishing His doctrine, and
+   chiefly so by means of His own sons, such as actual fact shews you to
+   be. For before your Reverence wrote, we knew how great grace has been
+   brought to pass in Tyre by means of your perseverance. And we rejoice
+   with you that by your means Tyre also has learned the right word of
+   piety. And I indeed took an opportunity of writing to you, longed-for
+   and beloved: but I marvel at your not having replied to my letter. Be
+   not then slow to write at once, knowing that you give me refreshment,
+   as a son to his father, and make me exceeding glad, as a herald of
+   truth. And enter upon no controversy with the heretics, but overcome
+   their argumentativeness with silence, their ill-will with courtesy. For
+   thus your speech shall be with grace, seasoned with salt [4806] ,'
+   while they [will be judged] by the conscience of all....
+     __________________________________________________________________
+
+   [4805] This fragment (Migne xxvi. 1261) is given by Facundus, Def. Tr.
+   Cap. iv. 2, who claims it as addressed to Diodorus of Tarsus, the
+   famous Antiochene confessor and master of Chrysostom and Theodore.
+   Unfortunately this is impossible, as Diodore became bishop of Tarsus
+   not before 378, i.e. after Athan. was dead. The letter itself decides
+   for Diodorus of Tyre, whom Paulinus of Antioch had quite unwarrantably
+   ordained to this see (cf. Rufin, H. E. ii. 21). Whether (as has been
+   held on the authority of Rufinus) Diodorus, or (as Le Quien, Or. Chr.
+   ii. 865 sq. holds) Zeno, the nominee of Meletius, was first in the
+   field in the unseemly scramble, is doubtful. Zeno is already bishop in
+   365 (Soz. vi. 12); the date of the appointment of Diodorus, whose claim
+   is at any rate no better than that of Paulinus himself, is quite
+   uncertain (see also Prolegg. ch. ii. §§9, 10). Diodorus was the friend
+   and correspondent of Epiphanius, and of Timothy, bishop of Alexandria,
+   second from Athanasius. Facundus confuses him in these particulars also
+   with his namesake of Tarsus, but the mistake is thoroughly sifted by
+   Tillemont, Mem. viii. pp. 238, 712. The letter is important, along with
+   Letter 56, and the correspondence of S. Basil, as illustrating the
+   attitude of Athanasius with regard to the unhappy schism of Antioch.
+
+   [4806] Col. iv. 6.

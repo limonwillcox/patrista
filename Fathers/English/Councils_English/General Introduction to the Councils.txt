@@ -1,0 +1,1925 @@
+# source: Fathers/English/NPNF2/Volume XIV.   The Seven Ecumenical Councils
+# series: NPNF2
+# volume: Volume XIV
+# father: Ecumenical Councils
+# work: General Introduction and Apostolic Canons
+# extracted: 2026-09-25
+# note: Public-domain Percival / Schaff English translation.
+# source: Fathers/English/NPNF2/Volume XIV.   The Seven Ecumenical Councils
+# series: NPNF2
+# volume: Volume XIV.
+# father: councils
+# work: The Seven Ecumenical Councils
+# latin_match_candidate: (none)
+# extracted: 2026-09-01
+# note: Public-domain Schaff English extract. Volume archives retained under ANF/NPNF1/NPNF2.
+The Seven Ecumenical Councils
+
+   T&T CLARK
+
+   EDINBURGH
+
+   __________________________________________________
+
+   WM. B. EERDMANS PUBLISHING COMPANY
+
+   GRAND RAPIDS, MICHIGAN
+
+   the seven ecumenical councils
+
+   OF THE UNDIVIDED CHURCH.
+
+   THEIR CANONS AND DOGMATIC DECREES,
+
+   Together with the Canons of All the Local Synods which have Received
+   Ecumenical Acceptance.
+
+   Edited with Notes Gathered from the Writings of the Greatest Scholars
+
+   by
+
+   Henry R. Percival, M.A., D.D.
+     __________________________________________________________________
+
+   Preface.
+
+   ------------------------
+
+   The work intrusted to me of preparing this volume evidently can be
+   divided into two separate parts.  The first, the collecting of the
+   material needed and the setting of it before the reader in the English
+   tongue; the other, the preparation of suitable introductions and notes
+   to the matter thus provided.  Now in each of these departments two
+   courses were open to the editor:  the one, to be original; the other,
+   to be a copyist.  I need hardly say that of these the former offered
+   many temptations.  But I could not fail to recognize the fact that such
+   a course would greatly take from the real value of the work, and
+   therefore without any hesitation I have adopted the other alternative,
+   and have endeavoured, so far as was at all possible, to keep myself out
+   of the question altogether; and as a general rule even the translation
+   of the text (as distinguished from the notes) is not mine but that of
+   some scholar of well-established reputation.
+
+   In the carrying out of this method of procedure I have availed myself
+   of all the translations which I could find, and where, after comparing
+   them with the original, I have thought them substantially accurate, I
+   have adopted them and reproduced them.  Where I have thought that the
+   translation was misleading, I have amended it from some other
+   translation, and, I think, in no case have I ventured a change of
+   translation which rests upon my own judgment alone.  A very
+   considerable portion, however, of the matter found in this volume is
+   now translated into English for the first time.  For some of this I am
+   indebted to my friends, who have most kindly given me every assistance
+   in their power, but even here no translation has been made from the
+   Greek without careful reference being had to the traditional
+   understanding, as handed down in the Latin versions, and wherever the
+   Latin and Greek texts differ on material points the difference has been
+   noted.  I have not thought it necessary nor desirable to specify the
+   source of each particular translation, but I have provided for the use
+   of the reader a list of all the translations which I have used.  I
+   should also add that I have not considered any one text sufficiently
+   well established as to command any deference being paid to it, and that
+   I have usually followed (for my own convenience rather than for any
+   other reason) the text contained in Labbe and Cossart's Concilia.  No
+   doubt Hardouin and Mansi are in some respects superior, but old
+   prejudices are very strong, and the reader will remember that these
+   differing Concilia gave rise to a hard-fought battle in the history of
+   the Gallican Church.  I should add, however, that where more recent
+   students of the subject have detected errors of importance in Labbe's
+   text, I have corrected them, usually noting the variety of reading.
+   With regard then to the text I entirely disclaim any responsibility,
+   and the more so as on such a matter my opinion would be entirely
+   valueless.  And with regard to the translation my responsibility goes
+   no further than the certifying the reader that, to all intents and
+   purposes, the meaning of the original is presented to him in the
+   English language and without interpretation being introduced under the
+   specious guise of translation.  Some portions are mere literal
+   translations, and some are done into more idiomatic English, but
+   all--so far as I am able to judge--are fair renderings of the original,
+   its ambiguities being duly preserved.  I have used as the foundation of
+   the translation of the canons of the first four synods and of the five
+   Provincial Synods that most convenient book, Index Canonum, by the Rev.
+   John Fulton, D.D., D.C.L., in which united to a good translation is a
+   Greek text, very well edited and clearly printed.
+
+   In preparing the other division of the book, that is to say, the
+   Introduction and Notes, I have been guided by the same considerations.
+   Here will be found no new and brilliant guesses of my own, but a
+   collection of the most reliable conclusions of the most weighty critics
+   and commentators.  Where the notes are of any length I have traced the
+   source and given the exact reference, but for the brief notes, where I
+   have not thought this necessary, the reader may feel the greatest
+   confidence that he is not reading any surmises of mine, but that in
+   every particular what he reads rests upon the authority of the greatest
+   names who have written on the subject.  In the bibliographical table
+   already referred to I have placed the authorities most frequently
+   cited.
+
+   I think it necessary to make a few remarks upon the rule which I have
+   laid down for myself with regard to my attitude on controverted
+   questions bearing upon doctrine or ecclesiastical discipline.  It seems
+   to me that in such a work as the present any expression of the editor's
+   views would be eminently out of place.  I have therefore confined
+   myself to a bare statement of what I conceive to be the facts of the
+   case, and have left the reader to draw from them what conclusions he
+   pleases.  I hope that this volume may be equally acceptable to the
+   Catholic and to the Protestant, to the Eastern and to the Western, and
+   while I naturally think that the facts presented are clearly in
+   accordance with my own views, I hope that those who draw from the same
+   premises different conclusions will find these premises stated to their
+   satisfaction in the following pages.  And should such be the case this
+   volume may well be a step toward "the union of all" and toward "the
+   peace of all the holy churches of God," for which the unchanging East
+   has so constantly prayed in her liturgy.
+
+   I wish to explain to the reader one other principle on which I have
+   proceeded in preparing this volume.  It professes to be a translation
+   of the decrees and canons of certain ecclesiastical synods.  It is not
+   a history of those synods, nor is it a theological treatise upon the
+   truth or otherwise of the doctrines set forth by those synods in their
+   legislation.  I have therefore carefully restricted my own historical
+   introductions to a bare statement of such facts as seemed needed to
+   render the meaning of the matter subsequently presented intelligible to
+   the reader.  And with regard to doctrine I have pursued the same
+   course, merely explaining what the doctrine taught or condemned was,
+   without entering into any consideration of its truth or falsity.  For
+   the history of the Church and its Councils the reader must consult the
+   great historians; for a defence of the Church's faith he must read the
+   works of her theologians.
+
+   I need hardly say that the overwhelming majority of the references
+   found in this volume I have had no opportunity of verifying, no copy of
+   many of the books being (so far as I know) to be found in America.  I
+   have, however, taken great pains to insure accuracy in reproducing the
+   references as given in the books from which I have cited them; this,
+   however, does not give me any feeling of confidence that they may be
+   relied on, especially as in some cases where I have been able to look
+   them up, I have found errors of the most serious kind.
+
+   It now only remains that I thank all those who have assisted me in this
+   work, and especially I must mention his Excellency the High Procurator
+   of the Holy Governing Synod of Russia, who directed the bibliographical
+   table of Russian editions of the Canons, etc., which is found in this
+   volume, to be prepared for me by Professor Glubokoffski of the
+   Ecclesiastical Academy at St. Petersburgh.  My special thanks are due
+   to the learned professor just named for the very admirable manner in
+   which he has performed the work, and to Mr. W. J. Birkbeck, who has
+   added one more to his numerous labours for making the West better
+   acquainted with the East by translating the Russian ms. into English.
+   I cannot but pause here to remark how deep my regret is that my
+   ignorance of the Russian and Slavic tongues has prevented me from
+   laying before my readers the treasures of learning and the stores of
+   tradition and local illustration which these volumes must contain.  I
+   am, however, extremely well pleased in being able to put those, who are
+   more fortunate than myself in this respect, in the way of investigating
+   the matter for themselves, by supplying them with the titles of the
+   books on the subject.  I desire also to offer my thanks to Professor
+   Bolotoff for the valuable information he sent me as well as for a copy
+   of his learned (and often most just) strictures upon Professor
+   Lauchert's book, "Die Kanones der wichtigsten altkirchlichen Concilien
+   nebst den Apostolischen Kanones."  (Freiburg in B. und Leipzig, 1896.)
+
+   The Rev. Wm. McGarvey has helped me most kindly by translating parts of
+   the Second Council of Nice, and one or more of the African Canons; and
+   by looking over the translation of the entire African Code.
+
+   The Rev. F. A. Sanborn translated two of St. Cyril's letters, and the
+   Rev. Leighton Hoskins the Sardican Canons.  To these and many other of
+   my friends, who in one way or another helped me, I wish to return my
+   deep thanks; also to the Nashotah Theological Seminary and to the
+   Lutheran Theological Seminary at Mt. Airy, Philadelphia, for having
+   placed their libraries entirely at my disposal; nor can I end this list
+   without mention of my sister, who has assisted me most materially
+   through the entire progress of the work, and without whom I never could
+   have undertaken it.
+
+   When I think of the great number of authors cited, of the rapidity with
+   which most of the translation has had to be done, of the difficulty of
+   getting access to the necessary books, and of the vast range of
+   subjects touched upon (including almost every branch of ecclesiastical
+   and theological learning), I feel I must throw myself and my work upon
+   the reader's indulgence and beg him to take all this in consideration
+   in making his estimate of the value of the work done.  As for me, now
+   that it is all finished, I feel like crying out with the reader, in
+   deep shame at the recollection of the many blunders he has made in
+   reading the lesson,--"Tu autem, Domine, miserere nobis!"
+
+   In conclusion I would add that nothing I have written must be
+   interpreted as meaning that the editor personally has any doubt of the
+   truth of the doctrines set forth by the Ecumenical Councils of the
+   Christian Church, and I wish to declare in the most distinct manner
+   that I accept all the doctrinal decrees of the Seven Ecumenical Synods
+   as infallible and irreformable.
+
+   Henry R. Percival.
+
+   Pentecost, 1899.
+     __________________________________________________________________
+     __________________________________________________________________
+
+   General Introduction.
+
+   ------------------------
+
+   I.  Method of Treatment.
+
+   It is absolutely necessary that a few words should be said on the
+   general arrangement of the work.  The reader will find given him in the
+   English tongue, so far as they have come down to us, all the doctrinal
+   definitions of the Seven Ecumenical Councils (councils which have
+   always, and still do, receive the unqualified acceptance of both East
+   and West), and all the canons, disciplinary and doctrinal, which were
+   enacted by them.  To these has been added a translation in full of all
+   the canons of the local synods which received the approval and sanction
+   of the aforesaid Ecumenical Councils.  Besides this, as throwing light
+   upon the subject, large extracts from the Acta have been given, in fact
+   all that seemed to illustrate the decrees; and, that nothing might be
+   lacking, in an appendix has been placed a collection of all the
+   non-synodal canons which have received the sanction of the Ecumenical
+   Synods, the "Canons of the Apostles" (so called) being given in full,
+   and the others in a shortened form, for the most part in the words of
+   the admirable and learned John Johnson.
+
+   This then is the text of the volume; but it is manifest that it stood
+   in need of much comment to make its meaning clear to the reader, even
+   if well informed on ordinary matters.  To provide for this, to each
+   synodal canon there has been added the Ancient Epitome.
+
+   Of this Epitome Bishop Beveridge treats with great learning in section
+   xxvi. of his "Prolegomena" to his Synodicon, and shows that while some
+   attributed this epitome to the Greek mediæval scholiast Aristenus, it
+   cannot be his, as he has taken it for the text of his commentaries, and
+   has in more than one instance pointed out that whoever he was who made
+   it had, in his judgment, missed the sense. [1]
+
+   The Epitome must indeed be much older, for Nicholas Hydruntinus, who
+   lived in the times of Alexis Angelus, when intending to quote one of
+   the canons of Ephesus, actually quotes words which are not in that
+   canon, but which are in the Epitome.  "Wherefore," says Beveridge, "it
+   is manifest that the Epitome is here cited, and that under the name of
+   the whole canon."  This being established we may justly look upon the
+   Ancient Epitome as supplying us with a very ancient gloss upon the
+   canons.
+
+   To this Epitome have been added Notes, taken from most of the great
+   commentators, and Excursuses, largely made up from the writings of the
+   greatest theologians, canonists, archæologists, etc., with regard to
+   whom and their writings, all the information that seems necessary the
+   reader will find in the Bibliographical Introduction.
+     __________________________________________________________________
+
+   [1] Vide Apostolic Canon LXXV., and Ancyr. Canon XIX.
+     __________________________________________________________________
+
+   II.  Concerning Ecumenical Councils in General.
+
+   An Ecumenical Synod may be defined as a synod the decrees of which have
+   found acceptance by the Church in the whole world. [2]   It is not
+   necessary to make a council ecumenical that the number of bishops
+   present should be large, there were but 325 at Nice, and 150 at I.
+   Constantinople; it is not necessary that it should be assembled with
+   the intention of its being ecumenical, such was not the case with I.
+   Constantinople; it is not necessary that all parts of the world should
+   have been represented or even that the bishops of such parts should
+   have been invited.  All that is necessary is that its decrees find
+   ecumenical acceptance afterwards, and its ecumenical character be
+   universally recognized.
+
+   The reader will notice that in the foregoing I have not proceeded from
+   the theological foundation of what an Ecumenical Synod should be (with
+   this question the present volume has nothing to do), but from a
+   consideration of the historical question as to what the Seven Councils
+   have in common, which distinguishes them from the other councils of the
+   Christian Church.
+
+   And here it is well to note that there have been many "General
+   Councils" which have not been "Ecumenical."  It is true that in
+   ordinary parlance we often use the expressions as interchangeable, but
+   such really is not the case.  There are but seven universally
+   recognized and undisputed "Ecumenical Councils"; on the other hand, the
+   number of "General Councils" is very considerable, and as a matter of
+   fact of these last several very large ones fell into heresy.  It is
+   only necessary to mention as examples the Latrocinium and the spurious
+   "Seventh Council," held by the iconoclastic heretics.  It is therefore
+   the mere statement of an historical fact to say that General Councils
+   have erred.
+
+   The Ecumenical Councils claimed for themselves an immunity from error
+   in their doctrinal and moral teaching, resting such claim upon the
+   promise of the presence and guidance of the Holy Ghost.  The Council
+   looked upon itself, not as revealing any new truth, but as setting
+   forth the faith once for all delivered to the Saints, its decisions
+   therefore were in themselves ecumenical, as being an expression of the
+   mind of the whole body of the faithful both clerical and lay, the
+   sensus communis of the Church.  And by the then teaching of the Church
+   that ecumenical consensus was considered free from the suspicion of
+   error, guarded, (as was believed,) by the Lord's promise that the gates
+   of hell should not prevail against his Church.  This then is what
+   Catholics mean when they affirm the infallibility of Ecumenical
+   Councils.  Whether this opinion is true or false is a question outside
+   the scope of the present discussion.  It was necessary, however, to
+   state that these Councils looked upon themselves as divinely protected
+   in their decisions from error in faith and morals, lest the reader
+   should otherwise be at a loss to understand the anathematisms which
+   follow the decrees, and which indeed would be singularly out of place,
+   if the decrees which they thus emphatically affirm were supposed to
+   rest only upon human wisdom and speculation, instead of upon divine
+   authority.
+
+   Theologians consider that the decisions of Ecumenical Councils, like
+   all juridical decrees, must be construed strictly, and that only the
+   point at issue must be looked upon as decided.  The obiter dicta of so
+   august a body are no doubt of the greatest weight, but yet they have no
+   claim to be possessed of that supreme authority which belongs to the
+   definition of the particular point under consideration. [3]
+
+   The Seven Ecumenical Councils were all called together at the
+   commandment and will of Princes; without any knowledge of the matter on
+   the part of the Pope in one case at least (1st Constantinople) [4] ;
+   without any consultation with him in the case of I. Nice, so far as we
+   know [5] ; and contrary to his expressed desire in at least the case of
+   Chalcedon, when he only gave a reluctant consent after the Emperor
+   Marcian had already convoked the synod.  From this it is historically
+   evident that Ecumenical Councils can be summoned without either the
+   knowledge or consent of the See of Rome.
+
+   In the history of the Christian Church, especially at a later period in
+   connection with the Great Schism, much discussion has taken place among
+   the learned as to the relative powers of a General Council and of the
+   Pope.  It will be remembered by everyone that the superior authority of
+   the council was not only taught, but on one occasion acted on, by a
+   council, but this is outside of the period covered by the Seven
+   Ecumenical Synods, and I shall therefore only discuss the relations of
+   these seven synods to the Roman See.  And in the first place it is
+   evident that no council has ever been received as ecumenical which has
+   not been received and confirmed by the Roman Pontiff.  But, after all,
+   this is only saying that no council has been accepted as ecumenical
+   which has not been ecumenically received, for it must be remembered
+   that there was but one Patriarchate for the whole West, that of Rome;
+   and this is true to all intents and purposes, whether or no certain
+   sections had extrapatriarchal privileges, and were "auto-cephalous."
+
+   But it would be giving an entirely unfair impression of the matter to
+   the reader were he left to suppose that this necessity for Rome's
+   confirmation sprang necessarily from any idea of Rome's infallibility.
+   So far as appears from any extant document, such an idea was as unknown
+   in the whole world then as it is in four of the five patriarchates
+   to-day.  And it should be borne in mind that the confirmation by the
+   Emperor was sought for and spoken of in quite as strong, if not
+   stronger, terms.  Before passing to a particular examination of what
+   relation each of the Councils bore to the Roman See, it may be well to
+   note that while as an historical fact each of the Seven Ecumenical
+   Councils did eventually find acceptance at Rome, this fact does not
+   prove that such acceptance is necessary in the nature of things.  If we
+   can imagine a time when Rome is not in communion with the greater part
+   of the West, then it is quite possible to imagine that an Ecumenical
+   Council could be held whose decrees would (for the time being) be
+   rejected by the unworthy occupant of the Apostolic See.  I am not
+   asserting that such a state of affairs is possible from a theological
+   standpoint, but merely stating an historical contingency which is
+   perfectly within the range of imagination, even if cut off from any
+   practical possibility by the faith of some.
+
+   We now come to a consideration of how, by its acts, each of the Seven
+   Synods intimated its relation to the Roman See:
+
+   1.  The First Council of Nice passed a canon in which some at least of
+   the Roman rights are evidently looked upon as being exactly on the same
+   plane as those of other metropolitans, declaring that they rest upon
+   "custom."
+
+   It was the Emperor who originated this council and called it together,
+   if we may believe his own words and those of the council; and while
+   indeed it is possible that when the Emperor did not preside in person,
+   Hosius of Cordova may have done so (even uniting the two Roman
+   Presbyters who were the legates of the Roman See with him), yet there
+   is no evidence that anything of the kind ever took place, and a pope,
+   Felix III. (a.d. 483-492), in his Fifth Epistle (ad Imp. Zen.) declares
+   that Eustathius, bishop of Antioch, presided at this council. [6]
+
+   The matter, however, is of little moment as no one would deny the right
+   of the See of Rome to preside in a council of the whole Church.
+
+   2.  The Second Ecumenical Council was called together by the Emperor
+   without the knowledge of the Roman Pontiff.  Nor was he invited to be
+   present.  Its first president was not in communion at the time of its
+   session with the Roman Church.  And, without any recourse to the first
+   of all the patriarchs, it passed a canon changing the order of the
+   patriarchates, and setting the new see of Constantinople in a higher
+   place than the other ancient patriarchates, in fact immediately after
+   Rome.  Of course Protestants will consider this a matter of very minor
+   importance, looking upon all patriarchal divisions and rank and
+   priority (the Papacy included) as of a disciplinary character and as
+   being jure ecclesiastico, and in no way affecting doctrine, but any
+   fair reading of the third canon of this synod would seem plainly to
+   assert that as the first rank of Rome rested upon the fact of its being
+   the capital city, so the new capital city should have the second rank.
+   If this interpretation is correct it affects very materially the Roman
+   claim of jure divino primacy.
+
+   3.  Before the third of the Ecumenical Synods was called to meet, Pope
+   Celestine had already convicted Nestorius of heresy and deposed and
+   excommunicated him.  When subsequently the synod was assembled, and
+   before the papal legates had arrived, the Council met, treated
+   Nestorius as in good standing, entirely ignoring the sentence already
+   given by Rome, and having examined the case (after summoning him three
+   times to appear that he might be heard in his own defence), proceeded
+   to sentence Nestorius, and immediately published the sentence.  On the
+   10th of July (more than a fortnight later), the papal legates having
+   arrived, a second session was held, at which they were told what had
+   been done, all of which they were good enough to approve of. [7]
+
+   4.  The Council of Chalcedon refused to consider the Eutychian matter
+   as settled by Rome's decision or to accept Leo's Tome without
+   examination as to whether it was orthodox.  Moreover it passed a canon
+   at a session which the Papal legates refused to attend, ratifying the
+   order of the Patriarchates fixed at I. Constantinople, and declaring
+   that "the Fathers had very properly given privileges to Old Rome as the
+   imperial city, and that now they gave the same (ta isa presbeia)
+   privileges" to Constantinople as the seat of the imperial government at
+   that time.
+
+   5.  The fifth of the Ecumenical Synods refused to receive any written
+   doctrinal communication from the then pope (Vigilius), took his name
+   from the diptychs, and refused him communion.
+
+   6.  The Third Council of Constantinople, the sixth of the Ecumenical
+   Synods, excommunicated Pope Honorius, who had been dead for years, for
+   holding and teaching the Monothelite heresy.
+
+   7.  It is certain that the Pope had nothing to do with the calling of
+   the Seventh Synod, [8] and quite possible that it was presided over by
+   Tarasius and not by the Papal legates.
+
+   Such is, in brief, the evidence which the Ecumenical Councils give on
+   the subject of what, for lack of a better designation, may be called
+   the Papal claims.  Under these circumstances it may not be deemed
+   strange that some extreme ultramontanists have arrived at the
+   conclusion that much of the acts and decisions as we have them is
+   spurious, or at least corrupted in an anti-papal direction.  Vincenzi,
+   who is the most learned of these writers, argues somewhat thus "if the
+   members of the Ecumenical Synods believed as we do to-day with regard
+   to the Papacy it is impossible that they should have acted and spoken
+   as they did, but we know they must have believed as we do, ergo they
+   did not so act or speak."  The logic is admirable, but the truth of the
+   conclusion depends upon the truth of the minor premise.  The forgeries
+   would have been very extensive, and who were they done by?  Forgeries,
+   as the false decretals, to advance papal claims we are unfortunately
+   familiar with, but it is hard to imagine who could have forged in Greek
+   and Latin the acts of the Ecumenical Synods.  It is not necessary to
+   pursue the matter any further, perhaps its very mention was uncalled
+   for, but I wish to be absolutely fair, that no one may say that any
+   evidence has been suppressed. [9]
+     __________________________________________________________________
+
+   [2] This was until the division of the East and West the definition
+   accepted by all the whole Christian world.  But since the Church has
+   been divided, while the East has kept to the old definition and has not
+   pretended to have held any Ecumenical Councils, the Roman Church has
+   made a new definition of the old term and has then proceeded to hold a
+   very considerable number of synods which she recognizes as Ecumenical.
+   I say "a very considerable number," for even among Roman Catholic
+   theologians there is much dispute as to the number of these "Ecumenical
+   Synods," the decrees of which, like those of Trent and the Vatican,
+   have never been received by about half of the Christian world,
+   including four of the five patriarchates and of the fifth patriarchate
+   all the Anglican communion.  According to modern Roman writers the
+   definition of these non-ecumenically received Ecumenical Synods is
+   "Ecumenical councils are those to which the bishops and others entitled
+   to vote are convoked from the whole world under the Presidency of the
+   Pope or his legates, and the decrees of which, having received Papal
+   confirmation, bind all Christians."  Addis and Arnold, A Catholic
+   Dictionary, s. v. Councils.  The reader will notice that by this
+   definition one at least (I. Constantinople), probably three, of the
+   seven undisputed Ecumenical Synods cease to be such.
+
+   [3] Vide Vasquez, P. III., Disp. 181, c. 9; Bellarmin., De Concil.,
+   Lib. II., cap. xvij.; Veron, Rule of the Cath. Faith, Chap. I., §§ 4,
+   5, and 6.
+
+   [4] See Hefele's answer to Baronius's special pleading.  Hist.
+   Councils, Vol. I., pp. 9, 10.
+
+   [5] It should be stated that at the Sixth Synod it was said that I.
+   Nice was "summoned by the Emperor and Pope Sylvester," on what
+   authority I know not.
+
+   [6] Cf. Theod. H. E., Lib. I., e. 6.
+
+   [7] Protestant Controversialists, as well as others, have curious ways
+   of stating historical events without any regard to the facts of the
+   case.  A notable instance of this is found in Dr. Salmon's
+   Infallibility of the Church (p. 426 of the 2d Edition) where we are
+   told that "the only one of the great controversies in which the Pope
+   really did his part in teaching Christians what to believe was the
+   Eutychian controversy.  Leo the Great, instead of waiting, as Popes
+   usually do, till the question was settled, published his sentiments at
+   the beginning, and his letter to Flavian was adopted by the Council of
+   Chalcedon.  This is what would have always happened if God had really
+   made the Pope the guide to the Church.  But this case is quite
+   exceptional, resulting from the accident that Leo was a good
+   theologian, besides being a man of great vigour of character.  No
+   similar influence was exercised either by his predecessors or
+   successors."  This sentence is not pleasant reading, for it is an
+   awe-inspiring display of one of two things, neither of which should be
+   in the author of such a book.  We need only remind the reader that
+   Celestine had condemned Nestorius and his teaching before the Council
+   of Ephesus; that Honorius had written letters defining the question
+   with regard to the will or wills of the Incarnate Son before the III.
+   Council of Constantinople (which excommunicated him as a heretic for
+   these very letters); that Pope Vigilius condemned the "Three Chapters"
+   before the II. Council of Constantinople; and that Gregory II.
+   condemned the iconoclastic heresy before the Seventh Synod, if the
+   letters attributed to him be genuine (which is not quite certain, as
+   will be shewn in its proper place).  Thus the only two great questions
+   not decided, one way or another, by the See of Rome before the meeting
+   of a General Council were Arianism and Macedonianism, and some have
+   held (though mistakenly as is generally thought) that Arius was
+   condemned by a synod held at Rome before that of Nice.
+
+   [8] See Michaud's brilliant answer to Hefele, Discussion sur les Sept
+   Conciles OEcuméniques, p. 327.
+
+   [9] The reader may easily satisfy himself on this matter by reading the
+   somewhat extensive works of Aloysius Vincenzi, published in Rome in
+   1875 and thereabouts.
+     __________________________________________________________________
+
+   III.  The Number of the Ecumenical Synods.
+
+   It may not be unjustly expected that some reasons should be assigned
+   for limiting the number of the Ecumenical Synods to seven.  There is no
+   need here to enter into any proof that Nice, I. Constantinople, Ephesus
+   and Chalcedon are Ecumenical, since so long ago as the time of St.
+   Gregory the Great, that Saint and Doctor said of them:  "I venerate the
+   first four Ecumenical Councils equally with the Four Gospels (sicut
+   quatuor Evangelia)," [10] and no one has been found to question that in
+   so saying he gave expression to the mind of the Church of his day.  Of
+   the fifth and sixth synods there never was any real doubt, although
+   there was trouble at first about the reception of the fifth in some
+   places.  The ecumenical character of the seventh is not disputed by
+   East or West and has not been for near a thousand years, and full proof
+   of its ecumenicity will be found in connection with that council.
+   There is therefore no possible doubt that these seven must be included,
+   but it may be asked why certain others are not here also.
+
+   The following is a list of those that might seem to have a claim:
+   Sardica (343 circa), Quinisext (692), Constantinople (869), Lyons
+   (1274), and Florence (1439).
+
+   The reasons for rejecting the claims of Sardica will be found in
+   connection with the canons set forth by that council.  The same is the
+   case with regard to the claims of the Synod in Trullo.  It is true that
+   IV. Constantinople, holden in a.d. 869, was for a short while held as
+   Ecumenical by both East and West, and continues to be held as such by
+   the Latin Church down to this day, but it was soon rejected by the East
+   and another synod of Constantinople (879), which undid much of its
+   work, has for the Greeks taken its place.  However the Easterns do not
+   claim for this synod an ecumenical character, but confine the number to
+   seven.
+
+   The Councils of Lyons and Florence both fail of ecumenicity for the
+   same reason.  At both the East was represented, and at each an
+   agreement was arrived at, but neither agreement was subsequently
+   accepted in the East, and the decrees therefore have failed, as yet, of
+   receiving ecumenical acceptance.
+
+   We are left therefore with Seven Ecumenical Councils, neither more nor
+   less, and these are fully treated of in the pages that follow.
+     __________________________________________________________________
+
+   [10] Epistle XXIV. of Lib. I.
+     __________________________________________________________________
+     __________________________________________________________________
+
+   Bibliographical Introduction.
+
+   ------------------------
+
+   To the student of the ancient synods of the Church of Christ, the name
+   of William Beveridge must ever stand most illustrious; and his work on
+   the canons of the undivided Church as received by the Greeks, published
+   at Oxford in 1672, will remain a lasting glory to the Anglican Church,
+   as the "Concilia" of Labbe and Cossart, which appeared in Paris about
+   the same time, must ever redound to the glory of her sister, the
+   Gallican Church.
+
+   Of the permanent value of Beveridge's work there can be no greater
+   evidence than that to-day it is quoted all the world over, and not only
+   are Anglicans proud of the bishop of St. Asaph, but Catholics and
+   Protestants, Westerns and Easterns alike quote him as an authority.  In
+   illustration of this it will be sufficient to mention two examples, the
+   most extensive and learned work on the councils of our own day, that by
+   the Roman Catholic bishop Hefele, and the "Compendium of Canon Law," by
+   the Metropolitan of the Orthodox Greek Hungarian Church, [11] in both
+   of which the reader will find constant reference to Beveridge's
+   "Synodicon."
+
+   This great work appeared in two volumes full folio, with the Greek
+   text, beautifully printed, but of course with the ligatures so
+   perplexing to the ordinary Greek reader of to-day.  It should however
+   be noted that the most learned and interesting Prolegomena in Sunodikon
+   sive Pandectæ Canonum, as well as the Præfationem ad annotationes in
+   Canones Apostolicos, is reprinted as an Appendix to Vol. XII. of "The
+   Theological Works of William Beveridge, sometime lord bishop of St.
+   Asaph," in the "Library of Anglo-Catholic Theology," (published at
+   Oxford, 1848), which also contains a reprint of the "Codex Canonum
+   Ecclesiæ Primitivæ vindicatus ac illustratus," of which last work I
+   shall have something to say in connection with the Apostolical Canons
+   in the Appendix to this volume.
+
+   Nothing could exceed the value of the Prolegomena and it is greatly to
+   be wished that this most unique preface were more read by students.  It
+   contains a fund of out-of-the-way information which can be found
+   nowhere else collected together, and while indeed later research has
+   thrown some further light upon the subject, yet the main conclusions of
+   Bishop Beveridge are still accepted by the learned with but few
+   exceptions.  I have endeavoured, as far as possible to incorporate into
+   this volume the most important part of the learned bishop's notes and
+   observations, but the real student must consult the work itself.  The
+   reader will be interested to know that the greatest English scholars of
+   his day assisted Bishop Beveridge in his work, among whom was John
+   Pearson, the defender of the Ignatian Epistles.
+
+   I think I cannot do better than set out in full the contents of the
+   Synodicon so that the student may know just what he will find in its
+   pages:
+
+   "Sunodikon sive Padectæ Canonum SS. Apostolorum, et Conciliorum ab
+   Ecclesia Græca receptorum; necnon Canonicorum SS. Patrum Epistolarum:
+   Unà cum Scholiis Antiquorum singulis eorum annexis, et scriptis aliis
+   huc spectantibus; quorum plurima e Biblothecæ Bodleianæ aliarumque mss.
+   codicibus nunc primum edita:  reliqua cum iisdem mss. summâ fide et
+   diligentiâ collata.  Totum Opus in duos Tomos divisum, Guilielmus
+   Beverigius, Ecclesiæ Anglicanæ Presbyter, Recensuit, Prolegomenis
+   munivit, et Annotationibus auxit.  Oxonii, E Theatro Sheldoniano.
+   M.DC.LXXII."
+
+   Such is the title in full.  I proceed to note the contents, premising
+   that for all the Greek a Latin translation is given in a parallel
+   column:
+
+   Volume I.
+
+   The Canons of the Holy Apostles, with the Ancient Epitome, and the
+   scholia of Balsamon, Zonaras and Aristenus.
+
+   The Canons of the Council of Nice with notes ut supra and so
+   throughout.
+
+   The Canons of the Council of Constantinople.
+
+   The Canons of the Council of Ephesus.
+
+   The Canons of the Council of Chalcedon.
+
+   The Canons of the Sixth Council in Trullo.
+
+   The Canons of the Seventh OEcumenical Council.
+
+   The Canons of the Council of Constantinople called the First-and-Second
+   [in the time of Photius].
+
+   The Canons of the Council held in the Temple of Wisdom [which confirmed
+   the Seventh OEcumenical Synod].  All these with notes as before.
+
+   The Canons of the Council of Carthage [over which St. Cyprian, the
+   Martyr, presided] with the notes of Balsamon and Zonaras.
+
+   The Canons of the Council of Ancyra.
+
+   The Canons of the Council of Neocæsarea.
+
+   The Canons of the Council of Gangra.
+
+   The Canons of the Council of Antioch.
+
+   The Canons of the Council of Laodicea.
+
+   The Canons of the Council of Sardica.  All these with full notes as
+   before.
+
+   The Canons of the 217 blessed Fathers who met at Carthage, with the
+   epitome, and scholia by Balsamon and Aristenus, and on the actual
+   canons by Zonaras also.  To these some epistles are added, likewise
+   annotated.
+
+   Then, ending Volume I. is a version of Josephus Æyptius's Arabic
+   Introduction and Paraphrase on the Canons of the first four General
+   Councils, bearing the following title:
+
+   Josephi Ægyptii Proæmia et Paraphrasis Arabica in Quatuor Preorum
+   Generalium Conciliorum Canones, interprete Guilielmo Beverigio, the
+   Arabic being given in the left hand column.
+
+   Volume II.
+
+   Part I.
+
+   The Canons of Dionysius of Alexandria, with the scholia of Balsamon and
+   Zonaras.
+
+   The Canons of Peter of Alexandria.
+
+   The Canons of Gregory Thaumaturgus.
+
+   The Canons of St. Athanasius.  All these with scholia as above.
+
+   The Canons of St. Basil, with the Ancient Epitome and scholia of
+   Balsamon, Zonaras, and Aristenus.
+
+   The Canons of St. Gregory Nyssen with scholia of Balsamon.
+
+   The Canonical Answer of Timothy, Bishop of Alexandria.
+
+   The Canons of Theophilus of Alexandria.
+
+   The Canonical Epistles of Cyril of Alexandria.
+
+   Extracts from the metrical poems of St. Gregory Theologus, concerning
+   what books of the Old and New Testaments should be read.
+
+   Extracts from the iambics of St. Amphilochius the bishop to Seleucus on
+   the same subject.
+
+   The Encyclical Letter of Gennadius, Patriarch of Constantinople.
+
+   The Epistle of Tarasius, Patriarch of Constantinople, to Adrian, Pope
+   of Rome, concerning simony.  All of these with Balsamon's scholia.
+
+   Part II.
+
+   The Synopsis by Alexius Aristenus of the letters called Canonical.
+
+   The questions of Certain Monks and the Answers sent by the Synod of
+   Constantinople.  With notes by Balsamon. [12]
+
+   The Alphabetical Syntagma of all that is contained in the Sacred and
+   Divine Canons, by Mathew Blastares, the Monk. [13]
+
+   Concerning the Holy and OEcumenical Synod which restored Photius, the
+   most holy Patriarch to the See of Constantinople, and dissolved the
+   scandal of the two Churches of Old and New Rome; [Styled by some the
+   "Eighth OEcumenical Synod."] to which is added the Letter of the
+   Blessed John Pope of Rome to the most holy Photius, Archbishop of
+   Constantinople.
+
+   An Index Rerum et Verborum of both volumes.
+
+   Beveridge's own Notes on the Canons of the Councils.
+
+   An Index Rerum et Verborum of the Notes.
+
+   Such are the contents of Bishop Beveridge's great work, and it is
+   impossible to exaggerate its value.  But it will be noticed that it
+   only covers the disciplinary action of the Councils, and does not give
+   the dogmatic decrees, these being excluded from the author's plan.
+
+   Before leaving the collections of the canons we must mention the great
+   work of Justellus (the Preface and notes of which are found reprinted
+   in Migne's Pat. Lat., Tom. LXVII.); Canonum Ecclesiæ Universæ Gr. et
+   Lat. cum Præfatione Notisque Christoph. Justelli.
+
+   The author was counsellor and secretary to the King of France, was born
+   in Paris 1580, and died in 1649.  After his death there appeared at
+   Paris in 1661 a work in 2 volumes folio, with the following title:
+   Bibliotheca juris canonici vetus...ex antiquis codicibus mss.
+   Bibliothecæ Christopheri Justelli....Opera et studio Gul. Voelli et
+   Henrici Justelli.
+
+   The Church in Paris had the honour of having among its Cathedral clergy
+   the first scholar who published a collection of the Acts of the
+   councils.  James Merlin was Canon and Grand Penitentiary of the
+   Metropolitan Church, and the first edition of his work he put out in
+   1523 in one volume folio.  This work passed through several editions
+   within a few years, but soon gave place to fuller collections. [14]
+
+   In 1538, the Belgian Franciscan Peter Crabbe (Pierre Grable) issued at
+   Cologne an enlarged collection in two volumes, and the second edition
+   in 1551 was enlarged to three folio volumes.  Besides these, there was
+   Lawrence Surius's still more complete collection, published in 1557 (4
+   vols. folio), and the Venice collection compiled by Domenick Bollanus,
+   O. P., and printed by Dominic Nicolini, 1585 (5 vols. folio).
+
+   But the renowned collection of Professor Severin Binius surpassed all
+   its predecessors, and its historical and critical notes are quoted with
+   respect even to-day.  The first edition, in four volumes folio, was
+   issued at Cologne in 1606, and later editions, better than the first,
+   in 1618 and 1636.  This last edition was published at Paris in nine
+   volumes, and made use of the Roman collection.
+
+   To the learned Jesuit Sirmond belongs the chief glory of having
+   compiled this Roman collection, and the "Introduction" is from his
+   pen.  The work was undertaken by the authority of Pope Paul V., and
+   much of the Greek text, copied from mss. in the Vatican Library, was
+   now for the first time given to the reading public.  This collection
+   contains only the Ecumenical Councils according to the Roman method of
+   reckoning, and its compilation took from 1608 to 1612.
+
+   No collection appeared from this date until the "Collectio Regia," a
+   magnificent series of thirty-seven volumes folio, at the royal press at
+   Paris in 1644.  But while it was superb in get up, it left much to be
+   desired when looked at critically, for many faults of the Roman edition
+   already pointed out by Sirmond were not corrected.
+
+   And now we have reached the time when the first really great Concilia
+   appeared, which while only filling seventeen volumes in folio was yet
+   far more complete --Hefele says twenty-five per cent. more
+   complete--than the great Collectio Regia just described.  This edition
+   was the work of Philip Labbe (Labbeus in Latin), S. J., and was
+   completed after his death in 1667, by Father Gabriel Cossart of the
+   same Society--"Almost all the French savants quote from this edition of
+   Labbe's with Baluze's supplement," [15] and I have followed their lead,
+   availing myself of the corrections made by later editors.  The title of
+   the edition used in this work is:  "Sacrasancta Concilia ad Regiam
+   Editionem exacta.  Studio Philip. Labbei et Gabr. Cossartii, Soc. Jesu
+   Presbyterorum.  Lutetiæ Parisiorum.  MDCLXXI.  Cum Privilegio Regis
+   Christianissimi."
+
+   Anything more perfect than these precious volumes it would be hard to
+   conceive of, and while of course they contain the errors of chronology
+   et cetera of their age, yet their general accuracy and marvellous
+   completeness leave them even to-day as the greatest of the great,
+   although the later edition of Hardouin is more often used by English
+   and American scholars, and is the one quoted by Pope Benedict XIV. in
+   his famous work De Synodo Diæcesana.  Hardouin's edition did certainly
+   correct many of the faults of Labbe and Cossart, yet had itself many
+   faults and defects which are pointed out by Salmon [16] in a long list,
+   although he fully acknowledges the value of Hardouin's improvements and
+   additions.  Perhaps, not unnaturally, as a Professor at the Sorbonne,
+   he preferred Labbe and Cossart.  It may not be amiss to add that
+   Hardouin was very anti-Gallican and ultramontane.
+
+   The Dominican Archbishop of Lucca, Mansi, in 1759, put out his
+   "Concilia" in thirty-one volumes folio at Florence, styled on the
+   title-page "the most ample" edition ever printed, and claiming to
+   contain all the old and much new matter.  It was never finished, only
+   reaching to the XV^th century, has no indices, and (says Hefele) "is
+   very inferior to Hardouin in accuracy.  The order of the subjects in
+   the later volumes is sometimes not sufficiently methodical, and is at
+   variance with the chronology." [17]
+
+   I shall now present the reader with some bibliographical notes which I
+   extract verbatim from Hefele (Hefele, History of the Councils, Vol. I.,
+   p. 74).
+
+   Among the numerous works on the history of the councils, the most
+   useful to consult are:
+
+   1.  John Cabassutius, Notitia ecclesiastica historiarum conciliorum et
+   canonum.  Lyons 1680, folio.  Very often reprinted.
+
+   2.  Hermant, Histoire des Conciles, Rouen 1730, four volumes, 8vo.
+
+   3.  Labbe, Synopsis historica Conciliorum, in vol. i. of his Collection
+   of Councils.
+
+   4.  Edm. Richer, Historia conciliorum generalium (Paris, 1680), three
+   volumes, 4to.  Reprinted in 8vo. at Cologne.
+
+   5.  Charles Ludovic Richard, Analysis conciliorum generalium et
+   particularium.  Translated from French into Latin by Dalmasus.  Four
+   volumes, 8vo, Augsburg, 1778.
+
+   6.  Christ. Wilh. Franz Walch, Entwurf einer vollständigen Historie der
+   Kirchenversammlungen, Leipzig, 1759.
+
+   7.  Fabricius, Bibliotheca Græca, edit. Harless. t. xii., p. 422 sqq.,
+   in which is contained an alphabetical table of all the councils, and an
+   estimate of the value of the principal collections.
+
+   8.  Alletz, Concilien-Lexikon, translated from French into German by
+   Father Maurus Disch, a Benedictine and professor at Augsburg, 1843.
+
+   9.  Dictionnaire universel et complet des Conciles, tant généraux que
+   particuliers, etc., rédigé par M. l'abbé P----, prêtre du Diocese de
+   Paris, published by the Abbé Migne (Paris, 1846), two volumes, 4to.
+
+   In the great works on ecclesiastical history--for example, in the
+   Nouvelle Bibliothèque des Auteurs Ecclesiastiques, by El. Dupin, and
+   the Historia Literaria of Cave, and particularly in the excellent
+   Histoire des Auteurs Sacrés, by Remi Ceillier--we find matter relating
+   to the history of the councils.  Salmon, l. c., p. 387, and Walch in
+   his Historie der Kirchenversammlungen, pp. 48-67, have pointed out a
+   large number of works on the history of the councils.  There are also
+   very valuable dissertations on the same subject in--
+
+   1.  Christian Lupus, Synodorum generalium ac provincialium decreta et
+   canones, scholiis, notis ac historica actorum dissertatione illustrata,
+   Louv., 1665; Brussels, 1673; five volumes, 4to.
+
+   2.  Lud. Thomassin, Dissertationum in Concilia generalia et
+   particularia, t. i., Paris, 1667; reprinted in Rocaberti, Bibl.
+   pontificia, tr. XV.
+
+   3.  Van Espen, Tractatus Historicus exhibens scholia in omnes canones
+   conciliorum, etc., in his complete works.
+
+   4.  Barth. Caranza has written a very complete and useful abstract of
+   the acts of the councils in his Summa Conciliorum, which has often been
+   re-edited.
+
+   5.  George Daniel Fuchs, deacon of Stuttgart, has, in his Bibliothek
+   der Kirchenversammlungen, four volumes, Leipsic, 1780-1784, given
+   German translations and abstracts of the acts of the councils in the
+   fourth and fifth centuries.
+
+   6.  Francis Salmon, Doctor and Librarian of the Sorbonne, has published
+   an Introduction to the Study of the Councils, in his Traité de l'Étude
+   des Conciles et de leurs collections, Paris, 1724, in 4to, which has
+   often been reprinted.
+
+   To these I would add the following:
+
+   1.  Fleury, Histoire Ecclesiastique.  This work in many volumes, part
+   of which has been translated into English, is most useful and accurate,
+   and contains a resumé of the separate canons and definitions as well as
+   the history of the proceedings.
+
+   2.  Denziger, Enchiridion Symbolorum et Definitionum quæ de rebus fidei
+   et morum a Conciliis OEcumenicis et Summis Pontificibus emanarunt.  A
+   most useful handbook in the original.
+
+   3.  Hefele, Conciliengeschicte.  This, the most recent work upon the
+   subject, is also in some respects the most satisfactory, and it is a
+   matter of real regret that only the first part of the work, down to the
+   end of the Seventh OEcumenical Council, has been translated into
+   English.  The last volume of the author's revised edition appeared in
+   1890.  The first volume of the first edition was published in 1855, and
+   the seventh and last in 1874.  The entire book was translated into
+   French some years ago (with full indices) by M. l'abbé Goschlerand and
+   M. l'abbé Delarc (Paris, Adrien le Clere et Cie).  It should in
+   fairness, however, be remarked that Bishop Hefele was one of the
+   minority who opposed the opportuneness of the definition of Papal
+   infallibility at the Vatican Council, and while indeed afterwards he
+   submitted to the final decree, yet he has been a somewhat suspected
+   person since to those who held extreme views on this doctrine.
+
+   So far as I am aware no serious work has been done upon the councils by
+   any writer using the English tongue in recent times, with the exception
+   of the useful Notes on the Canons of the First Four General Councils,
+   by Canon Wm. Bright.
+
+   The following is a list of the English translations which I have
+   consulted or followed:
+
+   John Johnson, The Clergyman's Vade-mecum (London, 2d Ed., 1714).
+
+   Wm. A. Hammond, The Definitions of Faith and Canons of Discipline of
+   the Six OEcumenical Councils, etc.
+
+   William Lambert, The Canons of the First Four General Councils of the
+   Church and those of the Early Greek Synods (London, s.d. Preface dated
+   1868).
+
+   John Fulton, Index Canonum.  [This work ends with the Council of
+   Chalcedon.]  (New York, 1872.  3d Ed., 1892.)
+
+   John Mendham, The Seventh General Council, the Second of Nice (London,
+   s. d.).
+
+   H. R. Percival, The Decrees of the Seven Ecumenical Synods.  Appendix
+   I. to A Digest of Theology (London, Masters, 1893).
+
+   It only remains that I mention two other works.
+
+   Dr. Pusey's book, The Councils of the Church from the Council of
+   Jerusalem a.d. 51 to the Council of Constantinople, 381 (1857) should
+   not be omitted, and certainly the reader's attention should be called
+   to that most accurate and valuable volume by Herm. Theod. Bruns,
+   Canones Apostolorum et Conciliorum Veterum Selecti (Berolini, 1839),
+   which has been constantly referred to in preparing this work.
+     __________________________________________________________________
+
+   [11] As one of the few books of the Eastern Church ever translated into
+   a Western tongue, the reader may be glad to have its full title.
+   Compendium des Kanonischen Rechtes der einen heiligen, allgemeinen und
+   apostoliochen Kirche verfaszt von Andreas Freiherrn von Schaguna.
+   Hermannstadt, Buchdruckerei des Josef Droklieff, 1868.
+
+   [12] According to the Elenchus, in the beginning of this volume, both
+   of these writings are found in the First Part and not in the Second
+   Part of the volume.
+
+   [13] Schoell says that the text is not accurately given.
+
+   [14] I am indebted to Hefele, History of the Councils, Vol. I., p. 67
+   et seqq., for this account of Merlin's Collection, as also for most of
+   the statements that follow.  Hefele says (footnote to page 67):  "The
+   longest details on Merlin's edition are found in a work of Salmon,
+   Doctor and Librarian of the Sorbonne, Traité de l'Etude des Conciles et
+   de leurs Collections, etc.  Paris, 1726."
+
+   [15] Hefele, Hist. Councils, vol. I, p. 69.
+
+   [16] Salmon, l. c., pp. 315-331, 786-831.
+
+   [17] Hefele, Hist. Councils, vol. I, p. 72.
+     __________________________________________________________________
+     __________________________________________________________________
+
+   Appended Note on the Eastern Editions of Synodical Literature.
+
+   ------------------------
+
+   From the presses of the East, especially those at Athens, a number of
+   editions more or less complete of the Greek text of the Canons of the
+   Ecumenical and of the Local Councils have been issued, and the notes of
+   Balsamon, Zonaras, and Aristenus have been added in some cases.
+   Professor Bolotoff writes however that so far as Greek literature on
+   the subject is concerned, with the exception of purely topographical
+   researches in the environs of Constantinople, it is simply putting into
+   Greek what was originally in German.
+
+   The Russian Church has done somewhat more and as will be seen from the
+   following table, some attempts have been made at providing scholia, but
+   when the scheme of this present work was shewn him, Professor Bolotoff
+   said:  "We have nothing analogous to this undertaking in Russia."  The
+   learned professor remarks that all the best Russian literature upon the
+   subject is contained in magazine articles, especially those of
+   Professor Zaozersky of the Moscow Theological Academy, and of Professor
+   A. S. Pavloff, of the University of Moscow; he mentions also the
+   latter's article in the Orthodox Review, and adds that "An Essay on a
+   Course of Church Legislation," by Joann Smolensk (St. Petersburg, 1851)
+   should be referred to.
+     __________________________________________________________________
+
+   Bibliograficeskij Ukazatel' Pecatnyh Izdanij Apostol'skih I Sobornyh
+   Pravil Na Slavjanskom I Russkom Jazykah.
+
+   V pravoslavnoj Russkoj Cerkvi izdanija sobornyh pravil i opredelenij
+   sover?alis' tol'ko po neposredstvennomu rasporjazeniju i soizvoleniju
+   vys?ej cerknovnoj vlasti i fakticeski izjaty iz kompetencii castnoj
+   ucenoj predpriimcivosti.  Poetomu podrobnyja izdanija vypuskalis' v
+   Rossii li?' po mere prakticeskoj potrebnosti.
+
+   (1)  Pervoe po vremeni pecatnoe izdanie nazvannyh pravil bylo v
+   slavjanskoj "Kormcej Knige" (=grec. Pedalion ), kotoraja nacata
+   pecataniem pri Moskovskom patriarhe Iosife v Moskve 7go oktjabrja 1649
+   g. i okoncena 1go ijulja 1650 g., no patr. Nikon podverg ego sobornomu
+   peresmotru, pri cem ne?kol'ko listov bylo perepecatano i vneseno vnov'.
+   [18]   Po semu ekzempljary etoj "Kormcej" byli razoslany po cerkvam
+   dlja cerkovnago upotreblenija i postupili v obrascenie ne ranee 1653 g.
+   Vtoroe izdanie "Kormcej"bylo v 1787 g. posle peresmotra eja
+   mitropolitom Novgorodskim i S. Peterburgskim Gavriilom, [19] a zatem i
+   drugija (napr., v 1804 g., 1816 g. i 1823 g.) bez osobyh peremen.
+   Pozdnej?ija izdanija otlicajutsja ot Nikonovskago v castnostjah, no eto
+   ne kasaetsja cerkovnyh pravil, kotoryja pome?cajutsja v pervoj casti
+   "Kormcej"i soderzat 85 apostol'skih pravil, postanovlenija 16-i soborov
+   (Nikejskago, Ankirskago, Neokesarijskago, Gangrskago, Antiohijskago,
+   Laodikijskago, II-go, III-go, IV-go vselenskih, Sardikskago,
+   Karfagenskago, Konstantinopol'skago, pri Nekoparge, Trull'skago 692 g.,
+   VII-go vselenskago, Dvukratnago i v cerkvi sv. Sofii) i pravila 13-ti
+   sv. otcov.
+
+   (2)  V pecatnoj "Kormcej" kanony izlozeny ne v polnom tekste, a v
+   sokra?cennom, inogda daju?cem li?' ves'ma nedostatocnoe predstavlenie o
+   soderzanii podlinnika.  Poetomu izdavna delalis' popytki celostnyh
+   perevodov, [20] no poslednie ne pojavljalis' v pecati.  Tol'ko uze v
+   1839 g. sv. Sinodom vypu?ceno bylo v S. Peterburge takoe izdanie:
+   "Kniga pravil sv. apostol, sv. soborov vselenskih i pomestnyh i sv.
+   otec", napecatannaja v bol'?oj list v "carstvuju?cem grade sv. Petra
+   pervym tisneniem, v leto ot sozdanija mira 7347, ot Rozdestva ze po
+   ploti Boga Slova 1839, indikta 12"; v nem 4 nenumerovannye lista i 455
+   numerovannyh strannic.  Na kazdoj strannice dve kolonny dlja podlinnika
+   i novago slavjanskago perevoda po polnomu tekstu, no bez tolkovanij
+   vizantijskih kanonistov; redko na osnovanii Zonary ili Val'samona
+   dajutsja primecanija, ne vsegda tocnyja isto-riceski (napr. k 10
+   pravilu Ankirsk., 3 Sard., 4 Karfag. i o dvukratnom sobore 861 g.), a
+   po mestam i samyj tekst ne ispraven (napr., v 13-m prav. I-go vsel.
+   sobora).  Eta "Kniga"imela potom sleduju?cija izdanija:  (2) v Moskve v
+   Sinodal'noj tipografii v 1862, in folio 8 ll.+672+74 numer. strn., s
+   tekstom greceskim i slavjanskim  (3)  ibid. v 1866 g. in quarto, 3 ll.+
+   373 strn.+1 l.+ 59 strn., s odnim slavjanskim tekstom; (4)  ibid. v
+   1874 g., in octavo, 4 ll.+ 455 strn.+ 2 ll.+ 104 + 4 strn., toze s
+   odnim slavjanskim tekstom; (5)  ibid. v 1886 g., in folio, 3 ll.+395+42
+   strn.+1 l., opjat' v odnom slavjanskom tekste.
+
+   (3)  "Kniga pravil" nicut' ne predstavljaet avtorizovannago textus
+   receptus, i posle eja izdanija sam Sv. Sinod ne redko privodil v svoih
+   ukazah pravila po slavjanskoj redakcii "Kormcej knigi," a potom
+   rekomendoval Afinskoe izdanie "Sintagmy" dlja vseh duhovno-ucebnyh
+   zavedenij.  Eto otkryvalo mesto dlja novoj obrabotki, kotoraja s
+   razre?enija vys?ej duhovnoj vlasti i byla predprinjata Moskovskim
+   "Ob?cestvom ljubitelej duhovnago prosve?cenija".  Objavlenie ob etom
+   bylo sdelano v N-re 3 "Moskovskih Eparhialnyh Cerkovnyh Vedomostej"za
+   1875 g., a v janvarskoj knizke togoze goda Moskovskago zurnala "Ctenija
+   v Ob?cestve ljubitelej duhovnago prosve?cenija"byla napecatana i samaja
+   "programma"izdanija (strn. 79-90 v otdele bibliografii.  Po povodu eja
+   professor kanoniceskago prava v Novororossijskom Universitete
+   (skoncav?ijsja 16go avgusta 1898 g. professorom Moskovskago
+   Universiteta) Aleksej Stepanovic Pavlov sdelal "Zamecanija na programmu
+   izdanija, v russkom perevode, cerkovnyh pravil s tolkovanijami" v
+   "Zapiskah Imperatorskago Novorossijskago Universiteta", t. XVI (Odessa
+   1875 g.) strn. 1-17 prilozenij (i v otdel'noj bro?ure), a posle
+   perepecatal ih--s nekotorymi dopolnenijami--v Moskovskom zurnale
+   "Pravoslavnoe Obozrenie"za aprel' 1876 g. (strn. 730-746) pod zaglaviem
+   "O novom perevode tolkovanij na cerkovnyja pravila".  Na eti
+   vozrazenija otvecal professor cerkovnago prava v Moskovskoj Duhovnoj
+   Akademii Aleksandr Feodorovic Lavrov v zurnale "Ctenija v Ob?cestve
+   ljubitelej duhovnago prosve?cenija" (c. II, strn. 158-194 za 1877 g.)
+   "Pecatnym pis'mom k Alekseju Stepanovicu Pavlovu".  Tak postepenno
+   opredelilsja plan izdanija, kotoroe pecatalos' snacala v prilozenijah k
+   zurnalu "Ctenija v Ob?cestve i pr.", a potom javilos' i otdel'no in
+   octavo v sleduju?cih vypuskah:  (a) I-j "Pravila svjatih Apostol s
+   tolkovanijami" v dvuh izdanijah--Moskva 1876 g. iz "Ctenij 1875 g.,
+   strn. 1-163) 4+12+175 strn., i ibid. 1887 g., 5+12+163 strn.; II-j
+   "Pravila svjatyh vselennyh soborov s tolkovanijami"(iz "Ctenij" 1875
+   g., strn. 165-328; 1876 g., strn. 329-680; 1877 g., strn. 681-900) v
+   dvuh castjah:  1-ja "pravila soborov 1-4" Moskva 1877 g., 260 strn.,
+   2-ja "pravila soborov 5-7" ibid., 736 strn.; b) "Pravila svjatyh
+   pomestnyh soborov s tolkovanijami" toze v dvuh vypuskah (iz "Ctenij"
+   1877 g., strn. 900-1066; 1878 g., strn. 1067-1306; 1879 g., strn.
+   1307-1410:  1-j (pravila soborov Ankirskago, Neokesarijskago,
+   Gangrskago, Antiohijskago, Laodikijskago i Sardikijskago) Moskva 1880,
+   strn. 359; 2-j (pravila soborov Karfagenskago [s poslanijami k pape
+   Vonifatiju i pape Kelestinu], Konstantinopol'skago, Dvukratnago i vo
+   hrame premudrosti slova Bozija) ibid. 1881, strn. 876; c) "Pravila
+   svjatyh otec s tolkovanijami" ibid. 1884, strn. 626.  Pri nih imeetsja
+   otdel'nyj "Ukazatel' predmetov, soderza?cihsja v izdanii pravil
+   apostol'skih, sobornyh i svjatyh otcev s tolkovanijami", Moskva 1888,
+   58 strn. in octavo.  Greceskij tekst pravil privoditsja po izdaniju
+   Suntagma ton Theion kai hieron kanonon...hupo G. A. Ralle kai M. Potln,
+   'Athenesin 1852-1854, rjadom s nim pome?cajetsja doslovnyj slavjanskij
+   perevod tolkovanij vizantijskih kommentatorov (Zonary, Aristina,
+   Val'samona), tekst i tolkovanija slavjanskoj Kormcej; vse eto
+   soprovozdaetsja vydanijami i vsjakago roda pojasnenijami
+   (istoriceskimi, filologiceskimi i t. p.).  Izdanie eto specialistami
+   spravedlivo scitaetsja ves'ma cennym v naucnom otno?enii.  Glavnym
+   redaktorom i dejatelem ego byl prof. A. F. Lavrov (v mona?estve
+   Aleksij, skoncav?ijsja arhiepiskopom Litovskim i Vilenskim), no
+   privlekalis' k ucastiju mnogija drugija lica i mezdu nimi prof. A. S.
+   Pavlov.
+
+   (4)  Russkij perevod pravil imeetsja tol'ko pri izdanijah Kazanskoj
+   Duhovnoj Akademii:   a) "Dejanija vselenskih soborov v perevode na
+   russkij jazyk", t. I VII (7), Kazan' 1859-1878 (nekotorye tomy vo
+   vtorom izdanii) i b) "Dejanija devjati pomestnyh soborov v perevode na
+   russkij jazyk", odin tom, Kazan' 1878.  Etot perevod sdelan po
+   porucenii Sv. Sinoda, a pravila peredajutsja v nem po tekstu sobornyh
+   dejanij.
+
+   Iz predstavlennago ocerka pecatnyh izdanij sobornyh pravil vidno, cto
+   oni--v predelah svoej fakticeskoj primenimosti--pocitajutsja istocnikom
+   dejstvuju?cago prava v Russkoj pravoslavnoj cerkvi, pocemu dlja neja
+   osobennuju vaznost' imejut li?' avtoritetnyja vizantijskija,
+   tolkovanija, o kotoryh su?cestvujut izsledovanija V. Demidova, harakter
+   i znacenie tolkovanij na kanoniceskij kodeks greceskoj
+   cerkvi--Aristina, Zonary i Val'samona--v "Pravoslavnom Obozrenii" t.
+   II-j za 1888 g., Kazanskago prof. V. A. Narbskago, Tolkovanija
+   Val'samona na nomokanon Fotija, Kazan' 1889, i Jur'evskago
+   (=Derptskago) prof. M. E. Krasnozena, Tolkovateli kanoniceskago kodeksa
+   vostocnoj cerkvi:  Aristin, Zonara i Val'samon, Moskva 1892.
+
+   Otdel'nyh naucnyh tolkovanij vseh sobornyh pravil v russkoj literature
+   net, no oni izlagajutsja i razjasnjajutsja v kursah cerkovnago prava
+   (arhimandrit. [ep. Smolenskago] Ioanna, prof. N. S. Suvorova, I. S.
+   Berdnikova, P. A. Laskareva, M. A. Ostroumova), v socinenijah po
+   istorii vselenskih soborov (ep. Ioanna, prof. Alekseja Petrovica
+   Lebedeva), v kanoniceskih i cerkovno-istoriceskih monografijah.
+   Kasatel'no kriticeskago izdanija podlinnago teksta pravil est' ucenaja
+   i poleznaja stat'ja (o knige Fr. Lauchert, Die Kanones usw., Freiburg
+   i. Br. und Leipzig 1896) professora cerkovnnoj istorii v S.
+   Peterburgskoj Duhovnoj Akademii Vasilija Vasilievica Bolotova v
+   "Hristianskom Ctenii", vyp. IV-j za 1896 g., strn. 178-195.
+
+   Professor S.-Peterburgskoj Duhovnoj Akademii po kafedre Sv. Pisanija
+   Novago Zaveta
+
+   Nikolaj Glubokovskij
+
+   S.-Peterburg, 1898, X, 11-voskresenie.
+     __________________________________________________________________
+
+   [18] Poetomu nekotorye bibliografy spravedlivo seitajut zdes' dva
+   izdanija, iz koih 1653 g.--in folio--sostoit iz 37+1+60+1+16+679 listov
+   i bylo perepecatano staroobrjadcami (raskol'nikami) v 1785 g. v
+   Var?ave.
+
+   [19] Eto izdanie in folio v Moskve v dvuh castjah i knigah--v 1-j 2
+   nenum.+38+5+60+300+39 numerovannyh listov,--vo 2-j 1+2+235+16+37
+   listov.
+
+   [20] Vo vtoroj polovine XVII v. perevodil kanony Epifanij Slavineckij,
+   a v pervoj polovine XVIII v. pravila apostol'skija i sobornyja byli
+   perevedeny Vasiliem Kozlovskim i Grigoriem Poletikoju po greceskomu
+   tekstu "Synodicon" a Beveregii, s kakovago izdanija sdelan byl novyj
+   perevod v 1782 g.
+     __________________________________________________________________
+
+   A Bibliographical Index of the Printed Editions of the Canons of the
+   Apostles and of the Councils in the Slavonic and Russian Languages.
+
+   (Prepared by Nicolas Glubokoffski, Professor of the Chair of the Holy
+   Scriptures of the New Testament in the Ecclesiastical Academy of St.
+   Petersburgh.) [21]
+
+   In the orthodox Russian Church, editions of the Conciliar Canons and
+   Decrees have only been issued under the immediate disposition and
+   sanction of the supreme ecclesiastical authority, and, in fact, are
+   amongst those things which it is not within the competence of private
+   scholars to undertake.  Such editions therefore have been published in
+   Russia only in accordance with practical requirements.
+
+   1.  The earliest printed edition of the afore-mentioned canons appeared
+   in the Slavonic "Kormchaja Kniga" [22] (=Gk. pedalion), the printing of
+   which was commenced at Moscow, on October 7th, 1649, under the
+   Patriarch Joseph of Moscow, and was finished on July 1, 1650; but the
+   Patriarch Nicon caused it to be submitted to a Council for revision, in
+   consequence of which certain pages were reprinted and inserted afresh
+   into it. [23]   Thereupon copies of this "Kormchaja" were distributed
+   for use amongst the churches, and came into general circulation not
+   earlier than the year 1653.  The second edition of the "Kormchaja"
+   appeared in 1787, after a revision under the Metropolitan Gabriel of
+   Novgorod and St. Petersburgh, [24] and was followed by others (e.g.,
+   those of 1804, 1816, and 1823) without any alterations of importance.
+   The latest editions differ from that of Nicon in certain particulars,
+   but these particulars do not concern the ecclesiastical Canons, which
+   are placed in the first part of the "Kormchaja" and include the 85
+   Apostolic Canons, the decrees of the sixteen councils (of Nicæa,
+   Ancyra, Neocæsarea, Gangra, Antioch, Laodicea, the 2d, 3d, and 4th
+   Ecumenical, Sardica, Carthage, Constantinople under Nectarius, in
+   Trullo, a.d. 692, the 7th Ecumenical, the First-and-Second [council of
+   Constantinople] and that in the church of St. Sophia) and the Canons of
+   the 13 Holy Fathers.
+
+   2.  In the printed "Kormchaja" the canons are set forth, not in their
+   full text, but in a shortened form which sometimes gives but a very
+   insufficient representation of the contents of the original.  On this
+   account attempts at full translations were made many years back, but
+   these never appeared in print.  It was not until 1839 that such an
+   edition as this was put forth by the Holy Synod at St. Petersburgh,
+   under the title:  "The Book of the Canons of the Holy Apostles, of the
+   Holy Ecumenical and local Councils, and of the Holy Fathers," printed
+   in large folio in "the Imperial city of St. Peter, the first impression
+   in the 7347th year from the creation of the world, and the 1839th from
+   the Birth in the flesh of God the Word, indict. 12."  In this edition
+   there are 4 unnumbered leaves and 455 numbered pages.  On each page
+   there are two columns, for the original text and the new translation of
+   the whole text into the Slavonic respectively, but without the
+   commentaries of the Byzantine Canonists; occasionally, but rarely,
+   notes based upon Zonaras or Balsamon are given, which are not always
+   historically accurate (for instance, that to the 10th Canon of Ancyra,
+   the 3d of Sardica, the 4th of Carthage, and the one which deals with
+   the First-and-Second Council of a.d. 861) while in some places the text
+   itself is not correct (for instance, in the 13th Canon of the 1st
+   Ecumenical Council).  This "Book of the Canons" subsequently went
+   through the following editions:  the 2d, printed in Moscow at the
+   Synodal Press in 1862, in folio 8 leaves + 672 + 74 numbered pages,
+   with Greek and Slavonic texts; the 3d ibid. in 1866, in quarto, 3
+   leaves + 373 pages + 1 leaf + 59 pages, with the Slavonic text only;
+   the 4th, ibid. in 1874, in octavo, 4 leaves 4 + 455 pages + 2 leaves +
+   104 + 4 pages, also with the Slavonic text only; the 5th, ibid. in
+   1886, in folio, 3 leaves + 395 + 42 pages + 1 leaf, again with Slavonic
+   text only.
+
+   3.  The "Book of Canons" by no means represents an authorized textus
+   receptus, and after its publication, the Holy Synod itself not
+   unfrequently introduced the Canons as given in the Slavonic edition of
+   the "Kormchaja Kniga" into its edicts, and moreover recommended the
+   Athenian Edition of the "Syntagma" for all the
+   ecclesiastico-educational establishments.  This opened the way for a
+   new work, which, with the permission of the supreme ecclesiastical
+   authority, was undertaken by the Moscow "Society of Amateurs of
+   Spiritual Enlightenment."  The announcement of this was made in No. 3
+   of the "Moscow Diocesan Church Gazette" of the year 1875, whilst in the
+   same year in the January number of the Moscow Journal, "Lectures
+   delivered in the Society of Amateurs of Spiritual Enlightenment," the
+   "programe" of the edition itself was printed (pages 79-90 in the
+   section devoted to bibliography).  In criticism of it the Professor of
+   Canonical Law in the University of Novorossiisk, Alexis Stepanovich
+   Pavloff (who died on August 16, 1898, as Professor of the University of
+   Moscow) wrote "Notes on the programme of an edition, in a Russian
+   translation of the Canons of the Church with Commentaries" in the
+   sixteenth volume of "Memoirs of the Imperial University of
+   Novorossiisk" (Odessa, 1875), pages 1-17 of the Appendix (and in a
+   separate pamphlet), which was afterwards reprinted with certain
+   additions in the Moscow Journal, "Orthodox Review," of April, 1876
+   (pages 730-746), under the title:  "A new translation of the
+   Commentaries upon the canons of the church."  To these criticisms the
+   Professor of Ecclesiastical Law in the Moscow Ecclesiastical Academy,
+   Alexander Theodorovich Lavroff, wrote a reply in "Lectures delivered in
+   the Society of Amateurs of Spiritual Enlightenment" (for the year 1877,
+   part 2, pages 158-194), entitled "A printed letter to Alexis
+   Stepanovich Pavloff."  Thus the plan of the edition gradually took
+   shape.  It was first printed in the Appendices to the Journal "Lectures
+   in the Society, etc.," and subsequently was published separately in
+   octavo in the following parts (A) I. "The Canons of the Holy Apostles
+   with Commentaries" in two editions--Moscow, 1876, (from "Lectures,"
+   1875, pages 1-163) 4 + 12 + 175 pages, and ibid., 1887, 5-12 + 163
+   pages; II. "Canons of the Holy Ecumenical Councils with Commentaries"
+   (from "Lectures" 1875, pages 165-325; 1876, pages 329-680; 1877, pages
+   891-900), in two parts:  1st "The Canons of the Councils I.-IV.,"
+   Moscow, 1877, 260 pages; 2d. "The Canons of Councils V.-VII.," ibid.,
+   736 pages; (B) "The Canons of the Holy Local Councils with
+   Commentaries," also in two parts (from "Lectures" 1877, pages 900-1066;
+   1878, pages 1067-1306; 1879, pages 1307-1410):  the 1st (The Canons of
+   the Councils of Ancyra, Neocæsarea, Gangra, Antioch, Laodicea, and
+   Sardica) Moscow, 1880, 359 pages; the 2d (The Canons of the Councils of
+   Carthage [with the letters to Pope Boniface and to Pope Celestine],
+   Constantinople, the First-and-Second, and that in the Temple of the
+   Wisdom of the Word of God) ibid., 1881, 876 pages; (C) "The Canons of
+   the Holy Fathers with Commentaries," ibid., 1884, 626 pages.  Together
+   with these is a separate "Index of subjects contained in the edition of
+   the Canons of the Apostles, Councils and Holy Fathers with
+   Commentaries," Moscow, 1888, 58 pages in octavo.  The Greek text of the
+   canons follows the edition Suntagma ton theion kai ieron kanonon...hupo
+   G. A. Ralle kai M. Potle, Athenesin 1852-1854, and alongside of it is
+   placed a literal Slavonic translation, after which follows a Russian
+   translation of the Commentaries of the Byzantine Canonists (Zonaras,
+   Aristenus, Balsamon), and the text and commentaries of the Slavonic
+   "Kormchaja;" all this is accompanied by introductions and explanations
+   of all sorts (historical, philological, etc.).  This edition is rightly
+   considered by specialists to be of very great value from a scientific
+   point of view.  Professor A. Th. Lavroff (who became a monk under the
+   name Alexis, and died Archbishop of Lithuania and Vilna) was its chief
+   editor and had most to do with it, but many others took part in the
+   work, and amongst these Professor A. S. Pavloff.
+
+   4.  The only Russian translation of the canons which exists is
+   contained in the publications of the Ecclesiastical Academy of Kazan:
+   (a) "The Acts of the Ecumenical Councils translated into Russian," 7
+   volumes.  Kazan, 1859-1878 (some of these volumes have run into a
+   second edition) and (b) "Acts of the nine local councils translated
+   into Russian," 1 volume, Kazan, 1878.  This translation was made under
+   the direction of the Holy Synod, and the Canons are reproduced in it
+   according to the text of the Acts of the Councils.
+
+   From the outline here presented of the printed editions of the Canons
+   of the Councils, it will be seen that, within the limits of their
+   practical applicability, they are reverenced as the source of the
+   operative law in the Russian orthodox church, and therefore for her it
+   is only the authoritative Byzantine commentaries which have any
+   particular importance.  There are works upon these by V. Demidoff, "The
+   character and significance of the commentaries upon the Canonical Codex
+   of the Greek Church--of Aristenus, Zonaras, and Balsamon," in the
+   "Orthodox Review," vol. ii. of 1888, and of Professor V. A. Narbekoff,
+   of Kazan, "The commentaries of Balsamon upon the Nomocanon of Photius,"
+   Kazan, 1889, and of Professor M. E. Krasnozhen, of Jurieff (Dorpat)
+   "The Commentators of the Canonical Codex of the Eastern Church:
+   Aristenus, Zonaras, and Balsamon."  Moscow, 1892.
+
+   No separate scientific commentaries upon all the canons of the councils
+   exist in Russian literature, but they are described, and explained in
+   courses of Ecclesiastical law (of the Archimandrite John [who, when he
+   died, was Bishop of Smolensk] of Professors N. S. Suvoroff, T. S.
+   Berdnikoff, N. A. Lashkareff, M. A. Ostroümoff) in our works upon the
+   history of the Ecumenical Councils (by Bishop John, and Professor
+   Alexis Petrovich Lebedeff), and in monographs dealing with Canon Law
+   and Church History.  As far as a critical edition of the original text
+   of the canons is concerned, there is a learned and useful article (upon
+   a book by Fr. Lauchert, Die Kanones usw., Freiberg i. Br. und Leipsig,
+   1896), by Vasili Vasilievich Bolotoff, Professor of Ecclesiastical
+   History in the St. Petersburgh Ecclesiastical Academy in the "Christian
+   Reading," vol. iv. for 1896, pp. 178-195.
+     __________________________________________________________________
+
+   [21] Translated into English by W. J. Birkbeck, Esq., F.S.A.
+
+   [22] Steering-Book.  W.J.B.
+
+   [23] Accordingly some bibliographers correctly reckon this as two
+   editions, of which that of 1653 in folio consists of 37 + 1 + 60 + 1 +
+   16 + 679 pages, and was reprinted by the "Old Ritualists"
+   (Rascolniki*), in 1785 at Warsaw. *Rascolniki, lit. Schismatics; i.e.,
+   the Russian Dissenting sects which in the 17th century left the Church
+   rather than accept the service-books as corrected by the Patriarch
+   Nicon.--W.J.B.
+
+   [24] This edition was published at Moscow in folio in two parts and
+   volumes, in the 1st there are 2 unnumbered + 38 + 5 - 60 + 300 + 39
+   numbered pages; in the 2d 1 + 2 + 235 + 16 + 37 pages.
+     __________________________________________________________________
+     __________________________________________________________________
+
+   Excursus on the History of the Roman Law and Its Relation to the Canon
+   Law.
+
+   ------------------------
+
+   The foregoing bibliographical outline would be entirely incomplete did
+   I not give the reader at least a sketch of how those canons adopted by
+   the various councils gradually won admission to the law-code of the
+   Empire, and how that code itself came into being.  For those wishing to
+   study the matter in detail I would name as the most recent authorities
+   upon the Roman Law, Mr. Muirhead, who has published with additions and
+   notes his article on the subject in the "Encyclopædia Britannica," and
+   Mr. Bury's new edition of Gibbon's Rome just being issued with most
+   learned notes.
+
+   But neither of these writers has put the matter exactly as I desire for
+   this purpose, and I have therefore been forced to seek elsewhere the
+   information I now lay before the reader.
+
+   The study of Jurisprudence did not form a separate department among the
+   ancient Greeks, but among the Romans it was quite otherwise, and a very
+   elaborate system was developed, so elaborate as to demand the care of a
+   special class of men, who devoted themselves to this business alone and
+   handed down to their successors a constantly increasing mass of legal
+   matter.
+
+   When Greece fell under the Roman yoke the laws of the victor were
+   imposed upon the vanquished, but even then the Greeks did not take to
+   legal studies.  In fact not until the seat of the Empire was removed to
+   Constantinople did the East become a centre of jurisprudence or the
+   residence of the chief legal experts.  In the whole period before the
+   fourth century of our era we know of but one barrister who wrote in
+   Greek, and he came from the West, Herennius Modestinus.  He was a
+   disciple of Ulpian and preceptor to the Emperor Maximian the Younger.
+
+   From the time of Hadrian to that of Alexander Severus the influence of
+   the legal schools of Rome had been paramount.  The Emperors consulted
+   them and asked them to decide difficult points.  But after the death of
+   Alexander this custom fell into entire disuse, and the Emperors
+   themselves decided the matters formerly entrusted to the lawyers.
+   After this time the Imperial Constitutions became the chief sources of
+   Roman law.  It is only in the time of Constantine the Great that we
+   find once again the lawyers rising into prominence and a flourishing
+   school at Beyroot in Syria.  It was at this time that the Imperial
+   Constitutions or Edicts were first collected, for until then they
+   existed only in detached documents.  This collection was made by two
+   lawyers, Gregory or Gregorian, and Hermogenes.  Gregory's collection
+   contains the laws set forth from the time of Hadrian to Constantine,
+   and Hermogenes wrote a supplement.  Although this was but a private
+   enterprise, yet it was cited in the courts of law, just as Lord
+   Lyndwood's Provinciale is with us to-day.
+
+   It is interesting to note that it was about this same time that the
+   first attempt was made to collect the ecclesiastical canons, and so the
+   Civil Law and the Canon Law (as we know them in after times) had their
+   rise about the same period.
+
+   The law of the Empire was not, however, to be left to private and
+   unofficial action, but by the care of Theodosius the Younger its first
+   official collection was made.  This prince directed eight men learned
+   in the law to gather into one body of laws all the Imperial
+   Constitutions published since the last included in the collections of
+   Gregory and Hermogenes.  This is the "Theodosian Code," and contains
+   the laws set forth by Constantine and his successors.  It was
+   promulgated in 438 in the East, and received by the then Emperor of the
+   West, Valentinian III.  To this were subsequently added such laws as
+   each set forth, under the title of "New Constitutions."
+
+   The Emperor Justinian determined still further to simplify the
+   attaining of judicial decisions.  It is true that the making of the
+   legal collections referred to had added greatly to the ease of
+   determining the law in any given case, but there was a source of great
+   confusion in the endless number of legal decisions which by custom had
+   acquired the force of law, and which were by no means always consistent
+   between themselves; these were the famous responsa jurisperitorum.  To
+   clear up this difficulty was no small task, but the Emperor went about
+   it in the most determined fashion and appointed a commission,
+   consisting of Tribonian and ten other experts, to make a new collection
+   of all the imperial constitutions from Hadrian to his own day.  This is
+   the famous Justinian Code, which was promulgated in 529, and abrogated
+   all previous collections. [25]
+
+   This, however, was not sufficient to remove the difficulty, and
+   Tribonian next, together with sixteen lawyers, spent three years in
+   making extracts from the great mass of decisions of the ancient
+   jurists, filling as they did nearly two thousand volumes.  These they
+   digested and did their best to clear away the contradictions.  When the
+   work was finished it appeared to the world as the "Pandects," because
+   it was intended to contain all there was to be said upon the subject.
+   It is also known as the "Digest."  This work was set forth in 533 and
+   from that time such of the former decisions as were not incorporated
+   ceased to have any force.
+
+   It must however be remembered that, while this was the case, all the
+   decisions contained in the Pandects did not obtain the force of law.
+   The Pandects are not a code of laws, but a system of public
+   jurisprudence composed by public authority.  To the Pandects were added
+   by the Emperor two ordinances, the first to forbid any copyist to write
+   them in an abbreviated form; and the second forbidding commentators to
+   treat them in anything but their literal sense.
+
+   While this work was in progress some points were so complicated and
+   obscure that the Emperor had to be appealed to, and his writings in
+   these particulars are the origin of the "Fifty Decisions."
+
+   At the same time was prepared the "Institutes," containing the elements
+   of the whole Roman law. [26]
+
+   Later, new laws having been made, the Code had to be revised; the
+   former edition was abrogated in 534, and a new one set forth with the
+   title "Codex repetitæ prælectionis."
+
+   The last of Justinian's labours in the field of jurisprudence (if
+   indeed they were not collected after his death) are his "Novels," a
+   series of imperial constitutions issued between 535 and 559 (Nearai
+   Diataxeis).  There are one hundred and sixty-eight of these Novels, but
+   the ancient glosses only know ninety-seven, and the rest have been
+   added since, as they have been found.
+
+   Such is the origin of the Corpus Juris Civilis, and its history needed
+   to be set forth in this place on account of its close connection with
+   the Corpus Juris Canonici.  In the foregoing I have followed M. Schoell
+   in his admirable Histoire de la Littérature Grecque Profane, to which I
+   am also chiefly indebted for the following notes upon the jurists of
+   the sixth and ensuing centuries.
+
+   A work which is often looked upon as the origin of the Canon Law was
+   composed by a lawyer of Antioch, somewhere near the middle of the sixth
+   century.  This jurist was John of Antioch, surnamed Scholasticus.  He
+   was representative or apocrisiarius of the Church of Antioch at
+   Constantinople, and afterward was made Patriarch of that see, over
+   which he ruled from 564 until his death in 578.  While still a simple
+   priest at Antioch he made his Collection of the Canons of the Councils.
+
+   "He was not the first who conceived the idea of such a work.  Some
+   writers, resting upon a passage in Socrates, have been of opinion that
+   this honour belonged to Sabinus, bishop of Heraclea, in Thrace, at the
+   beginning of the fifth century; but Socrates is not speaking of a
+   collection of canons at all, but of the synodal acts, of the letters
+   written by or addressed to the synods.  If, however, Sabinus did not
+   make a collection of canons, it is certain nevertheless that before
+   John of Antioch there existed one, for he himself cites it many times,
+   although he does not name the authors." [27]
+
+   "In gathering together thus the canons of the councils John of Antioch
+   did not form a complete body of ecclesiastical law.  By his Novel
+   CXLI., Justinian had indeed given to the canons of the Church the force
+   of law, but he himself published a great number of constitutions upon
+   Church matters.  Now it was necessary to harmonize these constitutions
+   and canons, and to accomplish this feat was the object of a second work
+   undertaken by John of Antioch, to which he gave the title of Nomocanon
+   (Nomokanon ), [28] a word which from that time has served to designate
+   any collection of this sort." [29]
+
+   Bury says, "In the troubles of the VII^th century the study of law,
+   like many other things, declined, and in the practical administration
+   of justice the prescriptions of the Code and Digest were often ignored
+   or modified by the alien precepts of Christianity.  The religion of the
+   Empire had exerted but very slight influence--no fundamental influence,
+   we may say--on the Justinian law.  Leo III., the founder of the Syrian
+   (vulgarly called Isaurian) dynasty, when he restored the Empire after a
+   generation of anarchy, saw the necessity of legislation to meet the
+   changed circumstances of the time.  The settlements of
+   foreigners--Slavs and Mardaites--in the provinces of the Empire created
+   an agrarian question, which he dealt with in his Agrarian Code.  The
+   increase of Slavonic and Saracenic piracy demanded increased securities
+   for maritime trade, and this was dealt with in a Navigation Code.  But
+   it was not only for special relations that Leo made laws; he legislated
+   also, and in an entirely new way, for the general relations of life.
+   He issued a law book (in a.d. 740 in the name of himself and his son
+   Constantine), which changed and modified the Roman law, as it had been
+   fixed by Justinian.  The Ecloga, [30] as it is called, may be described
+   as a Christian law book.  It is a deliberate attempt to change the
+   legal system of the Empire by an application of Christian principles.
+   Examples, to illustrate its tendency, will be given below.  The horror
+   in which the iconoclasts were held on account of their heresy by the
+   image-worshippers, cast discredit upon all their works.  This feeling
+   had something to do with the great reaction, which was inaugurated by
+   Basil I., against their legal reforms.  The Christian Code of Leo
+   prevailed in the empire for less than a century and a half; and then,
+   under the auspices of Basil, the Roman law of Justinian was (partially)
+   restored.  In legal activity the Basilian epoch faintly reflected the
+   epoch of Justinian itself.  A handbook of extracts from the Institutes,
+   Digest, Code, and Novels, was published in a.d. 879, entitled the
+   Prochiron, to diffuse a knowledge of the forgotten system.  But the
+   great achievement of the Basilian epoch is the Basilica'--begun under
+   Basil, completed under Leo VI.--a huge collection of all the laws of
+   the Empire, not only those still valid, but those which had become
+   obsolete.  It seems that two commissions of experts were appointed to
+   prepare the material for this work.  One of these commissions compiled
+   the Prochiron by the way, and planned out the Basilica in sixty Books.
+   The other commission also prepared a handbook called the Epanagoge,
+   which was never actually published (though a sketch of the work is
+   extant), and planned out the Basilica in forty Books.  The Basilica, as
+   actually published, are arranged in sixty Books, compiled from the
+   materials prepared by both commissions.
+
+   "The Basilian revival of Justinianean law was permanent; and it is
+   outside our purpose to follow the history further, except to note the
+   importance of the foundation of a school of law at Constantinople in
+   the 11th century by the Emperor Constantine IX.  The law enacting the
+   institution of this school, under the direction of a salaried
+   Nomophylax, is extant.  John Xiphilin (see above) was the first
+   director.  This foundation may have possibly had some influence on the
+   institution of the school at Bologna half a century later." [31]
+
+   I take from Schoell the following description of the "Basilica":
+
+   "The Basilica' are a body of Roman law in the Greek language, extracted
+   from the Institutes, the Pandects, the Codes and the Novels of
+   Justinian as well as from the Imperial Constitutions posterior to that
+   prince; also extracts from the interpretations of such jurists as had
+   won a fixed authority in the courts, and the canons of the councils.
+   Here is found together the civil and the ecclesiastical law of the
+   Greeks, these two laws having been in an intimate union by reason of
+   the authority which the Emperors exercised over the Church; on the
+   other hand, in the West there was formed step by step a canon law
+   separate from the civil law, and having a different source." [32]
+
+   Such, then, were the "Basilica," but what is most singular is that this
+   collection was not given the force of law, neither by Leo VI. nor by
+   Constantine VI., although it was prepared at their order, under their
+   authority, and was written in the language which was spoken by their
+   subjects.  The Justinian code of law, although in Latin, still
+   continued to be the only authority in the entire East.  An anonymous
+   writer prepared an Epitome of the Basilica, digested into Alphabetical
+   order, and beginning with "Of the Orthodox faith of Christians."
+
+   In 883 Photius published a "Syntagma canonum" and a "Nomocanon" with
+   the title Prokanon, because it was placed before the canons.  This last
+   work at the command of Constantine VI. was revised and soon took the
+   place of the Nomocanon of John of Antioch, over which work it had the
+   advantage of being more recent and of being digested in better order.
+   In citing the canons, only the titles are given; but the text of the
+   civil laws appears in full.  "As in the Eastern Church the influence of
+   the imperial authority increased at the expense of that of the
+   councils, and as these princes made ecclesiastical affairs a principal
+   part of their government, it came to pass that the Nomocanon of Photius
+   became of more frequent and more necessary use than his Syntagma,
+   [which contained the actual text of the canons of the councils down to
+   880].  Many commentators busied themselves with it, while the
+   collection of the councils was neglected.  Thus it has happened that
+   the Nomocanon has become the true foundation of the ecclesiastical law
+   of the East." [33]
+
+   But while this is true, yet there were not lacking commentators upon
+   the Canon law, and of the three chiefest of these some notice must be
+   taken in this place.  As I have already pointed out it is to Bishop
+   Beveridge that we owe the publication not only of Photius's Collection
+   of Canons which are found in his "Sunodikon sive Pandectæ," but also of
+   the scholia of all three of these great commentators, Zonaras,
+   Aristenus, and Balsamon, and from his most learned Prolegomena to the
+   same work I have chiefly drawn the following facts, referring the
+   curious reader to the introduction [34] itself for further particulars.
+
+   John Zonaras was probably the same person who wrote the Byzantine
+   History which bears his name.  He flourished under Alexis Comnenus, and
+   enjoyed the high office of Grand Drungarius Viglæ (Droungarios tes
+   Bigles) and Chief of the Clerks.  After some years of secular life he
+   retired to a monastery and devoted himself to literary pursuits.  While
+   here, at the command of his superiors, and moved by the persuasion of
+   his friends, he wrote that great book which has made his fame, which he
+   entitled "An Exposition of the Sacred and Divine Canons, as well those
+   of the holy and venerable Apostles, as also those of the sacred
+   OEcumenical Synods, and those of the local or particular councils, and
+   those of the rest of the Holy Fathers; by the labour of John Zonaras
+   the monk, who was formerly Grand Drungarius Viglæ and Chief of the
+   Clerks." [35]
+
+   One of the greatest peculiarities of this work, and one which
+   distinguishes it very markedly from the later work of Balsamon upon the
+   same subject, is that Zonaras confines himself strictly to the canon
+   law and rarely makes any references to the civil law whatever; and in
+   such canons as bear no relation to the civil law Balsamon often adopts
+   Zonaras's notes without change or addition.
+
+   These commentaries were first brought to light by John Quintin, a
+   professor of canon law at Paris, who published a Latin translation of
+   the scholia upon the Apostolic Canons.  This was in 1558.  In 1618
+   Antonius Salmatia edited his commentaries on the canons of the Councils
+   done into Latin.  To this Latin version the Paris press added the Greek
+   text from the ms. codex in the Royal Library and printed it in 1618.
+   In 1622 the same press issued his commentaries upon the Epistles of the
+   Holy Fathers, together with those of St. Gregory Thaumaturgus, Macarius
+   of Egypt, and Basil.  But Beveridge collected them in his Oxford
+   Edition for the first time into one work; preparing a somewhat critical
+   text by collation with some manuscripts he found at home.
+
+   The second of these great Greek scholiasts is Alexis Aristenus.  As
+   Beveridge points out, he must have flourished before or at the same
+   time as Balsamon, for this latter speaks of him in high terms of
+   commendation in his scholion on the Sixth of the Apostolic Canons,
+   describing him as ton hupertimon.  Aristenus was Nomophylax,
+   Orphanotrophe and Protecdekas, or chief of the Syndics of the Communes,
+   called Ecdics (Ekdikoi).  He wrote the excellent series of notes upon
+   the Epitomes of the Canons which are given the reader in Beveridge's
+   Pradects.  Schoell says that it is an error to attribute to him the
+   "Extract of the Ancient Ecclesiastical Laws," "which is none of his."
+   [36]   Aristenus was Grand Economus of the Church of Constantinople and
+   a man of great distinction; and his opinion was sought after and his
+   decision followed even when in opposition to one of the Patriarchs,
+   viz.:  Nicephorus of Jerusalem.
+
+   Beveridge was the first to print Aristenus's Scholia, and he did so
+   from four mss., in England, for a description of which I refer the
+   reader to the bishop's prolegomena. [37]
+
+   Theodore Balsamon is the last of the three great Greek scholiasts.  He
+   flourished in the time of the Emperor Isaac Angelus and bore the title
+   of Patriarch of Antioch, although at that time the city was in the
+   hands of the Latins and had been so since 1100.  He was looked upon as
+   the greatest jurist of his times both in ecclesiastical and civil
+   matters.  Somewhere about the year 1150, he wrote by the order of
+   Manuel Comnenus a series of "Scholia upon the Nomocanon of Photius,"
+   and another set styled "Scholia upon the Canons of the Apostles, of the
+   Councils and of the Fathers of the Church;" he also prepared a
+   "Collection of [imperial] Constitutions upon ecclesiastical matters,"
+   [38] in three books, which has been published (by Loewenklaw) at
+   Frankfort, 1595, under the title "Paratitles."  There remains also a
+   great number of his opinions on cases presented to him, notably his
+   "answers to sixty-four canonical questions by Mark, Patriarch of
+   Alexandria."
+
+   These most learned writings were unknown and forgotten, at least in the
+   West, until they were set forth in a Latin translation during the time
+   the Council of Trent was sitting, in 1561, and not till 1620 did the
+   Greek text appear in the Paris edition of that date.  But this text was
+   imperfect and corrupt, and Beveridge produced a pure text from an
+   Oxford ms., with which he compared several others.  Moreover in his
+   Pandects he amended the Latin text as well in numberless particulars.
+   For further, particulars of the bibliography of the matter see
+   Beveridge. [39]
+
+   It may not be amiss to add that abundant proof of the high esteem in
+   which Balsamon was held is found in contemporary authors, and no words
+   can give an exaggerated idea of the weight of his opinion on all legal
+   matters, religious and profane; his works were undertaken at the
+   command of the Emperor and of the Patriarch, and were received with an
+   unmixed admiration. [40]
+
+   In the thirteenth century a certain Chumnus who had been Nomophylax and
+   was afterwards elevated to the Archiepiscopal chair of Thessalonica
+   wrote a little book on the "Degrees of Relationship." [41]
+
+   In the fourteenth century we find Matthew Blastares writing "An
+   Alphabetical Table" [42] of the contents of the canons of the councils,
+   and of the laws of the Emperors.
+
+   And in the same century we find Constantine Harmenopulus, who was born
+   in 1320.  He was, when thirty years of age, a member of the first court
+   of civil justice (Judex Dromi).  Subsequently he was appointed
+   Counsellor of the Emperor, John Cantacuzene, and finally Sebastos and
+   Curopalatos under John Paleologus.  In the year 1345 he published a
+   "Manual of Jurisprudence." [43]   This work is of great value to the
+   student of Roman law as he completes the work of the Emperor Basil by
+   adding the imperial constitutions since that time.  But our chief
+   concern with him is as the author of an "Epitome of the Divine and
+   Sacred Canons." [44]
+
+   Constantine Harmenopulus was the last Greek jurist, and then
+   Constantinople fell, to the everlasting disgrace of a divided
+   Christendom, into the hands of the Infidel, and the law of the false
+   Prophet supplanted the Roman Law, the Code of Civilization and
+   Christianity.
+
+   I pass now to the history of the growth of the canon law in the West.
+   No one reading even cursorily the canons contained in the present
+   volume can fail to notice that, with the exception of those of the
+   African code, they are primarily intended for the government of the
+   East and of persons more immediately under the shadow of the imperial
+   city.  In fact in the canons of the Council in Trullo and in those of
+   the Seventh Synod there are places which not even covertly are attacks,
+   or at least reflections, upon the Western customs of the time.  And it
+   does not seem to be an unjust view of the matter to detect in the
+   Council of Chalcedon and its canon on the position of the See of Rome,
+   a beginning of that unhappy spirit which found its full expression in
+   that most lamentable breaking off of communion between East and West.
+
+   While, then, as I have pointed out, in the East the Canon Law was
+   developed and digested side by side and in consonance with the civil
+   law, in the West the state of things was wholly different, and while in
+   secular matters the secular power was supposed to be supreme, there
+   grew up a great body of Ecclesiastical Law, often at variance with the
+   secular decrees upon the subject.  To trace this, step by step, is no
+   part of my duty in this excursus, and I shall only give so brief an
+   outline that the reader may be able to understand the references in the
+   notes which accompany the Canons in the text.
+
+   Somewhere about the year 500 Dionysius Exiguus, who was Abbot of a
+   Monastery in Rome, translated a collection of Greek Canons into Latin
+   for Bishop Stephen of Salona.  At the head of these he placed fifty of
+   what we now know as the "Canons of the Apostles," but it must not be
+   supposed that he was convinced of their Apostolic origin, for in the
+   Preface to his translation he expressly styles them "Canons which are
+   said to be by the Apostles," and adds "quibus plurimi consensum non
+   proebuere facilem." [45]   To these he added the canons of Chalcedon
+   with those that council had accepted, viz., those of Sardica, and a
+   large number passed by African Synods, and lastly the Papal Decretals
+   from Siricius to Anastasius II.
+
+   The next collection is that of St. Isidore of Seville, or which is
+   supposed to have been made by him, early in the seventh century.
+
+   About the middle of the ninth century there appeared a collection
+   bearing the name of Isidore Mercator, and containing the "false
+   decretals" which have been so fruitful a theme of controversial
+   writing.  This collection was made somewhere about the year 850, and
+   possibly at Mayence.  Many writers in treating of these decretals,
+   which are undoubtedly spurious, seem to forget that they must have
+   expressed the prevailing opinions of the day in which they were forged,
+   of what those early Popes would have been likely to have said, and that
+   therefore even forgeries as they certainly are, they have a great
+   historical value which no sound scholar can properly neglect.
+
+   After the collection of St. Isidore we have no great collection till
+   that of Gratian in 1151.  Gratian was a Benedictine monk, and he styled
+   his work "A Reconciling of contradictory canons" (Concordantia
+   discordantium Canonum), which well sets forth what his chief object in
+   view was, but his work had a great future before it, and all the world
+   knows it as "Gratian's Decretum," and with it begins the "collections"
+   of Canon law, if we consider it as a system in present force.
+
+   "This great work is divided into three parts.  The first part, in 101
+   Distinctions,' treats of ecclesiastical law, its origin, principles,
+   and authority, and then of the different ranks and duties of the
+   clergy.  The second part, in thirty-six Causes,' treats of
+   ecclesiastical courts and their forms of procedure.  The third part,
+   usually called De Consecratione,' treats of things and rites employed
+   in the service of religion.  From its first appearance the Decretum
+   obtained a wide popularity, but it was soon discovered that it
+   contained numerous errors, which were corrected under the directions of
+   successive Popes down to Gregory XIII.  Nor, although every subsequent
+   generation has resorted to its pages, is the Decretum an authority to
+   this day--that is, whatever canons or maxims of law are found in it
+   possess only that degree of legality which they would possess if they
+   existed separately; their being in the Decretum gives them no binding
+   force.  In the century after Gratian, several supplementary collections
+   of Decretals appeared.  These, with many of his own, were collected by
+   the orders of Gregory IX., who employed in the work the extraordinary
+   learning and acumen of St. Raymond of Pennafort, into five books, known
+   as the Decretals of Gregory IX.  These are in the fullest sense
+   authoritative, having been deliberately ratified and published by that
+   Pope (1234).  The Sext, or sixth book of the Decretals, was added by
+   Boniface VIII. (1298).  The Clementines are named after Clement V., who
+   compiled them out of the canons of the Council of Vienne (1316) and
+   some of his own constitutions.  The Extravagantes of John XXII., who
+   succeeded Clement V., and the Extravagantes Communes, containing the
+   decretals of twenty-five Popes, ending with Sixtus IV. (1484), complete
+   the list.  Of these five collections--namely the Decretals, the Sext,
+   the Clementines, the Extravagants of John XXII. and the Extravagants
+   Common--the Corpus Juris Ecclesiastici' of the West is made up." [46]
+
+   Into this body of canon law of course many of the canons we shall have
+   to treat of in the following pages have been incorporated and so far as
+   possible I shall give the reader a reference which will help his
+   research in this particular.
+     __________________________________________________________________
+
+   [25] It was written in Latin but, says Bury (Appendix to Vol. V. of
+   Gibbon's Rome, p. 525), "was also immediately after its publication in
+   Latin, issued (perhaps incompletely) in a Greek form (cf. Zacharia Von
+   Lingenthal, Gr. Röm. Recht, p. 6).  Most of the later Novels are Greek,
+   and Novel vij. [15, ed. Zach.] expressly recognizes the necessity of
+   using the common Greek tongue.'"
+
+   [26] The Pandects or Digest was translated into Greek by Dorotheus, and
+   Theophilus prepared a Greek paraphrase of the Institutes.
+
+   [27] Schoell, Hist. Litt. Grec., Tome vii., Lib. vi., chap. xcvij., p.
+   226.
+
+   [28] The two collections of John are published with a translation in
+   the Bibliotheca Juris Canonici Veteris of Voellus and Justellus, Vol.
+   II.
+
+   [29] Ibid ut supra, p. 227.
+
+   [30] The "Ecloga" were edited in 1852 by Zacharia, and again in 1889 by
+   Monferratus.
+
+   [31] Appendix to Vol. V. of Gibbon's Decline and Fall of the Roman
+   Empire, pp. 525 and 526.
+
+   [32] Schoell, ut supra, p. 229.  The best edition of the Basilica is by
+   W. E. Heimbach in 6 vols. (1833-70).
+
+   [33] Schoell, ut ante, p. 238.
+
+   [34] Beveridge, Sunodikon sive Pandectæ, Tom. I. of the original ed.
+   Reprinted in Lib. Anglo. Cath. Theol., appendix to Vol. XII. of
+   Beveridge's Works, pp. xxi.-xxxix.
+
+   [35] 'Exegesis ton hieron kai theion kanonon ton te hagion kai septon
+   'Apostalon, k.t.l.
+
+   [36] Schoell, Hist. Lib. Grec., Tom. VII., p. 241.
+
+   [37] Beveridge, Pandectæ.  Prol. § XXX.
+
+   [38] Ton ekklesiastikon diataxeon Sulloge.
+
+   [39] Beveridge, Pandects, Prol. § XIX.-XXII.
+
+   [40] Ibid., Prol. § XVI.-XIX.
+
+   [41] Found in Leunclavius, Jur. Grec. Rom., Vol. ii.
+
+   [42] Suntagma kata Stoicheon, found in Beveridge's Synodicon, but (says
+   Schoell) "in a manner very little correct."
+
+   [43] Procheiron ton nomon.  Of this there have been many editions since
+   the first, which was that of Paris, 1540, edited by Snallenberg,
+   without any Latin translation and without notes.  The first Latin
+   version was published at Cologne in 1547, a second at Lyons in 1556,
+   and a third at Lausanne in 1580.  At last in 1587, at Geneva, there
+   appeared an edition in Greek and Latin.
+
+   [44] 'Epitome ton theion kai ieron kanonon.  This work is found with a
+   Latin version in the Collection of Loewenklaw.
+
+   [45] Hefele points out that Dr. von Drey's contention that "plurimi"
+   refers to the Greeks cannot be sustained if it is pushed so far as to
+   exclude from the West an acquaintance with these canons in their Greek
+   form, for, as he well points out, Greek was a perfectly well understood
+   language at this time in the West, especially in Italy, where it was
+   largely spoken.  (A Hist. Christ. Councils, Vol. I.  Appendix, p. 449.)
+
+   [46] Addis and Arnold, A Catholic Dictionary, sub voce Canon Law.
+     __________________________________________________________________
+     __________________________________________________________________
+

@@ -1,0 +1,269 @@
+# Clavis works checklist
+
+Off-site working list. Not shown on the reader.
+
+Authors fully checked: 0/258.
+
+258 authors · 5,117 works. Six Y/N columns per work.
+
+Canonical file: `works.jsonl`. Spreadsheet / GitHub export: `tasks.csv`.
+Regen with `python3 scripts/clavis-checklist.py regen`.
+
+- [ ] [Acacius Constantinopolitanus](authors/acacius-constantinopolitanus.md) — en 0/22 · orig 0/22 · fmt-en 0/22 · fmt-orig 0/22 · tag-en 0/22 · tag-orig 0/22
+- [ ] [Adomnanus abbas Hiensis](authors/adomnanus-abbas-hiensis.md) — en 0/5 · orig 0/5 · fmt-en 0/5 · fmt-orig 0/5 · tag-en 0/5 · tag-orig 0/5
+- [ ] [Agapetus I papa](authors/agapetus-i-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Agatho papa](authors/agatho-papa.md) — en 0/6 · orig 0/6 · fmt-en 0/6 · fmt-orig 0/6 · tag-en 0/6 · tag-orig 0/6
+- [ ] [Agobardus Lugdunensis](authors/agobardus-lugdunensis.md) — en 0/5 · orig 0/5 · fmt-en 0/5 · fmt-orig 0/5 · tag-en 0/5 · tag-orig 0/5
+- [ ] [Alcimus Avitus episcopus Viennensis](authors/alcimus-auitus-episcopus-uiennensis.md) — en 0/17 · orig 0/17 · fmt-en 0/17 · fmt-orig 0/17 · tag-en 0/17 · tag-orig 0/17
+- [ ] [Alcuinus abbas Sancti Martini Turonensis](authors/alcuinus-abbas-sancti-martini-turonensis.md) — en 0/10 · orig 0/10 · fmt-en 0/10 · fmt-orig 0/10 · tag-en 0/10 · tag-orig 0/10
+- [ ] [Aldhelmus episcopus Scireburnensis](authors/aldhelmus-episcopus-scireburnensis.md) — en 0/52 · orig 0/52 · fmt-en 0/52 · fmt-orig 0/52 · tag-en 0/52 · tag-orig 0/52
+- [ ] [Ambrosius episcopus Mediolanensis](authors/ambrosius-episcopus-mediolanensis.md) — en 11/95 · orig 12/95 · fmt-en 0/95 · fmt-orig 0/95 · tag-en 0/95 · tag-orig 0/95
+- [ ] [Amphilochius episcopus Iconiensis](authors/amphilochius-episcopus-iconiensis.md) — en 0/50 · orig 0/50 · fmt-en 0/50 · fmt-orig 0/50 · tag-en 0/50 · tag-orig 0/50
+- [ ] [Anastasius I papa](authors/anastasius-i-papa.md) — en 1/4 · orig 1/4 · fmt-en 0/4 · fmt-orig 0/4 · tag-en 0/4 · tag-orig 0/4
+- [ ] [Anastasius Sinaita](authors/anastasius-sinaita.md) — en 0/67 · orig 0/67 · fmt-en 0/67 · fmt-orig 0/67 · tag-en 0/67 · tag-orig 0/67
+- [ ] [Anastasius bibliothecarius](authors/anastasius-bibliothecarius.md) — en 0/0 · orig 0/0 · fmt-en 0/0 · fmt-orig 0/0 · tag-en 0/0 · tag-orig 0/0
+- [ ] [Andreas Caesariensis](authors/andreas-caesariensis.md) — en 0/2 · orig 0/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Anonymus ad Diognetum](authors/anonymus-ad-diognetum.md) — en 1/1 · orig 1/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Anselmus episcopus Cantuariensis](authors/anselmus-episcopus-cantuariensis.md) — en 0/11 · orig 0/11 · fmt-en 0/11 · fmt-orig 0/11 · tag-en 0/11 · tag-orig 0/11
+- [ ] [Aphraates anachoreta in Syria](authors/aphraates-anachoreta-in-syria.md) — en 0/2 · orig 0/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Apollinaris Hierapolitanus](authors/apollinaris-hierapolitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Apollinaris Laodicenus](authors/apollinaris-laodicenus.md) — en 0/60 · orig 0/60 · fmt-en 0/60 · fmt-orig 0/60 · tag-en 0/60 · tag-orig 0/60
+- [ ] [Apollinaris Sidonius episcopus Arvernorum](authors/apollinaris-sidonius-episcopus-aruernorum.md) — en 0/10 · orig 0/10 · fmt-en 0/10 · fmt-orig 0/10 · tag-en 0/10 · tag-orig 0/10
+- [ ] [Arethas Caesariensis](authors/arethas-caesariensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Aristides Philosophus, Athenis](authors/aristides-philosophus-athenis.md) — en 0/0 · orig 0/0 · fmt-en 0/0 · fmt-orig 0/0 · tag-en 0/0 · tag-orig 0/0
+- [ ] [Arius](authors/arius.md) — en 0/17 · orig 0/17 · fmt-en 0/17 · fmt-orig 0/17 · tag-en 0/17 · tag-orig 0/17
+- [ ] [Arnobius](authors/arnobius.md) — en 1/1 · orig 1/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Asterius Amasenus](authors/asterius-amasenus.md) — en 0/3 · orig 0/3 · fmt-en 0/3 · fmt-orig 0/3 · tag-en 0/3 · tag-orig 0/3
+- [ ] [Asterius Sophista](authors/asterius-sophista.md) — en 0/9 · orig 0/9 · fmt-en 0/9 · fmt-orig 0/9 · tag-en 0/9 · tag-orig 0/9
+- [ ] [Athanasius Alexandrinus](authors/athanasius-alexandrinus.md) — en 36/256 · orig 13/256 · fmt-en 0/256 · fmt-orig 0/256 · tag-en 0/256 · tag-orig 0/256
+- [ ] [Athenagoras](authors/athenagoras.md) — en 2/2 · orig 2/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Augustinus episcopus Hipponensis](authors/augustinus-episcopus-hipponensis.md) — en 47/235 · orig 50/235 · fmt-en 0/235 · fmt-orig 0/235 · tag-en 0/235 · tag-orig 0/235
+- [ ] [Bardesanes](authors/bardesanes.md) — en 0/3 · orig 0/3 · fmt-en 0/3 · fmt-orig 0/3 · tag-en 0/3 · tag-orig 0/3
+- [ ] [Barnabas apostolus](authors/barnabas-apostolus.md) — en 0/15 · orig 0/15 · fmt-en 0/15 · fmt-orig 0/15 · tag-en 0/15 · tag-orig 0/15
+- [ ] [Barsanuphius et Iohannes](authors/barsanuphius-et-iohannes.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Basilides](authors/basilides.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Basilius Ancyranus](authors/basilius-ancyranus.md) — en 0/4 · orig 0/4 · fmt-en 0/4 · fmt-orig 0/4 · tag-en 0/4 · tag-orig 0/4
+- [ ] [Basilius Caesariensis](authors/basilius-caesariensis.md) — en 9/225 · orig 8/225 · fmt-en 0/225 · fmt-orig 0/225 · tag-en 0/225 · tag-orig 0/225
+- [ ] [Beatus Liebanensis](authors/beatus-liebanensis.md) — en 0/3 · orig 0/3 · fmt-en 0/3 · fmt-orig 0/3 · tag-en 0/3 · tag-orig 0/3
+- [ ] [Beda Venerabilis monachus in Anglia](authors/beda-uenerabilis-monachus-in-anglia.md) — en 0/102 · orig 1/102 · fmt-en 0/102 · fmt-orig 0/102 · tag-en 0/102 · tag-orig 0/102
+- [ ] [Bernardus abbas Claraevallensis](authors/bernardus-abbas-claraeuallensis.md) — en 0/28 · orig 0/28 · fmt-en 0/28 · fmt-orig 0/28 · tag-en 0/28 · tag-orig 0/28
+- [ ] [Bessarion cardinalis](authors/bessarion-cardinalis.md) — en 0/3 · orig 0/3 · fmt-en 0/3 · fmt-orig 0/3 · tag-en 0/3 · tag-orig 0/3
+- [ ] [Boethius](authors/boethius.md) — en 0/26 · orig 0/26 · fmt-en 0/26 · fmt-orig 0/26 · tag-en 0/26 · tag-orig 0/26
+- [ ] [Bonifatius I papa](authors/bonifatius-i-papa.md) — en 0/3 · orig 0/3 · fmt-en 0/3 · fmt-orig 0/3 · tag-en 0/3 · tag-orig 0/3
+- [ ] [Bonifatius II papa](authors/bonifatius-ii-papa.md) — en 0/5 · orig 0/5 · fmt-en 0/5 · fmt-orig 0/5 · tag-en 0/5 · tag-orig 0/5
+- [ ] [Braulio episcopus Caesaraugustanus](authors/braulio-episcopus-caesaraugustanus.md) — en 0/20 · orig 0/20 · fmt-en 0/20 · fmt-orig 0/20 · tag-en 0/20 · tag-orig 0/20
+- [ ] [Caelestinus I papa](authors/caelestinus-i-papa.md) — en 0/2 · orig 0/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Caelestius Pelagianus](authors/caelestius-pelagianus.md) — en 0/7 · orig 0/7 · fmt-en 0/7 · fmt-orig 0/7 · tag-en 0/7 · tag-orig 0/7
+- [ ] [Caesarius episcopus Arelatensis](authors/caesarius-episcopus-arelatensis.md) — en 0/30 · orig 0/30 · fmt-en 0/30 · fmt-orig 0/30 · tag-en 0/30 · tag-orig 0/30
+- [ ] [Caesarius episcopus Arelatensis](authors/caesarius-episcopus-arelatensis-2.md) — en 0/2 · orig 0/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Canon Muratorianus](authors/canon-muratorianus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Cassianus abbas Massiliensis](authors/cassianus-abbas-massiliensis.md) — en 3/12 · orig 3/12 · fmt-en 0/12 · fmt-orig 0/12 · tag-en 0/12 · tag-orig 0/12
+- [ ] [Cassiodorus](authors/cassiodorus.md) — en 0/31 · orig 2/31 · fmt-en 0/31 · fmt-orig 0/31 · tag-en 0/31 · tag-orig 0/31
+- [ ] [Chromatius episcopus Aquileiensis](authors/chromatius-episcopus-aquileiensis.md) — en 0/7 · orig 0/7 · fmt-en 0/7 · fmt-orig 0/7 · tag-en 0/7 · tag-orig 0/7
+- [ ] [Clemens Alexandrinus](authors/clemens-alexandrinus.md) — en 3/18 · orig 3/18 · fmt-en 0/18 · fmt-orig 0/18 · tag-en 0/18 · tag-orig 0/18
+- [ ] [Clemens Romanus papa martyr Chersonae](authors/clemens-romanus-papa-martyr-chersonae.md) — en 3/40 · orig 2/40 · fmt-en 0/40 · fmt-orig 0/40 · tag-en 0/40 · tag-orig 0/40
+- [ ] [Columbanus abbas Bobiensis et Luxoviensis](authors/columbanus-abbas-bobiensis-et-luxouiensis.md) — en 0/35 · orig 0/35 · fmt-en 0/35 · fmt-orig 0/35 · tag-en 0/35 · tag-orig 0/35
+- [ ] [Commodianus](authors/commodianus.md) — en 0/3 · orig 2/3 · fmt-en 0/3 · fmt-orig 0/3 · tag-en 0/3 · tag-orig 0/3
+- [ ] [Cosmas Hierosolymitanus](authors/cosmas-hierosolymitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Cosmas Indicopleustes](authors/cosmas-indicopleustes.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Cyprianus episcopus Carthaginensis](authors/cyprianus-episcopus-carthaginensis.md) — en 17/60 · orig 17/60 · fmt-en 0/60 · fmt-orig 0/60 · tag-en 0/60 · tag-orig 0/60
+- [ ] [Cyrillus Alexandrinus](authors/cyrillus-alexandrinus.md) — en 0/264 · orig 0/264 · fmt-en 0/264 · fmt-orig 0/264 · tag-en 0/264 · tag-orig 0/264
+- [ ] [Cyrillus Hierosolymitanus](authors/cyrillus-hierosolymitanus.md) — en 2/30 · orig 0/30 · fmt-en 0/30 · fmt-orig 0/30 · tag-en 0/30 · tag-orig 0/30
+- [ ] [Damasus I papa](authors/damasus-i-papa.md) — en 0/33 · orig 0/33 · fmt-en 0/33 · fmt-orig 0/33 · tag-en 0/33 · tag-orig 0/33
+- [ ] [Demetrius Cydones](authors/demetrius-cydones.md) — en 0/2 · orig 0/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Diadochus Photicensis](authors/diadochus-photicensis.md) — en 0/6 · orig 0/6 · fmt-en 0/6 · fmt-orig 0/6 · tag-en 0/6 · tag-orig 0/6
+- [ ] [Didymus Alexandrinus Caecus](authors/didymus-alexandrinus-caecus.md) — en 0/34 · orig 0/34 · fmt-en 0/34 · fmt-orig 0/34 · tag-en 0/34 · tag-orig 0/34
+- [ ] [Diodorus Tarsensis](authors/diodorus-tarsensis.md) — en 0/24 · orig 0/24 · fmt-en 0/24 · fmt-orig 0/24 · tag-en 0/24 · tag-orig 0/24
+- [ ] [Dionysius Alexandrinus](authors/dionysius-alexandrinus.md) — en 0/53 · orig 0/53 · fmt-en 0/53 · fmt-orig 0/53 · tag-en 0/53 · tag-orig 0/53
+- [ ] [Dionysius Areopagita](authors/dionysius-areopagita.md) — en 0/0 · orig 0/0 · fmt-en 0/0 · fmt-orig 0/0 · tag-en 0/0 · tag-orig 0/0
+- [ ] [Dionysius Exiguus](authors/dionysius-exiguus.md) — en 0/26 · orig 0/26 · fmt-en 0/26 · fmt-orig 0/26 · tag-en 0/26 · tag-orig 0/26
+- [ ] [Dionysius papa](authors/dionysius-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Dioscorus I Alexandrinus](authors/dioscorus-i-alexandrinus.md) — en 0/25 · orig 0/25 · fmt-en 0/25 · fmt-orig 0/25 · tag-en 0/25 · tag-orig 0/25
+- [ ] [Dorotheus Gazaeus](authors/dorotheus-gazaeus.md) — en 0/8 · orig 0/8 · fmt-en 0/8 · fmt-orig 0/8 · tag-en 0/8 · tag-orig 0/8
+- [ ] [Ephraem Antiochenus](authors/ephraem-antiochenus.md) — en 0/23 · orig 0/23 · fmt-en 0/23 · fmt-orig 0/23 · tag-en 0/23 · tag-orig 0/23
+- [ ] [Ephraem Syrus diaconus Edessae](authors/ephraem-syrus-diaconus-edessae.md) — en 0/17 · orig 0/17 · fmt-en 0/17 · fmt-orig 0/17 · tag-en 0/17 · tag-orig 0/17
+- [ ] [Epiphanius episcopus Constantiae seu Salaminae in Cypro](authors/epiphanius-episcopus-constantiae-seu-salaminae-in-cypro.md) — en 0/89 · orig 0/89 · fmt-en 0/89 · fmt-orig 0/89 · tag-en 0/89 · tag-orig 0/89
+- [ ] [Eucherius episcopus Lugdunensis](authors/eucherius-episcopus-lugdunensis.md) — en 0/30 · orig 1/30 · fmt-en 0/30 · fmt-orig 0/30 · tag-en 0/30 · tag-orig 0/30
+- [ ] [Eugippius abbas](authors/eugippius-abbas.md) — en 0/8 · orig 1/8 · fmt-en 0/8 · fmt-orig 0/8 · tag-en 0/8 · tag-orig 0/8
+- [ ] [Eunomius Cyzicenus](authors/eunomius-cyzicenus.md) — en 0/11 · orig 0/11 · fmt-en 0/11 · fmt-orig 0/11 · tag-en 0/11 · tag-orig 0/11
+- [ ] [Eusebius Caesariensis](authors/eusebius-caesariensis.md) — en 1/41 · orig 1/41 · fmt-en 0/41 · fmt-orig 0/41 · tag-en 0/41 · tag-orig 0/41
+- [ ] [Eusebius Emesenus](authors/eusebius-emesenus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Eusebius Nicomediensis](authors/eusebius-nicomediensis.md) — en 0/10 · orig 0/10 · fmt-en 0/10 · fmt-orig 0/10 · tag-en 0/10 · tag-orig 0/10
+- [ ] [Eusebius papa](authors/eusebius-papa.md) — en 0/0 · orig 0/0 · fmt-en 0/0 · fmt-orig 0/0 · tag-en 0/0 · tag-orig 0/0
+- [ ] [Eustathius episcopus Antiochenus](authors/eustathius-episcopus-antiochenus.md) — en 0/38 · orig 0/38 · fmt-en 0/38 · fmt-orig 0/38 · tag-en 0/38 · tag-orig 0/38
+- [ ] [Euthymius Zigabenus](authors/euthymius-zigabenus.md) — en 0/8 · orig 0/8 · fmt-en 0/8 · fmt-orig 0/8 · tag-en 0/8 · tag-orig 0/8
+- [ ] [Eutyches archimandrita Constantinopolitanus](authors/eutyches-archimandrita-constantinopolitanus.md) — en 0/20 · orig 0/20 · fmt-en 0/20 · fmt-orig 0/20 · tag-en 0/20 · tag-orig 0/20
+- [ ] [Evagrius Ponticus](authors/euagrius-ponticus.md) — en 0/69 · orig 0/69 · fmt-en 0/69 · fmt-orig 0/69 · tag-en 0/69 · tag-orig 0/69
+- [ ] [Evagrius Scholasticus](authors/euagrius-scholasticus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Facundus episcopus Hermianensis](authors/facundus-episcopus-hermianensis.md) — en 0/34 · orig 0/34 · fmt-en 0/34 · fmt-orig 0/34 · tag-en 0/34 · tag-orig 0/34
+- [ ] [Felix I papa](authors/felix-i-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Ferrandus diaconus Carthaginensis](authors/ferrandus-diaconus-carthaginensis.md) — en 0/6 · orig 0/6 · fmt-en 0/6 · fmt-orig 0/6 · tag-en 0/6 · tag-orig 0/6
+- [ ] [Filastrius episcopus Brixiensis](authors/filastrius-episcopus-brixiensis.md) — en 0/8 · orig 0/8 · fmt-en 0/8 · fmt-orig 0/8 · tag-en 0/8 · tag-orig 0/8
+- [ ] [Firmicus Maternus](authors/firmicus-maternus.md) — en 0/3 · orig 0/3 · fmt-en 0/3 · fmt-orig 0/3 · tag-en 0/3 · tag-orig 0/3
+- [ ] [Firmilianus Caesariensis](authors/firmilianus-caesariensis.md) — en 0/2 · orig 0/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Flavianus Constantinopolitanus](authors/flauianus-constantinopolitanus.md) — en 0/15 · orig 0/15 · fmt-en 0/15 · fmt-orig 0/15 · tag-en 0/15 · tag-orig 0/15
+- [ ] [Flavius Iosephus historiographus](authors/flauius-iosephus-historiographus.md) — en 0/2 · orig 0/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Fulgentius episcopus Ruspensis](authors/fulgentius-episcopus-ruspensis.md) — en 0/44 · orig 0/44 · fmt-en 0/44 · fmt-orig 0/44 · tag-en 0/44 · tag-orig 0/44
+- [ ] [Gaudentius episcopus Brixiensis](authors/gaudentius-episcopus-brixiensis.md) — en 0/3 · orig 0/3 · fmt-en 0/3 · fmt-orig 0/3 · tag-en 0/3 · tag-orig 0/3
+- [ ] [Gelasius I papa](authors/gelasius-i-papa.md) — en 0/17 · orig 1/17 · fmt-en 0/17 · fmt-orig 0/17 · tag-en 0/17 · tag-orig 0/17
+- [ ] [Gennadius](authors/gennadius.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Gennadius Scholarius](authors/gennadius-scholarius.md) — en 0/7 · orig 0/7 · fmt-en 0/7 · fmt-orig 0/7 · tag-en 0/7 · tag-orig 0/7
+- [ ] [Georgius Syncellus](authors/georgius-syncellus.md) — en 0/2 · orig 0/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Gregorius II papa](authors/gregorius-ii-papa.md) — en 0/4 · orig 0/4 · fmt-en 0/4 · fmt-orig 0/4 · tag-en 0/4 · tag-orig 0/4
+- [ ] [Gregorius III papa](authors/gregorius-iii-papa.md) — en 0/0 · orig 0/0 · fmt-en 0/0 · fmt-orig 0/0 · tag-en 0/0 · tag-orig 0/0
+- [ ] [Gregorius Magnus](authors/gregorius-magnus.md) — en 2/77 · orig 2/77 · fmt-en 0/77 · fmt-orig 0/77 · tag-en 0/77 · tag-orig 0/77
+- [ ] [Gregorius Nazianzenus](authors/gregorius-nazianzenus.md) — en 4/157 · orig 1/157 · fmt-en 0/157 · fmt-orig 0/157 · tag-en 0/157 · tag-orig 0/157
+- [ ] [Gregorius Nyssenus](authors/gregorius-nyssenus.md) — en 14/111 · orig 0/111 · fmt-en 0/111 · fmt-orig 0/111 · tag-en 0/111 · tag-orig 0/111
+- [ ] [Gregorius Palamas archiepiscopus Thessalonicensis](authors/gregorius-palamas-archiepiscopus-thessalonicensis.md) — en 0/23 · orig 0/23 · fmt-en 0/23 · fmt-orig 0/23 · tag-en 0/23 · tag-orig 0/23
+- [ ] [Gregorius Turonensis](authors/gregorius-turonensis.md) — en 0/35 · orig 0/35 · fmt-en 0/35 · fmt-orig 0/35 · tag-en 0/35 · tag-orig 0/35
+- [ ] [Gregorius episcopus Neocaesariensis thaumaturgus](authors/gregorius-episcopus-neocaesariensis-thaumaturgus.md) — en 7/47 · orig 0/47 · fmt-en 0/47 · fmt-orig 0/47 · tag-en 0/47 · tag-orig 0/47
+- [ ] [Hadrianus I papa](authors/hadrianus-i-papa.md) — en 0/3 · orig 0/3 · fmt-en 0/3 · fmt-orig 0/3 · tag-en 0/3 · tag-orig 0/3
+- [ ] [Hegesippus](authors/hegesippus.md) — en 0/3 · orig 0/3 · fmt-en 0/3 · fmt-orig 0/3 · tag-en 0/3 · tag-orig 0/3
+- [ ] [Hermas](authors/hermas.md) — en 1/1 · orig 1/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Hermias](authors/hermias.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Hesychius Hierosolymitanus](authors/hesychius-hierosolymitanus.md) — en 0/45 · orig 0/45 · fmt-en 0/45 · fmt-orig 0/45 · tag-en 0/45 · tag-orig 0/45
+- [ ] [Hieronymus presbyter](authors/hieronymus-presbyter.md) — en 13/140 · orig 13/140 · fmt-en 0/140 · fmt-orig 0/140 · tag-en 0/140 · tag-orig 0/140
+- [ ] [Hilarius episcopus Pictaviensis](authors/hilarius-episcopus-pictauiensis.md) — en 3/43 · orig 3/43 · fmt-en 0/43 · fmt-orig 0/43 · tag-en 0/43 · tag-orig 0/43
+- [ ] [Hincmarus Remensis](authors/hincmarus-remensis.md) — en 0/2 · orig 0/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Hippolytus Romanus](authors/hippolytus-romanus.md) — en 8/52 · orig 2/52 · fmt-en 0/52 · fmt-orig 0/52 · tag-en 0/52 · tag-orig 0/52
+- [ ] [Hormisdas papa](authors/hormisdas-papa.md) — en 0/5 · orig 0/5 · fmt-en 0/5 · fmt-orig 0/5 · tag-en 0/5 · tag-orig 0/5
+- [ ] [Iacobus Edessenus](authors/iacobus-edessenus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Ibas Edessenus](authors/ibas-edessenus.md) — en 0/6 · orig 0/6 · fmt-en 0/6 · fmt-orig 0/6 · tag-en 0/6 · tag-orig 0/6
+- [ ] [Ignatius episcopus Antiochenus martyr](authors/ignatius-episcopus-antiochenus-martyr.md) — en 3/23 · orig 2/23 · fmt-en 0/23 · fmt-orig 0/23 · tag-en 0/23 · tag-orig 0/23
+- [ ] [Ildefonsus episcopus Toletanus](authors/ildefonsus-episcopus-toletanus.md) — en 0/27 · orig 0/27 · fmt-en 0/27 · fmt-orig 0/27 · tag-en 0/27 · tag-orig 0/27
+- [ ] [Innocentius I papa](authors/innocentius-i-papa.md) — en 0/7 · orig 0/7 · fmt-en 0/7 · fmt-orig 0/7 · tag-en 0/7 · tag-orig 0/7
+- [ ] [Iohannes Antiochenus](authors/iohannes-antiochenus.md) — en 0/87 · orig 0/87 · fmt-en 0/87 · fmt-orig 0/87 · tag-en 0/87 · tag-orig 0/87
+- [ ] [Iohannes Chrysostomus](authors/iohannes-chrysostomus.md) — en 17/1066 · orig 0/1066 · fmt-en 0/1066 · fmt-orig 0/1066 · tag-en 0/1066 · tag-orig 0/1066
+- [ ] [Iohannes Climacus abbas in monte Sina](authors/iohannes-climacus-abbas-in-monte-sina.md) — en 0/26 · orig 0/26 · fmt-en 0/26 · fmt-orig 0/26 · tag-en 0/26 · tag-orig 0/26
+- [ ] [Iohannes Damascenus](authors/iohannes-damascenus.md) — en 1/99 · orig 0/99 · fmt-en 0/99 · fmt-orig 0/99 · tag-en 0/99 · tag-orig 0/99
+- [ ] [Iohannes I papa](authors/iohannes-i-papa.md) — en 0/2 · orig 0/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Iohannes III papa](authors/iohannes-iii-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Iohannes Malalas](authors/iohannes-malalas.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Iohannes Moschus](authors/iohannes-moschus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Iohannes Philoponus](authors/iohannes-philoponus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Iohannes Scythopolitanus](authors/iohannes-scythopolitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Iohannes Zonaras](authors/iohannes-zonaras.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Iordanes](authors/iordanes.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Irenaeus Lugdunensis](authors/irenaeus-lugdunensis.md) — en 1/29 · orig 1/29 · fmt-en 0/29 · fmt-orig 0/29 · tag-en 0/29 · tag-orig 0/29
+- [ ] [Isaac Antiochenus](authors/isaac-antiochenus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Isaac Ninivita](authors/isaac-niniuita.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Isidorus Hispalensis](authors/isidorus-hispalensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Isidorus Pelusiota monachus](authors/isidorus-pelusiota-monachus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Iulius I papa](authors/iulius-i-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Iustinus Martyr](authors/iustinus-martyr.md) — en 2/13 · orig 2/13 · fmt-en 0/13 · fmt-orig 0/13 · tag-en 0/13 · tag-orig 0/13
+- [ ] [Iuvencus presbyter](authors/iuuencus-presbyter.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Ivo Carnotensis](authors/iuo-carnotensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Lactantius](authors/lactantius.md) — en 4/8 · orig 4/8 · fmt-en 0/8 · fmt-orig 0/8 · tag-en 0/8 · tag-orig 0/8
+- [ ] [Leo I papa](authors/leo-i-papa.md) — en 0/0 · orig 0/0 · fmt-en 0/0 · fmt-orig 0/0 · tag-en 0/0 · tag-orig 0/0
+- [ ] [Leo II papa](authors/leo-ii-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Leo III papa](authors/leo-iii-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Leontius Byzantinus](authors/leontius-byzantinus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Leontius Neapolitanus](authors/leontius-neapolitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Liberius papa](authors/liberius-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Lucifer episcopus Calaritanus](authors/lucifer-episcopus-calaritanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Macarius Aegyptius abbas in Scete](authors/macarius-aegyptius-abbas-in-scete.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Macarius Alexandrinus abbas in Thebaide](authors/macarius-alexandrinus-abbas-in-thebaide.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Magnus Felix Ennodius](authors/magnus-felix-ennodius.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Malchion presbyter](authors/malchion-presbyter.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Marcellus Ancyranus](authors/marcellus-ancyranus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Marcion](authors/marcion.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Marcus Eremita](authors/marcus-eremita.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Marcus Eugenicus archiepiscopus Ephesi](authors/marcus-eugenicus-archiepiscopus-ephesi.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Marius Victorinus](authors/marius-uictorinus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Martinus I papa](authors/martinus-i-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Martinus episcopus Bracarensis](authors/martinus-episcopus-bracarensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Maximus Confessor](authors/maximus-confessor.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Maximus episcopus Taurinensis](authors/maximus-episcopus-taurinensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Meletius episcopus Antiochenus](authors/meletius-episcopus-antiochenus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Melito Sardensis](authors/melito-sardensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Methodius Olympius](authors/methodius-olympius.md) — en 6/19 · orig 2/19 · fmt-en 0/19 · fmt-orig 0/19 · tag-en 0/19 · tag-orig 0/19
+- [ ] [Michael Choniates](authors/michael-choniates.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Michael Psellus](authors/michael-psellus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Miltiades papa](authors/miltiades-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Minucius Felix](authors/minucius-felix.md) — en 1/2 · orig 1/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Nemesius Emesenus](authors/nemesius-emesenus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Nestorius](authors/nestorius.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Nicephorus Gregoras](authors/nicephorus-gregoras.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Nicetas Choniates](authors/nicetas-choniates.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Nicolaus Cabasilas](authors/nicolaus-cabasilas.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Nicolaus I papa](authors/nicolaus-i-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Nilus Ancyranus](authors/nilus-ancyranus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Novatianus presbyter Romanus](authors/nouatianus-presbyter-romanus.md) — en 3/9 · orig 3/9 · fmt-en 0/9 · fmt-orig 0/9 · tag-en 0/9 · tag-orig 0/9
+- [ ] [Optatus episcopus Milevitanus](authors/optatus-episcopus-mileuitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Origenes](authors/origenes.md) — en 0/9 · orig 0/9 · fmt-en 0/9 · fmt-orig 0/9 · tag-en 0/9 · tag-orig 0/9
+- [ ] [Pacianus episcopus Barcinonensis](authors/pacianus-episcopus-barcinonensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Pamphilus Caesariensis](authors/pamphilus-caesariensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Pantaenus presbyter Alexandrinus](authors/pantaenus-presbyter-alexandrinus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Papias Hierapolitanus](authors/papias-hierapolitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Paschasius Radbertus](authors/paschasius-radbertus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Paulinus Nolanus](authors/paulinus-nolanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Paulus Orosius presbyter Bracarensis](authors/paulus-orosius-presbyter-bracarensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Paulus Samosatenus](authors/paulus-samosatenus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Paulus diaconus](authors/paulus-diaconus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Pelagius](authors/pelagius.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Pelagius I papa](authors/pelagius-i-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Pelagius II papa](authors/pelagius-ii-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Petrus Alexandrinus](authors/petrus-alexandrinus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Petrus Chrysologus episcopus Ravennatensis](authors/petrus-chrysologus-episcopus-rauennatensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Petrus Damiani](authors/petrus-damiani.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Petrus Mongus](authors/petrus-mongus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Philostorgius](authors/philostorgius.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Philoxenus Hierapolitanus](authors/philoxenus-hierapolitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Phoebadius episcopus Agennensis](authors/phoebadius-episcopus-agennensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Photius patriarcha Constantinopolitanus](authors/photius-patriarcha-constantinopolitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Pierius Presbyter Alexandrinus](authors/pierius-presbyter-alexandrinus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Polycarpus Smyrnensis](authors/polycarpus-smyrnensis.md) — en 2/24 · orig 2/24 · fmt-en 0/24 · fmt-orig 0/24 · tag-en 0/24 · tag-orig 0/24
+- [ ] [Potamius episcopus Olisiponensis](authors/potamius-episcopus-olisiponensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Primasius episcopus Hadrumetinus](authors/primasius-episcopus-hadrumetinus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Proclus Constantinopolitanus](authors/proclus-constantinopolitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Procopius Gazaeus](authors/procopius-gazaeus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Prosper Aquitanus](authors/prosper-aquitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Prudentius](authors/prudentius.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Quadratus episcopus, apostolorum discipulus](authors/quadratus-episcopus-apostolorum-discipulus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Rabanus Maurus episcopus Moguntinus](authors/rabanus-maurus-episcopus-moguntinus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Rabbulas Edessenus](authors/rabbulas-edessenus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Romanus Melodus Constantinopolitanus](authors/romanus-melodus-constantinopolitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Sabellius](authors/sabellius.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Salvianus presbyter Massiliensis (e Colonia Agrippina?)](authors/saluianus-presbyter-massiliensis-e-colonia-agrippina.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Sedulius (presbyter)](authors/sedulius-presbyter.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Serapion Antiochenus](authors/serapion-antiochenus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Serapion Thmuitanus](authors/serapion-thmuitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Sergius I papa](authors/sergius-i-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Severus Antiochenus](authors/seuerus-antiochenus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Silvester I papa](authors/siluester-i-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Simplicius papa](authors/simplicius-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Siricius papa](authors/siricius-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Sixtus II papa martyr](authors/sixtus-ii-papa-martyr.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Sixtus III papa](authors/sixtus-iii-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Sixtus seu Xystus III papa](authors/sixtus-seu-xystus-iii-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Socrates Scholasticus](authors/socrates-scholasticus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Sozomenus](authors/sozomenus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Sulpicius Severus](authors/sulpicius-seuerus.md) — en 0/1 · orig 1/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Symmachus papa](authors/symmachus-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Synesius Cyrenensis](authors/synesius-cyrenensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Tarasius patriarcha Constantinopolitanus](authors/tarasius-patriarcha-constantinopolitanus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Tatianus](authors/tatianus.md) — en 1/5 · orig 1/5 · fmt-en 0/5 · fmt-orig 0/5 · tag-en 0/5 · tag-orig 0/5
+- [ ] [Tertullianus](authors/tertullianus.md) — en 32/42 · orig 33/42 · fmt-en 0/42 · fmt-orig 0/42 · tag-en 0/42 · tag-orig 0/42
+- [ ] [Theodoretus episcopus Cyri](authors/theodoretus-episcopus-cyri.md) — en 3/91 · orig 1/91 · fmt-en 0/91 · fmt-orig 0/91 · tag-en 0/91 · tag-orig 0/91
+- [ ] [Theodorus Anagnostes](authors/theodorus-anagnostes.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Theodorus Mopsuestenus](authors/theodorus-mopsuestenus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Theodorus Studita](authors/theodorus-studita.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Theodotus Ancyranus](authors/theodotus-ancyranus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Theognostus](authors/theognostus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Theophanes confessor chronographus hegumenus Sigrianae in Bithynia](authors/theophanes-confessor-chronographus-hegumenus-sigrianae-in-bithynia.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Theophilus Antiochenus](authors/theophilus-antiochenus.md) — en 1/4 · orig 1/4 · fmt-en 0/4 · fmt-orig 0/4 · tag-en 0/4 · tag-orig 0/4
+- [ ] [Theophylactus Bulgarorum archiepiscopus](authors/theophylactus-bulgarorum-archiepiscopus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Timotheus Aelurus](authors/timotheus-aelurus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Tyconius](authors/tyconius.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Tyrranius Rufinus Aquileiensis](authors/tyrranius-rufinus-aquileiensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Urbanus I papa](authors/urbanus-i-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Venantius Fortunatus](authors/uenantius-fortunatus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Victor I papa](authors/uictor-i-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Victorinus episcopus Poetovionensis](authors/uictorinus-episcopus-poetouionensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Vigilius papa](authors/uigilius-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Vincentius Lirinensis (vel Lerinensis), presbyter Gallus](authors/uincentius-lirinensis-uel-lerinensis-presbyter-gallus.md) — en 1/2 · orig 1/2 · fmt-en 0/2 · fmt-orig 0/2 · tag-en 0/2 · tag-orig 0/2
+- [ ] [Zacharias Rhetor (Scholasticus)](authors/zacharias-rhetor-scholasticus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Zacharias papa](authors/zacharias-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Zeno episcopus Veronensis](authors/zeno-episcopus-ueronensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Zephyrinus papa](authors/zephyrinus-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
+- [ ] [Zosimus papa](authors/zosimus-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1

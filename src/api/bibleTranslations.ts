@@ -20,6 +20,13 @@ export const BIBLE_TRANSLATIONS: BibleTranslation[] = [
     description: "Public domain local translation"
   },
   {
+    id: "esv",
+    name: "English Standard Version",
+    abbreviation: "ESV",
+    isLocal: false,
+    description: "English Standard Version via ESV API"
+  },
+  {
     id: "a556c5305ee15c3f-01",
     name: "Christian Standard Bible",
     abbreviation: "CSB",

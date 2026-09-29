@@ -3,9 +3,13 @@
 # volume: Volume X.
 # father: Ambrose
 # work: Concerning Virgins
-# latin_match_candidate: (none)
-# extracted: 2026-09-01
+# clavis: CPL-145
+# extracted: 2026-09-24
 # note: Public-domain Schaff English extract. Volume archives retained under ANF/NPNF1/NPNF2.
+     __________________________________________________________________
+     __________________________________________________________________
+     __________________________________________________________________
+
 Concerning Virgins.
      __________________________________________________________________
      __________________________________________________________________
@@ -2357,6 +2361,3 @@ Three Books Concerning Virgins
    this St. Pelagia mentioned below may be. St. Chrysostom says she
    committed suicide by throwing herself from the roof; see Pelagia (1) in
    Dict. Chr. Biog.
-     __________________________________________________________________
-     __________________________________________________________________
-     __________________________________________________________________

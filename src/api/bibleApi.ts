@@ -152,8 +152,16 @@ function parseHtmlVerses(html: string): string[] {
   return clean ? [clean] : [];
 }
 
+export function getEsvApiKey(): string {
+  if (typeof localStorage !== "undefined") {
+    const userKey = localStorage.getItem("fg-esv-api-key");
+    if (userKey) return userKey.trim();
+  }
+  return import.meta.env.VITE_ESV_API_KEY || "";
+}
+
 /**
- * Fetches a chapter from API.Bible with 14-day local cache.
+ * Fetches a chapter from API.Bible or ESV API with local cache.
  */
 export async function fetchRemoteBibleVerses(
   bibleId: string,
@@ -163,7 +171,7 @@ export async function fetchRemoteBibleVerses(
   const usfm = bookIdToUsfm(bookId);
   const cacheKey = `${CACHE_PREFIX}${bibleId}_${usfm}_${chapter}`;
 
-  // 1. Check local cache (14-day TTL)
+  // 1. Check local cache
   if (typeof localStorage !== "undefined") {
     const cachedStr = localStorage.getItem(cacheKey);
     if (cachedStr) {
@@ -179,8 +187,64 @@ export async function fetchRemoteBibleVerses(
     }
   }
 
-  // 2. Fetch: direct API.Bible if the browser has a key; otherwise Worker proxy
-  //    (BIBLE_API_KEY stays server-side on Cloudflare).
+  // 2. Fetch ESV directly if key exists; otherwise fallback to Worker proxy
+  if (bibleId.toLowerCase() === "esv") {
+    const esvKey = getEsvApiKey();
+    let passageText = "";
+
+    if (esvKey) {
+      const query = `${usfm} ${chapter}`;
+      const url = `https://api.esv.org/v3/passage/text/?q=${encodeURIComponent(query)}&include-passage-references=false&include-verse-numbers=true&include-first-verse-numbers=true&include-footnotes=false&include-headings=false`;
+      const res = await fetch(url, { headers: { Authorization: `Token ${esvKey}` } });
+      if (!res.ok) {
+        const errText = await res.text().catch(() => "");
+        throw new Error(`ESV API request failed (${res.status}): ${errText || res.statusText}`);
+      }
+      const data = await res.json();
+      passageText = data.passages?.[0] || "";
+    } else {
+      // Fallback to Worker proxy
+      const base = (import.meta.env.VITE_DONATE_API_BASE || "").replace(/\/+$/, "");
+      const proxyUrl = `${base}/api/bible/remote?bibleId=esv&chapterId=${encodeURIComponent(`${usfm}.${chapter}`)}`;
+      const res = await fetch(proxyUrl);
+      if (!res.ok) {
+        let errMsg = "";
+        try {
+          const errJson = (await res.json()) as { error?: string };
+          errMsg = errJson.error || "";
+        } catch {
+          errMsg = await res.text().catch(() => "");
+        }
+        if (res.status === 503) {
+          throw new Error("ESV API key missing. Add ESV_API_KEY on your Cloudflare Worker, or enter an API key in Settings.");
+        }
+        throw new Error(`ESV fetch failed (${res.status}): ${errMsg || res.statusText}`);
+      }
+      const data = await res.json();
+      passageText = data.passages?.[0] || "";
+    }
+
+    if (!passageText) {
+      throw new Error(`Could not fetch ESV text for ${usfm} ${chapter}`);
+    }
+    
+    // Parse ESV verse text (verses are marked with [1], [2], etc.)
+    const verses = passageText
+      .split(/\[\d+\]/)
+      .map((v: string) => v.trim())
+      .filter(Boolean);
+
+    if (typeof localStorage !== "undefined" && verses.length > 0) {
+      try {
+        localStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), verses }));
+      } catch {
+        /* storage full */
+      }
+    }
+    return verses;
+  }
+
+  // 3. Fetch API.Bible
   const chapterId = `${usfm}.${chapter}`;
   const apiKey = getBibleApiKey();
   let json: { data?: { content?: unknown } };

@@ -3,9 +3,12 @@
 # volume: Volume X.
 # father: Ambrose
 # work: Exposition of the Christian Faith
-# latin_match_candidate: (none)
-# extracted: 2026-09-01
+# clavis: CPL-150
+# extracted: 2026-09-24
 # note: Public-domain Schaff English extract. Volume archives retained under ANF/NPNF1/NPNF2.
+     __________________________________________________________________
+     __________________________________________________________________
+
 Exposition of the Christian Faith.
      __________________________________________________________________
      __________________________________________________________________
@@ -12293,6 +12296,3 @@ Exposition of the Christian Faith.
    [2827] 2 Cor. xiii. 3, 4.
 
    [2828] Isa. xiv. 14.
-     __________________________________________________________________
-     __________________________________________________________________
-     __________________________________________________________________

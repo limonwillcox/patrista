@@ -270,6 +270,9 @@ html[data-theme="night"] .booklist-eras button.active { background: #3a2420; }
 .page > .give-page {
   max-width: 1040px;
 }
+.page > .about-page {
+  max-width: 38rem;
+}
 .page.page--landing > .landing {
   max-width: none;
 }
@@ -1221,6 +1224,29 @@ body.give-chrome-dim .promo-bar {
   filter: grayscale(1);
   opacity: 0.42;
 }
+body.about-read-dim .site-header,
+body.about-read-dim .site-footer,
+body.about-read-dim .promo-bar {
+  filter: grayscale(0.7);
+  opacity: 0.5;
+}
+body.about-read-dim .rail {
+  filter: grayscale(0.55);
+  opacity: 0.55;
+}
+body.about-read-dim .ios-topbar,
+body.about-read-dim .ios-tabbar {
+  filter: grayscale(0.7);
+  opacity: 0.5;
+  transition: filter 1.4s ease, opacity 1.4s ease;
+}
+body.about-read-dim .page {
+  background: color-mix(in srgb, var(--bg) 82%, #16110e);
+  transition: background 1.4s ease;
+}
+html[data-theme="night"] body.about-read-dim .page {
+  background: color-mix(in srgb, var(--bg) 62%, #000);
+}
 
 .give-page { max-width: 860px; margin: 0 auto; }
 .give-hero {
@@ -1389,6 +1415,114 @@ body.give-chrome-dim .promo-bar {
 @media (max-width: 760px) {
   .give-hero { min-height: 70dvh; }
   .give-amounts { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* About — the room hushes so the letter can be read. */
+.about-page {
+  position: relative;
+  z-index: 1;
+  max-width: 38rem;
+  margin: 0 auto;
+  min-height: calc(100dvh - var(--header) - 3.25rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 4px 40px;
+}
+.about-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(
+      ellipse 58% 52% at 50% 46%,
+      transparent 0%,
+      color-mix(in srgb, #140e0b 0%, transparent) 42%,
+      color-mix(in srgb, #140e0b 22%, transparent) 100%
+    );
+  opacity: 0;
+  animation: aboutVignetteIn 1.6s ease-out forwards;
+}
+html[data-theme="night"] .about-vignette {
+  background:
+    radial-gradient(
+      ellipse 60% 54% at 50% 46%,
+      transparent 0%,
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 0, 0, 0.48) 100%
+    );
+}
+.about-letter {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+.about-q {
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 3.2vw, 1.95rem);
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  line-height: 1.2;
+  margin: 0 0 0.7em;
+  color: var(--text);
+}
+.about-block p {
+  font-family: var(--serif);
+  margin: 0;
+  color: var(--text);
+}
+.about-what p {
+  font-size: 1.22rem;
+  line-height: 1.5;
+}
+.about-why p {
+  font-size: 1.08rem;
+  line-height: 1.72;
+}
+.about-why p + p { margin-top: 1.1em; }
+.about-block + .about-block { margin-top: 2.6rem; }
+.about-what {
+  opacity: 0;
+  animation: aboutLetterIn 0.9s ease-out 0.22s forwards;
+}
+.about-why {
+  opacity: 0;
+  animation: aboutLetterIn 1.05s ease-out 0.95s forwards;
+}
+.about-page a:link,
+.about-page a:visited {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--link) 45%, currentColor);
+  text-underline-offset: 3px;
+}
+.about-page a:hover,
+.about-page a:focus-visible {
+  color: var(--link);
+  text-decoration-color: var(--link);
+}
+@keyframes aboutVignetteIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes aboutLetterIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@media (max-width: 760px) {
+  .about-page { min-height: calc(100dvh - var(--header) - 5.5rem); }
+  .about-q { font-size: 1.45rem; }
+  .about-what p { font-size: 1.12rem; }
+  .about-why p { font-size: 1.02rem; }
+  .about-block + .about-block { margin-top: 2.4rem; }
+}
+body.ios-shell .about-page {
+  min-height: calc(
+    100dvh - var(--ios-top) - var(--ios-tab) - env(safe-area-inset-top, 0px) -
+      env(safe-area-inset-bottom, 0px) - 1.5rem
+  );
 }
 
 
@@ -1928,6 +2062,23 @@ body.ch-history-cinematic.ch-dark .rail {
   body.give-chrome-dim .promo-bar {
     filter: none;
     opacity: 1;
+  }
+  body.about-read-dim .site-header,
+  body.about-read-dim .site-footer,
+  body.about-read-dim .promo-bar,
+  body.about-read-dim .rail,
+  body.about-read-dim .ios-topbar,
+  body.about-read-dim .ios-tabbar {
+    filter: none;
+    opacity: 1;
+  }
+  body.about-read-dim .page { background: var(--bg); }
+  .about-vignette { animation: none; opacity: 0; }
+  .about-what,
+  .about-why {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
 

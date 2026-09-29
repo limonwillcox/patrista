@@ -1,0 +1,1100 @@
+# source: Patrologia Latina 23, cols. 601-720 (J.-P. Migne)
+# father: jerome
+# work: Lives of Illustrious Men
+# clavis: CPL-616
+# language: Latin
+# note: Complete Latin text of De Viris Illustribus from Patrologia Latina 23.
+
+S. EUSEBII HIERONYMI STRIDONENSIS PRESBYTERI DE VIRIS ILLUSTRIBUS LIBER AD DEXTRUM PRAEFECTUM PRAETORIO.
+
+Adjuncta versione antiqua Graeca quam sub Sophronii nomine Erasmus edidit
+
+PROLOGUS.
+
+821 Hortaris me, Dexter 2, ut Tranquillum se quens, ecclesiasticos scriptores in ordinem digeram, et quod ille in enumerandis gentilium littelarum viris3 fecit illustribus, ego [Al. id ego] in nostris faciam, id est, ut a passione Christi usque ad decimum quartum Theodosii imperatoris annum, omnes qui de Scripturis sanctis memoriae aliquid prodiderunt, tibi breviter exponam. Fecerunt quidem hoc idem apud Graecos, Hermippus Peripateticus 4, Antigonus Carystius, Satyrus doctus vir. et longe omnium doctissimus Aristoxenus musicus. Apud Latinos autem Varro 5, Santra, Nepos, Hyginus, et ad cujus nos exemplum provocas, Tranquil lus Sed non mea est et illorum similis conditio : ilii enim historias, veteres annalesque replicantes, potuerunt quasi de ingenti prato non parvam opusculi sui coronam texere. Ego quid aucturus, qui nullum praevium sequens, pessimum, ut dicitur, magistrum memetipsum habeo? Quanquam Eusebius Pamphili in decem Ecclesiasticae Historiae libris maximo nobis adjumento fuerit, et singulorum, de quibus scripturi sumus, volumina aetates auctorum suorum saepe testentur. Itaque Dominum Jesum Christum precor, ut quod Cicero tuus, qui 824 in arce Romanae eloquentiae stetit, non est facere dedignatus in Bruto, oratorum Latinae lingue texens catalogum, id ego in ejus Ecclesiae scriptoribus 1 enumerandis, digne cohortatione tua impleam. Si qui autem de his qui usque hodic scriptitant [Al. scripserunt], a me in hoc volumine praetermissi sunt, sibi magis quam mihi debebunt [Al. debent] imputare. Neque enim celantes scripta sua, de his quae non legi 2, nosse potui, et quod aliis forsitan sit notum, mihi in hoc terrarum angulo (Bethleemi) fuerit ignotam. Certe cum scriptis suis claruerint, non magnopere nostri silentii dispendia [Al. dispendio] suspirabunt. Discant ergo Celsus, Porphyrius, Julianus 3, rabidi adversus Christum canes, discant eorum sectatores (qui putant Ecclesiam nullos philosophos et eloquentes, nullos habuisse doctores) quanti et quales viri eam fundaverint, exstruxerint [Al. struxerint], et adornaverint; ct desinant fidem nostram rusticae tantum simplicitatis arguere, suamque potius imperitiam agnoscant. Vale in Domino Jesu Christo 4.
+
+INCIPIUNT CAPITULA 5 LIBRI [Al. tacet Libri].
+
+I. Simon Petrus.
+
+II. Jacobus frater Domini.
+
+III. Matthaeus, qui et Levi
+
+VI. Barnabas, qui et Joseph.
+
+IV. Juda frater Jacobi.
+
+V. Paulus, qui [Al. et] ante Sanius.
+
+VII. Lucas evangelista.
+
+VIII. Marcus evangelista.
+
+IX. Joannes apost. et evang.
+
+X. Hermas [ms. reliqua tacet], ut ferunt Pastor, auctor libri.
+
+XI. Philon Judaeus.
+
+XII. Lucius Annaeus Seneca.
+
+XIII. Josephus Matthiae filius.
+
+XIV. Justus Tiberiensis.
+
+XV. Clemens episcopus.
+
+XVI. Ignatius episcopus.
+
+XVII. Polycarpus episcopus.
+
+XVIII. Papias episcopus.
+
+XIX. Quadratus episcopus.
+
+XX. Aristides philosophus.
+
+XXI. Agrippa, qui et Castor [ms. Castoris].
+
+XXII. Hegesippus historicus.
+
+XXIII. Justinus philosophus.
+
+XXIV. Melito episcopus.
+
+XXV. Theophilus episcopus.
+
+XXVI. Apollinaris episcopus.
+
+XXVII. Dionysius episcopus.
+
+XXVIII. Pinitus [Al. Pinytus] episcopus.
+
+XXIX. Tatianus haeresiarches.
+
+XXX. Philippus episcopus.
+
+XXXI. Musanus.
+
+XXXII. Modestus.
+
+XXXIII. Bardesanes haeresiarches.
+
+XXXIV. Victor episcopus.
+
+XXXV. Irenaeus episcopus.
+
+XXXVI. Panthaenus philosophus.
+
+XXXVII. Rhodon Tatiani discipulus.
+
+XXXVIII. Clemens presbyter.
+
+XXXIX. Miltiades.
+
+XL. Apollonius.
+
+XLI. Serapion episcopus,.
+
+XLII. Apollonius alius senator.
+
+XLIII. Theophilus alius episcopus.
+
+XLIV. Baccillus [Al. Bacchelus] episcopus.
+
+XLV. Polycrates episcopus.
+
+ΧLVI. Heraclitus episcopus.
+
+XLVII. Maximus.
+
+ΧLVIΙΙ. Candidus.
+
+XLIX. Apion.
+
+L. Sextus.
+
+LI. Arabianus.
+
+LII. Judas.
+
+LIII. Tertullianus presbyter.
+
+LIV. Origenes, qui ct Adamantius, presbyter.
+
+LV. Ammonius presbyter.
+
+LVI. Ambrosius diaconus.
+
+LVII. Tryphon Origenis discipulus.
+
+LVIII. Minucius Felix.
+
+LIX Gaius.
+
+LX. Berillus [Al. Beryllus] episcopus.
+
+LXI. Hippolytus [Al. Hypolitus] episcopus.
+
+LXII. Alexander episcopus.
+
+LXIII. Julianus Africanus.
+
+LXIV. Geminus presbyter.
+
+LXV. Theodorus, qui et Gregorius, episcopus.
+
+LXVI. Cornelius episcopus.
+
+LXVII. Cyprianus episcopus.
+
+LXVIII. Pontius diaconus.
+
+LXIX. Dionysius episcopus.
+
+LXX. Novatianus haeresiarches.
+
+LXXI. Malchion presbyter.
+
+LXXII. Archelaus episcopus.
+
+LXXIII. Anatolius episcopus.
+
+LXXIV. Victorinus episcopus.
+
+LXXV. Pamphilus presbyter·
+
+LXXVI. Pierius presbyter.
+
+LXXVII. Lucianus presbyter.
+
+LXXVIII Phileas episcopus.
+
+LXXIX. Arnobius rhetor.
+
+LXXX. Firmianus rhetor.
+
+LXXXI. Eusebius episcopus.
+
+LXXXII. Recticius episcopus Eduorum.
+
+LXXXIII Methodius episcopus.
+
+LXXXIV. Juveneus presbyter.
+
+LXXXV. Eustathius episcopus.
+
+LXXXVI. Marcellus episcopus.
+
+LXXXVII. Athanasius episcopus.
+
+LXXXVIII. Antonius monachus.
+
+LXXXIX. Basilius episcopus.
+
+XC. Theodorus episcopus.
+
+XCI. Eusebius alius episcopus.
+
+XCII. Triphilus episcopus.
+
+XCIII. Donatus haeresiarches.
+
+XCIV. Asterius philosophus.
+
+XCV. Lucifer episcopus.
+
+XCVI. Eusebius alius episcopus.
+
+XCVII. Fortunatianus episcopus.
+
+XLVIII. Acacius episcopus.
+
+XCIX. Serapion episcopus.
+
+C. Hilarius episcopus.
+
+CI. Victorinus rhetor Petavionensis 1
+
+CII. Titus episcopus
+
+CIII. Damasus episcopus.
+
+CIV. Apollinaris episcopus.
+
+CV. Gregorius episcopus.
+
+CVI. Pacianus episcopus.
+
+CVII. Photinus haeresiarches.
+
+CVIII. Foebadius episcopus.
+
+CIX. Didymus 6 βλέπων.
+
+CX. Optatus episcopus.
+
+CXI. Acilius Severus, senator.
+
+CXII. Cyrillus episcopus.
+
+CXIII. Euzoius episcopus.
+
+CXIV. Epiphanius episcopos.
+
+GXV. Ephrem diaconus.
+
+CXVI. Basilius alter episcopus.
+
+CXVII. Gregorius alius episcopus.
+
+CXVIII. Lucius episcopus.
+
+CXIX. Diodorus episcopus.
+
+CXX. Eunomius haeresiarches.
+
+CXXI. Priscillianus episcopus·
+
+CXXII. Latronianus episcopus.
+
+CXXIII. Tiberianus episcopus.
+
+CXXIV. Ambrosius episcopus Mediolan.
+
+CXXV. Evagrius episcopus.
+
+CXXVI. Ambrosius Didymi discipulus.
+
+CXXVII. Maximus ex philosopho episcopus.
+
+CXXVIII. Gregorius alius episcopus.
+
+CXXIX. Joannes presbyter1.
+
+CXXX. Gelasius episcopus.
+
+CXXXI. Theotimus episcopus.
+
+CXXXII. Dexter Paciani filius, nunc praefectus praetorio.
+
+CXXXIII. Amphilochius episcopus.
+
+CXXXIV. Sophronius.
+
+CXXXV. Hieronymus.
+
+INCIPIT LIBER.
+
+CAPUT PRIMUM
+
+CAPUT PRIMUM.
+
+828 Simon Petrus, filius Joannis 1, provinciae Galileae·, e vico Bethsaida, frater Andreae apostoli (Matth. IV, 18), et princeps apostolorum, post episcopatum Antiochensis Ecclesiae 2, et praedicationem dispersionis corum qui de circumcisione crediderant, in Ponto, Galatia, Cappadocia, Asia et Bithynia (I Petr. I, 1), secundo Claudii imperatoris anno 3, ad expugnandum Simonem magum, Romam pergit, ibique viginti quinque annis cathedram sacerdotalem tenuit 4, usque ad ultimum annum Neronis, id est, decimum quartum. A quo et affixus cruci, martyrio coronatus est, capite ad terram verso 5, et in sublime pedibus elevatis 6; asserens se indignum qui sic crucifigeretur ut Dominus suus. Scripsit duas epistolas, quae Catholicae 7 nominantur : quarum 8 secunda a plerisque ejus esse negatur, propter styli cum priore dissonantiam. Sed et Evangelium juxta Marcum 9, qui auditor ejus et interpres fuit, hujus dicitur. Libri autem, c quibus unus Actorum ejus inscribitur, alius Evang lii, tertius Praedicationis, quartus Apocalypseos, quintus Judicii 1, inter apocryphas scripturas repudiantur 2. Sepultus Romae in Vaticano 3, juxta viam Triumphalem, (??)ius orbis 4 veneratione celebratur.
+
+CAPUT II.
+
+829 Jacobus, qui appellatur frater Domini (Galat. I, 19), cognomento Justus, ut nonnulli existimant 5, Joseph ex alia uxore, ut autem mihi videtur. Mariae sororis Matris Domini (Joan. XIX, 23), cujus Joannes in libro 6 suo meminit, filius, post passionem Domini 7 statim ab apostolis Hierosolymorum episcopus ordinatus, unam tantum (??)ipsit epistolam, quae de septem Catholicis est, quae et ipsa ab alio 8 quodam sub nomine ejus edita asseritur, licet paulatim tempore procedente obtinnerit auctoritatem 9. Hegesippus 10, vicinus apostolicorum temporum, in quinto Commentariorum libro de Jacobo narrans, ait : « Suscepit Ecclesiam Hierosolymorum post apostolos 11 frater Domini Jacobus, cognomento Justus. Multi siquidem Jacobi vocabantur. Hic de utero matris sanctus fuit, vinum et siceram non bibit, carnem nullam comedit, nunquam attonsus fuit, nec unctus fuit unguento, nec usus balneo. Huic soli licitum erat 12 ingredi Sanctu sanctorum : siquidem vestibus laneis non utebatur, sed lineis, solusque ingrediebatur templum, et fixis genibus pro populo deprecabatur, in tantum, 832 ut camelorum duritiem traxisse1 ejus genua crederentur. » Dicti et alia multa 2, quae enumerare longum esset. Sed et Josephus 3 in vicesimo libro Antiquitatum refert, et Clemens in septimo Υποτυπώσεων, mortuo Festo, qui Judaeam regebat, missum esse a Nerone successorem ejus Albinum, qui cnm necdum ad provinciam pervenisset, Ananus 4, inquit, pontific, adolescens, Anani filius, de genere sacerdotali, accepta occasione άναρχίας, concilium congregavit, et compellens publice Jacobum, ut Christum Dei Filium denegaret, contradicentem, lapidari jussit. Qui cum praecipitatus de pinna templi 5, confractis cruribus, adhuc semiani dis tendens ad coelum manus, diceret : Domine ignosce eis, quod enim faciunt, nesciunt (Luc. XXIII, 34); fullonis fuste, que· uda vestimenta extorqueri solent 6, in cerebro percussus interiit. Tradit item Josephus, tantae cum sanctitatis fuisse et celebritatis in populo, ut propter ejus necem, creditum sit subversam esse Hierosolymam 7. Hic est de quo Paulus apostolas scribit ad Galatas : Alium autem apostolorum vidi neminem, nisi Jacobum fratrem Domini (Galat. I, 19). Et apostolorum super hoc crebrius Acta testantur (Act. I, 13; XXI, 18; XV, 13). Evangelium quoque quod appellatur secundum Hebraeos 8, et a me nuper in Graecum Latinumque sermonem translatum est, quo et Origenes saepe utitur, post resurrectionem Salvatoris refert : « Dominus autem cum dedisset sindonem 1 servo sacerdotis, ivit ad Jacobum, et apparuit 2. Juraverat enim Jacobus, se non comesturum panem ab illa hora 833 qua biberat calicem Domini, donec videret eum resurgentem 3 a dormientibus. » Rursusque post paululum : « Afferte, » ait Dominus, « mensam et panem. » « Statimque additur : « Tulit panem et benedixit, ac fregit, et dedit Jacobo Justo, et dixit ei : Frater mi, comede panem tuum, quia resurrexit Filius hominis a dormientibus. » Triginta itaque annos Hierosolymorum [Al. Hierosolymis] rexit Ecclesiam, id est, usque ad septimum Neronis annum 4, et juxta templum ubi et praecipitatus fuerat, sepultus est. Titulum usque ad obsidionem Titi, et ultimam Hadriani, notissimum habuit. Quidam e nostris in monte Oliveti eum putaverunt conditum, sed falsa eorum opinio est5.
+
+CAPUT II.
+
+CAPUT III.
+
+Matthaeus, qui et Levi, ex publicano apostolus (Matth. IX, 9; Marc. II, 14; Luc. v, 27), primus in Judaea propter eos qui ex circumcisione crediderant, Evangelium Christi Hebraicis 6 litteris verbisque composuit : quod quis postea in Graecum transtulerit, non satis certum est. Porro ipsum Hebraicum habetur usque hodie in Caesariensi bibliotheca 7, quam Pamphilus martyr studiosissime confecit. Mihi quoque a Nazaraeis, qui in Beroea urbe Syriae hoc volumine utuntur, describendi facultas fuit. In quo animadvertendum, quod ubicunque evangelista, sive ex persona sua, sive ex persona Domini Salvatoris, veteris Scri· pturae testimoniis abutitur, non sequatur Septuaginta Translatorum auctoritatem, sed Hebraicam, e quibus illa duo sunt : Ex AEgypto vocati filium meum; et : Quoniam Nazaroeus vocabitur.
+
+CAPUT III.
+
+CAPUT IV.
+
+Judas frater J.icobi 1 parvam, quae de septem Catholicis esi, epistolam reliquit. Et quin de libro Euoch, qui apocryphus est, in en · assumit testi· monium, 836 a plerisque rejicitur, tamen auctoritatem 1 vetustate Jam et usu meruit, et inter sanctas Scripturas computatur.
+
+CAPUT IV.
+
+CAPUT V.
+
+Paulus apostolus, qui ante Sanlus (Act. VII, 57), extra numerum duodecim apostolorum 4, de tribu Benjamin et oppido Judaeae 5 Giscalis fuit, quo a Romanis capto, cum parentibus suis Tarsum Ciliciae commigravit (Act. XXII, 3), a quibus ob studia Legis missus Hierosolymam, a Gamaliele viro doctissimo, cujus Lucas meminit, cruditus est. Cum autem interfuisset neci martyris Stephani, et acceptis a pontifice templi epistolis ad persequendos cos qui Christo crediderant, Damascum pergeret, revelatione compulsus ad fidem, quae in Actibus apostolorum scribitur, in vas electionis de persecutore translatus est. Cumque primum ad praedicationem ejus Sergius Paulus proconsul Cypri credidisset, ab co quod eum Christi fidei subegerat, sortitus est nomen Paulus 6, et juncto sibi Barnaba, multis urbibus peragratis, revertensque Hierosolymam, a Petro, Jacobo et Joanne gentium Apostolus ordinatur. Et quia in Actibus apostolorum plenissime de ejus conversatione 7 scriptum est, hoc tantum dicam, quod post passionem Domini vicesimo quinto anno, id est secundo Neronis 8, eo tempore quo Festus procurator Judaeae sucecssit Felici, Romant vinctus mittitur, et biennium in libera manens custodia, adversus Judaeos de adventu Christi quotidie disputavit. 837 Sciendum autem in prima satisfactione 1, necdum Neronis imperio roborato, nec in tanta crumpente scelera, quanta de eo narrant historiae, Paulum a Nerone dimissum, ut Evangelium Christi in Occidentis quoque partibus praedicaretur, sicut ipse scribit in secunda Epistola ad Timotheum, eo tempore quo et passus est, de vinculis dictans Epistotam : In prima mea satisfactione nemo mihi adfuit, sed omnes me dereliquerunt 2; non eis imputetur. Dominus autem mihi adfuit, et confortavit me, ut per me proedicatio compleretur, et audirent omnes gentes, et liberatus sum de ore leonis (II Tim. IV, 16, 17), manifestissime leonem propter crudelitatem Neronem significans 3. Et in sequentibus : Liberatus sum 4 de ore leonis. Et statim : Liberabit me Dominus ab omni opere malo, et salvebit me 5 in regnum suum coeleste (Ibid. 18), quod scilicet praesens sibi sentiret imminere martyrium. Nam et in cadem Epistola praemiserat : Ego enim jam immotor, et tempus resolutionis meoe instat (II Tim. IV, 6). Hic ergo quarto decimo Neronis anno 6, codem die quo Petrus Romae, pro Christo capite truncatur, sepultusque est in via Ostiensi, anno post passionem Domini tricesimo septimo. Scripsit autem novem ad septem Ecclesias epistolas, ad Romanos unam, ad Corinthios duas, ad Galatas unam, ad Ephesios unam, ad Philippenses unam, ad Colossenses unam, ad Thessalonicenses duas, praeterea ad discipulos suos 7, Timotheo duas, Tito unam, Philemoni unam. Epistola autem quae fertur ad Hebraeos, non ejus creditur, propter styli sermonisque dissonantiam 8, sed vel Barnabae, juxta Tertullianum 1, vel Lucae evangelistae, 839 juxta quosdam 2, vel Clementis 3 Romanae postea Ecclesiae episcopi, quem aiunt ipsi adjunctum sententias Pauli proprio ordinasse et ornasse sermone. Vel certe quia Paulus scribebat ad Hebraeos, et propter invidiam sui apud eos nominis, titulum in principio salutationis amputaverit 4. Scripserat ut Hebraeus 5 Hebraice, id est, suo eloquio disertissime ut ea quae eloquenter scripta fuerunt in Hebraeo, eloquentius verterentur [vertisse] in Graecum, et hanc causam esse, quod a caeteris Pauli Epistolis discrepare videatur. Legunt quidam et ad Laodicenses, sed ab omnibus exploditur.
+
+CAPUT V.
+
+CAPUT VI.
+
+840 Barnabas Cyprius (Act. IV, 36 ), qui et Joseph Levites. cum Paulo gentium apostolus ordinatus (Act. XIII. 2; Galat. II, 9), unam ad aedificationem Ecclesiae pertinentem Epistolam composuit6, quae inter apocryphas scripturas legitur. Hic postea propter Joannem discipulum, qui et Marcus vocabatur (Act. XV, 37 ), separatus a Paulo, nihilominus evangelicae praedicationis injunctum sibi opus exercuit.
+
+CAPUT VI.
+
+CAPUT VII.
+
+Lucas medicus Antiochensis 7, ut ejus scripta indicant, Graeci sermonis non ignarus fuit, sectator apostoli Pauli, et omnis peregrinationis ejus comes, scripsit Evangelium, de quo idem Paulus : Misimus 8, inquit, cum illo fratrem, cujus laus est in Evangelio per omnes Ecclesias (II Cor. VIII, 18); et ad Colossenses : Salutat vos Lucat medicus charissimus (Coloss. IV, 14 ); et ad Timotheum : Lucas est mecum solus (II Tim. IV, 11). Aliud quoque edidit volumen egregium, quod titulo Apostolicarum πράξεων 9 praenotatur, cujus historia usque ad hiennium Romae commorantis Pauli pervenit, id est, usque ad quartum Neronis annum 1 (Act. XXVIII, 30 ). Ex quo intelligimus, 841 in eadem urbe librum esse compositum 2. Igitur περιόδους 3 ( ms. περιιχάς) Pauli, et Theclae, et totam baptizati Leonis fabulam, inter apocryphas scripturas computamus. Quale enim est, ut individuus comes Apostoli inter caeteras ejus res hoc solum ignoraverit? Sed et Tertullianus, vicinus eorum temporum 4, refert presbyterum quemdam in Asia σπουδαστήν apostoli Pauli, convictum apud Joannem 5, quod auctor esset libri, et confessum se hoc Pauli amore fecisse, loco excidisse. Quidam suspicantur. quotiescunque in Epistolis suis Paulus dicit, juxta Evangelium meum 6, de Lucae significare volumine, et Lucam non solum ab apostolo. Paulo didicisse Evangelium, qui cum Domino in carne non fuerat, sed et a caeteris apostolis. Quod ipse quoque in principio sui voluminis declarat 7, dicens : Sicut tradiderunt nobis, qui a principio ipsi viderunt, et ministri fuerunt sermonis (Luc. I, 2). Igitur Evangelium sicut audierat, scripsit. Acta vero Apostolorum sicut viderat, composuit. Sepultus est Constantinopoli 8 ad quam urbem vicesimo Constantii anno ossa ejus cum reliquiis Andreae apostoli translata sunt 9.
+
+CAPUT VII.
+
+CAPUT VIII.
+
+Marcus discipulus et interpres Petri 1, juxta quod Petrum referentem audierat, rogatus Romae a fratribus, breve scripsit Evangelium. Quod cum Petrus audisset, probavit, et Ecclesiis legendum 2 sua auctoritate edidit, 844 sicut Clemens in sexto Υποτυπώσεων libro scribit, et Papias Hierapolitanus episcopus. Meminit hujus Marci et Petrus in Epistola prima, sub nomine Babylonis figuraliter Romam significans : Salutat vos quoe 3 in Babylone est coelecta, et Marcus filius meus (I Petr. V, 13). Assumpto itaque Evangelio quod ipse confecerat, perrexit AEgyptum, et primus [ms. primum] Alexnndriae Christum annuntians, constituit Ecclesiam, tanta doctrina [Al. doctrinae] et vitae continentia, ut omnes sectatores Christi ad exemplum sui co-
+
+geret. Denique Philo disertissimus Judaeorum, videns Alexandriae primam Ecclesiam adhuc judaizantem, quasi in laudem gentis suae librum 4 super eorum conversatione scripsit. Et quomodo Lucas narrat, Hierosolymae credentes omnia habuisse communia (Act. II, 44) : sic et ille quod Alexandriae sub Marco fieri doctore cernebat, memoriae tradidit. Mortuus est autem octavo Neronis anno 5, et sepultus Alexandriae, succedente sibi Anniano 6.
+
+CAPUT VIII.
+
+CAPUT IX.
+
+Joannes apostolus, quem Jesus amavit plurimum (Joan. XIII, 25, et XIX, 26, et XX, 2, et XXI, 7), filius Zebedaei, frater Jacobi apostoli (Matth. IV, 21, et X, 2; Marc. X, 35; Luc. V, 10), quem Herodes post passionem Domini decollavit (Act. XII, 2 seqq.), novissimus omnium scripsit Evangelium, rogatus ab Asiae episcopis 7, adversus Cerinthum, aliosque haereticos, et maxime tunc Ebionitarum dogma consurgens, qui asserunt Christum ante Mariam non fuisse. Unde et compulsus est divinam ejus nativitatem edicere. Sed et aliam causam hujus scripturae· ferunt 1, quod cum legisset Matthaei, Marci et Lucae volumina, probaverit quidem textum historiae, et vera eos dixisse firmaverit, sed unius tantum anni, in quo et passus est, post carcerem Joannis [ms. tacet Joannis], historiam texuisse. Praetermisso itaque anno, cujus acta a tribus exposita fuerant, superioris temporis antequam Joannes 845 clauderetur in carcerem, gesta narravit : sicut manifestum esse poterit his qui diligenter quatuor Evangeliorum volumina legerint. Quae res etiam διαφωνίαν (dissonantiam), quae videtur Joannis esse cum caeteris, tollit. Scripsit autem et unam Epistolam, cujus exordium est : Quod fuit ab initio, quod audivimus, et vidimus oculis nostris, quod perspeximus, et manus nostroe contrectaverunt de Verbo vitoe, quae ab universis ecclesiasticis et eruditis viris probatur. Reliquae nutem duae, quarum principium est : Senior Electoe dominoe et natis ejus, et sequentis : Senior Caio charissimo, quem ego diligo in veritate, Joannis presbyteri 2 asseruntur, cujus et hodie alterum 3 sepulerum apud Ephesum ostenditur, etsi nonnulli 5 putant duas memorias 6 ejusdem Joannis evangelistae esse, super qua re cum per ordinem ad Papiam auditorem ejus ventum fuerit, disseremus. Quarto decimo igitur anno, secundum post Neronem persecutionem movente Domitiano 7, in Patmos insulam relegatus, scripsit Apocalypsim, quam interpretatur Justinus Martyr et Irenaeus 8. Interfecto autem Domitiano, et actis ejus ob nimiam crudelitatem a senatu rescissis, sub Nerva principe 9 redit Ephesum, ibique usque ad Trajanum principem perseverans 1, totas Asiae fundavit rexitque Ecclesias, et confectus senio, sexagesimo octavo post passionem Domini anno mortuus 2, juxta eamdem urbem sepultus est.
+
+CAPUT IX.
+
+CAPUT X.
+
+Herman 3, cujus apostolus Paulus ad Romanos scribens meminit : Salutate Asyncritum, Phlegonte, Herman, Patroban, Hermen 4, et qui cum eis fratres sunt (Rom. XVI, 14), asserunt auctorem esse libri, 848 qui appellatur Pastor 5, et apud quasdam Graeciae Ecclesias jam publice legitur 6. Revera utilis liber, multique de eo scriptorum veterum usurpavere 7 testimonia. Sed apud Latinos pene ignotus est 8.
+
+CAPUT X.
+
+CAPUT XI.
+
+Philo Judaeus, natione Alexandrinus 9, de genere sacerdotum, idcirco a nobis inter scriptores ecclesiasticos ponitur, quia librum de prima Marci evangelistae apud Alexandriam scribens Ecclesia 10, in nostrorum laude versatus est, non solum eos ibi, sed in multis quoque provinciis esse memorans, et habitacula eorum dicens monasteria 11. Ex quo apparet talem primum Christo credentium fuisse Ecclesiam, quales nunc monachi esse nituntur [ms. imitantur] et cupiunt, ut nihil cujusquam proprium sit, nullus inter eos dives, nullus pauper. Patrimonia egentibus dividuntur [Al. dividunt], orationi vacatur [Al. vacant] et psalmis, doctrinae quoque et continentiae, quales et Lucas refert (Act. II, 4, et IV, 32) primum Hierosolymae fuisse credentes. Aiunt hunc sub Caio Caligula Romae periclitatum12, quo legatus gentis suae missus fuerat. Cum secunda vice venisset ad Claudium, in eadem urbe locutum esse cum apostolo Petro 13, ejusque habuisse amicitias, et ob hanc causam etiam 1 Marci, discipuli Petri, apud Alexandriam sectatores ornasse laudibus suis. Exstant hujus praeclara et innumerabilia opera in quinque libros Moysi, de Confusione linguarum liber unus, de Natura et Inventione 2 liber unus, de His quae sensu precamur et detestamur liber unus, de Eruditione liber unus, de Haerede divinarum rerum liber unus, 849 de Divisione aequalium et contrariorum 3 liber, de Tribus virtutibus liber unus 4, Quare quorumdam in Scripturis mutata sunt [mss. sint] nomina liber unus, de Pactis libri duo 5, de Vita sapientis liber unus, de Gigantibus liber unus 6, Quod somnia mittantur a Deo libri quinque 7, Quaestionum et solutionum in Exodo libri quinque 8, de Tabernaculo et Decalogo libri quatuor 9, necnon de Victimis et Repromissionibus 10, sive Maledictis, de Providentia 11, de Judaeis, de Conversatione vitae, de Alexandro 12, et Quod propriam rationem muta animalia habeant, et Quod omnis insipiens servus sit, et de Vita nostrorum liber unus 13, de quo supra diximus, id est, de apostolicis viris, quem et inscripsit περ\ Βίου θεωρητικού Ικετών 14, quod videlicet coelestia contemplentur, et semper Deum orent. Et sub aliis indicibus, de Agricultura duo, de Ebrietate duo 15. Sunt et alia 16 ejus monumenta ingenii, quae in nostras manus non pervenerunt. De hoc vulgo apud Graecos dicitur,"Η Πλάτων φιλωνίζει, ή Φίλων πλατωνίζει: id est, aut Plato Philonem sequitur, aut Platonem Philo : tanta est similitudo sensuum et eloquii.
+
+CAPUT XI.
+
+CAPUT XII.
+
+CAPUT XII.
+
+Lucius Annaeus Seneca Cordubensis, Sotionis 1 Stoici discipulus, et patruus Lucani poetae, continentissimae vitae fuit, quem non ponerem in Catalogo Sanctorum 2, nisi me illae Epistolae provocarent, quae leguntur a plurimis 852 Pauli ad Senecam, et Senecae 3 ad Paulum. In quibus, cum esset Neronis magister, et illius temporis potentissimus, optare se dicit 4 ejus esse loci apud suos, cujus sit Paulus apud Christianos. Hic ante biennium quam Petrus et Paulus coronarentur martyrio 5, a Nerone interfectus est.
+
+CAPUT XIII.
+
+Josephus Matthiae filius 6, ex Hierosolymis sacerdos, a Vespasiano captus, cum Tito filio ejus relictus est. Hic Romam veniens, septem libros Judaicae captivitatis imperatoribus patri filioque obtulit, qui et bibliothecae publicae traditi sunt 7, et ob ingenii gloriam statuam quoque meruit Romae. Scripsit autem et alios 8 viginti Antiquitatum libros, ab exordio mundi usque ad decimum quartum annum Domitiani Caesaris 9, et duos Αρχαιότητας, adversum Appionem grammaticum Alexandrinum, qui sub Caligula legatus missus ex parte Gentilium, contra Philonem etiam librum, vituperationem gentis Judaicae continentem, scripserat. Alius quoque liber ejus, qui inscribitur πβρ\ Αύτο/.ράτορος λογισμού, valde elegans habetur. in quo et Machabaeorum sunt digesta Hic in decimo octavo Antiquitatum libromanifestissime confitetur, propter magnitudinem signorum Christum a Pharisaeis interfectum, et Joannem Baptistam vere prophetam fuisse, et propter interfectionem Jacobi apostoli 10 dirutam Hierosolymam. Scripsit autem de Domino 11 in hunc modum : « Eodem tempore fuit Jesus, vir sapiens, si tamen virum oportet eum dicere. Erat enim mirabilium patrator operum, et doctor corum, qui libenter vera suscipiunt : plurimos quoque tam de Judaeis quam de gentibus sui habuit sectatores, et credebatur esse Christus 1. Cumque invidia nostrorum principum cruci eum Pilatus addixisset, nihilominus qui eum primum dilexeranl 2, perseveraverunt. Apparuit enim eis tertia die vivens, multa et haec alia mirabilia carminibus prophetarum de eo vaticinantibus, et usque hodie Christianorum gens ab hoc sortita vocabulum, non defecit. >
+
+CAPUT XIII.
+
+CAPUT XIV.
+
+853 Justus Tiberiensis 3, de provincia Galilaea, conatus est et ipse Judaicarum rerum historiam texere, et quosdam Commentariolos de Scripturis 4 componere 5; sed hunc Josephus (Just. Vita) arguit mendacii. Constat autem illum eo tempore scripsisse, quo et Josephus.
+
+CAPUT XIV.
+
+CAPUT XV.
+
+Clemens 6, de quo apostolus Paulus ad Philippenses scribens, ait, Cum Clemente et coeteris cooperatoribus 7 meis, quorum nomina scripta sunt in libro vitoe (Philipp. IV, 3), quartus post Petrum Romae episcopus : siquidem secundus Linus fuit, tertius Anacletus 8, tametsi plerique Latinorum secundum post Petrum apostolum putent fuisse Clementem 9. Scripsit ex persona Romanae Ecclesiae ad Ecclesiam Corinthiorum valde utilem Epistolam, quae et in nonnullis locis publice legitur, quae mihi videtur characteri Epistolae, quae sub Pauli nomine ad Hebraeos fertur, convenire. Sed et multis de eadem Epistola, non solum sensibus, sed juxta verborum quoque ordinem abutitur. Omnino grandis in utraque similitudo est. Fertur et se· cunda ejus nomine Epistola, quae a veteribus reprobatur. Et Disputatio Petri et Appionis longo sermone conscripta 2, quam Eusebius in tertio Historiae Ecclesiasticae volumine coarguit. Obiit tertio Trajani anno, et nominis ejus 3 memoriam usque hodie Romae exstructa Ecclesia custodit.
+
+CAPUT XV.
+
+CAPUT XVI.
+
+856 Ignatius Antiochenae Ecclesiae tertius post Petrum apostolum episcopus, persecutionem commovente Trojano, damnatus ad bestias, Romam vinctus mittitur. Cumque navigans Smyrnam venisset, ubi Polycarpus, auditor Joannis, episcopus erat, scripsit unam Epistolam ad Ephesios, alteram ad Magnesianos, tertiam ad Trallenses, quartam ad Romanos, et inde egrediens scripsit ad Philadelpheos et ad Smyrnaeos; et proprie ad Polycarpum, commendans illi Antiochensem Ecclesiam, in qua et de Evangelio 4 quod nuper a me translatum est 5, super persona Christi ponit testimonium dicens : « Ego vero et post resurrectionem 6 in carne eum vidi 7, et credo quia sit. Et quando venit ad Petrum, et ad eos qui cum Petro erant, dixit eis : Ecce palpate me, et videte, quia non sum doemonium incorporale·8. Et statim tetigerunt eum et crediderunt. » Dignum autem videtur, quia tanti viri fecimus mentionem, et de epistola ejus, quam ad Romanos scribit [Al. scripsit], pauca ponere. « De Syria 9 usque ad Romam pugno ad bestias, in mari et in terra, nocte dieque ligatus cum decem leopardis 10, hoc est militibus, qui me custodiunt : quibus et cum benefeceris, pejores fiunt. Iniquitas autem eorum mea doctrina est, sed non idcirco justificatus sum. Utinam fruar bestiis, quae mihi sunt praeparatae, quas et oro mihi 857 veloces esse ad interitum, et alliciam 1 eas ad comedendum me, ne sicut aliorum martyrum, non audeant corpus meum attingere. Quod si venire noluerint, ego vim faciam, ego me ingeram, ut devorer. Ignoscite mihi, filioli : quid mihi prosit, ego scio. Nunc incipio Christi esse discipulus 2, nihil de his quae videntur desiderans 3, ut Jesum Christum inveniam. Ignis, crux, bestiae, confractio ossium, membrorum divisio, et totius corporis contritio, et tota 4 tormenta diaboli, in me veniant, tantum ut Christo fruar. » Cumque jam damnatus esset ad bestias, ardore patiendi, cum rugientes audiret leones, ait : « Frumentum Christi sum, dentibus bestiarum molar, ut panis mundus inveniar. » Passus est anno undecimo 5 Trajani. Reliquiae corporis ejus Antiochiae jacent extra portam Daphniticam 6 in coemeterio.
+
+CAPUT XVI.
+
+CAPUT XVII.
+
+Polycarpus, Joannis apostoli discipulus, et ab eo Smyrnae episcopus ordinatus, totius Asiae princeps fuit, quippe qui nonnullos apostolorum, et eorum qui viderant Dominum, magistros habuerit et viderit. Hic propter quasdam super die. Paschae quaestiones sub imperatore Antonino Pio, Ecclesiam in Urbe regente Aniceto, Romam venit, ubi plurimos credentium, Marcionis et Valentini persuasione deceptos, reduxit ad fidem. Cumque ei fortuito obviam fuisset Marcion, et diceret : « Cognosce 7 nos; » respondit : « Cognosco primogenitum diaboli. » Postea vero regnante M. Antonino est L. Aurelio Commodo 8, quarta post Neronem persecutione, Smyrnae, sedente proconsule 9, et universo populo in amphitheatro adversus eum personante, igni traditus est. Scripsit ad Philippenses valde utilem Epistolam, quae usque hodie in Asiae conventu 10 legitur.
+
+CAPUT XVII.
+
+CAPUT XVIII.
+
+860 Papias Joannis 1 auditor, Hierapolitanus in Asia episcopus, quinque tantum scripsit volumina, quae praenotavit, Explanatio sermonum Domini 2. In quibus cum se in praefatione asserat, non varias opiniones sequi, sed apostolos habere auctores, ait 3 : « Considerabam, quid Andreas, quid Petrus dixissent, quid Philippus, quid Thomas, quid Jacobus, quid Joannes; quid Matthaeus, vel alius quilibet discipulorum Domini : quid etiam Aristion 4,et senior Joannes, discipuli Domoni loquebantur. Non enim tantum mihi libri ad legendum prosunt, quantum viva vox, usque hodie in suis auctoribus personans. » Ex quo apparet in [Al. ex] ipso Catalogo nominum, alium esse Joannem, qui inter apostolos ponitur, et alium seniorem Joannem, quem post Aristionem erumerat 5. Hoc autem diximus, propter superiorem opinionem, quam a plerisque retulimus traditam6, duas posteriores Epistolas Joannis non apostoli esse, sed presbyteri. Hic dicitur mille annorum Judaicam edidisse δευτέρωσιν, quem secuti sunt 7 Irenaeus, et Apollinarius, et caeteri qui post resurrectionem aiunt in carne cum sanctis Dominum regnaturum. Tertullianus quoque in libro de Spe fidelium, et Victorinus Petabionensis 8, et Lactantius hac opinione ducuntur.
+
+CAPUT XVIII.
+
+CAPUT XIX.
+
+Quadratus apostolorum discipulus, Publico Athenarum episcopo ob Christi fidem martyrio coronato 9, in locum ejus substituitur, et Ecclesiam grandi terrore dispersam fide et industria sua congregat. Cumque Hadrianus 862 Athenis exegisset hiemem, invisens Eleusina 10, et omnibus pene Graeciae sacris initiatus dedisset occasionem his, qui Christianos oderant, absque praecepto imperatoris vexare credentes; porrexit ei librum pro religione nostra compositum, valde utilem 1, plenumque rationis et fidei, et apostolica doctrina dignum, in quo et antiquitatem suae aetatis ostendens, ait, plurimos a se visos qui sub Domino variis in Judaea oppressi calamitatibus, sanati fuerant, et qui a mortuis resurrexerant.
+
+CAPUT XIX.
+
+CAPUT XX.
+
+Aristides Atheniensis philosophus eloquentissimus et sub pristino habitu 2 discipulus Christi, volumen nostri dogmatis rationem continens, eodem tempore quo et Quadratus, Hadriano principi dedit, id est, Apologeticum pro Christianis, quod usque hodie perseverans, apud philologos ingenii ejus indicium est.
+
+CAPUT XX.
+
+CAPUT XXI.
+
+Agrippa, cognomento Castor·3, vir valde doctus, adversum viginti quatuor Basilidis haeretici volumina 4, quae in Evangelium confecerat, fortissime disseruit, prodens ejus universa mysteria, et prophetas enumerans, Barcaban 5 et Barcob, et ad terrorem audientium alia quaedam barbara nomina : et Deum maximum ejus Abraxas. qui quasi annum continens 6. si juxta Graecorum numerum supputetur. Moratus est 7 autem Basilides, a quo 863 Gnostici, in Alexandria temporibus Hadriani, qua tempestate et Cochebas 1 dux Judaicae factionis Christianos variis suppliciis enecavit.
+
+CAPUT XXI.
+
+CAPUT XXII.
+
+Hegesippus vicinus apostolicorum temporum, et omnes a passione Domini usque ad suam aetatem Ecclesiasticorum actuum texens historias, multaque ad utilitatem legentium pertinentia hinc inde congregans, quinque libros composuit2, sermone simplici, ut quorum vitam sectabatur, dicendi quoque exprimeret characterem. Asserit se venisse sub Aniceto Romam, qui decimus post Petrum episeopus fuit, et perseverasse usque ad Eleutherum ejusdem urbis episcopum3 qui Aniceti quondam diaconus fuerat. Praeterea adversum idola disputans, ex quo primum errore crevissent, subtexit historiam, ex qua ostendit, qua floruerit aetate. Ait enim 4 : « Tumulos mortuis templaque fecerunt, sicut usque hodie videmus : e quihus est et Antinous, servus Hadriani Caesaris, cui et gymnicus agon exercetur apud Antinoum civitatem 5, quam ex ejus nomine condidit, et statuit prophetas in templo 6. » Antinoum autem in deliciis habuisse Caesar Hadrianus scribitur.
+
+CAPUT XXII.
+
+CAPUT XXIII.
+
+Justinos philosophus, habitu quoque philosophorum incedens, de Neapoli urbe Palaestinae 7 patre Prisco Bacchio 8, pro religione Christi plurimum laboravit : in tantum, ut Antonino 866 quoque Pio, et filiis ejus, et senatui librum (Apotogia longior) contra gentes scriptum daret, ignominiamque crucis non erubesceret; et alium librum (Altera brevior) successoribus ejusdem Antonini, M. Antonino Vero et L. Aurelio Commodo. Exstat ejus aliud volumen (Oratio ad Grcecos) contra gentes, ubi de daemonum quoque natura disputat : et quartum adversus gentes, cui titulum praenotavit "Ελεγχος 1 : sed et alius de Monarchia Dei, et alius liber, quem praenotavit Psalten 2, et alius de Anima. Dialogus contra Judaeos, quem habuit adversus Tryphonem principem Judaeorum : sed et contra Marcionem insignia volumina, quorum trenaeus quoque quarto 3 adversus Haereses libro meminit : et alius liber contra omnes haereses 4, cujus facit mentionem in Apologetico, quem dedit Antonino Pio. Hic cum in urbe Roma haberet διατριβά; 5, et Crescentem Cynicum, qui multa adversum Christianos blasphemabat, redargueret gulosum, et mortis timidum, luxuriae que et libidinum sectatorem, ad extremum studio ejus et insidiis accusatus, quod Christianus esset, pro Christo sanguinem fudit·
+
+CAPUT XXIII.
+
+CAPUT XXIV.
+
+Melito Asianus, Sardensis episcopus, librum imperatori M. Antonino Vero, qui Frontonis 6 oratoris discipulus fuit, pro Christiano dogmate dedit. Scripsit quoque et alia, de quibus ista sunt, quae subjecimus : de Pascha libros duos, de Vita prophetarum librum unum, de Ecclesia librum unum, de Die Dominica librum unum 7, de Sensibus librum unum, de Fide librum unum, de Plasmate librum unum 8, de Anima et Corpore librum unum, de Baptismate librum unum, de Veritate librum unum, de Generatione Christi librum unum, de Prophetia 9 sua librum unum, de Philoxenia librum unum, et alium 867 librum qui Clavis inscribitur; de Diabolo librum unum, de Apocalypsi Joannis librum unum, περί Ενσωμάτου Θεού librum unum 10, et Εκλογών libros sex. Hujus elegans et declamatorium ingenium Tertullianus in septem libris, quos scripset adversus Ecclesiam pro Montano, cavillatur, dicens eum 1 a plerisque nostrorum prophetam putari.
+
+CAPUT XXIV.
+
+CAPUT XXV.
+
+Theophilus, sextus Antiochensis Ecclesiae episcopus 2, sub imperatore M. Antonino Vero librum contra Marcionem composuit, qui usque hodie exstat 3. Feruntur ejus et ad Autolycum tria volumina, et contra haeresim Hermogenis liber unus : et alii breves elegantesque tractatus ad aedifirationem Ecclesiae pertinentes. Legi sub nomine ejus in Evangelium et in Proverbia Salomonis Commentarios, qui mihi cum superiorum voluminum elegantia et phrasi non videntur congruere.
+
+CAPUT XXV.
+
+CAPUT XXVI.
+
+Apollinaris, Asiae Hierapolitanus episcopus, sub imperatore M. Antonino Vero floruit, cui et insigne volumen pro fide Christianorum dedit. Exstant ejus et alii quinque adversum gentes libri, et de veritate duo, adversum Cataphrygas 4 tunc primum exortos cum Priscilla et Maximilla insanis vatibus, incipiente Montano.
+
+CAPUT XXVI.
+
+CAPUT XXVII.
+
+Dionysius, Corinthiorum Ecclesiae episcopus, tantae eloquentiae et industriae fuit, ut non solum suae civitatis 870 et provinciae populos, sed et aliarum urbium et provinciarum 5 episcopos epistolis crudiret. Ex quibus est una ad Lacedaemonios, alia ad Athenienses, tertia ad Nicomedienses, quarta ad Cretenses, quinta ad Ecclesiam Amastrianam 6 et ad reliquas Ponti Ecclesias, sexta ad Cnossianos et ad Pinytum ejusdem urbis episcopum, septima ad Romanos, quam scripsit ad Soterem episcopum corum, octava ad Chrysophoram, santum feminam. Claruit sub impp. M. Antonino Vero et L. Aurelio Commodo.
+
+CAPUT XXVII.
+
+CAPUT XXVIII.
+
+Pinytus Cretensis, Cnossiae urbis episcopus, scripsit ad Dionysium 1 Corinthiorum episcopum valde elegantem epistolam : in qua docet, non semper lacte populos nutriendos, ne quasi parvuli ab ultimo occupentur die; sed et solido vesci debere cibo, ut in spiritalem proficiant senectutem. Et hic sub M. Antonino Vero et L. Aurelio Commodo floruit.
+
+CAPUT XXVIII.
+
+CAPUT XXIX.
+
+Tarianus·2, qui primum oratoriam docens, non parvam sibi ex arte rhetorica gloriam comparaverat, Justini Martyris sectator fuit, florens in Ecclesia. quandiu ab ejus latere non discessit. Postea vero, inflatus eloquentiae tumore 3, novam condidit haeresim quae Έγκρβτιτών dicitur. quam postea Severus auxit, a quo ejusdem partis haeretici Severiani neque hodie appellantur. Porro Tatianus infinita scripsit volumina, e quibus unus contra Gentes florentissimus exstat liber, qui inter omnia opera ejus fertur insignis. Et hic sub imperatore M. Antonino Vero et L. Aurelio Commodo floruit. συγγραμμάτων έπίαημό; I jxu Και οδτο; £*kU£ovxc μόίου f4vOipj*v.
+
+CAPUT XXIX.
+
+CAPUT XXX.
+
+Philippus, episcopus Cretensis, hoc est, urbis Gortynae 4, cujus Dionysius 871 in epistola sua meminit, quam scripsit ad ejusdem civitatis Ecclesiam, praeclarum adversum Marcionem edidit librum 5 temporibusque M. Antonini Veri et L Aurelii Commodi claruit.
+
+CAPUT XXX.
+
+CAPUT XXXI.
+
+Musanus 6 non ignobilis inter eos, qui de ecclesiastico dogmate scripserunt, sub imperatore M. Antonino Vero confecit librum ad quosdam fratres 7, qui de Ecclesia ad Encratitarum haeresim declinaverant.
+
+CAPUT XXXI.
+
+CAPUT XXXII.
+
+Modestus et ipse sub imperatore M. Antonino et L. Aurelio Commodo, adversum Marcionem scripsit librum 8, qui usque hodie perseverat. Feruntur sub nomine ejus et alia syntagmata, sed ab eruditis quasi ψευδόγραφα repudiantur.
+
+CAPUT XXXII.
+
+CAPUT XXXIII.
+
+Bardesanes in Mesopotamia 1 clarus habitas est, qui primum Valentini sectator, deinde confutator, novam haeresim condidit 2. Ardens ejus a Syris praedicatur ingenium, et in disputatione vehemens. Scripsit 3 infinita adversum omnes pene haereticos, qui aetate ejus pullulaverant. In quibus clarissimus ille et fortissimus liber 4, quem M. Antonino ·de Facto tradidit : 874 et multa alia super persecutione volumina, quae sectatores ejus de Syra lingua verterunt in Graecam. Si autem tanta vis est et fulgor in interpretatione, quantam putamus in sermone proprio?
+
+CAPUT XXXIII.
+
+CAPUT XXXIV.
+
+Victor, tertius decimus Romanae urbis episcopus 6, super quaestione Paschae et alia quaedam scribens opuscula 7, rexit Ecclesiam sub Severo principe 8 annis decem.
+
+CAPUT XXXIV.
+
+CAPUT XXXV.
+
+Irenaeus, Pothini episcopi, qui Lugdunensem in Gallia regebat Ecclesiam, presbyter, a martyribus ejusdem loci, ob quasdam Ecclesiae quaestiones legatus Romam missus, honorificas super nomine suo ad Eleutherum episcopum perfert litteras. Postea, jam Pothino prope nonagenario ob Christum martyrio coronato, in locum ejus substituitur. Constat autem Polycarpi, cujus supra fecimus mentionem 1, sacerdotis et martyris, hunc fuisse discipulum. Scripsit quinque adversus haereses libros 2, et contra gentes volumen breve, et de disciplina aliud 3, et ad Martianum fratrem de apostolica praedicatione, et librum variorum tractatuum, et ad Blastum de Schismate 4, et ad Florinum de Monarchia, sive quod Deus non sit conditor malorum, et de Ogdoade 5 egregium commentarium, in cujus fine significans se apostolicorum temporum vicinum fuisse, sic subscripsit 6 : « Adjuro te, qui 875 transcribis librum istum, per Dominum Jesum Christum, et per gloriosum ejus adventum, quo judicaturus est vivos et mortuos. ut conferas, postquam transcripseris, et emendes illum ad exemplar, unde scripsisti 7, diligentissime : hanc quoque obtestationem similiter transferas, ut invenisti in exemplari. » Feruntur ejus et aliae ad Victorem episcopum Romanum de quaestione Paschae epistolae : in quibus commonet eum, non facile debere unitatem collegii scindere. Siquidem Victor 8 multos Asiae et Orientis episcopos, qui decima quarta luna cum Judaeis Pascha celebrabant, damnandos crediderat. In qua sententia hi, qui discrepabant ab illis, Victori non dederant manus 9. Floruit maxime sub Commodo principe, qui M. Antonino Vero in imperium successerat.
+
+CAPUT XXXV.
+
+CAPUT XXXVI.
+
+Pantaenus 10, Stoicae sectae philosophus, juxta quamdam veterem in Alexandria consuetudinem, ubi a Marco evangelista semper ecclesiastici fuere doctores, tantae prudentiae et eruditionis tam in Scripturis divinis, quam in saeculari litteratura fuit, ut in Indiam quoque, rogatus ab illius gentis legatis, a Demetrio Alexandrise episcopo mitteretur. Ubi reperit, Bartholomaecum de duodecim apostolis adventum Domini nostri Jesu Christi juxta Matthaei Evangelium praedicasse, quod Hebraicis litteris scriptum, revertens Alexandriam secumdetulit 1 Hujus multi quidem in sanctam Scripturam exstant commentarii : sed magis viva voce Ecclesiis pro fuit 2. Docuitque sub Severo principe et Antonino, cognomento Caracalla.
+
+CAPUT XXXVI.
+
+CAPUT XXXVII.
+
+878 Rhodon, genere Asianus, a Tatiano, de quo supra diximus 3, Romae in Scripturis eruditus, edidit plurima : praecipuumque adversus Marcionem opus, in quo refert, quomodo ipsi quoque inter se Marcionitae discrepent; et Apellem senem alium haereticum a se quondam fuisse conventum 4, et risui habitum, eo quod Deum, quem coleret, ignorare se diceret 5. Meminit in eodem libro, quem scripsit ad Callistionem, Tatiani se Romae fuisse auditorem 6. Sed et in Hexaemeron elegantes tractatus composuit et adversum Phrygas 7 insigne opus; temporibus que Commodi et Severi floruit.
+
+CAPUT XXXVII.
+
+CAPUT XXXVIII.
+
+Clemens, Alexandrinae Ecclesiae presbyter, Pantaeni, de quo supra retulimus, auditor, post ejus mortem Alexandriae ecclesiasticam scholam tenuit 8, et κατηχήσεων magister fuit. Feruntur ejus insignia volumina, plenaque eruditionis et eloquen-. tiae, tam de Scripturis divinis, quam de saecularis litteraturae instrumento. Euquibus illa sunt, ΣτρωρατεΤ;, libri octo; Ύποτυπώαεων libri octo; ad· versus Gentes, liber unus; Paedagogi libri tres, de Pascha liber unus, de jejunio disceptatio 1, et alius inscribitur Quisnam dives ille sit, qui salvetur; de obtrectatione liber unus, de Canonibus ecclesiasticis, et adversum eos 2, 879 qui Judaeorum sequuntur errorem, liber unus, quem proprie Alexandro, Hierosolymorum episcopo, προαεφώ/ησε 3. Meminit autem, in Stromatibus suis, voluminis Tatiani adversus gentes, de quo supra diximus, et Casiani 4 cujusdam χρονογραφίας, quod opusculum 5 invenire non potui. Necnon et de Judaeis Aristobuum 6 quemdam et Demetrium et Eupolemum scriptores adversus gentes refert, qui in similitudinem Josephi άρχαιογονίαν Moysi et Judaicae gentis asseverant. Exstat Alexandri Hierosolymorum episcopi, qui cum Narcisso postea rexit Ecclesiam, epistola super ordinatione Asclepiadis confessoris ad Antiochenses, congratulantis eis, in qua ponit in fine 7 : « Haec vobis, domini ac fratres, scripta transmisi per Clementem beatum presbyterum, virum illusirem et probatum, quem vos quoque scitis, et nunc plenius recognoscetis, qui cum huc venisset juxta providentiam et visitationem Dei, confirmavit et auxit Domini Ecclesiam.» Constat, Origenem hujus fuisse discipulum. Floruit autem Severi et Antonini filii ejus temporibus.
+
+CAPUT XXXVIII.
+
+CAPUT XXXIX.
+
+Miltiades, cujus Rhodon 8 in opere suo, quod adversus Montanum, Priscam 9 Maximillamque composuit, recordatur, scripsit contra eosdem volumen praecipuum, et adversus gentes Judae osque libros alios 10, et principibus illius temporis Apologeticum dedit. Floruit autem M. Antonini Commodique 1 temporibus.
+
+CAPUT XXXIX.
+
+CAPUT XL.
+
+882 Apollonius 2, vir disertissimus, scripsit adversus Montanum, Priscam et Maximillam insigne et longum volumen, in quo asserit Montanum et insanas vales 3 ejus 4 periisse suspendio : et multa alia, in quibus de Prisca et Maximilla refert 5 : « Si negant eas accepisse munera, confiteantur non esse prophetas, qui accipiunt : et mille hoc testibus approbabo. Sed et ex aliis fructibus probantur prophetae. Dic mihi, crinem fucat prophetes? stibio oculos linit? Prophetae vestibus et gemmis ornantur? Prophetes tabula ludit et tesseris? Propheta fenus accipit? Respondeant, utrum hoc fieri liceat, an non : meum est approbare, quod fecerint 6.» Dicit iu eodem libro, quadragesimum esse annum usque ad tempus 7, quo ipse scribebat librum, ex quo haeresis Cataphrygarum habuerit exordium. Tertullianus sex voluminibus adversus Ecclesiam editis quae scripsit περί έχσ;άσεως, septimum proprie adversus Apollonium elaboravit, in quo omnia, quae ille arguit, conatur defendere. Floruit autem Apollonius sub Commodo Severoque principibus.
+
+CAPUT XL.
+
+CAPUT XLI.
+
+Serapion, undecimo 8 Commodi imperatoris anno Antiochiae episcopus ordinatus, scripsit epistolam ad Caricum 9 et Pontium de haeresi Monlani, in qua et haec addit 10 : « Ut autem 883 sciatis falsi hujus dogmatis, id est, novae prophetiae ab omni mundo insaniam reprobari, misi vobis Apollinaris beatissimi, qui fuit in Hierapoli Asiae episcopus, litteras 1. » Ad Domninum quoque 2, qui persecutionis tempore ad Judaeos declinaverat, volumen composuit; et alium de Evangelio, quod sub nomine Petri fertur, librum ad Rhosensem Ciliciae Ecclesiam, quae in haeresim ejus lectione diverterat. Leguntur et sparsim ejus breves epistolae 3, auctoris sui άσχήσει et vitae congruentes.
+
+CAPUT XLI.
+
+CAPUT XLII.
+
+Apollonius, Romanae urbis senator 4, sub Commodo principe a servo Severo proditus, quod Christianus esset, impetrato 5, ut rationem fidei suae redderet, insigne volumen composuit 6, quod in senatu legit; et nihilominus sententia senatus pro Christo capite truncatus est, veteri apud eos obtinente lege, absque negatione non dimitti Christianos, qui semel ad eorum judicium pertracti essent.
+
+CAPUT XLII.
+
+CAPUT XLIII.
+
+Theophilus, Caesareae Palestinae (quae olim Turris Stratonis vocabatur) episcopus, sub Severo principe, adversum eos, qui decima quarta luna cum Judaeis Pascha faciebant, cum caeteris episcopis synodicam 7 valde utilem composuit epistolam.
+
+CAPUT XLIII.
+
+CAPUT XLIV.
+
+884· Bacchylus, Corinthi episcopos, sub eodem Severo principe clarus habitus, de Pascha, ex omnium qui in Achaia erant episcoporum persona, elegantem librum 8 scripsit.
+
+CAPUT XLIV.
+
+CAPUT XLV.
+
+Polycrates, Ephesiorum episcopus, cum caeteris episcopis Asiae, qui juxta quamdam veterem consuetudinem cum Judaeis decima quarta luna Pascha celebrabant, scripsit adversus Victorem, episcopum Romanum, epistolam synodicam, in qua docet, se apostoli Joannis et veterum auctoritatem sequi : de qua haec pauca excerpsimus 1 : « Nos igitur inviolabilem celebramus diem, neque addentes aliquid, neque dementes. Etenim in Asia elementa 2 maxima dormierunt, quae resurgent in die Domini, quando venturus est de coelis in majestate sua, suscitaturus omnes sanctos : Philippum loquor de duodecim apostolis, qui dormivit Hierapoli, et duas filias ejus, quae virgines senuerunt, et aliam ejus filiam, quae Spiritu sancto plena in Epheso occubuit. Sed et Joannes, qui super pectus Domini recubuit, et pontifex ejus 3 auream laminam in fronte portans, martyr et doctor in Epheso dormivit : et Polycarpus, episcopus et martyr, Smyrnae cubat 4. 888 Thraseas quoque episcopus et martyr de Eumenia in eadem Smyrna requiescit. Quid necesse est Sagaris episcopi et martyris recordari, qui in Laodicea soporatur, et Papirii beati, et Melitonis in sancto Spiritu 5 eunuchi, qui semper Domino serviens, positus est in Sardis, et exspectat in adventu ejus resurrectionem? Ili omnes observaverunt Paschae diem decima quarta luna, ab evangelica traditione in nullam partem declinantes, et ecclesiasticum sequentes canonem. Ego quoque minimus omnium vestrum Polycrates, secundum doctrinam propinquorum meorum, quos et secutus sum; septem siquidem fuerunt propinqui mei episcopi, et ego octavus : semper Pascha celebravi, quando populus Judaeorum azyma faciebat. Itaque, fratres, sexaginta quinque annos aetatis meae natus in Domino, et a multis ex toto orbe fratribus eruditus, peragrata omni Scriptura, non formidabo eos, qui nobis minantur. Dixerunt enim majores mei 1 : Obedire Deo magis oportet, quam hominibus. » Haec propterea posui, ut ingenium et auctoritatem viri ex parvo opusculo demonstrarem. Floruit temporibus Severi principis, eadem aetate qua Narcissus Hierosolymae.
+
+CAPUT XLV.
+
+CAPUT XLVI.
+
+Heraclitus 2 sub Commodi Severique imperio in Apostolum Commentarios composuit 3.
+
+CAPUT XLVI.
+
+CAPUT XLVII.
+
+Maximus 4 sub iisdem principibus famosam quaestionem insigni volumine ventilavit, unde malum, et quod materia a Deo facta sit.
+
+CAPUT XLVII.
+
+CAPUT XLVIII.
+
+889 Candidus, regnantibus supra scriptis, in Hexaemeron pulcherrimos tractatus edidit 5,
+
+CAPUT XLVIII.
+
+CAPUT XLIX.
+
+Appion, sub Severo principe, similiter in Hexaemeron tractatus 6 fecit.
+
+CAPUT XLIX.
+
+CAPUT L.
+
+Sextus sub imperatore Severo, librum de resurrectione 7 scripsit.
+
+CAPUT L.
+
+CAPUT LI.
+
+Arabianus 8 sub eodem principe edidit quaedam opuscula 9 ad Christianum dogma pertinentia.
+
+CAPUT LI.
+
+CAPUT LII.
+
+Judas de septuaginta apud Danielem hebdomadibus plenissime disputavit, et chronographiam superiorum temporum usque ad decimum Severi produxit annum. In qua erroris arguitur quod adventum Antichristi circa, sua tempora futurum esse dixerit : sed hoc ideo, quia magnitudo persecutionum praesentem mundi minabatur occasum 10.
+
+CAPUT LII.
+
+CAPUT LIII.
+
+Tertullianus presbyter, nunc demum primus post Victorem et Apollonium Latinorum ponitur, provinciae Africae, civitatis Carthaginiensis, patre Centurione proconsulari 1. Hic acris et vehementis ingenii, sub Severo principe et Antonino Caracalla maxime floruit, multaque scripsit volumina quae quia nota sunt pluribus, praetermittimus. Vidi ego quemdam Paulum Concordiae, quod oppidum Italiae est 2, senem qui se beati Cypriani, jam grandis aetatis, notarium, cum ipse admodum esset adolescens, Romae vidisse diceret, 892 referreque 3 sibi solitum nunquam Cyprianum absque Tertulliani lectione unum diem praeterisse, ac sibi crebro dicere. Da magistrum : Tertullianum videliret significans. Hic cum usque ad mediam aetalem presbyter Ecclesiae permansisset 4, invidia postea 5 et contumeliis clericorum Romanae Ecclesiae, ad Montani dogma delapsus, in multis libris novae prophetiae meminit, specialiter autem adversum Ecclesiam texuit volumina de pudicitia, de persecutione, de jejuniis, de monogamia, de exstasi 6 libros sex, et septimum, quem adversum Apollonium composuit. Ferturque vixisse usque ad decrepitam aetatem, et multa quae non exstant 7 opuscula condidisse.
+
+CAPUT LIII.
+
+CAPUT LIV.
+
+Origenes, qui et Adamantius 8, decimo Severi Pertinacis anno adversum Christianos persecutione commota, a Leonide patre 1, Christi martyrio coronato, cum sex fratribus et matre vidua, pauper relinquitur, annos natus circiter decem et septem. Rem enim familiarem ob confessionem Christi fiscus occupaverat. Hic, Alexandriae dispersa Ecclesia, decimo octavo aetatis suae anno, κατηχήσεων opus aggressus, postea a Demetrio, ejus urbis episcopo, in locum Clementis presbyteri 2 confirmatus, per multos annos floruit : et cum jam mediae esset aetatis 3, et propter Ecclesias Achaiae, quae pluribus 893 haeresibus vexabantur, sub testimonio ecclesiasticae epistolae 4, Athenas per Palaestinam pergeret, a Theoctisto et Alexandro, Caesareae et Hierosolymorum episcopis, presbyter ordinatus Demetrii offendit animum; qui tanta in eum debacchatus est insania, ut per totum mundum super nomine ejus scriberet. Constat eum, antequam Caesaream migraret, fuisse Romae sub Zephyrino episcopo, et statim Alexandriam reversum, Heraclan presbyterum 5, qui sub habitu philosophi perseverabat, adjutorem sibi fecisse χατηχήσεως, qui quidem et post Demetrium Alexandrinam tenuit Ecclesiam. Quantae autem gloriae fuerit, hinc apparet, quod Firmilianus 6, Caesareae episcopus, cum omni Cappadocia eum invitavit, et diu tenuit, et postea, sub occasione sanctorum locorum Palaestinam veniens, diu Caesareae in sanctis Scripturis ab eo eruditus est. Sed et illud, quod ad Mammeam matrem Alexandri imperatoris, religiosam feminam, rogatus venit Antiochiam, et summo honore habitus est : quodque ad Philippum imperatorem, qui primus de regibus Romanis Christianus fuit 7, et ad matrem ejus litteras fecit 8, quae usque hodie exstant. Quis ignorat et quod tantum in Scripturis divinis habuerit studii, ut etiam Hebraeam linguam 9, contra aetatis gentisque suae naturam, edisceret, et exceptis Septuaginta interpretibus, alias quoque editiones in unum congregaret volumen 1; Aquilae scilicet Pontici proselyti, et Theodotionis Hebionei, et Symmachi ejusdem dogmatis, qui in Evangelium quoque κατά Ματθαίον scripsit commentirios. de quo et suum dogma confirmare conatur. Praeterea quintam et sextam et septimam editionem, quas etiam nos de ejus bibliotheca 2 habemus, miro labore reperit, et cum caeteris editionibus comparavit 3.
+
+896 Et quia indicem operum ejus in voluminibus epistolarum, quas ad Paulam scripsimus, in quadam epistola 4 contra Varronis opera conferens posui, nunc omitto : illud de immortali ejus ingenio non tacens, quod dialecticam quoque et geometriam, et arithmeticam, musicam, grammaticam et rhistoricam, omniumque philosophorum sectas ita didicit, ut studiosos quoquo 5 saecularium litterarum sectatores haberet, et interpretaretur eis quotidie, concursusque ad cum miri fierent : quos ille propterea recipiebat, ut sub occasione saecularis litteraturae in fide Christi eos institueret. De crudelitate autem persecutionis, quae adversum Christianos sub Decio consurrexit, eo quod in religionem Philippi desaeviret, quem et interfecit, superfluum est dicere; cum etiam Fabianus, Romano Ecclesiae episcopus, in ipsa occubuerit, et Alexander Babylasque, Hierosolymorum et Antiochenae Ecclesiae pontifices, in carcere pro confessione Christi dormierint. Et super Origenis statu si quis scire velit, quid actum sit, primum quidem de epistolis 6 ejus, quae post persecutionem ad diversos missae sunt; deinde de sexto Eusebii Caesariensis ecclesiasticae historiae libro, et pro codem Origene in sex voluminibus, poterit liquido cognoscere 7. Vixit usque ad Gallum et Volusianum, id est, usque ad LXIX aetatis suae annum; et mortuus est Tyri, in qua urbe et sepultus est.
+
+CAPUT LIV.
+
+CAPUT LV.
+
+Ammonius, vir disertus et valde 1 eruditus in philosophia 2, eodem tempore Alexandriae clarus habitus est : qui inter multa ingenii sui et praeclara monumenta etiam de consonantia Moysi et Jesu elegans opus composuit 3, et evangelicos canones excogitavit, quos postea secutus est Eusebius Caesariensis. Hunc falso accusat Porphyrius 4, quod ex Christiano ethnicus fuerit, cum constet eum usque ad extremam vitam Christianum perseverasse..
+
+CAPUT LV.
+
+CAPUT LVI.
+
+897 Ambrosius primum Marcionites 5, deinde ab Origine correctus, Ecclesiae diaconus, et confessionis Dominicae gloria insignis fuit, cui et Protocteto presbytero 6 liber Origenis de Martyrio scribitur. Hujus industria et sumptu et instantia adjutus infinita Origenes dictavit volumina 7. Sed et ipse, quippe ut vir nobilis, non inelegantis ingenii fuit, sicut ejus ad Origenem epistolae 8 indicio sunt. Obiit ante mortem Origenis·9, et in hoc a plerisque reprehenditur, quod vir locuples amici sui senis et pauperis moriens non recordatus sit.
+
+CAPUT LVI.
+
+CAPUT LVII.
+
+Tryphon 10, Origenis auditor, ad quem nonnullae ejus exstant epistolae, in Scripturis eruditissimus fuit. Quod quidem et multa ejus sparsim ostendunt opuscula, sed praecipue liber, quem composuit de Vacca rufa 1 in Deuteronomio, et de Dichotomematibus, quae cum columba et turture Abraham ponuntur in Genesi.
+
+CAPUT LVII.
+
+CAPUT LVIII.
+
+Minucius Felix 2, Romae insignis causidicus, scripsit Dialogum Christiani et ethnici disputantium 3, qui Octavius inscribitur. Sed et alius sub nomine ejus fertur de Fato 4, vel contra mathematicos, qui cum sit et ipse diserti hominis, non mihi videtur cum superioris libri stylo convenire. Meminit hujus Minucii et Lactantius 5 in libris suis.
+
+CAPUT LVIII.
+
+CAPUT LIX.
+
+900 Galus, sub Zephyrino Romanae urbis episcopo, id est sub Antonino Severi filio, disputationem adversum Proculum 4, Montani sectatorem, valde insignem habuit, arguens cum temeritatis, super Nova Prophetia defendenda, et in eodem volumine Epistolas quoque Pauli tredecim tantum enumerans; decimam quartam quae fertur ad Hebraeos, dicit non ejus esse, sed et apud Romanos 7 usque hodie quasi Pauli apostoli nou habetur.
+
+CAPUT LIX.
+
+CAPUT LX.
+
+Beryllus 8, Arabiae Bostrenus episcopus, cum aliquanto tempore gloriose rexisset Ecelesiam, ad extremum lapsus in haeresim, quae Christum ante incarnationem 9 negat, ab Origene correctus, scripsit varia opuscula, et maxime epistolas, in quibus Origeni gratias agit; sed et Origenis ad eum litterae sunt 10. Exstat dialogus Origenis et Berylli, in quo haereseos coarguitur. Claruit autem sub Alexandro, Mammeae filio, et Maximino et Gordiano, qui ei in imperium successerunt.
+
+CAPUT LX.
+
+CAPUT LXI.
+
+Hippolytus, cujusdam Ecclesiae episcopus 1, no-, men quippe urbis scire non potui, rationem Paschae temporumque Canones scripsit 2, usque ad primum annum Alexandri imperatoris, et sedecim annorum circulum, quem Graeci Ιχχαιδεχοετηρίδα vocant, reperit, et Eusebio, qui super eodem Pascha Canonem, decem et novem annorum circulum 3, id est, έννεακαιδεχαετηρίδα 901 composuit, occasionem dedit. Scripsit nonnullos in Scripturas commentarios, e quibus hos reperi : in Έξαήμερον, et in Exodum 4, in Canticum canticorum, in Genesim, et in Zachariam; de Psalmis, et in Isaiam, de Daniele, de Apocalypsi, de Proverbiis, de Ecclesiaste, de Saul et Pythonissa, de Antichristo 5, de Resurrectione, contra Marcionem, de Pascha, adversum omnes haereses, et · 6 de lau le Domini Salvatoris, in qua praesente Origene, se loqui in ecclesia significat. In hujus aemulationem 7 Ambrosius, quem de Marcionis haeresi ad veram fidem correctum diximus, cohortatus est Origenem, in Scripturas commentarios scribere, praebens ei septem et eo amplius notarios, eorumque expensas, et librariorum parem numerum, quodque his majus est, incredibili studio quotidie ab eo opus exigens. Unde in quadam epistola έργοδιώκτην cum Origenes vocat.
+
+CAPUT LXI.
+
+CAPUT LXII.
+
+Alexander, episcopus Cappadociae 1, cum desiderio sanctorum locorum Hierosolymam pergeret, et Narcissus episcopus ejusdem urbis jam senex 2 regeret Ecclesiam, et Narcisso et multis clericorum ejus revelatum est, altera die mane intrare episcopum, qui adjutor sacerdotalis cathedrae esse deberet. Itaque re ita completa, ut praedicta fuerat, cunctis in Palaestina episcopis in unum congregatis 3, adnitente quoque ipso vel maxime Narcisso, Hierosolymitanae Ecclesiae cum eo gubernaculum suscepit. Hic in fine cujusdam epistolae, 904 quam scribit ad Antinoitas super pace Ecclesiae, ait 4 : « Salutat vos Narcissus, qui ante me hic tenuit episcopalem locum, et nunc mecum eumdem orationibus regit, annos natus circiter centum sedecim 5, et vos mecum precatur ut unum idemque sapiatis. » Scripsit et aliam ad Antiochenses, per Clementem presbyterum Alexandriae, de quo supra diximus 6, nec non ad Origenem, et pro Origene contra Demetrium; eo quod juxta testimonium Demetrii 7 eum presbyterum constituerit. Sed et aliae ejus ad diversos feruntur epistolae. Septima autem persecutione sub Decio, quo tempore Babylas Antiochiae passus est, ductus Caesaream, et clausus in carcere, ob confessionem Christi martyrio coronatur
+
+CAPUT LXII.
+
+CAPUT LΧΙΙΙ.
+
+Julius Africanus 8, cujus quinque de Temporibus exstant volumina, sub imperatore 9 M. Aurelio Antonino, qui Macrino successerat, legationem pro instauratione urbis Emmaus su cepit, quae postea Nicopolis 10 appellata est. Hujus est epistola ad Origenem super quaestione Susannae : eo quod dicat in Hebraeo hanc fabulam 1 non haberi, nec convenire cum Hebraica etymologia άτΧ τού σχίνου σχίσαι2, καί άπδ του πρίνου πρισαι, contra quem doctam epistolam3 scribit Origenes. Exstat ejus ad Aristidem altera epistola, in qua super διαφωνίφ, quae videtur esse in genealogia Salvatoris apud Matthaeum et Lucam, plenissime disputat.
+
+CAPUT LΧΙΙΙ.
+
+CAPUT LXIV.
+
+Geminus 4, Antiochenae Ecclesiae presbyter, pauca ingenii sui monumenta 905 composuit : florens sub Alexandro principe, et episcopo urbis suae Zebenno 5, eo vel maxime tempore, quo Heracias Alexandrinae Ecclesiae pontifex ordinatus est.
+
+CAPUT LXIV.
+
+CAPUT LXV.
+
+Theodorus, qui postea Gregorius appellatus est, Neocaesareae Ponti episcopus, admodum adolescens, ob studia Graecarum et Latinarum litterarum, de Cappadocia Berytum, et inde Caesaream Palaestinae transiit, juncto sibi fratre Athenodoro. Quorum cum egregiam indolem vidisset Origenes, hortatus est eos ad philosophiam, in qua paulatim Christi fidem 6 subintroducens, sui quoque sectatores reddidit. Quinquennio 7 itaque eruditi ab eo remittuntur ad matrem 8, e quibus Theolorus proficiscens, πανηγυρικήν ευχαριστίας scripsit Origeni : et convocata grandi frequentia, ipso quoque Origene 9 praesente recitavit, qui usque hodie exstat. Scripsit et μετάφρασιν in Ecclesiasten, brevem quidem, sed valde utilem. Et aliae hujus vulgo feruntur epistolae 10, sed praecipue signa atque miracula, quae jam episcopus cum multa Ecclesiarum gloria perpetravit.
+
+CAPUT LXV.
+
+CAPUT LXVI.
+
+Cornelius, Romanae urbis episcopus, ad quem ocio Cypriani exstant epistolae, scripsit epistolam ad Fabium 1 Antiochenae Ecclesiae episcopum, de synodo Romana, Italica, Africana, et aliam de Novatiano 2, et de his qui lapsi sunt; tertiam de gestis synodi (Romanoe an. 251); quartam ad eum-· dem Fabium valde prolixam, et Novatianae haereseos 908 causas et anathema continentem 3. Rexit Ecclesiam annis duobus 4 sub Gallo et Volusiano, cui ob Christum martyrio coronato successit Lucius.
+
+CAPUT LXVI.
+
+CAPUT LXVII.
+
+Cyprianus Afer, primum gloriose rhetoricam docuit; exinde suadente presbytero Caecilio, a quo et cognomentum sortitus est, Christianus factus, omnem substantiam suam pauperibus erogavit, ac post non multum temporis electus in presbyterum 5, etiam episcopus Carthaginiensis constitutus est. Hujus ingenii superfluum est indicem texere, cum sole clariora sint ejus opera. Passus est sub Valeriano et Galieno principibus, persecutione octava, eodem die quo Romae Cornelius, sed non eodem anno.
+
+CAPUT LXVII.
+
+CAPUT LXVIII.
+
+Pontius 6, diaconus Cypriani, usque ad diem passionis ejus cum ipso exsilium sustinens, egregium volumen vitae et passionis Cypriani reliquit.
+
+CAPUT LXVIII.
+
+CAPUT LXIX.
+
+Dionysius, Alexandrinae urbis episcopus, sub Heracla scholam κατηχήσεων presbyter tenuit, et Origenis valde insignis 7 auditor fuit. Hic in Cypriani et Africanae synodi dogma consentiens 1, de haereticis rebaptizandis, ad diversos plurimas misit epistolas, quae usque hodie exstant, et ad Fabium 2 Antiochenae urbis episcopum scripsit de poenitentia, et ad Romanos per Hippolytum alteram : ad 909 Xystum, qui Stephano successerat, duas epistolas 3, et ad Philemonem et ad Dionysium, Romanae Ecclesiae presbyteros, duas epistolas, et ad eumdem Dionysiunr, postea Romae episcopum, et ad Novatianum 4 causantem, quod invitus Romae episcopus ordinatus esset, cujus epistolae hoc exordium est 5 : « Dionysius Novatiano fratri salutem. Si invitus, ut dicis, ordinatus es, probabis, cum volens secesseris 6. Nam Oportuit quidvis etiam hac gratia perpeti, ne discinderetur Ecclesia Dei. Neque minus praeclarum ex hoc contigisset testimonium, quod noluisses dissidium inducere, quam proficisci solet ex eo 7, si quis recuset simulacris immolare, atque adeo praeclarius etiam, mea quidem sententia, siquidem illic uni propriaeque consulitur animae, hic totius Ecclesiae negotium agitur. Tametsi nunc quoque si persuaseris, si compuleris fratres in concordiam redire, plus egeris οfficiο, quam peccaris errato. Atque hoc quidem haud imputabitur, illud vero laudibus feretur. Canerum si non obtemperantibus illis minus assequeris quod vis, tamen fac modis omnibus ut tuam ipsius serves animam. » Est ejus ad Dionysium 8 et ad Didymum altera epistola, et έορταστικα\ de Pascha plurimae, declamatorio sermone conscriptae. et ad Alexandrinam Ecclesiam de Exsilio, et ad Hieracam 9 in AEgypto episcopum, et alia de Mortalitate 1 911 et de Sabbato, et xepl Γυμνασίου, et ad Hermammonem 2, et alia de Persecutione Decii, et duo libri adversum Nepotem episcopum, qui mille annorum corporale regnum suis scriptis asseverat 3, in quibus de Apocalypsi Joannis diligentissime disputat : et adversum Sabellium, et ad Ammonem 4 Beronices episcopum, et ad Telesphorum, et ad Euphranorem 5, et quatuor libri 6 ad Dionysium Romanae urbis episcopum, et ad Laodicenses de Poenitentia; item ad Canonem de Poenitentia7, et ad Origenem de Martyrio, ad Armenios de Poenitentia et de ordine delictorum, de Natura ad Timotheum 8, de Tenlationibus nd Euphranorem. Ad Basilidem quoque multae epistolae, in quarum una se asserit etiam in Ecclesiasten coepisse scribere Commentarios. Sed et adversus Paulum Samosatenum ante naucos dies quam moreretur, insignis ejus fertur epistola. Moritur duodecimo Galieni 9 anno.
+
+CAPUT LXIX.
+
+CAPUT LXX.
+
+912 Νovatianus, Romanae urbis presbyter, adversus Corneliam cathedram sacerdotalem conatus invadere. Novatianorum, quod Graece dicitur Καθαρών 10 dogma constituit, nolens apostatas suscipere poenitentes. Hujus auctor Novatus 11, Cypriani presbyter, fuit. Scripsit autem de Pascha, de Sabbato, de Circumcisione, de Sacerdote, de Oratione 12, de Cibis Judaicis, de Instantia, de Attalo multaque alia, et de Trinitate grande volumen, quasi έπιτομήν 1 operis Tertulliani faciens, quod plerique nescientes, Cypriani existimant.
+
+CAPUT LXX.
+
+CAPUT LXXI.
+
+913 Malchion, disertissimus Antiochenae Ecclesiae presbyter, quippe qui in eadem urbe rhetoricam florentissime docuerat 2, adversum Paulum Samosatenum, qui Antiochenae Ecclesiae episcopus dogma Artemonis instaurarat. excipientibus notariis disputavit; qui dialogus 3 usque hodie exstat. Sed et alia grandis epistola, ex persona synodi ab eo scripta, ad Dionysium et Maximum Romanae et Alexandrinae Ecclesiae episcopos dirigitur. Floruit sub Claudio et Aureliano.
+
+CAPUT LXXI.
+
+CAPUT LXXII.
+
+Archelaus 4, episcopus Mesopotamiae 5, librum disputationis suae, quam habuit adversum Manichaeum, exeuntem de Perside, Syro sermone composuit, qui translatus in Graecum habetur a multis 6· Claruit sub imperatore Probo 7, qui Aureliano et Tacito successerat.
+
+CAPUT LXXII.
+
+CAPUT LXXIII.
+
+Anatolius Alexandrinus, Laodiceae Syriae episcopus, sub Probo et Caro 8 imperatoribus floruit; mirae doctrinae vir fuit in arithmetica, geometria, astronomia, grammatica 9, rhetorica, dialectica. Cujus ingenii magnitudinem de volumine, quod super Pascha composuit 10, et decem libris de Arithmeticae institutionibus, intelligere possumus.
+
+CAPUT LXXIII.
+
+CAPUT LXXIV.
+
+Victorinus, Petavionensis episcopus 11, non aeque Latine ut Graece noverat. Unde opera ejus grandia sensibus, 916 viliora videntur compositione verborum. Sunt autem haec : Commentarii in Genesim 1, in Exodum, in Leviticum, in Isaiam, in Ezechiel, in Habacuc, iu Ecclesiasten, in Cantica canticorum, in Apocalypsim Joannis 2, adversum omnes haereses, et multa alia. Ad extremum martyrio coronatus est.
+
+CAPUT LXXIV.
+
+CAPUT LXXV.
+
+Pamphilus presbyter, Eusebii Caesariensis episcopi necessarius, tanto Bibliothecae divinae 3 amore flagravit, ut maximam partem Origenis voluminum sua manu descripserit, quae usque hodie in Caesariensi bibliotheca habentur. Sed et in duodecim Prophetas viginti quinque Εξηγήσεων Origenis 4 volumina, manu ejus exarata reperi, quae tanto amplector et servo gaudio, ut Croesi opes habere me credam. Si enim laetitia est, unam epistolam habere martyris, quanto magis tot millia versuum, quae mihi videtur sui sanguinis signasse vestigiis 5 l Scripsit, antequam 6 Eusebius Caesariensis scriberet. Apologeticum pro Origene 7, et passus est Caesareae Palaestinae sub persecutione Maximini 8.
+
+CAPUT LXXV.
+
+CAPUT LXXVI.
+
+Pierius, Alexandrinae Ecclesiae presbyter, sub Caro et Diocletiano principibus, eo tempore quo eam Ecclesiam Theonas·9 episcopus regebat, florentissime docuit populos, et in tantam sermonis diversorumque tractatuum, qui usque hodie exstant 10, venit elegantiam, ut Origenes junior vocaretur. Constat hunc mirae άσχήσεως et appetitorem voluntariae paupertatis fuisse 1, scientissimum et dialecticae et rhetoricae artis, 917 et post persecutionem omne vitae suae tempus Romae fuisse versatum. Hujus est longissimus tractatus de propheta Osee, quem in vigilia Paschae 2 habitum ipse sermo demonstrat.
+
+CAPUT LXXVI.
+
+CAPUT LXXVII.
+
+Lucianus, vir disertissimus, Antiochenae Ecclesiae presbyter,3 tantum in Scripturarum studio laboravit, ut usque nunc quaedam, exemplaria Scripturarum Lucianea nuncupentur. Feruntur ejus de Fide libelli 4, et breves ad nonnullos epistolae. Passus est Nicomediae ob confessionem Christi, sub persecutione Maximini 5, sepultusque Helenopoli Bithyniae.
+
+CAPUT LXXVII.
+
+CAPUT LXXVIII.
+
+Phileas, de urbe AEgypti quae vocatur Thmuis 6, nobili genere, et non parvis opibus, suscepto, episcopatu, eleganitissimum librum 7 de Martyrum laude composuit, et disputatione actorum habita adversum judicem, qui eum sacrificare `cogebat, pro Christo capite truncatur 8, eodem in AEgypto persecutionis auctore, quo Lucianus Nicomediae.
+
+CAPUT LXXVIII.
+
+CAPUT LXXIX.
+
+Arnobius 9 sub Diocletiano principe Siccae 10 apud Africam florentissime rhetoricam docuit, scripsitque adversura gentes, quae vulgo exstant, volumina.
+
+CAPUT LXXX.
+
+920 Firmianus 1, qui et Lactantius, Arnobii discipulus, sub Diocletiano principe accitus cum Flavio grammatico 2, cujus de Medicinalibus versu compositi 3 exstant libri, Nicomediae rhetoricam docuit, et penuria discipulorum, ob Graecam videlicet civitatem, ad scribendum se contulit. Habemus ejus Symposium, quod adolescentulus scripsit; •Οδοιπορικήν 4de Africa usque Nicomediam, hexametris scriptum versibus, et alium librum, qui inscribitur Grammaticus, et pulcherrimum de Ira Dei, et Institutionum divinarum adversum gentes libros septem, et Επιτομήν ejusdem operis in libro uno acephalo 5, et ad Asclepiadem libros duos, de Persecutione 6 librum unum, ad Probum Epistolarum libros quatuor 7, ad Severum 8 Epistolarum libros duos, ad Demetrianum, auditorem suum, Epistolarum libros duos, ad eumdem de Opificio Dei vel Formatione hominis librum unum. Hic extrema senectute magister Caesaris Crispi, filii Constantini, in Gallia fuit, qui postea a patre interfectus est.
+
+CAPUT LXXX.
+
+CAPUT LXXXI.
+
+Eusebius, Caesareae Palaestinae episcopus in Scripturis divinis studiosissimus, et Bibliothecae divinae, cum Pamphilo martyre, diligentissimus pervestigator, edidit infinita volumina. De quibus haec sunt : Ευαγγελική:Άποδείξεως 921 libri viginti 1, Ευαγγελικής Προδείξεως παρασκευής libri quindecim, Θεοφανείας libri quinque 2, Ecclesiasticae Historiae libri decem, Chronicorum Canonum omnimoda Historia, et eorum Επιτομή, et de Evangeliorum Diaphonia 3, in Isaiam libri decem 4, et contra Porphyrium, qui eodem tempore scribebat in Sicilia, ut quidam putant, libri triginta, de quibus ad me viginti tantum pervenerunt 5; Τοπικών liber unus, 'Απολογίας pro Origene libri sex, de Vita Pamphili 6 libri tres, de Martyribus alia opuscula, et in centum quinquaginta Psalmos 7 eruditissimi Commentarii, et multa alia. Floruit maxime sub Constantino imperatore et Constantio, et ob amicitiam Pamphili martyris ab eo cognomentum sortitus est.
+
+CAPUT LXXXI.
+
+CAPUT LXXXII.
+
+Rheticius, AEduorum, id est Augustodunensis episcopus, sub Constantino 8 celeberrimae famae habitus est in Galliis. Leguntur ejus Commentarii III Cantica canticorum, et aliud grande volumen adversus Novatianum, nec praeter haec 9 quidquam ejus operum reperi.
+
+CAPUT LXXXII.
+
+CAPUT LXXXIII.
+
+Methodius, Olympi Lyciae, et postea Tyri episcopus 10, nitidi compositique sermonis, adversum Porphyrium confecit libros, et Symposium decem virginum, de Resurrectione opus egregium contra Origenem 11, et adversus eumdem de Pythonissa, et de 923 Autexusio 22; in Genesim quoque et in Cantica canticorum Commentarios; et multa alia, quae vulgo lectitantur. Et ad extremum novissimae persecutionis, sive, ut alii affirmant, sub Decio et Valeriano 1 in Chalcide Graeciae martyrio coronatus est.
+
+CAPUT LXXXIII.
+
+CAPUT LXXXIV.
+
+(??)uvencus 2, nobilissimi generis, Hispanus presbyter, quatuor Evangelia 3 hexametris versibus pene ad verbum transferens, quatuor libros composuit, et nonnulla eodem metro ad Sacramentorum 4 ordinem pertinentia. Floruit sub Constantino principe.
+
+CAPUT LXXXIV.
+
+CAPUT LXXXV.
+
+Eustathius, genere Pamphylius, Sidetes 5, primum Beroeae Syriae, deinde Antiochiae rexit Ecclesiam, et adversum Arianorum dogma componens multa sub Constantino 6 principe pulsus est in exsilium Trajanopolim Thraciarum, ubi usque hodie conditus est. Exstant ejus volumina de Anima, de Engastrimytho adversum Origenem 7, et infinitae epistola, quas enumerare longum est.
+
+CAPUT LXXXV.
+
+CAPUT LXXXVI.
+
+Marcellus, Ancyranus episcopus, sub Constantino et Constantio 8 principibus floruit, multaque diversarum Υποθέσεων scripsit volumina, et 926 maxime adversum Arianos. Feruntur contra hunc Asterii et Apollinarii libri, Sabellianae eum haeresis arguentes; sed et Hilarius, in septimo adversum Arianos libro 9, nominis ejus, quasi haeretici, meminit. Porro ille defendit se non esse dogmatis, cujus accusatur, sed communione Julii et Athanasii 1, Romanae et Alexandrinae urbis pontificum, se esse munitum.
+
+CAPUT LXXXVI.
+
+CAPUT LXXXVII.
+
+Athanasius. Alexandrinae urbis episcopus, multas Arianorum perpessus insidias 2, ad Constantem Galliarum principem fugit, unde reversus cum litteris, et rursum post mortem ejus fugatus, usque ad Joviniani3 imperium latuit, a quo recepta Ecclesia, sub Valente moritur. Feruntur ejus adversum Gentes duo libri, et contra Valentem et Ursacium 4 unus, et de Virginitate, et de Persecutionibus Arianorum plurimi, et de Psalmorum titulis, et Historia Antonii monachi vitam continens, et έορταττικα\ epistolae, et multa alia, quae enumerare longum est.
+
+CAPUT LXXXVII.
+
+CAPUT LXXXVIII.
+
+Antonius monachus, cujus vitam Athanasius, Alexandrinae urbis episcopus, insigni volumine prosecutus est, misit AEgyptiaco ad diversa monasteria apostolici sensus sermonisque epistolas septem, quae in Graeciam linguam translatae sunt 5, quarum praecipua est ad Arsenoitas. Floruit Constantino et filiis ejus regnantibus6. Vixit annos centum quinque 7.
+
+CAPUT LXXXVIII.
+
+CAPUT LXXXIX.
+
+Basilius, Ancyranus episcopus, artis medicinae 8, scripsit contra Marcellum, 927 et 9 de Virginitate librum, et nonnulla alia, et sub rege Constantio 10 Macedonianae partis, cum Eustathio Sebasteno, princeps fuit.
+
+CAPUT LXXXIX.
+
+CAPUT XC.
+
+Theodorus, Heracliae Thraciarum episcopus, elegantis apertique sermonis, et magis historicae in· telligentiae, edidit sub Constantio 11 principe Commentarios in Matthaeum, et in Joannem, et in Apostolum, et in Psalterium 1.
+
+CAPUT XC.
+
+CAPUT XCI.
+
+Eusebius, Emesenus episcopus 2, elegantis et rhetorici ingenii, innumerabiles, et qui ad plausum populi pertinent, confecit libros, magisque historiam secutus, ab his qui declamare volunt, studiosissime legitur, e quibus vel praecipui sunt adversum Judaeos 3, et Gentes, et Novatianos, er ad Galatas libri decem 4 et in Evangelia homiliae breves, sed plurimae. Floruit temporibus Constantii imperatoris, sub quo et mortuus, Antiochiae sepultus est·
+
+CAPUT XCI.
+
+CAPUT XCII.
+
+Triphyllius, Cypri Ledrensis sive Leucotheon episcopus 5, eloquentissimus suae aetatis, et sub rege Constantio celeberrimus fuit. Legi ejus in Cantica canticorum Commentarios 6. Et multa alia composuisse fertur quae in nostras manus minime pervenerunt,
+
+CAPUT XCII.
+
+CAPUT XCIII.
+
+930 Donatus, a quo Donatiani per Africam sub Constantio Constantinoque 7 principibus pullulaverunt, asserens a nostris Scripturas in persecutione ethnicis traditas, totam pene Africam et maxime Numidiam sua persuasione decepit. Exstant ejus multa ad suam haeresim pertinentia opuscula, et de Spiritu sancto liber, Ariano dogmati congruens 8.
+
+CAPUT XCIII.
+
+CAPUT XCIV.
+
+Asterius·9, Arianae philosophus factionis, scripsit, regnante Constantio, in Epistolam ad Romanos, et in Evangelia et Psalmos Commentarios 1, et multa alia 2, quae a suae partis hominibus studiosissime leguntur.
+
+CAPUT XCIV.
+
+CAPUT XCV.
+
+Lucifer, Caralitanus episcopus, cum Pancratio et Hilario 3, Romanae Ecclesiae clericis, ad Constantium imperatorem a Liberio episcopo pro fide legatus missus, cum nollet sub nomine Athanasii Nicaenam damnare fidem, in Palaestinam relegatus, mirae constantiae et praeparati animi ad martyrium, contra Constantium imperatorem scripsit librum, eique legendum misit, ac non multo post 4, sub Juliano principe, reversus Caralis, Valentiniano regnante, obiit 5.
+
+CAPUT XCV.
+
+CAPUT XCVI.
+
+931 Eusebius, natione Sardus, et ex lectore urbisae Romanae, Vercellensis episcopus, ob confessionem fidei a Constantio principe Scythopolim et inde Cappadociam relegatus, sub Juliano imperatore ad Ecclesiam reversus 6, edidit in Psalmos Commentarios Eusebii Caesariensis, quos de Graeco in Latinum verterat 7. Mortuus est Valentiniano et Valente regnantibus 8.
+
+CAPUT XCVI.
+
+CAPUT XCVII.
+
+Fortunatianus, natione Afer, Aquileiensis episcopus, imperante Constantio 9, in Evangelia, titulis ordinatis 10, brevi et rustico sermone 11 scriosit Commentarios : et in hoc habetur detestabilis, quod Liberium, Romanae urbis episcopum, pro fide ad exsilium pergentem, primus sollicitavit ac fregit, et ad subscriptionem haereseos 1 compulit.
+
+CAPUT XCVII.
+
+CAPUT XCVIII.
+
+Acacius, quem, quia luscus erat, Μονόφθαλμον nuncupabant, Caesariensis Ecclesiae in Palaestina episcopus, elaboravit in Ecclesiasten decem et septem volumina, et Συμμίχτων ζητημάτων sex 2, et multos praeterea diversosque tractatus. In tantum autem sub Constantio imperatore claruit, ut in Liberii locum Romae Felicem episcopum 3 constitueret.
+
+CAPUT XCVIII.
+
+CAPUT XCIX.
+
+934 Serapion, Thmueos episcopus 4, qui ob elegantiam ingenii cognomen Scholastici meruit 5, charus Antonii monachi, edidit adversum Manichaeum egregium librum, et de Psalmorum titulis alium, et ad diversos utiles epistolas, et sub Constantio principe etiam in confessione inclytus fuit.
+
+CAPUT XCIX.
+
+CAPUT C.
+
+Hilarius, urbis Pictavorum Aquitaniae 6 episcopus, factione Saturnini Arelatensis episcopi, de synodo Biterrensi in Phrygiam relegatus· duodecim adversus Arianos confecit libros, et alium librum de Synodis, quem ad Galliarum episcopos scripsit, et in Psalmos Commentarios, primum videlicet et secundum, et a quinquagesimo7 primo usque ad sexagesimum secundum, et a centesimo decimo octavo usque ad extremum, in quo opere imitatus Origenem, nonnulla etiam de suo addidit. Est ejus et ad Constantium libellus, quem viventi 8 Constantinopoli porrexerat et alius in Constantium, quem post mortem ejus scripsit, et liber adversum Valentem 1 et Ursacium, historiam Ariminensis et Selenciensis 2 synodi continens : et ad praefectum Salustium, sive contra Dioscorum, et liber Hymnorum et Mysteriorum alius, et Commentarii in Matthaeum, et tractatus in Job, quos de Graeco Origenis ad sensum transtulit, et alius elegans libellus 3 contra Auxentium, et nonnullae ad diversos epistolae. Aiunt quidam, scripsisse eum et in Cantica canticorum; sed a nobis hoc opus ignoratur. Mortuus est Pictavis 4, Valentiniano et Valente regnantibus.
+
+CAPUT C.
+
+CAPUT CI.
+
+935 Victorinus, natione Afer, Romae sub Constantio 5·principe rhetoricam docuit 6, es in extrema senectute, Christi 7 se tradens fidel, scripsit adversus Arium libros more dialectico valde obscuros, qui nisi ab eruditis non intelliguntur 8, et Commentarios 9 in Apostolum.
+
+CAPUT CI.
+
+CAPUT CII.
+
+Titus, Bostrenus 10 episcopus, sub Juliano et Joviano principibus, fortes adversum Manichaeos scripsit libros, et nonnulla volumina alia. Moritur autem sub Valente 1.
+
+CAPUT CII.
+
+CAPUT CIII.
+
+Damasus, Romanae urbis episcopus, elegans in versibus componendis ingenium habuit, multaque et brevia metro edidit 2, et prope octogenarius sub Theodosio principe mortuus est.
+
+CAPUT CIII.
+
+CAPUT CIV.
+
+Apollinarius, Laodicenus Syriae episcopus, patre presbytero 3, magis grammaticis in adolescentia operam dedit, et postea in sanctas Scripturas innumerabilia scribens volumina 4, 938 sub Theodosio imperatore obiite 5. Exstant ejus adversus Porphyriam triginta libri,6 qui inter caetera ejus opera vel maxime probantur·
+
+CAPUT CIV.
+
+CAPUT CV.
+
+Gregorius. Baeticus, Eliberi episcopus 7 usque ad extremam senectutem diversos mediocri sermone tractatus composuit, et de Fide elegantem librum, qui 8 hodieque superesse dicitur.
+
+CAPUT CV.
+
+CAPUT CVI.
+
+Pacianus 9, in Pyrenaei jugis Barcilonae episcopus, castitate et eloquentia, et tam vita quam sermone clarus, scripsit varia opuscula, de quibus est Cervus 10, et contra Novatianos. Sub Theodosio principe, jam ultima senectute 11, mortuus est.
+
+CAPUT CVI.
+
+CAPUT CVII.
+
+Photinus, de Gallograecia, Marcelli discipulus, Sirmii 1 episcopus ordinatus, Hebionis haeresim instaurare conatus est, postea a Valentiniano 2 principe pulsus Ecclesia, plura scripsit volumina, in quibus vel praecipua sunt contra Gentes, et ad Valentinianum libri.
+
+CAPUT CVII.
+
+CAPUT CVIII.
+
+939 Phoebadius 3, Agenni Galliarum episcopus, edidit contra Arianos librum. Dicuntur et ejus alia esse opuscula, quae necdum legi. Vivit usque hodie decrepita senectute 4.
+
+CAPUT CVIII.
+
+CAPUT CIX.
+
+Didymus, Alexandrinus, captus a parva aetate oculis, et ob id elementorum quoque ignarus, tantum miraculum sui omnibus praebuit, ut dialecticam quoque, et geometriam, quae vel maxime visu 5 indiget, usque ad perfectum didicerit. Is plura opera et nobilia conscripsit, commentarios in Psalmos omnes, commentarios in Evangelium Matthaei et Joannis, et de Dogmatibus, et contra Arianos libros duos, et de Spiritu sancto librum unum 6, quem ego in Latinum verti : in Isaiam tomos decem et octo 7, in Osee, ad me scribens, commentariorum libros tres, et in Zachariam, meo rogatu, libros quinque, et commentarios in Job, et infinita alia 8 quae digerere proprii indicis est. Vivit usque hodie, et octogesimum 9 tertium aetatis excessit annum.
+
+CAPUT CIX.
+
+CAPUT CX.
+
+Optatus Afer, episcopus Milevitanus, ex parte catholica, scripsit Valentiniano et Valente princi pibus 1, adversum Donatianae partis calumniam libros sex 2, in quibus asserit crimen Donatianorum in nos falso retorqueri.
+
+CAPUT CX.
+
+CAPUT CXI.
+
+942 Aquilius 3 Severus, in Ilispania, de ge nere illius Severi ad quem Lactantii 4 duo episto larum scribuntur libri, composuit volumen, quasi όδοιπορικδν lotius suae vitae statum continens tam prosa quam versibus, quod vocavit Καταστροφήν, sive Πείραν, et sub Valentiniano principe obiit.
+
+CAPUT CXI.
+
+CAPUT CXII.
+
+Cyrillus, Hierosolymae episcopus, saepe pulsus5 Ecclesia, et receptus, ad extremum sub Theodosio principe octo annis inconcussum episcopatum tenuit. Exstant ejus κατηχήσεις, quas in adolescentia composuit 6.
+
+CAPUT CXII.
+
+CAPUT CXIII.
+
+Euzoius, apud Thespesium rhetorem, eum Gregorio Nazianzeno episcopo adolescens Caesareae eruditus est, et ejusdem postea urbis episcopus plurimo labore corruptam jam 7 Bibliothecam Ori genis et Pamphili in membranis instaurare conatur est. Ad extremum sub Theodosio principe Ecclesia pulsus est. Feruntur ejus varii multiplicesque tractatus, quos nosse perfacile est.
+
+CAPUT CXIII.
+
+CAPUT CXIV.
+
+Epiphanius, Cypri Salaminae episcopus, scripsit adversum omnes haereses libros, et multa alia, quae ab cruditis propter res, a simplicioribus propter verba lectitantur 8. Super est usque hodie, et in extrema jam senectute varia cudit opera.
+
+CAPUT CXIV.
+
+CAPUT CXV.
+
+944 Ephraem, Edessenae Ecclesiae diaconus. multa Syro sermone composuit, et ad tantam venit claritudinem, ut post lectionem Scripturarum publice in quibusdam ecclesiis ejus scripta recitentur. Legi ejus de Spiritu sancto Graecum volumen 1, quod quidam de Syriaca lingua verterant, et acumen sublimis ingenii, etiam in translatione, cognovi. Decessit sub Valente principe.
+
+CAPUT CXV.
+
+CAPUT CXVI.
+
+Basilius, Caesareae Cappadociae, quae prius Mazaca vocabatur, episcopus, egregios contra Eunomium elaboravit libros, et de Spiritu sancto volumen, et in Hexaemeron homilias novem, et 2 Ασκητικά, et breves variosque tractatus· Moritur imperante Gratiano3.
+
+CAPUT CXVI.
+
+CAPUT CXVII.
+
+Gregorius 4, primum Sasimorum, deinde Nazianzenus episcopus, vir eloquentissimus, praeceptor meus, quo Scripturas explanante didici, ad triginta millia versuum omnia opera sua composuit. E quibus illa sunt : de morte fratris Caesarii 5, Περ\ Φιλοπτωχίας, laudes Machabaeorum, laudes Cypriani, laudes Alhanasii, laudes Maximi philosophi post exsilium reversi, quem falso nomine quidam Heronis 6 superscripserunt (quia est et alius liber vituperationem ejusdem Maximi continens; quasi non licuerit eumdem et laudare et vituperare pro tempore); et liber, hexametro versu, Virginitatis et Nuptiarum contra se disserentium; adversum Eunomium liber unus 7, 945 de. Spiritu sancto liber unus, contra Julianum imperatorem libri duo. Secutus est autem Polemonem dicendi charactere, vivoque se episcopum 8 in loco suo ordinans, ruri vitam monachi exercuit. Decessitque ante hoc ferme triennium 9 sub Theodosio principe.
+
+CAPUT CXVII.
+
+CAPUT CXVIII.
+
+Lucius, post Athanasium Arianae partis episcopus, usque ad Theodosium principem, a quo et pulsus est 1, Alexandrinam Ecclesiam tenuit. Exstant ejus solemnes de Pascha epistolae et pauci variarum hypotheseon libelli.
+
+CAPUT CXVIII.
+
+CAPUT CXIX.
+
+Diodorus, Tarsensis episcopus 2, dum Antiochiae esset presbyter, magis claruit. Exstant ejus in Apostolum commentarii, et multa alia, ad Eusebii magis Emiseni 3 characterem pertinentia, cujus cum sensum secutus sit, eloquentiam imitari non potuit, propter ignorantiam saecularium litterarum.
+
+CAPUT CXIX.
+
+CAPUT CXX.
+
+Eunomius, Arianae partis, Cyzicenus episcopus, in apertam haereseos suae prorumpens 4 blasphe miam, ut quod illi tegunt, iste publice fateretur, usque hodie vivere dicitur in Cappadocia 5, et multa contra Ecclesiam scribere 6. Responderunt ei Apollinarius 7, Didymus, Basilius Caesariensis. Gregorius Nazianzenus, et Gregorius Nyssenus.
+
+CAPUT CXX.
+
+CAPUT CXXI.
+
+948 Priscillianus 8, Abilae episcopus, qui factione Hydatii et Ithacii 9 Treveris a Maximo tyranno caesus est, edidit multa opuscula 10, de quibus ad nos aliqua pervenerunt. Hic usque hodie a nonnullis Gnosticae, id est Basilidis et Marci 11, de quibus Irenaeus scripsit, haereseos accusatur, defendentibus aliis, non ita cum sensisse, ut arguitur·
+
+CAPUT CXXI.
+
+CAPUT CXXII.
+
+Latronianus 1, provinciae Hispaniae, valde eruditus, et in metrico opere veteribus comparandus, caesus est et ipse Treveris cum Priscilliano, Felicissimo, Juliano, Euchrotia, ejusdem factionis auctoribus. Exstant ejus ingenii opera, diversis metris edita.
+
+CAPUT CXXII.
+
+CAPUT CXXIII.
+
+Tiberianus, Beticus, scripsit pro suspicione, qua cum Priscilliano accusabatur, haereseos, apologeticum tumenti compositoque sermone; sed post suorum caedem 2, taedio victus exsilii, mutavit propositum, et juxta sanctam Scripturam, canis reversus ad vomitum suum 3 (Prov. XVI, 11; II Petr. II, 22), filiam, devotam Christo virginem, matrimonio copulavit 4.
+
+CAPUT CXXIII.
+
+CAPUT CXXIV.
+
+Ambrosius, Mediolanensis episcopus, usque in praesentem diem scribits 5, de quo. quia superest, meum judicium subtraham, ne in aiterutram partem aut adulatio in me reprehendatur, aut veritas.
+
+CAPUT CXXIV.
+
+CAPUT CXXV.
+
+949 Evagrius, Antiochiae episcopus, acris ac ferventis ingenii, cum adhuc esset presbyter, diversarum hypotheseon tractatus mihi legit 6, quos necdum edidit; Vitam quoque beati Antonii de Graeco Athanasii in sermonem nostrum transtulit.
+
+CAPUT CXXV.
+
+CAPUT CXXVI.
+
+Ambrosius Alexandrinus 7, auditor Didymi, scripsit adversum Apollinarium volumen multorum versuum de dogmatibus, et ut ad me nuper quodam narrante perlatum est, Commentarium in Job, qui usque hodie superest·
+
+CAPUT CXXVI.
+
+CAPUT CXXVII.
+
+Maximus Philosophus 1, natus Alexandriae, Constanitnopoli episcopus ordinatus est, et pulsus, insignem de Fide adversus Arianos scripsit librum, quem Mediolani Gratiano principi dedit.
+
+CAPUT CXXVII.
+
+CAPUT CXXVIII.
+
+Gregorius, Nyssenus episcopus, frater Basilii Caesariensis, ante paucos annos 2 mihi ct Gregorio Nazianzeno contra Eunomium legit libros, qui ct multa alia scripsisse et scribere dicitur.
+
+CAPUT CXXVIII.
+
+CAPUT CXXIX.
+
+Joannes 3, Antiochenae Ecclesiae presbyter, Eusebii Emiseni Diodorique sectator 4, multa componere dicitur, de quibus περ\ Ιερωσύνης tantum legi.
+
+CAPUT CXXIX.
+
+CAPUT CXXX.
+
+952 Gelasi us, Caesareae Palaestinae» post Enzoium 5 episcopus, accurati limatique sermonis» fertur quaedam scribere, sed celare.
+
+CAPUT CXXX.
+
+CAPUT CXXXI.
+
+Theotimus 6, Seythiae Tomorum episcopus, iumorem dialogorum et veteris eloquentiae breves commaticosque tractatus 1 edidit. Audio eum et alia scribere.
+
+CAPUT CXXXI.
+
+CAPUT CXXXII.
+
+Dexter 2, Paciani, de quo supra dixi, filius, clarus apud saeculum et Christi fidei deditus, fertur ad me omnimodam historiam texuisse, quam necdum legi.
+
+CAPUT CXXXII.
+
+CAPUT CXXXIII.
+
+Amphilochius, Iconii episcopus, nuper mihi librum legit de Spiritu sancto 3, quod Deus, et quod4 adorandus, quodque et omnipotens sit.
+
+CAPUT CXXXIII.
+
+CAPUT CXXXIV.
+
+Sophronius 5, vir apprime eruditus, laudes Bethlehem adhuc puer, et nuper de subversione Serapis 6 insignem librum composuit : de Virginitate quoque ad Eustochium, et Vitam Hilarionis monachi, opuscula mea in Graecum eleganti sermone transtulit 7 : Psalterium quoque et Prophetas, quos nos de Hebraeo in Latinum vertimus.
+
+CAPUT CXXXIV.
+
+CAPUT CXXXV.
+
+953 Hieronymus 8, patre Eusebio natus, oppido Stridonis, quod, a Gothis eversum 9, Dalmatiae quondam Pannoniaeque confinium fuit, usque in praesentem annum, id est, Theodosii principis decimum quartum 10, haec scripsi : Vitam Pauli monachi 11, Epistolarum 12 ad diversos librum unum, ad Heliodorum Exhortatoriam 1, Altercationem Luciferiani et Orthodoxi 2, Chronicon omnimodae historiae 3 : in Jeremiam et in Ezechiel Homilias Origenis viginti octo 4, quas de Graeco in Latinum verti; de Seraphim, de Osanna 5, et de frugi et luxurioso filiis 6; de tribus Quaestionibus legis veteris 7, homilias in Cantica canticorum duas 8, adversus Helvidium de virginitate Mariae perpetua 9, ad Eustochium de virginitate servanda 10 ad Marcellam Epistolarum librum unum 11, Consolatoriam de morte filiae ad Paulam 12, in Epistolam Pauli ad Galatas Commentariorum libros tres 13 item in Epistolam ad Ephesios libros tres, in Epistolam ad Titum librum unum, in Epistolam ad Philemonem librum unum, in Ecclesiasten Commentarios 14, Quaestionum hebraicarum in Genesim librum unum, de Locis librum unum, Hebraicorum Nominum 956 librum unum; de Spiritu sancto Didymi, quem in Latinum transtuli, librum unum 15; in Lucam homilias triginta novem 16; in Psalmos, a decimo usque ad decimum sextum, tractatus septem 17; Malchi 18, captivi monachi, Vitam, et beati Hilarionis· Novum Testamentum Graece fidei reddidi 19·, Vetus juxta Hebraicam transtuli 1; Epistolarum autem ad Paulam et Eustochium 2, quia quotidie scribuntur, incertus est numerus. Scripsi praeterea in Michaeam explanationum libros duos, in Sophoniam librum naum 3, in Nahum librum unum, in Habacuc libros duos, in Aggaeum librum unum, multaque alia de opero prophetali, quae nuuc habeo in manibus, et necdum expleta sunt 4. Adversus Jovinianum libros duos, et ad Panimachium Apologeticum et Epitaphium.
+
+CAPUT CXXXV.

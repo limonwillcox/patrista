@@ -1,0 +1,9 @@
+# source: https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/master/data/tlg2959/tlg001/tlg2959.tlg001.opp-grc1.xml
+# father: Methodius of Olympus
+# work: Banquet of the Ten Virgins
+# clavis: CPG-1810
+# language: grc
+# series: GCS 27 (G.N. Bonwetsch, 1917) / First1KGreek
+
+METHODIUS OF OLYMPUS - BANQUET OF THE TEN VIRGINS (ΣΥΜΠΟΣΙΟΝ Η ΠΕΡΙ ΑΓΝΕΙΑΣ)
+=============================================================================

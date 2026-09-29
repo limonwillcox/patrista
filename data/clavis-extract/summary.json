@@ -1,0 +1,19 @@
+{
+  "source": "Personae aliae person\u2192works walk",
+  "sourceUrl": "https://clavis.brepols.net/clacla/OA/Details.aspx?id=795692732956403484D796D1802D4A88",
+  "scrapedAt": "2026-09-17T23:52:00Z",
+  "personsTotal": 1384,
+  "personsVisited": 1384,
+  "personsWithWorks": 1221,
+  "personsNoWorks": 44,
+  "worksExtracted": 2420,
+  "uniqueWorkKeys": 2420,
+  "byClavis": {
+    "BHL": 1628,
+    "CPL": 789,
+    "CANT": 1,
+    "BHG": 2
+  },
+  "incomplete": false,
+  "notes": "One-tab walk of Personae aliae; work rows from person pages (no work-detail hops). Peripheral/other persons bucket, mostly BHL. Part A slice \u2014 Authors/Saints still ahead for core Fathers."
+}

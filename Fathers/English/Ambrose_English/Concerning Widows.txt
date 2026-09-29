@@ -3,9 +3,13 @@
 # volume: Volume X.
 # father: Ambrose
 # work: Concerning Widows
-# latin_match_candidate: (none)
-# extracted: 2026-09-01
+# clavis: CPL-146
+# extracted: 2026-09-24
 # note: Public-domain Schaff English extract. Volume archives retained under ANF/NPNF1/NPNF2.
+     __________________________________________________________________
+     __________________________________________________________________
+     __________________________________________________________________
+
 Concerning Widows.
      __________________________________________________________________
      __________________________________________________________________
@@ -1584,21 +1588,3 @@ The Treatise Concerning Widows.
    [3407] Gen. xxv. 10.
 
    [3408] Gen. xxix. 28 ff.
-     __________________________________________________________________
-     __________________________________________________________________
-     __________________________________________________________________
-
-                      Note on the Letters of St. Ambrose.
-
-   Of the 91 Epistles considered genuine by the Benedictine Editors,
-   sixty-three are referred by them to fairly certain dates, [3409] and a
-   large number of these would well be worth translation, throwing as they
-   do so clear a light on the events of St. Ambrose's life, and in many
-   cases on the history of the period. Only a few are here presented to
-   the reader.
-
-   Perhaps some others might have been better selected, but if they were
-   to be so few, it seemed as if these would give the best general
-   impression of the indomitable energy and fearless constancy of the
-   great Bishop.
-     __________________________________________________________________

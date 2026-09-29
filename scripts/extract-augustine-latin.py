@@ -205,7 +205,7 @@ write_work(
     extract_blocks(divs40[4])
 )
 write_work(
-    "On the Creed: A Sermon to Catechumens.txt", "augustine", "On the Creed: A Sermon to Catechumens", "CPL-309",
+    "On the Creed - A Sermon to Catechumens.txt", "augustine", "On the Creed: A Sermon to Catechumens", "CPL-309",
     "Patrologia Latina 40, cols. 627-636 (J.-P. Migne)",
     "Complete Latin text of De Symbolo Sermo ad Catechumenos from Patrologia Latina 40.",
     extract_blocks(divs40[8])

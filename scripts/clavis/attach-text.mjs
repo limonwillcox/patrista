@@ -37,6 +37,8 @@ export function missingReadyFields(fields) {
   const missing = [];
   if (!cleanText(fields.sourceUrl ?? fields.source_url)) missing.push("source_url");
   if (!cleanText(fields.license)) missing.push("license");
+  // A ready text may omit a translator only when the body is the original
+  // language. English needs a name, or the explicit values anonymous or n/a.
   if (fields.language !== "original" && !cleanText(fields.translator)) missing.push("translator");
   return missing;
 }

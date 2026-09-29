@@ -101,10 +101,11 @@ export function backfillProvenance(db, rows, options = {}) {
   };
   const workExists = db.prepare("SELECT 1 AS ok FROM works WHERE work_id = ?");
   const textRow = db.prepare(`
-    SELECT work_id, language, translator, edition, edition_year, source_url, license
+    SELECT work_id, language, status, translator, edition, edition_year, source_url, license
     FROM work_texts
     WHERE work_id = ? AND language = 'english'
   `);
+  const log = options.log || console.log;
   const update = db.prepare(`
     UPDATE work_texts
     SET translator = ?, edition = ?, edition_year = ?, source_url = ?, license = ?,
@@ -189,6 +190,15 @@ export function backfillProvenance(db, rows, options = {}) {
         }
       }
       if (changed) {
+        if (String(current.status) === "ready") {
+          for (const field of FIELDS) {
+            if (isEmpty(current[field]) || sameValue(field, current[field], next[field])) continue;
+            log(
+              "force ready " + row.work_id + " " + field + ": " +
+              JSON.stringify(current[field]) + " -> " + JSON.stringify(next[field])
+            );
+          }
+        }
         update.run(
           next.translator == null ? null : String(next.translator),
           next.edition == null ? null : String(next.edition),

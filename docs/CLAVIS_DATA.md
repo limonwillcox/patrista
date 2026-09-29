@@ -19,9 +19,9 @@ authors 1—* works 1—* work_texts
 | `work_texts` | `(work_id, language)` PK, `language` `english` \| `original`, title, `status` default `draft`, `r2_key`, `source_path`, `content_sha256`, `byte_size`, `updated_at`, `translator`, `edition`, `edition_year`, `source_url`, `license`, `quality` default `needs-cleanup` |
 | `schema_migrations` | migration id already applied, so import, pack, and attach can run again |
 
-Schema: `data/clavis/schema.sql`. Fresh databases get the columns above. A database created before them takes `data/clavis/migrations/0001_text_provenance.sql` once. Do not run that file against a database created from the current schema.
+Schema: `data/clavis/schema.sql`. Fresh databases get the columns above. A database created before them takes `data/clavis/migrations/0001_text_provenance.sql` once, then `0002_ready_quality_clean.sql`. Do not run `0001` against a database created from the current schema.
 
-`status` is only `draft` or `ready` and is what publishes a text. `quality` is separate: `ocr-raw`, `needs-cleanup`, `partial`, `clean`, or `verified`. A ready attach needs `source_url` and `license`. English also needs `translator` (`anonymous` and `n/a` are allowed). Original-language text does not. `edition` and `edition_year` are optional.
+`status` is only `draft` or `ready` and is what publishes a text. `quality` is separate: `ocr-raw`, `needs-cleanup`, `partial`, `clean`, or `verified`. New rows default to `needs-cleanup`. A `ready` row that is still `needs-cleanup` when `0002` runs becomes `clean`. Only a person sets `verified`. A ready attach needs `source_url` and `license`. English also needs `translator` (`anonymous` and `n/a` are allowed). Original-language text does not. `edition` and `edition_year` are optional. Provenance columns stay empty until someone passes a CSV to the backfill command. Nothing in these scripts sets `verified`.
 
 The work JSON includes those fields plus `attribution`, built from them. A public-domain English text comes back as `Public domain. Translated by X (Schaff, 1889)`. The UI reads that string; this layer only returns it.
 
@@ -29,7 +29,7 @@ The work JSON includes those fields plus `attribution`, built from them. A publi
 pnpm clavis:backfill-provenance -- data/clavis/provenance-backfill.csv
 ```
 
-The CSV columns are `work_id,translator,edition,edition_year,source_url,license`. The file is not in the repo until it is exported onto this branch. Re-running fills only empty fields on the English row. `--force` overwrites a field that already disagrees. Unmatched work ids, missing English rows, and conflicts are printed.
+The CSV columns are `work_id,translator,edition,edition_year,source_url,license`. `data/clavis/provenance-backfill.csv` is committed separately. Re-running fills only empty fields on the English row. `--force` may replace a filled field. On a `ready` row it prints each replacement (`force ready <work_id> <field>: ...`) before it writes. Unmatched work ids, missing English rows, and conflicts are printed.
 
 A Clavis export row looks like:
 

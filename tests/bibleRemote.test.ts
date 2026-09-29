@@ -25,6 +25,17 @@ describe("bible remote proxy", () => {
     expect(parseBibleRemoteQuery("", "JHN.1").ok).toBe(false);
   });
 
+  it("accepts the ESV alias while rejecting malformed API.Bible IDs", () => {
+    expect(parseBibleRemoteQuery(" ESV ", "jhn.1")).toEqual({
+      ok: true,
+      bibleId: "esv",
+      chapterId: "JHN.1"
+    });
+    for (const id of ["bad", "a".repeat(65), "abcd/efgh", "abcd?efgh", "abcd efgh"]) {
+      expect(parseBibleRemoteQuery(id, "JHN.1").ok, id).toBe(false);
+    }
+  });
+
   it("returns 503 when the Worker secret is missing", async () => {
     const result = await handleBibleRemoteChapter("a556c5305ee15c3f-01", "JHN.1", {
       apiKey: undefined

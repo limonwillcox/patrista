@@ -291,9 +291,8 @@ if (isMain) {
   } catch (err) {
     const code = err && err.code;
     if (code === "ENOENT") {
-      console.error("provenance CSV not found: " + csvPath);
-      console.error("Expected columns: work_id,translator,edition,edition_year,source_url,license");
-      process.exit(1);
+      console.log("provenance CSV not found: " + csvPath + ". Leaving provenance fields empty.");
+      process.exit(0);
     }
     throw err;
   }

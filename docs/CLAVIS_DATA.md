@@ -29,7 +29,7 @@ The work JSON includes those fields plus `attribution`, built from them. A publi
 pnpm clavis:backfill-provenance -- data/clavis/provenance-backfill.csv
 ```
 
-The CSV columns are `work_id,translator,edition,edition_year,source_url,license`. `data/clavis/provenance-backfill.csv` is committed separately. Re-running fills only empty fields on the English row. `--force` may replace a filled field. On a `ready` row it prints each replacement (`force ready <work_id> <field>: ...`) before it writes. Unmatched work ids, missing English rows, and conflicts are printed.
+The CSV columns are `work_id,translator,edition,edition_year,source_url,license`. That file is not part of this branch, and the command does not need it to exist. If it is missing, the command prints a note and exits without changing rows. Re-running fills only empty fields on the English row. `--force` may replace a filled field. On a `ready` row it prints each replacement (`force ready <work_id> <field>: ...`) before it writes. Unmatched work ids, missing English rows, and conflicts are printed.
 
 A Clavis export row looks like:
 

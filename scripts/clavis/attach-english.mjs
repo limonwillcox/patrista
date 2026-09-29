@@ -4,6 +4,7 @@ import { dirname, join, resolve } from "path";
 import { fileURLToPath } from "url";
 import { applySchema, defaultSchemaPath, openDatabase, root } from "./import-works.mjs";
 import { attachText } from "./attach-text.mjs";
+import { parseProvenanceCsv } from "./backfill-provenance.mjs";
 
 /**
  * High-confidence English → Clavis links.
@@ -11,6 +12,7 @@ import { attachText } from "./attach-text.mjs";
  * hit exactly one imported work, and exactly one file claims that work
  * (a reviewed standalone plan row may pick between two files).
  * Collection files and multi-matches are reported and left unattached.
+ * A ready attach also needs source_url, license, and a translator.
  */
 export const ENGLISH_ALIASES = [
   ["Augustine_English/The City of God.txt", ["augustinus", "hippon"], "De Ciuitate Dei"],
@@ -386,7 +388,13 @@ export function attachReadyBatch(options) {
       status: "ready",
       sourcePath: row.source_path,
       bodiesRoot: options.bodiesRoot,
-      updatedAt
+      updatedAt,
+      translator: row.translator,
+      edition: row.edition,
+      editionYear: row.edition_year ?? row.editionYear,
+      sourceUrl: row.source_url ?? row.sourceUrl,
+      license: row.license,
+      quality: row.quality
     });
     attached.push({ ...row, ...result, status: "ready" });
   }
@@ -410,6 +418,41 @@ function parseArgs(argv) {
   return out;
 }
 
+export function overlayProvenance(readyRows, csvRows) {
+  const map = new Map();
+  const duplicates = [];
+  const rejected = new Set();
+  const fields = ["translator", "edition", "edition_year", "source_url", "license"];
+  for (const row of csvRows) {
+    if (rejected.has(row.work_id)) continue;
+    const prev = map.get(row.work_id);
+    if (!prev) {
+      map.set(row.work_id, row);
+      continue;
+    }
+    if (fields.some((field) => prev[field] !== row[field])) {
+      duplicates.push(row.work_id);
+      rejected.add(row.work_id);
+      map.delete(row.work_id);
+    }
+  }
+  return {
+    duplicates,
+    rows: readyRows.map((row) => {
+      const extra = map.get(String(row.work_id).toUpperCase());
+      if (!extra) return row;
+      return {
+        ...row,
+        translator: extra.translator,
+        edition: extra.edition,
+        edition_year: extra.edition_year,
+        source_url: extra.source_url,
+        license: extra.license
+      };
+    })
+  };
+}
+
 export function runEnglishAttach(options) {
   const db = openDatabase(options.sqlitePath);
   try {
@@ -418,10 +461,15 @@ export function runEnglishAttach(options) {
     const files = options.files || listEnglishFiles(options.englishRoot);
     const plan = options.plan || [];
     const planned = planEnglishAttaches(works, files, plan);
-    if (options.dryRun) return { ...planned, attached: [] };
+    const provenancePath = options.provenancePath || join(root, "data/clavis/provenance-backfill.csv");
+    let ready = planned.ready;
+    if (existsSync(provenancePath)) {
+      ready = overlayProvenance(planned.ready, parseProvenanceCsv(readFileSync(provenancePath, "utf8"))).rows;
+    }
+    if (options.dryRun) return { ...planned, ready, attached: [] };
     const attached = attachReadyBatch({
       db,
-      ready: planned.ready,
+      ready,
       repoRoot: options.repoRoot,
       bodiesRoot: options.bodiesRoot,
       updatedAt: options.updatedAt
@@ -438,7 +486,7 @@ function writeJson(path, value) {
 }
 
 function seedLine(row) {
-  return JSON.stringify({
+  const seed = {
     work_id: row.work_id,
     language: "english",
     title: row.title,
@@ -448,7 +496,14 @@ function seedLine(row) {
     content_sha256: row.content_sha256,
     byte_size: row.byte_size,
     updated_at: row.updated_at
-  });
+  };
+  if (row.translator) seed.translator = row.translator;
+  if (row.edition) seed.edition = row.edition;
+  if (row.edition_year != null) seed.edition_year = row.edition_year;
+  if (row.source_url) seed.source_url = row.source_url;
+  if (row.license) seed.license = row.license;
+  if (row.quality) seed.quality = row.quality;
+  return JSON.stringify(seed);
 }
 
 const isMain = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url);

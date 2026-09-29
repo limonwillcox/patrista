@@ -16,9 +16,20 @@ authors 1—* works 1—* work_texts
 | --- | --- |
 | `authors` | `author_id`, Latin name, optional detail URL, `letter_bucket` (A–Z from the first Latin letter, else `#`), `imported_at` |
 | `works` | `work_id`, `author_id` FK, nullable `parent_work_id` FK, Latin title, optional designated title, `clavis_codes` JSON, `path_json` JSON, detail URL, `kind`, `imported_at` |
-| `work_texts` | `(work_id, language)` PK, `language` `english` \| `original`, title, `status` default `draft`, `r2_key`, `source_path`, `content_sha256`, `byte_size`, `updated_at` |
+| `work_texts` | `(work_id, language)` PK, `language` `english` \| `original`, title, `status` default `draft`, `r2_key`, `source_path`, `content_sha256`, `byte_size`, `updated_at`, `translator`, `edition`, `edition_year`, `source_url`, `license`, `quality` default `needs-cleanup` |
+| `schema_migrations` | migration id already applied, so import, pack, and attach can run again |
 
-Schema: `data/clavis/schema.sql`.
+Schema: `data/clavis/schema.sql`. Fresh databases get the columns above. A database created before them takes `data/clavis/migrations/0001_text_provenance.sql` once, then `0002_ready_quality_clean.sql`. Do not run `0001` against a database created from the current schema.
+
+`status` is only `draft` or `ready` and is what publishes a text. `quality` is separate: `ocr-raw`, `needs-cleanup`, `partial`, `clean`, or `verified`. New rows default to `needs-cleanup`. A `ready` row that is still `needs-cleanup` when `0002` runs becomes `clean`. Only a person sets `verified`. A ready attach needs `source_url` and `license`. English also needs `translator` (`anonymous` and `n/a` are allowed). Original-language text does not. `edition` and `edition_year` are optional. Provenance columns stay empty until someone passes a CSV to the backfill command. Nothing in these scripts sets `verified`.
+
+The work JSON includes those fields plus `attribution`, built from them. A public-domain English text comes back as `Public domain. Translated by X (Schaff, 1889)`. The UI reads that string; this layer only returns it.
+
+```bash
+pnpm clavis:backfill-provenance -- data/clavis/provenance-backfill.csv
+```
+
+The CSV columns are `work_id,translator,edition,edition_year,source_url,license`. That file is not part of this branch, and the command does not need it to exist. If it is missing, the command prints a note and exits without changing rows. Re-running fills only empty fields on the English row. `--force` may replace a filled field. On a `ready` row it prints each replacement (`force ready <work_id> <field>: ...`) before it writes. Unmatched work ids, missing English rows, and conflicts are printed.
 
 A Clavis export row looks like:
 
@@ -56,10 +67,15 @@ node scripts/clavis/attach-text.mjs \
   --language english \
   --status ready \
   --title Retractations \
+  --translator "X" \
+  --edition Schaff \
+  --edition-year 1889 \
+  --source-url https://example.test/retractationes \
+  --license us-public-domain \
   --file data/clavis/fixtures/retractationes-english.txt
 ```
 
-`clavis:import` and `clavis:pack` both apply `data/clavis/schema.sql` and upsert JSONL (one object per line, `#` comments allowed, or a JSON array). Pack does not drop `work_texts`. Attach refuses a `work_id` that is not already in `works`.
+`clavis:import` and `clavis:pack` both apply `data/clavis/schema.sql`, then any pending file in `data/clavis/migrations`, and upsert JSONL (one object per line, `#` comments allowed, or a JSON array). Pack does not drop `work_texts`. Attach refuses a `work_id` that is not already in `works`, and refuses `status=ready` when a required provenance field is missing.
 
 The same `work_id` sometimes appears under two authors in the export. Upsert keeps the last row. That cross-listing is why a title can sit on an unexpected author after import.
 

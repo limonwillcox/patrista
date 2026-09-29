@@ -3,6 +3,12 @@
 -- R2 key: clavis/texts/{work_id}/{language}.txt
 -- Local mirror: data/clavis/bodies/{work_id}/{language}.txt
 -- Import is read-only against Clavis scrape sources. This file is the mirror.
+-- Existing databases take new columns from data/clavis/migrations, not from here.
+
+CREATE TABLE IF NOT EXISTS schema_migrations (
+  id TEXT PRIMARY KEY,
+  applied_at TEXT NOT NULL
+);
 
 CREATE TABLE IF NOT EXISTS authors (
   author_id TEXT PRIMARY KEY,
@@ -35,6 +41,12 @@ CREATE TABLE IF NOT EXISTS work_texts (
   content_sha256 TEXT,
   byte_size INTEGER,
   updated_at TEXT,
+  translator TEXT,
+  edition TEXT,
+  edition_year INTEGER,
+  source_url TEXT,
+  license TEXT,
+  quality TEXT NOT NULL DEFAULT 'needs-cleanup' CHECK (quality IN ('ocr-raw', 'needs-cleanup', 'partial', 'clean', 'verified')),
   PRIMARY KEY (work_id, language)
 );
 

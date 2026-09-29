@@ -12,6 +12,7 @@ const ID_RE = /^[A-F0-9]{32}$/;
 
 export type ClavisLanguage = "english" | "original";
 export type ClavisTextStatus = "draft" | "ready";
+export type ClavisQuality = "ocr-raw" | "needs-cleanup" | "partial" | "clean" | "verified";
 
 export type ClavisAuthor = {
   author_id: string;
@@ -29,6 +30,13 @@ export type ClavisTextMeta = {
   content_sha256: string | null;
   byte_size: number | null;
   updated_at: string | null;
+  translator: string | null;
+  edition: string | null;
+  edition_year: number | null;
+  source_url: string | null;
+  license: string | null;
+  quality: ClavisQuality;
+  attribution: string;
 };
 
 export type ClavisWork = {
@@ -126,9 +134,45 @@ function mapAuthor(row: SqlRow): ClavisAuthor {
   };
 }
 
+const QUALITIES: readonly ClavisQuality[] = ["ocr-raw", "needs-cleanup", "partial", "clean", "verified"];
+
+export function attributionFor(text: {
+  language: string;
+  license: string | null;
+  translator: string | null;
+  edition: string | null;
+  edition_year: number | null;
+}): string {
+  const parts: string[] = [];
+  const license = (text.license || "").trim();
+  if (/^(us-public-domain|public-domain|public domain)$/i.test(license)) parts.push("Public domain.");
+  else if (license) parts.push(license.endsWith(".") ? license : license + ".");
+
+  const translator = (text.translator || "").trim();
+  const edition = (text.edition || "").trim();
+  const year = text.edition_year == null ? "" : String(text.edition_year);
+  const cite = [edition, year].filter((part) => part !== "").join(", ");
+  const paren = cite ? " (" + cite + ")" : "";
+  const lowered = translator.toLowerCase();
+  const named = translator !== "" && lowered !== "anonymous" && lowered !== "n/a";
+  if (named) parts.push("Translated by " + translator + paren);
+  else if (lowered === "anonymous") parts.push("Anonymous" + paren);
+  else if (paren) parts.push(paren.trim());
+  return parts.join(" ");
+}
+
+function mapQuality(value: unknown): ClavisQuality {
+  if (typeof value === "string" && (QUALITIES as readonly string[]).includes(value)) return value as ClavisQuality;
+  return "needs-cleanup";
+}
+
 function mapText(row: SqlRow): ClavisTextMeta {
   const language = row.language === "original" ? "original" : "english";
   const status = row.status === "ready" ? "ready" : "draft";
+  const translator = asNullableString(row.translator);
+  const edition = asNullableString(row.edition);
+  const editionYear = asNullableNumber(row.edition_year);
+  const license = asNullableString(row.license);
   return {
     language,
     title: asNullableString(row.title),
@@ -137,7 +181,20 @@ function mapText(row: SqlRow): ClavisTextMeta {
     source_path: asNullableString(row.source_path),
     content_sha256: asNullableString(row.content_sha256),
     byte_size: asNullableNumber(row.byte_size),
-    updated_at: asNullableString(row.updated_at)
+    updated_at: asNullableString(row.updated_at),
+    translator,
+    edition,
+    edition_year: editionYear,
+    source_url: asNullableString(row.source_url),
+    license,
+    quality: mapQuality(row.quality),
+    attribution: attributionFor({
+      language,
+      license,
+      translator,
+      edition,
+      edition_year: editionYear
+    })
   };
 }
 
@@ -226,7 +283,8 @@ ORDER BY title_latin COLLATE NOCASE, work_id
 
 const TEXTS_FOR_AUTHOR_SQL = `
 SELECT t.work_id, t.language, t.title, t.status, t.r2_key, t.source_path,
-       t.content_sha256, t.byte_size, t.updated_at
+       t.content_sha256, t.byte_size, t.updated_at,
+       t.translator, t.edition, t.edition_year, t.source_url, t.license, t.quality
 FROM work_texts t
 JOIN works w ON w.work_id = t.work_id
 WHERE w.author_id = ?
@@ -242,7 +300,8 @@ WHERE work_id = ?
 
 const TEXTS_FOR_WORK_SQL = `
 SELECT work_id, language, title, status, r2_key, source_path,
-       content_sha256, byte_size, updated_at
+       content_sha256, byte_size, updated_at,
+       translator, edition, edition_year, source_url, license, quality
 FROM work_texts
 WHERE work_id = ?
 ORDER BY language
@@ -250,7 +309,8 @@ ORDER BY language
 
 const TEXT_SQL = `
 SELECT work_id, language, title, status, r2_key, source_path,
-       content_sha256, byte_size, updated_at
+       content_sha256, byte_size, updated_at,
+       translator, edition, edition_year, source_url, license, quality
 FROM work_texts
 WHERE work_id = ? AND language = ?
 `;

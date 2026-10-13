@@ -20,9 +20,10 @@ function Rail() {
   const { navOpen, setNavOpen } = useApp();
   const location = useLocation();
   const homeActive = isHomePath(location.pathname);
-  const readActive = location.pathname === "/read";
+  const readActive = location.pathname === "/read" || location.pathname.startsWith("/fathers/");
   const bibleActive = location.pathname === "/bible";
-  const writingsActive = location.pathname === "/church-fathers" || location.pathname === "/browse";
+  const writingsActive =
+    location.pathname === "/church-fathers" || location.pathname === "/church-fathers/" || location.pathname === "/browse";
   const journalActive = location.pathname === "/journal";
   const timelineActive = location.pathname.startsWith("/church-history/timeline");
   return (
@@ -360,7 +361,8 @@ export function Layout({ children }: { children: ReactNode }) {
   const [searchQ, setSearchQ] = useState("");
   const isLanding = isHomePath(location.pathname);
   const isHistoryCinematic = location.pathname === "/church-history" || location.pathname === "/church-history/";
-  const isFathers = location.pathname === "/church-fathers" || location.pathname === "/browse";
+  const isFathers =
+    location.pathname === "/church-fathers" || location.pathname === "/church-fathers/" || location.pathname === "/browse";
   const isJournal = location.pathname === "/journal";
 
   useEffect(() => {

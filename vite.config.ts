@@ -1,5 +1,6 @@
 /// <reference types="vitest/config" />
 import { copyFileSync, createReadStream, cpSync, existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "fs";
+import type { IncomingMessage, ServerResponse } from "http";
 import { getCatalog, getWork } from "./server/api";
 import {
   CHURCH_HISTORY_CANONICAL_PATH,
@@ -11,12 +12,24 @@ import {
   renderChurchHistoryHtml
 } from "./server/churchHistory";
 import {
+  CHURCH_FATHERS_CANONICAL_PATH,
   CHURCH_FATHERS_DESCRIPTION,
-  CHURCH_FATHERS_PATH,
   CHURCH_FATHERS_TITLE,
   churchFathersJsonLd,
   renderChurchFathersHtml
 } from "./server/shelf";
+import {
+  applyReadCanonical,
+  prerenderShell,
+  readCanonMap,
+  renderHomeStaticHtml,
+  renderReadShell,
+  renderSitemaps,
+  robotsTxt,
+  workCanonicalMap,
+  writeFatherPages,
+  writeSplitNotes
+} from "./server/staticFathers";
 import { dirname, extname, join, resolve } from "path";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
@@ -26,14 +39,6 @@ import { writeStaticBibleApi } from "./server/staticBible";
 import { writeStaticLinksApi } from "./server/staticLinks";
 
 const root = dirname(fileURLToPath(import.meta.url));
-
-function escapeHtml(s: string): string {
-  return String(s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
 
 const MIME: Record<string, string> = {
   ".svg": "image/svg+xml",
@@ -47,15 +52,12 @@ const MIME: Record<string, string> = {
 const SITE_ORIGIN = "https://patrista.com";
 
 /**
- * Emit dist/church-history/index.html (cinematic shell) and
- * dist/church-history/timeline/index.html (crawlable eras). React replaces the
- * markup when it boots; crawlers already have the timeline payload.
- *
- * Every substitution is checked, because a silently wrong <title> on the site's
- * main SEO landing page is exactly the regression that must not ship.
+ * Emit a crawlable page from the built shell. React replaces #root when it
+ * boots; the substitutions are checked so a missing slot fails the build.
  */
 function writePrerenderedPage(
   dist: string,
+  indexHtml: string,
   opts: {
     outRel: string;
     canonicalPath: string;
@@ -66,58 +68,20 @@ function writePrerenderedPage(
     jsonLd?: unknown;
   }
 ): void {
-  const canonical = SITE_ORIGIN + opts.canonicalPath;
-  const headParts = [
-    '    <link rel="canonical" href="' + canonical + '" />',
-    '    <meta property="og:type" content="article" />',
-    '    <meta property="og:url" content="' + canonical + '" />',
-    '    <meta property="og:title" content="' + escapeHtml(opts.title) + '" />',
-    '    <meta property="og:description" content="' + escapeHtml(opts.description) + '" />'
-  ];
-  if (opts.jsonLd) {
-    const jsonLd = JSON.stringify(opts.jsonLd).replace(/</g, "\\u003c");
-    headParts.push("    <script type=\"application/ld+json\">" + jsonLd + "</script>");
+  let html: string;
+  try {
+    html = prerenderShell(indexHtml, SITE_ORIGIN, opts);
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    throw new Error(opts.label + " " + message);
   }
-  headParts.push("  </head>");
-  const head = headParts.join("\n");
-
-  const steps: { name: string; apply: (s: string) => string }[] = [
-    {
-      name: "<title>",
-      apply: (s) => s.replace(/<title>[\s\S]*?<\/title>/, "<title>" + escapeHtml(opts.title) + "</title>")
-    },
-    {
-      name: 'meta name="description"',
-      apply: (s) =>
-        s.replace(
-          /<meta\s+name="description"[\s\S]*?\/>/,
-          '<meta name="description" content="' + escapeHtml(opts.description) + '" />'
-        )
-    },
-    { name: "</head>", apply: (s) => s.replace("</head>", head) },
-    {
-      name: 'empty <div id="root">',
-      apply: (s) =>
-        s.replace('<div id="root"></div>', '<div id="root"><main class="page" id="page">' + opts.bodyHtml + "</main></div>")
-    }
-  ];
-
-  let html = readFileSync(join(dist, "index.html"), "utf8");
-  for (const step of steps) {
-    const next = step.apply(html);
-    if (next === html) {
-      throw new Error(opts.label + " prerender: could not find " + step.name + " in dist/index.html");
-    }
-    html = next;
-  }
-
   const outFile = join(dist, opts.outRel);
   mkdirSync(dirname(outFile), { recursive: true });
   writeFileSync(outFile, html);
 }
 
-function writeChurchHistoryPage(dist: string, catalog: ReturnType<typeof getCatalog>): void {
-  writePrerenderedPage(dist, {
+function writeChurchHistoryPage(dist: string, indexHtml: string, catalog: ReturnType<typeof getCatalog>): void {
+  writePrerenderedPage(dist, indexHtml, {
     outRel: join("church-history", "index.html"),
     canonicalPath: CHURCH_HISTORY_CANONICAL_PATH,
     bodyHtml: renderChurchHistoryCinematicHtml(),
@@ -125,7 +89,7 @@ function writeChurchHistoryPage(dist: string, catalog: ReturnType<typeof getCata
     title: CHURCH_HISTORY_TITLE,
     description: CHURCH_HISTORY_DESCRIPTION
   });
-  writePrerenderedPage(dist, {
+  writePrerenderedPage(dist, indexHtml, {
     outRel: join("church-history", "timeline", "index.html"),
     canonicalPath: CHURCH_HISTORY_TIMELINE_PATH,
     bodyHtml: renderChurchHistoryHtml(catalog),
@@ -136,10 +100,10 @@ function writeChurchHistoryPage(dist: string, catalog: ReturnType<typeof getCata
   });
 }
 
-function writeChurchFathersPage(dist: string, catalog: ReturnType<typeof getCatalog>): void {
-  writePrerenderedPage(dist, {
+function writeChurchFathersPage(dist: string, indexHtml: string, catalog: ReturnType<typeof getCatalog>): void {
+  writePrerenderedPage(dist, indexHtml, {
     outRel: join("church-fathers", "index.html"),
-    canonicalPath: CHURCH_FATHERS_PATH,
+    canonicalPath: CHURCH_FATHERS_CANONICAL_PATH,
     bodyHtml: renderChurchFathersHtml(catalog),
     label: "church-fathers",
     title: CHURCH_FATHERS_TITLE,
@@ -147,6 +111,33 @@ function writeChurchFathersPage(dist: string, catalog: ReturnType<typeof getCata
     jsonLd: churchFathersJsonLd(SITE_ORIGIN, catalog)
   });
 }
+
+function installReadCanonicalMiddleware(server: { middlewares: { stack: { route: string; handle: (req: IncomingMessage, res: ServerResponse, next: () => void) => void }[] } }): void {
+  server.middlewares.stack.unshift({
+    route: "",
+    handle(req, res, next) {
+      if (req.method !== "GET" && req.method !== "HEAD") return next();
+      const raw = req.url || "/";
+      const q = raw.indexOf("?");
+      const path = (q === -1 ? raw : raw.slice(0, q)).replace(/\/+$/, "") || "/";
+      if (path !== "/read") return next();
+      const file = join(root, "dist", "read.html");
+      if (!existsSync(file)) return next();
+      const params = new URLSearchParams(q === -1 ? "" : raw.slice(q + 1));
+      const rawHtml = readFileSync(file, "utf8");
+      const html = applyReadCanonical(rawHtml, params.get("work"), readCanonMap(rawHtml));
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "text/html; charset=utf-8");
+      if (req.method === "HEAD") {
+        res.end();
+        return;
+      }
+      res.end(html);
+    }
+  });
+}
+
+let fatherExtrasWritten = false;
 
 function extrasPlugin() {
   function serveAssets(middlewares: { use: (fn: (req: { url?: string }, res: { statusCode: number; setHeader: (k: string, v: string) => void; end: (s?: string) => void }, next: () => void) => void) => void }) {
@@ -174,9 +165,24 @@ function extrasPlugin() {
     },
     configurePreviewServer(server: { middlewares: Parameters<typeof serveAssets>[0] }) {
       serveAssets(server.middlewares);
+      return () => {
+        installReadCanonicalMiddleware(
+          server as { middlewares: Parameters<typeof serveAssets>[0] & Parameters<typeof installReadCanonicalMiddleware>[0]["middlewares"] }
+        );
+      };
     },
     closeBundle() {
+      // Vitest loads this config. Do not rebuild thousands of HTML files during unit tests.
+      if (process.env.VITEST || fatherExtrasWritten) return;
       const dist = join(root, "dist");
+      const indexPath = join(dist, "index.html");
+      if (!existsSync(indexPath)) return;
+      // Read the Vite shell before any page is injected. A second environment's
+      // closeBundle sees the finished home page and must leave the 404 shell alone.
+      const shell = readFileSync(indexPath, "utf8");
+      if (!shell.includes('<div id="root"></div>')) return;
+      fatherExtrasWritten = true;
+
       cpSync(join(root, "assets"), join(dist, "assets"), { recursive: true });
       const cname = join(root, "CNAME");
       if (existsSync(cname)) copyFileSync(cname, join(dist, "CNAME"));
@@ -198,11 +204,6 @@ function extrasPlugin() {
       if (existsSync(join(root, "src", "styles.css"))) {
         copyFileSync(join(root, "src", "styles.css"), join(dist, "css", "styles.css"));
       }
-      // GitHub Pages SPA fallback. Also overwrite give.html so /give is the React app
-      // (Pages maps /give → give.html if that file exists).
-      copyFileSync(join(dist, "index.html"), join(dist, "404.html"));
-      copyFileSync(join(dist, "index.html"), join(dist, "give.html"));
-
       const apiDir = join(dist, "api");
       const worksDir = join(apiDir, "works");
       mkdirSync(worksDir, { recursive: true });
@@ -224,95 +225,64 @@ function extrasPlugin() {
       ];
       const sitemapUrls = [
         SITE_ORIGIN + "/",
-        SITE_ORIGIN + "/church-fathers",
+        SITE_ORIGIN + CHURCH_FATHERS_CANONICAL_PATH,
         SITE_ORIGIN + CHURCH_HISTORY_CANONICAL_PATH,
         SITE_ORIGIN + CHURCH_HISTORY_TIMELINE_PATH,
         SITE_ORIGIN + "/about",
         SITE_ORIGIN + "/give"
       ];
 
-      writeChurchHistoryPage(dist, catalog);
-      writeChurchFathersPage(dist, catalog);
+      writeChurchHistoryPage(dist, shell, catalog);
+      writeChurchFathersPage(dist, shell, catalog);
 
       for (const w of catalog.works) {
         const payload = getWork(w.id);
         if (!payload) continue;
         writeFileSync(join(worksDir, w.id + ".json"), JSON.stringify(payload));
         redirectLines.push("/api/works/" + w.id + "  /api/works/" + w.id + ".json  200");
-
-        const author = catalog.authors.find((a) => a.id === w.author);
-        const fatherDir = join(dist, "fathers", w.author);
-        mkdirSync(fatherDir, { recursive: true });
-        const pagePath = join(fatherDir, w.id + ".html");
-        const translationId = Object.keys(payload.chapters[0]?.versions || {}).find((id) => id !== "lat" && id !== "grk") || "schaff";
-        // MVP: keep crawler HTML lean — full text lives in /api/works JSON + SPA reader.
-        const previewChapters = payload.chapters.slice(0, Math.min(3, payload.chapters.length));
-        const sections = previewChapters
-          .map((ch) => {
-            const paras = (ch.versions[translationId] || []).slice(0, 8).map((p) => "<p>" + escapeHtml(p) + "</p>").join("\n");
-            return "<section id=\"ch-" + ch.chapter + "\"><h2>" + escapeHtml(ch.heading) + "</h2>\n" + paras + "</section>";
-          })
-          .join("\n");
-        const moreNote =
-          payload.chapters.length > 3
-            ? "<p><em>Preview only — open in the reader for the full " +
-              payload.chapters.length +
-              " sections.</em></p>"
-            : "";
-        const title = escapeHtml(w.title + " — " + (author?.name || w.author));
-        const desc = escapeHtml(
-          "Public-domain English text of " + w.title + " by " + (author?.name || w.author) + ". Read on Patrista."
-        );
-        const fatherUrl = SITE_ORIGIN + "/fathers/" + w.author + "/" + w.id + ".html";
-        writeFileSync(
-          pagePath,
-          [
-            "<!DOCTYPE html>",
-            '<html lang="en">',
-            "<head>",
-            '  <meta charset="utf-8" />',
-            '  <meta name="viewport" content="width=device-width, initial-scale=1" />',
-            "  <title>" + title + "</title>",
-            '  <meta name="description" content="' + desc + '" />',
-            '  <link rel="canonical" href="' + fatherUrl + '" />',
-            "  <style>body{font-family:Georgia,serif;max-width:42rem;margin:1.5rem auto;padding:0 1rem;line-height:1.55;color:#1a1a1a}h1,h2{font-family:system-ui,sans-serif}a{color:#952004}</style>",
-            "</head>",
-            "<body>",
-            "  <p><a href=\"/\">Patrista</a> · <a href=\"/church-fathers\">Browse</a> · <a href=\"/read?work=" +
-              encodeURIComponent(w.id) +
-              '">Open in reader</a></p>',
-            "  <h1>" + escapeHtml(w.title) + "</h1>",
-            "  <p>" + escapeHtml(author?.name || "") + (author?.dates ? " (" + escapeHtml(author.dates) + ")" : "") + "</p>",
-            sections,
-            moreNote,
-            "</body>",
-            "</html>",
-            ""
-          ].join("\n")
-        );
-        sitemapUrls.push(fatherUrl);
       }
+
+      const fathers = writeFatherPages(dist, shell, catalog, SITE_ORIGIN);
+      writeSplitNotes(dist, fathers.notes);
+      sitemapUrls.push(...fathers.urls);
+      console.log(
+        "[fathers] " +
+          fathers.urls.length +
+          " work and chapter URLs, " +
+          fathers.notes.length +
+          " ambiguous splits"
+      );
+      for (const note of fathers.notes) {
+        console.log("[fathers] " + note.author + "/" + note.id + ": " + note.reason);
+      }
+
+      writeFileSync(
+        join(dist, "read.html"),
+        renderReadShell(shell, workCanonicalMap(catalog, SITE_ORIGIN), SITE_ORIGIN + CHURCH_FATHERS_CANONICAL_PATH)
+      );
+      writeFileSync(
+        indexPath,
+        prerenderShell(shell, SITE_ORIGIN, {
+          canonicalPath: "/",
+          title: "Patrista — a searchable library of the Church Fathers",
+          description:
+            "Look up a father, a work, or a keyword. Public-domain translations of the Church Fathers in a clean reading layout.",
+          bodyHtml: renderHomeStaticHtml(catalog)
+        })
+      );
+      // GitHub Pages serves /give from give.html and unknown paths from 404.html.
+      // Both must stay the empty SPA shell, written after index.html becomes the home page.
+      writeFileSync(join(dist, "404.html"), shell);
+      writeFileSync(join(dist, "give.html"), shell);
 
       redirectLines.push(...writeStaticBibleApi(dist));
       redirectLines.push(...writeStaticLinksApi(dist));
       redirectLines.push("/*    /index.html   200", "");
       writeFileSync(join(dist, "_redirects"), redirectLines.join("\n"));
-      writeFileSync(
-        join(dist, "sitemap.xml"),
-        [
-          '<?xml version="1.0" encoding="UTF-8"?>',
-          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-          ...sitemapUrls.map(
-            (u) => "  <url><loc>" + u + "</loc><changefreq>weekly</changefreq></url>"
-          ),
-          "</urlset>",
-          ""
-        ].join("\n")
-      );
-      writeFileSync(
-        join(dist, "robots.txt"),
-        ["User-agent: *", "Allow: /", "Sitemap: " + SITE_ORIGIN + "/sitemap.xml", ""].join("\n")
-      );
+      for (const file of renderSitemaps(sitemapUrls, SITE_ORIGIN)) {
+        writeFileSync(join(dist, file.name), file.body);
+      }
+      writeFileSync(join(dist, "robots.txt"), robotsTxt(SITE_ORIGIN));
     }
   };
 }

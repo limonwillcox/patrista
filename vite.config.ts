@@ -30,6 +30,8 @@ import {
   writeFatherPages,
   writeSplitNotes
 } from "./server/staticFathers";
+import { writeFatherDirectoryPages } from "./server/fatherDirectoryPages";
+import { FATHER_IMAGES } from "./src/lib/fatherImages";
 import { dirname, extname, join, resolve } from "path";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
@@ -242,6 +244,11 @@ function extrasPlugin() {
         redirectLines.push("/api/works/" + w.id + "  /api/works/" + w.id + ".json  200");
       }
 
+      const directory = writeFatherDirectoryPages(dist, shell, catalog, SITE_ORIGIN, FATHER_IMAGES);
+      redirectLines.push(...directory.redirects);
+      sitemapUrls.push(...directory.urls);
+      console.log("[fathers] " + directory.urls.length + " directory URLs");
+
       const fathers = writeFatherPages(dist, shell, catalog, SITE_ORIGIN);
       writeSplitNotes(dist, fathers.notes);
       sitemapUrls.push(...fathers.urls);
@@ -283,6 +290,10 @@ function extrasPlugin() {
         writeFileSync(join(dist, file.name), file.body);
       }
       writeFileSync(join(dist, "robots.txt"), robotsTxt(SITE_ORIGIN));
+      writeFileSync(
+        join(dist, "_headers"),
+        ["/assets/father-img/*", "  Cache-Control: public, max-age=31536000, immutable", ""].join("\n")
+      );
     }
   };
 }

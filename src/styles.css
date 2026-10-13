@@ -5340,3 +5340,79 @@ html[data-theme="night"] .fathers-portrait-fallback {
 html[data-theme="night"] .fathers-card-link:focus-visible {
   outline-color: rgba(224, 122, 85, 0.7);
 }
+.fathers-lede {
+  margin: 14px 0 0;
+  max-width: 38em;
+  font-size: 17px;
+  line-height: 1.47;
+  letter-spacing: -0.021em;
+}
+.fathers-facts {
+  display: grid;
+  gap: 4px 0;
+  margin: 16px 0 0;
+  font-size: 15px;
+  line-height: 1.35;
+}
+.fathers-facts div {
+  display: grid;
+  grid-template-columns: 4.5em minmax(0, 1fr);
+  gap: 8px;
+}
+.fathers-facts dt {
+  margin: 0;
+  color: var(--muted);
+}
+.fathers-facts dd {
+  margin: 0;
+}
+.fathers-tile-credit {
+  margin: 6px 0 0;
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+.fathers-tile-credit a,
+.fathers-hero-credit a {
+  color: inherit;
+}
+.fathers-hero-photo-wrap {
+  grid-area: photo;
+  position: relative;
+  justify-self: end;
+  width: 489px;
+  height: 336px;
+}
+.fathers-hero-photo {
+  grid-area: auto;
+  width: 100%;
+  height: 100%;
+}
+.fathers-hero-credit {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 11px;
+  line-height: 1.35;
+  color: #333;
+}
+@media (max-width: 1100px) {
+  .fathers-hero-photo-wrap {
+    width: 360px;
+    height: 280px;
+  }
+}
+@media (max-width: 735px) {
+  .fathers-hero-photo-wrap {
+    width: 100%;
+    height: 220px;
+  }
+}
+html[data-theme="night"] .fathers-hero-credit {
+  background: rgba(20, 20, 20, 0.88);
+  color: #f3e2a8;
+}

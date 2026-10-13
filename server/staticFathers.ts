@@ -391,6 +391,7 @@ export function renderHomeStaticHtml(catalog: Catalog, limit = 8): string {
     '<div class="static-home">',
     "<h1>Patrista</h1>",
     "<p>A searchable library of the public-domain Church Fathers. The full English text of every work is published here, one chapter to a page.</p>",
+    '<p><a href="/fathers/">Fathers</a></p>',
     '<p><a href="/church-fathers/">Church Fathers</a></p>',
     "<ul>",
     items,

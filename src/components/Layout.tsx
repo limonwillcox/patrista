@@ -53,7 +53,7 @@ function Rail() {
           {ICONS.browse}
           <span>Browse</span>
         </NavLink>
-        <NavLink to="/fathers" className={() => (fathersActive ? "active" : "")} onClick={() => setNavOpen(false)}>
+        <NavLink to="/fathers/" className={() => (fathersActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.fathers}
           <span>Fathers</span>
         </NavLink>

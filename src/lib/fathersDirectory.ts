@@ -20,9 +20,10 @@ export type FatherSection = {
 };
 
 export function isFathersTabPath(pathname: string): boolean {
-  if (pathname === "/fathers") return true;
-  const parts = pathname.split("/").filter(Boolean);
-  return parts[0] === "fathers" && parts.length === 2;
+  const path = pathname.replace(/\/+$/, "") || "/";
+  if (path === "/fathers") return true;
+  const parts = path.split("/").filter(Boolean);
+  return parts[0] === "fathers" && parts.length === 2 && !parts[1].endsWith(".html");
 }
 
 export function centuryHeading(n: number): string {

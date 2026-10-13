@@ -1,0 +1,904 @@
+{
+  "ambrose": {
+    "alt": "Portrait of Ambrose of Milan",
+    "tile": {
+      "src": "/assets/father-img/ambrose-460-f6b346c3f9.webp",
+      "srcset": "/assets/father-img/ambrose-230-dbe361f610.webp 230w, /assets/father-img/ambrose-460-f6b346c3f9.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/ambrose-720-d5de3787eb.webp",
+      "srcset": "/assets/father-img/ambrose-360-dad0ca8a29.webp 360w, /assets/father-img/ambrose-720-d5de3787eb.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:AmbroseOfMilan%20(cropped).jpg",
+      "attributionRequired": false
+    }
+  },
+  "aphrahat": {
+    "alt": "Portrait of Aphrahat",
+    "tile": {
+      "src": "/assets/father-img/aphrahat-460-2c5b0dbdf9.webp",
+      "srcset": "/assets/father-img/aphrahat-230-02052c8457.webp 230w, /assets/father-img/aphrahat-460-2c5b0dbdf9.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/aphrahat-720-3c5cafef9a.webp",
+      "srcset": "/assets/father-img/aphrahat-360-ce4868a2fb.webp 360w, /assets/father-img/aphrahat-720-3c5cafef9a.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Internet Archive Book Images",
+      "license": "No restrictions",
+      "licenseUrl": "https://www.flickr.com/commons/usage/",
+      "source": "https://commons.wikimedia.org/wiki/File:Les%20Vies%20des%20P%C3%A8res%20des%20d%C3%A9serts%20d'Orient%20-%20leur%20doctrine%20spirituelle%20et%20leur%20discipline%20monastique%20(1886)%20(14590545527).jpg",
+      "attributionRequired": false
+    }
+  },
+  "arnobius": {
+    "alt": "Portrait of Arnobius of Sicca",
+    "tile": {
+      "src": "/assets/father-img/arnobius-460-bbccc62174.webp",
+      "srcset": "/assets/father-img/arnobius-230-9c53c3c08c.webp 230w, /assets/father-img/arnobius-460-bbccc62174.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/arnobius-360-a05e2d9840.webp",
+      "srcset": "/assets/father-img/arnobius-360-a05e2d9840.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Schedel H.",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%80%D0%BD%D0%BE%D0%B1%D0%B8%D0%B9%20%D0%A1%D1%82%D0%B0%D1%80%D1%88%D0%B8%D0%B9%20-Arnobius%20of%20Sicca.jpg",
+      "attributionRequired": false
+    }
+  },
+  "athanasius": {
+    "alt": "Portrait of Athanasius of Alexandria",
+    "tile": {
+      "src": "/assets/father-img/athanasius-460-9dd12ad265.webp",
+      "srcset": "/assets/father-img/athanasius-230-b353adfea6.webp 230w, /assets/father-img/athanasius-460-9dd12ad265.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/athanasius-360-1b3834c1c7.webp",
+      "srcset": "/assets/father-img/athanasius-360-1b3834c1c7.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Byzantine Institute staff",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Fethiye%20Camii%2C%20parekklesion%2C%20diakonikon%2C%20mosaics%2C%20Istanbul%2C%20Turkey%20-%20South%20wall%2C%20St.%20Athanasius%2C%20detail%20of%20upper%20half%20-%20MSBZ004%20BF%20T%20F%20027%20B%20-%20Dumbarton%20Oaks.jpg",
+      "attributionRequired": false
+    }
+  },
+  "athenagoras": {
+    "alt": "Portrait of Athenagoras",
+    "tile": {
+      "src": "/assets/father-img/athenagoras-460-5d8c249170.webp",
+      "srcset": "/assets/father-img/athenagoras-230-c45a515f21.webp 230w, /assets/father-img/athenagoras-460-5d8c249170.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/athenagoras-360-093d5ad741.webp",
+      "srcset": "/assets/father-img/athenagoras-360-093d5ad741.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Greek%20Icon%20of%20Saint%20Athenagoras%20of%20Athens.jpg",
+      "attributionRequired": false
+    }
+  },
+  "augustine": {
+    "alt": "Portrait of Augustine of Hippo",
+    "tile": {
+      "src": "/assets/father-img/augustine-460-79de168102.webp",
+      "srcset": "/assets/father-img/augustine-230-393240a1a2.webp 230w, /assets/father-img/augustine-460-79de168102.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/augustine-360-6722e3b73f.webp",
+      "srcset": "/assets/father-img/augustine-360-6722e3b73f.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Philippe de Champaigne",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Saint%20Augustine%20by%20Philippe%20de%20Champaigne.jpg",
+      "attributionRequired": false
+    }
+  },
+  "basil": {
+    "alt": "Portrait of Basil the Great",
+    "tile": {
+      "src": "/assets/father-img/basil-460-a4b1d3f92d.webp",
+      "srcset": "/assets/father-img/basil-230-3c4d410499.webp 230w, /assets/father-img/basil-460-a4b1d3f92d.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/basil-360-83c3d0bf10.webp",
+      "srcset": "/assets/father-img/basil-360-83c3d0bf10.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Basil%20of%20Caesarea.jpg",
+      "attributionRequired": false
+    }
+  },
+  "cassian": {
+    "alt": "Portrait of John Cassian",
+    "tile": {
+      "src": "/assets/father-img/cassian-460-87a6d9fbcc.webp",
+      "srcset": "/assets/father-img/cassian-230-8eda043e2d.webp 230w, /assets/father-img/cassian-460-87a6d9fbcc.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/cassian-360-61ff77a4b5.webp",
+      "srcset": "/assets/father-img/cassian-360-61ff77a4b5.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:John%20Cassian.jpeg",
+      "attributionRequired": false
+    }
+  },
+  "chrysostom": {
+    "alt": "Portrait of John Chrysostom",
+    "tile": {
+      "src": "/assets/father-img/chrysostom-460-654c2b2dc7.webp",
+      "srcset": "/assets/father-img/chrysostom-230-ad56c0b2e7.webp 230w, /assets/father-img/chrysostom-460-654c2b2dc7.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/chrysostom-360-d7b96de339.webp",
+      "srcset": "/assets/father-img/chrysostom-360-d7b96de339.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Johnchrysostom.jpg",
+      "attributionRequired": false
+    }
+  },
+  "clement_alexandria": {
+    "alt": "Portrait of Clement of Alexandria",
+    "tile": {
+      "src": "/assets/father-img/clement_alexandria-460-86abafe286.webp",
+      "srcset": "/assets/father-img/clement_alexandria-230-7dc1d2e276.webp 230w, /assets/father-img/clement_alexandria-460-86abafe286.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/clement_alexandria-360-eeee9a3849.webp",
+      "srcset": "/assets/father-img/clement_alexandria-360-eeee9a3849.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "André Thévet",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Clement%20alexandrin.jpg",
+      "attributionRequired": false
+    }
+  },
+  "clement_rome": {
+    "alt": "Portrait of Clement of Rome",
+    "tile": {
+      "src": "/assets/father-img/clement_rome-460-1bdf3a8c7b.webp",
+      "srcset": "/assets/father-img/clement_rome-230-ad62d63980.webp 230w, /assets/father-img/clement_rome-460-1bdf3a8c7b.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/clement_rome-360-5ce9bd86c7.webp",
+      "srcset": "/assets/father-img/clement_rome-360-5ce9bd86c7.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Clemens%20Romanus.jpg",
+      "attributionRequired": false
+    }
+  },
+  "councils": {
+    "alt": "Portrait of Ecumenical Councils",
+    "tile": {
+      "src": "/assets/father-img/councils-460-4154a619a7.webp",
+      "srcset": "/assets/father-img/councils-230-8211078003.webp 230w, /assets/father-img/councils-460-4154a619a7.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/councils-360-e2641b203a.webp",
+      "srcset": "/assets/father-img/councils-360-e2641b203a.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "C messier",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:%CE%9C%CE%B9%CF%87%CE%B1%CE%AE%CE%BB%20%CE%94%CE%B1%CE%BC%CE%B1%CF%83%CE%BA%CE%B7%CE%BD%CF%8C%CF%82%20-%20%CE%91%CE%84%20%CE%9F%CE%B9%CE%BA%CE%BF%CF%85%CE%BC%CE%B5%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%A3%CF%8D%CE%BD%CE%BF%CE%B4%CE%BF%CF%82%207741.jpg",
+      "attributionRequired": false
+    }
+  },
+  "cyprian": {
+    "alt": "Portrait of Cyprian of Carthage",
+    "tile": {
+      "src": "/assets/father-img/cyprian-460-40143b1eae.webp",
+      "srcset": "/assets/father-img/cyprian-230-c6255c4feb.webp 230w, /assets/father-img/cyprian-460-40143b1eae.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/cyprian-360-ee8f17f81b.webp",
+      "srcset": "/assets/father-img/cyprian-360-ee8f17f81b.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "The original uploader was Bwag at German Wikipedia .",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Cyprian%20von%20Karthago2.jpg",
+      "attributionRequired": false
+    }
+  },
+  "cyril_jerusalem": {
+    "alt": "Portrait of Cyril of Jerusalem",
+    "tile": {
+      "src": "/assets/father-img/cyril_jerusalem-460-0772b112c9.webp",
+      "srcset": "/assets/father-img/cyril_jerusalem-230-0a5ca25e7e.webp 230w, /assets/father-img/cyril_jerusalem-460-0772b112c9.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/cyril_jerusalem-720-9e99671411.webp",
+      "srcset": "/assets/father-img/cyril_jerusalem-360-4c98c350c9.webp 360w, /assets/father-img/cyril_jerusalem-720-9e99671411.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Anonymous Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Saint%20Cyril%20of%20Jerusalem.jpg",
+      "attributionRequired": false
+    }
+  },
+  "didache": {
+    "alt": "Portrait of Didache",
+    "tile": {
+      "src": "/assets/father-img/didache-460-6a890995b1.webp",
+      "srcset": "/assets/father-img/didache-230-477b58b997.webp 230w, /assets/father-img/didache-460-6a890995b1.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/didache-720-37103fef4c.webp",
+      "srcset": "/assets/father-img/didache-360-a68ece0324.webp 360w, /assets/father-img/didache-720-37103fef4c.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "didachist",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Didache.png",
+      "attributionRequired": false
+    }
+  },
+  "dionysius": {
+    "alt": "Portrait of Dionysius",
+    "tile": {
+      "src": "/assets/father-img/dionysius-460-41630f6856.webp",
+      "srcset": "/assets/father-img/dionysius-230-17ec8b59e3.webp 230w, /assets/father-img/dionysius-460-41630f6856.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/dionysius-360-e73f737512.webp",
+      "srcset": "/assets/father-img/dionysius-360-e73f737512.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Anonymous Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Dionisii%20alek.jpg",
+      "attributionRequired": false
+    }
+  },
+  "ephraim": {
+    "alt": "Portrait of Ephraim the Syrian",
+    "tile": {
+      "src": "/assets/father-img/ephraim-460-4bedde92ba.webp",
+      "srcset": "/assets/father-img/ephraim-230-aef0505154.webp 230w, /assets/father-img/ephraim-460-4bedde92ba.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/ephraim-360-4add5c9ea0.webp",
+      "srcset": "/assets/father-img/ephraim-360-4add5c9ea0.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Anonymous Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Mor%20Ephrem%20icon.jpg",
+      "attributionRequired": false
+    }
+  },
+  "eusebius": {
+    "alt": "Portrait of Eusebius of Caesarea",
+    "tile": {
+      "src": "/assets/father-img/eusebius-230-2a827fef7c.webp",
+      "srcset": "/assets/father-img/eusebius-230-2a827fef7c.webp 230w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/eusebius-334-40676a678a.webp",
+      "srcset": "/assets/father-img/eusebius-334-40676a678a.webp 334w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown, the art is from the 6th Century AD",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Eusebius%20of%20Caesarea%20Rabbula%20Gospels%20Icon.jpg",
+      "attributionRequired": false
+    }
+  },
+  "gregory": {
+    "alt": "Portrait of Gregory the Great",
+    "tile": {
+      "src": "/assets/father-img/gregory-460-eaa0d63d25.webp",
+      "srcset": "/assets/father-img/gregory-230-a9720c779f.webp 230w, /assets/father-img/gregory-460-eaa0d63d25.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/gregory-720-cd571578d5.webp",
+      "srcset": "/assets/father-img/gregory-360-6e7ccc8e59.webp 360w, /assets/father-img/gregory-720-cd571578d5.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "British Library",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Gregory%20the%20Great%20with%20the%20Holy%20Spirit.jpg",
+      "attributionRequired": false
+    }
+  },
+  "gregory_nazianzen": {
+    "alt": "Portrait of Gregory Nazianzen",
+    "tile": {
+      "src": "/assets/father-img/gregory_nazianzen-460-d7833ec9bd.webp",
+      "srcset": "/assets/father-img/gregory_nazianzen-230-aec4104012.webp 230w, /assets/father-img/gregory_nazianzen-460-d7833ec9bd.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/gregory_nazianzen-360-24205c8800.webp",
+      "srcset": "/assets/father-img/gregory_nazianzen-360-24205c8800.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown author",
+      "license": "Copyrighted free use",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Gregor-Chora%20(cropped).jpg",
+      "attributionRequired": false
+    }
+  },
+  "gregory_nyssa": {
+    "alt": "Portrait of Gregory of Nyssa",
+    "tile": {
+      "src": "/assets/father-img/gregory_nyssa-460-c36025514f.webp",
+      "srcset": "/assets/father-img/gregory_nyssa-230-1c813e0aea.webp 230w, /assets/father-img/gregory_nyssa-460-c36025514f.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/gregory_nyssa-360-5fc3abbb1c.webp",
+      "srcset": "/assets/father-img/gregory_nyssa-360-5fc3abbb1c.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Anonymous Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Gregory%20of%20Nyssa.jpg",
+      "attributionRequired": false
+    }
+  },
+  "gregory_thaumaturgus": {
+    "alt": "Portrait of Gregory Thaumaturgus",
+    "tile": {
+      "src": "/assets/father-img/gregory_thaumaturgus-460-b820bef76b.webp",
+      "srcset": "/assets/father-img/gregory_thaumaturgus-230-5acdce1d33.webp 230w, /assets/father-img/gregory_thaumaturgus-460-b820bef76b.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/gregory_thaumaturgus-360-e2197c6e2a.webp",
+      "srcset": "/assets/father-img/gregory_thaumaturgus-360-e2197c6e2a.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Anonymous Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Grigorii%20chudotvoretz.jpg",
+      "attributionRequired": false
+    }
+  },
+  "hilary": {
+    "alt": "Portrait of Hilary of Poitiers",
+    "tile": {
+      "src": "/assets/father-img/hilary-460-544dd20a15.webp",
+      "srcset": "/assets/father-img/hilary-230-901cdf1d18.webp 230w, /assets/father-img/hilary-460-544dd20a15.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/hilary-720-6367091909.webp",
+      "srcset": "/assets/father-img/hilary-360-fdea25694d.webp 360w, /assets/father-img/hilary-720-6367091909.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Richard de Montbaston et collaborateurs.",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Hilaryofpoitiers.jpg",
+      "attributionRequired": false
+    }
+  },
+  "hippolytus": {
+    "alt": "Portrait of Hippolytus",
+    "tile": {
+      "src": "/assets/father-img/hippolytus-230-cc7cceeed2.webp",
+      "srcset": "/assets/father-img/hippolytus-230-cc7cceeed2.webp 230w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/hippolytus-353-c267b14aa4.webp",
+      "srcset": "/assets/father-img/hippolytus-353-c267b14aa4.webp 353w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Dobroš © Dana Stehlíková",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Statue%20of%20Saint%20.Hippolytus%20(cropped).jpg",
+      "attributionRequired": true
+    }
+  },
+  "ignatius": {
+    "alt": "Portrait of Ignatius of Antioch",
+    "tile": {
+      "src": "/assets/father-img/ignatius-230-c81320bf39.webp",
+      "srcset": "/assets/father-img/ignatius-230-c81320bf39.webp 230w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/ignatius-360-e61d33dbd2.webp",
+      "srcset": "/assets/father-img/ignatius-360-e61d33dbd2.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Anonymous Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Hosios%20Loukas%20(south%20west%20chapel%2C%20south%20side)%20-%20Ignatios.jpg",
+      "attributionRequired": false
+    }
+  },
+  "irenaeus": {
+    "alt": "Portrait of Irenaeus of Lyons",
+    "tile": {
+      "src": "/assets/father-img/irenaeus-230-d4ccc137c2.webp",
+      "srcset": "/assets/father-img/irenaeus-230-d4ccc137c2.webp 230w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/irenaeus-339-a2b6d66cc6.webp",
+      "srcset": "/assets/father-img/irenaeus-339-a2b6d66cc6.webp 339w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Lucien Bégule",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Saint%20irenee%20saint%20irenee.jpg",
+      "attributionRequired": false
+    }
+  },
+  "jerome": {
+    "alt": "Portrait of Jerome",
+    "tile": {
+      "src": "/assets/father-img/jerome-460-f3e80c8706.webp",
+      "srcset": "/assets/father-img/jerome-230-8f335374d2.webp 230w, /assets/father-img/jerome-460-f3e80c8706.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/jerome-360-cf82c4fbad.webp",
+      "srcset": "/assets/father-img/jerome-360-cf82c4fbad.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Matthias Stom",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:MatthiasStom-SaintJerome-Nantes.jpg",
+      "attributionRequired": false
+    }
+  },
+  "john_damascus": {
+    "alt": "Portrait of John of Damascus",
+    "tile": {
+      "src": "/assets/father-img/john_damascus-460-2a76c9e910.webp",
+      "srcset": "/assets/father-img/john_damascus-230-020c9b238e.webp 230w, /assets/father-img/john_damascus-460-2a76c9e910.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/john_damascus-360-d6e91b67dd.webp",
+      "srcset": "/assets/father-img/john_damascus-360-d6e91b67dd.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Athonite%20Fresco%20Icon%20of%20Saint%20John%20of%20Damascus.jpg",
+      "attributionRequired": false
+    }
+  },
+  "josephus": {
+    "alt": "Portrait of Flavius Josephus",
+    "tile": {
+      "src": "/assets/father-img/josephus-460-283ce34117.webp",
+      "srcset": "/assets/father-img/josephus-230-d9c61799cc.webp 230w, /assets/father-img/josephus-460-283ce34117.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/josephus-360-1a58535774.webp",
+      "srcset": "/assets/father-img/josephus-360-1a58535774.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Scan by NYPL",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Joseph%2C%20son%20of%20Gorian%2C%20called%20Flavius%20Josephus%20(cropped).jpg",
+      "attributionRequired": false
+    }
+  },
+  "justin": {
+    "alt": "Portrait of Justin Martyr",
+    "tile": {
+      "src": "/assets/father-img/justin-460-a5df3f5945.webp",
+      "srcset": "/assets/father-img/justin-230-75847af098.webp 230w, /assets/father-img/justin-460-a5df3f5945.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/justin-360-e252b1101e.webp",
+      "srcset": "/assets/father-img/justin-360-e252b1101e.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Theophanes the Cretan",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Saint%20Justin%20Martyr%20by%20Theophanes%20the%20Cretan.jpg",
+      "attributionRequired": false
+    }
+  },
+  "lactantius": {
+    "alt": "Portrait of Lactantius",
+    "tile": {
+      "src": "/assets/father-img/lactantius-460-d5d501a6f8.webp",
+      "srcset": "/assets/father-img/lactantius-230-d7c1d2fdbe.webp 230w, /assets/father-img/lactantius-460-d5d501a6f8.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/lactantius-720-a6f2cbdf55.webp",
+      "srcset": "/assets/father-img/lactantius-360-38031e5b42.webp 360w, /assets/father-img/lactantius-720-a6f2cbdf55.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lactantius.jpg",
+      "attributionRequired": false
+    }
+  },
+  "leo": {
+    "alt": "Portrait of Leo the Great",
+    "tile": {
+      "src": "/assets/father-img/leo-460-a4c2439a8d.webp",
+      "srcset": "/assets/father-img/leo-230-1a3388a1ca.webp 230w, /assets/father-img/leo-460-a4c2439a8d.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/leo-360-88596ad9e7.webp",
+      "srcset": "/assets/father-img/leo-360-88596ad9e7.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Francisco Herrera the Younger",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Herrera%20mozo%20San%20Le%C3%B3n%20magno%20Lienzo.%20%C3%93valo.%20164%20x%20105%20cm.%20Museo%20del%20Prado.png",
+      "attributionRequired": false
+    }
+  },
+  "methodius": {
+    "alt": "Portrait of Methodius of Olympus",
+    "tile": {
+      "src": "/assets/father-img/methodius-460-6a1512878f.webp",
+      "srcset": "/assets/father-img/methodius-230-3783f459c3.webp 230w, /assets/father-img/methodius-460-6a1512878f.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/methodius-720-e0d84dec93.webp",
+      "srcset": "/assets/father-img/methodius-360-93bd606a0f.webp 360w, /assets/father-img/methodius-720-e0d84dec93.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Anonymous Unknown author",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Methodius%20of%20Olympus.jpg",
+      "attributionRequired": false
+    }
+  },
+  "origen": {
+    "alt": "Portrait of Origen",
+    "tile": {
+      "src": "/assets/father-img/origen-460-e1ad5a67be.webp",
+      "srcset": "/assets/father-img/origen-230-fc108e8287.webp 230w, /assets/father-img/origen-460-e1ad5a67be.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/origen-360-ae1ef748ee.webp",
+      "srcset": "/assets/father-img/origen-360-ae1ef748ee.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Origen3.jpg",
+      "attributionRequired": false
+    }
+  },
+  "papias": {
+    "alt": "Portrait of Papias of Hierapolis",
+    "tile": {
+      "src": "/assets/father-img/papias-460-233cd948bd.webp",
+      "srcset": "/assets/father-img/papias-230-694a670a91.webp 230w, /assets/father-img/papias-460-233cd948bd.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/papias-360-3fdba5f3a5.webp",
+      "srcset": "/assets/father-img/papias-360-3fdba5f3a5.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Michel Wolgemut, Wilhelm Pleydenwurff (Text: Hartmann Schedel )",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Papias.png",
+      "attributionRequired": false
+    }
+  },
+  "polycarp": {
+    "alt": "Portrait of Polycarp of Smyrna",
+    "tile": {
+      "src": "/assets/father-img/polycarp-460-909101abc7.webp",
+      "srcset": "/assets/father-img/polycarp-230-239a8e5f73.webp 230w, /assets/father-img/polycarp-460-909101abc7.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/polycarp-360-39d9e3a8ad.webp",
+      "srcset": "/assets/father-img/polycarp-360-39d9e3a8ad.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "PravoslavnyChristianin",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Polycarp%20of%20Smyrna2.jpg",
+      "attributionRequired": false
+    }
+  },
+  "rufinus": {
+    "alt": "Portrait of Rufinus of Aquileia",
+    "tile": {
+      "src": "/assets/father-img/rufinus-460-7f93e0f063.webp",
+      "srcset": "/assets/father-img/rufinus-230-dc81bd6c7a.webp 230w, /assets/father-img/rufinus-460-7f93e0f063.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/rufinus-360-40cb0308cd.webp",
+      "srcset": "/assets/father-img/rufinus-360-40cb0308cd.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Bloemaert, Frederick (Bloemaert, Frederick) From: 1614— To: 1669",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Rufinus%20Aquileiensis.jpg",
+      "attributionRequired": false
+    }
+  },
+  "tertullian": {
+    "alt": "Portrait of Tertullian",
+    "tile": {
+      "src": "/assets/father-img/tertullian-460-bf211aec3b.webp",
+      "srcset": "/assets/father-img/tertullian-230-95f5826842.webp 230w, /assets/father-img/tertullian-460-bf211aec3b.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/tertullian-360-bb5c83a6d8.webp",
+      "srcset": "/assets/father-img/tertullian-360-bb5c83a6d8.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "André Thevet",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Tertullian2.png",
+      "attributionRequired": false
+    }
+  },
+  "theodoret": {
+    "alt": "Portrait of Theodoret of Cyrus",
+    "tile": {
+      "src": "/assets/father-img/theodoret-460-9923e3fb0e.webp",
+      "srcset": "/assets/father-img/theodoret-230-32e3221d41.webp 230w, /assets/father-img/theodoret-460-9923e3fb0e.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/theodoret-360-904fee96e3.webp",
+      "srcset": "/assets/father-img/theodoret-360-904fee96e3.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Jutory",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Theodoret%20of%20Cyr%20(in%20A.%20Thevet1584).png",
+      "attributionRequired": true
+    }
+  },
+  "theophilus": {
+    "alt": "Portrait of Theophilus of Antioch",
+    "tile": {
+      "src": "/assets/father-img/theophilus-460-bb4cd9bde3.webp",
+      "srcset": "/assets/father-img/theophilus-230-7453fb2015.webp 230w, /assets/father-img/theophilus-460-bb4cd9bde3.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/theophilus-360-6f0b801c87.webp",
+      "srcset": "/assets/father-img/theophilus-360-6f0b801c87.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "William Cave",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Theophilus%20Antiochenus.png",
+      "attributionRequired": false
+    }
+  },
+  "vincent": {
+    "alt": "Portrait of Vincent of Lérins",
+    "tile": {
+      "src": "/assets/father-img/vincent-460-ef1aae4828.webp",
+      "srcset": "/assets/father-img/vincent-230-25c2cf6623.webp 230w, /assets/father-img/vincent-460-ef1aae4828.webp 460w",
+      "width": 230,
+      "height": 178
+    },
+    "hero": {
+      "src": "/assets/father-img/vincent-360-64598c9138.webp",
+      "srcset": "/assets/father-img/vincent-360-64598c9138.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Bojan Teodosijević",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Icon%20of%20St%20Vincent%20of%20Lerins%20by%20Bojan%20Teodosijevi%C4%87.jpg",
+      "attributionRequired": true
+    }
+  }
+}

@@ -1,30 +1,98 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useApp } from "../context/AppContext";
+import { workPublicPath } from "../lib/fatherPaths";
+import { HERO_SIZES, TILE_SIZES, fatherImage, type FatherImage, type FatherImageCredit } from "../lib/fatherImages";
 import { fatherEntry, fatherSections } from "../lib/fathersDirectory";
 import { FATHER_PROFILES } from "../lib/fatherProfiles";
+import {
+  FATHERS_INDEX_DESCRIPTION,
+  FATHERS_INDEX_PATH,
+  FATHERS_INDEX_TITLE,
+  answerFirstBio,
+  fatherProfileDescription,
+  fatherProfileJsonLd,
+  fatherProfilePath,
+  fatherProfileTitle,
+  fathersIndexJsonLd
+} from "../lib/fatherPageMeta";
+import sameAsData from "../data/fatherSameAs.json";
 
-function FatherPortrait({ id, variant }: { id: string; variant: "tile" | "hero" }) {
+const SAME_AS = sameAsData as Record<string, string[]>;
+
+function Dove({ variant }: { variant: "tile" | "hero" }) {
+  const className = (variant === "tile" ? "fathers-portrait" : "fathers-hero-photo") + " fathers-portrait-fallback";
+  return (
+    <div className={className} aria-hidden="true">
+      <svg viewBox="0 0 64 48">
+        <path d="M6 30c8-2 14-10 18-16 3-6 10-8 18-8 1 6-2 11-7 14 6 2 12 6 15 11-8 1-14-2-19-6-2 6-7 11-13 13l-4 8 1-8C10 36 6 33 6 30z" />
+        <circle cx="40" cy="14" r="1.4" fill="currentColor" stroke="none" />
+      </svg>
+    </div>
+  );
+}
+
+function Portrait({ image, variant, eager }: { image: FatherImage | null; variant: "tile" | "hero"; eager: boolean }) {
   const [failed, setFailed] = useState(false);
-  const className = variant === "tile" ? "fathers-portrait" : "fathers-hero-photo";
-  if (failed) {
-    return (
-      <div className={className + " fathers-portrait-fallback"} aria-hidden="true">
-        <svg viewBox="0 0 64 48">
-          <path d="M6 30c8-2 14-10 18-16 3-6 10-8 18-8 1 6-2 11-7 14 6 2 12 6 15 11-8 1-14-2-19-6-2 6-7 11-13 13l-4 8 1-8C10 36 6 33 6 30z" />
-          <circle cx="40" cy="14" r="1.4" fill="currentColor" stroke="none" />
-        </svg>
-      </div>
-    );
-  }
+  if (!image || failed) return <Dove variant={variant} />;
+  const spec = variant === "tile" ? image.tile : image.hero;
   return (
     <img
-      className={className}
-      alt=""
-      src={"/assets/fathers/" + id + ".jpg"}
+      className={variant === "tile" ? "fathers-portrait" : "fathers-hero-photo"}
+      alt={image.alt}
+      src={spec.src}
+      srcSet={spec.srcset}
+      sizes={variant === "tile" ? TILE_SIZES : HERO_SIZES}
+      width={spec.width}
+      height={spec.height}
+      decoding="async"
+      loading={eager ? "eager" : "lazy"}
+      fetchPriority={eager ? "high" : undefined}
       onError={() => setFailed(true)}
     />
   );
+}
+
+function CreditLine({ credit, className }: { credit: FatherImageCredit | null; className: string }) {
+  if (!credit || !credit.attributionRequired) return null;
+  return (
+    <p className={className}>
+      {credit.artist || "Unknown artist"},{" "}
+      {credit.licenseUrl ? <a href={credit.licenseUrl}>{credit.license || "license"}</a> : credit.license || "license"}
+      , via {credit.source ? <a href={credit.source}>Wikimedia Commons</a> : "Wikimedia Commons"}.
+    </p>
+  );
+}
+
+function Facts({ dates, office, region }: { dates: string; office: string; region: string }) {
+  const rows: [string, string][] = [];
+  if (dates) rows.push(["Dates", dates]);
+  if (office) rows.push(["Role", office]);
+  if (region) rows.push(["See", region]);
+  if (!rows.length) return null;
+  return (
+    <dl className="fathers-facts">
+      {rows.map(([label, value]) => (
+        <div key={label}>
+          <dt>{label}</dt>
+          <dd>{value}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+function setHead(title: string, description: string, canonicalHref: string) {
+  document.title = title;
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute("content", description);
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute("href", canonicalHref);
 }
 
 export function FathersPage() {
@@ -40,14 +108,58 @@ export function FathersPage() {
   }, [authorId]);
 
   useEffect(() => {
-    const previous = document.title;
-    if (!authorId) document.title = "Fathers — Patrista";
-    else if (catalog) {
-      const author = catalog.authors.find((a) => a.id === authorId);
-      document.title = (author ? author.name : "Fathers") + " — Patrista";
+    const origin = window.location.origin;
+    const prevTitle = document.title;
+    const meta = document.querySelector('meta[name="description"]');
+    const prevDescription = meta?.getAttribute("content") ?? "";
+    const existingCanonical = document.querySelector('link[rel="canonical"]');
+    const prevCanonical = existingCanonical?.getAttribute("href") ?? "";
+    let title = FATHERS_INDEX_TITLE;
+    let description = FATHERS_INDEX_DESCRIPTION;
+    let canonicalHref = origin + FATHERS_INDEX_PATH;
+    let json: unknown = fathersIndexJsonLd(origin, []);
+    if (catalog && !authorId) {
+      const people = fatherSections(catalog.authors).flatMap((section) =>
+        section.fathers.map((father) => ({ name: father.name, path: fatherProfilePath(father.id) }))
+      );
+      json = fathersIndexJsonLd(origin, people);
+    } else if (catalog && authorId) {
+      const author = catalog.authors.find((item) => item.id === authorId);
+      if (author) {
+        const entry = fatherEntry(author, FATHER_PROFILES[author.id]);
+        const bio = answerFirstBio(entry.paragraphs);
+        title = fatherProfileTitle(entry.name, entry.dates);
+        description = fatherProfileDescription(bio.lede || entry.name);
+        const path = fatherProfilePath(author.id);
+        canonicalHref = origin + path;
+        json = fatherProfileJsonLd({
+          origin,
+          name: entry.name,
+          path,
+          description,
+          dates: entry.dates,
+          office: entry.office,
+          region: entry.region,
+          sameAs: SAME_AS[author.id] || []
+        });
+      }
     }
+    setHead(title, description, canonicalHref);
+    let script = document.getElementById("father-jsonld");
+    if (!script) {
+      script = document.createElement("script");
+      script.id = "father-jsonld";
+      script.setAttribute("type", "application/ld+json");
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(json);
     return () => {
-      document.title = previous;
+      document.title = prevTitle;
+      if (meta) meta.setAttribute("content", prevDescription);
+      const link = document.querySelector('link[rel="canonical"]');
+      if (!existingCanonical) link?.remove();
+      else if (link) link.setAttribute("href", prevCanonical);
+      script?.remove();
     };
   }, [authorId, catalog]);
 
@@ -55,38 +167,45 @@ export function FathersPage() {
   if (!catalog) return <p className="empty">Loading library…</p>;
 
   if (authorId) {
-    const author = catalog.authors.find((a) => a.id === authorId);
+    const author = catalog.authors.find((item) => item.id === authorId);
     if (!author) {
       return (
         <div className="fathers-page">
           <p className="fathers-missing">
-            This name is not in the library. <Link to="/fathers">Back to Fathers</Link>
+            This name is not in the library. <Link to={FATHERS_INDEX_PATH}>Back to Fathers</Link>
           </p>
         </div>
       );
     }
     const entry = fatherEntry(author, FATHER_PROFILES[author.id]);
+    const bio = answerFirstBio(entry.paragraphs);
+    const image = fatherImage(author.id);
     const works = catalog.works
-      .filter((w) => w.author === author.id)
+      .filter((work) => work.author === author.id)
       .slice()
       .sort((a, b) => a.title.localeCompare(b.title));
     return (
       <div className="fathers-page fathers-page--profile">
         <header className="fathers-hero">
           <div className="fathers-hero-inner">
-            <FatherPortrait id={author.id} variant="hero" />
+            <div className="fathers-hero-photo-wrap">
+              <Portrait image={image} variant="hero" eager />
+              <CreditLine credit={image?.credit ?? null} className="fathers-hero-credit" />
+            </div>
             <div className="fathers-hero-copy">
               <p className="fathers-back">
-                <Link to="/fathers">Fathers</Link>
+                <Link to={FATHERS_INDEX_PATH}>Fathers</Link>
               </p>
               <h1>{entry.name}</h1>
               <p className="fathers-hero-office">{entry.office}</p>
+              {bio.lede ? <p className="fathers-lede">{bio.lede}</p> : null}
+              <Facts dates={entry.dates} office={entry.office} region={entry.region} />
             </div>
           </div>
         </header>
         <article className="fathers-bio">
           <div className="fathers-bio-col">
-            {entry.paragraphs.map((paragraph) => (
+            {bio.rest.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
             {works.length > 0 ? (
@@ -95,7 +214,7 @@ export function FathersPage() {
                 <ul className="fathers-writings">
                   {works.map((work) => (
                     <li key={work.id}>
-                      <Link to={"/read?work=" + encodeURIComponent(work.id)}>{work.title}</Link>
+                      <Link to={workPublicPath(author.id, work.id)}>{work.title}</Link>
                     </li>
                   ))}
                 </ul>
@@ -108,6 +227,12 @@ export function FathersPage() {
   }
 
   const sections = fatherSections(catalog.authors);
+  const eagerIds = new Set<string>();
+  for (const section of sections) {
+    for (const father of section.fathers) {
+      if (eagerIds.size < 4) eagerIds.add(father.id);
+    }
+  }
   return (
     <div className="fathers-page">
       <h1 className="fathers-sr">Fathers</h1>
@@ -118,25 +243,25 @@ export function FathersPage() {
               {section.title}
             </h2>
             <ul className="fathers-grid">
-              {section.fathers.map((father) => (
-                <li key={father.id} className="fathers-card">
-                  <Link className="fathers-card-link" to={"/fathers/" + father.id}>
-                    <FatherPortrait id={father.id} variant="tile" />
-                    <h3 className="fathers-name">{father.name}</h3>
-                    <p className="fathers-office">{father.office}</p>
-                  </Link>
-                </li>
-              ))}
+              {section.fathers.map((father) => {
+                const image = fatherImage(father.id);
+                return (
+                  <li key={father.id} className="fathers-card">
+                    <Link className="fathers-card-link" to={fatherProfilePath(father.id)}>
+                      <Portrait image={image} variant="tile" eager={eagerIds.has(father.id)} />
+                      <h3 className="fathers-name">{father.name}</h3>
+                      <p className="fathers-office">{father.office}</p>
+                    </Link>
+                    <CreditLine credit={image?.credit ?? null} className="fathers-tile-credit" />
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>
       ))}
       <p className="fathers-credit">
-        Portraits from{" "}
-        <a href="https://commons.wikimedia.org/" rel="noreferrer">
-          Wikimedia Commons
-        </a>
-        .
+        Portraits from <a href="https://commons.wikimedia.org/">Wikimedia Commons</a>.
       </p>
     </div>
   );

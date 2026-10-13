@@ -1,3 +1,4 @@
+import { matchPath } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import type { Author } from "../server/types";
 import { centuryHeading, fatherSections, isFathersTabPath } from "../src/lib/fathersDirectory";
@@ -15,9 +16,14 @@ function author(partial: Pick<Author, "id" | "name" | "deathYear"> & Partial<Aut
 describe("Fathers tab path", () => {
   it("is active on the index and a profile, and inactive on a reading chapter", () => {
     expect(isFathersTabPath("/fathers")).toBe(true);
+    expect(isFathersTabPath("/fathers/")).toBe(true);
     expect(isFathersTabPath("/fathers/augustine")).toBe(true);
+    expect(isFathersTabPath("/fathers/augustine/")).toBe(true);
     expect(isFathersTabPath("/fathers/augustine/confessions/book-1")).toBe(false);
+    expect(isFathersTabPath("/fathers/augustine/confessions.html")).toBe(false);
     expect(isFathersTabPath("/read")).toBe(false);
+    expect(matchPath("/fathers", "/fathers/")).not.toBeNull();
+    expect(matchPath("/fathers/:authorId", "/fathers/augustine/")).not.toBeNull();
   });
 });
 

@@ -36,8 +36,8 @@ describe("site rail visibility", () => {
 
 describe("landing hero nav tiles", () => {
   it("lists Read through About in rail order, with Browse featured in the middle", () => {
-    expect(LANDING_NAV.map((item) => item.id)).toEqual(["read", "bible", "browse", "timeline", "about"]);
-    expect(LANDING_NAV.map((item) => item.label)).toEqual(["Read", "Bible", "Browse", "Timeline", "About"]);
+    expect(LANDING_NAV.map((item) => item.id)).toEqual(["read", "bible", "browse", "fathers", "about"]);
+    expect(LANDING_NAV.map((item) => item.label)).toEqual(["Read", "Bible", "Browse", "Fathers", "About"]);
     const mid = Math.floor(LANDING_NAV.length / 2);
     expect(LANDING_NAV[mid].id).toBe("browse");
     expect(LANDING_NAV.filter((item) => item.featured).map((item) => item.id)).toEqual(["browse"]);
@@ -48,7 +48,7 @@ describe("landing hero nav tiles", () => {
       "/read",
       "/bible",
       "/church-fathers",
-      "/church-history/timeline#nativity",
+      "/fathers/",
       "/about"
     ]);
   });

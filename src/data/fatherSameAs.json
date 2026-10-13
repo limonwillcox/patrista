@@ -1,0 +1,78 @@
+{
+  "augustine": [
+    "https://en.wikipedia.org/wiki/Augustine_of_Hippo",
+    "https://www.wikidata.org/wiki/Q8018"
+  ],
+  "gregory": [
+    "https://en.wikipedia.org/wiki/Pope_Gregory_I",
+    "https://www.wikidata.org/wiki/Q42827"
+  ],
+  "gregory_thaumaturgus": [
+    "https://en.wikipedia.org/wiki/Gregory_Thaumaturgus",
+    "https://www.wikidata.org/wiki/Q337537"
+  ],
+  "methodius": [
+    "https://en.wikipedia.org/wiki/Methodius_of_Olympus",
+    "https://www.wikidata.org/wiki/Q518300"
+  ],
+  "jerome": [
+    "https://en.wikipedia.org/wiki/Jerome",
+    "https://www.wikidata.org/wiki/Q44248"
+  ],
+  "leo": [
+    "https://en.wikipedia.org/wiki/Pope_Leo_I",
+    "https://www.wikidata.org/wiki/Q43954"
+  ],
+  "tertullian": [
+    "https://en.wikipedia.org/wiki/Tertullian",
+    "https://www.wikidata.org/wiki/Q174929"
+  ],
+  "clement_rome": [
+    "https://en.wikipedia.org/wiki/Clement_of_Rome",
+    "https://www.wikidata.org/wiki/Q42887"
+  ],
+  "theophilus": [
+    "https://en.wikipedia.org/wiki/Theophilus_of_Antioch",
+    "https://www.wikidata.org/wiki/Q220787"
+  ],
+  "clement_alexandria": [
+    "https://en.wikipedia.org/wiki/Clement_of_Alexandria",
+    "https://www.wikidata.org/wiki/Q188883"
+  ],
+  "origen": [
+    "https://en.wikipedia.org/wiki/Origen",
+    "https://www.wikidata.org/wiki/Q170472"
+  ],
+  "cyprian": [
+    "https://en.wikipedia.org/wiki/Cyprian",
+    "https://www.wikidata.org/wiki/Q190240"
+  ],
+  "basil": [
+    "https://en.wikipedia.org/wiki/Basil_of_Caesarea",
+    "https://www.wikidata.org/wiki/Q44258"
+  ],
+  "gregory_nazianzen": [
+    "https://en.wikipedia.org/wiki/Gregory_of_Nazianzus",
+    "https://www.wikidata.org/wiki/Q44011"
+  ],
+  "gregory_nyssa": [
+    "https://en.wikipedia.org/wiki/Gregory_of_Nyssa",
+    "https://www.wikidata.org/wiki/Q191734"
+  ],
+  "chrysostom": [
+    "https://en.wikipedia.org/wiki/John_Chrysostom",
+    "https://www.wikidata.org/wiki/Q43706"
+  ],
+  "hilary": [
+    "https://en.wikipedia.org/wiki/Hilary_of_Poitiers",
+    "https://www.wikidata.org/wiki/Q44344"
+  ],
+  "cassian": [
+    "https://en.wikipedia.org/wiki/John_Cassian",
+    "https://www.wikidata.org/wiki/Q313795"
+  ],
+  "josephus": [
+    "https://en.wikipedia.org/wiki/Josephus",
+    "https://www.wikidata.org/wiki/Q134461"
+  ]
+}

@@ -1,10 +1,16 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { translationsOf } from "../../server/query";
 import type { Passage, WorkPayload } from "../../server/types";
 import { fetchWork } from "../api/client";
 import { DictionaryDock } from "../components/DictionaryDock";
 import { useApp } from "../context/AppContext";
+import {
+  assignChapterSlugs,
+  chapterNumberForSlug,
+  chapterPublicPath,
+  parseFatherChapterPath
+} from "../lib/fatherPaths";
 
 const HL_COLORS = ["hl-yellow", "hl-green", "hl-blue", "hl-pink"] as const;
 
@@ -128,8 +134,12 @@ function restoreHighlights(work: string, root: HTMLElement) {
 
 export function ReadPage() {
   const { catalog, version, setVersion, setActivePassage } = useApp();
+  const location = useLocation();
+  const chapterRoute = parseFatherChapterPath(location.pathname);
+  const onChapterRoute = chapterRoute != null;
+  const routeSlug = chapterRoute?.chapterSlug || "";
   const [params] = useSearchParams();
-  const workId = params.get("work") || "confessions";
+  const workId = chapterRoute?.workId || params.get("work") || "confessions";
   const jumpChapter = params.get("chapter") || "";
   const [payload, setPayload] = useState<WorkPayload | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -161,6 +171,19 @@ export function ReadPage() {
     return trans.some((v) => v.id === version) ? version : trans[0].id;
   }, [trans, version]);
 
+  const entryChapter = useMemo(() => {
+    if (!payload) return null;
+    if (onChapterRoute) {
+      const fromSlug = chapterNumberForSlug(payload.chapters, routeSlug);
+      if (fromSlug) return fromSlug;
+    }
+    const hashTarget = location.hash.replace(/^#ch-/, "");
+    const target = hashTarget || jumpChapter;
+    const n = Number(target);
+    if (n && payload.chapters.some((c) => c.chapter === n)) return n;
+    return payload.chapters[0]?.chapter ?? null;
+  }, [payload, onChapterRoute, routeSlug, location.hash, jumpChapter]);
+
   useEffect(() => {
     if (preferred && preferred !== version) setVersion(preferred);
   }, [preferred, version, setVersion]);
@@ -177,9 +200,9 @@ export function ReadPage() {
 
   useEffect(() => {
     if (!payload) return;
-    const hashTarget = location.hash.replace(/^#ch-/, "");
-    const target = hashTarget || jumpChapter;
-    const openCh = Number(target) || payload.chapters[0]?.chapter || 1;
+    const hashTarget = onChapterRoute ? "" : location.hash.replace(/^#ch-/, "");
+    const target = hashTarget || (onChapterRoute ? "" : jumpChapter);
+    const openCh = Number(target) || entryChapter || payload.chapters[0]?.chapter || 1;
     setReady((prev) => {
       const next = new Set(prev);
       next.add(openCh);
@@ -187,7 +210,60 @@ export function ReadPage() {
       if (payload.chapters.some((c) => c.chapter === openCh + 1)) next.add(openCh + 1);
       return next;
     });
-  }, [payload, jumpChapter, location.hash]);
+  }, [payload, jumpChapter, location.hash, onChapterRoute, entryChapter]);
+
+  useLayoutEffect(() => {
+    if (!payload || !onChapterRoute || entryChapter == null) return;
+    const jumpKey = workId + ":path:" + entryChapter;
+    if (jumpedRef.current === jumpKey) return;
+    const el = document.getElementById("ch-" + entryChapter);
+    if (!el) return;
+    jumpedRef.current = jumpKey;
+    el.scrollIntoView({ behavior: "auto", block: "start" });
+  }, [payload, onChapterRoute, entryChapter, workId]);
+
+  useEffect(() => {
+    if (!payload || !onChapterRoute || !pageRef.current) return;
+    const slugs = assignChapterSlugs(payload.chapters);
+    const authorId = payload.work.author;
+    const id = payload.work.id;
+    const update = () => {
+      const root = pageRef.current;
+      if (!root) return;
+      const line = window.innerHeight * 0.33;
+      const sections = root.querySelectorAll<HTMLElement>(".book-chapter");
+      if (!sections.length) return;
+      let containing: HTMLElement | null = null;
+      let above: HTMLElement | null = null;
+      sections.forEach((sec) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= line && rect.bottom > line) containing = sec;
+        if (rect.top <= line) above = sec;
+      });
+      const current = containing || above || sections[0];
+      const n = Number(current.dataset.ch);
+      const slug = slugs.get(n);
+      if (!slug) return;
+      const path = chapterPublicPath(authorId, id, slug);
+      if (window.location.pathname !== path) {
+        window.history.replaceState(window.history.state, "", path);
+      }
+    };
+    update();
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        update();
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [payload, onChapterRoute]);
 
   useEffect(() => {
     if (!payload || !pageRef.current) return;
@@ -213,6 +289,7 @@ export function ReadPage() {
   }, [payload]);
 
   useEffect(() => {
+    if (onChapterRoute) return;
     const hashTarget = location.hash.replace(/^#ch-/, "");
     const target = hashTarget || jumpChapter;
     if (!target) return;
@@ -230,7 +307,7 @@ export function ReadPage() {
       }, 50);
       return () => window.clearTimeout(t);
     }
-  }, [jumpChapter, location.hash, workId, payload, ready]);
+  }, [jumpChapter, location.hash, workId, payload, ready, onChapterRoute]);
 
   function onMouseUp(e: React.MouseEvent) {
     if (document.body.classList.contains("read-dict-pick")) return;
@@ -335,7 +412,7 @@ export function ReadPage() {
         <section className="book-chapter" id={"ch-" + p.chapter} data-ch={p.chapter} key={p.chapter}>
           <h2 className="heading">{p.heading}</h2>
           <ChapterMount workId={payload.work.id}>
-            {ready.has(p.chapter) ? (
+            {ready.has(p.chapter) || p.chapter === entryChapter ? (
               <ChapterBody passage={p} preferred={preferred} versions={versions} />
             ) : null}
           </ChapterMount>

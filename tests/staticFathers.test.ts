@@ -204,7 +204,7 @@ describe("static chapter and work pages", () => {
     expect(describeSplit({ ...work(1, 9596), id: "on-the-lapsed", title: "On the Lapsed" }, blob)[0].reason).toMatch(/One passage/);
 
     const skipped = [passage(1, "Homily I", ["a"]), passage(2, "Homily II", ["b"]), passage(3, "Homily IV", ["c"])];
-    expect(describeSplit(work(3), skipped).some((note) => note.reason.includes("skip 3"))).toBe(true);
+    expect(describeSplit(work(3), skipped).some((note) => /skip 3/.test(note.reason))).toBe(true);
   });
 });
 

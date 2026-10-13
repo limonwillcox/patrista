@@ -1,6 +1,14 @@
 import { mkdirSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { getWork } from "./api";
+import {
+  assertChapterPageQuality,
+  CHAPTER_REDIRECTS,
+  numberingWarnings,
+  renderRedirectHtml,
+  uniqueChapterHeadings
+} from "./chapterQuality";
+import { junkTrimLog } from "./englishWorks";
 import type { Author, Catalog, Passage, Work } from "./types";
 import {
   assignChapterSlugs,
@@ -88,16 +96,10 @@ export function describeSplit(work: Work, chapters: Passage[]): SplitNote[] {
         " words. No literary chapter marks were found, so the full text stays on the work page."
     });
   }
-  const missing = missingUnitNumbers(headings);
-  if (missing.length) {
-    notes.push({
-      ...base,
-      reason: "Unit numbers skip " + missing.join(", ") + " (headings run to " + headings[headings.length - 1] + ")."
-    });
-  }
   const slugs = assignChapterSlugs(chapters);
   const collided: string[] = [];
   for (const ch of chapters) {
+    if (/\s*\(Part \d+\)$/.test(ch.heading)) continue;
     const plain = slugifyHeading(ch.heading) || "chapter-" + ch.chapter;
     const slug = slugs.get(ch.chapter);
     if (slug && slug !== plain) collided.push(plain);
@@ -106,6 +108,13 @@ export function describeSplit(work: Work, chapters: Passage[]): SplitNote[] {
     notes.push({
       ...base,
       reason: "Duplicate headings share a slug (" + [...new Set(collided)].slice(0, 6).join(", ") + "). Later units get the chapter number appended."
+    });
+  }
+  const numbering = numberingWarnings(headings);
+  for (const warning of numbering) {
+    notes.push({
+      ...base,
+      reason: "Unit numbers " + warning + " (headings run to " + headings[headings.length - 1] + "). Gaps or repeats that are real in the source are left as warnings."
     });
   }
   return notes;
@@ -481,36 +490,49 @@ export function writeFatherPages(
 ): { urls: string[]; notes: SplitNote[] } {
   const urls: string[] = [];
   const notes: SplitNote[] = [];
+  const pageChecks: { path: string; title: string; paras: string[] }[] = [];
+
+  for (const trim of junkTrimLog) {
+    notes.push({
+      id: trim.id,
+      author: trim.author,
+      title: trim.title,
+      reason: "Trimmed " + trim.cut + " trailing junk paragraphs (" + trim.reason + ")."
+    });
+  }
 
   for (const work of catalog.works) {
     const payload = getWork(work.id);
     if (!payload) continue;
-    notes.push(...describeSplit(payload.work, payload.chapters));
+    const labels = uniqueChapterHeadings(payload.chapters);
+    const chapters = payload.chapters.map((ch) => ({ ...ch, heading: labels.get(ch.chapter) || ch.heading }));
+    notes.push(...describeSplit(payload.work, chapters));
     const page = renderWorkPage({
       origin,
       author: payload.author,
       work: payload.work,
-      chapters: payload.chapters
+      chapters
     });
     const workFile = join(dist, page.path.replace(/^\//, ""));
     mkdirSync(dirname(workFile), { recursive: true });
     writeFileSync(workFile, page.html);
     urls.push(origin + page.path);
 
-    if (payload.chapters.length < 2) continue;
-    const refs = chapterRefs(payload.author.id, payload.work.id, payload.chapters);
-    payload.chapters.forEach((chapter, index) => {
+    if (chapters.length < 2) continue;
+    const refs = chapterRefs(payload.author.id, payload.work.id, chapters);
+    chapters.forEach((chapter, index) => {
       const ref = refs[index];
       const prev = index > 0 ? refs[index - 1] : null;
       const next = index + 1 < refs.length ? refs[index + 1] : null;
       const label = chapter.heading;
+      const title = chapterPageTitle(payload.author.name, payload.work.title, label);
       const description = metaDescription(proseOf(chapter) || label);
       const extra: string[] = [];
       if (prev) extra.push('    <link rel="prev" href="' + escapeHtml(origin + prev.path) + '" />');
       if (next) extra.push('    <link rel="next" href="' + escapeHtml(origin + next.path) + '" />');
       const html = prerenderShell(indexHtml, origin, {
         canonicalPath: ref.path,
-        title: chapterPageTitle(payload.author.name, payload.work.title, label),
+        title,
         description,
         bodyHtml: renderChapterBody({
           authorName: payload.author.name,
@@ -534,9 +556,26 @@ export function writeFatherPages(
       mkdirSync(dirname(file), { recursive: true });
       writeFileSync(file, html);
       urls.push(origin + ref.path);
+      pageChecks.push({ path: ref.path, title, paras: englishParagraphs(chapter.versions) });
     });
   }
 
+  for (const redir of CHAPTER_REDIRECTS) {
+    const fromPath = chapterPublicPath(redir.author, redir.work, redir.fromSlug);
+    const toPath = chapterPublicPath(redir.author, redir.work, redir.toSlug);
+    if (urls.includes(origin + fromPath)) continue;
+    const file = join(dist, fromPath.replace(/^\//, ""), "index.html");
+    mkdirSync(dirname(file), { recursive: true });
+    writeFileSync(file, renderRedirectHtml(origin + toPath, fromPath));
+    notes.push({
+      id: redir.work,
+      author: redir.author,
+      title: redir.work,
+      reason: "Redirect " + fromPath + " → " + toPath
+    });
+  }
+
+  assertChapterPageQuality(pageChecks);
   return { urls, notes };
 }
 

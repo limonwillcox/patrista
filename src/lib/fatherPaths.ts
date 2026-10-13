@@ -30,7 +30,7 @@ export function assignChapterSlugs(chapters: { chapter: number; heading: string 
   const out = new Map<number, string>();
   const ordered = [...chapters].sort((a, b) => a.chapter - b.chapter);
   for (const ch of ordered) {
-    const base = slugifyHeading(ch.heading) || "chapter-" + ch.chapter;
+    const base = slugifyHeading(ch.heading.replace(/\s*\(Part \d+\)$/i, "")) || "chapter-" + ch.chapter;
     let slug = base;
     let n = 2;
     while (used.has(slug)) {

@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ICONS } from "../components/Icons";
 import { useApp } from "../context/AppContext";
+import { LANDING_NAV } from "../lib/homeNav";
 
 type Starter = {
   id: string;
@@ -87,7 +89,7 @@ function StarterCard({ work }: { work: Starter }) {
 }
 
 export function HomePage() {
-  const { setActivePassage, setNavOpen, navOpen } = useApp();
+  const { setActivePassage } = useApp();
 
   useEffect(() => {
     setActivePassage(null);
@@ -100,17 +102,6 @@ export function HomePage() {
 
   return (
     <div className="landing">
-      <button
-        type="button"
-        className="landing-menu icon-btn hamburger"
-        aria-label="Open menu"
-        onClick={() => setNavOpen(!navOpen)}
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16" />
-        </svg>
-      </button>
-
       <section className="landing-hero" aria-label="Welcome">
         <div className="landing-hero-bg" role="img" aria-label="The Council of Nicaea" />
         <div className="landing-hero-shade" />
@@ -124,14 +115,18 @@ export function HomePage() {
             </p>
             <cite>2 Peter 1:20–21</cite>
           </blockquote>
-          <div className="landing-ctas">
-            <Link className="landing-cta landing-cta--primary" to="/church-history/timeline#nativity">
-              Church History
-            </Link>
-            <Link className="landing-cta landing-cta--ghost" to="/church-fathers">
-              Church Writings
-            </Link>
-          </div>
+          <nav className="landing-ctas" aria-label="Site sections">
+            {LANDING_NAV.map((item) => (
+              <Link
+                key={item.id}
+                className={"landing-tile" + (item.featured ? " landing-tile--featured" : "")}
+                to={item.href}
+              >
+                {ICONS[item.id]}
+                <span>{item.label}</span>
+              </Link>
+            ))}
+          </nav>
         </div>
       </section>
 

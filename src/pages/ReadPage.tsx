@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
-import { originalOf, translationsOf } from "../../server/query";
+import { Link, useSearchParams } from "react-router-dom";
+import { translationsOf } from "../../server/query";
 import type { Passage, WorkPayload } from "../../server/types";
 import { fetchWork } from "../api/client";
+import { DictionaryDock } from "../components/DictionaryDock";
 import { useApp } from "../context/AppContext";
 
 const HL_COLORS = ["hl-yellow", "hl-green", "hl-blue", "hl-pink"] as const;
@@ -14,38 +15,14 @@ function versionLabel(id: string, versions: { id: string; label: string }[]): st
 function renderParas(passage: Passage, version: string) {
   const paras = passage.versions[version] || [];
   return paras.map((text, i) => {
-    const notes = (passage.footnotes || []).filter((f) => f.para === i);
     const key = passage.work + "-" + passage.chapter + "-" + version + "-" + i;
     const section = `${passage.work}:${passage.chapter}:p${i}`;
     return (
       <p className="para" data-key={key} data-section={section} key={key}>
-        <span className="pnum">{i + 1}</span> {text}
-        {notes.map((f) => (
-          <sup className="fn" key={f.n}>
-            ({f.n})
-          </sup>
-        ))}
+        {text}
       </p>
     );
   });
-}
-
-function Notes({ passage }: { passage: Passage }) {
-  const notes = passage.footnotes || [];
-  return (
-    <aside className="chapter-notes" aria-label="Notes">
-      <p className="notes-label">Notes</p>
-      {notes.length ? (
-        notes.map((f) => (
-          <p className="note-item" key={f.n}>
-            <sup className="fn">({f.n})</sup> {f.text}
-          </p>
-        ))
-      ) : (
-        <p className="notes-empty">No notes for this book.</p>
-      )}
-    </aside>
-  );
 }
 
 function ChapterMount({ workId, children }: { workId: string; children: ReactNode }) {
@@ -62,74 +39,17 @@ function ChapterMount({ workId, children }: { workId: string; children: ReactNod
 
 function ChapterBody({
   passage,
-  mode,
   preferred,
-  split,
   versions
 }: {
   passage: Passage;
-  mode: "translation" | "original";
   preferred: string;
-  split: boolean;
   versions: { id: string; label: string; short: string; group: "translation" | "original" }[];
 }) {
-  const orig = originalOf(passage);
   const transList = translationsOf(passage, versions);
   const trans = transList.find((v) => v.id === preferred) || transList[0];
-
-  if (mode === "original") {
-    const main = !orig ? (
-      <div className="trans-pane">
-        <p className="empty">No original-language text for this book is in the library yet.</p>
-      </div>
-    ) : (
-      <div className="trans-pane">
-        <p className="pane-label">{versionLabel(orig.id, versions)} · original</p>
-        <div className="passage">{renderParas(passage, orig.id)}</div>
-      </div>
-    );
-    return (
-      <div className="chapter-row">
-        {main}
-        <Notes passage={passage} />
-      </div>
-    );
-  }
-
-  if (split && orig && trans) {
-    return (
-      <div className="chapter-row has-orig">
-        <div className="trans-pane">
-          <p className="pane-label">{versionLabel(trans.id, versions)}</p>
-          <div className="passage">{renderParas(passage, trans.id)}</div>
-        </div>
-        <div className="orig-pane">
-          <p className="pane-label">{versionLabel(orig.id, versions)} · original</p>
-          <div className="passage">{renderParas(passage, orig.id)}</div>
-        </div>
-        <Notes passage={passage} />
-      </div>
-    );
-  }
-
-  if (trans) {
-    return (
-      <div className="chapter-row">
-        <div className="trans-pane">
-          <p className="pane-label">{versionLabel(trans.id, versions)}</p>
-          <div className="passage">{renderParas(passage, trans.id)}</div>
-        </div>
-        <Notes passage={passage} />
-      </div>
-    );
-  }
-
-  return (
-    <div className="chapter-row">
-      <p className="empty">No text available.</p>
-      <Notes passage={passage} />
-    </div>
-  );
+  if (!trans) return <p className="empty">No text available.</p>;
+  return <div className="passage">{renderParas(passage, trans.id)}</div>;
 }
 
 function paraTextNodes(para: HTMLElement): Text[] {
@@ -207,10 +127,9 @@ function restoreHighlights(work: string, root: HTMLElement) {
 }
 
 export function ReadPage() {
-  const { catalog, mode, setMode, version, setVersion, parallel, setActivePassage } = useApp();
+  const { catalog, version, setVersion, setActivePassage } = useApp();
   const [params] = useSearchParams();
   const workId = params.get("work") || "confessions";
-  const modeParam = params.get("mode");
   const jumpChapter = params.get("chapter") || "";
   const [payload, setPayload] = useState<WorkPayload | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -241,10 +160,6 @@ export function ReadPage() {
     if (!trans.length) return version;
     return trans.some((v) => v.id === version) ? version : trans[0].id;
   }, [trans, version]);
-
-  useEffect(() => {
-    if (modeParam === "original" || modeParam === "translation") setMode(modeParam);
-  }, [modeParam, setMode]);
 
   useEffect(() => {
     if (preferred && preferred !== version) setVersion(preferred);
@@ -318,6 +233,7 @@ export function ReadPage() {
   }, [jumpChapter, location.hash, workId, payload, ready]);
 
   function onMouseUp(e: React.MouseEvent) {
+    if (document.body.classList.contains("read-dict-pick")) return;
     if ((e.target as HTMLElement).closest("#hlBar")) return;
     const sel = window.getSelection();
     if (!sel || sel.isCollapsed || !sel.rangeCount) {
@@ -370,24 +286,13 @@ export function ReadPage() {
   if (!payload) return <p className="empty">Loading…</p>;
   if (!payload.chapters.length) return <p className="empty">This work did not load.</p>;
 
-  const showParallelOrig = mode === "translation" && parallel && !!originalOf(payload.chapters[0]);
   const isConfessions = payload.work.id === "confessions";
   const unitLabel = isConfessions ? "books" : payload.chapters.length === 1 ? "part" : "chapters";
-  const origLabel = (() => {
-    const o = originalOf(payload.chapters[0]);
-    return o ? versionLabel(o.id, versions) + " · original" : "Original";
-  })();
-  const editionNote =
-    mode === "original"
-      ? isConfessions
-        ? "Latin text of the Confessiones"
-        : origLabel
-      : preferred
-        ? versionLabel(preferred, versions) + (showParallelOrig ? " · " + origLabel : "")
-        : "";
+  const editionNote = preferred ? versionLabel(preferred, versions) : "";
 
   return (
     <div ref={pageRef} onMouseUp={onMouseUp}>
+      <DictionaryDock workId={workId} />
       <div className="read-toolbar">
         <span className="nav-chap" style={{ opacity: 0.35, display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
           ‹
@@ -431,7 +336,7 @@ export function ReadPage() {
           <h2 className="heading">{p.heading}</h2>
           <ChapterMount workId={payload.work.id}>
             {ready.has(p.chapter) ? (
-              <ChapterBody passage={p} mode={mode} preferred={preferred} split={showParallelOrig} versions={versions} />
+              <ChapterBody passage={p} preferred={preferred} versions={versions} />
             ) : null}
           </ChapterMount>
         </section>
@@ -440,7 +345,7 @@ export function ReadPage() {
         <strong>{editionNote}</strong>
         {isConfessions ? (
           <>
-            . English: E. B. Pusey (1838), Project Gutenberg eBook #3296. Latin: the Confessiones under <code>Fathers/Latin/</code>.
+            . English: E. B. Pusey (1838), Project Gutenberg eBook #3296.
           </>
         ) : (
           <>

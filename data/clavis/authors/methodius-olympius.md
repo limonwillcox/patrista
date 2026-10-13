@@ -1,6 +1,6 @@
 # Methodius Olympius
 
-en 6/19 · orig 2/19 · fmt-en 0/19 · fmt-orig 0/19 · tag-en 0/19 · tag-orig 0/19
+en 6/19 · orig 3/19 · fmt-en 0/19 · fmt-orig 0/19 · tag-en 0/19 · tag-orig 0/19
 
 Clavis: https://clavis.brepols.net/clacla/OA/Details.aspx?id=C3AE2C449831438DA6C02E8A554246EA
 
@@ -150,7 +150,7 @@ English title: On resurrectione
 CPG-1826
 English title: Fragments on the Cross and Passion
 - [x] Has English text?  `Fathers/English/Methodius_English/Fragments on the Cross and Passion.txt`
-- [ ] Has original text?
+- [x] Has original text?  `Fathers/Greek/Methodius_Greek/Fragments on the Cross and Passion.txt`
 - [ ] Formatted English text?
 - [ ] Formatted original text?
 - [ ] English tagged?

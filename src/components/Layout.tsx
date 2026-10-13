@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link, NavLink, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { parseQuery } from "../../server/query";
+import { isExactAuthorQuery } from "../lib/catalogPreview";
+import { HOME_HREF, isHomePath, showSiteRail } from "../lib/homeNav";
 import { useApp } from "../context/AppContext";
+import { Booklist } from "./Booklist";
 import { ICONS } from "./Icons";
 
 function Brand() {
@@ -16,13 +19,19 @@ function Brand() {
 function Rail() {
   const { navOpen, setNavOpen } = useApp();
   const location = useLocation();
+  const homeActive = isHomePath(location.pathname);
   const readActive = location.pathname === "/read";
   const bibleActive = location.pathname === "/bible";
   const writingsActive = location.pathname === "/church-fathers" || location.pathname === "/browse";
+  const journalActive = location.pathname === "/journal";
   const timelineActive = location.pathname.startsWith("/church-history/timeline");
   return (
     <nav className={"rail" + (navOpen ? " open" : "")} id="rail" aria-label="Primary">
       <div className="rail-pages">
+        <NavLink to={HOME_HREF} className={() => (homeActive ? "active" : "")} onClick={() => setNavOpen(false)}>
+          {ICONS.home}
+          <span>Home</span>
+        </NavLink>
         <NavLink to="/read" className={() => (readActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.read}
           <span>Read</span>
@@ -38,6 +47,10 @@ function Rail() {
         >
           {ICONS.browse}
           <span>Browse</span>
+        </NavLink>
+        <NavLink to="/journal" className={() => (journalActive ? "active" : "")} onClick={() => setNavOpen(false)}>
+          {ICONS.journal}
+          <span>Journal</span>
         </NavLink>
         <NavLink
           to="/church-history/timeline#nativity"
@@ -64,7 +77,7 @@ function Rail() {
   );
 }
 
-function Header() {
+function Header({ searchQ, setSearchQ }: { searchQ: string; setSearchQ: (q: string) => void }) {
   const {
     user,
     theme,
@@ -78,18 +91,25 @@ function Header() {
     booklistOpen,
     setBooklistOpen
   } = useApp();
-  const [params, setParams] = useSearchParams();
-  const [q, setQ] = useState(params.get("q") || "");
+  const [params] = useSearchParams();
+  const [openedBySearch, setOpenedBySearch] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    setQ(params.get("q") || "");
-  }, [params]);
+    const urlQ = params.get("q");
+    if (urlQ != null) setSearchQ(urlQ);
+  }, [params, setSearchQ]);
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
-    const parsed = catalog ? parseQuery(q, catalog) : { type: "keyword" as const, q };
+    const trimmed = searchQ.trim();
+    if (!trimmed || !catalog) return;
+    if (isExactAuthorQuery(trimmed, catalog)) {
+      setBooklistOpen(true);
+      return;
+    }
+    const parsed = parseQuery(trimmed, catalog);
     if (parsed.type === "ref") {
       const ch = parsed.chapter;
       navigate(
@@ -97,7 +117,20 @@ function Header() {
       );
       return;
     }
-    navigate("/search?q=" + encodeURIComponent(q));
+    setBooklistOpen(true);
+  }
+
+  function onQueryInput(value: string) {
+    setSearchQ(value);
+    if (value.trim()) {
+      if (!booklistOpen) {
+        setOpenedBySearch(true);
+        setBooklistOpen(true);
+      }
+    } else if (openedBySearch) {
+      setBooklistOpen(false);
+      setOpenedBySearch(false);
+    }
   }
 
   return (
@@ -119,7 +152,10 @@ function Header() {
           className={"writings-toggle" + (booklistOpen ? " active" : "")}
           id="booklistBtn"
           aria-pressed={booklistOpen}
-          onClick={() => setBooklistOpen(!booklistOpen)}
+          onClick={() => {
+            setOpenedBySearch(false);
+            setBooklistOpen(!booklistOpen);
+          }}
         >
           Writings
         </button>
@@ -128,9 +164,9 @@ function Header() {
           name="q"
           id="q"
           placeholder="Find across the Fathers…"
-          value={q}
+          value={searchQ}
           aria-label="Search writings"
-          onChange={(e) => setQ(e.target.value)}
+          onChange={(e) => onQueryInput(e.target.value)}
         />
       </form>
       <div className="header-actions">
@@ -222,67 +258,6 @@ function RailSettings() {
           </label>
         </div>
       ) : null}
-    </div>
-  );
-}
-
-function Booklist() {
-  const { catalog, booklistOpen, setBooklistOpen } = useApp();
-  const [authorId, setAuthorId] = useState("augustine");
-  if (!catalog || !booklistOpen) {
-    return <div className="booklist" id="booklist" hidden />;
-  }
-  const author = catalog.authors.find((a) => a.id === authorId) || catalog.authors[0];
-  const works = author ? catalog.works.filter((w) => w.author === author.id) : [];
-  return (
-    <div className="booklist open" id="booklist">
-      <div className="booklist-eras">
-        {catalog.eras.map((era) => (
-          <div key={era.id}>
-            <div className="era-label">{era.label}</div>
-            {catalog.authors
-              .filter((a) => a.era === era.id)
-              .map((a) => (
-                <button
-                  key={a.id}
-                  type="button"
-                  data-author={a.id}
-                  className={a.id === author?.id ? "active" : ""}
-                  onClick={() => setAuthorId(a.id)}
-                >
-                  {a.name}
-                </button>
-              ))}
-          </div>
-        ))}
-      </div>
-      <div className="booklist-works" id="booklistWorks">
-        {author ? (
-          <>
-            <h3>{author.name}</h3>
-            <div className="meta">
-              {author.dates} · {author.region}
-            </div>
-            {works.map((w) => (
-              <div key={w.id}>
-                <Link className="work-link" to={"/read?work=" + w.id} onClick={() => setBooklistOpen(false)}>
-                  <strong>{w.title}</strong>{" "}
-                  <span className="meta">
-                    ({w.short} · {w.series})
-                  </span>
-                </Link>
-                <div className="chapters">
-                  {Array.from({ length: w.chapters }, (_, i) => i + 1).map((n) => (
-                    <Link key={n} to={"/read?work=" + w.id + "&chapter=" + n + "#ch-" + n} onClick={() => setBooklistOpen(false)}>
-                      {n}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </>
-        ) : null}
-      </div>
     </div>
   );
 }
@@ -382,9 +357,11 @@ function AuthModal() {
 export function Layout({ children }: { children: ReactNode }) {
   const { setNavOpen, setBooklistOpen, setLoginOpen, toast, navOpen } = useApp();
   const location = useLocation();
-  const isLanding = location.pathname === "/";
+  const [searchQ, setSearchQ] = useState("");
+  const isLanding = isHomePath(location.pathname);
   const isHistoryCinematic = location.pathname === "/church-history" || location.pathname === "/church-history/";
   const isFathers = location.pathname === "/church-fathers" || location.pathname === "/browse";
+  const isJournal = location.pathname === "/journal";
 
   useEffect(() => {
     document.body.classList.toggle("nav-open", navOpen);
@@ -422,15 +399,16 @@ export function Layout({ children }: { children: ReactNode }) {
       <a className="skip-link" href="#page">
         Skip to content
       </a>
-      <Rail />
-      {!isLanding ? <Header /> : null}
-      <Booklist />
+      {showSiteRail(location.pathname) ? <Rail /> : null}
+      {!isLanding ? <Header searchQ={searchQ} setSearchQ={setSearchQ} /> : null}
+      <Booklist query={searchQ} onQueryChange={setSearchQ} />
       <main
         className={
           "page" +
           (isLanding ? " page--landing" : "") +
           (isHistoryCinematic ? " page--history-cinematic" : "") +
-          (isFathers ? " page--library" : "")
+          (isFathers ? " page--library" : "") +
+          (isJournal ? " page--journal" : "")
         }
         id="page"
       >

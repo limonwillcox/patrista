@@ -8,6 +8,7 @@ import { ChurchHistoryPage } from "./pages/ChurchHistoryPage";
 import { FixesPage } from "./pages/FixesPage";
 import { GivePage } from "./pages/GivePage";
 import { HomePage } from "./pages/HomePage";
+import { JournalPage } from "./pages/JournalPage";
 import { ReadPage } from "./pages/ReadPage";
 import { SearchPage } from "./pages/SearchPage";
 import { StudyPage } from "./pages/StudyPage";
@@ -22,6 +23,7 @@ export function App() {
           <Route path="/read" element={<ReadPage />} />
           <Route path="/bible" element={<BiblePage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/journal" element={<JournalPage />} />
           <Route path="/church-fathers" element={<BrowsePage />} />
           <Route path="/browse" element={<Navigate to="/church-fathers" replace />} />
           <Route path="/church-history" element={<ChurchHistoryPage />} />

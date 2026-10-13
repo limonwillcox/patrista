@@ -9,6 +9,7 @@ data/clavis/*.sqlite
 data/clavis/*.sqlite-*
 data/clavis/bodies/
 data/fixes/
+data/dictionary/inbox/
 data/confessions.json
 *.local
 .env

@@ -7,6 +7,15 @@ import {
   isBibleRemotePath
 } from "./bibleRemote";
 import { donateCorsHeaders, handleDonateCheckout, isDonateCheckoutPath } from "./donate";
+import {
+  dictionaryMissCorsHeaders,
+  handleDictionaryMissList,
+  handleDictionaryMissSubmit,
+  isDictionaryMissListPath,
+  isDictionaryMissPath,
+  isDictionaryMissSubmitPath
+} from "./dictionaryMiss";
+import { listLocalMisses, readLocalMiss, writeLocalMiss } from "./dictionaryMissLocal";
 import { fixesCorsHeaders, handleFixesSubmit, isFixesPath } from "./fixes";
 import { writeLocalFix } from "./fixesLocal";
 import { repoRoot } from "./corpus";
@@ -15,7 +24,14 @@ function apiMiddleware(req: IncomingMessage, res: ServerResponse, next: () => vo
   const url = req.url || "";
   if (!url.startsWith("/api/")) return next();
   const path = url.split("?")[0].replace(/\/+$/, "") || "/";
-  if (isDonateCheckoutPath(path) || isFixesPath(path) || isBibleRemotePath(path)) return next();
+  if (
+    isDonateCheckoutPath(path) ||
+    isFixesPath(path) ||
+    isBibleRemotePath(path) ||
+    isDictionaryMissPath(path)
+  ) {
+    return next();
+  }
   try {
     const result = handleApiRequest(url);
     res.statusCode = result.status;
@@ -130,6 +146,67 @@ function fixesMiddleware(env: Record<string, string>) {
   };
 }
 
+function dictionaryMissMiddleware() {
+  return async (req: IncomingMessage, res: ServerResponse, next: () => void) => {
+    const path = (req.url || "").split("?")[0].replace(/\/+$/, "") || "/";
+    if (!isDictionaryMissPath(path)) return next();
+
+    const origin =
+      (typeof req.headers.origin === "string" && req.headers.origin) ||
+      "http://127.0.0.1:5173";
+    const cors = dictionaryMissCorsHeaders(origin);
+    for (const [k, v] of Object.entries(cors)) res.setHeader(k, v);
+    res.setHeader("Cache-Control", "no-store");
+
+    if (req.method === "OPTIONS") {
+      res.statusCode = 204;
+      res.end();
+      return;
+    }
+
+    const root = repoRoot();
+    if (isDictionaryMissListPath(path)) {
+      if (req.method !== "GET") {
+        res.statusCode = 405;
+        res.setHeader("Content-Type", "application/json; charset=utf-8");
+        res.end(JSON.stringify({ error: "Method not allowed" }));
+        return;
+      }
+      const result = await handleDictionaryMissList({ listLocal: () => listLocalMisses(root) });
+      res.statusCode = result.status;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.end(JSON.stringify(result.json));
+      return;
+    }
+
+    if (!isDictionaryMissSubmitPath(path) || req.method !== "POST") {
+      res.statusCode = 405;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.end(JSON.stringify({ error: "Method not allowed" }));
+      return;
+    }
+
+    let body: unknown = null;
+    try {
+      const raw = await readBody(req);
+      body = raw ? JSON.parse(raw) : null;
+    } catch {
+      res.statusCode = 400;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.end(JSON.stringify({ error: "Invalid JSON" }));
+      return;
+    }
+
+    const result = await handleDictionaryMissSubmit(body, {
+      readLocal: (word) => readLocalMiss(root, word),
+      writeLocal: (record) => writeLocalMiss(root, record)
+    });
+    res.statusCode = result.status;
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    res.end(JSON.stringify(result.json));
+  };
+}
+
 function bibleRemoteMiddleware(env: Record<string, string>) {
   return async (req: IncomingMessage, res: ServerResponse, next: () => void) => {
     const rawUrl = req.url || "";
@@ -173,6 +250,7 @@ export function fathersApiPlugin(): Plugin {
       const env = loadEnv(server.config.mode, server.config.root, "");
       server.middlewares.use(donateMiddleware(env));
       server.middlewares.use(fixesMiddleware(env));
+      server.middlewares.use(dictionaryMissMiddleware());
       server.middlewares.use(bibleRemoteMiddleware(env));
       server.middlewares.use(apiMiddleware);
     },
@@ -180,6 +258,7 @@ export function fathersApiPlugin(): Plugin {
       const env = loadEnv(server.config.mode, server.config.root, "");
       server.middlewares.use(donateMiddleware(env));
       server.middlewares.use(fixesMiddleware(env));
+      server.middlewares.use(dictionaryMissMiddleware());
       server.middlewares.use(bibleRemoteMiddleware(env));
       server.middlewares.use(apiMiddleware);
     }

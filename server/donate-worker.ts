@@ -1,9 +1,10 @@
 import { handleBibleRemoteFetch, type BibleRemoteEnv } from "./bibleRemote";
 import { handleClavisFetch, type ClavisEnv } from "./clavis-api";
+import { handleDictionaryMissFetch, type DictionaryMissEnv } from "./dictionaryMiss";
 import { handleDonateFetch, type DonateEnv } from "./donate";
 import { handleFixesFetch, type FixesEnv } from "./fixes";
 
-type Env = DonateEnv & FixesEnv & BibleRemoteEnv & ClavisEnv;
+type Env = DonateEnv & FixesEnv & BibleRemoteEnv & ClavisEnv & DictionaryMissEnv;
 
 /**
  * Cloudflare Worker: Stripe donate + Fixes → GitHub Issues + API.Bible proxy + Clavis reads.
@@ -17,6 +18,8 @@ export default {
     if (donate) return donate;
     const fixes = await handleFixesFetch(request, env);
     if (fixes) return fixes;
+    const dictMiss = await handleDictionaryMissFetch(request, env);
+    if (dictMiss) return dictMiss;
     const bible = await handleBibleRemoteFetch(request, env);
     if (bible) return bible;
     const clavis = await handleClavisFetch(request, env);

@@ -176,7 +176,7 @@ Regen with `python3 scripts/clavis-checklist.py regen`.
 - [ ] [Maximus episcopus Taurinensis](authors/maximus-episcopus-taurinensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
 - [ ] [Meletius episcopus Antiochenus](authors/meletius-episcopus-antiochenus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
 - [ ] [Melito Sardensis](authors/melito-sardensis.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
-- [ ] [Methodius Olympius](authors/methodius-olympius.md) — en 6/19 · orig 2/19 · fmt-en 0/19 · fmt-orig 0/19 · tag-en 0/19 · tag-orig 0/19
+- [ ] [Methodius Olympius](authors/methodius-olympius.md) — en 6/19 · orig 3/19 · fmt-en 0/19 · fmt-orig 0/19 · tag-en 0/19 · tag-orig 0/19
 - [ ] [Michael Choniates](authors/michael-choniates.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
 - [ ] [Michael Psellus](authors/michael-psellus.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1
 - [ ] [Miltiades papa](authors/miltiades-papa.md) — en 0/1 · orig 0/1 · fmt-en 0/1 · fmt-orig 0/1 · tag-en 0/1 · tag-orig 0/1

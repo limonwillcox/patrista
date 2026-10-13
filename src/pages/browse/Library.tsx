@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { createPortal } from "react-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   deathCentury,
   defaultBinWidthPx,
@@ -11,6 +12,15 @@ import {
   type ShelfPeriodId
 } from "../../../server/shelf";
 import type { Author, Catalog, Work } from "../../../server/types";
+import {
+  formatCentury,
+  LIBRARY_HOVER_FIELDS,
+  libraryHoverBarMetrics,
+  libraryHoverReadout,
+  workBarFontPx,
+  writingCategory,
+  writingTopic
+} from "../../lib/libraryHover";
 
 const DESKTOP_MQ = "(min-width: 761px)";
 
@@ -144,6 +154,8 @@ type LibraryProps = { catalog: Catalog };
 
 export function Library({ catalog }: LibraryProps) {
   const navigate = useNavigate();
+  const [params] = useSearchParams();
+  const authorParam = params.get("author");
   const trackRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(1100);
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -200,6 +212,30 @@ export function Library({ catalog }: LibraryProps) {
     if (!centuries.length) return;
     setActiveCentury((prev) => (centuries.includes(prev) ? prev : centuries[0]));
   }, [centuries]);
+
+  useEffect(() => {
+    if (!authorParam) return;
+    const block = authorPacked.find((b) => b.authorId === authorParam);
+    if (!block) return;
+    const who = authors.get(authorParam);
+    if (who) {
+      const c = deathCentury(who.deathYear);
+      setActiveCentury(c);
+      const centuryEl = trackRef.current?.querySelector<HTMLElement>('[data-century-section="' + c + '"]');
+      centuryEl?.scrollIntoView({ behavior: "auto", block: "start" });
+    }
+    const first = block.shelves.flat()[0];
+    if (first) {
+      setSelectedId(first.workId);
+      setInspectId(first.workId);
+    }
+    window.requestAnimationFrame(() => {
+      const el = trackRef.current?.querySelector<HTMLElement>(
+        '[data-author="' + CSS.escape(authorParam) + '"]'
+      );
+      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }, [authorParam, authorPacked, authors]);
 
   useEffect(() => {
     const rows = trackRef.current?.querySelectorAll<HTMLElement>("[data-century-section]");
@@ -296,6 +332,26 @@ export function Library({ catalog }: LibraryProps) {
   const inspectAuthor = inspectBook ? authors.get(inspectBook.author) : undefined;
   const inspectPeriod = inspectId ? flat.find((x) => x.book.workId === inspectId)?.periodId : undefined;
   const inspectBin = inspectId ? flat.find((x) => x.book.workId === inspectId)?.book.bin : 5;
+  const hoverReadout = libraryHoverReadout(selectedId, works, (id) => {
+    const who = authors.get(id);
+    return who ? { name: shelfName(who, id), century: deathCentury(who.deathYear) } : undefined;
+  });
+  const hoverMetrics = useMemo(() => {
+    const rows = catalog.works.flatMap((w) => {
+      const who = authors.get(w.author);
+      if (!who) return [];
+      return [
+        {
+          author: shelfName(who, who.id),
+          work: w.title,
+          century: formatCentury(deathCentury(who.deathYear)),
+          category: writingCategory(w.title),
+          topic: writingTopic(w.title)
+        }
+      ];
+    });
+    return libraryHoverBarMetrics(rows);
+  }, [catalog.works, authors]);
 
   return (
     <div className="library library--authors">
@@ -335,6 +391,35 @@ export function Library({ catalog }: LibraryProps) {
           </div>
         ))}
       </div>
+      {typeof document !== "undefined" && !inspectId
+        ? createPortal(
+            <div className="lib-hover-dock" aria-live="polite">
+              {LIBRARY_HOVER_FIELDS.map((field) => {
+                const isWork = field.key === "work";
+                return (
+                  <div
+                    className="lib-hover-field"
+                    key={field.key}
+                    style={{ width: `calc(${hoverMetrics.widthCh[field.key]}ch + 24px)` }}
+                  >
+                    <span className="lib-hover-label">{field.label}</span>
+                    <div
+                      className={"lib-hover-readout" + (isWork ? " lib-hover-readout--work" : "")}
+                      style={
+                        isWork && hoverReadout
+                          ? { fontSize: workBarFontPx(hoverReadout.work, hoverMetrics) + "px" }
+                          : undefined
+                      }
+                    >
+                      {hoverReadout ? hoverReadout[field.key] : null}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>,
+            document.body
+          )
+        : null}
       {inspectBook && inspectAuthor && inspectPeriod ? (
         <InspectOverlay
           work={inspectBook}

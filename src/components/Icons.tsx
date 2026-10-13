@@ -1,4 +1,10 @@
 export const ICONS = {
+  home: (
+    <svg viewBox="0 0 24 24">
+      <path d="M4 11.5 12 4l8 7.5" />
+      <path d="M6.5 10.5V20h11v-9.5" />
+    </svg>
+  ),
   read: (
     <svg viewBox="0 0 24 24">
       <path d="M4 5h7a3 3 0 0 1 3 3v13H7a3 3 0 0 0-3 3V5z" />
@@ -9,6 +15,12 @@ export const ICONS = {
     <svg viewBox="0 0 24 24">
       <circle cx="11" cy="11" r="6" />
       <path d="M20 20l-3.2-3.2" />
+    </svg>
+  ),
+  journal: (
+    <svg viewBox="0 0 24 24">
+      <path d="M14.5 5.5 18.5 9.5" />
+      <path d="M4 20l1.4-4.6L16.2 4.6a2 2 0 0 1 2.8 0l.4.4a2 2 0 0 1 0 2.8L8.6 18.6 4 20z" />
     </svg>
   ),
   browse: (

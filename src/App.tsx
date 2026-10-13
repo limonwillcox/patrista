@@ -5,6 +5,7 @@ import { AboutPage } from "./pages/AboutPage";
 import { BiblePage } from "./pages/BiblePage";
 import { BrowsePage } from "./pages/BrowsePage";
 import { ChurchHistoryPage } from "./pages/ChurchHistoryPage";
+import { FathersPage } from "./pages/FathersPage";
 import { FixesPage } from "./pages/FixesPage";
 import { GivePage } from "./pages/GivePage";
 import { HomePage } from "./pages/HomePage";
@@ -21,6 +22,8 @@ export function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/read" element={<ReadPage />} />
+          <Route path="/fathers" element={<FathersPage />} />
+          <Route path="/fathers/:authorId" element={<FathersPage />} />
           <Route path="/fathers/:authorId/:workId/:chapterSlug" element={<ReadPage />} />
           <Route path="/bible" element={<BiblePage />} />
           <Route path="/search" element={<SearchPage />} />

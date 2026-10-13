@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "rea
 import { Link, NavLink, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { parseQuery } from "../../server/query";
 import { isExactAuthorQuery } from "../lib/catalogPreview";
+import { isFathersTabPath } from "../lib/fathersDirectory";
 import { HOME_HREF, isHomePath, showSiteRail } from "../lib/homeNav";
 import { useApp } from "../context/AppContext";
 import { Booklist } from "./Booklist";
@@ -20,7 +21,10 @@ function Rail() {
   const { navOpen, setNavOpen } = useApp();
   const location = useLocation();
   const homeActive = isHomePath(location.pathname);
-  const readActive = location.pathname === "/read" || location.pathname.startsWith("/fathers/");
+  const readActive =
+    location.pathname === "/read" ||
+    (location.pathname.startsWith("/fathers/") && !isFathersTabPath(location.pathname));
+  const fathersActive = isFathersTabPath(location.pathname);
   const bibleActive = location.pathname === "/bible";
   const writingsActive =
     location.pathname === "/church-fathers" || location.pathname === "/church-fathers/" || location.pathname === "/browse";
@@ -48,6 +52,10 @@ function Rail() {
         >
           {ICONS.browse}
           <span>Browse</span>
+        </NavLink>
+        <NavLink to="/fathers" className={() => (fathersActive ? "active" : "")} onClick={() => setNavOpen(false)}>
+          {ICONS.fathers}
+          <span>Fathers</span>
         </NavLink>
         <NavLink to="/journal" className={() => (journalActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.journal}

@@ -1,0 +1,166 @@
+{
+  "ambrose": {
+    "title": "Ambrose",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/74/AmbroseOfMilan_%28cropped%29.jpg"
+  },
+  "arnobius": {
+    "title": "Arnobius",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/4c/%D0%90%D1%80%D0%BD%D0%BE%D0%B1%D0%B8%D0%B9_%D0%A1%D1%82%D0%B0%D1%80%D1%88%D0%B8%D0%B9_-Arnobius_of_Sicca.jpg"
+  },
+  "augustine": {
+    "title": "Augustine of Hippo",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Saint_Augustine_by_Philippe_de_Champaigne.jpg/330px-Saint_Augustine_by_Philippe_de_Champaigne.jpg"
+  },
+  "gregory": {
+    "title": "Pope Gregory I",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Gregory_the_Great_with_the_Holy_Spirit.jpg/330px-Gregory_the_Great_with_the_Holy_Spirit.jpg"
+  },
+  "gregory_thaumaturgus": {
+    "title": "Gregory Thaumaturgus",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Grigorii_chudotvoretz.jpg"
+  },
+  "methodius": {
+    "title": "Methodius of Olympus",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Methodius_of_Olympus.jpg/330px-Methodius_of_Olympus.jpg"
+  },
+  "jerome": {
+    "title": "Jerome",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/MatthiasStom-SaintJerome-Nantes.jpg/330px-MatthiasStom-SaintJerome-Nantes.jpg"
+  },
+  "lactantius": {
+    "title": "Lactantius",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Lactantius.jpg/330px-Lactantius.jpg"
+  },
+  "leo": {
+    "title": "Pope Leo I",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Herrera_mozo_San_Le%C3%B3n_magno_Lienzo._%C3%93valo._164_x_105_cm._Museo_del_Prado.png/330px-Herrera_mozo_San_Le%C3%B3n_magno_Lienzo._%C3%93valo._164_x_105_cm._Museo_del_Prado.png"
+  },
+  "tertullian": {
+    "title": "Tertullian",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Tertullian2.png/330px-Tertullian2.png"
+  },
+  "vincent": {
+    "title": "Vincent of L\u00e9rins",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Icon_of_St_Vincent_of_Lerins_by_Bojan_Teodosijevi%C4%87.jpg/330px-Icon_of_St_Vincent_of_Lerins_by_Bojan_Teodosijevi%C4%87.jpg"
+  },
+  "justin": {
+    "title": "Justin Martyr",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg/330px-Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg"
+  },
+  "irenaeus": {
+    "title": "Irenaeus",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Saint_irenee_saint_irenee.jpg/330px-Saint_irenee_saint_irenee.jpg"
+  },
+  "clement_rome": {
+    "title": "Clement of Rome",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Clemens_Romanus.jpg/330px-Clemens_Romanus.jpg"
+  },
+  "ignatius": {
+    "title": "Ignatius of Antioch",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Hosios_Loukas_%28south_west_chapel%2C_south_side%29_-_Ignatios.jpg/330px-Hosios_Loukas_%28south_west_chapel%2C_south_side%29_-_Ignatios.jpg"
+  },
+  "polycarp": {
+    "title": "Polycarp",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Polycarp_of_Smyrna2.jpg/330px-Polycarp_of_Smyrna2.jpg"
+  },
+  "didache": {
+    "title": "Didache",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Didache.png/330px-Didache.png"
+  },
+  "papias": {
+    "title": "Papias of Hierapolis",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/6/63/Papias.png"
+  },
+  "theophilus": {
+    "title": "Theophilus of Antioch",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Theophilus_Antiochenus.png/330px-Theophilus_Antiochenus.png"
+  },
+  "athenagoras": {
+    "title": "Athenagoras of Athens",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Greek_Icon_of_Saint_Athenagoras_of_Athens.jpg/330px-Greek_Icon_of_Saint_Athenagoras_of_Athens.jpg"
+  },
+  "clement_alexandria": {
+    "title": "Clement of Alexandria",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Clement_alexandrin.jpg/330px-Clement_alexandrin.jpg"
+  },
+  "origen": {
+    "title": "Origen",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Origen3.jpg"
+  },
+  "hippolytus": {
+    "title": "Hippolytus of Rome",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Statue_of_Saint_.Hippolytus_%28cropped%29.jpg/330px-Statue_of_Saint_.Hippolytus_%28cropped%29.jpg"
+  },
+  "cyprian": {
+    "title": "Cyprian",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Cyprian_von_Karthago2.jpg"
+  },
+  "dionysius": {
+    "title": "Dionysius of Alexandria",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Dionisii_alek.jpg/330px-Dionisii_alek.jpg"
+  },
+  "eusebius": {
+    "title": "Eusebius",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/70/Eusebius_of_Caesarea_Rabbula_Gospels_Icon.jpg"
+  },
+  "athanasius": {
+    "title": "Athanasius of Alexandria",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Fethiye_Camii%2C_parekklesion%2C_diakonikon%2C_mosaics%2C_Istanbul%2C_Turkey_-_South_wall%2C_St._Athanasius%2C_detail_of_upper_half_-_MSBZ004_BF_T_F_027_B_-_Dumbarton_Oaks.jpg/330px-thumbnail.jpg"
+  },
+  "basil": {
+    "title": "Basil of Caesarea",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Basil_of_Caesarea.jpg/330px-Basil_of_Caesarea.jpg"
+  },
+  "gregory_nazianzen": {
+    "title": "Gregory of Nazianzus",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Gregor-Chora_%28cropped%29.jpg/330px-Gregor-Chora_%28cropped%29.jpg"
+  },
+  "gregory_nyssa": {
+    "title": "Gregory of Nyssa",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Gregory_of_Nyssa.jpg/330px-Gregory_of_Nyssa.jpg"
+  },
+  "chrysostom": {
+    "title": "John Chrysostom",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Johnchrysostom.jpg/330px-Johnchrysostom.jpg"
+  },
+  "cyril_jerusalem": {
+    "title": "Cyril of Jerusalem",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Saint_Cyril_of_Jerusalem.jpg/330px-Saint_Cyril_of_Jerusalem.jpg"
+  },
+  "hilary": {
+    "title": "Hilary of Poitiers",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Hilaryofpoitiers.jpg/330px-Hilaryofpoitiers.jpg"
+  },
+  "john_damascus": {
+    "title": "John of Damascus",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Athonite_Fresco_Icon_of_Saint_John_of_Damascus.jpg/330px-Athonite_Fresco_Icon_of_Saint_John_of_Damascus.jpg"
+  },
+  "theodoret": {
+    "title": "Theodoret",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Theodoret_of_Cyr_%28in_A._Thevet1584%29.png/330px-Theodoret_of_Cyr_%28in_A._Thevet1584%29.png"
+  },
+  "rufinus": {
+    "title": "Tyrannius Rufinus",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Rufinus_Aquileiensis.jpg/330px-Rufinus_Aquileiensis.jpg"
+  },
+  "cassian": {
+    "title": "John Cassian",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/John_Cassian.jpeg/330px-John_Cassian.jpeg"
+  },
+  "ephraim": {
+    "title": "Ephrem the Syrian",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Mor_Ephrem_icon.jpg/330px-Mor_Ephrem_icon.jpg"
+  },
+  "aphrahat": {
+    "title": "Aphrahat",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Les_Vies_des_P%C3%A8res_des_d%C3%A9serts_d%27Orient_-_leur_doctrine_spirituelle_et_leur_discipline_monastique_%281886%29_%2814590545527%29.jpg/330px-Les_Vies_des_P%C3%A8res_des_d%C3%A9serts_d%27Orient_-_leur_doctrine_spirituelle_et_leur_discipline_monastique_%281886%29_%2814590545527%29.jpg"
+  },
+  "councils": {
+    "title": "First Council of Nicaea",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/%CE%9C%CE%B9%CF%87%CE%B1%CE%AE%CE%BB_%CE%94%CE%B1%CE%BC%CE%B1%CF%83%CE%BA%CE%B7%CE%BD%CF%8C%CF%82_-_%CE%91%CE%84_%CE%9F%CE%B9%CE%BA%CE%BF%CF%85%CE%BC%CE%B5%CE%BD%CE%B9%CE%BA%CE%AE_%CE%A3%CF%8D%CE%BD%CE%BF%CE%B4%CE%BF%CF%82_7741.jpg/330px-%CE%9C%CE%B9%CF%87%CE%B1%CE%AE%CE%BB_%CE%94%CE%B1%CE%BC%CE%B1%CF%83%CE%BA%CE%B7%CE%BD%CF%8C%CF%82_-_%CE%91%CE%84_%CE%9F%CE%B9%CE%BA%CE%BF%CF%85%CE%BC%CE%B5%CE%BD%CE%B9%CE%BA%CE%AE_%CE%A3%CF%8D%CE%BD%CE%BF%CE%B4%CE%BF%CF%82_7741.jpg"
+  },
+  "josephus": {
+    "title": "Josephus",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Joseph%2C_son_of_Gorian%2C_called_Flavius_Josephus_%28cropped%29.jpg/330px-Joseph%2C_son_of_Gorian%2C_called_Flavius_Josephus_%28cropped%29.jpg"
+  }
+}

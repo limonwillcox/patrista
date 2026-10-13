@@ -5026,3 +5026,317 @@ html[data-theme="night"] .lib-era-next {
   color: var(--burgundy);
   font-size: 14px;
 }
+
+/* Fathers — Apple leadership grid, Patrista type and color.
+   Tile is 230×178, four across, 18px column gap, matching apple.com/leadership. */
+.page > .fathers-page {
+  max-width: none;
+}
+.fathers-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.fathers-section {
+  padding-top: 75px;
+}
+.fathers-section:first-of-type {
+  padding-top: 31px;
+}
+.fathers-section-inner {
+  width: 974px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.fathers-century {
+  margin: 0 0 33px;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.011em;
+  color: var(--burgundy);
+}
+.fathers-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  column-gap: 18px;
+  row-gap: 52px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fathers-card {
+  width: 230px;
+  margin: 0;
+}
+.fathers-card-link {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+}
+.fathers-card-link:hover {
+  text-decoration: none;
+}
+.fathers-card-link:hover .fathers-name,
+.fathers-card-link:hover .fathers-office {
+  text-decoration: underline;
+}
+.fathers-card-link:focus-visible {
+  outline: 3px solid rgba(149, 32, 4, 0.45);
+  outline-offset: 4px;
+}
+.fathers-portrait,
+.fathers-hero-photo {
+  display: block;
+  background: #eaeaea;
+  object-fit: cover;
+  object-position: center 18%;
+}
+.fathers-portrait {
+  width: 230px;
+  height: 178px;
+}
+.fathers-portrait-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#f3e2a8, #f7f1e4);
+}
+.fathers-portrait-fallback svg {
+  width: 78px;
+  height: 58px;
+  fill: var(--burgundy);
+  stroke: none;
+}
+.fathers-name {
+  margin: 12px 0 2px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.29412;
+  letter-spacing: -0.021em;
+  color: var(--text);
+}
+.fathers-office {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.29412;
+  letter-spacing: -0.021em;
+  color: var(--text);
+}
+.fathers-credit {
+  margin: 28px auto 8px;
+  max-width: 974px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+.fathers-credit a {
+  color: var(--muted);
+}
+
+.fathers-page--profile {
+  margin-top: -22px;
+}
+.fathers-hero {
+  position: relative;
+  min-height: 336px;
+  width: calc(100% + 48px);
+  margin-left: -24px;
+  margin-right: -24px;
+  background: linear-gradient(#eaeaea, #fafafa);
+  overflow: hidden;
+}
+.fathers-hero-inner {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  min-height: 336px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 489px;
+  grid-template-areas: "copy photo";
+  align-items: center;
+}
+.fathers-hero-copy {
+  grid-area: copy;
+  padding: 36px 28px 36px 0;
+}
+.fathers-back {
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.3;
+}
+.fathers-hero h1 {
+  margin: 0 0 11px;
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: 0.008em;
+  color: var(--text);
+}
+.fathers-hero-office {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0.011em;
+  color: var(--text);
+}
+.fathers-hero-photo {
+  grid-area: photo;
+  width: 489px;
+  height: 336px;
+  justify-self: end;
+}
+.fathers-hero .fathers-portrait-fallback svg {
+  width: 120px;
+  height: 90px;
+}
+.fathers-bio {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 52px 0 88px;
+}
+.fathers-bio-col {
+  width: min(408px, 100%);
+}
+.fathers-bio p {
+  margin: 0.7em 0 0;
+  font-size: 17px;
+  line-height: 1.52947;
+  letter-spacing: -0.021em;
+}
+.fathers-bio p:first-of-type {
+  margin-top: 0;
+}
+.fathers-writings-title {
+  margin: 1.5em 0 0.45em;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--burgundy);
+}
+.fathers-writings {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fathers-writings li + li {
+  margin-top: 0.35em;
+}
+.fathers-writings a {
+  font-size: 17px;
+  line-height: 1.4;
+}
+.fathers-missing {
+  margin: 48px auto;
+  max-width: 36em;
+  font-size: 17px;
+}
+
+@media (max-width: 1100px) {
+  .fathers-section-inner {
+    width: 478px;
+  }
+  .fathers-grid {
+    row-gap: 28px;
+  }
+  .fathers-century {
+    font-size: 28px;
+  }
+  .fathers-hero-inner {
+    grid-template-columns: minmax(0, 1fr) 360px;
+    min-height: 280px;
+  }
+  .fathers-hero {
+    min-height: 280px;
+  }
+  .fathers-hero-photo {
+    width: 360px;
+    height: 280px;
+  }
+  .fathers-hero h1 {
+    font-size: 34px;
+  }
+  .fathers-hero-office {
+    font-size: 26px;
+  }
+}
+@media (max-width: 760px) {
+  .fathers-hero {
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+  .fathers-section:first-of-type {
+    padding-top: 18px;
+  }
+  .fathers-section {
+    padding-top: 56px;
+  }
+}
+@media (max-width: 735px) {
+  .fathers-section-inner {
+    width: 230px;
+  }
+  .fathers-grid {
+    row-gap: 32px;
+  }
+  .fathers-century {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .fathers-hero-inner {
+    display: block;
+    min-height: 0;
+  }
+  .fathers-hero {
+    min-height: 0;
+  }
+  .fathers-hero-photo,
+  .fathers-hero .fathers-portrait-fallback {
+    width: 100%;
+    height: 220px;
+  }
+  .fathers-hero-copy {
+    padding: 22px 16px 0;
+  }
+  .fathers-hero h1 {
+    font-size: 28px;
+  }
+  .fathers-hero-office {
+    font-size: 22px;
+    font-weight: 300;
+  }
+  .fathers-bio {
+    padding: 28px 0 56px;
+  }
+  .fathers-bio-col {
+    width: 100%;
+  }
+}
+html[data-theme="night"] .fathers-century,
+html[data-theme="night"] .fathers-writings-title {
+  color: var(--link);
+}
+html[data-theme="night"] .fathers-portrait,
+html[data-theme="night"] .fathers-hero-photo {
+  background: #2a2a2a;
+}
+html[data-theme="night"] .fathers-hero {
+  background: linear-gradient(#2a2724, #1b1b1b);
+}
+html[data-theme="night"] .fathers-portrait-fallback {
+  background: linear-gradient(#3a3018, #2a2418);
+}
+html[data-theme="night"] .fathers-card-link:focus-visible {
+  outline-color: rgba(224, 122, 85, 0.7);
+}

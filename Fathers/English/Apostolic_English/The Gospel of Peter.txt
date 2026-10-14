@@ -30,11 +30,11 @@ The Gospel of Peter.
    ------------------------
 
    The important fragment of which Mr. J. Armitage Robinson's translation
-   here follows was discovered by the French ArchÃ¦ological Mission, Cairo,
-   in a grave (supposed to be a monk's) in an ancient cemetery at AkhmÃ®m
+   here follows was discovered by the French Archæological Mission, Cairo,
+   in a grave (supposed to be a monk's) in an ancient cemetery at Akhmîm
    (Panopolis), in Upper Egypt, in 1886.  It was published in 1892 under
    the care of M. Bouriant in vol. ix., fasc. i., of the Memoirs of the
-   French ArchÃ¦ological Mission at Cairo.  The same parchment which
+   French Archæological Mission at Cairo.  The same parchment which
    contained this fragment also contained a fragment of the Revelation of
    Peter and a fragment of the Book of Enoch in Greek.  The parchment
    codex is assigned to a date between the eighth and the twelfth century.
@@ -53,7 +53,7 @@ The Gospel of Peter.
    coming to you again:  so, brethren, expect me speedily.  Knowing then,
    brethren, of what kind of heresy was Marcion--[Here follows a sentence
    where the text is faulty.]...From others who used this very gospel--I
-   mean from the successors of those who started it, whom we call DocetÃ¦;
+   mean from the successors of those who started it, whom we call Docetæ;
    for most of its ideas are of their school--from them, I say, I borrowed
    it, and was able to go through it, and to find that most of it belonged
    to the right teaching of the Saviour, but some things were additions."
@@ -95,14 +95,14 @@ The Gospel of Peter.
    Geschichte der altchristl. Lit., I. Th., p. 11).
 
    This was all that was known of the Gospel of Peter till the publication
-   of the AkhmÃ®m fragment.  The latter extends to about 174 stichi,
+   of the Akhmîm fragment.  The latter extends to about 174 stichi,
    counting 32 words to the stichus.  It begins in the middle of the
    history of the Passion, just after Pilate has washed his hands of all
    responsibility, and ends in the middle of a sentence, with the
    departure of the disciples into Galilee at the end of the Feast of
    Unleavened Bread, exactly a week after the crucifixion, the ostensible
    author, Peter, and Andrew, his brother, taking their nets and going to
-   the sea; "and there was with us Levi the son of AlphÃ¦us, whom the
+   the sea; "and there was with us Levi the son of Alphæus, whom the
    Lord..."
 
    The accompanying Synoptical Table shows where the Petrine narrative
@@ -275,7 +275,7 @@ The Gospel of Peter.
    wrong hath he done to you?  And they, being angered at him, commanded
    that his legs should not be broken, that he might die in torment.
 
-   5  And it was noon, and darkness came over all JudÃ¦a:  and they were
+   5  And it was noon, and darkness came over all Judæa:  and they were
    troubled and distressed, lest the sun had set, whilst he was yet
    alive:  [for] it is written for them, that the sun set not on him that
    hath been put to death.  And one of them said, Give him to drink gall
@@ -377,7 +377,7 @@ The Gospel of Peter.
    the twelve disciples of the Lord, wept and were grieved:  and each one,
    being grieved for that which was come to pass, departed to his home.
    But I Simon Peter and Andrew my brother took our nets and went to the
-   sea; and there was with us Levi the son of AlphÃ¦us, whom the Lord...
+   sea; and there was with us Levi the son of Alphæus, whom the Lord...
      __________________________________________________________________
 
    [2] This translation is based on that which I published in The Gospel
@@ -419,7 +419,7 @@ The Gospel of Peter.
 
    Matthew xxvii.
 
-   24 Â¶  When Pilate saw that he could prevail nothing, but that rather a
+   24 ¶  When Pilate saw that he could prevail nothing, but that rather a
    tumult was made, he took water, and washed his hands before the
    multitude, saying, I am innocent of the blood of this just person:  see
    ye to it.
@@ -429,7 +429,7 @@ The Gospel of Peter.
 
    [cf. v. 57.]
 
-   26 Â¶  Then released he Barabbas unto them:  and when he had scourged
+   26 ¶  Then released he Barabbas unto them:  and when he had scourged
    Jesus, he delivered him to be crucified.
 
    27  Then the soldiers of the governor took Jesus into the common hall,
@@ -437,7 +437,7 @@ The Gospel of Peter.
 
    28  And they stripped him, and put on him a scarlet robe.
 
-   29 Â¶  And when they had platted a crown of thorns, they put it upon his
+   29 ¶  And when they had platted a crown of thorns, they put it upon his
    head, and a reed in his right hand:  and they bowed the knee before
    him, and mocked him, saying, Hail, King of the Jews!
 
@@ -450,11 +450,11 @@ The Gospel of Peter.
 
    [cf. v. 42.]
 
-   15 Â¶  And so Pilate, willing to content the people, released Barabbas
+   15 ¶  And so Pilate, willing to content the people, released Barabbas
    unto them, and delivered Jesus, when he had scourged him, to be
    crucified.
 
-   16  And the soldiers led him away into the hall, called PrÃ¦torium; and
+   16  And the soldiers led him away into the hall, called Prætorium; and
    they call together the whole band.
 
    17  And they clothed him with purple, and platted a crown of thorns,
@@ -549,7 +549,7 @@ The Gospel of Peter.
    Cyrenian, coming out of the country, and on him they laid the cross,
    that he might bear it after Jesus.
 
-   27 Â¶  And there followed him a great company of people, and of women,
+   27 ¶  And there followed him a great company of people, and of women,
    which also bewailed and lamented him.
 
    28  But Jesus turning unto them said, Daughters of Jerusalem, weep not
@@ -583,7 +583,7 @@ The Gospel of Peter.
 
    Matthew.
 
-   34  Â¶  They gave him vinegar to drink mingled with gall:  and when he
+   34  ¶  They gave him vinegar to drink mingled with gall:  and when he
    had tasted thereof, he would not drink.
 
    35  And they crucified him, and parted his garments, casting lots:
@@ -598,7 +598,7 @@ The Gospel of Peter.
    38  Then were there two thieves crucified with him, one on the right
    hand, and another on the left.
 
-   39  Â¶  And they that passed by reviled him, wagging their heads,
+   39  ¶  And they that passed by reviled him, wagging their heads,
 
    Mark.
 
@@ -621,7 +621,7 @@ The Gospel of Peter.
 
    Luke.
 
-   34  Â¶  Then said Jesus, Father, forgive them; for they know not what
+   34  ¶  Then said Jesus, Father, forgive them; for they know not what
    they do.  And they parted his raiment, and cast lots.
 
    35  And the people stood beholding.  And the rulers also with them
@@ -643,7 +643,7 @@ The Gospel of Peter.
 
    [cf. vv. 23, 24.]
 
-   19  Â¶  And Pilate wrote a title, and put it on the cross.  And the
+   19  ¶  And Pilate wrote a title, and put it on the cross.  And the
    writing was, JESUS OF NAZARETH THE KING OF THE JEWS.
 
    20  This title then read many of the Jews:  for the place where Jesus
@@ -707,7 +707,7 @@ The Gospel of Peter.
 
    Luke.
 
-   39  Â¶  And one of the malefactors which were hanged railed on him,
+   39  ¶  And one of the malefactors which were hanged railed on him,
    saying, If thou be Christ, save thyself and us.
 
    40  But the other answering rebuked him, saying, Dost not thou fear
@@ -720,7 +720,7 @@ The Gospel of Peter.
 
    22  Pilate answered, What I have written I have written.
 
-   23  Â¶  Then the soldiers, when they had crucified Jesus, took his
+   23  ¶  Then the soldiers, when they had crucified Jesus, took his
    garments, and made four parts, to every soldier a part; and also his
    coat:  now the coat was without seam, woven from the top throughout.
 
@@ -776,7 +776,7 @@ The Gospel of Peter.
 
    John.
 
-   25  Â¶  Now there stood by the cross of Jesus his mother, and his
+   25  ¶  Now there stood by the cross of Jesus his mother, and his
    mother's sister, Mary the wife of Cleophas, and Mary Magdalene.
 
    26  When Jesus therefore saw his mother, and the disciple standing by,
@@ -790,7 +790,7 @@ The Gospel of Peter.
    14  And they, being angered at him, commanded that his legs should not
    be broken, that he might die in torment.
 
-   15  And it was noon, and darkness came over all JudÃ¦a:
+   15  And it was noon, and darkness came over all Judæa:
 
    and they were troubled and distressed, lest the sun had set, whilst he
    was yet alive:  [for] it is written for them, that the sun set not on
@@ -809,7 +809,7 @@ The Gospel of Peter.
    49  The rest said, Let be, let us see whether Elias will come to save
    him.
 
-   50  Â¶  Jesus, when he had cried again with a loud voice, yielded up the
+   50  ¶  Jesus, when he had cried again with a loud voice, yielded up the
    ghost.
 
    51  And, behold, the veil of the temple was rent in twain from the top
@@ -839,13 +839,13 @@ The Gospel of Peter.
 
    Luke.
 
-   46  Â¶  And when Jesus had cried with a loud voice, he said, Father,
+   46  ¶  And when Jesus had cried with a loud voice, he said, Father,
    into thy hands I commend my spirit:  and having said thus, he gave up
    the ghost.
 
    John.
 
-   28  Â¶  After this, Jesus knowing that all things were now accomplished,
+   28  ¶  After this, Jesus knowing that all things were now accomplished,
    that the scripture might be fulfilled, saith, I thirst.
 
    29  Now there was set a vessel full of vinegar:  and they filled a
@@ -894,12 +894,12 @@ The Gospel of Peter.
    56  Among which was Mary Magdalene, and Mary the mother of James and
    Joses, and the mother of Zebedee's children.
 
-   57  When the even was come, there came a rich man of ArimathÃ¦a, named
+   57  When the even was come, there came a rich man of Arimathæa, named
    Joseph, who also himself was Jesus' disciple:
 
    Mark.
 
-   39  Â¶  And when the centurion, which stood over against him, saw that
+   39  ¶  And when the centurion, which stood over against him, saw that
    he so cried out, and gave up the ghost, he said, Truly this man was the
    Son of God.
 
@@ -910,10 +910,10 @@ The Gospel of Peter.
    41  (Who also, when he was in Galilee, followed him, and ministered
    unto him;) and many other women which came up with him unto Jerusalem.
 
-   42  Â¶  And now when the even was come, because it was the preparation,
+   42  ¶  And now when the even was come, because it was the preparation,
    that is, the day before the sabbath,
 
-   43  Joseph of ArimathÃ¦a, an honourable counsellor, which also waited
+   43  Joseph of Arimathæa, an honourable counsellor, which also waited
    for the kingdom of God, came, and went in boldly unto Pilate, and
    craved the body of Jesus.
 
@@ -928,11 +928,11 @@ The Gospel of Peter.
    49  And all his acquaintance, and the women that followed him from
    Galilee, stood afar off, beholding these things.
 
-   50  Â¶  And, behold, there was a man named Joseph, a counsellor; and he
+   50  ¶  And, behold, there was a man named Joseph, a counsellor; and he
    was a good man, and a just:
 
    51  (The same had not consented to the counsel and deed of them;) he
-   was of ArimathÃ¦a, a city of the Jews:  who also himself waited for the
+   was of Arimathæa, a city of the Jews:  who also himself waited for the
    kingdom of God.
 
    John.
@@ -949,7 +949,7 @@ The Gospel of Peter.
    37  And again another scripture saith, They shall look on him whom they
    pierced.
 
-   38  Â¶  And after this Joseph of ArimathÃ¦a, being a disciple of Jesus,
+   38  ¶  And after this Joseph of Arimathæa, being a disciple of Jesus,
    but secretly for fear of the Jews, besought Pilate that he might take
    away the body of Jesus:  and Pilate gave him leave.  He came therefore,
    and took the body of Jesus.
@@ -1047,7 +1047,7 @@ The Gospel of Peter.
 
    [^1cf. Mt. ix. 15.]
 
-   62  Â¶  Now the next day, that followed the day of the preparation, the
+   62  ¶  Now the next day, that followed the day of the preparation, the
    chief priests and Pharisees
 
    came together unto Pilate,
@@ -1138,7 +1138,7 @@ The Gospel of Peter.
 
    Chapter XXVIII.
 
-   1  Â¶  In the end of the sabbath, as it began to dawn toward the first
+   1  ¶  In the end of the sabbath, as it began to dawn toward the first
    day of the week, came Mary Magdalene and the other Mary to see the
    sepulchre.
 
@@ -1152,7 +1152,7 @@ The Gospel of Peter.
 
    Chapter XVI.
 
-   1  Â¶  And when the sabbath was past, Mary Magdalene, and Mary the
+   1  ¶  And when the sabbath was past, Mary Magdalene, and Mary the
    mother of James, and Salome, had bought sweet spices, that they might
    come and anoint him.
 
@@ -1192,7 +1192,7 @@ The Gospel of Peter.
 
    Chapter XX.
 
-   1  Â¶  The first day of the week cometh Mary Magdalene early, when it
+   1  ¶  The first day of the week cometh Mary Magdalene early, when it
    was yet dark, unto the sepulchre,
 
    and seeth the stone taken away from the sepulchre.
@@ -1298,7 +1298,7 @@ The Gospel of Peter.
    we, the twelve disciples of the Lord, mourned and were grieved:  and
    each one, being grieved for that which was come to pass, departed to
    his home.  60  But I, Simon Peter and Andrew my brother, took our nets
-   and went to the sea; and there was with us Levi the son of AlphÃ¦us,
+   and went to the sea; and there was with us Levi the son of Alphæus,
    whom the Lord...
      __________________________________________________________________
 
@@ -1345,7 +1345,7 @@ The Gospel of Peter.
    into English of an Arabic text, published at Rome in 1888, in a volume
    entitled in Arabic Diatessaron, which Titianus Compiled from the Four
    Gospels, with the alternative Latin title, Tatiani Evangeliorum
-   HarmoniÃ¦, Arabice.  The Roman volume consists of two parts--the text,
+   Harmoniæ, Arabice.  The Roman volume consists of two parts--the text,
    covering a little over 209 very clearly printed Arabic pages, and a
    Latin half, comprising a scholarly introduction (pp. v.-xv.), a Latin
    translation (pp. 1-99), and a table showing the order in which the
@@ -1355,7 +1355,7 @@ The Gospel of Peter.
 
    2  Former Translations.--In his Introduction (p. xiv. f.) Ciasca
    explains that in his translation he aimed at preserving quantum, salva
-   fidelitate, integrum fuit, indolem stylumque ClementinÃ¦ Vulgate.  This
+   fidelitate, integrum fuit, indolem stylumque Clementinæ Vulgate.  This
    Latin version was in its turn translated into English by the Rev. J.
    Hamlyn Hill, B.D., and published in 1894 in a volume entitled The
    Earliest Life of Christ, with an interesting introduction and a number
@@ -1381,7 +1381,7 @@ The Gospel of Peter.
    tells us (p. xiv.) that he took as the basis of his text that ms. which
    is more careful in its orthography, the Cod. Vat. Arab. No. 14.  He,
    however, printed at the foot of the page the variants of the other ms.,
-   and supplied from it two lacunÃ¦ in the Cod. Vat., [18] substituted its
+   and supplied from it two lacunæ in the Cod. Vat., [18] substituted its
    readings for those of the Cod. Vat. where he thought them preferable,
    and followed its testimony in omitting two important passages. [19]
    Here and there Ciasca has emended the text, but he does not profess to
@@ -1394,7 +1394,7 @@ The Gospel of Peter.
    p. vi. ff.  I. The former, which we shall call the Vatican ms. (in
    Ciasca's footnotes it is called A), was brought to the Vatican from the
    East by Joseph S. Assemani [21] about a.d. 1719.  It was described by
-   Stephen E. Assemani, [22] RosenmÃ¼ller, and Akerblad, [23] and then at
+   Stephen E. Assemani, [22] Rosenmüller, and Akerblad, [23] and then at
    length by Ciasca, to whose account the reader must be referred for the
    details.  It consists of 123 folios, of which the first seven are
    somewhat spoiled, and of which two are missing, [24] and is supposed by
@@ -1421,7 +1421,7 @@ The Gospel of Peter.
    reproduced in phototype in Ciasca's edition, begins the Introductory
    Note given in full at the beginning of the present translation.  The
    text of the Diatessaron ends on folio 353a, but is followed by certain
-   appendices, for which see below, Â§55, 17, note.  This ms. is complete,
+   appendices, for which see below, §55, 17, note.  This ms. is complete,
    and has, as we shall see, [29] in some respects a better text, though
    it is worse in its orthography than the Vatican ms.
 
@@ -1568,7 +1568,7 @@ The Gospel of Peter.
    and a consideration of the descriptions given by Ciasca and Lagarde,
    [54] make it almost certain that the genuine Arabic text of
    Ibn-at-Tayyib began with John i. 1.  Similarly the first four verses of
-   Luke (on which see also below, Â§ 1. 6, note) were probably not in the
+   Luke (on which see also below, § 1. 6, note) were probably not in the
    original text of the ms. that Victor found, for they are not mentioned
    in the (old) table of contents.  We seem thus to detect a process of
    gradual accretion of material drawn from the ordinary gospel text.  (2)
@@ -1587,7 +1587,7 @@ The Gospel of Peter.
    gospels more completely, we have also evidence that suggests that it
    has been at some time or times purged of certain features that are
    lacking in these canonical gospels.  For one case of this kind see
-   below, Â§4, 36, note.
+   below, §4, 36, note.
 
    15  Presentation of the Text of the Diatessaron.--We have observed
    already that the Latin, Armenian, and Arabic Diatessarons correspond
@@ -1674,7 +1674,7 @@ The Gospel of Peter.
    that Matthew has chiefly been followed; while Zahn regards the Fourth
    Gospel as normative.  For a specimen of the way in which words and
    phrases from the different gospels are woven together, we may refer to
-   Â§ 52, 35 ff., and the notes thereon.  In the Arabic mss., and probably
+   § 52, 35 ff., and the notes thereon.  In the Arabic mss., and probably
    in the Syriac exemplar, the work is divided into fifty-four almost
    equal chapters, followed by one short one--a feature that agrees well
    with what we have learned of the work as being of old the lectionary of
@@ -1773,7 +1773,7 @@ The Gospel of Peter.
 
    [17] For further explanation of the method followed see 20.
 
-   [18] See notes to Â§ 7, 47, and Â§ 52, 36, of the present translation.
+   [18] See notes to § 7, 47, and § 52, 36, of the present translation.
 
    [19] See below, 12, (2).
 
@@ -1785,9 +1785,9 @@ The Gospel of Peter.
 
    [23] cf. Zahn, Forschungen, i., 294 ff.
 
-   [24] See below, Â§ 7, 47, note, and Â§ 52, 36, note.
+   [24] See below, § 7, 47, note, and § 52, 36, note.
 
-   [25] See below, Â§ 28, 43, note.
+   [25] See below, § 28, 43, note.
 
    [26] See below, foot-notes, passim.
 
@@ -1801,7 +1801,7 @@ The Gospel of Peter.
    [30] He does not state, in so many words, that the list is absolutely
    exhaustive.
 
-   [31] See, e.g., below, Â§ 13, 42, note, and Â§ 14, 43, note.
+   [31] See, e.g., below, § 13, 42, note, and § 14, 43, note.
 
    [32] See the valuable article of Guidi, "Le traduzioni degli Evangelii
    in arabo e in etiopico" (Atti della R. Accademia dei Lincei; Classe di
@@ -1809,11 +1809,11 @@ The Gospel of Peter.
    Prima--Memorie, pp. 5-38).  Some of his results are briefly stated in
    Scrivener, A Plain Introd. to the Crit. of the N.T., 4th ed., ii., 162.
 
-   [33] cf.the foot-notes passim, e.g., Â§ 13, 14, Â§ 14, 24.
+   [33] cf.the foot-notes passim, e.g., § 13, 14, § 14, 24.
 
    [34] See below, note to Subscription.
 
-   [35] See a glaring case in Â§ 52, 11.
+   [35] See a glaring case in § 52, 11.
 
    [36] The references to the readings of the Diatessaron in
    Ibn-at-Tayyib's own commentary on the gospels (see next note) are
@@ -1831,7 +1831,7 @@ The Gospel of Peter.
    our present work.  Of mss. testifying to No. 1 we have some dating from
    the time of Ibn-al-Assal himself; of No. 2 we have, in addition to
    others, an eleventh-century ms. in Paris, described by De Slane
-   (catalogue No. 85) as being "un volume dÃ©pareillÃ© du ms. original de
+   (catalogue No. 85) as being "un volume dépareillé du ms. original de
    l'ouvrage"; of No. 3 we have of course the Vatican and Borgian mss.
    What is the mutual relation of these texts; were any two of them
    identical?  The Brit. Mus. ms. of the second has many points of contact
@@ -1851,7 +1851,7 @@ The Gospel of Peter.
    is not yet accessible, is "nothing more than the commentary of Ishodad"
    mentioned in the text.  A similar rumor lately circulated probably
    originated simply in the pamphlet of Goussen mentioned in the next
-   note.  S. BÃ¤umer, on the other hand, in his article, "Tatians
+   note.  S. Bäumer, on the other hand, in his article, "Tatians
    Diatessaron, seine bisher. Lit. u. die Reconstruction des Textes nach
    einer neuentdeckten Handschrift" (Literarischer Handweiser, 1890,
    153-169) which the present writer has not been able to see, perhaps
@@ -1868,17 +1868,17 @@ The Gospel of Peter.
    [42] Harris, Fragments, p. 14, where the Syriac text is quoted.
 
    [43] Bib. Or., ii., 159 f.  Most of them are repeated again by Bar
-   HebrÃ¦us (d. 1286), although some confusion is produced by his
-   interweaving some phrases from Eusebius of CÃ¦sarea.  (Bib. Or., i., 57
+   Hebræus (d. 1286), although some confusion is produced by his
+   interweaving some phrases from Eusebius of Cæsarea.  (Bib. Or., i., 57
    f., and a longer quotation in English in Contemp. Rev., Aug., 1895, p.
    274 f.)
 
-   [44] Lagarde's statement (Nachrichten von der KÃ¶nigl. Gesellsch. der
-   Wiss., etc., zu GÃ¶ttingen, 1891, No. 4, p. 153) that a ms. had been
-   discovered, appears to have been unfounded.  Prof. Rahlfs of GÃ¶ttingen
+   [44] Lagarde's statement (Nachrichten von der Königl. Gesellsch. der
+   Wiss., etc., zu Göttingen, 1891, No. 4, p. 153) that a ms. had been
+   discovered, appears to have been unfounded.  Prof. Rahlfs of Göttingen
    kindly tells me that he believes this is so.
 
-   [45] Migne, Patrol. grÃ¦c., tom. lxxxiii., col. 369, 372.
+   [45] Migne, Patrol. græc., tom. lxxxiii., col. 369, 372.
 
    [46] Published at Venice in 1836.
 
@@ -1906,12 +1906,12 @@ The Gospel of Peter.
    beginning was the Word."  (Patrol. Syr., pars i., tom. i., 21, lines
    17-19).
 
-   [54] Nachrichten von der KÃ¶nigl. Gesellsch. der Wiss., etc., March 17,
+   [54] Nachrichten von der Königl. Gesellsch. der Wiss., etc., March 17,
    1886, No. 4, p. 151 ff.
 
-   [55] See notes to Â§ 1, 81, and Â§ 4, 29.
+   [55] See notes to § 1, 81, and § 4, 29.
 
-   [56] See note to Â§ 55, 17.
+   [56] See note to § 55, 17.
 
    [57] The Armenian version of Ephraem is supposed to date from the fifth
    century.
@@ -1945,12 +1945,12 @@ The Gospel of Peter.
    given here, or that in Hill's volume) can then be used for the Arabic
    text also.
 
-   [67] e.g., Â§ 8, 10.  For a list of suggested emendations see at end of
+   [67] e.g., § 8, 10.  For a list of suggested emendations see at end of
    Index.
 
-   [68] e.g., Â§ 52, 11.
+   [68] e.g., § 52, 11.
 
-   [69] e.g., Â§ 45, 33.
+   [69] e.g., § 45, 33.
      __________________________________________________________________
 
    Introductory Notes.
@@ -2293,7 +2293,7 @@ The Gospel of Peter.
 
    [95] Luke i. 17.
 
-   [96] See Â§ 28, 17, note.
+   [96] See § 28, 17, note.
 
    [97] Luke i. 18.
 
@@ -2345,9 +2345,9 @@ The Gospel of Peter.
    [120] Luke i. 39.
 
    [121] Vat. ms., like that described by Gildemeister (see Introduction,
-   20) has into Galilee (cf. Â§ 8, 10, note).
+   20) has into Galilee (cf. § 8, 10, note).
 
-   [122] Lit. the, a form due to Syriac influence (cf. Â§ ii. 12, and
+   [122] Lit. the, a form due to Syriac influence (cf. § ii. 12, and
    passim).
 
    [123] Luke i. 40.
@@ -2376,7 +2376,7 @@ The Gospel of Peter.
 
    [134] The Arabic would naturally be rendered, the blessing on me, That;
    but a number of passages in this work seem to justify the rendering
-   given in the text (cf., e.g., Â§ 46, 54, and especially Â§ 15, 40).
+   given in the text (cf., e.g., § 46, 54, and especially § 15, 40).
 
    [135] Luke i. 50.
 
@@ -2414,7 +2414,7 @@ The Gospel of Peter.
 
    [151] Luke i. 65.
 
-   [152] Lit. described (cf. Â§ ii. 46).
+   [152] Lit. described (cf. § ii. 46).
 
    [153] Luke i. 66.
 
@@ -2450,7 +2450,7 @@ The Gospel of Peter.
    [168] Borg. ms. has and for of.
 
    [169] The word used in the Peshitta means visit, either in the sense of
-   caring for or in that of frequenting.  See Â§ 24, 29.
+   caring for or in that of frequenting.  See § 24, 29.
 
    [170] So Borg. ms.  The Vat. ms. is very indistinct.  Lagarde (see
    Introduction, 13, note), quoting Guidi, prints Whereby there visiteth
@@ -2487,11 +2487,11 @@ The Gospel of Peter.
    brought forth her firstborn son.
 
    [9] [184] And in those days there went forth a decree from Augustus
-   CÃ¦sar that all the [10] people of his dominion [185] should be
+   Cæsar that all the [10] people of his dominion [185] should be
    enrolled. [186] This first enrolment was [187] while Quirinius [11, 12]
    was governor of Syria.  [188] And every man went to be enrolled in his
    city.  [189] And Joseph went up also from Nazareth, a city of Galilee,
-   to JudÃ¦a, to the city of David [13] which is called Bethlehem (for he
+   to Judæa, to the city of David [13] which is called Bethlehem (for he
    was of the house of David and of his tribe), [190] with [14] [Arabic,
    p. 8] Mary his betrothed, she being with child, to be enrolled there.
    [191] And while [15] she was there the days for her being delivered
@@ -2602,13 +2602,13 @@ The Gospel of Peter.
    [177] The Arabic might even more naturally be rendered born, thus
    giving us the reading that Ishodad tells us was that of the Diatessaron
    (Harris, Fragments, p. 16 f.); but throughout the whole genealogy (see
-   Â§ 1, 81, note) this word has been used by the Vat. ms. in the sense of
+   § 1, 81, note) this word has been used by the Vat. ms. in the sense of
    begat.  Here the Borg. ms. has of her for in her; but Ibn-at-Tayyib in
    his Commentary discusses why Matthew wrote in and not of.
 
    [178] Matt. i. 21.
 
-   [179] cf. Â§ 1, 78.
+   [179] cf. § 1, 78.
 
    [180] Matt. i. 22.
 
@@ -2662,7 +2662,7 @@ The Gospel of Peter.
 
    [204] Luke ii. 18.
 
-   [205] cf. Â§ 1, 66, note.
+   [205] cf. § 1, 66, note.
 
    [206] Luke ii. 19.
 
@@ -2735,7 +2735,7 @@ The Gospel of Peter.
    him.  [237] And Herod the king heard, and he was troubled, and all [4]
    Jerusalem with him.  [238] And he gathered all the chief priests and
    the scribes of the [5] people, and asked them in what place [239] the
-   Messiah should be born.  [240] They said, In Bethlehem of JudÃ¦a:  thus
+   Messiah should be born.  [240] They said, In Bethlehem of Judæa:  thus
    it is written in the prophet,
 
    [6] [241] Thou also, Bethlehem of Judah,
@@ -2789,7 +2789,7 @@ The Gospel of Peter.
    Israel; for they have died who sought the child's life.  [21] [258] And
    Joseph rose and took the child and his mother, and came to the land
    [22] of Israel.  [259] But when he heard that Archelaus had become king
-   over JudÃ¦a instead of Herod his father, he feared to go thither; and he
+   over Judæa instead of Herod his father, he feared to go thither; and he
    saw in a dream that he should [23] go into the land of Galilee, [260]
    and that he should abide in a city called Nazareth:  that the saying in
    the prophet might be fulfilled, that he should be called a Nazarene.
@@ -2821,16 +2821,16 @@ The Gospel of Peter.
    [36] [Arabic, p. 13] [275] And Jesus grew in his stature and wisdom,
    and in grace with God and men.
 
-   [37] [276] And in the fifteenth year of the reign of Tiberius CÃ¦sar,
-   when Pontius Pilate was governor in JudÃ¦a, and one of the four rulers,
+   [37] [276] And in the fifteenth year of the reign of Tiberius Cæsar,
+   when Pontius Pilate was governor in Judæa, and one of the four rulers,
    Herod, in Galilee; and Philip his brother, one of the four rulers, in
-   IturÃ¦a and in the district of Trachonitis; and [38] Lysanias, one of
+   Ituræa and in the district of Trachonitis; and [38] Lysanias, one of
    the four rulers, in Abilene; [277] in the chief-priesthood of Annas and
    Caiaphas, the command [278] of God went forth to John the son of
    Zacharias in the [39] desert.  [279] And he came into all the region
    which is about Jordan, proclaiming the [40] baptism of repentance unto
    [280] the forgiveness of sins.  [281] And he was preaching in the [41]
-   wilderness of JudÃ¦a, and saying, [282] Repent ye; the kingdom of heaven
+   wilderness of Judæa, and saying, [282] Repent ye; the kingdom of heaven
    is come near.  [42] [283] This is he that was spoken of in Isaiah the
    prophet,
 
@@ -2977,7 +2977,7 @@ The Gospel of Peter.
 
    [286] Luke iii. 6.
 
-   [287] See note on Â§ 1, 78.
+   [287] See note on § 1, 78.
 
    [288] John i. 7.
 
@@ -3035,7 +3035,7 @@ The Gospel of Peter.
    [12] [317] Now John's raiment was camel's hair, and he was girded with
    skins, and his food [13] [Arabic, p. 15] was of locusts and honey of
    the wilderness. [318]   ^  [319] Then went out unto him the people of
-   Jerusalem, and all JudÃ¦a, and all the region which is about the [14,
+   Jerusalem, and all Judæa, and all the region which is about the [14,
    15] Jordan; [320] and they were baptized of him in the river Jordan,
    confessing their sins.  [321] But when he saw many of the Pharisees
    [322] and Sadducees [323] coming to be baptized, he said unto them, Ye
@@ -3182,12 +3182,12 @@ The Gospel of Peter.
    [328] Luke iii. 11.
 
    [329] Grammar requires this rendering, but solecisms in this kind of
-   word are very common, and in this work (e.g., Â§ 48, 21) the jussive
+   word are very common, and in this work (e.g., § 48, 21) the jussive
    particle is sometimes omitted.  We should therefore probably render let
    him give, let him do, etc.
 
    [330] Grammar requires this rendering, but solecisms in this kind of
-   word are very common, and in this work (e.g., Â§ 48, 21) the jussive
+   word are very common, and in this work (e.g., § 48, 21) the jussive
    particle is sometimes omitted.  We should therefore probably render let
    him give, let him do, etc.
 
@@ -3204,7 +3204,7 @@ The Gospel of Peter.
    [336] Our translator constantly uses this Arabic word (which we render
    haply, or, can it be? or, perhaps, etc.) to represent the Syriac word
    used in this place.  The latter is used in various ways, and need not
-   be interrogative, as our translator renders it (cf. especially Â§ 17,
+   be interrogative, as our translator renders it (cf. especially § 17,
    6).
 
    [337] Luke iii. 16.
@@ -3224,13 +3224,13 @@ The Gospel of Peter.
    God.  If this were not the reading of the Peshitta (against Sin.) and
    Ibn-at-Tayyib's Commentary, one might explain from as a corruption of
    the Arabic son of, the words being very similar.  On the Borg. ms. see
-   Â§ 55, 17, note.
+   § 55, 17, note.
 
    [344] John i. 29.
 
    [345] John i. 30.
 
-   [346] cf. Â§ 3, 54, note.
+   [346] cf. § 3, 54, note.
 
    [347] John i. 31.
 
@@ -3284,12 +3284,12 @@ The Gospel of Peter.
 
    [371] Luke iv. 5.
 
-   [372] Lit. backbiter, a different word from that used above in Â§ 4, 43,
+   [372] Lit. backbiter, a different word from that used above in § 4, 43,
    47.
 
    [373] Luke iv. 6.
 
-   [374] Lit. backbiter, a different word from that used above in Â§ 4, 43,
+   [374] Lit. backbiter, a different word from that used above in § 4, 43,
    47.
 
    [375] Luke iv. 7.
@@ -3424,7 +3424,7 @@ The Gospel of Peter.
 
    [377] Luke iv. 13.
 
-   [378] Lit. backbiter, a different word from that used above in Â§ 4, 43,
+   [378] Lit. backbiter, a different word from that used above in § 4, 43,
    47.
 
    [379] Matt. iv. 11b.
@@ -3461,7 +3461,7 @@ The Gospel of Peter.
 
    [395] John i. 47.
 
-   [396] Lit. the (cf. note to Â§ 1, 40).
+   [396] Lit. the (cf. note to § 1, 40).
 
    [397] John i. 48.
 
@@ -3475,9 +3475,9 @@ The Gospel of Peter.
 
    [402] John ii. 1.
 
-   [403] Arabic Qatna; at Â§ 5, 32, Qatina, following the Syriac form.
+   [403] Arabic Qatna; at § 5, 32, Qatina, following the Syriac form.
 
-   [404] Lit. the (cf. note to Â§ 1, 40).
+   [404] Lit. the (cf. note to § 1, 40).
 
    [405] John ii. 2.
 
@@ -3509,7 +3509,7 @@ The Gospel of Peter.
    [418] Luke iv. 15.
 
    [419] If the text does not contain a misprint the word for by is
-   wanting in both mss.  It should doubtless be restored as in Â§ 7, 3.
+   wanting in both mss.  It should doubtless be restored as in § 7, 3.
 
    [420] Luke iv. 16.
 
@@ -3563,7 +3563,7 @@ The Gospel of Peter.
 
    [443] Luke v. 6.
 
-   [444] Borg. ms. has he did this, he enclosed, on which see Â§ 38, 43,
+   [444] Borg. ms. has he did this, he enclosed, on which see § 38, 43,
    note (end).  Either reading could spring from the other, within the
    Arabic.
 
@@ -3583,8 +3583,8 @@ The Gospel of Peter.
    to the land; and they left everything, and followed him.
 
    [5] [451] And after that came Jesus and his disciples into the land of
-   JudÃ¦a; and he went [6] about there with them, and baptized.  [452] And
-   John also was baptizing in Ã†non, which is beside Salim, because there
+   Judæa; and he went [6] about there with them, and baptized.  [452] And
+   John also was baptizing in Ænon, which is beside Salim, because there
    was much water there:  and they came, and were baptized.  [7, 8] [453]
    And John was not yet come into prison.  [454] And there was an inquiry
    between [9] one of John's disciples and one of the Jews about
@@ -3614,7 +3614,7 @@ The Gospel of Peter.
    [20] [478] And Jesus learned [479] that the Pharisees had heard that he
    had received many disciples, [21] and that he was baptizing more than
    John [480] (not that Jesus was himself baptizing, [22] but his
-   disciples); [481] and so he left JudÃ¦a.
+   disciples); [481] and so he left Judæa.
 
    [23] [482] And Herod the governor, because he used to be rebuked by
    John because of Herodias the wife of Philip his brother, and for all
@@ -3625,7 +3625,7 @@ The Gospel of Peter.
    away to Galilee.  [26] [485] And he entered again into Cana, where he
    had made the water wine.  And there [27] was at Capernaum a king's
    servant, whose son was sick.  [486] And this man heard that Jesus was
-   come from JudÃ¦a to Galilee; and he went to him, and besought of him
+   come from Judæa to Galilee; and he went to him, and besought of him
    that he would come down and heal his son; for he had come near unto
    death.  [28, 29] [487] Jesus said unto him, Except ye see signs and
    wonders, ye do [488] not believe.  [489] The [Arabic, p. 24] king's
@@ -3638,7 +3638,7 @@ The Gospel of Peter.
    left [33] him.  [494] And his father knew that that was at that hour in
    which Jesus said unto him, [34] Thy son is alive.  [495] And he
    believed, he and the whole people of his house.  And this [35] is the
-   second sign [496] which Jesus did when he returned from JudÃ¦a to
+   second sign [496] which Jesus did when he returned from Judæa to
    Galilee.  [497] And he was preaching in the synagogues of Galilee.
 
    [36] [498] And he left Nazareth, and came and dwelt in Capernaum by the
@@ -3733,7 +3733,7 @@ The Gospel of Peter.
 
    [462] John iii. 29.
 
-   [463] See Â§ 9, 21, note.
+   [463] See § 9, 21, note.
 
    [464] So Ciasca's printed text.  The Vat. ms., however, probably
    represents a past tense.
@@ -3762,7 +3762,7 @@ The Gospel of Peter.
 
    [475] John iii. 36.
 
-   [476] Lit. the life of eternity; here and everywhere except Â§ 21, 40.
+   [476] Lit. the life of eternity; here and everywhere except § 21, 40.
 
    [477] i.e., alighteth-and-stayeth.
 
@@ -3802,7 +3802,7 @@ The Gospel of Peter.
 
    [495] John iv. 54.
 
-   [496] See Â§ 5, 32, note.
+   [496] See § 5, 32, note.
 
    [497] Luke iv. 44.
 
@@ -3818,7 +3818,7 @@ The Gospel of Peter.
 
    [503] Luke iv. 32.
 
-   [504] Perhaps we might here render learning; but see Â§ 28, 17, note.
+   [504] Perhaps we might here render learning; but see § 28, 17, note.
 
    [505] Luke iv. 33.
 
@@ -3846,7 +3846,7 @@ The Gospel of Peter.
 
    [516] Matt. viii. 16a.
 
-   [517] cf. Â§ 1, 40, note 2.
+   [517] cf. § 1, 40, note 2.
 
    [518] Luke iv. 40b.
 
@@ -3877,7 +3877,7 @@ The Gospel of Peter.
    [530] and casting out the devils.  [531] And his fame became known
    [532] that [533] he was teaching in [9] every place and being glorified
    by every man.  [534] And when he passed by, he saw Levi the son of
-   AlphÃ¦us sitting among the tax-gatherers; [535] and he said unto him,
+   Alphæus sitting among the tax-gatherers; [535] and he said unto him,
    Follow [10] me:  and he rose and followed him.  [536] And the news of
    him was heard of in all the land of Syria:  and they brought unto him
    all those whom grievous ills had befallen through divers diseases, and
@@ -3889,7 +3889,7 @@ The Gospel of Peter.
    gathered, so that it could not hold them, even about [13] [Arabic, p.
    27] the door; and he made known to them the word of God.  [541] And
    there were there some of the Pharisees and the teachers of the law,
-   sitting, come from all the villages of Galilee, and JudÃ¦a, and
+   sitting, come from all the villages of Galilee, and Judæa, and
    Jerusalem; and the power of the Lord was [14] present to heal them.
    [542] And some men brought a bed with a man on it who was paralytic.
    [15] And they sought to bring him in and lay him before him.  [543] And
@@ -4004,12 +4004,12 @@ The Gospel of Peter.
 
    [534] Mark ii. 14.
 
-   [535] See above, note to Â§ 6, 46, which applies, although the Arabic
+   [535] See above, note to § 6, 46, which applies, although the Arabic
    words are different.
 
    [536] Matt. iv. 24.
 
-   [537] Lit. son-of-the-roofs, a Syriac expression (cf. Â§ 24, 31, note).
+   [537] Lit. son-of-the-roofs, a Syriac expression (cf. § 24, 31, note).
 
    [538] Mark ii. 1.
 
@@ -4058,7 +4058,7 @@ The Gospel of Peter.
 
    [560] Luke v. 27.
 
-   [561] See above, note to Â§ 6, 46.
+   [561] See above, note to § 6, 46.
 
    [562] Luke v. 28.
 
@@ -4118,7 +4118,7 @@ The Gospel of Peter.
    simply to introduce the quotation, but is to be taken in the adverbial
    sense, how representing the Syriac what that is?
 
-   [588] See Â§ 10, 13, note.
+   [588] See § 10, 13, note.
 
    [589] Matt. xii. 8.
 
@@ -4129,8 +4129,8 @@ The Gospel of Peter.
    [592] Lit. other.  The definite article is a mistake of the translator.
 
    [593] Here, at the end of leaf 17 of Vat. ms., is a note by a later
-   hand:  "Here a leaf is missing."  This first lacuna extends from Â§ 7,
-   47 to Â§ 8, 17.
+   hand:  "Here a leaf is missing."  This first lacuna extends from § 7,
+   47 to § 8, 17.
 
    [594] Luke vi. 7.
 
@@ -4182,8 +4182,8 @@ The Gospel of Peter.
    might pray, and he [10] spent the night [616] there in prayer to God.
    [617] And when the morning was come, he called the disciples.  [618]
    And he went towards the sea:  and there followed him much people [11]
-   from Galilee that he might pray, [619] [620] and from JudÃ¦a, and from
-   Jerusalem, and from IdumÃ¦a, and from beyond Jordan, and from Tyre, and
+   from Galilee that he might pray, [619] [620] and from Judæa, and from
+   Jerusalem, and from Idumæa, and from beyond Jordan, and from Tyre, and
    from Sidon, and from Decapolis; [12] and great multitudes came unto
    him, which had heard what he did.  [621] And he spake to his disciples
    to bring him the boat because of the multitudes, that they [13] might
@@ -4202,7 +4202,7 @@ The Gospel of Peter.
    twelve; and they are those whom he named [20] apostles:  [633] Simon,
    whom he named Cephas, and Andrew his brother, and James and [21] John,
    and Philip and Bartholomew, [634] and Matthew and Thomas, and James the
-   son [22] of AlphÃ¦us, and Simon which was called the Zealot, [635] and
+   son [22] of Alphæus, and Simon which was called the Zealot, [635] and
    Judas the son of James, [23] and Judas the Iscariot, being he that had
    betrayed him. [636]   [637] And Jesus went down with them and stood in
    the plain, and the company of his disciples, and the great [24]
@@ -4332,7 +4332,7 @@ The Gospel of Peter.
    [613] Matt. xii. 21.
 
    [614] The Arab. might also mean, And he shall preach (the good tidings)
-   to the peoples in his name (cf. Â§ 22, 47, note).
+   to the peoples in his name (cf. § 22, 47, note).
 
    [615] Luke vi. 12.
 
@@ -4346,7 +4346,7 @@ The Gospel of Peter.
    [619] It must be remembered that we have here only one ms.  The Arabic
    words for Galilee and for mountain are very similar.  The words that he
    might pray have therefore probably made their way here by some error
-   from Â§ 8, 9, above.
+   from § 8, 9, above.
 
    [620] Mark iii. 8.
 
@@ -4375,7 +4375,7 @@ The Gospel of Peter.
    [630] This is the meaning of the Arabic word, as it is the primary
    meaning of the Syriac; but in this work a number of words meaning
    approach are used (and generally translated) in the sense of touch.
-   The commonest word so used is that in Â§ 12, 13 (cf. also Â§ 12, 35).
+   The commonest word so used is that in § 12, 13 (cf. also § 12, 35).
 
    [631] Matt. v. 1a.
 
@@ -4439,7 +4439,7 @@ The Gospel of Peter.
 
    [660] Matt. v. 16.
 
-   [661] Or, let (cf. Â§ 4, 20, note).
+   [661] Or, let (cf. § 4, 20, note).
 
    [662] Mark iv. 22.
 
@@ -4459,7 +4459,7 @@ The Gospel of Peter.
 
    [670] Matt. v. 22.
 
-   [671] See Â§ 10, 13, note.
+   [671] See § 10, 13, note.
 
    [672] Matt. v. 23.
 
@@ -4652,7 +4652,7 @@ The Gospel of Peter.
 
    [714] Matt. v. 48.
 
-   [715] Our translator is continually using this word (cf. Â§ 9, 23) where
+   [715] Our translator is continually using this word (cf. § 9, 23) where
    the context and the originals require then or therefore.  We shall only
    occasionally reproduce the peculiarity.
 
@@ -4893,7 +4893,7 @@ The Gospel of Peter.
 
    [774] Mark iv. 25.
 
-   [775] cf. Luke viii. 18b.  Our translator uses the same word in Â§ 50,
+   [775] cf. Luke viii. 18b.  Our translator uses the same word in § 50,
    5=Luke xxiii. 8b; and in both cases it represents the same word in the
    Syriac versions.
 
@@ -4937,7 +4937,7 @@ The Gospel of Peter.
    [793] Matt. vii. 13.
 
    [794] There is nothing about striving.  The verb is walaga, which means
-   enter (cf. Â§ 11, 48).
+   enter (cf. § 11, 48).
 
    [795] Matt. vii. 14.
 
@@ -4950,7 +4950,7 @@ The Gospel of Peter.
    [799] Luke vi. 44.
 
    [800] The verbs might be singular active, but not plural as in Syriac
-   versions (cf., however, Â§ 38, 43, note, end).  In the Borg. ms. the
+   versions (cf., however, § 38, 43, note, end).  In the Borg. ms. the
    nouns are in the accusative.
 
    [801] Matt. vii. 17.
@@ -5029,7 +5029,7 @@ The Gospel of Peter.
    speak; and he gave him to his mother.  [840] And fear came on all the
    people:  and they praised God, and said, There hath risen among us a
    great prophet:  and, God [23] hath had regard to his people.  [841] And
-   this news concerning him spread in all JudÃ¦a, and in all the region
+   this news concerning him spread in all Judæa, and in all the region
    which was about them.
 
    [24] [842] And when Jesus saw great multitudes surrounding him, he
@@ -5173,7 +5173,7 @@ The Gospel of Peter.
 
    [850] Mark iv. 35; Luke viii. 22d.
 
-   [851] cf., e.g., at Â§ 17, 19, Â§ 23, 16, where the same Arabic and
+   [851] cf., e.g., at § 17, 19, § 23, 16, where the same Arabic and
    Syriac word is used; cf. also the ambiguity of the Greek (R.V. has
    left).
 
@@ -5390,7 +5390,7 @@ The Gospel of Peter.
 
    [902] Mark v. 27.
 
-   [903] See Â§ 8, 17, note.
+   [903] See § 8, 17, note.
 
    [904] Mark v. 28.
 
@@ -5440,7 +5440,7 @@ The Gospel of Peter.
 
    [927] Matt. ix. 29.
 
-   [928] Lit. went forward to (cf. Â§ 8, 17, note).
+   [928] Lit. went forward to (cf. § 8, 17, note).
 
    [929] Matt. ix. 30.
 
@@ -5462,7 +5462,7 @@ The Gospel of Peter.
 
    [938] Matt. x. 5.
 
-   [939] Â§ 34, 40, shows that this Arabic form may be so translated.
+   [939] § 34, 40, shows that this Arabic form may be so translated.
 
    [940] Matt. x. 6.
 
@@ -5620,7 +5620,7 @@ The Gospel of Peter.
 
    [960] Matt. x. 22.
 
-   [961] See note to Â§ 1, 78.
+   [961] See note to § 1, 78.
 
    [962] Matt. x. 23.
 
@@ -5630,7 +5630,7 @@ The Gospel of Peter.
 
    [965] Matt. x. 26.
 
-   [966] See note to Â§ 9, 21.
+   [966] See note to § 9, 21.
 
    [967] Matt. x. 27a; Luke xii. 3b.
 
@@ -5638,7 +5638,7 @@ The Gospel of Peter.
 
    [969] Perhaps this Arabic word is a copyist's error for that used a few
    lines further down in Luke xii. 5, the Arabic words being very similar;
-   but see note on Â§ 1, 14.
+   but see note on § 1, 14.
 
    [970] Syriac.
 
@@ -5849,7 +5849,7 @@ The Gospel of Peter.
 
    [1015] Luke vii. 30.
 
-   [1016] See below, Â§ 20, 28, note.
+   [1016] See below, § 20, 28, note.
 
    [1017] Matt. xi. 12a.
 
@@ -5867,7 +5867,7 @@ The Gospel of Peter.
 
    [1024] Luke vii. 31b.
 
-   [1025] See Â§ 1, 49, note.
+   [1025] See § 1, 49, note.
 
    [1026] Luke vii. 32.
 
@@ -5899,7 +5899,7 @@ The Gospel of Peter.
 
    [1040] The word used in the Syriac versions (Pesh. and Cur.) means
    garments as well as utensils, and the Arabic translator has chosen the
-   wrong meaning (cf. Â§ 42, 44).
+   wrong meaning (cf. § 42, 44).
 
    [1041] Certain derivatives from the same root signify bind, but hardly
    this word.
@@ -6168,7 +6168,7 @@ The Gospel of Peter.
 
    [1113] Luke x. 16.
 
-   [1114] See below, Â§ 20, 28, note.
+   [1114] See below, § 20, 28, note.
 
    [1115] Luke x. 17.
 
@@ -6194,7 +6194,7 @@ The Gospel of Peter.
 
    [1125] Matt. xi. 29.
 
-   [1126] Lit. that (cf. above, Â§ 1, 50, note).
+   [1126] Lit. that (cf. above, § 1, 50, note).
 
    [1127] Matt. xi. 30.
 
@@ -6362,7 +6362,7 @@ The Gospel of Peter.
 
    [1143] Matt. xii. 39.
 
-   [1144] See Â§ 1, 49, note.
+   [1144] See § 1, 49, note.
 
    [1145] Luke xi. 30.
 
@@ -6370,7 +6370,7 @@ The Gospel of Peter.
 
    [1147] Luke xi. 31.
 
-   [1148] See note to Â§ 10, 13.
+   [1148] See note to § 10, 13.
 
    [1149] Matt. xii. 41.
 
@@ -6461,9 +6461,9 @@ The Gospel of Peter.
 
    [1191] Luke viii. 13b; Matt. xiii. 21c.
 
-   [1192] See above, Â§ 1, 40, note 2.
+   [1192] See above, § 1, 40, note 2.
 
-   [1193] Or, is seduced (cf. Â§ 25, 17, note).
+   [1193] Or, is seduced (cf. § 25, 17, note).
 
    [1194] Matt. xiii. 22a.
 
@@ -6598,7 +6598,7 @@ The Gospel of Peter.
    save to Zarephath of Sidon, to a woman that was [47] a widow.  [1257]
    And many lepers were among the children of Israel in the days of Elisha
    the prophet; but not one of them was cleansed, save Naaman the
-   NabathÃ¦an. [1258]   [48] [1259] And he was not able to do there many
+   Nabathæan. [1258]   [48] [1259] And he was not able to do there many
    mighty works, [1260] because of their unbelief; [49] except that he
    laid his hand upon a few of the sick, and healed them.  [1261] And he
    marvelled [50] at their lack of faith.  [1262] And when those who were
@@ -6624,7 +6624,7 @@ The Gospel of Peter.
 
    [1209] Matt. xiii. 29.
 
-   [1210] See above, Â§ 4, 24, note.
+   [1210] See above, § 4, 24, note.
 
    [1211] Matt. xiii. 30.
 
@@ -6649,16 +6649,16 @@ The Gospel of Peter.
    [1221] Matt. xiii. 34b; Matt. xiii. 35.
 
    [1222] The word (if not a corruption of that used in the Brit. Mus.
-   text of Ibn-at-Tayyib's Commentary, and in Â§ 43, 46 where, however,
+   text of Ibn-at-Tayyib's Commentary, and in § 43, 46 where, however,
    according to Ciasca's foot-note, it was not the word first written by
    the scribe) is Syriac.  Perhaps it means the ends of the earth (see P.
-   Smith, Thes. Syr.).  Still a third word is used in Â§ 47, 42.
+   Smith, Thes. Syr.).  Still a third word is used in § 47, 42.
 
    [1223] Mark iv. 34b.
 
    [1224] Matt. xiii. 36.
 
-   [1225] cf. Â§ 11, 32, note.
+   [1225] cf. § 11, 32, note.
 
    [1226] Matt. xiii. 37.
 
@@ -6684,7 +6684,7 @@ The Gospel of Peter.
 
    [1237] Matt. xiii. 47.
 
-   [1238] cf. note to Â§ 10, 8.
+   [1238] cf. note to § 10, 8.
 
    [1239] Matt. xiii. 48.
 
@@ -6712,7 +6712,7 @@ The Gospel of Peter.
 
    [1251] Luke iv. 23.
 
-   [1252] cf. above, Â§ 4, 24, note.
+   [1252] cf. above, § 4, 24, note.
 
    [1253] Luke iv. 24.
 
@@ -6725,7 +6725,7 @@ The Gospel of Peter.
    [1257] Luke iv. 27.
 
    [1258] Of the Syriac versions Cur. and Sin. are wanting.  Pesh. has
-   AramÃ¦an.
+   Aramæan.
 
    [1259] Mark vi. 5.
 
@@ -7135,9 +7135,9 @@ The Gospel of Peter.
 
    [1349] Mark vi. 56.
 
-   [1350] cf. Â§ 12, 13, and note to Â§ 8, 17.
+   [1350] cf. § 12, 13, and note to § 8, 17.
 
-   [1351] The word used at Â§ 12, 35.
+   [1351] The word used at § 12, 35.
 
    [1352] Or, revived, i.e., made to live.
 
@@ -7173,7 +7173,7 @@ The Gospel of Peter.
 
    [1368] Represents a mistaken vocalisation of the Peshitta.
 
-   [1369] Lit. equity; see above, Â§ 3, 53, note.
+   [1369] Lit. equity; see above, § 3, 53, note.
 
    [1370] John vi. 33.
 
@@ -7201,7 +7201,7 @@ The Gospel of Peter.
 
    [1382] John vi. 45.
 
-   [1383] i.e., therefore (see note, Â§ 9, 21).
+   [1383] i.e., therefore (see note, § 9, 21).
 
    [1384] John vi. 46.
 
@@ -7618,7 +7618,7 @@ The Gospel of Peter.
    [47, 48] [1532] And after two days Jesus went out thence and departed
    to Galilee.  [1533] And Jesus [49] testified that a prophet is not
    honoured in his own city.  [1534] And when he came to Galilee, the
-   GalilÃ¦ans received him.
+   Galilæans received him.
      __________________________________________________________________
 
    [1479] Mark vii. 31.
@@ -7651,7 +7651,7 @@ The Gospel of Peter.
 
    [1493] John iv. 10.
 
-   [1494] For the form cf. below, Â§ 34, 40.
+   [1494] For the form cf. below, § 34, 40.
 
    [1495] John iv. 11.
 
@@ -7689,7 +7689,7 @@ The Gospel of Peter.
 
    [1512] Or, was speaking.
 
-   [1513] But see note to Â§ 7, 38.
+   [1513] But see note to § 7, 38.
 
    [1514] John iv. 28.
 
@@ -7714,7 +7714,7 @@ The Gospel of Peter.
    [1524] John iv. 36.
 
    [1525] So in the Arabic, contrary to the usual practice of this writer
-   (cf. Â§ 6, 19).
+   (cf. § 6, 19).
 
    [1526] John iv. 37.
 
@@ -7979,7 +7979,7 @@ The Gospel of Peter.
    [1595] John v. 39.
 
    [1596] This word (often used by our translator) means in Syriac
-   (transposed) believe, think, hope (cf. Â§ 8, 8, note).
+   (transposed) believe, think, hope (cf. § 8, 8, note).
 
    [1597] John v. 40.
 
@@ -7994,7 +7994,7 @@ The Gospel of Peter.
    [1602] John v. 45.
 
    [1603] This word (often used by our translator) means in Syriac
-   (transposed) believe, think, hope (cf. Â§ 8, 8, note).
+   (transposed) believe, think, hope (cf. § 8, 8, note).
 
    [1604] John v. 46.
 
@@ -8073,7 +8073,7 @@ The Gospel of Peter.
    nor tell any man in the village.
 
    [31] [1649] And Jesus went forth, and his disciples, to the villages of
-   CÃ¦sarea Philippi.  [32] [1650] And while he was going in the way, and
+   Cæsarea Philippi.  [32] [1650] And while he was going in the way, and
    his disciples alone, [1651] he asked his disciples, [33] and said, What
    do men say of me that I am, the Son of man? [1652]   [1653] They said
    unto him, Some say, John the Baptist; and others, Elijah; and others,
@@ -8153,7 +8153,7 @@ The Gospel of Peter.
 
    [1624] Mark viii. 13.
 
-   [1625] cf. Â§ 11, 32, note.
+   [1625] cf. § 11, 32, note.
 
    [1626] Mark viii. 14.
 
@@ -8167,7 +8167,7 @@ The Gospel of Peter.
 
    [1630] Matt. xvi. 8.
 
-   [1631] Lit. What.  See note to Â§ 7, 38.
+   [1631] Lit. What.  See note to § 7, 38.
 
    [1632] Mark viii. 17b.
 
@@ -8212,7 +8212,7 @@ The Gospel of Peter.
 
    [1652] The Arabic, which reappears in Ibn-at-Tayyib's Commentary (Brit.
    Mus. text), and seems to represent the consonantal text of the
-   Peshitta, is awkward.  Â§ 23, 34 (Arabic), shows, however, that the
+   Peshitta, is awkward.  § 23, 34 (Arabic), shows, however, that the
    rendering given in the text is the meaning intended by the translator.
 
    [1653] Matt. xvi. 14.
@@ -8225,7 +8225,7 @@ The Gospel of Peter.
 
    [1657] Matt. xvi. 18.
 
-   [1658] Same Arabic word in both places.  See note to Â§ 5, 11.
+   [1658] Same Arabic word in both places.  See note to § 5, 11.
 
    [1659] Matt. xvi. 19.
 
@@ -8241,7 +8241,7 @@ The Gospel of Peter.
    [1664] Mark viii. 32a.
 
    [1665] The Arabic might perhaps be construed and to speak, depending on
-   began in Â§ 23, 40; but the clause agrees with the Sinaitic of Mark, as
+   began in § 23, 40; but the clause agrees with the Sinaitic of Mark, as
    does the following.
 
    [1666] Matt. xvi. 22.
@@ -8268,7 +8268,7 @@ The Gospel of Peter.
 
    [1677] Matt. xvi. 27.
 
-   [1678] See Â§ 23, 40, note.
+   [1678] See § 23, 40, note.
      __________________________________________________________________
 
    Section XXIV.
@@ -8451,8 +8451,8 @@ The Gospel of Peter.
    clerical error.  The text as printed can hardly be translated without
    forcing.
 
-   [1710] This Arabic word repeatedly represents a Syriac ran (cf. Â§ 53,
-   11).  A different word is so used in Â§ 26, 21.
+   [1710] This Arabic word repeatedly represents a Syriac ran (cf. § 53,
+   11).  A different word is so used in § 26, 21.
 
    [1711] Luke xiii. 31.
 
@@ -8461,7 +8461,7 @@ The Gospel of Peter.
    [1713] Luke xiii. 33.
 
    [1714] The Syriac word used in the Peshitta is here translated just as
-   it was translated in Â§ 1, 79 (see note); but the Greek shows that in
+   it was translated in § 1, 79 (see note); but the Greek shows that in
    the present passage the Syriac word means go about (cf. Cur.).
 
    [1715] Luke ix. 38a; Matt. xvii. 14b.
@@ -8596,7 +8596,7 @@ The Gospel of Peter.
    that hath ears to hear, let him [26] hear.  [1780] Have ye salt in
    yourselves, and be in peace one with another.
 
-   [27] [1781] And he arose from thence, and came to the borders of JudÃ¦a
+   [27] [1781] And he arose from thence, and came to the borders of Judæa
    beyond Jordan:  and there went unto him thither great multitudes, and
    he healed them; and he taught [28] them also, according to his custom.
    [1782] And the Pharisees came unto him, tempting [29] him, and asking
@@ -8697,7 +8697,7 @@ The Gospel of Peter.
 
    [1773] Matt. xviii. 9a.
 
-   [1774] See note to Â§ 25, 17.
+   [1774] See note to § 25, 17.
 
    [1775] Mark ix. 47b.
 
@@ -8751,7 +8751,7 @@ The Gospel of Peter.
 
    [1799] Lit. blame, a mistranslation (found also in the Brit. Mus. text
    of Ibn-at-Tayyib's Commentary) of the Syriac word, which is ambiguous
-   (cf. even the Greek).  For a somewhat similar case see Â§ 50, 11, note.
+   (cf. even the Greek).  For a somewhat similar case see § 50, 11, note.
 
    [1800] Matt. xix. 11.
 
@@ -8919,7 +8919,7 @@ The Gospel of Peter.
 
    [1830] Luke xv. 20.
 
-   [1831] See above, Â§ 24, 26, note.
+   [1831] See above, § 24, 26, note.
 
    [1832] Did not Ibn-at-Tayyib's Commentary (Brit. Mus. text) also read
    breast, we might assume it to be a clerical error for a very similar
@@ -9060,11 +9060,11 @@ The Gospel of Peter.
    thing which was lost.
 
    [30] [1909] And after that, Jesus walked in Galilee; and he did not
-   like to walk in JudÃ¦a, [31] because the Jews sought to kill him.
-   [1910] And there came people who told him of [32] the GalilÃ¦ans, those
+   like to walk in Judæa, [31] because the Jews sought to kill him.
+   [1910] And there came people who told him of [32] the Galilæans, those
    whose blood Pilate had mingled with their sacrifices.  [1911] Jesus
-   answered and said unto them, Do ye imagine that those GalilÃ¦ans were
-   sinners [33] more than all the GalilÃ¦ans, so that this thing has come
+   answered and said unto them, Do ye imagine that those Galilæans were
+   sinners [33] more than all the Galilæans, so that this thing has come
    upon them?  [1912] Nay.  Verily I say unto you now, [1913] that ye
    shall all also, if ye repent not, likewise perish.  [34] [1914] Or
    perchance those eighteen on whom the palace fell in Siloam, and slew
@@ -9197,7 +9197,7 @@ The Gospel of Peter.
 
    [1914] Luke xiii. 4.
 
-   [1915] See note, Â§ 10, 13.
+   [1915] See note, § 10, 13.
 
    [1916] Luke xiii. 5.
 
@@ -9236,7 +9236,7 @@ The Gospel of Peter.
 
    [1, 2] [Arabic, p. 107] [1933] And at that time the feast of
    tabernacles of the Jews drew near.  [1934] So the brethren of Jesus
-   said unto him, Remove now hence, and go to JudÃ¦a, that [3] thy
+   said unto him, Remove now hence, and go to Judæa, that [3] thy
    disciples may see the deeds that thou doest.  [1935] For no man doeth a
    thing secretly [4] and wisheth to be apparent.  [1936] If thou doest
    this, shew thyself to the world.  For [5] up to this time not even the
@@ -9249,7 +9249,7 @@ The Gospel of Peter.
    this, and remained behind in Galilee.
 
    [9] [1941] But when his brethren went up unto the feast, he journeyed
-   from Galilee, and [10] came to the borders of JudÃ¦a, to the country
+   from Galilee, and [10] came to the borders of Judæa, to the country
    beyond Jordan; [1942] and there came after [11] him great multitudes,
    and he healed them all there.  [1943] And he went out, and proceeded
    [12] to the feast, not openly, but as one that conceals himself.
@@ -9378,13 +9378,13 @@ The Gospel of Peter.
    [1950] John vii. 16.
 
    [1951] This word ordinarily means knowledge, but is used in this work
-   in the sense of doctrine.  The commoner form occurs perhaps only in Â§
+   in the sense of doctrine.  The commoner form occurs perhaps only in §
    50, 2.
 
    [1952] John vii. 17.
 
    [1953] This word ordinarily means knowledge, but is used in this work
-   in the sense of doctrine.  The commoner form occurs perhaps only in Â§
+   in the sense of doctrine.  The commoner form occurs perhaps only in §
    50, 2.
 
    [1954] John vii. 18.
@@ -9393,7 +9393,7 @@ The Gospel of Peter.
 
    [1956] John vii. 20.
 
-   [1957] cf. Â§ 14, 12.
+   [1957] cf. § 14, 12.
 
    [1958] John vii. 21.
 
@@ -9588,7 +9588,7 @@ The Gospel of Peter.
 
    [1999] Mark x. 26.
 
-   [2000] cf. note, Â§ 1, 14.  Borg. MS, omits being agitated.
+   [2000] cf. note, § 1, 14.  Borg. MS, omits being agitated.
 
    [2001] Mark x. 27.
 
@@ -9669,7 +9669,7 @@ The Gospel of Peter.
 
    [2038] Matt. xx. 9.
 
-   [2039] i.e., probably the eleventh hour (cf. Â§ 21, 10).
+   [2039] i.e., probably the eleventh hour (cf. § 21, 10).
 
    [2040] Matt. xx. 10.
 
@@ -9986,17 +9986,17 @@ The Gospel of Peter.
    last that have become first, and first that have become last.
 
    [15, 16] [2137] And when Jesus entered and passed through Jericho,
-   [2138] there was a man named ZacchÃ¦us, [17] rich, and chief of the
+   [2138] there was a man named Zacchæus, [17] rich, and chief of the
    publicans.  [2139] And he desired to see Jesus who he was; and he was
-   not able for the pressure of the crowd, because ZacchÃ¦us was little of
+   not able for the pressure of the crowd, because Zacchæus was little of
    stature.  [18] [Arabic, p. 119] [2140] And he hastened, and went before
    Jesus, and went up into an unripe fig [19] tree [2141] to see Jesus:
    for he was to pass thus.  [2142] And when Jesus came to that place, he
-   saw him, and said unto him, Make haste, and come down, ZacchÃ¦us:  [20]
+   saw him, and said unto him, Make haste, and come down, Zacchæus:  [20]
    to-day I must be in thy house.  [2143] And he hastened, and came down,
    and received [21] him joyfully.  [2144] And when they all saw, they
    murmured, and said, He hath gone in [22] and lodged with a man that is
-   a sinner.  [2145] So ZacchÃ¦us stood, and said unto Jesus, My Lord, now
+   a sinner.  [2145] So Zacchæus stood, and said unto Jesus, My Lord, now
    half of my possessions I give to the poor, and what I have unjustly
    [23] taken [2146] from every man I give him fourfold.  [2147] Jesus
    said unto him, Today is salvation [24] come to this house, because this
@@ -10006,7 +10006,7 @@ The Gospel of Peter.
    [25] [2150] And when Jesus went out of Jericho, he and his disciples,
    there came after him [26] a great multitude.  [2151] And there was a
    blind man sitting by the way side begging.  [27] [2152] And his name
-   was TimÃ¦us, the son of TimÃ¦us.  And he heard the sound of the [28]
+   was Timæus, the son of Timæus.  And he heard the sound of the [28]
    multitude passing, and asked, Who is this?  [2153] They said unto him,
    Jesus the Nazarene [29] passeth by.  [2154] And when he heard that it
    was Jesus, he called out with a loud [30] voice, and said, Jesus, son
@@ -10704,13 +10704,13 @@ The Gospel of Peter.
    teachest the way of God with equity, [2318] and art not lifted up
    [2319] by any man:  for thou actest not so as to [3] be seen of any
    man.  [2320] Tell us now, What is thy opinion?  Is it lawful that we
-   should [4] pay the tribute to CÃ¦sar, or not? shall we give, or shall we
+   should [4] pay the tribute to Cæsar, or not? shall we give, or shall we
    not give?  [2321] But Jesus knew [5] their deceit, and said unto them,
    [2322] Why tempt ye me, ye hypocrites?  Shew me the [6] penny of the
    tribute.  [2323] So they brought unto him a penny.  Jesus said unto
    them, To whom belongeth this image and inscription?  They said unto
-   him, To CÃ¦sar.  [7, 8] [2324] He said unto them, Give what is CÃ¦sar's
-   to CÃ¦sar, and what is God's to God.  [2325] And they could not make him
+   him, To Cæsar.  [7, 8] [2324] He said unto them, Give what is Cæsar's
+   to Cæsar, and what is God's to God.  [2325] And they could not make him
    slip in a single word before the people; and they marvelled at his
    word, and refrained.
 
@@ -10754,7 +10754,7 @@ The Gospel of Peter.
    is, Hear, O [28] Israel; The Lord our God, the Lord is one:  [2352] and
    thou shalt love the Lord thy God with all thy heart, and with all thy
    soul, and with all thy thought, and with all thy [29, 30] strength.
-   [2353] This is the great and preÃ«minent [2354] commandment.  [2355] And
+   [2353] This is the great and preëminent [2354] commandment.  [2355] And
    the second, which is like it, is, Thou shalt love thy neighbour as
    thyself.  And another commandment [31] greater than these two there is
    not.  [2356] On these two commandments, then, are hung the [32]
@@ -10813,7 +10813,7 @@ The Gospel of Peter.
 
    [2317] Matt. xxii. 16.
 
-   [2318] See note, Â§ 3, 53.
+   [2318] See note, § 3, 53.
 
    [2319] Possibly this is the meaning of the Arabic phrase, which occurs
    also in Ibn-at-Tayyib's Commentary (Brit. Mus. text).
@@ -10923,7 +10923,7 @@ The Gospel of Peter.
    he before came.  This is unsupported by any of the three Syriac texts,
    although they differ from one another.  Perhaps till and came should be
    transposed.  The translation would then be as given in the text above;
-   but this rendering may also be obtained according to Â§ 54, 1, note.
+   but this rendering may also be obtained according to § 54, 1, note.
 
    [2370] Luke x. 34.
 
@@ -10952,7 +10952,7 @@ The Gospel of Peter.
 
    [2381] John vii. 32.
 
-   [2382] See note, Â§ 11, 11.
+   [2382] See note, § 11, 11.
 
    [2383] John vii. 33.
 
@@ -10960,7 +10960,7 @@ The Gospel of Peter.
 
    [2385] John vii. 35.
 
-   [2386] See note above, on Â§ 34, 46.
+   [2386] See note above, on § 34, 46.
 
    [2387] i.e., Gentiles.
 
@@ -11416,7 +11416,7 @@ The Gospel of Peter.
 
    [2501] John ix. 27.
 
-   [2502] Or, why (cf. note, Â§ 7, 38).
+   [2502] Or, why (cf. note, § 7, 38).
 
    [2503] John ix. 28.
 
@@ -11542,7 +11542,7 @@ The Gospel of Peter.
    [2583] And Jesus loved Martha, and Mary, and Lazarus.  [2584] And when
    he [52] heard that he was sick, he abode in the place where he was two
    days.  [2585] And after that, [53] he said unto his disciples, Come,
-   let us go into JudÃ¦a.  [2586] His disciples said unto him, Our [Arabic,
+   let us go into Judæa.  [2586] His disciples said unto him, Our [Arabic,
    p. 143] Master, now the Jews desire to stone thee; and goest thou again
    thither?  [54, 55] [2587] Jesus said unto them, Is not the day of
    twelve hours?  If then a man walk in the day, he stumbleth not, because
@@ -11576,13 +11576,13 @@ The Gospel of Peter.
    [2522] Or, to him.
 
    [2523] A different word (lit. rams) from that used in the other verses;
-   so in Peshitta (cf. Sin., which, however, differs somewhat); cf. also Â§
+   so in Peshitta (cf. Sin., which, however, differs somewhat); cf. also §
    54, 40 f., note.
 
    [2524] John x. 4.
 
    [2525] A different word (lit. rams) from that used in the other verses;
-   so in Peshitta (cf. Sin., which, however, differs somewhat); cf. also Â§
+   so in Peshitta (cf. Sin., which, however, differs somewhat); cf. also §
    54, 40 f., note.
 
    [2526] John x. 5.
@@ -11605,7 +11605,7 @@ The Gospel of Peter.
 
    [2535] John x. 12.
 
-   [2536] cf. note to Â§ 37, 6.
+   [2536] cf. note to § 37, 6.
 
    [2537] Or, to snatch...and scatter.
 
@@ -11641,11 +11641,11 @@ The Gospel of Peter.
 
    [2553] John x. 26.
 
-   [2554] cf. Â§ 37, 6.
+   [2554] cf. § 37, 6.
 
    [2555] John x. 27.
 
-   [2556] cf. Â§ 37, 6.
+   [2556] cf. § 37, 6.
 
    [2557] John x. 28.
 
@@ -11859,7 +11859,7 @@ The Gospel of Peter.
 
    [2613] John xi. 33.
 
-   [2614] This is the Syriac word (cf. the versions, and below, Â§ 44, 44;
+   [2614] This is the Syriac word (cf. the versions, and below, § 44, 44;
    see also Ibn-at-Tayyib's Commentary, ad loc).
 
    [2615] John xi. 34.
@@ -11936,7 +11936,7 @@ The Gospel of Peter.
    the plural terminations.  Besides, they are often omitted in Syriac
    mss.
 
-   [2647] cf. note, Â§ 1, 40.
+   [2647] cf. note, § 1, 40.
 
    [2648] Luke ix. 53.
 
@@ -12057,7 +12057,7 @@ The Gospel of Peter.
 
    [2655] John xii. 2.
 
-   [2656] Lit. he made (cf. first note to Â§ 38, 43, last sentence).
+   [2656] Lit. he made (cf. first note to § 38, 43, last sentence).
 
    [2657] Mark xiv. 3a.
 
@@ -12079,7 +12079,7 @@ The Gospel of Peter.
 
    [2666] John xii. 6.
 
-   [2667] Lit. fell (cf. Â§ 25, 18).
+   [2667] Lit. fell (cf. § 25, 18).
 
    [2668] Mark xiv. 4.
 
@@ -12153,7 +12153,7 @@ The Gospel of Peter.
    [2702] John xii. 12b.
 
    [2703] Lit. the heart (or, pith) of the palm.  The word pith, which
-   occurs also in the Ã†hiopic version (Ezek. xxvii. 25; Jubilees, ch. 16)
+   occurs also in the Æhiopic version (Ezek. xxvii. 25; Jubilees, ch. 16)
    and in Ibn-at-Tayyib's exposition, though not in the Brit. Mus. gospel
    text, is perhaps used here of the inner branches from its resemblance
    to the post-biblical Hebrew word employed in accounts of the Feast of
@@ -12423,7 +12423,7 @@ The Gospel of Peter.
    [2756] Mark xii. 40.
 
    [2757] The Syriac word means on the pretext of as well as because of
-   (cf. Â§ 50, 11, note).
+   (cf. § 50, 11, note).
 
    [2758] Matt. xxiii. 8.
 
@@ -12445,7 +12445,7 @@ The Gospel of Peter.
 
    [2766] Matt. xxiii. 14.
 
-   [2767] Syriac, same as in Â§ 40, 35; Arabic different.
+   [2767] Syriac, same as in § 40, 35; Arabic different.
 
    [2768] Matt. xxiii. 13a.
 
@@ -12467,13 +12467,13 @@ The Gospel of Peter.
 
    [2775] Matt. xxiii. 16.
 
-   [2776] See Â§ 10, 13.
+   [2776] See § 10, 13.
 
    [2777] Matt. xxiii. 17.
 
    [2778] Matt. xxiii. 18.
 
-   [2779] See Â§ 10, 13.
+   [2779] See § 10, 13.
 
    [2780] Matt. xxiii. 19.
 
@@ -12666,7 +12666,7 @@ The Gospel of Peter.
 
    [2806] Matt. xxiii. 36.
 
-   [2807] See Â§ 1, 49, note.
+   [2807] See § 1, 49, note.
 
    [2808] Matt. xxiii. 37.
 
@@ -12692,11 +12692,11 @@ The Gospel of Peter.
 
    [2818] John xii. 47.
 
-   [2819] Or, to save the world (cf. Â§ 1, 78, note).
+   [2819] Or, to save the world (cf. § 1, 78, note).
 
    [2820] John xii. 48.
 
-   [2821] See Â§ 20, 28, note.
+   [2821] See § 20, 28, note.
 
    [2822] John xii. 49.
 
@@ -12710,7 +12710,7 @@ The Gospel of Peter.
 
    [2827] So Ciasca, following Vat. ms.  The true reading, however, is
    probably that underlying the Borg. ms.  If we restore diacritical
-   points to the radical letters we get deceiving (cf. Â§ 41, 31), an
+   points to the radical letters we get deceiving (cf. § 41, 31), an
    alternative meaning (or the word laying wait for, used in the
    Peshitta.  The Arabic follows the Peshitta very closely in this and the
    following verse.
@@ -12748,10 +12748,10 @@ The Gospel of Peter.
 
    [2843] Mark xiv. 1.
 
-   [2844] Lit. before two days would be (cf. Sin. and above, Â§ 39, 1,
+   [2844] Lit. before two days would be (cf. Sin. and above, § 39, 1,
    note).
 
-   [2845] cf. Â§ 41, 16, note.
+   [2845] cf. § 41, 16, note.
 
    [2846] Mark xiv. 2.
 
@@ -12802,7 +12802,7 @@ The Gospel of Peter.
 
    [2869] Matt. xxiv. 30.
 
-   [2870] See Â§ 25, 17, note.
+   [2870] See § 25, 17, note.
 
    [2871] Luke xxi. 16.
 
@@ -12831,13 +12831,13 @@ The Gospel of Peter.
 
    [1] [2881] But when ye see Jerusalem with the army compassing it about,
    then know that [2] its desolation is come near.  [2882] Those then that
-   are in JudÃ¦a at that time shall flee to the mountain; and those that
+   are in Judæa at that time shall flee to the mountain; and those that
    are within her shall flee; and those that are in the [3] villages shall
    not enter her.  [2883] For these days are the days of vengeance, that
    all that [4] is written may be fulfilled.  [2884] And when ye see the
    unclean sign of desolation, [2885] spoken of in Daniel the prophet,
    standing in the pure place, he that readeth shall understand, [5, 6]
-   [2886] and then he that is in JudÃ¦a shall flee in to the mountain:
+   [2886] and then he that is in Judæa shall flee in to the mountain:
    [2887] and let him that is on the [7] roof not go down, nor enter in to
    take anything from his house:  [2888] and let him that is in [8]
    [Arabic, p. 159] the field not turn behind him to take his garment.
@@ -12976,19 +12976,19 @@ The Gospel of Peter.
 
    [2897] Luke xvii. 25.
 
-   [2898] cf. Â§ 16, 2.
+   [2898] cf. § 16, 2.
 
    [2899] Matt. xxiv. 20.
 
    [2900] Matt. xxiv. 21.
 
-   [2901] Same Arabic (and Syriac) word as in Â§ 41, 50.
+   [2901] Same Arabic (and Syriac) word as in § 41, 50.
 
    [2902] Mark xiii. 20.
 
    [2903] Luke xxi. 25.
 
-   [2904] Same Arabic (and Syriac) word as in Â§ 41, 50.
+   [2904] Same Arabic (and Syriac) word as in § 41, 50.
 
    [2905] So the Borg. ms.  The Vat. ms., followed by Ciasca, has grief.
 
@@ -13032,7 +13032,7 @@ The Gospel of Peter.
 
    [2925] Mark xiii. 35.
 
-   [2926] cf. Â§ 9, 21.
+   [2926] cf. § 9, 21.
 
    [2927] Mark xiii. 36.
 
@@ -13054,7 +13054,7 @@ The Gospel of Peter.
 
    [2936] Luke xvii. 31.
 
-   [2937] cf. Â§ 14, 24 note.
+   [2937] cf. § 14, 24 note.
 
    [2938] Luke xvii. 32.
 
@@ -13235,7 +13235,7 @@ The Gospel of Peter.
 
    [2967] Matt. xxv. 9.
 
-   [2968] See Â§ 10, 17, and Â§ 4, 24, note.
+   [2968] See § 10, 17, and § 4, 24, note.
 
    [2969] Matt. xxv. 10.
 
@@ -13249,7 +13249,7 @@ The Gospel of Peter.
 
    [2974] Matt. xxv. 15.
 
-   [2975] cf. Â§ 27, 2, note.
+   [2975] cf. § 27, 2, note.
 
    [2976] Matt. xxv. 16.
 
@@ -13306,7 +13306,7 @@ The Gospel of Peter.
 
    [3002] Matt. xxv. 34.
 
-   [3003] cf. Â§ 17, 17, note.
+   [3003] cf. § 17, 17, note.
 
    [3004] Matt. xxv. 35.
 
@@ -13474,7 +13474,7 @@ The Gospel of Peter.
    [3029] Luke xxii. 6.
 
    [3030] Lit. became responsible unto.  Syriac versions as in text above
-   (cf. Â§ 44, 33).
+   (cf. § 44, 33).
 
    [3031] The Arabic (lit. a stumbling or a cause of stumbling) doubtless
    represents the Syriac.
@@ -13535,9 +13535,9 @@ The Gospel of Peter.
 
    [3058] Luke xxii. 30.
 
-   [3059] cf. Â§ 44, 9, note.
+   [3059] cf. § 44, 9, note.
 
-   [3060] cf. Â§ 44, 9, note.
+   [3060] cf. § 44, 9, note.
 
    [3061] Luke xxii. 7.
 
@@ -13577,7 +13577,7 @@ The Gospel of Peter.
    [3078] John xiii. 21a.
 
    [3079] The Syriac word is retained.  In Arabic it properly means become
-   strong or proud (cf. Â§ 38, 17).
+   strong or proud (cf. § 38, 17).
 
    [3080] Mark xiv. 18b; Mark xiv. 19.
 
@@ -14003,7 +14003,7 @@ The Gospel of Peter.
 
    [3173] John xiv. 28.
 
-   [3174] This word is quite unlike that used in Â§ 45, 29.
+   [3174] This word is quite unlike that used in § 45, 29.
 
    [3175] The Syriac form of the introductory particle is wrongly used,
    for in Arabic it has interrogative force.
@@ -14041,7 +14041,7 @@ The Gospel of Peter.
 
    [3191] John xv. 6.
 
-   [3192] The verbs may be active or passive, but are singular (cf. Â§ 38,
+   [3192] The verbs may be active or passive, but are singular (cf. § 38,
    43, note).
 
    [3193] John xv. 7.
@@ -14084,9 +14084,9 @@ The Gospel of Peter.
 
    [3212] John xv. 20.
 
-   [3213] cf. Â§ 8, 34, note.
+   [3213] cf. § 8, 34, note.
 
-   [3214] cf. Â§ 8, 34, note.
+   [3214] cf. § 8, 34, note.
 
    [3215] John xv. 21.
 
@@ -14190,8 +14190,8 @@ The Gospel of Peter.
    give you.  [3259] Hitherto ye have asked nothing [9] in my name:  ask,
    and ye shall receive, that your joy may be complete.
 
-   [10] [3260] I have spoken unto you now in Ã¦nigmas: [3261]   but there
-   will come an hour when [3262] I shall not speak to you in Ã¦nigmas,
+   [10] [3260] I have spoken unto you now in ænigmas: [3261]   but there
+   will come an hour when [3262] I shall not speak to you in ænigmas,
    [3263] but shall reveal unto you the Father plainly, [11] in that day
    when [3264] ye shall ask in my name:  [3265] and I say not unto you,
    that I shall [12] entreat the Father for you; [3266] for the Father
@@ -14199,7 +14199,7 @@ The Gospel of Peter.
    came forth from my Father.  [3267] I came forth from my Father, and
    came into the world:  and I leave the world, and go unto my Father.
    [14] [3268] His disciples said unto him, Lo, thy speech is now plain,
-   and thou hast not said one [15] thing in an Ã¦nigma.  [3269] Now, lo, we
+   and thou hast not said one [15] thing in an ænigma.  [3269] Now, lo, we
    know that thou knowest everything, and needest not that any man should
    ask thee:  and by this we believe that thou camest forth [16, 17] from
    God.  [3270] Jesus said unto them, Believe that an hour cometh, [3271]
@@ -14284,7 +14284,7 @@ The Gospel of Peter.
    [3257] John xvi. 23.
 
    [3258] Not quite the usual formula, there being here no article (cf.
-   also Â§ 47, 5).
+   also § 47, 5).
 
    [3259] John xvi. 24.
 
@@ -14382,7 +14382,7 @@ The Gospel of Peter.
 
    [3303] John xvii. 24.
 
-   [3304] cf. Â§ 17, 17, note.
+   [3304] cf. § 17, 17, note.
 
    [3305] John xvii. 25.
 
@@ -14578,7 +14578,7 @@ The Gospel of Peter.
 
    [3341] Mark xiv. 42a; Matt. xxvi. 46b.
 
-   [3342] cf. Â§ 4, 20, note.
+   [3342] cf. § 4, 20, note.
 
    [3343] Matt. xxvi. 47.
 
@@ -14649,7 +14649,7 @@ The Gospel of Peter.
 
    [3373] John xviii. 12a.
 
-   [3374] cf. Â§ 11, 11.
+   [3374] cf. § 11, 11.
 
    [3375] Mark xiv. 51.
 
@@ -14700,7 +14700,7 @@ The Gospel of Peter.
    [3401] And after a little one of the servants of the chief priest, the
    kinsman of him whose ear Simon cut off, saw him; and [12] he disputed
    [3402] and said, Truly this man was with him:  [3403] and he also is a
-   GalilÃ¦an; [13] and his speech resembles. [3404]   [3405] And he said
+   Galilæan; [13] and his speech resembles. [3404]   [3405] And he said
    unto Simon, Did not I see thee with him [14] in the garden?  [3406]
    Then began Simon to curse, [3407] and to swear, I know not this man
    [15] whom ye have mentioned.  [3408] And immediately, while he was
@@ -14747,9 +14747,9 @@ The Gospel of Peter.
    and said against him.
 
    [43] [3442] And all of their assembly arose, [3443] and took Jesus, and
-   brought him bound [3444] to [44] the prÃ¦torium, [3445] and delivered
+   brought him bound [3444] to [44] the prætorium, [3445] and delivered
    him up to Pilate the judge; [3446] but they entered not into the
-   prÃ¦torium, that they might not be defiled when they should eat the
+   prætorium, that they might not be defiled when they should eat the
    passover.
 
    [45] [3447] And Jesus stood before the judge.  And Pilate went forth
@@ -14757,14 +14757,14 @@ The Gospel of Peter.
    ye against this man?  [3449] They answered and said unto him, If he had
    not been doing evils, neither should we have delivered [47] him up unto
    thee.  [3450] We found this man leading our people astray, and
-   restraining from giving tribute to CÃ¦sar, and saying of himself that he
+   restraining from giving tribute to Cæsar, and saying of himself that he
    is the King, the Messiah.  [48] [3451] Pilate said unto them, Then take
    ye him, and judge him according to your law.  [Arabic, p. 188] The Jews
    said unto him, We have no authority to put a man to death:  [49] [3452]
    that the word might be fulfilled, which Jesus spake, when he made known
    by what manner of death he was to die.
 
-   [50] [3453] And Pilate entered into the prÃ¦torium, and called Jesus,
+   [50] [3453] And Pilate entered into the prætorium, and called Jesus,
    and said unto him, Art [51] thou the King of the Jews?  [3454] Jesus
    said unto him, Of thyself saidst thou this, or [52] did others tell it
    thee concerning me?  [3455] Pilate said unto him, Am I, forsooth,
@@ -14783,7 +14783,7 @@ The Gospel of Peter.
 
    [3387] John xviii. 19.
 
-   [3388] cf. Â§ 6, 40, note.
+   [3388] cf. § 6, 40, note.
 
    [3389] John xviii. 20.
 
@@ -14793,7 +14793,7 @@ The Gospel of Peter.
 
    [3392] John xviii. 22.
 
-   [3393] See Â§ 9, 7, note.
+   [3393] See § 9, 7, note.
 
    [3394] John xviii. 23.
 
@@ -14888,11 +14888,11 @@ The Gospel of Peter.
 
    [3438] Mark xiv. 65c; Matt. xxvi. 68.
 
-   [3439] See Â§ 9, 7, note.
+   [3439] See § 9, 7, note.
 
    [3440] Luke xxii. 65.
 
-   [3441] See Â§ 7, 17, note.
+   [3441] See § 7, 17, note.
 
    [3442] John xviii. 28; Mark xv. 1b.
 
@@ -14922,7 +14922,7 @@ The Gospel of Peter.
 
    [3455] John xviii. 35.
 
-   [3456] See Â§ 4, 24, note.
+   [3456] See § 4, 24, note.
 
    [3457] The Syriac word.
 
@@ -14938,9 +14938,9 @@ The Gospel of Peter.
    [1] [3461] And Pilate said unto the chief priests and the multitude, I
    have not found [2] against this man anything.  [3462] But they cried
    out and said, He hath disquieted [3463] our people with his teaching in
-   all JudÃ¦a, and he began [3464] from Galilee and unto this [3] place.
+   all Judæa, and he began [3464] from Galilee and unto this [3] place.
    [3465] And Pilate, when he heard the name of Galilee, asked, Is this
-   man a GalilÃ¦an?  [4] [3466] And when he learned that he was under the
+   man a Galilæan?  [4] [3466] And when he learned that he was under the
    jurisdiction of Herod, he sent him to Herod:  for he was in Jerusalem
    in those days.
 
@@ -15007,7 +15007,7 @@ The Gospel of Peter.
    scourged Jesus with whips. [3509]
 
    [38] [3510] Then the footsoldiers of the judge took Jesus, and went
-   into the prÃ¦torium, and [39] [Arabic, p. 191] gathered unto him all of
+   into the prætorium, and [39] [Arabic, p. 191] gathered unto him all of
    the footsoldiers.  [3511] And they stripped him, and put on [40] him a
    scarlet cloak.  [3512] And they clothed him in garments of purple, and
    plaited [41] a crown of thorns, and placed it on his head, and a reed
@@ -15035,14 +15035,14 @@ The Gospel of Peter.
    therefore the sin of him that delivered [51] me up unto thee is greater
    than thy sin.  [3532] And for this word Pilate wished to release him:
    but the Jews cried out, If thou let him go, thou art not a friend of
-   CÃ¦sar:  for every one that maketh himself a king is against CÃ¦sar.
+   Cæsar:  for every one that maketh himself a king is against Cæsar.
      __________________________________________________________________
 
    [3461] Luke xxiii. 4.
 
    [3462] Luke xxiii. 5.
 
-   [3463] Or, led astray (cf. Â§ 25, 17, note).
+   [3463] Or, led astray (cf. § 25, 17, note).
 
    [3464] cf. Syriac versions.
 
@@ -15052,7 +15052,7 @@ The Gospel of Peter.
 
    [3467] Luke xxiii. 8.
 
-   [3468] Same word as in Â§ 10, 16 (see note there).
+   [3468] Same word as in § 10, 16 (see note there).
 
    [3469] Luke xxiii. 9.
 
@@ -15070,8 +15070,8 @@ The Gospel of Peter.
 
    [3476] The Arabic word may also, like the Syriac, mean thing, but
    hardly, as that does here, fault or crime.  The Vat. ms., pointing
-   differently, reads thing.  The same confusion occurs at Â§ 40, 35 (cf. a
-   converse case in Â§ 25, 40).
+   differently, reads thing.  The same confusion occurs at § 40, 35 (cf. a
+   converse case in § 25, 40).
 
    [3477] So Ciasca's text, following the Borg. ms.  The Vat. ms. has
    plotted, which is nearer the Syriac accuse.
@@ -15092,7 +15092,7 @@ The Gospel of Peter.
 
    [3485] Matt. xxvii. 19.
 
-   [3486] See Â§ 3, 12, note.
+   [3486] See § 3, 12, note.
 
    [3487] Matt. xxvii. 15.
 
@@ -15107,8 +15107,8 @@ The Gospel of Peter.
    [3492] Luke xxiii. 19.
 
    [3493] Ciasca's text, following the Vat. ms., has disorder.  Borg. ms.
-   has division (cf. heresies, Curetonian of Â§ 50, 37), which by addition
-   of a diacritical point gives sedition; cf. Â§ 50, 37 (Ciasca, following
+   has division (cf. heresies, Curetonian of § 50, 37), which by addition
+   of a diacritical point gives sedition; cf. § 50, 37 (Ciasca, following
    Vat. ms.), and Peshitta (both places).
 
    [3494] Mark xv. 8.
@@ -15132,14 +15132,14 @@ The Gospel of Peter.
    [3503] Luke xxiii. 22.
 
    [3504] Our translator has retained the Syriac word, which in this
-   context means fault (see Â§ 50, 11, note).
+   context means fault (see § 50, 11, note).
 
    [3505] Luke xxiii. 23.
 
    [3506] The word used in Vat ms. means a repeated charge or attack.
    That in Borg. ms. is probably used in the post-classical sense of
    importuning him.  Either word might be written by a copyist for the
-   other.  The same double reading probably occurs again at Â§ 53, 55.
+   other.  The same double reading probably occurs again at § 53, 55.
 
    [3507] Mark xv. 15a; Luke xxiii. 25a.
 
@@ -15172,15 +15172,15 @@ The Gospel of Peter.
    [3519] This reading may be a corruption of a very literal rendering of
    the Peshitta.
 
-   [3520] cf. Â§ 50, 11.
+   [3520] cf. § 50, 11.
 
    [3521] John xix. 5.
 
    [3522] John xix. 6.
 
-   [3523] cf. Â§ 11, 11, note.
+   [3523] cf. § 11, 11, note.
 
-   [3524] See Â§ 50, 35, note.
+   [3524] See § 50, 35, note.
 
    [3525] John xix. 7.
 
@@ -15209,7 +15209,7 @@ The Gospel of Peter.
    the sixth hour. [3535]   [3536] And he said to the Jews, Behold, your
    King!  And they cried out, Take him, take him, crucify him, crucify
    him.  Pilate said unto them, Shall I crucify your King?  The chief
-   priests said unto him, We have no king except [4] CÃ¦sar.  [3537] And
+   priests said unto him, We have no king except [4] Cæsar.  [3537] And
    Pilate, when he saw it, and [3538] he was gaining nothing, but the
    tumult was increasing, took water, and washed his hands before the
    multitude, and said, I [5] am innocent of the blood of this innocent
@@ -15360,7 +15360,7 @@ The Gospel of Peter.
 
    [3547] Matt. xxvii. 6.
 
-   [3548] cf. Â§ 32, 15, note.
+   [3548] cf. § 32, 15, note.
 
    [3549] Matt. xxvii. 7.
 
@@ -15439,9 +15439,9 @@ The Gospel of Peter.
 
    [3584] Luke xxiii. 35a; Matt. xxvii. 39.
 
-   [3585] cf. Â§ 7, 17, note.  Borg. ms. has jesting at.
+   [3585] cf. § 7, 17, note.  Borg. ms. has jesting at.
 
-   [3586] The Arabic text has deriding (cf. Â§ 51, 37).  Either with is
+   [3586] The Arabic text has deriding (cf. § 51, 37).  Either with is
    accidentally omitted, or, more probably, we should correct the spelling
    to shaking (cf. Syriac versions).
 
@@ -15635,7 +15635,7 @@ The Gospel of Peter.
 
    [3620] Mark xv. 36b.
 
-   [3621] cf. Â§ 12, 13, note.
+   [3621] cf. § 12, 13, note.
 
    [3622] John xix. 30a.
 
@@ -15738,7 +15738,7 @@ The Gospel of Peter.
    [3670] Matt. xxvii. 60b.
 
    [3671] On the plural, which is to be found also in Ibn-at-Tayyib's
-   Commentary, see Â§ 38, 43, note (end).  The word chosen might be simply
+   Commentary, see § 38, 43, note (end).  The word chosen might be simply
    a clerical error for an original Arabic rolled.
 
    [3672] Lit. cast (cf. Sinaitic).
@@ -15748,7 +15748,7 @@ The Gospel of Peter.
    [3674] Dual.  The clause (from came) is found verbatim in Sin. and Cur.
    at Luke xxiii. 55.  Here, after the word Luke of the reference, at the
    end of leaf 117 of Vat. ms., is a note by a later hand:  "Here a leaf
-   is wanting."  This second and last lacuna extends from Â§ 52, 37, to Â§
+   is wanting."  This second and last lacuna extends from § 52, 37, to §
    53, 4.
 
    [3675] Luke xxiii. 55b.
@@ -15779,7 +15779,7 @@ The Gospel of Peter.
    [3687] Matt. xxvii. 65.
 
    [3688] The word might be taken as a collective noun, singular.  But cf.
-   Peshitta and Â§ 52, 51.
+   Peshitta and § 52, 51.
 
    [3689] Matt. xxvii. 66.
 
@@ -15996,20 +15996,20 @@ The Gospel of Peter.
 
    [3728] John xx. 15.
 
-   [3729] cf., Â§ 10, 16.
+   [3729] cf., § 10, 16.
 
    [3730] John xx. 16.
 
    [3731] John xx. 17.
 
-   [3732] cf. Â§ 12, 13.
+   [3732] cf. § 12, 13.
 
    [3733] Mark xvi. 9.
 
    [3734] Matt. xxviii. 11b.
 
    [3735] The Vat. ms. has a form that is distinctively plural.  The Borg.
-   ms. uses, with a plural adjective, the form found in Â§ 52, 43.  In the
+   ms. uses, with a plural adjective, the form found in § 52, 43.  In the
    next verse the relation of the mss. is reversed.
 
    [3736] Matt. xxviii. 12.
@@ -16089,7 +16089,7 @@ The Gospel of Peter.
 
    [3773] Luke xxiv. 29.
 
-   [3774] cf. Â§ 50, 36, note.
+   [3774] cf. § 50, 36, note.
 
    [3775] Luke xxiv. 30.
 
@@ -16235,7 +16235,7 @@ The Gospel of Peter.
 
    [3784] The Arabic word after together looks as if it might be due to a
    misreading of the Syriac, but it is probably a usage cited by Dozy,
-   SupplÃ©ment, etc., i., 247.
+   Supplément, etc., i., 247.
 
    [3785] Luke xxiv. 36c.
 
@@ -16304,7 +16304,7 @@ The Gospel of Peter.
    [3817] John xxi. 2.
 
    [3818] Apparently the Vat. ms. means to translate the word.  The Borg.
-   ms. retains Tama, as both mss. did in Â§ 37, 61.
+   ms. retains Tama, as both mss. did in § 37, 61.
 
    [3819] John xxi. 3.
 
@@ -16353,7 +16353,7 @@ The Gospel of Peter.
 
    [3841] John xxi. 20.
 
-   [3842] cf. Â§ 45, 3, note.
+   [3842] cf. § 45, 3, note.
 
    [3843] John xxi. 21.
 

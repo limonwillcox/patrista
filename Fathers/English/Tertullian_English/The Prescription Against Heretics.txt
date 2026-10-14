@@ -31,15 +31,15 @@ The Prescription Against Heretics. [1850]
      __________________________________________________________________
 
    [1850] Of the various forms of the title of this treatise, de
-   PrÃ¦scriptione HÃ¦reticorum, de PrÃ¦scriptionibus HÃ¦reticorum, de
-   PrÃ¦scriptionibus adversus HÃ¦reticos, the first is adopted by Oehler
+   Præscriptione Hæreticorum, de Præscriptionibus Hæreticorum, de
+   Præscriptionibus adversus Hæreticos, the first is adopted by Oehler
    after the oldest authorities, such as the Liber Argobardinus and the
    Codex Paterniacensis (or Seletstadiensis), and the Editio Princeps of
-   Rhenanus. The term prÃ¦scriptio is a legal one, meaning a demurrer, or
-   formal objection. The genitive hÃ¦reticorum is used in an objective
-   sense, as if adversus hÃ¦reticos. Tertullian himself, in de Carne
-   Christi, ii. says, "Sed plenius ejusmodi prÃ¦scriptionibus adversus
-   omnes hÃ¦reses alibi jam usi sumus." The title therefore means, "On the
+   Rhenanus. The term præscriptio is a legal one, meaning a demurrer, or
+   formal objection. The genitive hæreticorum is used in an objective
+   sense, as if adversus hæreticos. Tertullian himself, in de Carne
+   Christi, ii. says, "Sed plenius ejusmodi præscriptionibus adversus
+   omnes hæreses alibi jam usi sumus." The title therefore means, "On the
    Church's Prescriptive Rule against Heresies of all kinds." [Elucidation
    I.]
 
@@ -139,7 +139,7 @@ The Prescription Against Heretics. [1850]
    His company to the very last, after He had gently inquired of them
    whether they also would go away. [1879] It is a comparatively small
    thing, [1880] that certain men, like Phygellus, and Hermogenes, and
-   Philetus, and HymenÃ¦us, deserted His apostle: [1881] the betrayer of
+   Philetus, and Hymenæus, deserted His apostle: [1881] the betrayer of
    Christ was himself one of the apostles. We are surprised at seeing His
    churches forsaken by some men, although the things which we suffer
    after the example of Christ Himself, show us to be Christians. "They
@@ -236,7 +236,7 @@ The Prescription Against Heretics. [1850]
    [1883] Matt. vii. 15.
 
    [1884] Adulteri evangelizatores, the spurious preachers of the gospel.
-   [Galat. i. 8, 9, an example of Apostolic prÃ¦scription.]
+   [Galat. i. 8, 9, an example of Apostolic præscription.]
 
    [1885] Hoc scil. "tempore."
 
@@ -350,13 +350,13 @@ The Prescription Against Heretics. [1850]
    [1907] Anathema. See Gal. i. 8.
 
    [1908] Concerning Philumene, see below, chap. xxv.; Eusebius, Hist.
-   Eccl. v. 13; Augustine, de HÃ¦res, chap. xlii. ; Jerome, Epist. adv.
+   Eccl. v. 13; Augustine, de Hæres, chap. xlii. ; Jerome, Epist. adv.
    Ctesiph. (Works, ed. Ben.) iv. 477, and in his Commentary on Galatians,
    ii. See also Tertullian, Against Marcion, p. 139, Edinb. Edition.
 
    [1909] 2 Cor. xi. 14.
 
-   [1910] PrÃ¦stigiis.
+   [1910] Præstigiis.
      __________________________________________________________________
 
    Chapter VII.--Pagan Philosophy the Parent of Heresies. The Connection
@@ -369,7 +369,7 @@ The Prescription Against Heretics. [1850]
    confound even philosophy itself. For (philosophy) it is which is the
    material of the world's wisdom, the rash interpreter of the nature and
    the dispensation of God. Indeed [1913] heresies are themselves
-   instigated [1914] by philosophy. From this source came the Ã†ons, and I
+   instigated [1914] by philosophy. From this source came the Æons, and I
    known not what infinite forms, [1915] and the trinity of man [1916] in
    the system of Valentinus, who was of Plato's school. From the same
    source came Marcion's better god, with all his tranquillity; he came of
@@ -419,10 +419,10 @@ The Prescription Against Heretics. [1850]
 
    [1914] Subornantur.
 
-   [1915] FormeÃ¦, "IdeÃ¦" (Oehler).
+   [1915] Formeæ, "Ideæ" (Oehler).
 
    [1916] See Tertullian's treatises, adversus Valentinum, xxv., and de
-   Anima, xxi.; also Epiphanius, HÃ¦r. xxxi . 23.
+   Anima, xxi.; also Epiphanius, Hær. xxxi . 23.
 
    [1917] Volutatur.
 
@@ -446,7 +446,7 @@ The Prescription Against Heretics. [1850]
 
    [1925] 2 Tim. ii. 17.
 
-   [1926] Col. ii. 8. The last clause, "prÃ¦ter providentiam Spiritus
+   [1926] Col. ii. 8. The last clause, "præter providentiam Spiritus
    Sancti," is either Tertullian's reading, or his gloss of the apostle's
    ou kata Christon--"not after Christ."
 
@@ -564,7 +564,7 @@ The Prescription Against Heretics. [1850]
 
    [1952] Doctrina.
 
-   [1953] In personas, i.e., JudÃ¦orum (Oehler).
+   [1953] In personas, i.e., Judæorum (Oehler).
 
    [1954] Proprietatem admonitionis.
 
@@ -615,7 +615,7 @@ The Prescription Against Heretics. [1850]
 
    [1961] See Oehler's note.
 
-   [1962] Gubernaculo. See IrenÃ¦us, ii. 46, for a similar view (Rigalt.).
+   [1962] Gubernaculo. See Irenæus, ii. 46, for a similar view (Rigalt.).
    Surely Dodgson's version, if intelligible in itself even, incorrectly
    represents Tertullian's sense.
 
@@ -911,7 +911,7 @@ The Prescription Against Heretics. [1850]
 
    [2006] Exercitatio.
 
-   [2007] De peritiÃ¦ studio.
+   [2007] De peritiæ studio.
 
    [2008] Non obstrepant.
 
@@ -996,7 +996,7 @@ The Prescription Against Heretics. [1850]
    brain.
      __________________________________________________________________
 
-   [2027] De consilio diffidentiÃ¦.
+   [2027] De consilio diffidentiæ.
 
    [2028] Constitutionis, "prima causarum conflictio,"--a term of the law
    courts.
@@ -1033,7 +1033,7 @@ The Prescription Against Heretics. [1850]
    nothing but vexation from their blasphemy.
      __________________________________________________________________
 
-   [2034] Ista hÃ¦resis.
+   [2034] Ista hæresis.
 
    [2035] Aliquatenus.
 
@@ -1067,7 +1067,7 @@ The Prescription Against Heretics. [1850]
 
    [2040] Or, "from the Scriptures."
 
-   [2041] Ã†quo gradu.
+   [2041] Æquo gradu.
 
    [2042] Statu certe pari.
 
@@ -1103,7 +1103,7 @@ The Prescription Against Heretics. [1850]
    [2048] Conlatio scripturarum, or, "a polemical comparison of the
    Scriptures."
 
-   [2049] Quibus competat fides ipsa cujus sint ScripturÃ¦.
+   [2049] Quibus competat fides ipsa cujus sint Scripturæ.
 
    [2050] Disciplina [or, where was the guide-post set?]
      __________________________________________________________________
@@ -1131,7 +1131,7 @@ The Prescription Against Heretics. [1850]
    of David, [2053] chosen Matthias by lot as the twelfth, into the place
    of Judas, they obtained the promised power of the Holy Ghost for the
    gift of miracles and of utterance; and after first bearing witness to
-   the faith in Jesus Christ throughout JudÃ¦a, and founding churches
+   the faith in Jesus Christ throughout Judæa, and founding churches
    (there), they next went forth into the world and preached the same
    doctrine of the same faith to the nations. They then in like manner
    founded churches in every city, from which all the other churches, one
@@ -1188,7 +1188,7 @@ The Prescription Against Heretics. [1850]
    other words, what it was which Christ revealed to them--can, as I must
    here likewise prescribe, properly be proved in no other way than by
    those very churches which the apostles founded in person, by declaring
-   the gospel to them directly themselves, both vivÃ¢ voce, as the phrase
+   the gospel to them directly themselves, both vivâ voce, as the phrase
    is, and subsequently by their epistles. If, then, these things are so,
    it is in the same degree [2063] manifest that all doctrine which agrees
    with the apostolic churches--those moulds [2064] and original sources
@@ -1211,7 +1211,7 @@ The Prescription Against Heretics. [1850]
 
    [2064] Matricibus.
 
-   [2065] PrÃ¦judicandam. [This then is PrÃ¦scription.]
+   [2065] Præjudicandam. [This then is Præscription.]
 
    [2066] De mendacio.
 
@@ -1492,7 +1492,7 @@ The Prescription Against Heretics. [1850]
 
    [2117] 2 Tim. i. 14.
 
-   [2118] Ut alterius doctrinÃ¦ deputetur.
+   [2118] Ut alterius doctrinæ deputetur.
 
    [2119] 1 Tim. i. 18.
 
@@ -1580,7 +1580,7 @@ The Prescription Against Heretics. [1850]
 
    [2135] Domesticos. [All this interprets Clement and utterly deprives
    the Trent System of its appeal to a secret doctrine, against our
-   PrÃ¦scription.]
+   Præscription.]
 
    [2136] Catholice, or, "which they were bringing before the public in
    catholic way."
@@ -1617,7 +1617,7 @@ The Prescription Against Heretics. [1850]
    which were rebuked in the privileges of one and the same institution.
      __________________________________________________________________
 
-   [2139] Plenitudinem prÃ¦dicationis.
+   [2139] Plenitudinem prædicationis.
 
    [2140] Scrupulositatis.
 
@@ -1797,7 +1797,7 @@ The Prescription Against Heretics. [1850]
 
    [2166] In chap. vi. p. 246 above.
 
-   [2167] Energemate. Oehler defines this word, "vis et efficacia dÃ¦monum,
+   [2167] Energemate. Oehler defines this word, "vis et efficacia dæmonum,
    quibus agebatur." [But see Lardner, Credib. viii. p. 540.]
 
    [2168] Matt. vii. 16.
@@ -1818,8 +1818,8 @@ The Prescription Against Heretics. [1850]
    [2175] Christ; so Routh.
 
    [2176] We add Oehler's reading of this obscure passage: "Sic enim
-   apostolus descripsit, sic enim apostolos solet facere, dare prÃ¦terea
-   illis virtutem eadem signa edendi quÃ¦ et ipse." ["It is worthy of
+   apostolus descripsit, sic enim apostolos solet facere, dare præterea
+   illis virtutem eadem signa edendi quæ et ipse." ["It is worthy of
    remark" (says Kaye, p. 95), "that he does not appeal to any instance of
    the exercise of miraculous powers in his own day."]
      __________________________________________________________________
@@ -1920,7 +1920,7 @@ The Prescription Against Heretics. [1850]
    challenged." [Not to one particular See, but to all the Apostolic
    churches: Quod ubique.]
 
-   [2188] Pro consanguinitate doctrinÃ¦.
+   [2188] Pro consanguinitate doctrinæ.
 
    [2189] That is, the succession of bishops from the apostles, and the
    identity of doctrine with the apostolic.
@@ -1950,13 +1950,13 @@ The Prescription Against Heretics. [1850]
    said that "the resurrection was past already." [2198] Such an opinion
    did the Valentinians assert of themselves. When again he mentions
    "endless genealogies," [2199] one also recognises Valentinus, in whose
-   system a certain Ã†on, whosoever he be, [2200] of a new name, and that
+   system a certain Æon, whosoever he be, [2200] of a new name, and that
    not one only, generates of his own grace [2201] Sense and Truth; and
    these in like manner produce of themselves Word [2202] and Life, while
    these again afterwards beget Man and the Church. From these primary
-   eight [2203] ten other Ã†ons after them spring, and then the twelve
+   eight [2203] ten other Æons after them spring, and then the twelve
    others arise with their wonderful names, to complete the mere story of
-   the thirty Ã†ons. The same apostle, when disapproving of those who are
+   the thirty Æons. The same apostle, when disapproving of those who are
    "in bondage to elements," [2204] points us to some dogma of Hermogenes,
    who introduces matter as having no beginning, [2205] and then compares
    it with God, who has no beginning. [2206] By thus making the mother of
@@ -1986,7 +1986,7 @@ The Prescription Against Heretics. [1850]
 
    [2196] 1 Tim. iv. 3.
 
-   [2197] Ã†que tangit.
+   [2197] Æque tangit.
 
    [2198] 2 Tim. ii. 3.
 
@@ -1998,7 +1998,7 @@ The Prescription Against Heretics. [1850]
 
    [2202] Sermonem.
 
-   [2203] De qua prima ogdoade. [See IrenÃ¦us, Vol. I. p. 316, etc. this
+   [2203] De qua prima ogdoade. [See Irenæus, Vol. I. p. 316, etc. this
    Series.]
 
    [2204] Gal. iv. 9.
@@ -2034,7 +2034,7 @@ The Prescription Against Heretics. [1850]
    goodness only.  Apelles made the Creator of some nondescript [2214]
    glorious angel, who belonged to the superior God, the god (according to
    him,) of the law and of Israel, affirming that he was fire. [2215]
-   Valentinus disseminated his Ã†ons, and traced the sin of one Ã†on [2216]
+   Valentinus disseminated his Æons, and traced the sin of one Æon [2216]
    to the production of God the Creator. To none, forsooth, except these,
    nor prior to these, was revealed the truth of the Divine Nature; and
    they obtained this especial honour and fuller favour from the devil, we
@@ -2078,21 +2078,21 @@ The Prescription Against Heretics. [1850]
 
    [2218] Luke vi. 40.
 
-   [2219] UniversÃ¦.
+   [2219] Universæ.
 
    [2220] Utique.
 
-   [2221] Nominarentur et ipsÃ¦.
+   [2221] Nominarentur et ipsæ.
 
    [2222] Nominatione, i.e. by the apostles.
 
-   [2223] PrÃ¦dicationis.
+   [2223] Prædicationis.
 
    [2224] Fine.
 
-   [2225] PrÃ¦cedente.
+   [2225] Præcedente.
 
-   [2226] PrÃ¦judicarentur. [i.e. by PrÃ¦scription.]
+   [2226] Præjudicarentur. [i.e. by Præscription.]
 
    [2227] i.e., in the days of the apostles, and by their mouth.
      __________________________________________________________________
@@ -2166,18 +2166,18 @@ The Prescription Against Heretics. [1850]
    have only wild leaves to show. [2246]
      __________________________________________________________________
 
-   [2230] CathedrÃ¦.
+   [2230] Cathedræ.
 
-   [2231] Suis locis prÃ¦sident.
+   [2231] Suis locis præsident.
 
-   [2232] AuthenticÃ¦. This much disputed phrase may refer to the
+   [2232] Authenticæ. This much disputed phrase may refer to the
    autographs or the Greek originals (rather than the Latin translations),
    or full unmutilated copies as opposed to the garbled ones of the
    heretics. The second sense is probably the correct one.
 
    [2233] [Note, those near by may resort to this ancient and glorious
    church; not as any better than Corinth, or Philippi, or having any
-   higher Apostolic throne. See IrenÃ¦us, Vol. I. p. 415, (note) and
+   higher Apostolic throne. See Irenæus, Vol. I. p. 415, (note) and
    Elucid. p. 460.]
 
    [2234] Compare our Anti-Marcion, iv. 5, p. 186.
@@ -2201,7 +2201,7 @@ The Prescription Against Heretics. [1850]
 
    [2241] Nucleo.
 
-   [2242] NecessariÃ¦.
+   [2242] Necessariæ.
 
    [2243] Papavere. "Ego cum aliis papaver ficus interpretor de
    seminalibus ficus, non de ipso fructu" (Oehler).
@@ -2302,7 +2302,7 @@ The Prescription Against Heretics. [1850]
    existence. [2258]
      __________________________________________________________________
 
-   [2250] By the instrumenta doctrinÃ¦ he here means the writings of the
+   [2250] By the instrumenta doctrinæ he here means the writings of the
    New Testament.
 
    [2251] [Our author insists on the precise agreement of Catholic
@@ -2325,7 +2325,7 @@ The Prescription Against Heretics. [1850]
    [2257] That is, cutting out whatever did not fall in with it (Dodgson).
 
    [2258] Non comparentium rerum. [Note, he says above "of them, the
-   Scriptures, we, Catholics, have our being." PrÃ¦scription does not
+   Scriptures, we, Catholics, have our being." Præscription does not
    undervalue Scripture as the food and life of the Church, but supplies a
    short and decisive method with innovaters.]
      __________________________________________________________________
@@ -2503,12 +2503,12 @@ The Prescription Against Heretics. [1850]
    [2284] Compare Tertullian's tract, de Bapt. I. and de Veland. Virg.
    viii. [Also, Epiphan. iv. p. 453, Ed. Oehler.]
 
-   [2285] TemerariÃ¦.
+   [2285] Temerariæ.
 
    [2286] They were constantly changing their ministers. It was a saying
    of the heretics, "Alius hodie episcopus, cras alius" (Rigalt.).
 
-   [2287] SÃ¦culo obstrictos.
+   [2287] Sæculo obstrictos.
 
    [2288] Promereri est.
      __________________________________________________________________
@@ -2558,7 +2558,7 @@ The Prescription Against Heretics. [1850]
    (Dodgson).
 
    [2292] Sua in vilitate. Another reading, pronounced corrupt by Oehler,
-   has "quasi sibi latÃ¦ vagantur," q.d. "All for themselves, as it were,
+   has "quasi sibi latæ vagantur," q.d. "All for themselves, as it were,
    they wander" etc. (Dodgson).
      __________________________________________________________________
 
@@ -2659,7 +2659,7 @@ The Prescription Against Heretics. [1850]
 
    [2299] 2 Cor. v. 10.
 
-   [2300] ScÃ¦vis.
+   [2300] Scævis.
 
    [2301] Futuris.
 
@@ -2692,7 +2692,7 @@ The Prescription Against Heretics. [1850]
    [2311] Specialiter. He did this, indeed, in his treatises against
    Marcion, Hermogenes, the Valentinians, Praxeas, and others. [These are
    to follow in this Series. Kaye (p. 47) justly considered this sentence
-   as proving the De PrÃ¦script, a preface to all his treatises against
+   as proving the De Præscript, a preface to all his treatises against
    particular heresies.]
 
    [2312] Elucidation V.
@@ -2712,14 +2712,14 @@ The Prescription Against Heretics. [1850]
    law-cases, is a rejoinder to the testimony of the other party,
    amounting to--"Well, what of it? It does not prove your case."
    Something like this is indeed in Tertullian's use of the term
-   prÃ¦scription; but Dr. Holmes furnishes what seems to me the best
+   præscription; but Dr. Holmes furnishes what seems to me the best
    explanation, (though he only half renders it,) "the Prescriptive Rule
    against Heresies." In a word, it means, "the Rule of Faith asserted
    against Heresies." And his practical point is, it is useless to discuss
    Scripture with convicted (Titus iii. 10, 11.) heretics; every one of
    them is ready with "his psalm, his doctrine, his interpretation," and
    you may argue fruitlessly till Doomsday. But bring them to the test of
-   (Quod Semper, etc.), the apostolic prÃ¦scription (1 Corinthians xi.
+   (Quod Semper, etc.), the apostolic præscription (1 Corinthians xi.
    16).--We have no such custom neither the Churches of God. State this
    Rule of Faith, viz. Holy Scripture, as interpreted from the apostolic
    day: if it proves the doctrine or custom a novelty, then it has no
@@ -2760,7 +2760,7 @@ The Prescription Against Heretics. [1850]
    stones," being cemented with Him by the Spirit.  But, (2) this
    specialty of St. Peter, as such, belongs to him (Cephas) only. (3) So
    far as transmitted it belongs to no particular See. (4) The claim of
-   Rome is disproved by PrÃ¦scription. (5) Were it otherwise, it would not
+   Rome is disproved by Præscription. (5) Were it otherwise, it would not
    justify that See in making new articles of Faith.  (6) Nor in its
    Schism with the East.  (7) When it restores St. Peter's Doctrine and
    Holiness, to the Latin Churches, there will be no quarrel about
@@ -2772,7 +2772,7 @@ The Prescription Against Heretics. [1850]
    (The Apostles, cap. xxv. p. 254.)
 
    Nothing less than a new incarnation of Christ and a new commission to
-   new apostles can give us anything new in religion. This prÃ¦scription is
+   new apostles can give us anything new in religion. This præscription is
    our Catholic answer to the Vatican oracles of our own time. These give
    us a new revelation, prefacing the Gospels (1) by defining the
    immaculate conception of Mary in the womb of her mother; and (2) adding
@@ -2791,7 +2791,7 @@ The Prescription Against Heretics. [1850]
 
    The famous appeal of Bishop Jewel, known as "the Challenge at Paul's
    Cross," which he made in a sermon preached there on Passion Sunday,
-   a.d. 1560, is an instance of "PrÃ¦scription against heresies," well
+   a.d. 1560, is an instance of "Præscription against heresies," well
    worthy of being recalled, in a day which has seen Truth and Peace newly
    sacrificed to the ceaseless innovations of Rome. It is as follows:--"If
    any learned man of all our adversaries, or, if all the learned men that
@@ -2853,7 +2853,7 @@ The Prescription Against Heretics. [1850]
    Primitive Church; I promise, then, that I will give over and subscribe
    unto him."
 
-   All this went far beyond the concession of prÃ¦scription which makes
+   All this went far beyond the concession of præscription which makes
    little of any one saying of any one Father, and demands the general
    consent of Antiquity; but, it is needless to say that Jewel's challenge
    has remained unanswered for more than three hundred years, and so it
@@ -2865,7 +2865,7 @@ The Prescription Against Heretics. [1850]
      __________________________________________________________________
 
    [2313] It must be remembered that an appeal to Scripture lies behind
-   Tertullian's PrÃ¦scription: only he will not discuss Holy Scripture with
+   Tertullian's Præscription: only he will not discuss Holy Scripture with
    heretics.
      __________________________________________________________________
 

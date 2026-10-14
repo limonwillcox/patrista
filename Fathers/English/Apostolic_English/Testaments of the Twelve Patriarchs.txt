@@ -26,7 +26,7 @@ The Testaments of the Twelve Patriarchs
    This very curious fragment of antiquity deserves a few words in
    anticipation of the translator's valuable preface.  Grabe's Spicilegium
    is there referred to; but it may be well also to consult his citations,
-   in elucidation, of Bull's Defensio Fidei NicÃ¦nÃ¦, [4] where he treats
+   in elucidation, of Bull's Defensio Fidei Nicænæ, [4] where he treats
    the work with respect.  My most valued authority, however, on this
    subject, is Lardner, [5] who gives a very full account of the work with
    his usual candor and learning.  He seems to treat the matter with a
@@ -160,7 +160,7 @@ The Testaments of the Twelve Patriarchs
    that event.  This will harmonize perfectly with what is the natural
    inference from several passages,--namely, that the Gentiles now were a
    majority in the Church,--as well as with the presence of the many
-   formulÃ¦ to express the incarnation, and with the apparent collection of
+   formulæ to express the incarnation, and with the apparent collection of
    the books of the New Testament into a volume. [17]
 
    On the other hand, important evidence as to the posterior limit of the
@@ -203,8 +203,8 @@ The Testaments of the Twelve Patriarchs
    To refer now briefly to the external history of our document, we meet
    with nothing definite, after its citation by Origen, for many
    centuries:  there are possible allusions in Jerome [24] and in
-   Procopius GazÃ¦us; [25] there is also a mention of patriarchai in the
-   Synopsis SacrÃ¦ ScripturÃ¦ found among the writings of Athanasius, as
+   Procopius Gazæus; [25] there is also a mention of patriarchai in the
+   Synopsis Sacræ Scripturæ found among the writings of Athanasius, as
    well as in the Stichometria of Nicephorus of Constantinople, on which
    it is probably based.  Again, in the Canons of the Council of Rome (494
    a.d.) under Gelasius, and of the Council of Bracara (563 a.d.), are
@@ -290,7 +290,7 @@ The Testaments of the Twelve Patriarchs
    no details have yet been published. [32]
 
    The entire Greek text of the Testaments was first printed by Grabe in
-   his Spicilegium Patrum et HÃ¦reticorum, Oxford, 1698, professedly from
+   his Spicilegium Patrum et Hæreticorum, Oxford, 1698, professedly from
    the Cambridge ms., but in reality from some very inaccurate transcript
    of it, very possibly from one made by Abednego Seller, also in the
    Cambridge University Library, Oo. vi. 92.  Grabe also gave a few of the
@@ -303,7 +303,7 @@ The Testaments of the Twelve Patriarchs
    on the whole, less accurate than his first.  Since then the text and
    notes, as given in Grabe's second edition, have been reprinted, with
    but few additions, by Gallandi, in his Bibliotheca Veterum Patrum, vol.
-   i. p. 193 sqq., Venice, 1765, and in Migne's Patrologia GrÃ¦ca, vol.
+   i. p. 193 sqq., Venice, 1765, and in Migne's Patrologia Græca, vol.
    ii., Paris, 1857.  The text of the Cambridge ms. with a full statement
    of the variations of the Oxford ms., has recently been edited directly
    from the mss. by myself, Cambridge, 1869; from this edition the present
@@ -336,8 +336,8 @@ The Testaments of the Twelve Patriarchs
    Die Entstehung der altkatholischen Kirche (Bonn, 1850; ed. 2, 1857), p.
    171 sqq.; Vorstman, Disquisitio de Testamentorum XII. Patriarcharum
    origine et pretio (Rotterdam, 1857); Kayser in Reuss and Cunitz's
-   BeitrÃ¤ge zu den theol. Wissenschaften for 1851, pp. 107-140;
-   LÃ¼cke,Einleitung in die Offenbarung des Joh., vol. i. p. 334 sqq., ed.
+   Beiträge zu den theol. Wissenschaften for 1851, pp. 107-140;
+   Lücke,Einleitung in die Offenbarung des Joh., vol. i. p. 334 sqq., ed.
    2.
 
    R. S.
@@ -430,7 +430,7 @@ The Testaments of the Twelve Patriarchs
    make much less use of it than I could have desired.  It has, however,
    been compared throughout.
 
-   [36] Monsieur MacÃ©, Chefecier, curÃ© de Saint Opportune, Paris, 1713.
+   [36] Monsieur Macé, Chefecier, curé de Saint Opportune, Paris, 1713.
 
    [37] e.g., Vienna, 1544; Strasburgh, 1596; Hamburgh, 1637.
 
@@ -765,7 +765,7 @@ The Testaments of the Twelve Patriarchs
    Targum of the Pseudo-Jonathan on Gen. xxxvii. 19:  "Simeon and Levi,
    who were brothers in counsel, said one to another, Let us kill him."
    Also this same Targum on Gen. xlii. 24:  "And he took from them Simeon,
-   who had counselled to kill him."  Cf. also Breshith Rabba, Â§ 91.
+   who had counselled to kill him."  Cf. also Breshith Rabba, § 91.
 
    [51] [Gen. xxxvii. 22, 29; xlii. 22.]
 
@@ -1194,7 +1194,7 @@ The Testaments of the Twelve Patriarchs
    [77] Or rather, with Cd. Oxon., "with our father."
 
    [78] We constantly find Peter, in the Clementine Homilies and
-   Recognitions, combining with the AgapÃ¦ the practice of bathing.  Cf.,
+   Recognitions, combining with the Agapæ the practice of bathing.  Cf.,
    e.g., Recog., iv. 3, v. 36.
 
    [79] Cf. Hom., xiv. 1.  [Lev. ii. 13; Mark ix. 49.]
@@ -1643,7 +1643,7 @@ The Testaments of the Twelve Patriarchs
 
    [103] Cf. Gen. xxxviii. 1.
 
-   [104] Cd. Oxon. en 'Anoniram, probably per incuriam scribÃ¦, for epano
+   [104] Cd. Oxon. en 'Anoniram, probably per incuriam scribæ, for epano
    'Iram
 
    [105] This seems to arise from the wish to disconnect Israel as far as
@@ -2286,7 +2286,7 @@ The Testaments of the Twelve Patriarchs
    could not.  For Joseph outstripped us, and took him, and ascended up
    with him on high.  And I saw, for I was there, and behold a holy
    writing appeared to us saying:  Assyrians, Medes, Persians, Elamites,
-   GelachÃ¦ans, Chaldeans, Syrians, shall possess in captivity the twelve
+   Gelachæans, Chaldeans, Syrians, shall possess in captivity the twelve
    tribes of Israel.
 
    6.  And again, after seven months, I saw our father Jacob standing by
@@ -2635,7 +2635,7 @@ The Testaments of the Twelve Patriarchs
    carried him up and buried him with his fathers.
      __________________________________________________________________
 
-   [167] [See the DuÃ¦ ViÃ¦, vol. vii., p. 377, this series.]
+   [167] [See the Duæ Viæ, vol. vii., p. 377, this series.]
 
    [168] [This section is commended by Dr. Lardner.]
 
@@ -2816,7 +2816,7 @@ The Testaments of the Twelve Patriarchs
 
    11.  Do ye also, therefore, have the fear of God in your works, and
    honour your brethren.  For every one who worketh the law of the Lord
-   shall be loved by Him.  And when I came to the IndocolpitÃ¦ with the
+   shall be loved by Him.  And when I came to the Indocolpitæ with the
    Ishmaelites, they asked me, and I said that I was a slave from their
    house, that I might not put my brethren to shame.  And the eldest of
    them said unto me, Thou art not a slave, for even thy appearance doth
@@ -2892,7 +2892,7 @@ The Testaments of the Twelve Patriarchs
    since he was not willing to traffic with them, he returned.  So when
    the eunuch had made trial of them, he made known to his mistress that
    they asked a large price for their slave.  And she sent another eunuch,
-   saying, Even though they demand two minÃ¦ of gold, take heed not to
+   saying, Even though they demand two minæ of gold, take heed not to
    spare the gold; only buy the boy, and bring him hither.  And he gave
    them eighty pieces of gold for me, and told his mistress that a hundred
    had been given for me.  And when I saw it I held my peace, that the
@@ -2984,7 +2984,7 @@ The Testaments of the Twelve Patriarchs
    kinswoman of Elisabeth.  On this tendency to associate the old
    sacerdotal tribe with the new royalty of Messiah, cf., e.g.,
    Protevangel. Jacobi, cc. 6, 7, 9; Augustine, contra Faustum, xxiii. 4;
-   Epiphanius, HÃ¦r., lxxviii. 13.  [See Reuben, sec. 6, p. 10, supra.]
+   Epiphanius, Hær., lxxviii. 13.  [See Reuben, sec. 6, p. 10, supra.]
 
    [182] Isa. i. 8; xxiv. 20.
 
@@ -3184,7 +3184,7 @@ The Testaments of the Twelve Patriarchs
 
    [185] The ordinary theory as to the meaning of Benjamin is
    comparatively late, and seems doubtful.  The Targum Jerushalmi (on Gen.
-   xxxv. 18), and the Breshith Rabba, Â§ 82, make Benjamin and Benoni
+   xxxv. 18), and the Breshith Rabba, § 82, make Benjamin and Benoni
    synonymous.  Cf. Josephus, Antiq., i. 21. 3; Cyril, Glaph. in Gen.,
    lib. iv.  With the view mentioned in the text, cf. Arethas on Rev. vii.
    8 (Cramer's Catena, viii. 289).
@@ -3210,7 +3210,7 @@ The Testaments of the Twelve Patriarchs
 
    [193] Compare Scorpiace, cap. 13 [with reference to Gen. xxv. 34 and
    xxvii. 25, vol. iii. p. 646, this series.  Lardner adds Origen, Hom. in
-   Ezech., iv. tom. iii. p. 731; Theodoret, in Gen. QuÃ¦st., cx. tom. i. p.
+   Ezech., iv. tom. iii. p. 731; Theodoret, in Gen. Quæst., cx. tom. i. p.
    77; and Augustine, Serm., 279 (and passim), tom. v. ed. Benedict.].
 
    [194] ["Mel in ore, melos in aure, melodia in corde."--St. Bernard.]

@@ -265,7 +265,7 @@ the Early Liturgies.
    Various liturgies have come down to us from antiquity; and their age,
    authorship, and genuineness have been matter of keen discussion. In our
    own country two writers on this subject stand specially prominent: the
-   Rev. William Palmer, M.A., who in his Origines LiturgicÃ¦ [4046] gave a
+   Rev. William Palmer, M.A., who in his Origines Liturgicæ [4046] gave a
    dissertation on Primitive Liturgies; and the Rev. J. Mason Neale, who
    devoted a large portion of his life to liturgies, edited four of them
    in his Tetralogia Liturgica, [4047] five of them in his Liturgies of
@@ -337,7 +337,7 @@ the Early Liturgies.
 
    2. The Gallican has still less claim to antiquity. In fact, Daniel
    marks it among the spurious. [4058] Mabillon tries to prove that three
-   ecclesiastics had a share in the authorship of this liturgy: MusÃ¦us,
+   ecclesiastics had a share in the authorship of this liturgy: Musæus,
    presbyter of Marseilles, who died after the middle of the fifth
    century; Sidonius, bishop of Auvergne, who died a.d. 494; and Hilary,
    bishop of Poictiers, who died a.d. 366. [4059] Palmer strives to show
@@ -356,7 +356,7 @@ the Early Liturgies.
    much later age. [4060]
 
    "From the Liturgy of St. James," says Neale, "are derived, on the one
-   hand, the forty Syro-Jacobite offices: on the other, the CÃ¦sarean
+   hand, the forty Syro-Jacobite offices: on the other, the Cæsarean
    office, or Liturgy of St. Basil, with its offshoots; that of St.
    Chrysostom, and the Armeno-Gregorian." [4061]
 
@@ -368,7 +368,7 @@ the Early Liturgies.
    Bishop Rattray edited the Anaphora, [4064] and attempted to separate
    the original from the interpolations, "though," says Neale, "the
    supposed restoration is unsatisfactory enough." Bunsen, in his Analecta
-   Ante-NicÃ¦na, [4065] has tried to restore the Anaphora to the state in
+   Ante-Nicæna, [4065] has tried to restore the Anaphora to the state in
    which it may have been in the fourth century, "as far as was
    possible--quantum fieri potuit "
 
@@ -391,7 +391,7 @@ the Early Liturgies.
    Collectio, tom. i. pp. 120-148, [4067] in Neale's two works, and in
    Daniel's Codex Liturgicus
 
-   5. The Liturgy of the Apostles AdÃ¦us and Maris. This liturgy has been
+   5. The Liturgy of the Apostles Adæus and Maris. This liturgy has been
    brought prominently forward by Neale, who says: "It is generally passed
    over as of very inferior importance, and Renaudot alone seems to have
    been prepared to acknowledge in some degree its great antiquity."
@@ -744,9 +744,9 @@ the Early Liturgies.
    if not also in Rome.]
 
    [4053] [A fair view of their origin is to be found in Sir William
-   Palmer's Origines LiturgicÃ¦, Oxford, 1832.]
+   Palmer's Origines Liturgicæ, Oxford, 1832.]
 
-   [4054] Origines LiturgicÃ¦, p. 11.
+   [4054] Origines Liturgicæ, p. 11.
 
    [4055] General Introduction to the History of the Holy Eastern Church,
    p. 319.
@@ -756,7 +756,7 @@ the Early Liturgies.
    "Clementine," and had reached them from the East. See vol. i. [321]p.
    185, this series.]
 
-   [4057] TÃ¼bingen, 1870.
+   [4057] Tübingen, 1870.
 
    [4058] no'thoi. Codex Liturgicus, vol. iv. p. 35, note.
 
@@ -818,9 +818,9 @@ the Early Liturgies.
    [4083] London, Rivingtons, 1882.
 
    [4084] The Hague, Scheurler, 1715. Let me give the title of this rare
-   book more fully, thus: S. IrenÃ¦i Fragmenta Anecdota, etc., quÃ¦
-   illustravit, denique Liturgia GrÃ¦ca Jo. Ern. Grabii, et dissertatione
-   de prÃ¦judiciis theologicis auxit Christoph. Matth. Pfaffius Of whom see
+   book more fully, thus: S. Irenæi Fragmenta Anecdota, etc., quæ
+   illustravit, denique Liturgia Græca Jo. Ern. Grabii, et dissertatione
+   de præjudiciis theologicis auxit Christoph. Matth. Pfaffius Of whom see
    Lardner, Credib., i. 17. See vol. i. p. 574, [322]note 5.
 
    [4085] London, Hatchards, 1870. Valuable for its study of the "Autun
@@ -3661,7 +3661,7 @@ EARLY LITURGIES. [4086]
    [4155] Rather "for the emperor," says Renaudot; and the word basileu's
    will stand this meaning.
 
-   [4156] The (ku'rie ele'eson) Kyrie EleÃ«son.]
+   [4156] The (ku'rie ele'eson) Kyrie Eleëson.]
 
    [4157] [According to 1 Tim. ii. 2.]
 
@@ -3819,7 +3819,7 @@ EARLY LITURGIES. [4086]
 
   The Liturgy of the Blessed Apostles.
 
-      Composed by St. adÃ¦us and St. Maris, Teachers of the Easterns. [4220]
+      Composed by St. adæus and St. Maris, Teachers of the Easterns. [4220]
 
    I. [4221] First: Glory to God in the highest, etc. Our Father which art
    in heaven.
@@ -4605,7 +4605,7 @@ EARLY LITURGIES. [4086]
    [4222] Suicer says that a canon is a psalm or hymn (canticum) wont to
    be sung on certain days, ordinarily and as if by rule. He quotes
    Zonaras, who says that a canon is metrical and is composed of nine
-   odes. See Sophocles, Glossary of Byzantine Greek, Introduction, Â§ 43.
+   odes. See Sophocles, Glossary of Byzantine Greek, Introduction, § 43.
    The canon of the Nestorian Church is somewhat different. See Neale,
    General Introduction to the History of the Eastern Church, p. 979.
 
@@ -4615,7 +4615,7 @@ EARLY LITURGIES. [4086]
    always entitled gradual, from being chanted on the steps (gradus) of
    the pulpit. When sung by one person without interruption, it was called
    tractus; when chanted alternately by several singers, it was termed
-   responsory."--Palmer, Origines LiturgicÃ¦, vol. ii. p. 46, note.
+   responsory."--Palmer, Origines Liturgicæ, vol. ii. p. 46, note.
 
    [4225] i.e., while the lesson from the Old Testament is read. [But the
    Malabar Liturgy and Dr. Badger's translation insert before this,
@@ -4650,7 +4650,7 @@ EARLY LITURGIES. [4086]
 
    [4237] Which is said also in the Liturgy of Nestorius.
 
-   [4238] In another ms. [Evidently corrupt and mediÃ¦val.]
+   [4238] In another ms. [Evidently corrupt and mediæval.]
 
    [4239] [Here begins the Anaphora.]
 
@@ -4909,7 +4909,7 @@ EARLY LITURGIES. [4086]
    (The propitiatory blood, etc., [358]p. 566.)
 
    The peril of confounding the early use of this idea of propitiation
-   with the mediÃ¦val theory, which is quite another, is well pointed out
+   with the mediæval theory, which is quite another, is well pointed out
    and enforced by Burbidge. [4287] The primitive writers and the ancient
    liturgies "do not regard the Eucharist as being itself a propitiatory
    offering," but it is the perpetual pleading of the blood of
@@ -4935,34 +4935,34 @@ EARLY LITURGIES. [4086]
    here add the following from Bishop Williams, as there quoted:--
 
    "In both the Mozarabic and the Gallican Liturgies there was an
-   invocation as well as an oblation. IrenÃ¦us [4290] says (and he, writing
+   invocation as well as an oblation. Irenæus [4290] says (and he, writing
    at Lyons, must have in mind the Gallican Liturgy), The bread which is
    of the earth, having received the invocation of God, is no longer
    common bread, but the Eucharist.' The word translated invocation' is
    epi'klesin; and it is worthy of notice that Basil and Cyril of
    Jerusalem use the same word in evidently the same technical sense
-   (Harvey's IrenÃ¦us, vol. ii. pp. 205-207 and notes). In another passage
-   IrenÃ¦us [4291] speaks even more distinctly: We offer to God the bread
+   (Harvey's Irenæus, vol. ii. pp. 205-207 and notes). In another passage
+   Irenæus [4291] speaks even more distinctly: We offer to God the bread
    and the cup of blessing, giving thanks to Him for that He hath
    commanded the earth to bring forth these fruits for our nourishment;
    and, having finished the offering, we invoke the Holy Spirit that He
    may exhibit (or declare, apophe'ne) this sacrifice and bread the body
    of Christ, and the cup the blood of Christ, that they who shall receive
    these antitypes may obtain remission of sins and everlasting life'
-   (Harvey's IrenÃ¦us, vol. ii. p. 502). This passage is a remarkable one.
-   It proves beyond question, that, in the time of IrenÃ¦us (d. a.d. 202 or
+   (Harvey's Irenæus, vol. ii. p. 502). This passage is a remarkable one.
+   It proves beyond question, that, in the time of Irenæus (d. a.d. 202 or
    208), the Liturgy of Gaul contained an invocation of the Holy Ghost
    following the oblation of the bread and cup. Moreover, when we compare
-   the words of IrenÃ¦us with those of the Clementine Liturgy, their
+   the words of Irenæus with those of the Clementine Liturgy, their
    agreement is too clear and precise to be explained as a mere
    chance-matter. The liturgy reads, Send down Thy Holy Spirit on this
    sacrifice, the witness of the sufferings of the Lord Jesus, that He may
    exhibit (apophe'ne) this bread, the body of Thy Christ, and this cup,
    the blood of Thy Christ, that they who shall receive,' [4292] etc.
-   IrenÃ¦us says as above, using the same word (apophe'ne), a word which is
+   Irenæus says as above, using the same word (apophe'ne), a word which is
    found, it is believed, in no liturgy but the Clementine."
 
-   Now I humbly suggest that Justin Martyr and IrenÃ¦us concur in giving us
+   Now I humbly suggest that Justin Martyr and Irenæus concur in giving us
    evidence that the Clementine Liturgy is substantially that which was
    used in Rome and Gaul in their times. The latter may have received it
    from Polycarp. The use of the Roman and the Greek churches was uniform
@@ -4995,7 +4995,7 @@ EARLY LITURGIES. [4086]
 
    [4277] The "Intense Adoration" of the liturgies.
 
-   [4278] Die Christlichen ZustÃ¤nde der Gegenwart, Frieburg, 1850. My
+   [4278] Die Christlichen Zustände der Gegenwart, Frieburg, 1850. My
    translation appeared in Oxford in 1852, and is often advertised in old
    book catalogues as Sympathies of the Continent; or, Proposals for a New
    Reformation.
@@ -5022,7 +5022,7 @@ EARLY LITURGIES. [4086]
 
    [4288] Opp., tom. xii. p. 131, ed. Migne
 
-   [4289] Christliche ZustÃ¤nde, etc., p. 74.
+   [4289] Christliche Zustände, etc., p. 74.
 
    [4290] See vol. i. p. 486, [363]note 6, this series.
 
@@ -5675,14 +5675,14 @@ Index of Citations
 
      * cont. Ath: [2393]1 [2394]2 [2395]3
      * in Relation to the Messiah: [2396]1
-     * Ã†n.: [2397]1 [2398]2 [2399]3 [2400]4 [2401]5 [2402]6 [2403]7
+     * Æn.: [2397]1 [2398]2 [2399]3 [2400]4 [2401]5 [2402]6 [2403]7
        [2404]8 [2405]9 [2406]10 [2407]11 [2408]12 [2409]13 [2410]14
        [2411]15 [2412]16 [2413]17 [2414]18
-     * Ã†neid: [2415]1 [2416]2 [2417]3 [2418]4 [2419]5 [2420]6 [2421]7
+     * Æneid: [2415]1 [2416]2 [2417]3 [2418]4 [2419]5 [2420]6 [2421]7
        [2422]8 [2423]9 [2424]10 [2425]11 [2426]12 [2427]13 [2428]14
        [2429]15 [2430]16
-     * . IrenÃ¦i Fragmenta Anecdota, etc., quÃ¦ illustravit, denique
-       Liturgia GrÃ¦ca Jo. Ern. : [2431]1
+     * . Irenæi Fragmenta Anecdota, etc., quæ illustravit, denique
+       Liturgia Græca Jo. Ern. : [2431]1
      * A Hundred Enigmas: [2432]1
      * Acad.: [2433]1
      * Acta Sanctorum: [2434]1
@@ -5690,7 +5690,7 @@ Index of Citations
      * Address to the Assembly of the Saints: [2436]1
      * Adelphi: [2437]1
      * Alcibiad: [2438]1
-     * Analecta Ante-NicÃ¦na: [2439]1
+     * Analecta Ante-Nicæna: [2439]1
      * Analecta Ante-Nicoena: [2440]1
      * Anaphora: [2441]1 [2442]2
      * Ancient Geography: [2443]1
@@ -5733,7 +5733,7 @@ Index of Citations
      * Barnabas: [2566]1 [2567]2 [2568]3
      * Benedicite: [2569]1
      * Bet-ha-Midrash: [2570]1
-     * BibliothÃ¨que Ancienne et Mod.: [2571]1
+     * Bibliothèque Ancienne et Mod.: [2571]1
      * Biblioth. Reg.: [2572]1
      * Book of Laws: [2573]1
      * Book of Nature: [2574]1
@@ -5752,7 +5752,7 @@ Index of Citations
      * Christian Councils: [2596]1
      * Christian Priesthood: [2597]1
      * Christianity and Mankind: [2598]1 [2599]2
-     * Christliche ZustÃ¤nde: [2600]1
+     * Christliche Zustände: [2600]1
      * Chronicon: [2601]1
      * Chronicon Paschale: [2602]1
      * Chronographia: [2603]1
@@ -5789,7 +5789,7 @@ Index of Citations
      * De Civit. Dei: [2668]1
      * De Civitate Dei: [2669]1 [2670]2
      * De Corpore et Sanguine: [2671]1
-     * De Decretis NicÃ¦nÃ¦ Synodi: [2672]1
+     * De Decretis Nicænæ Synodi: [2672]1
      * De Finibus: [2673]1 [2674]2
      * De Fuga: [2675]1 [2676]2 [2677]3
      * De Indulg.: [2678]1
@@ -5821,7 +5821,7 @@ Index of Citations
      * Dictionary of Greek and Roman Biography: [2737]1 [2738]2
      * Didache: [2739]1
      * Didascalia: [2740]1
-     * Die Christlichen ZustÃ¤nde der Gegenwart: [2741]1
+     * Die Christlichen Zustände der Gegenwart: [2741]1
      * Discourse to Caligula: [2742]1
      * Dissertatio de Oblatione: [2743]1
      * Dissertation on the Canons: [2744]1
@@ -5829,7 +5829,7 @@ Index of Citations
      * Div. Legat.: [2746]1
      * Divine Institutes: [2747]1
      * Divine Institutions: [2748]1
-     * DuÃ¦ ViÃ¦: [2749]1 [2750]2 [2751]3
+     * Duæ Viæ: [2749]1 [2750]2 [2751]3
      * Duoe Vioe: [2752]1
      * Early Liturgies: [2753]1
      * Easter: [2754]1
@@ -5869,7 +5869,7 @@ Index of Citations
      * Georgic: [2809]1
      * Georgics: [2810]1 [2811]2
      * Glossary of Byzantine Greek: [2812]1
-     * Grabii, et dissertatione de prÃ¦judiciis theologicis auxit
+     * Grabii, et dissertatione de præjudiciis theologicis auxit
        Christoph. Matth. Pfaffius: [2813]1
      * Heautont.: [2814]1
      * Heautontim.: [2815]1
@@ -5891,7 +5891,7 @@ Index of Citations
      * Introd.: [2844]1
      * Introduction: [2845]1 [2846]2 [2847]3 [2848]4
      * Introduction to True Religion: [2849]1
-     * IrenÃ¦us: [2850]1 [2851]2
+     * Irenæus: [2850]1 [2851]2
      * Journal of Society of Biblical Literature and Exegesis: [2852]1
      * Justin Martyr: [2853]1
      * Lectures on the Life of Christ: [2854]1
@@ -5910,7 +5910,7 @@ Index of Citations
      * Med. Dict.: [2867]1
      * Memor.: [2868]1
      * Memorabilia: [2869]1
-     * Messias JudÃ¦orum: [2870]1
+     * Messias Judæorum: [2870]1
      * Metam: [2871]1 [2872]2
      * Metam.: [2873]1 [2874]2 [2875]3
      * Metamorph: [2876]1
@@ -5919,15 +5919,15 @@ Index of Citations
      * Miscellanea: [2879]1
      * Modern Science: [2880]1
      * Moral Character of the Monkey: [2881]1
-     * Moyens employÃ©s par l'Ã©glise affranchir les esclaves, Civilisation
-       EuropÃ©ene: [2882]1
-     * Muratorii Antiquit. Ital. med. Ã¦v.: [2883]1
+     * Moyens employés par l'église affranchir les esclaves, Civilisation
+       Européene: [2882]1
+     * Muratorii Antiquit. Ital. med. æv.: [2883]1
      * Nat. Deor: [2884]1 [2885]2 [2886]3 [2887]4
      * Nat. Deor.: [2888]1 [2889]2
      * Natura Deor.: [2890]1
      * Nestorians: [2891]1
      * Nestorians and their Rituals: [2892]1 [2893]2
-     * Neue Untersuchungen Ã¼ber die Constitut. u. Kanones der Ap.,:
+     * Neue Untersuchungen über die Constitut. u. Kanones der Ap.,:
        [2894]1
      * Nineveh: [2895]1
      * Notitia Eucharistica: [2896]1
@@ -5947,7 +5947,7 @@ Index of Citations
      * Opp.: [2913]1 [2914]2 [2915]3 [2916]4
      * Orac. Sibyl.: [2917]1
      * Origines: [2918]1
-     * Origines LiturgicÃ¦: [2919]1 [2920]2 [2921]3 [2922]4
+     * Origines Liturgicæ: [2919]1 [2920]2 [2921]3 [2922]4
      * Orphica: [2923]1 [2924]2
      * Passion of the Lord: [2925]1
      * Patrologia: [2926]1
@@ -5972,7 +5972,7 @@ Index of Citations
      * Prophecy: [2953]1
      * Prophecy and History: [2954]1
      * Pseudepigrapha: [2955]1
-     * QuÃ¦stt. in Exod.: [2956]1
+     * Quæstt. in Exod.: [2956]1
      * Questions to the Orthodox: [2957]1
      * Quis Dives Salvetur: [2958]1
      * Reliqu. Sac.: [2959]1
@@ -5994,8 +5994,8 @@ Index of Citations
      * Sibyllina: [2984]1 [2985]2
      * Sibylline Oracles: [2986]1
      * Sinai and Palestine: [2987]1
-     * SoirÃ¨es: [2988]1
-     * SoirÃ©es: [2989]1 [2990]2
+     * Soirèes: [2988]1
+     * Soirées: [2989]1 [2990]2
      * Speaker's Commentary: [2991]1
      * St. Clement of : [2992]1
      * St. Martin: [2993]1
@@ -6038,14 +6038,14 @@ Index of Citations
      * The Task: [3093]1
      * The Two Ways: [3094]1
      * The Workmanship of God: [3095]1
-     * TimÃ¦us: [3096]1 [3097]2
+     * Timæus: [3096]1 [3097]2
      * Timoeus: [3098]1
      * Trallians: [3099]1
      * Translation: [3100]1
      * Trinumm.: [3101]1
      * Tusc.: [3102]1
      * Tusc. Disp.: [3103]1 [3104]2
-     * Tuscal. QuÃ¦st.: [3105]1
+     * Tuscal. Quæst.: [3105]1
      * Tusculan Disputations: [3106]1 [3107]2 [3108]3
      * Tusculan Questions: [3109]1
      * Typology of Scripture: [3110]1
@@ -6067,13 +6067,13 @@ Index of Names
      * Clement: [3125]1
      * Pearson: [3126]1
      * Wordsworth: [3127]1
-     * Ã†acus: [3128]1
-     * Ã†gÃ¦a: [3129]1
-     * Ã†neas: [3130]1 [3131]2 [3132]3 [3133]4 [3134]5
-     * Ã†sculapius: [3135]1 [3136]2 [3137]3 [3138]4 [3139]5 [3140]6 [3141]7
+     * Æacus: [3128]1
+     * Ægæa: [3129]1
+     * Æneas: [3130]1 [3131]2 [3132]3 [3133]4 [3134]5
+     * Æsculapius: [3135]1 [3136]2 [3137]3 [3138]4 [3139]5 [3140]6 [3141]7
        [3142]8 [3143]9 [3144]10 [3145]11 [3146]12 [3147]13 [3148]14
        [3149]15 [3150]16 [3151]17 [3152]18 [3153]19
-     * Ãœltzen: [3154]1 [3155]2
+     * Ültzen: [3154]1 [3155]2
      * Aaron: [3156]1 [3157]2 [3158]3 [3159]4 [3160]5 [3161]6 [3162]7
        [3163]8 [3164]9 [3165]10 [3166]11 [3167]12 [3168]13 [3169]14
        [3170]15 [3171]16 [3172]17 [3173]18 [3174]19 [3175]20
@@ -6100,7 +6100,7 @@ Index of Names
      * Achan: [3227]1 [3228]2
      * Achiah: [3229]1 [3230]2
      * Achilles: [3231]1
-     * AdÃ¦us: [3232]1
+     * Adæus: [3232]1
      * Adam: [3233]1 [3234]2 [3235]3 [3236]4 [3237]5 [3238]6 [3239]7
        [3240]8 [3241]9
      * Ades: [3242]1
@@ -6133,7 +6133,7 @@ Index of Names
      * Alexandria: [3287]1
      * Alexandrian Dionysius: [3288]1
      * Alexius Menesius: [3289]1
-     * AmalthÃ¦a: [3290]1 [3291]2
+     * Amalthæa: [3290]1 [3291]2
      * Amalthea: [3292]1 [3293]2 [3294]3
      * Amasa: [3295]1
      * Ambraciot: [3296]1
@@ -6155,7 +6155,7 @@ Index of Names
      * Andrew: [3330]1 [3331]2 [3332]3
      * Androgynus: [3333]1
      * Aniceris: [3334]1
-     * AnnÃ¦us Seneca: [3335]1
+     * Annæus Seneca: [3335]1
      * Anna: [3336]1 [3337]2 [3338]3
      * Annas: [3339]1 [3340]2 [3341]3
      * Annianus: [3342]1 [3343]2
@@ -6176,10 +6176,10 @@ Index of Names
        [3373]15 [3374]16 [3375]17 [3376]18 [3377]19 [3378]20 [3379]21
        [3380]22 [3381]23 [3382]24 [3383]25 [3384]26 [3385]27 [3386]28
        [3387]29 [3388]30
-     * Apollo DidymÃ¦us: [3389]1
+     * Apollo Didymæus: [3389]1
      * Apollo of Miletus: [3390]1
      * Apollodorus: [3391]1 [3392]2
-     * Apollodorus the ErythrÃ¦an: [3393]1
+     * Apollodorus the Erythræan: [3393]1
      * Apollonius: [3394]1 [3395]2 [3396]3 [3397]4 [3398]5 [3399]6 [3400]7
        [3401]8 [3402]9
      * Appius: [3403]1 [3404]2
@@ -6194,7 +6194,7 @@ Index of Names
      * Archytas of Tarentum: [3428]1
      * Argus: [3429]1
      * Ariadne: [3430]1
-     * AristÃ¦us: [3431]1
+     * Aristæus: [3431]1
      * Aristarchus: [3432]1 [3433]2
      * Aristides: [3434]1 [3435]2 [3436]3
      * Aristippus: [3437]1 [3438]2 [3439]3 [3440]4 [3441]5 [3442]6
@@ -6218,7 +6218,7 @@ Index of Names
      * Athan.: [3499]1
      * Athanasius: [3500]1 [3501]2 [3502]3 [3503]4 [3504]5 [3505]6 [3506]7
        [3507]8 [3508]9 [3509]10 [3510]11
-     * AthenÃ¦us: [3511]1
+     * Athenæus: [3511]1
      * Athene: [3512]1
      * Atinius: [3513]1
      * Atlas: [3514]1
@@ -6231,7 +6231,7 @@ Index of Names
        [3533]15 [3534]16 [3535]17 [3536]18 [3537]19 [3538]20 [3539]21
        [3540]22
      * Augustus: [3541]1 [3542]2 [3543]3 [3544]4 [3545]5 [3546]6
-     * Augustus CÃ¦sar: [3547]1
+     * Augustus Cæsar: [3547]1
      * Aulus Gellius: [3548]1
      * Aurelian: [3549]1
      * Autolycus: [3550]1 [3551]2
@@ -6295,8 +6295,8 @@ Index of Names
      * Butes: [3722]1
      * Butler: [3723]1
      * Byrennios: [3724]1
-     * CÃ¦cilius: [3725]1 [3726]2
-     * CÃ¦sar Domitian: [3727]1 [3728]2
+     * Cæcilius: [3725]1 [3726]2
+     * Cæsar Domitian: [3727]1 [3728]2
      * Coelus: [3729]1 [3730]2 [3731]3 [3732]4 [3733]5 [3734]6 [3735]7
        [3736]8 [3737]9
      * C. J. H. Ropes: [3738]1 [3739]2
@@ -6306,10 +6306,10 @@ Index of Names
      * Caiaphas: [3744]1 [3745]2 [3746]3 [3747]4 [3748]5 [3749]6 [3750]7
      * Cain: [3751]1 [3752]2 [3753]3 [3754]4 [3755]5 [3756]6 [3757]7
      * Caius: [3758]1 [3759]2 [3760]3 [3761]4 [3762]5
-     * Caius CÃ¦sar: [3763]1 [3764]2
+     * Caius Cæsar: [3763]1 [3764]2
      * Caius Cotta: [3765]1
      * Caius Curio: [3766]1
-     * Caius LÃ¦lius: [3767]1
+     * Caius Lælius: [3767]1
      * Caius Marius Victorinus: [3768]1
      * Caius Verres: [3769]1 [3770]2 [3771]3 [3772]4
      * Caleb: [3773]1 [3774]2 [3775]3
@@ -6433,7 +6433,7 @@ Index of Names
      * Cronos: [4198]1
      * Cronus: [4199]1
      * Cruden: [4200]1
-     * CumÃ¦an Sibyl: [4201]1
+     * Cumæan Sibyl: [4201]1
      * Cumina: [4202]1
      * Cunina: [4203]1
      * Cupid: [4204]1 [4205]2 [4206]3 [4207]4 [4208]5
@@ -6500,7 +6500,7 @@ Index of Names
      * Diagoras: [4465]1
      * Diagoras of Melos: [4466]1
      * Diana: [4467]1 [4468]2 [4469]3 [4470]4
-     * DicÃ¦archus: [4471]1 [4472]2 [4473]3 [4474]4 [4475]5
+     * Dicæarchus: [4471]1 [4472]2 [4473]3 [4474]4 [4475]5
      * Dictionary of Biography: [4476]1
      * Didymus: [4477]1 [4478]2 [4479]3 [4480]4
      * Dinomachus: [4481]1 [4482]2
@@ -6578,8 +6578,8 @@ Index of Names
      * Eratineus: [4760]1
      * Eratosthenes: [4761]1
      * Erichthonius: [4762]1 [4763]2 [4764]3
-     * ErythrÃ¦an: [4765]1
-     * ErythrÃ¦an Sibyl: [4766]1 [4767]2 [4768]3 [4769]4 [4770]5 [4771]6
+     * Erythræan: [4765]1
+     * Erythræan Sibyl: [4766]1 [4767]2 [4768]3 [4769]4 [4770]5 [4771]6
        [4772]7 [4773]8
      * Eryx: [4774]1
      * Esaias: [4775]1
@@ -6652,7 +6652,7 @@ Index of Names
        [4971]57 [4972]58 [4973]59 [4974]60 [4975]61 [4976]62 [4977]63
        [4978]64 [4979]65 [4980]66 [4981]67 [4982]68 [4983]69 [4984]70
        [4985]71 [4986]72 [4987]73 [4988]74 [4989]75
-     * Galerius CÃ¦sar: [4990]1 [4991]2 [4992]3
+     * Galerius Cæsar: [4990]1 [4991]2 [4992]3
      * Galli: [4993]1 [4994]2 [4995]3 [4996]4
      * Ganymede: [4997]1 [4998]2 [4999]3 [5000]4 [5001]5
      * Gavius: [5002]1 [5003]2
@@ -6662,8 +6662,8 @@ Index of Names
      * Genseric: [5008]1 [5009]2
      * George H. Schodde: [5010]1
      * George Ross Merry: [5011]1
-     * Germ. CÃ¦s.: [5012]1
-     * Germanicus CÃ¦sar: [5013]1 [5014]2 [5015]3 [5016]4
+     * Germ. Cæs.: [5012]1
+     * Germanicus Cæsar: [5013]1 [5014]2 [5015]3 [5016]4
      * Gibbon: [5017]1 [5018]2
      * Gideon: [5019]1
      * Glauca: [5020]1
@@ -6749,7 +6749,7 @@ Index of Names
      * Hosea: [5257]1 [5258]2 [5259]3
      * Hosius: [5260]1
      * Huldah: [5261]1 [5262]2
-     * HyperberetÃ¦us: [5263]1
+     * Hyperberetæus: [5263]1
      * Hyperion: [5264]1
      * Hystaspes: [5265]1 [5266]2 [5267]3
      * Iapetus: [5268]1 [5269]2 [5270]3
@@ -6763,7 +6763,7 @@ Index of Names
      * Ino: [5282]1
      * Io: [5283]1 [5284]2
      * Irah Chase: [5285]1
-     * IrenÃ¦us: [5286]1 [5287]2 [5288]3 [5289]4 [5290]5 [5291]6 [5292]7
+     * Irenæus: [5286]1 [5287]2 [5288]3 [5289]4 [5290]5 [5291]6 [5292]7
        [5293]8 [5294]9 [5295]10 [5296]11 [5297]12
      * Irenaus: [5298]1
      * Isaac: [5299]1 [5300]2 [5301]3
@@ -6780,7 +6780,7 @@ Index of Names
      * J. Mason Neale: [5332]1
      * Jacob: [5333]1 [5334]2 [5335]3 [5336]4 [5337]5 [5338]6 [5339]7
        [5340]8
-     * Jacques BalmÃ¨s: [5341]1
+     * Jacques Balmès: [5341]1
      * Jael: [5342]1
      * Jahn: [5343]1
      * Jairus: [5344]1
@@ -6790,7 +6790,7 @@ Index of Names
        [5360]15 [5361]16 [5362]17 [5363]18
      * James Donaldson: [5364]1
      * James the brother of our Lord: [5365]1
-     * James the son of AlphÃ¦us: [5366]1
+     * James the son of Alphæus: [5366]1
      * Jannes: [5367]1
      * Janus: [5368]1 [5369]2 [5370]3
      * Jarvis: [5371]1 [5372]2 [5373]3 [5374]4
@@ -6930,7 +6930,7 @@ Index of Names
      * Kaye: [5963]1
      * Klotz: [5964]1
      * Krabbe: [5965]1 [5966]2 [5967]3 [5968]4 [5969]5
-     * LÃ¦lius: [5970]1 [5971]2 [5972]3 [5973]4 [5974]5 [5975]6 [5976]7
+     * Lælius: [5970]1 [5971]2 [5972]3 [5973]4 [5974]5 [5975]6 [5976]7
        [5977]8
      * Labrandius: [5978]1
      * Lacantius: [5979]1
@@ -6967,9 +6967,9 @@ Index of Names
      * Le Brun: [6095]1
      * Le Clerc: [6096]1
      * Le Nourry: [6097]1
-     * LeÃ¦na: [6098]1
-     * LebbÃ¦us: [6099]1 [6100]2
-     * LebbÃ¦us,: [6101]1
+     * Leæna: [6098]1
+     * Lebbæus: [6099]1 [6100]2
+     * Lebbæus,: [6101]1
      * Lecky: [6102]1
      * Leda: [6103]1 [6104]2
      * Leo Allatius: [6105]1
@@ -7015,8 +7015,8 @@ Index of Names
      * Lucilius: [6268]1 [6269]2 [6270]3 [6271]4 [6272]5 [6273]6 [6274]7
        [6275]8 [6276]9 [6277]10 [6278]11 [6279]12
      * Lucius: [6280]1 [6281]2
-     * Lucius CÃ¦lius Firmianus Lactantius: [6282]1
-     * Lucius CÃ¦sar: [6283]1
+     * Lucius Cælius Firmianus Lactantius: [6282]1
+     * Lucius Cæsar: [6283]1
      * Lucius Valerius: [6284]1
      * Lucret.: [6285]1 [6286]2
      * Lucretius: [6287]1 [6288]2 [6289]3 [6290]4 [6291]5 [6292]6 [6293]7
@@ -7141,10 +7141,10 @@ Index of Names
        [6758]105 [6759]106 [6760]107
      * Moses,: [6761]1
      * Muratori: [6762]1
-     * MusÃ¦us: [6763]1 [6764]2
+     * Musæus: [6763]1 [6764]2
      * Muta: [6765]1 [6766]2
      * Mutius: [6767]1
-     * NÃ¦vius: [6768]1
+     * Nævius: [6768]1
      * Naaman: [6769]1
      * Naaman;: [6770]1
      * Naboth: [6771]1
@@ -7198,13 +7198,13 @@ Index of Names
      * Ovid: [6914]1 [6915]2 [6916]3 [6917]4 [6918]5 [6919]6 [6920]7
        [6921]8 [6922]9 [6923]10 [6924]11 [6925]12 [6926]13 [6927]14
        [6928]15 [6929]16 [6930]17
-     * PÃ¨re de Montfaucon: [6931]1
-     * PalÃ¦mon: [6932]1
+     * Père de Montfaucon: [6931]1
+     * Palæmon: [6932]1
      * Pallas: [6933]1
      * Palmer: [6934]1 [6935]2 [6936]3 [6937]4 [6938]5 [6939]6 [6940]7
      * Pan: [6941]1 [6942]2
-     * PanÃ¦tius: [6943]1
-     * PanÃ¦tius the Rhodian: [6944]1
+     * Panætius: [6943]1
+     * Panætius the Rhodian: [6944]1
      * Paul: [6945]1 [6946]2 [6947]3 [6948]4 [6949]5 [6950]6 [6951]7
        [6952]8 [6953]9 [6954]10 [6955]11 [6956]12 [6957]13 [6958]14
        [6959]15 [6960]16 [6961]17 [6962]18 [6963]19 [6964]20 [6965]21
@@ -7216,7 +7216,7 @@ Index of Names
      * Paul of Samosata: [6995]1
      * Paul;: [6996]1
      * Paulus: [6997]1 [6998]2 [6999]3 [7000]4
-     * Paulus Ã†milius: [7001]1
+     * Paulus Æmilius: [7001]1
      * Payne-Smith: [7002]1 [7003]2
      * Pearson: [7004]1 [7005]2
      * Pelagius: [7006]1
@@ -7237,12 +7237,12 @@ Index of Names
      * Petilius: [7065]1
      * Pfaff: [7066]1 [7067]2 [7068]3
      * Pfaffius, Christ. Math: [7069]1
-     * PhÃ¦do: [7070]1 [7071]2 [7072]3
+     * Phædo: [7070]1 [7071]2 [7072]3
      * Phalaris: [7073]1 [7074]2 [7075]3 [7076]4 [7077]5
      * Phanuel: [7078]1
      * Pharaoh: [7079]1 [7080]2 [7081]3
      * Pharsalia: [7082]1
-     * PhenÃ¦: [7083]1
+     * Phenæ: [7083]1
      * Pherecydes: [7084]1 [7085]2
      * Phidias: [7086]1
      * Philemon: [7087]1 [7088]2 [7089]3
@@ -7339,7 +7339,7 @@ Index of Names
      * Romulus: [7382]1 [7383]2 [7384]3 [7385]4 [7386]5 [7387]6 [7388]7
        [7389]8
      * Ropes: [7390]1
-     * RosenmÃ¼ller: [7391]1
+     * Rosenmüller: [7391]1
      * Routh: [7392]1 [7393]2 [7394]3 [7395]4 [7396]5
      * Ruberius Geminus: [7397]1
      * Rufinus: [7398]1 [7399]2 [7400]3 [7401]4
@@ -7436,7 +7436,7 @@ Index of Names
      * Stanley: [7764]1
      * Stephen: [7765]1 [7766]2 [7767]3 [7768]4 [7769]5 [7770]6
      * Stercutus: [7771]1 [7772]2
-     * StratÃ¦as: [7773]1
+     * Stratæas: [7773]1
      * Straton: [7774]1
      * Suicer: [7775]1
      * Sulla: [7776]1
@@ -7467,7 +7467,7 @@ Index of Names
        [7848]22 [7849]23 [7850]24
      * Teucer: [7851]1 [7852]2
      * Teutas: [7853]1
-     * ThaddÃ¦us: [7854]1 [7855]2 [7856]3
+     * Thaddæus: [7854]1 [7855]2 [7856]3
      * Thaddeus: [7857]1
      * Thales: [7858]1 [7859]2 [7860]3 [7861]4
      * Thales of Miletus: [7862]1 [7863]2 [7864]3
@@ -7491,7 +7491,7 @@ Index of Names
      * Tiberinus: [7900]1
      * Tiberius: [7901]1
      * Tiberius Atinius: [7902]1
-     * Tiberius CÃ¦sar: [7903]1 [7904]2
+     * Tiberius Cæsar: [7903]1 [7904]2
      * Tillemont: [7905]1 [7906]2 [7907]3
      * Timon: [7908]1 [7909]2
      * Timotheus: [7910]1
@@ -7593,7 +7593,7 @@ Index of Names
      * Xerxes: [8204]1 [8205]2
      * Young: [8206]1
      * Zaccaria: [8207]1
-     * ZacchÃ¦us: [8208]1 [8209]2 [8210]3
+     * Zacchæus: [8208]1 [8209]2 [8210]3
      * Zachariah: [8211]1
      * Zacharias: [8212]1 [8213]2 [8214]3 [8215]4
      * Zechariah: [8216]1 [8217]2 [8218]3 [8219]4 [8220]5
@@ -7614,7 +7614,7 @@ Index of Names
      * Zoroaster: [8258]1
      * Zoticus: [8259]1
      * Zoticus Otrenus.: [8260]1
-     * adÃ¦us: [8261]1
+     * adæus: [8261]1
      * robert ernest wallis: [8262]1
      * stin Martyr: [8263]1
      * tine: [8264]1
@@ -7804,27 +7804,27 @@ Index of Greek Words and Phrases
 Index of Latin Words and Phrases
 
      * Quindecemviri.: [8513]1
-     * Sed neque mulier virtutem pudicitiÃ¦ caperet, si peccare non posset.
+     * Sed neque mulier virtutem pudicitiæ caperet, si peccare non posset.
        Nam quis mutum animal pudicum esse dixerit, quod suscepto foe tu
        mari repugnat? Quod ideo facit, quia necesse est in dolorem atque
        in periculum veniat, si admiserit. Nulla igitur laus est, non
        facere quod facere non possis. Ideo autem pudicitia in homine
        laudatur, quia non naturalis est, sed voluntaria. Servanda igitur
        fides ab utroque alteri est: immo exemplo continentia: docenda
-       uxor, ut se caste gerat. Iniquum est enim, ut id exigas, quod prÃ¦
-       stare ipse non possis. QuÃ¦ iniquitas effecit profecto, ut essent
-       adulteria, foe minis Ã¦gre ferentibus prÃ¦ stare se fidem non
+       uxor, ut se caste gerat. Iniquum est enim, ut id exigas, quod præ
+       stare ipse non possis. Quæ iniquitas effecit profecto, ut essent
+       adulteria, foe minis ægre ferentibus præ stare se fidem non
        exhibentibus mutuam charitatem. Denique nulla est tam perditi
-       pudoris adultera, quÃ¦ non hanc causam vitiis suis prÃ¦ tendat;
+       pudoris adultera, quæ non hanc causam vitiis suis præ tendat;
        injuriam se peccando non facere, sed referre. Quod optime
        Quintilianus expressit: Homo, inquit, neque alieni matrimonii
-       abstinens, neque sui custos, quÃ¦ inter se natura. connexa sunt. Nam
+       abstinens, neque sui custos, quæ inter se natura. connexa sunt. Nam
        neque maritus circa corrumpendas aliorum conjuges occupatus potest
-       vacare domesticÃ¦ sanctitati; et uxor, cum in tale incidit
+       vacare domesticæ sanctitati; et uxor, cum in tale incidit
        matrimonium, exemplo ipso concitara, out imitari se putat, out
        vindicari.: [8514]1
      * a vinculo pietatis esse deductum, quod hominem sibi Deus : [8515]1
-     * auctoritas in unÃ¢ vilissimÃ¢ tunicÃ¢.: [8516]1
+     * auctoritas in unâ vilissimâ tunicâ.: [8516]1
      * diem decimam,: [8517]1
      * diem decimum,: [8518]1
      * dierum, : [8519]1
@@ -7834,8 +7834,8 @@ Index of Latin Words and Phrases
        recte cum virili mixture sit, utraque concreta et simul co-agulata
        informari: et primum quidem cor hominis effingi, quod in eo sit et
        vita omnis et sapientia; denique totum opus quadragesimo die
-       consummari. Ex abortionibus hÃ¦ c fortasse collecta sunt. In avium
-       tamen foetibus primurn oculos fingi dubium non est, quod in ovis sÃ¦
+       consummari. Ex abortionibus hæ c fortasse collecta sunt. In avium
+       tamen foetibus primurn oculos fingi dubium non est, quod in ovis sæ
        pe deprehendimus. Unde fieri non posse arbitror quin fictio a
        capite sumat exordium.: [8520]1
      * etc.] : [8521]1
@@ -7844,7 +7844,7 @@ Index of Latin Words and Phrases
      * frequentia: [8524]1
      * gratia, : [8525]1
      * hominem: [8526]1
-     * inquam infelici et Ã¦rumnoso, qui nunquam istam potestatem viderat
+     * inquam infelici et ærumnoso, qui nunquam istam potestatem viderat
        comparabatur.: [8527]1
      * interpretatur) a mollitie, immutata et detracta littera, velut :
        [8528]1
@@ -7854,30 +7854,30 @@ Index of Latin Words and Phrases
        masculina est, sinistra veto foeminina. Ipsum semen quidam putant
        ex medullis tantum, quidam : [8530]1
      * potuit habere nullo dante?: [8531]1
-     * prÃ¦stiterit,: [8532]1
+     * præstiterit,: [8532]1
      * prole.: [8533]1
      * sumus.: [8534]1
      * sunt dicti : [8535]1
      * sunt illi.: [8536]1
      * verberibus. : [8537]1
-     * vocant quÃ¦ perversitas est naturam potius quam Deum nominare. :
+     * vocant quæ perversitas est naturam potius quam Deum nominare. :
        [8538]1
      * !: [8539]1
      *  [: [8540]1
-     * Ã†doniÃ¦,: [8541]1
-     * Ã†qualis.: [8542]1
-     * Ã†quatur.: [8543]1
-     * Ã†ternÃ¦: [8544]1
-     * Ã†terna morte damnatur.: [8545]1
-     * Ã†thera: [8546]1
-     * Ã†thera.: [8547]1
-     * Ã¦que fieri,: [8548]1
+     * Ædoniæ,: [8541]1
+     * Æqualis.: [8542]1
+     * Æquatur.: [8543]1
+     * Æternæ: [8544]1
+     * Æterna morte damnatur.: [8545]1
+     * Æthera: [8546]1
+     * Æthera.: [8547]1
+     * æque fieri,: [8548]1
      * ) corporibus.: [8549]1
      * ,: [8550]1 [8551]2
      * , : [8552]1
      * , Dominus noster : [8553]1
-     * , JudÃ¦i Christum cruci affixerunt.: [8554]1
-     * , a JudÃ¦is cruciatus est : [8555]1
+     * , Judæi Christum cruci affixerunt.: [8554]1
+     * , a Judæis cruciatus est : [8555]1
      * , duobus Geminis consulibus.: [8556]1
      * , ex : [8557]1 [8558]2
      * , passim.: [8559]1
@@ -7885,22 +7885,22 @@ Index of Latin Words and Phrases
      * , ut : [8561]1
      * , ventres pigri.: [8562]1
      * ; cui suscepto foetu, cum partus appropinquare jam coepit,
-       turgescentes mammÃ¦ dulcibus succis distenduntur, et ad nutrimenta
+       turgescentes mammæ dulcibus succis distenduntur, et ad nutrimenta
        nascentis fontibus lacteis foecundum pectus exuberat. Nec enim
        decebat aliud quam ut sapiens animal a corde alimoniam duceret.
        Idque ipsum solertissime comparatum est, ut candens ac pinguis
        humor teneritudinem novi corporis irrigaret, donec ad capiendos
        fortiores cibos, et dentibus instruatur, et viribus roboretur. Sed
-       redeamus ad propositum, ut cÃ¦ tera, quÃ¦ supersunt, breviter
+       redeamus ad propositum, ut cæ tera, quæ supersunt, breviter
        explicemus.: [8563]1
      * A corpore: [8564]1
      * A religendo.: [8565]1
-     * AÃ«doniÃ¦ voces.: [8566]1
+     * Aëdoniæ voces.: [8566]1
      * Ab aliquo imperito doctore fundati.: [8567]1
      * Ab uxoris congressione.: [8568]1
      * Abdicati: [8569]1
      * Abdicati.: [8570]1
-     * Abdicato et exhÃ¦redato.: [8571]1
+     * Abdicato et exhæredato.: [8571]1
      * Abest ab iis fides.: [8572]1
      * Abjectum.: [8573]1
      * Aboleret.: [8574]1
@@ -7911,7 +7911,7 @@ Index of Latin Words and Phrases
      * Ad confundendos.: [8580]1
      * Ad justitiam. : [8581]1
      * Ad lusum gestiunt.: [8582]1
-     * Ad prÃ¦sens.: [8583]1 [8584]2
+     * Ad præsens.: [8583]1 [8584]2
      * Ad ruinam.: [8585]1
      * Ad tradendam.: [8586]1
      * Ad victimam.: [8587]1
@@ -7931,7 +7931,7 @@ Index of Latin Words and Phrases
      * Alienigenis.: [8601]1
      * Alienum.: [8602]1
      * Alii legunt: [8603]1
-     * AliquÃ¢ ratione.: [8604]1
+     * Aliquâ ratione.: [8604]1
      * Aliter.: [8605]1
      * Alius novas populus.: [8606]1
      * Alteque jubebis: [8607]1
@@ -7953,7 +7953,7 @@ Index of Latin Words and Phrases
      * Aperta Olympi: [8623]1
      * Apparitors.: [8624]1
      * Appositione.: [8625]1
-     * Appropinquante sÃ¦culorum fine.: [8626]1
+     * Appropinquante sæculorum fine.: [8626]1
      * Arbitrantur: [8627]1
      * Aristas.: [8628]1
      * Ars: [8629]1
@@ -7974,8 +7974,8 @@ Index of Latin Words and Phrases
      * Bipartito.: [8644]1
      * Boves Lucas.: [8645]1
      * Brachia.: [8646]1
-     * CÃ¦dis amore furor.: [8647]1
-     * CÃ¦menta: [8648]1
+     * Cædis amore furor.: [8647]1
+     * Cæmenta: [8648]1
      * Coelestis arcani.: [8649]1
      * Coelo.: [8650]1
      * Coelum potius quÃ m coelata. : [8651]1
@@ -7991,35 +7991,35 @@ Index of Latin Words and Phrases
      * Cautum est.: [8661]1
      * Cavendum igitur, ne occasionem vitiis nostra intemperantia demus:
        sed assuescant invicem mores duorum, et jugum paribus animis
-       ferant. Nos ipsos in altero cogitemus. Nam fere in hoc justitiÃ¦
+       ferant. Nos ipsos in altero cogitemus. Nam fere in hoc justitiæ
        summa consistit, ut non facias alteri, quidquid ipse ab altero pati
-       nolis. HÃ¦c sunt quÃ¦ ad continentiam prÃ¦ cipiuntur a Deo. Sed tamen
-       ne quis divina prÃ¦ cepta circumscribere se putet posse, adduntur
+       nolis. Hæc sunt quæ ad continentiam præ cipiuntur a Deo. Sed tamen
+       ne quis divina præ cepta circumscribere se putet posse, adduntur
        ilia, ut omnis calumnia, et occasio fraudis removeatur, adulterum
-       esse, qui a marito dimissam duxerit, et eum qui prÃ¦ tercrimen
+       esse, qui a marito dimissam duxerit, et eum qui præ tercrimen
        adulterii uxorem dimiserit, ut alteram ducat; dissociari enim
-       corpus et distrahi Deus noluit. PrÃ¦ terea non tanturn adulterium
+       corpus et distrahi Deus noluit. Præ terea non tanturn adulterium
        esse vitandum, sed etiam cogitationem; ne quis aspiciat alienam, et
        animo concupiscat: adulteram enim fieri mentem, si vel imaginem
-       voluptatis sibi ipsa depinxerit. Mens est enim profecto quÃ¦ peccat;
-       quÃ¦ immoderata: libidinis fructum cogitatione complectitur; in hac
+       voluptatis sibi ipsa depinxerit. Mens est enim profecto quæ peccat;
+       quæ immoderata: libidinis fructum cogitatione complectitur; in hac
        crimen est, in hac omne delictum. Nam etsi corpus nulla sit lobe
-       maculatum, non constat tamen pudicitiÃ¦ ratio, si animus incestus
+       maculatum, non constat tamen pudicitiæ ratio, si animus incestus
        est; nec illibata castitas videri potest, ubi conscientiam
        cupiditas inquinavit. Nec verb aliquis existimet, difficile esse
-       frÃ¦ nos imponere voluptati, eamque vagam et errantem castitatis
-       pudicitiÃ¦ que limitibus includere, cum propositum sit hominibus
+       fræ nos imponere voluptati, eamque vagam et errantem castitatis
+       pudicitiæ que limitibus includere, cum propositum sit hominibus
        etiam vincere, ac plurimi beatam atque incorruptam corporis
        integritatem retinuerint, multique sint, qui hoc coe lesti genere
-       vitÃ¦ felicissime perfruantur. Quod quidem Deus non ira fieri prÃ¦
+       vitæ felicissime perfruantur. Quod quidem Deus non ira fieri præ
        cepit, tanquam astringat, quia generari homines oportet; sed
        tanquam sinat. Scit enim, quantam his affectibus imposuerit
        necessitatem. Si quis hoc, inquit, facere potuerit, habebit eximiam
-       incomparabilemque mercedem. Quod continentiÃ¦ genus quasi fastigium
+       incomparabilemque mercedem. Quod continentiæ genus quasi fastigium
        est, omniumque consummatio virtutum. Ad quam si quis eniti atque
        eluctari potuerit, hunc servum dominus, hunc discipulum magister
        agnoscet; hic terrain triumphabit, hic erit consimilis Deo, qui
-       virtutem Dei cepit. HÃ¦c quidem difficilia videntur; sed de eo
+       virtutem Dei cepit. Hæc quidem difficilia videntur; sed de eo
        loquimur, cui calcatis omnibus terrenis, iter in coelum paratur.
        Nam quia virtus in Dei agnitione consistit, omnia gravia sunt, dum
        ignores; ubi cognoveris, facilia: per ipsas difficultates nobis
@@ -8046,14 +8046,14 @@ Index of Latin Words and Phrases
      * Coagmentari.: [8682]1
      * Coagmentationem.: [8683]1
      * Coeuntibus aquis: [8684]1
-     * CohÃ¦reat sibi.: [8685]1
+     * Cohæreat sibi.: [8685]1
      * Coiisse.: [8686]1
      * Colit.: [8687]1
      * Colles faucium.: [8688]1
      * Collige.: [8689]1
      * Commendat.: [8690]1
      * Commotio.: [8691]1
-     * Communis culpÃ¦.: [8692]1
+     * Communis culpæ.: [8692]1
      * Communitatem.: [8693]1
      * Comparari.: [8694]1
      * Comparem.: [8695]1
@@ -8074,7 +8074,7 @@ Index of Latin Words and Phrases
      * Confusa est et maledicta.: [8710]1
      * Conglobare: [8711]1
      * Conglobatam.: [8712]1
-     * Conjunctiores, quÃ²d animis, quÃ m quÃ²d: [8713]1
+     * Conjunctiores, quòd animis, quÃ m quòd: [8713]1
      * Conscium. : [8714]1
      * Consequetur.: [8715]1
      * Consignatam teneri.: [8716]1
@@ -8115,20 +8115,20 @@ Index of Latin Words and Phrases
      * Cum trepidatione mobili.: [8751]1
      * Curta: [8752]1
      * De Tactus Voluptate Et Libidine, Atque de Matrimonio Et
-       ContinentiÃ¢.: [8753]1
+       Continentiâ.: [8753]1
      * De manu inferorum.: [8754]1
      * De suis spiritibus.: [8755]1
      * De te: [8756]1
-     * De terrenÃ¢ concretione.: [8757]1
+     * De terrenâ concretione.: [8757]1
      * De transverso jugulasset.: [8758]1
-     * De tunicÃ¢ et pallio.: [8759]1
+     * De tunicâ et pallio.: [8759]1
      * De utero quoque et conceptione, quoniam de internis loquimur, dici
-       necesse est, ne quid prÃ¦ terisse videamur; quÃ¦ quamquam in operto
+       necesse est, ne quid præ terisse videamur; quæ quamquam in operto
        latent, sensum tamen atque intelligentiam latere non possunt. Vena
-       in maribus, quÃ¦ seminium continet, duplex est, paulo interior, quam
+       in maribus, quæ seminium continet, duplex est, paulo interior, quam
        illud humoris obscoeni receptaculum. Sicut enim renes duo sunt,
-       itemque testes, ita et venÃ¦ seminales duÃ¦, in una tamen compage
-       cohÃ¦ rentes; quod videmus in corporibus animalium, cum interfecta:
+       itemque testes, ita et venæ seminales duæ, in una tamen compage
+       cohæ rentes; quod videmus in corporibus animalium, cum interfecta:
        [8760]1
      * Decii: [8761]1
      * Decursis septem spatiis: [8762]1
@@ -8159,7 +8159,7 @@ Index of Latin Words and Phrases
      * Deus homines pro liberis habet sed corruptos.: [8787]1
      * Deus, igitur, machinator constitutorque rerum: [8788]1
      * Diabolus: [8789]1
-     * Dies irÃ¦, dies illa,... : [8790]1
+     * Dies iræ, dies illa,... : [8790]1
      * Disceptator.: [8791]1
      * Discolor unde auri per ramos aura refulsit.: [8792]1
      * Discors concordia.: [8793]1
@@ -8171,17 +8171,17 @@ Index of Latin Words and Phrases
      * Divinitate.: [8800]1
      * Divino spiritu hausto.: [8801]1
      * Diximus nomen : [8802]1
-     * Doctrina pacis nostrÃ¦: [8803]1
+     * Doctrina pacis nostræ: [8803]1
      * Donum: [8804]1
-     * DuÃ¦ ViÃ¦: [8805]1 [8806]2
-     * DuÃ¦ ViÃ¦.: [8807]1 [8808]2 [8809]3
+     * Duæ Viæ: [8805]1 [8806]2
+     * Duæ Viæ.: [8807]1 [8808]2 [8809]3
      * Dum ad descendentem occursu suo redit.: [8810]1
      * Dum descendentem reddit.: [8811]1
      * Dum disputant: [8812]1
      * Dum volunt sanare, vitiaverunt. : [8813]1
      * Duplicitas.: [8814]1
-     * Ea enim visa est aptior victima, quÃ¦ ipsi, cui mactatur,
-       magnitudine virilis obsceni posset Ã¦quari.: [8815]1
+     * Ea enim visa est aptior victima, quæ ipsi, cui mactatur,
+       magnitudine virilis obsceni posset æquari.: [8815]1
      * Editio secunda correctior. Francofurti ad Moenum: [8816]1
      * Effectum: [8817]1
      * Efficere : [8818]1
@@ -8202,12 +8202,12 @@ Index of Latin Words and Phrases
      * Et Jovis in regno, coelique in parte resedit.: [8833]1
      * Et citra hoc opus homo resistit. : [8834]1
      * Et qui fuerint aversi, redeant.: [8835]1
-     * Et sociat myrrhÃ¦ pascua grata nimis: [8836]1
+     * Et sociat myrrhæ pascua grata nimis: [8836]1
      * Eum.: [8837]1
      * Evadat ad bonam frugem.: [8838]1
      * Evigilat.: [8839]1
      * Ex : [8840]1
-     * Ex Ã¦theris oris.: [8841]1
+     * Ex ætheris oris.: [8841]1
      * Ex Deo.: [8842]1
      * Ex mortibus.: [8843]1
      * Ex omnibus.: [8844]1
@@ -8218,7 +8218,7 @@ Index of Latin Words and Phrases
      * Examinis.: [8849]1
      * Excogitabit.: [8850]1
      * Exinde tetrarchas habuerunt usque ad Herodem, qui fuit sub imperio
-       Tiberii CÃ¦saris: cujus anno quinto decimo, id est duobus Geminis
+       Tiberii Cæsaris: cujus anno quinto decimo, id est duobus Geminis
        consulibus, : [8851]1
      * Expectanda dies homini est; dicique beatus : [8852]1
      * Expedita: [8853]1
@@ -8230,10 +8230,10 @@ Index of Latin Words and Phrases
      * Exsulantur.: [8859]1
      * Exsurget homo ex : [8860]1
      * Extollent.: [8861]1
-     * Extremis temporibus Tiberii CÃ¦saris, : [8862]1
+     * Extremis temporibus Tiberii Cæsaris, : [8862]1
      * Exuberat in sentes: [8863]1
      * Exutum.: [8864]1
-     * ExuviÃ¦ corporis.: [8865]1
+     * Exuviæ corporis.: [8865]1
      * Exuvias suas.: [8866]1
      * Exuviis: [8867]1
      * Foetu: [8868]1
@@ -8243,7 +8243,7 @@ Index of Latin Words and Phrases
      * Facinorosi.: [8872]1
      * Familia: [8873]1
      * Familiam. : [8874]1
-     * Fatigata est Ã†gyptus.: [8875]1
+     * Fatigata est Ægyptus.: [8875]1
      * Fatis urgentibus: [8876]1
      * Favent.: [8877]1
      * Februis: [8878]1
@@ -8293,12 +8293,12 @@ Index of Latin Words and Phrases
      * Gratum: [8922]1
      * Gravem: [8923]1
      * Gurgite.: [8924]1
-     * HÃ¦redibus abdicatis.: [8925]1
+     * Hæredibus abdicatis.: [8925]1
      * Hac in nocte brevi.: [8926]1
      * Hactenus operata est.: [8927]1
      * Hauriendis: [8928]1
      * Haustum.: [8929]1
-     * HerbidÃ¦ fruges.: [8930]1
+     * Herbidæ fruges.: [8930]1
      * Herbis: [8931]1
      * Hiat.: [8932]1
      * Hic: [8933]1
@@ -8308,20 +8308,20 @@ Index of Latin Words and Phrases
        etiam mares maribus admiscuit; et nefandos coitus contra naturam
        contraque institutum Dei machinatus est: sic imbuit homines, et
        armavit ad nefas omne. Quid enim potest esse sanctum iis, qui
-       Ã¦tatem imbecillam et prÃ¦sidio indigentem, libidini suÃ¦ depopulandam
-       foedandamque substraverint? Non potest hÃ¦c res pro magnitudine
+       ætatem imbecillam et præsidio indigentem, libidini suæ depopulandam
+       foedandamque substraverint? Non potest hæc res pro magnitudine
        sceleris enarrari. Nihil amplius istos appellare possum, quam
        implos et parricidas, quibus non sufficit sexus a Deo datus, nisi
-       eliare suum profane ac petulanter illudant. HÃ¦c tamen apud illos
+       eliare suum profane ac petulanter illudant. Hæc tamen apud illos
        levia, et quasi honesta sunt. Quid dicam de iis, qui abominandam
        non libidinem, sod insaniam potius exercent! Piget dicere: sed quid
        his fore credamus, quos non piget facere? et tamen dicendum est,
        quia fit. De istis loquor, quorum teterrima libido et execrabilis
        furor ne capiti quidem parcit. Quibus hoc verbis, aut qua
-       indignatione tantum nefas prosequar? Vincit officium linguÃ¦
-       sceleris magnitudo. Cum igitur libido hÃ¦c edat opera, et hÃ¦c
+       indignatione tantum nefas prosequar? Vincit officium linguæ
+       sceleris magnitudo. Cum igitur libido hæc edat opera, et hæc
        facinora designer, armandi adversus earn virtute maxima sumus.
-       Quisquis affectus illos frÃ¦nare non potest, cohibeat eos intra prÃ¦
+       Quisquis affectus illos frænare non potest, cohibeat eos intra præ
        scriptum legitimi tori, ut et illud, quod avide expetat,
        consequatur, et tamen in peccatum non incidat. Nam quid sibi
        homines perditi volunt? Nempe honesta opera voluptas sequitur: si
@@ -8332,7 +8332,7 @@ Index of Latin Words and Phrases
      * Hominum.: [8939]1
      * Homo: [8940]1
      * Homo ab humo.: [8941]1
-     * Homo in plagÃ¢ positus.: [8942]1
+     * Homo in plagâ positus.: [8942]1
      * Honesta utrinsque sexus discretione: [8943]1
      * Horarum splendor, scriptula, puncta fovent.: [8944]1
      * Horarum splendor, stridula cuncta favent. : [8945]1
@@ -8345,10 +8345,10 @@ Index of Latin Words and Phrases
      * Idoneis. : [8952]1
      * Ignivomus.: [8953]1
      * Ignoraverunt.: [8954]1
-     * Iidem sunt doctores sapientiÃ¦ qui et De. sacerdotes.: [8955]1
-     * IllÃ¦sibilis est.: [8956]1
+     * Iidem sunt doctores sapientiæ qui et De. sacerdotes.: [8955]1
+     * Illæsibilis est.: [8956]1
      * Ille: [8957]1
-     * Ille autem mense conceptum et passum esse Christum, et PaschÃ¦
+     * Ille autem mense conceptum et passum esse Christum, et Paschæ
        observatio et dies ecclesiis notissimus Nativitatis ejus ostendit.
        Qui enim mense nono natus est octavo kalendas Janvarias profecto
        mense primo conceptus est circa octavum kalendas Aprilis, quod
@@ -8360,12 +8360,12 @@ Index of Latin Words and Phrases
      * Immania: [8963]1
      * Immobilem: [8964]1
      * Immobilem. : [8965]1
-     * ImmutatÃ¦ sunt.: [8966]1
+     * Immutatæ sunt.: [8966]1
      * Impedimentis.: [8967]1
      * Implebit eum spiritus timoris Dei.: [8968]1
      * In altum se abdiderit.: [8969]1
      * In aram Dei.: [8970]1
-     * In cicutÃ¦ modum. : [8971]1
+     * In cicutæ modum. : [8971]1
      * In cogitationem.: [8972]1
      * In conspectu meo.: [8973]1
      * In eloquium sermonemque solvebat.: [8974]1
@@ -8382,7 +8382,7 @@ Index of Latin Words and Phrases
      * In nihilum resolvi.: [8984]1
      * In perditionem et improperium.: [8985]1
      * In remissionem.: [8986]1
-     * In sÃ¦culi hujus consummatione.: [8987]1
+     * In sæculi hujus consummatione.: [8987]1
      * In signo.: [8988]1
      * In solido puteum demitti: [8989]1
      * In solido.: [8990]1
@@ -8394,7 +8394,7 @@ Index of Latin Words and Phrases
      * In usu suo non est.: [8996]1
      * Inanem.: [8997]1
      * Inania: [8998]1
-     * Incassum facta est metatura falsa, scribÃ¦ confusi sunt.: [8999]1
+     * Incassum facta est metatura falsa, scribæ confusi sunt.: [8999]1
      * Incondita: [9000]1
      * Incorruptus.: [9001]1
      * Incutere.: [9002]1
@@ -8428,7 +8428,7 @@ Index of Latin Words and Phrases
      * Intermicantibus astrorum luminibus.: [9030]1
      * Interpatet.: [9031]1
      * Interpres.: [9032]1
-     * InterpretatÃ¦ sunt: [9033]1
+     * Interpretatæ sunt: [9033]1
      * Interpretatus est.: [9034]1
      * Intervallum.: [9035]1
      * Intima: [9036]1
@@ -8438,23 +8438,23 @@ Index of Latin Words and Phrases
      * Inurit: [9040]1
      * Involutum.: [9041]1
      * Ipsa duplicitate.: [9042]1
-     * Ipse prÃ¦ceptis suis fidem detrahat.: [9043]1
+     * Ipse præceptis suis fidem detrahat.: [9043]1
      * Ipsum.: [9044]1
      * Irrecitabiliter.: [9045]1
      * Irrepere.: [9046]1
      * Israel: [9047]1
-     * Ista caduca sÃ¦cula.: [9048]1
+     * Ista caduca sæcula.: [9048]1
      * Iste: [9049]1
      * Ita leviter odoratos.: [9050]1
      * Jacet.: [9051]1
      * Jacuerunt.: [9052]1
-     * Jam emergente atque illustratÃ¢ veritate.: [9053]1
-     * JudÃ¦is, quorum cophinus, foenumque supellex.: [9054]1
+     * Jam emergente atque illustratâ veritate.: [9053]1
+     * Judæis, quorum cophinus, foenumque supellex.: [9054]1
      * Jumenta: [9055]1
      * Jure humanitatis.: [9056]1
      * Justitiam sequi.: [9057]1
      * Juvenescere.: [9058]1
-     * LÃ¦sio.: [9059]1
+     * Læsio.: [9059]1
      * Labilis orbis amicos sensus.: [9060]1
      * Laborare.: [9061]1
      * Lacerti: [9062]1
@@ -8468,10 +8468,10 @@ Index of Latin Words and Phrases
      * Leves.: [9070]1
      * Liberum esse.: [9071]1
      * Libidinis finis est.: [9072]1
-     * LicentiÃ¢.: [9073]1
+     * Licentiâ.: [9073]1
      * Lignorum.: [9074]1
      * Limina: [9075]1
-     * LinguÃ¦ sinu.: [9076]1
+     * Linguæ sinu.: [9076]1
      * Lingua: [9077]1
      * Lit. "wish for wars.": [9078]1
      * Litant: [9079]1
@@ -8537,11 +8537,11 @@ Index of Latin Words and Phrases
      * Nihil opere et manu factum.: [9140]1
      * Nimio: [9141]1
      * Nisi lacessitus injuria.: [9142]1
-     * Nisi quÃ²d. : [9143]1
+     * Nisi quòd. : [9143]1
      * Nobilitas anni, mensum decus, : [9144]1
      * Nocentes.: [9145]1
      * Nodi. : [9146]1
-     * Non bene conveniunt igitur legibus divinis quÃ¦ supradicta sunt
+     * Non bene conveniunt igitur legibus divinis quæ supradicta sunt
        auctore nostro: [9147]1
      * Non est fidem consecuta,: [9148]1
      * Non est tibi frons ficta, nec in alienam voluptatem sermo
@@ -8550,14 +8550,14 @@ Index of Latin Words and Phrases
      * Non mortalitate. : [9151]1
      * Non vacaret.: [9152]1
      * Nondum omnia castitatis officio exsecutus sum: quam Deus fion modo
-       intra privatos parietes, sed etiam prÃ¦ scripto lectuli terminat; ut
+       intra privatos parietes, sed etiam præ scripto lectuli terminat; ut
        cum quis hobeat uxorem, neque servam, neque liberam habere insuper
        velit, sed matrimonio fidem server. Non enim, sicut juris publici
-       ratio est, solo mulier adultera est, quÃ¦ habet allure, maritus
+       ratio est, solo mulier adultera est, quæ habet allure, maritus
        outem, etiam si plures habeat, a crimine adulterii solutus est. Sed
        divina lex ira duos in matrimonium, quod est in corpus unum, pari
        jure conjungit, ut adulter habeatur, quisquis compagem corporis in
-       diversa distraxerit. Nec ob aliam cansam Deus, cam cÃ¦teras
+       diversa distraxerit. Nec ob aliam cansam Deus, cam cæteras
        animantes suscepto foetu maribus repugnare voluisset, solam omnium
        mulierem patientem viri fecit; scilicet ne foeminis repugnantibus,
        libido cogeret viros aliud appetere, eoque facto, castitatis
@@ -8565,7 +8565,7 @@ Index of Latin Words and Phrases
      * Nonnunquam: [9154]1
      * Nos ad justitiam esse natos.: [9155]1
      * Noster.: [9156]1
-     * NostrÃ¦ sectÃ¦.: [9157]1
+     * Nostræ sectæ.: [9157]1
      * Nostri: [9158]1
      * Notio. : [9159]1
      * Nuda.: [9160]1
@@ -8579,7 +8579,7 @@ Index of Latin Words and Phrases
      * Oblidere.: [9168]1
      * Obsit.: [9169]1
      * Obsolescit.: [9170]1
-     * ObstructÃ¢ meandi facultate.: [9171]1
+     * Obstructâ meandi facultate.: [9171]1
      * Obtineat. : [9172]1
      * Obtulerunt eum: [9173]1
      * Occiduis rebus.: [9174]1
@@ -8598,7 +8598,7 @@ Index of Latin Words and Phrases
      * Otiosus.: [9187]1
      * Poenale.: [9188]1
      * Poene: [9189]1
-     * PoenitentiÃ¢ factorum.: [9190]1
+     * Poenitentiâ factorum.: [9190]1
      * Pabulum.: [9191]1
      * Palpitatio.: [9192]1
      * Paradiso.: [9193]1
@@ -8610,7 +8610,7 @@ Index of Latin Words and Phrases
      * Pastos: [9199]1
      * Pater familias: [9200]1
      * Paterfamilias: [9201]1
-     * Pateris vitÃ¦ auctor: [9202]1
+     * Pateris vitæ auctor: [9202]1
      * Pati.: [9203]1
      * Patientia: [9204]1
      * Patientia.: [9205]1
@@ -8618,7 +8618,7 @@ Index of Latin Words and Phrases
      * Pedibus mare ingressus.: [9207]1
      * Pedum vitio afflictos.: [9208]1
      * Penetrale: [9209]1
-     * Pensa quÃ¦ faceret. : [9210]1
+     * Pensa quæ faceret. : [9210]1
      * Pensum: [9211]1
      * Per dimotum populum.: [9212]1
      * Per diversa regionum.: [9213]1
@@ -8658,45 +8658,45 @@ Index of Latin Words and Phrases
      * Postliminio.: [9248]1
      * Poteram nunc ego ipsorum quoque genitalium membrorum mirificam
        rationem tibi exponere, nisi me pudor ab hujusmodi sermone
-       revocaret: itaque a nobis indumento verecundiÃ¦, quÃ¦ sunt pudenda
+       revocaret: itaque a nobis indumento verecundiæ, quæ sunt pudenda
        velentur. Quod ad hanc rem attinet, queri satis est, homines impios
        ac profanos summum nefas admittere, qui divinum et admirabile Dei
        opus, ad propagandam successionem inexcogitabili ratione provisum
-       et effectum, vel ad turpissimos quÃ¦ stus, vel ad obscoenÃ¦ libidinis
+       et effectum, vel ad turpissimos quæ stus, vel ad obscoenæ libidinis
        pudenda opera convertunt, ut jam nihil aliud ex re sanctissima
        petant, quam inanem et sterilem voluptatem.: [9249]1
      * Potissimum.: [9250]1
-     * PrÃ¦cepta sua factis adimplendo.: [9251]1
-     * PrÃ¦cursor: [9252]1
-     * PrÃ¦donum.: [9253]1
-     * PrÃ¦fert.: [9254]1
-     * PrÃ¦figurat: [9255]1
-     * PrÃ¦postere: [9256]1
-     * PrÃ¦posterus: [9257]1
-     * PrÃ¦scriptionem. : [9258]1
-     * PrÃ¦sentaneÃ¢.: [9259]1
-     * PrÃ¦senti opere convincat. : [9260]1
-     * PrÃ¦senti virtute.: [9261]1
-     * PrÃ¦sentibus factis.: [9262]1
-     * PrÃ¦sentibus poenis: [9263]1
-     * PrÃ¦sentibus.: [9264]1
-     * PrÃ¦stare. : [9265]1
-     * PrÃ¦valeat.: [9266]1
-     * PrÃ¦varicator: [9267]1
-     * PrÃ¦varicatores.: [9268]1
-     * PrÃ¦vius.: [9269]1
+     * Præcepta sua factis adimplendo.: [9251]1
+     * Præcursor: [9252]1
+     * Prædonum.: [9253]1
+     * Præfert.: [9254]1
+     * Præfigurat: [9255]1
+     * Præpostere: [9256]1
+     * Præposterus: [9257]1
+     * Præscriptionem. : [9258]1
+     * Præsentaneâ.: [9259]1
+     * Præsenti opere convincat. : [9260]1
+     * Præsenti virtute.: [9261]1
+     * Præsentibus factis.: [9262]1
+     * Præsentibus poenis: [9263]1
+     * Præsentibus.: [9264]1
+     * Præstare. : [9265]1
+     * Prævaleat.: [9266]1
+     * Prævaricator: [9267]1
+     * Prævaricatores.: [9268]1
+     * Prævius.: [9269]1
      * Prater infantiam: [9270]1
      * Pravum.: [9271]1
-     * PressurÃ¦ verberibus.: [9272]1
+     * Pressuræ verberibus.: [9272]1
      * Pressura et contritio.: [9273]1
      * Pretium mundi.: [9274]1
-     * Primam terrÃ¦ faciem: [9275]1
+     * Primam terræ faciem: [9275]1
      * Princeps. : [9276]1
      * Principe. : [9277]1
      * Pro fide.: [9278]1
      * Pro moribus.: [9279]1
-     * Pro personÃ¢.: [9280]1
-     * Pro pietate suÃ¢: [9281]1
+     * Pro personâ.: [9280]1
+     * Pro pietate suâ: [9281]1
      * Pro qualitate numinis sui. : [9282]1
      * Prodigiis.: [9283]1
      * Profani a sacramentis.: [9284]1
@@ -8715,12 +8715,12 @@ Index of Latin Words and Phrases
      * Propter humanitatem.: [9297]1
      * Propter miraculum virtutis.: [9298]1
      * Propter quem homines fecisse dicatur Deus.: [9299]1
-     * ProsecrÃ¢rant.: [9300]1
+     * Prosecrârant.: [9300]1
      * Protegebat.: [9301]1
      * Protulit.: [9302]1
      * Providentia. : [9303]1
      * Providere.: [9304]1
-     * PrudentiÃ¦: [9305]1
+     * Prudentiæ: [9305]1
      * Ps. cxxiii.: [9306]1
      * Pugillo.: [9307]1
      * Punicei coloris.: [9308]1
@@ -8729,10 +8729,10 @@ Index of Latin Words and Phrases
      * Purpureum.: [9311]1
      * Pusilli animi.: [9312]1
      * QuÃ : [9313]1
-     * QuÃ¦ : [9314]1
-     * QuÃ¦ summum fastigium imponerent.: [9315]1
-     * QuÃ¦, nisi in metu cohibetur.: [9316]1
-     * QuÃ²d si ratio ei quadraret.: [9317]1
+     * Quæ : [9314]1
+     * Quæ summum fastigium imponerent.: [9315]1
+     * Quæ, nisi in metu cohibetur.: [9316]1
+     * Quòd si ratio ei quadraret.: [9317]1
      * Quadrat.: [9318]1
      * Quadrupes.: [9319]1
      * Quam : [9320]1
@@ -8745,41 +8745,41 @@ Index of Latin Words and Phrases
      * Quasi odore quodam veritatis.: [9326]1
      * Quem croceum.: [9327]1
      * Quem propter homines: [9328]1
-     * Quem rectum rectÃ¨ sortitus est. : [9329]1
+     * Quem rectum rectè sortitus est. : [9329]1
      * Qui: [9330]1
-     * Qui autem omnia quÃ¦ ad cultum deorum pertinerent, diligentes
+     * Qui autem omnia quæ ad cultum deorum pertinerent, diligentes
        retractarent et tamquam : [9331]1
-     * Qui sunt principes omnis disciplinÃ¦. : [9332]1
+     * Qui sunt principes omnis disciplinæ. : [9332]1
      * Quia non egent.: [9333]1
      * Quia oculis manuque tractabile est.: [9334]1
      * Quid fiat.: [9335]1
      * Quid potestatis.: [9336]1
      * Quid sit Deus. : [9337]1
-     * Quidam cÃ¦cis mentibus viri.: [9338]1
+     * Quidam cæcis mentibus viri.: [9338]1
      * Quietus.: [9339]1
      * Quis autem nesciat plus esse momenti in paucioribus doctis, quam in
        pluribus imperitis?: [9340]1
      * Quo moderante: [9341]1
      * Quoad fieri potest. : [9342]1
-     * Quod carne indui haberet in terrÃ¢.: [9343]1
+     * Quod carne indui haberet in terrâ.: [9343]1
      * Quod ignorantes Deum facere non possunt. : [9344]1
      * Quod si Deum : [9345]1
      * Quod si aliqua necessitas prohibebit tum vero maxima adhibenda
        virtus erit, ut cupiditati continentia reluctetur. Nec tanturn
-       alienis, quÃ¦ attingere non licet, veriun etiam publicis vulgatisque
-       corporibus abstinendum, Deus prÃ¦cepit; docetque nos, cum duo inter
+       alienis, quæ attingere non licet, veriun etiam publicis vulgatisque
+       corporibus abstinendum, Deus præcepit; docetque nos, cum duo inter
        se corpora fuerint copulata, unum corpus efficere. Ita qui se coeno
        immerserit, coeno sit oblitus necesse est; et corpus quidem cito
        ablui potest: mens autem contagione impudici corporis inquinata non
-       potest, nisi et longo tempore, et multis bonis operibus, ab ea quÃ¦
-       inhÃ¦ serit colluvione purgari. Oportet ergo sibi quemque proponere,
+       potest, nisi et longo tempore, et multis bonis operibus, ab ea quæ
+       inhæ serit colluvione purgari. Oportet ergo sibi quemque proponere,
        duorum sexuum conjunctionem generandi causa datam esse viventibus,
        eamque legera his affectibus positam, ut successionera parent.
        Sicut autem dedit nobis oculos Deus, non ut spectemus,
        voluptatemque capiamus, sed ut videamus propter eos actus, qui
-       pertinent ad vitÃ¦ necessitatem, ita genitalem corporis partem, quod
-       nomen ipsum docet, nulla alia causa nisi efficiendÃ¦ sobolis
-       accepimus. Huic divinÃ¦ legi summa devotione parendum est. Sint
+       pertinent ad vitæ necessitatem, ita genitalem corporis partem, quod
+       nomen ipsum docet, nulla alia causa nisi efficiendæ sobolis
+       accepimus. Huic divinæ legi summa devotione parendum est. Sint
        omnes, qui se discipulos Dei profitebuntur, ita morati et
        instituti, ut imperare sibi possint. Nam qui voluptatibus
        indulgent, qui libidini obsequuntur, ii animam suam corpori
@@ -8789,8 +8789,8 @@ Index of Latin Words and Phrases
        mente tueatur; nec tantum legibus publicis pareat: sed sit supra
        omnes leges, qui legem Dei sequitur. Quibus : [9346]1
      * Quoniam.: [9347]1
-     * Quorum cÃ¦cis mentibus lux negatur.: [9348]1
-     * Quorum prÃ¦sens et admirabilis fuerit eventus. : [9349]1
+     * Quorum cæcis mentibus lux negatur.: [9348]1
+     * Quorum præsens et admirabilis fuerit eventus. : [9349]1
      * Rapiunt.: [9350]1
      * Rarum: [9351]1
      * Ratio virtutis.: [9352]1
@@ -8801,7 +8801,7 @@ Index of Latin Words and Phrases
      * Rationem hominis.: [9359]1
      * Rationem.: [9360]1
      * Rebus communibus.: [9361]1
-     * ReciprocÃ¢ vicissitudine.: [9362]1
+     * Reciprocâ vicissitudine.: [9362]1
      * Reddit.: [9363]1
      * Redit et Virgo: [9364]1
      * Redundent.: [9365]1
@@ -8872,14 +8872,14 @@ Index of Latin Words and Phrases
      * Sequela.: [9431]1
      * Si ab omnibus in legem Dei conjuraretur.: [9432]1
      * Si vero masculinum in dexteram, foemininum in sinistram pervenerit,
-       utrosque foetus recte provenire; ut et foeminis per omnia naturÃ¦
-       suÃ¦ decus constet, et maribus tam mente, quam corpore robur virile
+       utrosque foetus recte provenire; ut et foeminis per omnia naturæ
+       suæ decus constet, et maribus tam mente, quam corpore robur virile
        servetur. Istud vero ipsum quam mirabile institutum Dei, quod ad
-       conservationem generum singulorum, duos sexus maris ac foeminÃ¦
+       conservationem generum singulorum, duos sexus maris ac foeminæ
        machinatus est; quibus inter se per voluptatis illecebras
        copulatis, successiva soboles pareretur, ne omne genus viventium
        conditio mortalitatis extingueret. Sed plus roboris maribus
-       attributum est, quo facilius ad patientiam jugi maritalis foeminÃ¦
+       attributum est, quo facilius ad patientiam jugi maritalis foeminæ
        cogerentur. Vir itaque nominatus est, quod major in eo vis est,
        quire in foemina; et hinc virtus nomen accepit. Item mulier (ut :
        [9433]1
@@ -8894,19 +8894,19 @@ Index of Latin Words and Phrases
      * Siler: [9441]1
      * Similitudines autem in corporibus filiorum sic fieri putant. Cum
        semina inter se permixta coalescunt, si virile superaverit, patri
-       similem provenire, seu marem, seu foeminam; si muliebre prÃ¦
+       similem provenire, seu marem, seu foeminam; si muliebre præ
        valuerit, progeniem cujusque sexus ad imaginem respondere maternam.
-       Id autem prÃ¦ valet e duobus, quod fuerit uberius; alterum enim
+       Id autem præ valet e duobus, quod fuerit uberius; alterum enim
        quodammodo amplectitur et includit: hinc plerumque fled, ut unius
-       tantum lineamenta prÃ¦ tendat. Si vero Ã¦qua fuerit ex pari semente
+       tantum lineamenta præ tendat. Si vero æqua fuerit ex pari semente
        permixtio, figuras quoque misceri, ut soboles illa communis aut
        neutrum referre videatur, quia totum ex altero non habet; aut
        utrumque, quia partem de singulis mutuata est. Nam in cor-poribus
        animalium videmus aut confundi parentum colores, ac fieri tertium
        neutri generantium simile; aut utriusque sic exprimi, ut
        discoloribus membris per omne corpus concors mixtura varietur.
-       Dispares quoque naturÃ¦ hoc modo fieri putantur. Cum forte in lÃ¦ vam
-       uteri partem masculinÃ¦ stirpis semen inciderit, marem quidem gigni
+       Dispares quoque naturæ hoc modo fieri putantur. Cum forte in læ vam
+       uteri partem masculinæ stirpis semen inciderit, marem quidem gigni
        opinatio est; sed quia sit in foeminina parte conceptus, aliquid in
        se habere foemineum, supra quam decus virile patiatur; vel formam
        insignem, vel nimium candorem, vel corporis levitatem, vel artus
@@ -8925,7 +8925,7 @@ Index of Latin Words and Phrases
      * Sine cujusquam suspicione.: [9447]1
      * Sine delectu.: [9448]1
      * Sine fuco.: [9449]1
-     * Sine malitiÃ¢.: [9450]1
+     * Sine malitiâ.: [9450]1
      * Sine nutu et adminiculo animi.: [9451]1
      * Singularis.: [9452]1
      * Singulis ratio non quadravit. : [9453]1
@@ -8952,12 +8952,12 @@ Index of Latin Words and Phrases
      * Stultitiam.: [9474]1
      * Stultitiam. : [9475]1
      * Sub ambage: [9476]1
-     * Sub cortice lÃ¦vi: [9477]1
-     * Sub prÃ¦textu.: [9478]1
+     * Sub cortice lævi: [9477]1
+     * Sub prætextu.: [9478]1
      * Subinde,: [9479]1
      * Subjaceret. : [9480]1
      * Sublimes ad auras. : [9481]1
-     * SubstantiÃ¦: [9482]1
+     * Substantiæ: [9482]1
      * Substricta.: [9483]1
      * Suffixus.: [9484]1
      * Suis attemperat organa cannis.: [9485]1
@@ -8969,13 +8969,13 @@ Index of Latin Words and Phrases
      * Supervacuam: [9492]1
      * Sus ille lutulentus.: [9493]1
      * Sus lota in volutabro luti.: [9494]1
-     * Suscepta publicÃ¨ sacra.: [9495]1
+     * Suscepta publicè sacra.: [9495]1
      * Suspicio.: [9496]1
      * Suspicione.: [9497]1
      * Suspiciunt: [9498]1
      * Sustentatio sui.: [9499]1
      * Tabe corporis.: [9500]1
-     * TantÃ¦ affluentiÃ¦ ubertate.: [9501]1
+     * Tantæ affluentiæ ubertate.: [9501]1
      * Tanta: [9502]1
      * Tanta rerum magnitudo.: [9503]1
      * Tanti ad miracula visus.: [9504]1
@@ -8983,11 +8983,11 @@ Index of Latin Words and Phrases
      * Temperandum.: [9506]1
      * Temporalem.: [9507]1
      * Temporalis.: [9508]1
-     * TemporariÃ¦.: [9509]1
+     * Temporariæ.: [9509]1
      * Teneritudinem domicilii.: [9510]1
      * Tensa: [9511]1
      * Tenues: [9512]1
-     * Tenuia nec lanÃ¦ per coelum vellera ferri.: [9513]1
+     * Tenuia nec lanæ per coelum vellera ferri.: [9513]1
      * Tenuis: [9514]1
      * Tenuis.: [9515]1 [9516]2
      * Teretes.: [9517]1
@@ -8999,9 +8999,9 @@ Index of Latin Words and Phrases
      * Teste : [9523]1
      * Testudine.: [9524]1
      * Thure soluto.: [9525]1
-     * TineÃ¦.: [9526]1
+     * Tineæ.: [9526]1
      * Tituli: [9527]1
-     * Toto venerabilis Ã¦vo: [9528]1
+     * Toto venerabilis ævo: [9528]1
      * Tractabilis. : [9529]1
      * Tribus rebus animantium vita tenetur, cibo, potione, spiritu.:
        [9530]1
@@ -9014,9 +9014,9 @@ Index of Latin Words and Phrases
      * Ubertas animorum.: [9537]1
      * Ulla.: [9538]1
      * Ultima semper : [9539]1
-     * UmbrÃ¢ et imaginibus.: [9540]1
+     * Umbrâ et imaginibus.: [9540]1
      * Umbram et extrema lineamenta. : [9541]1
-     * Umbratico et imaginario prÃ¦ceptori.: [9542]1
+     * Umbratico et imaginario præceptori.: [9542]1
      * Undique quadrat.: [9543]1
      * Unica: [9544]1
      * Unus.: [9545]1
@@ -9025,7 +9025,7 @@ Index of Latin Words and Phrases
      * Ut errores hominibus immittant.: [9548]1
      * Ut infinita et perpetua potestate dominos se dici velint universi
        generis humani. : [9549]1
-     * Ut naturÃ¦ immortali quidquam decederet.: [9550]1
+     * Ut naturæ immortali quidquam decederet.: [9550]1
      * Ut supra: [9551]1
      * Uteri terram radicibus apti.: [9552]1
      * Utrumne illis ratio subsistat. : [9553]1
@@ -9040,15 +9040,15 @@ Index of Latin Words and Phrases
      * Vellera: [9562]1
      * Venerabilis.: [9563]1
      * Venia: [9564]1
-     * Venio nunc ad eam, quÃ¦ percipitur ex tactu, voluptatem: qui sensus
+     * Venio nunc ad eam, quæ percipitur ex tactu, voluptatem: qui sensus
        est quidem totius corporis. Sed ego non de ornamentis, aut
-       vestibus, sed de solÃ¢ libidine dicendum mihi puto; quÃ¦ maxime
+       vestibus, sed de solâ libidine dicendum mihi puto; quæ maxime
        coercenda est, quia maxime nocet. Cure excogitasset Deus duorum
        sexuum rationero, attribuit iis, ut se invicem appeterent, et
        conjunctione gauderent. Itaque ardentissimam cupiditatem cunctorum
        animantium corporibus admiscuit, ut in hos affectus avidissime
        ruerent, eaque ratione propagari et multiplicari genera possent.
-       QuÃ¦ cupiditas et appetentia in homine vehementior et acrior
+       Quæ cupiditas et appetentia in homine vehementior et acrior
        invenitur; vel quia hominum multitudinem voluit esse majorem, vel
        quoniam virtutem soli homini dedit, ut esset laus et gloria in
        coercendis voluptatibus, et abstinentia sui. Seit ergo adversarius
@@ -9063,7 +9063,7 @@ Index of Latin Words and Phrases
        esset, qui poenarum metu abstineret alieno, lupanaria quoque
        constituit; et pudorem infelicium mulierum publicavit, ut ludibrio
        haberet tam eos qui faciunt, quam quas pati necesse est.: [9565]1
-     * Ventri ac gulÃ¦ ingeras.: [9566]1
+     * Ventri ac gulæ ingeras.: [9566]1
      * Verba: [9567]1
      * Veri peritus ac sciens.: [9568]1
      * Verisimilia: [9569]1
@@ -9078,12 +9078,12 @@ Index of Latin Words and Phrases
      * Viduis.: [9578]1
      * Virtus divitiis pretium persolvere posse;: [9579]1
      * Virtus id dare quod re ipsa debetur honori.: [9580]1
-     * Virtus quÃ¦rendÃ¦ rei finem scire, modumque;: [9581]1
+     * Virtus quærendæ rei finem scire, modumque;: [9581]1
      * Virtutem in se recipere.: [9582]1
      * Viscera.: [9583]1
      * Visceribus.: [9584]1 [9585]2
      * Vitiosum.: [9586]1
-     * Vivam prÃ¦sentemque legem.: [9587]1
+     * Vivam præsentemque legem.: [9587]1
      * Vivificare.: [9588]1
      * Vivum cruorem.: [9589]1
      * Vivum.: [9590]1
@@ -9103,11 +9103,11 @@ Index of Latin Words and Phrases
      * affligit: [9604]1
      * agitetur.: [9605]1
      * alma: [9606]1
-     * altiores cÃ¦teris...fulgebant.: [9607]1
+     * altiores cæteris...fulgebant.: [9607]1
      * ante: [9608]1
      * ante diem septimam Calendarum Aprilium: [9609]1
-     * apud Mysiam PhrygiÃ¦: [9610]1
-     * apud Phrygiam MysiÃ¦ civitatem: [9611]1
+     * apud Mysiam Phrygiæ: [9610]1
+     * apud Phrygiam Mysiæ civitatem: [9611]1
      * ara maxima.: [9612]1
      * arbitrabantur: [9613]1
      * arcam: [9614]1
@@ -9117,7 +9117,7 @@ Index of Latin Words and Phrases
      * aut ab illis fortitudinis, aut,: [9618]1
      * aut plane terrores.: [9619]1
      * bonis si assueverit, jam pudebit eum ad deteriora desciscere: modo
-       placeant recta et honesta, quÃ¦ melioribus jucundiora sunt quam
+       placeant recta et honesta, quæ melioribus jucundiora sunt quam
        prava et inhonesta pejoribus.: [9620]1
      * coelando.: [9621]1
      * coelum: [9622]1
@@ -9163,25 +9163,25 @@ Index of Latin Words and Phrases
      * et immundum.: [9663]1
      * et qui fugerunt, universi redeant.: [9664]1
      * et seq. : [9665]1
-     * et sociam myrrhÃ¦ vim, Panachaia tuÃ¦.: [9666]1
-     * et tetrÃ¦.: [9667]1
+     * et sociam myrrhæ vim, Panachaia tuæ.: [9666]1
+     * et tetræ.: [9667]1
      * evincet et deliget validas nationes: [9668]1
      * ex moribus.: [9669]1
      * ex omni corpore ad venam genitalem confluere, ibique concrescere.
        Sed hoc, humana mens, quomodo fiat, non potest comprehendere. Item
-       in foeminis uterus in duas se dividit partes, quÃ¦ in diversum
-       diffussÃ¦ ac reflexÃ¦, circumplicantur, sicut arietis cornua. QuÃ¦
-       pars in dextram retorquetur, masculina est; quÃ¦ in sinistram,
+       in foeminis uterus in duas se dividit partes, quæ in diversum
+       diffussæ ac reflexæ, circumplicantur, sicut arietis cornua. Quæ
+       pars in dextram retorquetur, masculina est; quæ in sinistram,
        foeminina.: [9670]1
      * ex parte somniis constituerunt.: [9671]1
      * ex persona.: [9672]1
-     * exhÃ¦redati,: [9673]1
+     * exhæredati,: [9673]1
      * expelluntur,: [9674]1
      * expolient.: [9675]1
      * exsolantur,: [9676]1
      * extrema: [9677]1
      * exultantur.: [9678]1
-     * fÃ¦cunditatem variam generandi.: [9679]1
+     * fæcunditatem variam generandi.: [9679]1
      * familia.: [9680]1
      * ferrea: [9681]1
      * fibris: [9682]1
@@ -9192,11 +9192,11 @@ Index of Latin Words and Phrases
      * humus: [9687]1
      * hysteron-proteron: [9688]1
      * ignoravi: [9689]1
-     * illÃ¢: [9690]1
+     * illâ: [9690]1
      * illa sibi illam dedit: [9691]1
      * ille,: [9692]1
      * imago.: [9693]1
-     * imprudentiÃ¦.: [9694]1
+     * imprudentiæ.: [9694]1
      * in loco: [9695]1
      * in orbem,: [9696]1
      * in te.: [9697]1
@@ -9210,24 +9210,24 @@ Index of Latin Words and Phrases
      * infra.: [9720]1
      * instabile: [9721]1
      * intelligendo intelligentes.: [9722]1
-     * intempestÃ¢ nocte.: [9723]1
+     * intempestâ nocte.: [9723]1
      * intersecta.: [9724]1
      * intra.: [9725]1
      * ira, cupiditas, libido.: [9726]1
      * juvo: [9727]1
-     * lÃ¦sio: [9728]1
-     * lÃ¦via,: [9729]1
+     * læsio: [9728]1
+     * lævia,: [9729]1
      * lactens: [9730]1
-     * lacunÃ¦: [9731]1
+     * lacunæ: [9731]1
      * latrunculi.: [9732]1
      * ligando.: [9733]1
      * livor: [9734]1
      * majestatem.: [9735]1
-     * malÃ¦ bestiÃ¦: [9736]1
+     * malæ bestiæ: [9736]1
      * mater,: [9737]1
      * mediorum officiorum: [9738]1
      * mentis compos.: [9739]1
-     * metÃ¦: [9740]1
+     * metæ: [9740]1
      * mimus: [9741]1
      * minimus,: [9742]1
      * mollier: [9743]1
@@ -9253,9 +9253,9 @@ Index of Latin Words and Phrases
      * orbis.: [9764]1
      * organum,: [9765]1
      * osier: [9766]1
-     * palÃ¦stra.: [9767]1
+     * palæstra.: [9767]1
      * pallium: [9768]1
-     * palpebrÃ¦,: [9769]1
+     * palpebræ,: [9769]1
      * parricides: [9770]1 [9771]2
      * pasach: [9772]1
      * pascha: [9773]1
@@ -9272,13 +9272,13 @@ Index of Latin Words and Phrases
      * per Moysen,: [9786]1
      * per grave pondus,: [9787]1
      * persuasione: [9788]1
-     * perversÃ¢ religione: [9789]1
+     * perversâ religione: [9789]1
      * philosophia.: [9790]1
      * philosophiam nemo potuit invenire.: [9791]1
      * pietatis: [9792]1
-     * planÃ¨.: [9793]1
+     * planè.: [9793]1
      * planta.: [9794]1
-     * plenÃ¨,: [9795]1
+     * plenè,: [9795]1
      * polleo,: [9796]1
      * pollex: [9797]1
      * popularis aura.: [9798]1
@@ -9286,9 +9286,9 @@ Index of Latin Words and Phrases
      * post: [9800]1
      * post diem decimum kalendarum Aprilis: [9801]1
      * posuit Deus omnia.: [9802]1
-     * prÃ¦nomen: [9803]1
-     * prÃ¦nomen.: [9804]1
-     * prÃ¦tor: [9805]1
+     * prænomen: [9803]1
+     * prænomen.: [9804]1
+     * prætor: [9805]1
      * presbyter : [9806]1
      * pressura: [9807]1
      * principem angelorum: [9808]1
@@ -9296,13 +9296,13 @@ Index of Latin Words and Phrases
      * pro viribus,: [9810]1
      * professi Deum.: [9811]1
      * propter infans: [9812]1
-     * prosecÃ¢rant: [9813]1
+     * prosecârant: [9813]1
      * providentia.: [9814]1
      * pyra.: [9815]1
-     * quÃ m materiÃ¢ providentiam conglobatam.: [9816]1
-     * quÃ¦ capitur ex foeminei corporis copulatione: [9817]1
-     * quÃ¦ moderata.: [9818]1
-     * quÃ¦ sunt principes omnium disciplinÃ¦: [9819]1
+     * quÃ m materiâ providentiam conglobatam.: [9816]1
+     * quæ capitur ex foeminei corporis copulatione: [9817]1
+     * quæ moderata.: [9818]1
+     * quæ sunt principes omnium disciplinæ: [9819]1
      * quam,: [9820]1
      * quaternion: [9821]1
      * qui: [9822]1
@@ -9333,13 +9333,13 @@ Index of Latin Words and Phrases
      * sciente.: [9847]1
      * se probat.: [9848]1
      * sectare justitiam: [9849]1
-     * sed hÃ¦c verba de naturÃ¢ muliebri minime imperita, esse videntur.:
+     * sed hæc verba de naturâ muliebri minime imperita, esse videntur.:
        [9850]1
      * seu.: [9851]1
      * sigilla. : [9852]1
      * simulacra.: [9853]1
      * simulo: [9854]1
-     * sine maculÃ¢,: [9855]1
+     * sine maculâ,: [9855]1
      * sit.: [9856]1
      * sollicitam.: [9857]1
      * solus: [9858]1
@@ -9351,7 +9351,7 @@ Index of Latin Words and Phrases
      * spiritus: [9868]1
      * stabilis est: [9869]1
      * statio: [9870]1
-     * sub sidere cÃ¦li.: [9871]1
+     * sub sidere cæli.: [9871]1
      * summum bonum: [9872]1
      * superstite: [9873]1
      * superstitem: [9874]1
@@ -9385,7 +9385,7 @@ Index of Latin Words and Phrases
      * ut supra: [9975]1 [9976]2 [9977]3
      * uti.: [9978]1
      * vanis.: [9979]1
-     * veluti primogenitum prophetiÃ¦ ipsorum.: [9980]1
+     * veluti primogenitum prophetiæ ipsorum.: [9980]1
      * ventura: [9981]1
      * verbero,: [9982]1
      * verius,: [9983]1

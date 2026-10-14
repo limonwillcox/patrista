@@ -249,17 +249,6 @@ function extrasPlugin() {
         mkdirSync(chapterDir, { recursive: true });
         for (const chapter of payload.chapters) {
           writeFileSync(join(chapterDir, chapter.chapter + ".json"), JSON.stringify(chapter));
-          redirectLines.push(
-            "/api/works/" +
-              w.id +
-              "/chapters/" +
-              chapter.chapter +
-              "  /api/works/" +
-              w.id +
-              "/chapters/" +
-              chapter.chapter +
-              ".json  200"
-          );
         }
       }
 

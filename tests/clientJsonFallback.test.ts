@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { jsonFallbackPath } from "../src/api/client";
+import { chapterFetchPath, jsonFallbackPath } from "../src/api/client";
 
 describe("jsonFallbackPath", () => {
   it("appends .json to extensionless API paths", () => {
@@ -15,5 +15,14 @@ describe("jsonFallbackPath", () => {
 
   it("returns null when the path already ends in .json", () => {
     expect(jsonFallbackPath("/api/catalog.json")).toBeNull();
+  });
+
+  it("requests the chapter file directly on a static deploy", () => {
+    expect(chapterFetchPath("homilies-on-acts-and-romans", 30, false)).toBe(
+      "/api/works/homilies-on-acts-and-romans/chapters/30.json"
+    );
+    expect(chapterFetchPath("homilies-on-acts-and-romans", 30, true)).toBe(
+      "/api/works/homilies-on-acts-and-romans/chapters/30"
+    );
   });
 });

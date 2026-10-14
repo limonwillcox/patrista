@@ -32,8 +32,15 @@ export function fetchWorkText(id: string): Promise<WorkPayload> {
   return getJson<WorkPayload>("/api/works/" + encodeURIComponent(id) + "/text");
 }
 
+/** Extensionless in dev (Vite API). The built file on a static host. */
+export function chapterFetchPath(workId: string, chapter: number, dev = import.meta.env.DEV): string {
+  const extensionless = "/api/works/" + encodeURIComponent(workId) + "/chapters/" + chapter;
+  if (dev) return extensionless;
+  return jsonFallbackPath(extensionless) ?? extensionless;
+}
+
 export function fetchChapter(workId: string, chapter: number): Promise<Passage> {
-  return getJson<Passage>("/api/works/" + encodeURIComponent(workId) + "/chapters/" + chapter);
+  return getJson<Passage>(chapterFetchPath(workId, chapter));
 }
 
 export type BibleManifestBook = { id: string; name: string; chapters: number };

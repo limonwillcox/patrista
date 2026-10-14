@@ -73,10 +73,6 @@ function Rail() {
           {ICONS.about}
           <span>About</span>
         </NavLink>
-        <NavLink to="/give" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
-          {ICONS.give}
-          <span>Give</span>
-        </NavLink>
         <NavLink to="/fixes" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.fixes}
           <span>Fixes</span>

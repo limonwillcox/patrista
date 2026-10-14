@@ -179,6 +179,14 @@ describe("static chapter and work pages", () => {
     expect(page.html).toContain('"@type":"Book"');
     expect(page.html).not.toContain("Second homily sentence one.");
     expect(page.chapterPaths).toHaveLength(2);
+    expect(page.html).toContain(">Start reading</a>");
+    expect(page.html).toContain('href="/fathers/chrysostom/homilies-on-matthew/homily-i/"');
+    expect(page.html).toMatch(/<details class="chapter-index">/);
+    expect(page.html).not.toMatch(/<details[^>]*\sopen\b/);
+    expect(page.html).toContain("<summary>Chapters (2)</summary>");
+    expect(page.html).toContain('title="Homily I"');
+    expect(page.html).toContain('title="Homily II"');
+    expect(page.html).not.toContain('<nav class="static-toc"');
   });
 
   it("keeps a single passage on the work page", () => {

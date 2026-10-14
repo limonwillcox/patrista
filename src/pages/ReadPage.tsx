@@ -154,7 +154,20 @@ export function ReadPage() {
   const generationRef = useRef(0);
   const [hl, setHl] = useState<{ x: number; y: number; para: HTMLElement; range: Range } | null>(null);
   const jumpedRef = useRef<string | null>(null);
+  const pendingJump = useRef<number | null>(null);
   textsRef.current = texts;
+
+  function jumpToChapter(n: number) {
+    pendingJump.current = n;
+    loadAround(n);
+    jumpedRef.current = `${workId}:${n}`;
+    const el = document.getElementById("ch-" + n);
+    if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
+    const hash = "#ch-" + n;
+    if (window.location.hash !== hash) {
+      window.history.replaceState(window.history.state, "", hash);
+    }
+  }
 
   useEffect(() => {
     const generation = generationRef.current + 1;
@@ -332,12 +345,49 @@ export function ReadPage() {
     if (!el) return;
     jumpedRef.current = jumpKey;
     const n = Number(target);
-    if (n) loadAround(n);
+    if (n) {
+      pendingJump.current = n;
+      loadAround(n);
+    }
     const t = window.setTimeout(() => {
       el.scrollIntoView({ behavior: "auto", block: "start" });
     }, 50);
     return () => window.clearTimeout(t);
   }, [jumpChapter, location.hash, workId, outline, onChapterRoute, loadAround]);
+
+  useLayoutEffect(() => {
+    const n = pendingJump.current;
+    if (n == null || !texts.has(n)) return;
+    const el = document.getElementById("ch-" + n);
+    if (!el) return;
+    const pin = () => {
+      if (pendingJump.current !== n) return;
+      el.scrollIntoView({ behavior: "auto", block: "start" });
+    };
+    pin();
+    const observer = new ResizeObserver(pin);
+    observer.observe(document.body);
+    const timer = window.setTimeout(() => {
+      if (pendingJump.current === n) pendingJump.current = null;
+      observer.disconnect();
+    }, 1200);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(timer);
+    };
+  }, [texts]);
+
+  useEffect(() => {
+    const stop = () => {
+      pendingJump.current = null;
+    };
+    window.addEventListener("wheel", stop, { passive: true });
+    window.addEventListener("touchmove", stop, { passive: true });
+    return () => {
+      window.removeEventListener("wheel", stop);
+      window.removeEventListener("touchmove", stop);
+    };
+  }, []);
 
   function onMouseUp(e: React.MouseEvent) {
     if (document.body.classList.contains("read-dict-pick")) return;
@@ -425,14 +475,7 @@ export function ReadPage() {
                 title={p.heading}
                 onClick={(event) => {
                   event.preventDefault();
-                  loadAround(p.chapter);
-                  jumpedRef.current = `${workId}:${p.chapter}`;
-                  const el = document.getElementById("ch-" + p.chapter);
-                  if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
-                  const hash = "#ch-" + p.chapter;
-                  if (window.location.hash !== hash) {
-                    window.history.replaceState(window.history.state, "", hash);
-                  }
+                  jumpToChapter(p.chapter);
                 }}
               >
                 {p.heading || String(p.chapter)}

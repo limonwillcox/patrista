@@ -266,6 +266,7 @@ export function renderChurchFathersHtml(catalog: Catalog): string {
   out.push("<div class=\"browse-prerender\">");
   out.push("<h1>Church Writings</h1>");
   out.push("<p>" + escapeHtml(CHURCH_FATHERS_DESCRIPTION) + "</p>");
+  out.push('<p><a href="/fathers/">Fathers</a></p>');
   const worksByAuthor = new Map<string, typeof catalog.works>();
   for (const w of catalog.works) {
     const list = worksByAuthor.get(w.author);

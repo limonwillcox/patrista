@@ -5,8 +5,12 @@
   "description": "Searchable public-domain Church Fathers library.",
   "packageManager": "pnpm@11.24.0",
   "scripts": {
+    "predev": "node scripts/build-father-images.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/build-father-images.mjs",
     "build": "NODE_OPTIONS=--max-old-space-size=8192 tsc --noEmit && NODE_OPTIONS=--max-old-space-size=8192 vite build",
+    "fathers:images": "node scripts/build-father-images.mjs",
+    "fathers:credits": "node scripts/fetch-father-credits.mjs",
     "preview": "vite preview --host 127.0.0.1 --port 4173",
     "start": "vite preview --host 127.0.0.1 --port 4173",
     "test": "NODE_OPTIONS=--max-old-space-size=8192 vitest run",
@@ -35,6 +39,7 @@
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.2",
     "playwright": "^1.62.1",
+    "sharp": "^0.35.5",
     "typescript": "^5.9.2",
     "vite": "^7.1.5",
     "vitest": "^3.2.4"

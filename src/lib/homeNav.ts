@@ -9,7 +9,7 @@ export function showSiteRail(pathname: string): boolean {
   return !isHomePath(pathname);
 }
 
-export type LandingNavId = "read" | "bible" | "browse" | "timeline" | "about";
+export type LandingNavId = "read" | "bible" | "browse" | "fathers" | "about";
 
 export type LandingNavItem = {
   id: LandingNavId;
@@ -18,11 +18,11 @@ export type LandingNavItem = {
   featured?: boolean;
 };
 
-/** Hero tiles on `/` — rail destinations minus Home, Give, and Fixes. */
+/** Hero tiles on `/`. Timeline stays on the rail; Fathers takes its home slot. */
 export const LANDING_NAV: readonly LandingNavItem[] = [
   { id: "read", href: "/read", label: "Read" },
   { id: "bible", href: "/bible", label: "Bible" },
   { id: "browse", href: "/church-fathers", label: "Browse", featured: true },
-  { id: "timeline", href: "/church-history/timeline#nativity", label: "Timeline" },
+  { id: "fathers", href: "/fathers/", label: "Fathers" },
   { id: "about", href: "/about", label: "About" }
 ];

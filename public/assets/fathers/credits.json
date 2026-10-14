@@ -1,166 +1,412 @@
 {
   "ambrose": {
     "title": "Ambrose",
-    "source": "https://upload.wikimedia.org/wikipedia/commons/7/74/AmbroseOfMilan_%28cropped%29.jpg"
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/74/AmbroseOfMilan_%28cropped%29.jpg",
+    "file": "File:AmbroseOfMilan (cropped).jpg",
+    "artist": "",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:AmbroseOfMilan%20(cropped).jpg"
   },
   "arnobius": {
     "title": "Arnobius",
-    "source": "https://upload.wikimedia.org/wikipedia/commons/4/4c/%D0%90%D1%80%D0%BD%D0%BE%D0%B1%D0%B8%D0%B9_%D0%A1%D1%82%D0%B0%D1%80%D1%88%D0%B8%D0%B9_-Arnobius_of_Sicca.jpg"
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/4c/%D0%90%D1%80%D0%BD%D0%BE%D0%B1%D0%B8%D0%B9_%D0%A1%D1%82%D0%B0%D1%80%D1%88%D0%B8%D0%B9_-Arnobius_of_Sicca.jpg",
+    "file": "File:Арнобий Старший -Arnobius of Sicca.jpg",
+    "artist": "Schedel H.",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%80%D0%BD%D0%BE%D0%B1%D0%B8%D0%B9%20%D0%A1%D1%82%D0%B0%D1%80%D1%88%D0%B8%D0%B9%20-Arnobius%20of%20Sicca.jpg"
   },
   "augustine": {
     "title": "Augustine of Hippo",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Saint_Augustine_by_Philippe_de_Champaigne.jpg/330px-Saint_Augustine_by_Philippe_de_Champaigne.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Saint_Augustine_by_Philippe_de_Champaigne.jpg/330px-Saint_Augustine_by_Philippe_de_Champaigne.jpg",
+    "file": "File:Saint Augustine by Philippe de Champaigne.jpg",
+    "artist": "Philippe de Champaigne",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Saint%20Augustine%20by%20Philippe%20de%20Champaigne.jpg"
   },
   "gregory": {
     "title": "Pope Gregory I",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Gregory_the_Great_with_the_Holy_Spirit.jpg/330px-Gregory_the_Great_with_the_Holy_Spirit.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Gregory_the_Great_with_the_Holy_Spirit.jpg/330px-Gregory_the_Great_with_the_Holy_Spirit.jpg",
+    "file": "File:Gregory the Great with the Holy Spirit.jpg",
+    "artist": "British Library",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gregory%20the%20Great%20with%20the%20Holy%20Spirit.jpg"
   },
   "gregory_thaumaturgus": {
     "title": "Gregory Thaumaturgus",
-    "source": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Grigorii_chudotvoretz.jpg"
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Grigorii_chudotvoretz.jpg",
+    "file": "File:Grigorii chudotvoretz.jpg",
+    "artist": "Anonymous Unknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Grigorii%20chudotvoretz.jpg"
   },
   "methodius": {
     "title": "Methodius of Olympus",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Methodius_of_Olympus.jpg/330px-Methodius_of_Olympus.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Methodius_of_Olympus.jpg/330px-Methodius_of_Olympus.jpg",
+    "file": "File:Methodius of Olympus.jpg",
+    "artist": "Anonymous Unknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Methodius%20of%20Olympus.jpg"
   },
   "jerome": {
     "title": "Jerome",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/MatthiasStom-SaintJerome-Nantes.jpg/330px-MatthiasStom-SaintJerome-Nantes.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/MatthiasStom-SaintJerome-Nantes.jpg/330px-MatthiasStom-SaintJerome-Nantes.jpg",
+    "file": "File:MatthiasStom-SaintJerome-Nantes.jpg",
+    "artist": "Matthias Stom",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:MatthiasStom-SaintJerome-Nantes.jpg"
   },
   "lactantius": {
     "title": "Lactantius",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Lactantius.jpg/330px-Lactantius.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Lactantius.jpg/330px-Lactantius.jpg",
+    "file": "File:Lactantius.jpg",
+    "artist": "Unknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Lactantius.jpg"
   },
   "leo": {
     "title": "Pope Leo I",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Herrera_mozo_San_Le%C3%B3n_magno_Lienzo._%C3%93valo._164_x_105_cm._Museo_del_Prado.png/330px-Herrera_mozo_San_Le%C3%B3n_magno_Lienzo._%C3%93valo._164_x_105_cm._Museo_del_Prado.png"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Herrera_mozo_San_Le%C3%B3n_magno_Lienzo._%C3%93valo._164_x_105_cm._Museo_del_Prado.png/330px-Herrera_mozo_San_Le%C3%B3n_magno_Lienzo._%C3%93valo._164_x_105_cm._Museo_del_Prado.png",
+    "file": "File:Herrera mozo San León magno Lienzo. Óvalo. 164 x 105 cm. Museo del Prado.png",
+    "artist": "Francisco Herrera the Younger",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Herrera%20mozo%20San%20Le%C3%B3n%20magno%20Lienzo.%20%C3%93valo.%20164%20x%20105%20cm.%20Museo%20del%20Prado.png"
   },
   "tertullian": {
     "title": "Tertullian",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Tertullian2.png/330px-Tertullian2.png"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Tertullian2.png/330px-Tertullian2.png",
+    "file": "File:Tertullian2.png",
+    "artist": "André Thevet",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tertullian2.png"
   },
   "vincent": {
-    "title": "Vincent of L\u00e9rins",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Icon_of_St_Vincent_of_Lerins_by_Bojan_Teodosijevi%C4%87.jpg/330px-Icon_of_St_Vincent_of_Lerins_by_Bojan_Teodosijevi%C4%87.jpg"
+    "title": "Vincent of Lérins",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Icon_of_St_Vincent_of_Lerins_by_Bojan_Teodosijevi%C4%87.jpg/330px-Icon_of_St_Vincent_of_Lerins_by_Bojan_Teodosijevi%C4%87.jpg",
+    "file": "File:Icon of St Vincent of Lerins by Bojan Teodosijević.jpg",
+    "artist": "Bojan Teodosijević",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Icon%20of%20St%20Vincent%20of%20Lerins%20by%20Bojan%20Teodosijevi%C4%87.jpg"
   },
   "justin": {
     "title": "Justin Martyr",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg/330px-Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg/330px-Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg",
+    "file": "File:Saint Justin Martyr by Theophanes the Cretan.jpg",
+    "artist": "Theophanes the Cretan",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Saint%20Justin%20Martyr%20by%20Theophanes%20the%20Cretan.jpg"
   },
   "irenaeus": {
     "title": "Irenaeus",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Saint_irenee_saint_irenee.jpg/330px-Saint_irenee_saint_irenee.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Saint_irenee_saint_irenee.jpg/330px-Saint_irenee_saint_irenee.jpg",
+    "file": "File:Saint irenee saint irenee.jpg",
+    "artist": "Lucien Bégule",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Saint%20irenee%20saint%20irenee.jpg"
   },
   "clement_rome": {
     "title": "Clement of Rome",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Clemens_Romanus.jpg/330px-Clemens_Romanus.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Clemens_Romanus.jpg/330px-Clemens_Romanus.jpg",
+    "file": "File:Clemens Romanus.jpg",
+    "artist": "Unknown",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Clemens%20Romanus.jpg"
   },
   "ignatius": {
     "title": "Ignatius of Antioch",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Hosios_Loukas_%28south_west_chapel%2C_south_side%29_-_Ignatios.jpg/330px-Hosios_Loukas_%28south_west_chapel%2C_south_side%29_-_Ignatios.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Hosios_Loukas_%28south_west_chapel%2C_south_side%29_-_Ignatios.jpg/330px-Hosios_Loukas_%28south_west_chapel%2C_south_side%29_-_Ignatios.jpg",
+    "file": "File:Hosios Loukas (south west chapel, south side) - Ignatios.jpg",
+    "artist": "Anonymous Unknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hosios%20Loukas%20(south%20west%20chapel%2C%20south%20side)%20-%20Ignatios.jpg"
   },
   "polycarp": {
     "title": "Polycarp",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Polycarp_of_Smyrna2.jpg/330px-Polycarp_of_Smyrna2.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Polycarp_of_Smyrna2.jpg/330px-Polycarp_of_Smyrna2.jpg",
+    "file": "File:Polycarp of Smyrna2.jpg",
+    "artist": "PravoslavnyChristianin",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Polycarp%20of%20Smyrna2.jpg"
   },
   "didache": {
     "title": "Didache",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Didache.png/330px-Didache.png"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Didache.png/330px-Didache.png",
+    "file": "File:Didache.png",
+    "artist": "didachist",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Didache.png"
   },
   "papias": {
     "title": "Papias of Hierapolis",
-    "source": "https://upload.wikimedia.org/wikipedia/commons/6/63/Papias.png"
+    "source": "https://upload.wikimedia.org/wikipedia/commons/6/63/Papias.png",
+    "file": "File:Papias.png",
+    "artist": "Michel Wolgemut, Wilhelm Pleydenwurff (Text: Hartmann Schedel )",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Papias.png"
   },
   "theophilus": {
     "title": "Theophilus of Antioch",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Theophilus_Antiochenus.png/330px-Theophilus_Antiochenus.png"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Theophilus_Antiochenus.png/330px-Theophilus_Antiochenus.png",
+    "file": "File:Theophilus Antiochenus.png",
+    "artist": "William Cave",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Theophilus%20Antiochenus.png"
   },
   "athenagoras": {
     "title": "Athenagoras of Athens",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Greek_Icon_of_Saint_Athenagoras_of_Athens.jpg/330px-Greek_Icon_of_Saint_Athenagoras_of_Athens.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Greek_Icon_of_Saint_Athenagoras_of_Athens.jpg/330px-Greek_Icon_of_Saint_Athenagoras_of_Athens.jpg",
+    "file": "File:Greek Icon of Saint Athenagoras of Athens.jpg",
+    "artist": "Unknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Greek%20Icon%20of%20Saint%20Athenagoras%20of%20Athens.jpg"
   },
   "clement_alexandria": {
     "title": "Clement of Alexandria",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Clement_alexandrin.jpg/330px-Clement_alexandrin.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Clement_alexandrin.jpg/330px-Clement_alexandrin.jpg",
+    "file": "File:Clement alexandrin.jpg",
+    "artist": "André Thévet",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Clement%20alexandrin.jpg"
   },
   "origen": {
     "title": "Origen",
-    "source": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Origen3.jpg"
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Origen3.jpg",
+    "file": "File:Origen3.jpg",
+    "artist": "",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Origen3.jpg"
   },
   "hippolytus": {
     "title": "Hippolytus of Rome",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Statue_of_Saint_.Hippolytus_%28cropped%29.jpg/330px-Statue_of_Saint_.Hippolytus_%28cropped%29.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Statue_of_Saint_.Hippolytus_%28cropped%29.jpg/330px-Statue_of_Saint_.Hippolytus_%28cropped%29.jpg",
+    "file": "File:Statue of Saint .Hippolytus (cropped).jpg",
+    "artist": "Dobroš © Dana Stehlíková",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Statue%20of%20Saint%20.Hippolytus%20(cropped).jpg"
   },
   "cyprian": {
     "title": "Cyprian",
-    "source": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Cyprian_von_Karthago2.jpg"
+    "source": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Cyprian_von_Karthago2.jpg",
+    "file": "File:Cyprian von Karthago2.jpg",
+    "artist": "The original uploader was Bwag at German Wikipedia .",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Cyprian%20von%20Karthago2.jpg"
   },
   "dionysius": {
     "title": "Dionysius of Alexandria",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Dionisii_alek.jpg/330px-Dionisii_alek.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Dionisii_alek.jpg/330px-Dionisii_alek.jpg",
+    "file": "File:Dionisii alek.jpg",
+    "artist": "Anonymous Unknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Dionisii%20alek.jpg"
   },
   "eusebius": {
     "title": "Eusebius",
-    "source": "https://upload.wikimedia.org/wikipedia/commons/7/70/Eusebius_of_Caesarea_Rabbula_Gospels_Icon.jpg"
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/70/Eusebius_of_Caesarea_Rabbula_Gospels_Icon.jpg",
+    "file": "File:Eusebius of Caesarea Rabbula Gospels Icon.jpg",
+    "artist": "Unknown, the art is from the 6th Century AD",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Eusebius%20of%20Caesarea%20Rabbula%20Gospels%20Icon.jpg"
   },
   "athanasius": {
     "title": "Athanasius of Alexandria",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Fethiye_Camii%2C_parekklesion%2C_diakonikon%2C_mosaics%2C_Istanbul%2C_Turkey_-_South_wall%2C_St._Athanasius%2C_detail_of_upper_half_-_MSBZ004_BF_T_F_027_B_-_Dumbarton_Oaks.jpg/330px-thumbnail.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Fethiye_Camii%2C_parekklesion%2C_diakonikon%2C_mosaics%2C_Istanbul%2C_Turkey_-_South_wall%2C_St._Athanasius%2C_detail_of_upper_half_-_MSBZ004_BF_T_F_027_B_-_Dumbarton_Oaks.jpg/330px-thumbnail.jpg",
+    "file": "File:Fethiye Camii, parekklesion, diakonikon, mosaics, Istanbul, Turkey - South wall, St. Athanasius, detail of upper half - MSBZ004 BF T F 027 B - Dumbarton Oaks.jpg",
+    "artist": "Byzantine Institute staff",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Fethiye%20Camii%2C%20parekklesion%2C%20diakonikon%2C%20mosaics%2C%20Istanbul%2C%20Turkey%20-%20South%20wall%2C%20St.%20Athanasius%2C%20detail%20of%20upper%20half%20-%20MSBZ004%20BF%20T%20F%20027%20B%20-%20Dumbarton%20Oaks.jpg"
   },
   "basil": {
     "title": "Basil of Caesarea",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Basil_of_Caesarea.jpg/330px-Basil_of_Caesarea.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Basil_of_Caesarea.jpg/330px-Basil_of_Caesarea.jpg",
+    "file": "File:Basil of Caesarea.jpg",
+    "artist": "Unknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Basil%20of%20Caesarea.jpg"
   },
   "gregory_nazianzen": {
     "title": "Gregory of Nazianzus",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Gregor-Chora_%28cropped%29.jpg/330px-Gregor-Chora_%28cropped%29.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Gregor-Chora_%28cropped%29.jpg/330px-Gregor-Chora_%28cropped%29.jpg",
+    "file": "File:Gregor-Chora (cropped).jpg",
+    "artist": "Unknown author",
+    "license": "Copyrighted free use",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gregor-Chora%20(cropped).jpg"
   },
   "gregory_nyssa": {
     "title": "Gregory of Nyssa",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Gregory_of_Nyssa.jpg/330px-Gregory_of_Nyssa.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Gregory_of_Nyssa.jpg/330px-Gregory_of_Nyssa.jpg",
+    "file": "File:Gregory of Nyssa.jpg",
+    "artist": "Anonymous Unknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gregory%20of%20Nyssa.jpg"
   },
   "chrysostom": {
     "title": "John Chrysostom",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Johnchrysostom.jpg/330px-Johnchrysostom.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Johnchrysostom.jpg/330px-Johnchrysostom.jpg",
+    "file": "File:Johnchrysostom.jpg",
+    "artist": "",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Johnchrysostom.jpg"
   },
   "cyril_jerusalem": {
     "title": "Cyril of Jerusalem",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Saint_Cyril_of_Jerusalem.jpg/330px-Saint_Cyril_of_Jerusalem.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Saint_Cyril_of_Jerusalem.jpg/330px-Saint_Cyril_of_Jerusalem.jpg",
+    "file": "File:Saint Cyril of Jerusalem.jpg",
+    "artist": "Anonymous Unknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Saint%20Cyril%20of%20Jerusalem.jpg"
   },
   "hilary": {
     "title": "Hilary of Poitiers",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Hilaryofpoitiers.jpg/330px-Hilaryofpoitiers.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Hilaryofpoitiers.jpg/330px-Hilaryofpoitiers.jpg",
+    "file": "File:Hilaryofpoitiers.jpg",
+    "artist": "Richard de Montbaston et collaborateurs.",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hilaryofpoitiers.jpg"
   },
   "john_damascus": {
     "title": "John of Damascus",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Athonite_Fresco_Icon_of_Saint_John_of_Damascus.jpg/330px-Athonite_Fresco_Icon_of_Saint_John_of_Damascus.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Athonite_Fresco_Icon_of_Saint_John_of_Damascus.jpg/330px-Athonite_Fresco_Icon_of_Saint_John_of_Damascus.jpg",
+    "file": "File:Athonite Fresco Icon of Saint John of Damascus.jpg",
+    "artist": "Unknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Athonite%20Fresco%20Icon%20of%20Saint%20John%20of%20Damascus.jpg"
   },
   "theodoret": {
     "title": "Theodoret",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Theodoret_of_Cyr_%28in_A._Thevet1584%29.png/330px-Theodoret_of_Cyr_%28in_A._Thevet1584%29.png"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Theodoret_of_Cyr_%28in_A._Thevet1584%29.png/330px-Theodoret_of_Cyr_%28in_A._Thevet1584%29.png",
+    "file": "File:Theodoret of Cyr (in A. Thevet1584).png",
+    "artist": "Jutory",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Theodoret%20of%20Cyr%20(in%20A.%20Thevet1584).png"
   },
   "rufinus": {
     "title": "Tyrannius Rufinus",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Rufinus_Aquileiensis.jpg/330px-Rufinus_Aquileiensis.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Rufinus_Aquileiensis.jpg/330px-Rufinus_Aquileiensis.jpg",
+    "file": "File:Rufinus Aquileiensis.jpg",
+    "artist": "Bloemaert, Frederick (Bloemaert, Frederick) From: 1614— To: 1669",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Rufinus%20Aquileiensis.jpg"
   },
   "cassian": {
     "title": "John Cassian",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/John_Cassian.jpeg/330px-John_Cassian.jpeg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/John_Cassian.jpeg/330px-John_Cassian.jpeg",
+    "file": "File:John Cassian.jpeg",
+    "artist": "Unknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:John%20Cassian.jpeg"
   },
   "ephraim": {
     "title": "Ephrem the Syrian",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Mor_Ephrem_icon.jpg/330px-Mor_Ephrem_icon.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Mor_Ephrem_icon.jpg/330px-Mor_Ephrem_icon.jpg",
+    "file": "File:Mor Ephrem icon.jpg",
+    "artist": "Anonymous Unknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Mor%20Ephrem%20icon.jpg"
   },
   "aphrahat": {
     "title": "Aphrahat",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Les_Vies_des_P%C3%A8res_des_d%C3%A9serts_d%27Orient_-_leur_doctrine_spirituelle_et_leur_discipline_monastique_%281886%29_%2814590545527%29.jpg/330px-Les_Vies_des_P%C3%A8res_des_d%C3%A9serts_d%27Orient_-_leur_doctrine_spirituelle_et_leur_discipline_monastique_%281886%29_%2814590545527%29.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Les_Vies_des_P%C3%A8res_des_d%C3%A9serts_d%27Orient_-_leur_doctrine_spirituelle_et_leur_discipline_monastique_%281886%29_%2814590545527%29.jpg/330px-Les_Vies_des_P%C3%A8res_des_d%C3%A9serts_d%27Orient_-_leur_doctrine_spirituelle_et_leur_discipline_monastique_%281886%29_%2814590545527%29.jpg",
+    "file": "File:Les Vies des Pères des déserts d'Orient - leur doctrine spirituelle et leur discipline monastique (1886) (14590545527).jpg",
+    "artist": "Internet Archive Book Images",
+    "license": "No restrictions",
+    "licenseUrl": "https://www.flickr.com/commons/usage/",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Les%20Vies%20des%20P%C3%A8res%20des%20d%C3%A9serts%20d'Orient%20-%20leur%20doctrine%20spirituelle%20et%20leur%20discipline%20monastique%20(1886)%20(14590545527).jpg"
   },
   "councils": {
     "title": "First Council of Nicaea",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/%CE%9C%CE%B9%CF%87%CE%B1%CE%AE%CE%BB_%CE%94%CE%B1%CE%BC%CE%B1%CF%83%CE%BA%CE%B7%CE%BD%CF%8C%CF%82_-_%CE%91%CE%84_%CE%9F%CE%B9%CE%BA%CE%BF%CF%85%CE%BC%CE%B5%CE%BD%CE%B9%CE%BA%CE%AE_%CE%A3%CF%8D%CE%BD%CE%BF%CE%B4%CE%BF%CF%82_7741.jpg/330px-%CE%9C%CE%B9%CF%87%CE%B1%CE%AE%CE%BB_%CE%94%CE%B1%CE%BC%CE%B1%CF%83%CE%BA%CE%B7%CE%BD%CF%8C%CF%82_-_%CE%91%CE%84_%CE%9F%CE%B9%CE%BA%CE%BF%CF%85%CE%BC%CE%B5%CE%BD%CE%B9%CE%BA%CE%AE_%CE%A3%CF%8D%CE%BD%CE%BF%CE%B4%CE%BF%CF%82_7741.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/%CE%9C%CE%B9%CF%87%CE%B1%CE%AE%CE%BB_%CE%94%CE%B1%CE%BC%CE%B1%CF%83%CE%BA%CE%B7%CE%BD%CF%8C%CF%82_-_%CE%91%CE%84_%CE%9F%CE%B9%CE%BA%CE%BF%CF%85%CE%BC%CE%B5%CE%BD%CE%B9%CE%BA%CE%AE_%CE%A3%CF%8D%CE%BD%CE%BF%CE%B4%CE%BF%CF%82_7741.jpg/330px-%CE%9C%CE%B9%CF%87%CE%B1%CE%AE%CE%BB_%CE%94%CE%B1%CE%BC%CE%B1%CF%83%CE%BA%CE%B7%CE%BD%CF%8C%CF%82_-_%CE%91%CE%84_%CE%9F%CE%B9%CE%BA%CE%BF%CF%85%CE%BC%CE%B5%CE%BD%CE%B9%CE%BA%CE%AE_%CE%A3%CF%8D%CE%BD%CE%BF%CE%B4%CE%BF%CF%82_7741.jpg",
+    "file": "File:Μιχαήλ Δαμασκηνός - Α΄ Οικουμενική Σύνοδος 7741.jpg",
+    "artist": "C messier",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:%CE%9C%CE%B9%CF%87%CE%B1%CE%AE%CE%BB%20%CE%94%CE%B1%CE%BC%CE%B1%CF%83%CE%BA%CE%B7%CE%BD%CF%8C%CF%82%20-%20%CE%91%CE%84%20%CE%9F%CE%B9%CE%BA%CE%BF%CF%85%CE%BC%CE%B5%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%A3%CF%8D%CE%BD%CE%BF%CE%B4%CE%BF%CF%82%207741.jpg"
   },
   "josephus": {
     "title": "Josephus",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Joseph%2C_son_of_Gorian%2C_called_Flavius_Josephus_%28cropped%29.jpg/330px-Joseph%2C_son_of_Gorian%2C_called_Flavius_Josephus_%28cropped%29.jpg"
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Joseph%2C_son_of_Gorian%2C_called_Flavius_Josephus_%28cropped%29.jpg/330px-Joseph%2C_son_of_Gorian%2C_called_Flavius_Josephus_%28cropped%29.jpg",
+    "file": "File:Joseph, son of Gorian, called Flavius Josephus (cropped).jpg",
+    "artist": "Scan by NYPL",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Joseph%2C%20son%20of%20Gorian%2C%20called%20Flavius%20Josephus%20(cropped).jpg"
   }
 }

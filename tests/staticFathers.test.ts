@@ -242,6 +242,7 @@ describe("home, read shell, and sitemap", () => {
     const html = renderHomeStaticHtml(catalog);
     expect(html.match(/<h1[\s>]/g)).toHaveLength(1);
     expect(html).toContain("<h1>Patrista</h1>");
+    expect(html).toContain('href="/fathers/"');
     expect(html).toContain('href="/church-fathers/"');
     expect(html).toContain('href="/church-fathers/#author-augustine"');
     expect(html.indexOf("Augustine of Hippo")).toBeLessThan(html.indexOf("Cyprian"));

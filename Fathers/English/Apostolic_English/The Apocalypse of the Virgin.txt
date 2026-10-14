@@ -208,8 +208,8 @@ The Apocalypse of the Virgin.
    XV.  And in another place the all holy one saw a man hanging from his
    four extremities, and from his nails blood gushed vehemently, and his
    tongue [3963] was tied in a flame of fire, and he was unable to groan
-   and say the Kyrie eleÃ¯son me.  And when she had seen him the all holy
-   one wept and herself said the Kyrie eleÃ¯son thrice:  and after the
+   and say the Kyrie eleïson me.  And when she had seen him the all holy
+   one wept and herself said the Kyrie eleïson thrice:  and after the
    saying of the prayer, came the angel who had authority over the scourge
    and loosed the man's tongue:  and the all holy one asked the
    commander-in-chief:  Who is this wretched one who has this
@@ -627,7 +627,7 @@ The Apocalypse of the Virgin.
    Tell me, Sedrach, since I made the sea, how many waves arose and how
    many fell, and how many are to arise, and how many winds blow along the
    margin of the sea?  Tell me, Sedrach, from the creation of the world of
-   the Ã¦ons, when the air rained, how many drops fell upon the world, and
+   the æons, when the air rained, how many drops fell upon the world, and
    how many are to fall?  And Sedrach said:  Thou alone knowest all these
    things, O Lord; thou only understandest all these things:  only, I pray
    thee, deliver man from chastisement, and I shall not be separated from
@@ -793,7 +793,7 @@ The Apocalypse of the Virgin.
    [3987] Cf.Apoc. of Esdras, in Ante-Nicene Lib., vol. xvi., p. 474, and
    Testament of Abraham, Rec. A., Chaps. vii. and xvi.
 
-   [3988] Cf. Test. of Abraham, Rec. A. Â§Â§ xiv., xviii.
+   [3988] Cf. Test. of Abraham, Rec. A. §§ xiv., xviii.
 
    [3989] Rom. ii. 4.
 
@@ -3316,8 +3316,8 @@ The Apocalypse of the Virgin.
    to the books of the New Testament contained in it, there are two
    writings described as the Epistles of one Clement.  Of these, that now
    before us is the first.  It is tolerably perfect, but there are many
-   slight lacunÃ¦, or gaps, in the ms., and one whole leaf is supposed to
-   have been lost towards the close.  These lacunÃ¦, however, so numerous
+   slight lacunæ, or gaps, in the ms., and one whole leaf is supposed to
+   have been lost towards the close.  These lacunæ, however, so numerous
    in some chapters, do not generally extend beyond a word or syllable,
    and can for the most part be easily supplied.
 
@@ -3384,7 +3384,7 @@ The Apocalypse of the Virgin.
    Additional Introduction.
 
    Towards the close of 1875, at Constantinople, Philotheus Bryennius,
-   Metropolitan of SerrÃ¦, published the first complete edition of the
+   Metropolitan of Serræ, published the first complete edition of the
    epistles ascribed to Clement.  This he was enabled to do by the
    discovery of a ms. in the library of the Holy Sepulchre at Fanari in
    Constantinople.  This ms., of vellum, consists of one hundred and
@@ -3408,7 +3408,7 @@ The Apocalypse of the Virgin.
    The ms. is written with comparative accuracy and clearness.  Internal
    evidence seems to establish its independent value; e.g., words
    carelessly omitted in the Codex Alexandrinus are found in this ms.  It
-   also supplies the lacunÃ¦, notably chapters 57 (concluding sentence)--63
+   also supplies the lacunæ, notably chapters 57 (concluding sentence)--63
    inclusive of the first Epistle and chapters 12 (concluding
    sentences)--20, being the close of the second Epistle.  Harnack seems
    to prove that the new ms. is as complete as the original Alexandrian.
@@ -3590,7 +3590,7 @@ The Apocalypse of the Virgin.
    Hebrew text.  We have given the rendering approved by the best critics;
    but some prefer to translate, as in our English version, "unto thee
    shall be his desire, and thou shalt rule over him."  See, for an
-   ancient explanation of the passage, IrenÃ¦us, Adv. HÃ¦r., iv. 18, 3.
+   ancient explanation of the passage, Irenæus, Adv. Hær., iv. 18, 3.
 
    [4017] Gen. xxvii. 41, etc.
 
@@ -3641,7 +3641,7 @@ The Apocalypse of the Virgin.
 
    [4029] I. phugadeutheis (having become a fugitive).  Archbishop Wake
    here reads "scourged."  We have followed the most recent critics in
-   filling up the numerous lacunÃ¦ in this chapter.
+   filling up the numerous lacunæ in this chapter.
 
    [4030] I. punctuates elabe dikaiosunen, (received righteousness, having
    taught).
@@ -3662,7 +3662,7 @@ The Apocalypse of the Virgin.
    is to be added a great multitude of the elect, who, having through envy
    endured many indignities and tortures, furnished us with a most
    excellent example.  Through envy, those women, the Danaids [4033] and
-   DircÃ¦, being persecuted, after they had suffered terrible and
+   Dircæ, being persecuted, after they had suffered terrible and
    unspeakable torments, finished the course of their faith with
    stedfastness, [4034] and though weak in body, received a noble reward.
    Envy has alienated wives from their husbands, and changed that saying
@@ -3746,7 +3746,7 @@ The Apocalypse of the Virgin.
    [4045] Comp. Isa. i. 18.
 
    [4046] These words are not found in Scripture, though they are quoted
-   again by Clem. Alex. (PÃ¦dag. i. 10) as from Ezekiel.
+   again by Clem. Alex. (Pædag. i. 10) as from Ezekiel.
 
    [4047] Isa. i. 16-20.
      __________________________________________________________________
@@ -3827,7 +3827,7 @@ The Apocalypse of the Virgin.
 
    [4055] Gen. xix; comp. 2 Pet. ii. 6-9.
 
-   [4056] So Joseph., Antiq., i. 11. 4; IrenÃ¦us, Adv. HÃ¦r., iv. 31.
+   [4056] So Joseph., Antiq., i. 11. 4; Irenæus, Adv. Hær., iv. 31.
 
    [4057] Literally, "become a judgment and sign."
      __________________________________________________________________
@@ -3861,7 +3861,7 @@ The Apocalypse of the Virgin.
    [4058] Josh. ii; Heb. xi. 31.
 
    [4059] Others of the fathers adopt the same allegorical interpretation,
-   e. g., Justin Mar., Dial. c. Tryph., n. 111; IrenÃ¦us, Adv. HÃ¦r., iv.
+   e. g., Justin Mar., Dial. c. Tryph., n. 111; Irenæus, Adv. Hær., iv.
    20.
      __________________________________________________________________
 
@@ -4321,7 +4321,7 @@ The Apocalypse of the Virgin.
 
    [4122] This fable respecting the phoenix is mentioned by Herodotus (ii.
    73), and by Pliny (Nat. Hist., x. 2). and is used as above by
-   Tertullian (De Resurr., Â§ 13), and by others of the fathers.
+   Tertullian (De Resurr., § 13), and by others of the fathers.
      __________________________________________________________________
 
    Chapter XXVI.--We Shall Rise Again, Then, as the Scripture Also
@@ -6420,7 +6420,7 @@ The Apocalypse of the Virgin.
    opinions of philosophers ("contextum philosophorum sententiis"), and
    was afterwards imitated by Justin Martyr.
 
-   After this date Aristides passes out of view.  In the mediÃ¦val
+   After this date Aristides passes out of view.  In the mediæval
    martyrologies there is a faint reflection of the earlier testimony, as,
    e.g., the 31st of August is given as the saint's day "of the blessed
    Aristides, most renowned for faith and wisdom, who presented books on
@@ -6648,14 +6648,14 @@ The Apocalypse of the Virgin.
    classes of men in this world; these being the worshippers of the gods
    acknowledged among you, and Jews, and Christians.  Further they who pay
    homage to many gods are themselves divided into three classes,
-   ChaldÃ¦ans namely, and Greeks, and Egyptians; for these have been guides
+   Chaldæans namely, and Greeks, and Egyptians; for these have been guides
    and preceptors to the rest of the nations in the service and worship of
    these many-titled deities.
 
    III.  Let us see then which of them participate in truth and which of
    them in error.
 
-   The ChaldÃ¦ans, then, not knowing God went astray after the elements and
+   The Chaldæans, then, not knowing God went astray after the elements and
    began to worship the creation more than their Creator.
 
    And of these they formed certain shapes and styled them a
@@ -6667,7 +6667,7 @@ The Apocalypse of the Virgin.
    guard is greater than that which is guarded, and that he who makes is
    greater than that which is made.  For if their gods are unfit to look
    after their own safety, how shall they bestow protection upon others?
-   Great then is the error into which the ChaldÃ¦ans wandered in adoring
+   Great then is the error into which the Chaldæans wandered in adoring
    lifeless and good-for-nothing images.
 
    And it occurs to me as surprising, O King, how it is that their
@@ -6752,7 +6752,7 @@ The Apocalypse of the Virgin.
    the elements and animals, and by ever-assailing death.  It cannot be
    admitted, then, that man is a god, but only a work of God.
 
-   Great therefore is the error into which the ChaldÃ¦ans wandered,
+   Great therefore is the error into which the Chaldæans wandered,
    following after their own desires.
 
    For they reverence the perishable elements and lifeless images, and do
@@ -6760,7 +6760,7 @@ The Apocalypse of the Virgin.
 
    VIII.  Let us proceed then to the Greeks, that we may see whether they
    have any discernment concerning God.  The Greeks, indeed, though they
-   call themselves wise proved more deluded than the ChaldÃ¦ans in alleging
+   call themselves wise proved more deluded than the Chaldæans in alleging
    that many gods have come into being, some of them male, some female,
    practised masters in every passion and every variety of folly.  [And
    the Greeks themselves represented them to be adulterers and murderers,
@@ -6882,7 +6882,7 @@ The Apocalypse of the Virgin.
 
    XII.  The Egyptians, again, being more stupid and witless than these
    have gone further astray than all the nations.  For they were not
-   content with the objects of worship of the ChaldÃ¦ans and the Greeks,
+   content with the objects of worship of the Chaldæans and the Greeks,
    but in addition to these brought forward also brute creatures as gods,
    both land and water animals, and plants and herbs; and they were
    defiled with all madness and brutality more deeply than all the nations
@@ -6910,7 +6910,7 @@ The Apocalypse of the Virgin.
    and burnt as offerings and slain as victims and mouldering in decay,
    they have not perceived that they are not gods.
 
-   XIII.  So the Egyptians and the ChaldÃ¦ans and the Greeks made a great
+   XIII.  So the Egyptians and the Chaldæans and the Greeks made a great
    error in bringing forward such beings as gods, and in making images of
    them, and in deifying dumb and senseless idols.
 
@@ -6922,7 +6922,7 @@ The Apocalypse of the Virgin.
    For when they have no power to see to their own safety, how will they
    take forethought for men?
 
-   But further, the poets and philosophers, alike of the ChaldÃ¦ans and the
+   But further, the poets and philosophers, alike of the Chaldæans and the
    Greeks and the Egyptians, while they desired by their poems and
    writings to magnify the gods of their countries, rather revealed their
    shame, and laid it bare before all men.  For if the body of man while
@@ -7063,7 +7063,7 @@ The Apocalypse of the Virgin.
    probably the original division.  To a Greek, men were either Greeks or
    Barbarians; to a Greek Christian it would seem necessary to add two new
    peoples, Jews and Christians.  The Greek calls the Barbarians
-   "ChaldÃ¦ans."  This change of classification is probably the cause of
+   "Chaldæans."  This change of classification is probably the cause of
    the omission in the Greek of the preliminary accounts of the four
    classes.  The Greek blends the summaries with the fuller accounts.
 
@@ -7078,7 +7078,7 @@ The Apocalypse of the Virgin.
    [4423] This, the "Christological" passage, occurs earlier in the
    Syriac.  Chap. II.
 
-   [4424] The Armenian agrees with the Greek against the Syriac.  "UnÃ¡ cum
+   [4424] The Armenian agrees with the Greek against the Syriac.  "Uná cum
    Spiritu Sancto" Arm.
 
    [4425] The reference is to Josaphat, son of Abenner, who was taught to
@@ -7102,7 +7102,7 @@ The Apocalypse of the Virgin.
    Here follows the defence which Aristides the philosopher made before
    Hadrian the King on behalf of reverence for God.
 
-   ...All-powerful CÃ¦sar Titus Hadrianus Antoninus, venerable and
+   ...All-powerful Cæsar Titus Hadrianus Antoninus, venerable and
    merciful, from Marcianus Aristides, an Athenian philosopher. [4427]
 
    I.  I, O King, by the grace of God came into this world; and when I had
@@ -7398,7 +7398,7 @@ The Apocalypse of the Virgin.
    say that he is a physician and prepares drugs and plaster that he may
    supply the necessaries of his livelihood.  Is then this god in want?
    And at length he was struck with lightning by Dios on account of
-   Tyndareos of LacedÃ¦mon, and so he died.  If then Asklepios were a god,
+   Tyndareos of Lacedæmon, and so he died.  If then Asklepios were a god,
    and, when he was struck with lightning, was unable to help himself, how
    should he be able to give help to others?  But that a divine nature
    should be in want or be destroyed by lightning is impossible.
@@ -7730,7 +7730,7 @@ The Apocalypse of the Virgin.
 
    [4427] The superscription seems to be duplicate in the Syriac.  It is
    absent from the Greek as we have it; the Armenian has "To the Emperor
-   CÃ¦sar Hadrian from Aristides."  Various explanations are offered.  (a)
+   Cæsar Hadrian from Aristides."  Various explanations are offered.  (a)
    Both emperors, as colleagues, may be meant.  In support of this the
    Syriac adjectives for "venerable and merciful" are marked plural; the
    phrase "Your majesty" occurring later has a plural suffix; and two
@@ -7747,7 +7747,7 @@ The Apocalypse of the Virgin.
    attribute which a Christian would care to apply to a Roman emperor.
    pantokrator may have been confounded with au tokrator.  Raabe supplies
    *** giving the sense "qui imperium (postatem) habet," as an epithet of
-   CÃ¦sar.  If *** ="Renewed, or dedicated again to...Antoninus Pius,"
+   Cæsar.  If *** ="Renewed, or dedicated again to...Antoninus Pius,"
    could be read, both headings might be retained.
 
    [4428] The Armenian adds, "For that which is subject to this
@@ -7771,7 +7771,7 @@ The Apocalypse of the Virgin.
    is the equivalent of the Greek "dio kai kosmos kaleitai," which occurs
    (Chap. IV.) in discussing the supposed divinity of the sky or heaven.
 
-   [4433] Professor NÃ¶ldeke's emendation, ***, in place of *** ="they were
+   [4433] Professor Nöldeke's emendation, ***, in place of *** ="they were
    reviled," is adopted in the translation given.
 
    [4434] Cf. Amos v. 26, "Chiun, your star god," and Acts vii. 43.
@@ -7831,7 +7831,7 @@ The Apocalypse of the Virgin.
    part of Numidia which belonged to proconsular Africa.  The proconsul at
    the time, who is said by Tertullian to have been the first to draw the
    sword against the Christians there, was P. Vigellius Saturninus.  The
-   consuls for the year were PrÃ¦sens II. and Condianus.  Marcus Aurelius
+   consuls for the year were Præsens II. and Condianus.  Marcus Aurelius
    had died only a few months before.
 
    The exact date of the martyrdom was long under dispute, and the
@@ -7842,9 +7842,9 @@ The Apocalypse of the Virgin.
    of the consuls for the year in the first line of the piece.  But M.
    Leon Renier conjectured that the word bis pointed to a consul's name
    underlying the word preceding it, and suggested the year 180, when
-   PrÃ¦sens and Condianus were consuls.  This conjecture was confirmed by
+   Præsens and Condianus were consuls.  This conjecture was confirmed by
    Usener's publication in 1881 of a Greek version from a ninth century
-   ms. in the BibliothÃ¨que Nationale at Paris, though even here the names,
+   ms. in the Bibliothèque Nationale at Paris, though even here the names,
    though recognizable, were in a corrupt form.  Usener believed this
    version to be a translation from a Latin original, and his theory has
    been confirmed by Mr. Armitage Robinson's discovery of a Latin ms. of
@@ -7859,7 +7859,7 @@ The Apocalypse of the Virgin.
 
    ------------------------
 
-   When PrÃ¦sens, for the second time, and Claudianus were the consuls, on
+   When Præsens, for the second time, and Claudianus were the consuls, on
    the seventeenth day of July, at Carthage, there were set in the
    judgment-hall Speratus, Nartzalus, Cittinus, Donata, Secunda and
    Vestia.
@@ -7898,7 +7898,7 @@ The Apocalypse of the Virgin.
    Cittinus said:  We have none other to fear, save only our Lord God, who
    is in heaven.
 
-   Donata said:  Honour to CÃ¦sar as CÃ¦sar:  but fear to God. [4444]
+   Donata said:  Honour to Cæsar as Cæsar:  but fear to God. [4444]
 
    Vestia said:  I am a Christian.
 
@@ -7935,7 +7935,7 @@ The Apocalypse of the Virgin.
    Nartzalus said:  To-day we are martyrs in heaven; thanks be to God.
 
    Saturninus the proconsul ordered it to be declared by the herald:
-   Speratus, Nartzalus, Cittinus, Veturius, Felix, Aquilinus, LÃ¦tantius,
+   Speratus, Nartzalus, Cittinus, Veturius, Felix, Aquilinus, Lætantius,
    Januaria, Generosa, Vestia, Donata and Secunda, I have ordered to be
    executed.
 
@@ -7984,12 +7984,12 @@ The Apocalypse of the Virgin.
    suffered martyrdom in the year 202, and Origen very soon afterwards
    succeeded the great Clement as head of the school at Alexandria.
    Thirteen years after, the persecution of Caracalla drove him from his
-   own country to CÃ¦sarea, where though still a layman he preached at
+   own country to Cæsarea, where though still a layman he preached at
    church meetings.  Recalled to Alexandria, he laboured there for fifteen
    years further as teacher and author, till in the year 231 his
-   ordination at CÃ¦sarea to the office of presbyter drew upon him the
+   ordination at Cæsarea to the office of presbyter drew upon him the
    condemnation of the bishop of Alexandria and became the occasion of his
-   permanent withdrawal from the place of his birth.  At CÃ¦sarea he now
+   permanent withdrawal from the place of his birth.  At Cæsarea he now
    formed a new school of Christian training similar to that from which he
    had been driven.  At this time, as well as in the earlier period of his
    life, he made various journeys to different parts of the world.  His
@@ -8014,7 +8014,7 @@ The Apocalypse of the Virgin.
    cited and often rather unfairly dealt with by Origen, as he follows him
    over the same ground, belonged to the Valentinian school.  Many of his
    comments the reader will find to be very just and shrewd; but the
-   tenets of his school led him into many extravagances.  Of PantÃ¦nus,
+   tenets of his school led him into many extravagances.  Of Pantænus,
    head of the catechetical school at Alexandria in the end of the second
    and early years of the third century, we hear that he interpreted many
    of the books of Scripture.  We also learn that he preceded Clement and
@@ -8067,8 +8067,8 @@ The Apocalypse of the Virgin.
    lectures, on every part of Christian learning, and from that time to
    his death, at the age of sixty-nine, he was constantly engaged in the
    work of public exposition.  At Alexandria his expositions took place in
-   the school, but at CÃ¦sarea they formed part of the church services, so
-   that the reports of those belonging to the CÃ¦sarean period provide us
+   the school, but at Cæsarea they formed part of the church services, so
+   that the reports of those belonging to the Cæsarean period provide us
    with the earliest examples we possess of the discourse at Christian
    meetings.  In an activity which he practised so much Origen acquired
    extraordinary skill and facility, and gained the highest reputation,
@@ -8228,11 +8228,11 @@ The Apocalypse of the Virgin.
    which has come down to us, and are therefore placed in this volume
    before those on Matthew.  The first five books on John were written at
    Alexandria before Origen's compulsory withdrawal from that city to
-   CÃ¦sarea in 231.  In chaps. 4 and 8 of the first book he speaks of this
+   Cæsarea in 231.  In chaps. 4 and 8 of the first book he speaks of this
    work as being the first fruits of his activity as a writer on Holy
    Scripture.  The sixth book, as he tells us in vi. 1, had been begun at
    Alexandria, but the manuscript had been left behind, so that a new
-   beginning had to be made at CÃ¦sarea.  The work was again interrupted by
+   beginning had to be made at Cæsarea.  The work was again interrupted by
    the persecution of Maximian in 238; the volumes from the twenty-second
    to the last were written after that date.  At the end of the
    thirty-second volume, which is the last we now possess, the writer has
@@ -8283,20 +8283,20 @@ The Apocalypse of the Virgin.
    for the Exposition of the Holy Scriptures; with a lively Personal
    Appeal.
 
-   This letter to Gregory, afterwards bishop of CÃ¦sarea, and called
+   This letter to Gregory, afterwards bishop of Cæsarea, and called
    Thaumaturgus, was preserved in the Philocalia, or collection of
    extracts from Origen's works drawn up by Gregory of Nyssa and Basil of
-   CÃ¦sarea.  It is printed by Delarue and Lommatzsch in the forefront of
+   Cæsarea.  It is printed by Delarue and Lommatzsch in the forefront of
    their editions of the works.  It forms a good preface to the
    commentaries, as it shows how Origen considered the study of Scripture
    to be the highest of all studies, and how he regarded scientific
    learning, in which he was himself a master, as merely preparatory for
-   this supreme learning.  DrÃ¤seke [4446] has shown that it was written
+   this supreme learning.  Dräseke [4446] has shown that it was written
    about 235, when Origen, after having had Gregory as his pupil at
-   CÃ¦sarea for some years, had fled before the persecution under Maximinus
+   Cæsarea for some years, had fled before the persecution under Maximinus
    Thrax to Cappadocia; while Gregory, to judge from the tenor of this
    Epistle, had gone to Egypt.  The Panegyric on Origen, [4447] pronounced
-   by Gregory at CÃ¦sarea about 239, when the school had reassembled there
+   by Gregory at Cæsarea about 239, when the school had reassembled there
    after the persecution, shows that the master's solicitude for his
    pupil's true advancement was not disappointed.
 
@@ -8410,7 +8410,7 @@ The Apocalypse of the Virgin.
 
    [4448] ix. 2.
 
-   [4449] Reading with DrÃ¤seke, raphideouton, surraptonton ton
+   [4449] Reading with Dräseke, raphideouton, surraptonton ton
    raphideuton.
 
    [4450] Exod. xxxi. 3, 6; xxxvi. 1, 2, 8.

@@ -56,7 +56,7 @@ The Refutation of All Heresies.
    Philosophumena, or the Refutation of all Heresies." The last is
    Miller's in his Oxford edition, 1851. The title might have been,
    "Philosophumena, and the Refutation (therefrom) of all Heresies." There
-   were obviously two divisions of the work: (1) A rÃ©sumÃ© of the tenets of
+   were obviously two divisions of the work: (1) A résumé of the tenets of
    the philosophers (books i., ii., iii., iv.), preparatory to (2) the
    refutation of heresies, on the ground of their derivative character
    from Greek and Egyptian speculation. Bunsen would denominate the work
@@ -64,7 +64,7 @@ The Refutation of All Heresies.
    remains of the ten books."
 
    [21] Most of what follows in book i. is a compilation from ancient
-   sources.  The ablest rÃ©sumÃ© followed by Cicero in the De Nat. Deor., of
+   sources.  The ablest résumé followed by Cicero in the De Nat. Deor., of
    the tenets of the ancient philosophers, is to be found in Aristotle's
    Metaphysics. The English reader is referred to the Metaphysics, book i.
    pp. 13-46 (Bohn's Classical Library), also to the translator's analysis
@@ -234,7 +234,7 @@ The Refutation of All Heresies.
 
    [38] Or, "devoting his attention to;" or, "having lighted upon."
 
-   [39] The chief writers on the early heresies are: IrenÃ¦us, of the
+   [39] The chief writers on the early heresies are: Irenæus, of the
    second century; Hippolytus, his pupil, of the third; Philastrius,
    Epiphanius, and St. Augustine, of the fourth century. The learned need
    scarcely be reminded of the comprehensive digest furnished by Ittigius
@@ -344,7 +344,7 @@ The Refutation of All Heresies.
 
    This philosopher likewise said that the soul is immortal, and that it
    subsists in successive bodies. Wherefore he asserted that before the
-   Trojan era he was Ã†thalides, [55] and during the Trojan epoch
+   Trojan era he was Æthalides, [55] and during the Trojan epoch
    Euphorbus, and subsequent to this Hermotimus of Samos, and after him
    Pyrrhus of Delos; fifth, Pythagoras. And Diodorus the Eretrian, [56]
    and Aristoxenus [57] the musician, assert that Pythagoras came to
@@ -385,7 +385,7 @@ The Refutation of All Heresies.
    rest, and remained as a disciple, and took his meals along with them;
    if otherwise, however, he received back his property, and was rejected.
    These persons, then, were styled Esoteric Pythagoreans, whereas the
-   rest, PythagoristÃ¦.
+   rest, Pythagoristæ.
 
    Among his followers, however, who escaped the conflagration were Lysis
    and Archippus, and the servant of Pythagoras, Zamolxis, [64] who also
@@ -423,7 +423,7 @@ The Refutation of All Heresies.
    [54] Kobisthe in text must be rendered "multiplied." The formulary is
    self-evident: (a^2)^2 = a^4, (a^2)^3 = a^6, (a^3)^3 = a^9.
 
-   [55] Or Thallis. Ã†thalides, a son of Hermes, was herald of the
+   [55] Or Thallis. Æthalides, a son of Hermes, was herald of the
    Argonauts, and said never to have forgotten anything. In this way his
    soul remembered its successive migrations into the bodies of Euphorbus,
    Hermotimus, Pyrrhus, and Pythagoras. (See Diogenes' Lives, book viii.
@@ -434,9 +434,9 @@ The Refutation of All Heresies.
    far as the translator knows, is mentioned only by Hippolytus; so that
    this is likely another Diodorus to be added to the long list already
    existing. It may be that Diodorus Eretriensis is the same as Diodorus
-   Crotoniates, a Pythagorean philosopher. See Fabricius' Biblioth. GrÃ¦c.,
+   Crotoniates, a Pythagorean philosopher. See Fabricius' Biblioth. Græc.,
    lib ii. cap. iii., lib. iii. cap. xxxi.; also Meursius' Annotations, p.
-   20, on Chalcidius' Commentary on Plato's TimÃ¦us.  The article in
+   20, on Chalcidius' Commentary on Plato's Timæus.  The article in
    Smith's Dictionary is a transcript of these.
 
    [57] Aristoxenus is mentioned by Cicero in his Tusculan Questions, book
@@ -543,7 +543,7 @@ The Refutation of All Heresies.
    former ethical, and the latter logical. [70]
      __________________________________________________________________
 
-   [69] Proclus, in his commentary on Plato's TimÃ¦us, uses almost the same
+   [69] Proclus, in his commentary on Plato's Timæus, uses almost the same
    words: "but Heraclitus, in asserting his own universal knowledge, makes
    out all the rest of mankind ignorant."
 
@@ -670,7 +670,7 @@ The Refutation of All Heresies.
    Cause; His Cosmogony and Astronomy.
 
    After this (thinker) comes Anaxagoras, [82] son of Hegesibulus, [83] a
-   native of ClazomenÃ¦. This person affirmed the originating principle of
+   native of Clazomenæ. This person affirmed the originating principle of
    the universe to be mind and matter; mind being the efficient cause,
    whereas matter that which was being formed. For all things coming into
    existence simultaneously, mind supervening introduced order. And
@@ -743,7 +743,7 @@ The Refutation of All Heresies.
    explains Hippolytus' remark, while it suggests an emendation of the
    text.
 
-   [85] Or, "in the Antipodes;" or, "from the snow in Ã†thiopia."
+   [85] Or, "in the Antipodes;" or, "from the snow in Æthiopia."
 
    [86] Or, "overpowered by the sun," that is, whose light was lost in the
    superior brilliancy of the sun.
@@ -1153,7 +1153,7 @@ The Refutation of All Heresies.
 
    [110] De Legibus, iv. 7 (p. 109, vol. viii. ed. Bekker).
 
-   [111] TimÃ¦us, c. xvi. (p. 277, vol. vii. ed. Bekker). The passage runs
+   [111] Timæus, c. xvi. (p. 277, vol. vii. ed. Bekker). The passage runs
    thus in the original: "Gods of gods, of whom I am Creator and Father of
    works, which having been formed by Me, are indissoluble, through, at
    all events, My will."
@@ -1179,7 +1179,7 @@ The Refutation of All Heresies.
    employs the same word in the case of their view of virtue.
 
    [118] This is supplied from the original; the passage occurs in the
-   PhÃ¦drus, c. lx. (p. 86, vol. i. ed. Bekker).
+   Phædrus, c. lx. (p. 86, vol. i. ed. Bekker).
 
    [119] The word Adrasteia was a name for Nemesis, and means here
    unalterable destiny.
@@ -1235,7 +1235,7 @@ The Refutation of All Heresies.
    in an individual, as we have before stated, vanishes (in the fifth
    body). This (speculator), then holding discussions in the Lyceum, drew
    up from time to time his system of philosophy; but Zeno (held his
-   school) in the porch called PoecilÃ©. And the followers of Zeno obtained
+   school) in the porch called Poecilé. And the followers of Zeno obtained
    their name from the place--that is, from Stoa--(i.e., a porch), being
    styled Stoics; whereas Aristotle's followers (were denominated) from
    their mode of employing themselves while teaching. For since they were
@@ -1248,7 +1248,7 @@ The Refutation of All Heresies.
    the other four (elements);" or, "the fifth body, which is supposed to
    be (composed) of the other four."
 
-   [124] Hippolytus expresses himself in the words of StobÃ¦us, who says
+   [124] Hippolytus expresses himself in the words of Stobæus, who says
    (Eclog., ii. 274): "And among reputed external blessings are nobility,
    wealth, glory, peace, freedom, friendship."
 
@@ -1437,9 +1437,9 @@ The Refutation of All Heresies.
    Roeper.
 
    [137] Or, "knowledge." (See Clemens Alexandrinus, Strom., i., xv.,
-   lxxii.; Eusebius, PrÃ¦parat. Evang., ix. 6.)
+   lxxii.; Eusebius, Præparat. Evang., ix. 6.)
 
-   [138] AthenÃ¦us (Deipn., book ix.) ascribes this opinion to Plato, who,
+   [138] Athenæus (Deipn., book ix.) ascribes this opinion to Plato, who,
    he tells us, "asserted that the soul was so constituted, that it should
    reject its last covering, that of vanity."
 
@@ -1543,7 +1543,7 @@ The Refutation of All Heresies.
 
    Embracing Heaven, she Ocean bred with eddies deep,
 
-   And CÃ¦us, and Crius, and Hyperian, and Iapetus,
+   And Cæus, and Crius, and Hyperian, and Iapetus,
 
    And Thia, and Rhea, and Themis, and Mnemosyne,
 
@@ -1639,17 +1639,17 @@ The Refutation of All Heresies.
    [149] Or, "celestial."
      __________________________________________________________________
 
-   Chapter II.--Doctrines Concerning Ã†ons; The Chaldean Astrology; Heresy
+   Chapter II.--Doctrines Concerning Æons; The Chaldean Astrology; Heresy
    Derivable from It.
 
    Employing these (as analogies), Euphrates the Peratic, and Acembes
    [150] the Carystian, and the rest of the crowd of these (speculators),
    imposing names different from the doctrine of the truth, speak of a
-   sedition of Ã†ons, and of a revolt of good powers over to evil (ones),
-   and of the concord of good with wicked (Ã†ons), calling them Toparchai
+   sedition of Æons, and of a revolt of good powers over to evil (ones),
+   and of the concord of good with wicked (Æons), calling them Toparchai
    and Proastioi, and very many other names.  But the entire of this
    heresy, as attempted by them, I shall explain and refute when we come
-   to treat of the subject of these (Ã†ons). But now, lest any one suppose
+   to treat of the subject of these (Æons). But now, lest any one suppose
    the opinions propounded by the Chaldeans respecting astrological
    doctrine to be trustworthy and secure, we shall not hesitate to furnish
    a brief refutation respecting these, establishing that the futile art
@@ -1945,7 +1945,7 @@ The Refutation of All Heresies.
    long straight hair, [179] be of a fair complexion, childless, modest.
    These statements, however, and others similar to them, are rather
    deserving of laughter than serious consideration. For, according to
-   them, it is possible for no Ã†thiopian to be born in Virgo; otherwise he
+   them, it is possible for no Æthiopian to be born in Virgo; otherwise he
    would allow that such a one is white, with long straight hair and the
    rest. But I am rather of opinion, [180] that the ancients imposed the
    names of received animals upon certain specified stars, for the purpose
@@ -1970,7 +1970,7 @@ The Refutation of All Heresies.
    having become almost extinct, was revived by the Arabians at the verve
    of the middle ages. For the history of astrology one must consult the
    writings of Manilius, Julius Firmicus, and Ptolemy. Its greatest
-   mediÃ¦val apologist is Cardan, the famous physician of Pavia (see his
+   mediæval apologist is Cardan, the famous physician of Pavia (see his
    work, De Astron. Judic., lib. vi.-ix. tom. v. of his collected works).
 
    [179] Sextus adds, "bright-eyed."
@@ -1981,7 +1981,7 @@ The Refutation of All Heresies.
    chapter, was a poet and astronomer of antiquity, born at Soli in
    Cilicia. He afterwards became physician to Gonatus, son of Demetrius
    Poliorcetes, king of Macedon, at whose court he rose high into favour.
-   The work alluded to by Hippolytus is Aratus' PhÃ¦nomena,--a versified
+   The work alluded to by Hippolytus is Aratus' Phænomena,--a versified
    account of the motions of the stars, and of sidereal influence over
    men. This work seems to have been a great favourite with scholars, if
    we are to judge from the many excellent annotated editions of it that
@@ -1989,8 +1989,8 @@ The Refutation of All Heresies.
    edition, 1600, in Greek and Latin; and Buhle's edition, Leipsic, 1803.
    See also Dionysius Petavius' Uranologion. Aratus must always be famous,
    from the fact that St. Paul (Acts xiii. 28) quotes the fifth line of
-   the PhÃ¦nomena. Cicero considered Aratus a noble poet, and translated
-   the PhÃ¦nomena into Latin, a fragment of which has been preserved, and
+   the Phænomena. Cicero considered Aratus a noble poet, and translated
+   the Phænomena into Latin, a fragment of which has been preserved, and
    is in Grotius' edition. Aratus has been translated into English verse,
    with notes by Dr. Lamb, Dean of Bristol (London: J. W. Parker, 1858).
      __________________________________________________________________
@@ -2110,7 +2110,7 @@ The Refutation of All Heresies.
    Gen.; Diodorus of Tarsus, De Fato; Photii Biblioth., cod. ccxxiii.; and
    Bardesanis, De Legibus Nationum, in Cureton's Spicilegium Syriacum.
 
-   [186] See Plato's TimÃ¦us.
+   [186] See Plato's Timæus.
 
    [187] Schneidewin, on Roeper's suggestion, amends the passage thus,
    though I am not sure that I exactly render his almost unintelligible
@@ -2416,8 +2416,8 @@ The Refutation of All Heresies.
    but history hands down the name of Ulysses as the conqueror. Achilles
    and Hector (may be adduced as examples). Achilles, according to the
    rule of the number nine, makes four monads; Hector one:  Achilles gains
-   the victory. Again, Achilles and AsteropÃ¦us (are instances). Achilles
-   makes four monads, AsteropÃ¦us three: Achilles conquers. Again, Menelaus
+   the victory. Again, Achilles and Asteropæus (are instances). Achilles
+   makes four monads, Asteropæus three: Achilles conquers. Again, Menelaus
    and Euphorbus (may be adduced as examples). Menelaus has nine monads,
    Euphorbus eight: Menelaus gains the victory.
 
@@ -2438,13 +2438,13 @@ The Refutation of All Heresies.
 
    [197] The subject of the numerical system employed by the Gnostics, and
    their occult mysteries, is treated of by the learned Kircher, OEdipi
-   Ã†gypt., tom. ii. part i., de CabalÃ¢ HebrÃ¦orum; also in his Arithmolog.
-   in the book De Arithmomantia Gnosticor., cap. viii., de CabalÃ¢
-   PythagoreÃ¢. See also Mersennes, Comment. on Genes.
+   Ægypt., tom. ii. part i., de Cabalâ Hebræorum; also in his Arithmolog.
+   in the book De Arithmomantia Gnosticor., cap. viii., de Cabalâ
+   Pythagoreâ. See also Mersennes, Comment. on Genes.
 
    [198] This subject is examined by Cornelius Agrippa in his celebrated
    work, De vanitate et incertitudine Scientiarum, chap. xi., De Sorte
-   PythagoricÃ¢. Terentius Maurus has also a versified work on Letters and
+   Pythagoricâ. Terentius Maurus has also a versified work on Letters and
    Syllables and Metres, in which he alludes to similar interpretations
    educible from the names Hector and Patroclus.
 
@@ -2949,7 +2949,7 @@ The Refutation of All Heresies.
 
    [244] The words "death of a goat" occur on the margin of the ms.
 
-   [245] A similar statement is made, on the authority of AlcmÃ¦on, by
+   [245] A similar statement is made, on the authority of Alcmæon, by
    Aristotle in his Histor. Animal., i. 2.
 
    [246] Manne is the word in the text. But manna in the ordinary
@@ -2981,7 +2981,7 @@ The Refutation of All Heresies.
    quantity of blazing coals, (the magician) keeps the linen cloth
    unconsumed. Creating also darkness in the house, (the sorcerer) alleges
    that he can introduce gods or demons; and if any requires him to show
-   Ã†sculapius, he uses an invocation couched in the following words:--
+   Æsculapius, he uses an invocation couched in the following words:--
 
    "The child once slain, again of Phoebus deathless made,
 
@@ -3012,9 +3012,9 @@ The Refutation of All Heresies.
    [248] Or "indissoluble," or "inseparable."
      __________________________________________________________________
 
-   Chapter XXXIII.--The Burning Ã†sculapius; Tricks with Fire.
+   Chapter XXXIII.--The Burning Æsculapius; Tricks with Fire.
 
-   But after he discontinues uttering these jests, a fiery Ã†sculapius
+   But after he discontinues uttering these jests, a fiery Æsculapius
    [249] appears upon the floor. Then, placing in the midst a pot full of
    water, he invokes all the deities, and they are present. For any one
    who is by, glancing into the pot, will behold them all, and Diana
@@ -3477,7 +3477,7 @@ The Refutation of All Heresies.
    ends in a duad, and each reverts into its own peculiar (function).
      __________________________________________________________________
 
-   [278] See Aristotle's Metaphysics, book i.; Cicero, De NaturÃ¢ Deorum,
+   [278] See Aristotle's Metaphysics, book i.; Cicero, De Naturâ Deorum,
    book i. (both translated in Bohn's Classical Library); and Plutarch, De
    Placitis Philosophorum. lib. i.
 
@@ -3499,7 +3499,7 @@ The Refutation of All Heresies.
    being a divisible number.
 
    [284] Miller considers some reference here to the six days' creation
-   (HexaÃ«meron), on account of the word phusikotera, i.e., more natural.
+   (Hexaëmeron), on account of the word phusikotera, i.e., more natural.
    The Abbe Cruice considers that there is an allusion to an astronomic
    instrument used for exhibiting harmonic combinations; see Ptolem.,
    Harmon., i. 2. Bunsen reads tou hexakuklou hulikou.
@@ -3626,7 +3626,7 @@ The Refutation of All Heresies.
    Holds earth midway, and heaven itself around conducts."
      __________________________________________________________________
 
-   [291] Arat., PhÃ¦nom., v. 19 et seq.
+   [291] Arat., Phænom., v. 19 et seq.
      __________________________________________________________________
 
    Chapter XLVII.--Opinions of the Heretics Borrowed from Aratus.
@@ -3677,11 +3677,11 @@ The Refutation of All Heresies.
    [293] This refers to Job i. 7, but is at once recognised as not a
    correct quotation.
 
-   [294] Arat., PhÃ¦nom., v. 61.
+   [294] Arat., Phænom., v. 61.
 
-   [295] Arat., PhÃ¦nom., v. 63 et seq.
+   [295] Arat., Phænom., v. 63 et seq.
 
-   [296] Arat., PhÃ¦nom., v. 70.
+   [296] Arat., Phænom., v. 70.
      __________________________________________________________________
 
    Chapter XLVIII.--Invention of the Lyre; Allegorizing the Appearance and
@@ -3798,27 +3798,27 @@ The Refutation of All Heresies.
    translated bed might be also rendered fan, which was used as a cradle,
    its size and construction being suitable. [See note, p. 46, infra.]
 
-   [298] Arat., PhÃ¦nom., v. 268.
+   [298] Arat., Phænom., v. 268.
 
-   [299] Or, "son of" (see Arat., PhÃ¦nom., v. 70).
+   [299] Or, "son of" (see Arat., Phænom., v. 70).
 
    [300] The Abbe Cruice considers that these interpretations, as well as
    what follows, are taken not from a Greek writer, but a Jewish heretic.
    No Greek, he supposes, would write, as is stated lower down, that the
    Greeks were a Phoenician colony. The Jewish heresies were impregnated
-   by these silly doctrines about the stars (see Epiphan., Adv. HÃ¦res.,
-   lib. i. De PharisÃ¦is).
+   by these silly doctrines about the stars (see Epiphan., Adv. Hæres.,
+   lib. i. De Pharisæis).
 
    [301] Reference is here made to Matt. vii. 14.
 
-   [302] Arat., PhÃ¦nom., v. 44.
+   [302] Arat., Phænom., v. 44.
 
    [303] Herod., Hist., i. 1.
 
-   [304] Or, "for creation is the Logos" (see Arat., PhÃ¦nom., v. 332 et
+   [304] Or, "for creation is the Logos" (see Arat., Phænom., v. 332 et
    seq.).
 
-   [305] Arat., PhÃ¦nom., v. 179.
+   [305] Arat., Phænom., v. 179.
      __________________________________________________________________
 
    Chapter XLIX.--Symbol of the Creature; And of Spirit; And of the
@@ -3846,7 +3846,7 @@ The Refutation of All Heresies.
    different) species, becomes replete with animals of this description.
      __________________________________________________________________
 
-   [306] i.e., literally a sea-monster (Cicero's Pistrix); Arat., PhÃ¦nom.,
+   [306] i.e., literally a sea-monster (Cicero's Pistrix); Arat., Phænom.,
    v. 353 et seq.
 
    [307] pros autois ede tois termasi genomenon tou biou. Some read tois
@@ -3880,7 +3880,7 @@ The Refutation of All Heresies.
 
    But since almost every heresy (that has sprung up) through the
    arithmetical art has discovered measures of hebdomads and certain
-   projections of Ã†ons, each rending the art differently, while whatever
+   projections of Æons, each rending the art differently, while whatever
    variation prevailed was in the names merely; and (since) Pythagoras
    became the instructor of these, first introducing numbers of this sort
    among the Greeks from Egypt, it seems expedient not to omit even this,
@@ -4031,12 +4031,12 @@ The Refutation of All Heresies.
    mystical (rites), from (both of) whom the Naasseni taking occasion,
    have constructed their heresies.
 
-   And what are the tenets of the PeratÃ¦, and that their system is not
+   And what are the tenets of the Peratæ, and that their system is not
    framed by them out of the holy Scriptures, but from astrological art.
 
    What is the doctrine of the Sethians, [314] and that, purloining [315]
    their theories from the wise men among the Greeks, they have patched
-   together their own system out of shreds of opinion taken from MusÃ¦us,
+   together their own system out of shreds of opinion taken from Musæus,
    and Linus, and Orpheus.
 
    What are the tenets of Justinus, and that his system is framed by him,
@@ -4093,7 +4093,7 @@ The Refutation of All Heresies.
    Adam; and hymns many and various are made to him. The hymns [322]
    however--to be brief--are couched among them in some such form as this:
    "From thee (comes) father, and through thee (comes) mother, two names
-   immortal, progenitors of Ã†ons, O denizen of heaven, thou illustrious
+   immortal, progenitors of Æons, O denizen of heaven, thou illustrious
    man." But they divide him as Geryon [323] into three parts. For, say
    they, of this man one part is rational, another psychical, another
    earthly. And they suppose that the knowledge of him is the originating
@@ -4125,11 +4125,11 @@ The Refutation of All Heresies.
    phase of Gnosticism.
 
    [319] The heresy of the Naasseni is adverted to by the other leading
-   writers on heresy in the early age of the Church. See St. IrenÃ¦us, i.
+   writers on heresy in the early age of the Church. See St. Irenæus, i.
    34; Origen, Contr. Cels., vi. 28 (p. 291 et seq. ed. Spenc.);
-   Tertullian, PrÃ¦scr., c. 47; Theodoret, HÃ¦retic. Fabul., i. 14;
-   Epiphanius, Advers. HÃ¦reses., xxv. and xxxvii.; St. Augustine, De
-   HÃ¦res., xvii.; Jerome, Comment. Epist. ad Galat., lib. ii. The Abbe
+   Tertullian, Præscr., c. 47; Theodoret, Hæretic. Fabul., i. 14;
+   Epiphanius, Advers. Hæreses., xxv. and xxxvii.; St. Augustine, De
+   Hæres., xvii.; Jerome, Comment. Epist. ad Galat., lib. ii. The Abbe
    Cruice reminds his readers that the Naasseni carried their doctrines
    into India, and refers to the Asiatic Researches (vol. x. p. 39).
 
@@ -4141,7 +4141,7 @@ The Refutation of All Heresies.
    "The Naasseni honour the Father of all existent things, the Logos, as
    man and the Son of Man."
 
-   [322] See IrenÃ¦us, HÃ¦r., i. 1.
+   [322] See Irenæus, Hær., i. 1.
 
    [323] Geryon (see note, chap. iii.) is afterwards mentioned as a
    synonyme with Jordan, i.e., "flowing from earth" (ge rhuon).
@@ -4189,13 +4189,13 @@ The Refutation of All Heresies.
    sense, nor beasts without reason, but of a gentle and highly favoured
    creature." "It, however, is difficult," (the Naassene) says, "to
    ascertain whether Alalcomeneus, [330] first of men, rose upon the
-   Boeotians over Lake Cephisus; or whether it were the IdÃ¦an Curetes, a
+   Boeotians over Lake Cephisus; or whether it were the Idæan Curetes, a
    divine race; or the Phrygian Corybantes, whom first the sun beheld
    springing up after the manner of the growth of trees; or whether
    Arcadia brought forth Pelasgus, of greater antiquity than the moon; or
    Eleusis (produced) Diaulus, an inhabitant of Raria; or Lemnus begot
    Cabirus, fair child of secret orgies; or Pallene (brought forth) the
-   PhlegrÃ¦an Alcyoneus, oldest of the giants. But the Libyans affirm that
+   Phlegræan Alcyoneus, oldest of the giants. But the Libyans affirm that
    Iarbas, first born, on emerging from arid plains, commenced eating the
    sweet acorn of Jupiter. But the Nile of the Egyptians," he says, "up to
    this day fertilizing mud, (and therefore) generating animals, renders
@@ -4477,7 +4477,7 @@ The Refutation of All Heresies.
    hymn of Pindar's on Jupiter Ammon. Schneidewin furnishes a restored
    poetic version of it by Bergk. This hymn, we believe, first suggested
    to M. Miller an idea of the possible value and importance of the ms. of
-   The Refutation brought by MinÃ¶ides Mynas from Greece.
+   The Refutation brought by Minöides Mynas from Greece.
 
    [330] The usual form is Alalcomenes. He was a Boeoian Autocthon.
 
@@ -4537,12 +4537,12 @@ The Refutation of All Heresies.
    among the Naasseni, and from whence they derived their system:  The
    Gospel of Perfection, Gospel of Eve, The Questions of Mary, Concerning
    the Offspring of Mary, The Gospel of Philip, The Gospel according to
-   (1) Thomas, (2) the Egyptians.  (See Epiphanius, HÃ¦res., c. xxvi., and
+   (1) Thomas, (2) the Egyptians.  (See Epiphanius, Hæres., c. xxvi., and
    Origen, Contr. Cels., vi. 30, p. 296, ed. Spenc.) These heretics
    likewise make use of the Old Testament, St. John's Gospel, and some of
    the Pauline epistles.
 
-   [347] Miller refers to LittrÃ©, Traduct. des OEuvres d'Hippocrate, t. i.
+   [347] Miller refers to Littré, Traduct. des OEuvres d'Hippocrate, t. i.
    p. 396.
 
    [348] See Herodotus, ii. 2, 5.
@@ -4557,7 +4557,7 @@ The Refutation of All Heresies.
 
    [353] Or, "spirit."
 
-   [354] See Epiphanius, HÃ¦res., xxvi. 8.
+   [354] See Epiphanius, Hæres., xxvi. 8.
 
    [355] Matt. xix. 17; Mark x. 18; Luke xviii. 19.
 
@@ -4608,7 +4608,7 @@ The Refutation of All Heresies.
 
    [377] Gal. iv. 26.
 
-   [378] Philo JudÃ¦us adopts the same imagery (see his De Agricult., lib.
+   [378] Philo Judæus adopts the same imagery (see his De Agricult., lib.
    i.).
 
    [379] John iii. 6.
@@ -4716,7 +4716,7 @@ The Refutation of All Heresies.
    heard, could they receive. For the things that are not according to
    nature, are with them contrary to nature.
 
-   This, he says, the Thracians who dwell around HÃ¦mus, and the Phrygians
+   This, he says, the Thracians who dwell around Hæmus, and the Phrygians
    similarly with the Thracians, denominate Corybas, because, (though)
    deriving the beginning of his descent from the head above and from the
    unportrayed brain, and (though) permeating all the principles of the
@@ -4934,16 +4934,16 @@ The Refutation of All Heresies.
 
    [382] The Abbe Cruice considers that this is taken from verses of
    Ezekiel, founding his opinion on fragments of these verses to be found
-   in Eusebius' PrÃ¦parat. Evang., ix. 38.
+   in Eusebius' Præparat. Evang., ix. 38.
 
    [383] Iliad, xv. 189.
 
    [384] Matt. xiii. 13.
 
-   [385] The commentators refer to Isa. xxviii. 10.  Epiphanius,HÃ¦res.,
+   [385] The commentators refer to Isa. xxviii. 10.  Epiphanius,Hæres.,
    xxv., mentions these expressions, but assigns them a different meaning.
     Saulasau is tribulation,Caulacau hope, and Zeesar "hope, as yet,
-   little." [See my note on IrenÃ¦us, p. 350, this series, and see
+   little." [See my note on Irenæus, p. 350, this series, and see
    Elucidation II.]
 
    [386] John i. 3, 4.
@@ -5078,7 +5078,7 @@ The Refutation of All Heresies.
    word of God, which, he says, is a word of revelation of the Great
    Power.  Wherefore it will be sealed, and hid, and concealed, lying in
    the habitation where lies the basis of the root of the universe, viz.
-   Ã†ons, Powers, Intelligences, Gods, Angels, delegated Spirits, Entities,
+   Æons, Powers, Intelligences, Gods, Angels, delegated Spirits, Entities,
    Nonentities, Generables, Ingenerables, Incomprehensibles,
    Comprehensibles, Years, Months, Days, Hours, (and) Invisible Point from
    which [437] what is least begins to increase gradually. That which is,
@@ -5103,13 +5103,13 @@ The Refutation of All Heresies.
    gloomy mutilation of Rhea. Assyrians style thee thrice-longed-for
    Adonis, and the whole of Egypt (calls thee) Osiris, celestial horn of
    the moon; Greeks denominate (thee) Wisdom; Samothracians, venerable
-   Adam; HÃ¦monians, Corybas; and them Phrygians (name thee) at one time
+   Adam; Hæmonians, Corybas; and them Phrygians (name thee) at one time
    Papa, at another time Corpse, or God, or Fruitless, or Aipolos, or
    green Ear of Corn that has been reaped, or whom the very fertile
    Amygdalus produced--a man, a musician." This, he says, is multiform
    Attis, whom while they celebrate in a hymn, they utter these words: "I
    will hymn Attis, son of Rhea, not with the buzzing sounds of trumpets,
-   or of IdÃ¦an pipers, which accord with (the voices of) the Curetes; but
+   or of Idæan pipers, which accord with (the voices of) the Curetes; but
    I will mingle (my song) with Apollo's music of harps, evoe, evan,'
    inasmuch as thou art Pan, as thou art Bacchus, as thou art shepherd of
    brilliant stars."
@@ -5322,11 +5322,11 @@ The Refutation of All Heresies.
    them as they desire.
      __________________________________________________________________
 
-   Chapter VII.--The System of the PeratÃ¦; Their Tritheism; Explanation of
+   Chapter VII.--The System of the Peratæ; Their Tritheism; Explanation of
    the Incarnation.
 
    There is also unquestionably a certain other (head of the hydra, [454]
-   namely, the heresy) of the PeratÃ¦, [455] whose blasphemy against Christ
+   namely, the heresy) of the Peratæ, [455] whose blasphemy against Christ
    has for many years escaped notice. And the present is a fitting
    opportunity for bringing to light the secret mysteries of such
    (heretics). These allege that the world is one, triply divided. And of
@@ -5382,10 +5382,10 @@ The Refutation of All Heresies.
 
    [455] Most of what is mentioned by Hippolytus concerning this sect is
    new, as the chief writers on the early heresies are comparatively
-   silent concerning the PeratÃ¦; indeed, IrenÃ¦us, Tertullian, and
+   silent concerning the Peratæ; indeed, Irenæus, Tertullian, and
    Epiphanius completely so. Clemens Alexandrinus, Strom., vii.; (vol. ii.
    p. 555), mentions the Peratics, and Theodoret more fully than the rest
-   speaks of them (HÃ¦ret. fabul., i. 17).  Theodoret, however, as the Abbe
+   speaks of them (Hæret. fabul., i. 17).  Theodoret, however, as the Abbe
    Cruice thinks, has appropriated his remarks from Hippolytus.
 
    [456] proechestera or prosechestera, contiguous. This is Miller's
@@ -5418,7 +5418,7 @@ The Refutation of All Heresies.
    i.e., those of the nature of the Serpent.
      __________________________________________________________________
 
-   Chapter VIII.--The PeratÃ¦ Derive Their System from the Astrologers;
+   Chapter VIII.--The Peratæ Derive Their System from the Astrologers;
    This Proved by a Statement of the Astrological Theories of the Zodiac;
    Hence the Terminology of the Peratic Heretics.
 
@@ -5503,7 +5503,7 @@ The Refutation of All Heresies.
    arrogated to themselves by those of whom we have previously spoken.
 
    Now these, falsifying the name of truth, proclaim as a doctrine of
-   Christ an insurrection of Ã†ons and revolts of good into (the ranks of)
+   Christ an insurrection of Æons and revolts of good into (the ranks of)
    evil powers; and they speak of the confederations of good powers with
    wicked ones. Denominating them, therefore, Toparchai and Proastioi,
    [470] and (though thus) framing for themselves very many other names
@@ -5558,7 +5558,7 @@ The Refutation of All Heresies.
    Refutation.
      __________________________________________________________________
 
-   Chapter IX.--System of the PeratÃ¦ Explained Out of One of Their Own
+   Chapter IX.--System of the Peratæ Explained Out of One of Their Own
    Books.
 
    It seems, then, expedient to set forth a certain one of the books held
@@ -5586,7 +5586,7 @@ The Refutation of All Heresies.
    wage war or introduce any alteration. The tempestuous daughter of this
    one is a faithful protectress of all sorts of waters. Her name is
    Chorzar. Ignorance is in the habit of styling this (power) Neptune,
-   according to whose image was produced Glaucus, Melicertes, Ino, NebroÃ«.
+   according to whose image was produced Glaucus, Melicertes, Ino, Nebroë.
    [478] He that is encircled with the pyramid of twelve angels, [479] and
    darkens the gate into the pyramid with various colours, and completes
    the entire in the sable hues of Night: this one ignorance denominated
@@ -5597,14 +5597,14 @@ The Refutation of All Heresies.
    generation. Manager of the rising of the star [481] is
    Carphacasemeocheir, (and) Eccabbacara (is the same). Ignorance is in
    the habit of denominating these Curetes chief of the winds; third in
-   order is Ariel, according to whose image was generated Ã†olus, Briares.
+   order is Ariel, according to whose image was generated Æolus, Briares.
    And chief of the twelve-houred nocturnal (power) is Soclan, whom
    ignorance is accustomed to style Osiris; (and) according to the image
-   of this one was born Admetus, Medea, Helen, Ã†thusa. Chief of the
+   of this one was born Admetus, Medea, Helen, Æthusa. Chief of the
    twelve-houred diurnal power is Euno. This is manager of the rising of
    the star Protocamarus and of the ethereal (region), but ignorance has
    denominated him Isis. A sign of this one is the Dog-star, according to
-   whose image were born PtolemÃ¦us son of Arsinoe, Didyma, Cleopatra, and
+   whose image were born Ptolemæus son of Arsinoe, Didyma, Cleopatra, and
    Olympias. God's right-hand power is that which ignorance has
    denominated Rhea, according to whose image were produced Attis, Mygdon,
    [482] (and) OEnone. The left-hand power has lordship over sustenance,
@@ -5616,7 +5616,7 @@ The Refutation of All Heresies.
    Trismegistus, Curites, Petosiris, Zodarium, Berosus, Astrampsuchus,
    (and) Zoroaster. The left-hand power is (lord) of fire, (and) ignorance
    has denominated this one Vulcan, according to whose image were born
-   Ericthonius, Achilles, Capaneus, PhaÃ«thon, [485] Meleager, Tydeus,
+   Ericthonius, Achilles, Capaneus, Phaëthon, [485] Meleager, Tydeus,
    Enceladus, Raphael, Suriel, (and) Omphale.  There are three
    intermediate powers suspended from air, authors of generation. These
    ignorance has been in the habit of denominating Fates; and according to
@@ -5627,7 +5627,7 @@ The Refutation of All Heresies.
    concupiscence; and ignorance has been accustomed to style this Eros,
    according to whose image were born Paris, Narcissus, Ganymede,
    Endymion, Tithonus, Icarius, Leda, Amymone, Thetis, Hesperides, Jason,
-   Leander, (and) Hero." These are Proastioi up to Ã†ther, for with this
+   Leander, (and) Hero." These are Proastioi up to Æther, for with this
    title also he inscribes the book.
      __________________________________________________________________
 
@@ -5682,7 +5682,7 @@ The Refutation of All Heresies.
    Chapter X.--The Peratic Heresy Nominally Different from Astrology, But
    Really the Same System Allegorized.
 
-   It has been easily made evident to all, that the heresy of the PeratÃ¦
+   It has been easily made evident to all, that the heresy of the Peratæ
    is altered in name only from the (art) of the astrologers. And the rest
    of the books of these (heretics) contain the same method, if it were
    agreeable to any one to wade through them all. For, as I said, they
@@ -5710,7 +5710,7 @@ The Refutation of All Heresies.
    in with the treatises of these (heretics), finds mention among them of
    right or left power, let him recur to the centre, and the declination,
    and the ascension (of the Chaldean sages, and) he will clearly observe
-   that the entire system of these (PeratÃ¦) consists of the astrological
+   that the entire system of these (Peratæ) consists of the astrological
    doctrine.
      __________________________________________________________________
 
@@ -5719,13 +5719,13 @@ The Refutation of All Heresies.
    [487] kentrois:  Schneidewin suggests kentron.
      __________________________________________________________________
 
-   Chapter XI.--Why They Call Themselves PeratÃ¦; Their Theory of
+   Chapter XI.--Why They Call Themselves Peratæ; Their Theory of
    Generation Supported by an Appeal to Antiquity; Their Interpretation of
    the Exodus of Israel; Their System of "The Serpent;" Deduced by Them
    from Scripture; This the Real Import of the Doctrines of the
    Astrologers.
 
-   They denominate themselves, however, PeratÃ¦, imagining that none of
+   They denominate themselves, however, Peratæ, imagining that none of
    those things existing by generation can escape the determined lot for
    those things that derive their existence from generation. For if, says
    (the Peratic), anything be altogether begotten, it also perishes, as
@@ -5874,16 +5874,16 @@ The Refutation of All Heresies.
    [498] John i. 1-4.
 
    [499] The Abbe Cruise thinks that Hippolytus is here quoting from the
-   Gospel of Eve (see Epiph., HÃ¦r., xxvi. 2).
+   Gospel of Eve (see Epiph., Hær., xxvi. 2).
 
    [500] akra: this is a conjectural reading instead of arche.
 
-   [501] Aratus, PhÃ¦nom., v. 62.
+   [501] Aratus, Phænom., v. 62.
 
    [502] Ibid., v. 46.
      __________________________________________________________________
 
-   Chapter XII.--Compendious Statement of the Doctrines of the PeratÃ¦.
+   Chapter XII.--Compendious Statement of the Doctrines of the Peratæ.
 
    This is the diversified wisdom of the Peratic heresy, which it is
    difficult to declare in its entirety, so intricate is it on account of
@@ -6148,10 +6148,10 @@ The Refutation of All Heresies.
      __________________________________________________________________
 
    [511] This is the form in which the name occurs in Hippolytus, but the
-   correct one is Sethians. As regards this sect, see IrenÃ¦us, Contr.
-   HÃ¦res., i. 30; Tertullian, PrÃ¦script., c. lxvii.; Theodoret, HÃ¦ret.
-   Fabul., i. 14; Epiphanius, Advers. HÃ¦res., c. xxviii., xxxvii., and
-   xxxix.; Augustine, De HÃ¦ret., c. xix.; Josephus, Antiq. Judaic., i. 2;
+   correct one is Sethians. As regards this sect, see Irenæus, Contr.
+   Hæres., i. 30; Tertullian, Præscript., c. lxvii.; Theodoret, Hæret.
+   Fabul., i. 14; Epiphanius, Advers. Hæres., c. xxviii., xxxvii., and
+   xxxix.; Augustine, De Hæret., c. xix.; Josephus, Antiq. Judaic., i. 2;
    Suidas on the word "Seth."
 
    [512] For dunameis ...logizestho, Bernays reads dunatai...logizesthai:
@@ -6239,7 +6239,7 @@ The Refutation of All Heresies.
    awarded to each of these acts of wickedness.
 
    The entire system of their doctrine, however, is (derived) from [537]
-   the ancient theologians MusÃ¦us, and Linus, and Orpheus, [538] who
+   the ancient theologians Musæus, and Linus, and Orpheus, [538] who
    elucidates especially the ceremonies of initiation, as well as the
    mysteries themselves. For their doctrine concerning the womb is also
    the tenet of Orpheus; and the (idea of the) navel, [539] which is
@@ -6258,7 +6258,7 @@ The Refutation of All Heresies.
    books is also drawn the representation of a certain aged man,
    grey-haired, winged, [545] having his pudendum erectum, pursuing a
    retreating woman of azure colour. [546] And over the aged man is the
-   inscription "phaos ruentes," and over the woman "pereÃ«phicola." [547]
+   inscription "phaos ruentes," and over the woman "pereëphicola." [547]
    But "phaos ruentes" [548] appears to be the light (which exists),
    according to the doctrine of the Sethians, and "phicola" the darkish
    water; while the space in the midst of these seems to be a harmony
@@ -6306,7 +6306,7 @@ The Refutation of All Heresies.
 
    [537] hupo, Miller.
 
-   [538] These belong to the legendary period of Greek philosophy.  MusÃ¦us
+   [538] These belong to the legendary period of Greek philosophy.  Musæus
    flourished among the Athenians, Linus among the Thebans, and Orpheus
    among the Thracians. They weaved their physical theories into crude
    theological systems, which subsequently suggested the cosmogony and
@@ -6502,7 +6502,7 @@ The Refutation of All Heresies.
    mention occurs of this heretic in ecclesiastical history. It is
    evident, however, that, like Simon Magus, he was contemporary with St.
    Peter and St. Paul. Justinus, however, and the Ophitic sect to which he
-   belonged, are assigned by Hippolytus and IrenÃ¦us a prior position as
+   belonged, are assigned by Hippolytus and Irenæus a prior position as
    regards the order of their appearance to the system of Simon, or its
    offshoot Valentinianism. The Ophites engrafted Phrygian Judaism, and
    the Valentinians Gentilism, upon Christianity; the former not rejecting
@@ -6513,7 +6513,7 @@ The Refutation of All Heresies.
    Gnostics and of Simon. Hippolytus, however, now places the Ophitic sect
    before us prior to its amalgamation with Valentinianism. Here, for the
    first time, we have an authentic delineation of the primitive Ophites.
-   This is of great value. [See IrenÃ¦us, vol. i., this series, p. 354;
+   This is of great value. [See Irenæus, vol. i., this series, p. 354;
    also Bunsen (on Baur), vol. i. p. 42.]
 
    [559] Matt. x. 5.
@@ -6617,10 +6617,10 @@ The Refutation of All Heresies.
    brought them together into the one nuptial couch of love. [569] And
    from such an intercourse the Father generates out of Edem unto himself
    twelve angels. And the names of the angels begotten by the Father are
-   these: MichaÃ«l, Amen, [570] Baruch, Gabriel, EsaddÃ¦us....And of the
+   these: Michaël, Amen, [570] Baruch, Gabriel, Esaddæus....And of the
    maternal angels which Edem brought forth, the names in like manner have
    been subjoined, and they are as follows: Babel, [571] Achamoth, Naas,
-   Bel, Belias, Satan, SaÃ«l, AdonÃ¦us, Leviathan, [572] Pharao, Carcamenos,
+   Bel, Belias, Satan, Saël, Adonæus, Leviathan, [572] Pharao, Carcamenos,
    (and) Lathen.
 
    Of these twenty-four angels the paternal ones are associated with the
@@ -6800,8 +6800,8 @@ The Refutation of All Heresies.
    Leda, and begat a child from her, (learn that) the swan is Elohim, and
    Leda Edem. And when people allege that an eagle went in unto Ganymede,
    (know that) the eagle is Naas, and Ganymede Adam. And when they assert
-   that gold (in a shower) went in unto DanaÃ« and begat a child from her,
-   (recollect that) the gold is Elohim, and DanaÃ« is Edem. And similarly,
+   that gold (in a shower) went in unto Danaë and begat a child from her,
+   (recollect that) the gold is Elohim, and Danaë is Edem. And similarly,
    in the same manner adducing all accounts of this description, which
    correspond with (the nature of) legends, they pursue the work of
    instruction. When, therefore, the prophet says, "Hearken, O heaven, and
@@ -6994,7 +6994,7 @@ The Refutation of All Heresies.
    not constructed out of the Scriptures, but out of the Platonic and
    Pythagorean tenets.
 
-   And what are the opinions of Secundus, and PtolemÃ¦us, and Heracleon, as
+   And what are the opinions of Secundus, and Ptolemæus, and Heracleon, as
    persons also who themselves advanced the same doctrines as the
    philosophers among the Greeks, but enunciated them in different
    phraseology.
@@ -7049,11 +7049,11 @@ The Refutation of All Heresies.
    worthy of the attempt made by this man.
      __________________________________________________________________
 
-   [610] See IrenÃ¦us, HÃ¦res., i. 19, 20; Tertullian, PrÃ¦script., c. xlvi.;
-   Epiphanius, HÃ¦res., xxi.; Theodoret, HÃ¦ret. Fab., i. 1; St. Augustine,
-   De HÃ¦res., 1. See the apology of Justin Martyr (vol. i., this series,
+   [610] See Irenæus, Hæres., i. 19, 20; Tertullian, Præscript., c. xlvi.;
+   Epiphanius, Hæres., xxi.; Theodoret, Hæret. Fab., i. 1; St. Augustine,
+   De Hæres., 1. See the apology of Justin Martyr (vol. i., this series,
    p. 171), who says, "There was a Samaritan, Simon, a native of the
-   village called Gitto, who, in the reign of Claudius CÃ¦sar, and in your
+   village called Gitto, who, in the reign of Claudius Cæsar, and in your
    royal city of Rome, did mighty acts of magic, by virtue of the art of
    the devils operating in him." Simon's history and opinions are treated
    of largely in the Recognitions of Clement. See vol. iii. of the
@@ -7100,7 +7100,7 @@ The Refutation of All Heresies.
    concerning one Psapho, a Libyan, in his Dissert. (xxxv.), and that
    Apostolius extracted this account and inserted it in his Cent., xviii.
    p. 730, ed. Leutsch, mentioning at the same time a similar narrative
-   from Ã†lian's Hist., xiv. 30. See Justin., xxi. 4, and Pliny, Nat.
+   from Ælian's Hist., xiv. 30. See Justin., xxi. 4, and Pliny, Nat.
    Hist., viii. 16.
      __________________________________________________________________
 
@@ -7181,7 +7181,7 @@ The Refutation of All Heresies.
    [615] Deut. iv. 24.
 
    [616] The Abbe Cruice considers that Theodoret has made use of this
-   passage. (See HÃ¦ret. Fab., i. 1.)
+   passage. (See Hæret. Fab., i. 1.)
 
    [617] Or, ton aoraton, the invisible one.
 
@@ -7292,7 +7292,7 @@ The Refutation of All Heresies.
    Moon. 3. Ratiocination and Reflection:  termed also,--3. Air and Water.
      __________________________________________________________________
 
-   Chapter IX.--Simon's Interpretation of the Mosaic HexaÃ«meron; His
+   Chapter IX.--Simon's Interpretation of the Mosaic Hexaëmeron; His
    Allegorical Representation of Paradise.
 
    When, therefore, Moses has spoken of "the six days in which God made
@@ -7473,7 +7473,7 @@ The Refutation of All Heresies.
    stands below, when in the stream of waters He was begotten in a
    likeness. He is to stand above, beside the blessed indefinite power, if
    He be fashioned into an image. For, he says, there are three who have
-   stood; and except there were three Ã†ons who have stood, the unbegotten
+   stood; and except there were three Æons who have stood, the unbegotten
    one is not adorned. (Now the unbegotten one) is, according to them,
    wafted over the water, and is re-made, according to the similitude (of
    an eternal nature), a perfect celestial (being), in no (quality of)
@@ -7546,7 +7546,7 @@ The Refutation of All Heresies.
    Simon expressly speaks of this in the "Revelation" after this manner:
    "To you, then, I address the things which I speak, and (to you) I write
    what I write. The writing is this: there are two offshoots from all the
-   Ã†ons, having neither beginning nor end, from one root. And this is a
+   Æons, having neither beginning nor end, from one root. And this is a
    power, viz., Sige, (who is) invisible (and) incomprehensible. And one
    of these (offshoots) appears from above, which constitutes a great
    power, (the creative) Mind of the universe, which manages all things,
@@ -7652,7 +7652,7 @@ The Refutation of All Heresies.
    particular adherents.
      __________________________________________________________________
 
-   [639] Homer, for instance (See Epiphanius, HÃ¦res., xxi. 3).
+   [639] Homer, for instance (See Epiphanius, Hæres., xxi. 3).
 
    [640] miaros, Bunsen's emendation for psuchros, the reading in Miller
    and Schneidewin. Some read psudros, i.e., lying; others pseudochristos,
@@ -7661,7 +7661,7 @@ The Refutation of All Heresies.
    literally meaning cold, is applied in a derived sense to persons who
    were heartless,--an import suitable to Hippolytus' meaning.
 
-   [641] [See IrenÃ¦us, vol. i. p. 348, and Bunsen's ideas, p. 50 of his
+   [641] [See Irenæus, vol. i. p. 348, and Bunsen's ideas, p. 50 of his
    first volume.]
 
    [642] This rendering is according to Bunsen's emendation of the text.
@@ -7678,7 +7678,7 @@ The Refutation of All Heresies.
 
    [645] Miller reads phusin, which makes no sense. The rendering above
    follows Bunsen's emendation of the text. [Here it is equally
-   interesting to the student of our author or of IrenÃ¦us to turn to
+   interesting to the student of our author or of Irenæus to turn to
    Bunsen (p. 51), and to observe his parallels.]
      __________________________________________________________________
 
@@ -7712,7 +7712,7 @@ The Refutation of All Heresies.
    starting-point (for his own doctrine. This doctrine, in point of fact,
    was the same with the Simonian, though Valentinus) denominated it under
    different titles: for "Nous," and "Aletheia," and "Logos," and "Zoe,"
-   and "Anthropos," and "Ecclesia," and Ã†ons of Valentinus, are
+   and "Anthropos," and "Ecclesia," and Æons of Valentinus, are
    confessedly the six roots of Simon, viz., "Mind" and "Intelligence,"
    "Voice" and "Name," "Ratiocination" and "Reflection." But since it
    seems to us that we have sufficiently explained Simon's tissue of
@@ -7749,15 +7749,15 @@ The Refutation of All Heresies.
    might omit to mention it, supposing it to be at Rome. At all events,
    the very precise statement of Justin Martyr ought not to be rejected on
    slight or conjectural grounds. [See vol. i., this series, pp. 171 ,172,
-   182, 187, and 193. But our author relies on IrenÃ¦us, same vol., p. 348.
+   182, 187, and 193. But our author relies on Irenæus, same vol., p. 348.
    Why reject positive testimony?]
      __________________________________________________________________
 
    Chapter XVI.--Heresy of Valentinus; Derived from Plato and Pythagoras.
 
    The heresy of Valentinus [649] is certainly, then, connected with the
-   Pythagorean and Platonic theory. For Plato, in the TimÃ¦us, altogether
-   derives his impressions from Pythagoras, and therefore TimÃ¦us himself
+   Pythagorean and Platonic theory. For Plato, in the Timæus, altogether
+   derives his impressions from Pythagoras, and therefore Timæus himself
    is his Pythagorean stranger.  Wherefore, it appears expedient that we
    should commence by reminding (the reader) of a few points of the
    Pythagorean and Platonic theory, and that (then we should proceed) to
@@ -7787,10 +7787,10 @@ The Refutation of All Heresies.
    to remain in communion with Rome, which he did for many years, as
    Tertullian informs us. Epiphanius, however, tells that Valentinus,
    towards the end of his life, when living in Cyprus, separated entirely
-   from the Church. IrenÃ¦us, book i.; Tertullian on Valentinus, and chap.
-   xxx. of his PrÃ¦script.; Clemens Alexandrinus, Strom., iv. 13, vi. 6;
-   Theodoret, HÃ¦ret. Fab., i. 7; Epiphanius, HÃ¦r., xxxi.; St. Augustine,
-   HÃ¦r., xi.; Philastrius, Hist. HÃ¦rs., c. viii.; Photius, Biblioth., cap.
+   from the Church. Irenæus, book i.; Tertullian on Valentinus, and chap.
+   xxx. of his Præscript.; Clemens Alexandrinus, Strom., iv. 13, vi. 6;
+   Theodoret, Hæret. Fab., i. 7; Epiphanius, Hær., xxxi.; St. Augustine,
+   Hær., xi.; Philastrius, Hist. Hærs., c. viii.; Photius, Biblioth., cap.
    ccxxx.; Clemens Alexandrinus' Epitome of Theodotus (pp. 789-809, ed.
    Sylburg). The title is, 'Ek ton Theodotou kai tes anatolikes kaloumenes
    didaskalias, kata tous Oualentinou chronous epitomai.  See likewise
@@ -7799,19 +7799,19 @@ The Refutation of All Heresies.
    [650] These opinions are mostly given in extracts from Valentinus' work
    Sophia, a book of great repute among Gnostics, and not named by
    Hippolytus, probably as being so well known at the time. The Gospel of
-   Truth, mentioned by IrenÃ¦us as used among the Valentinians, is not,
+   Truth, mentioned by Irenæus as used among the Valentinians, is not,
    however, considered to be from the pen of Valentinus. In the extracts
    given by Hippolytus from Valentinus, it is important (as in the case of
    Basilides: see translator's introduction) to find that he quotes St.
    John's Gospel, and St. Paul's Epistle to the Ephesians. The latter had
-   been pronounced by the TÃ¼bingen school as belonging to the period of
+   been pronounced by the Tübingen school as belonging to the period of
    the Montanistic disputes in the middle of the second century, that is,
    somewhere about 25-30 years after Valentinus.
      __________________________________________________________________
 
    Chapter XVII.--Origin of the Greek Philosophy.
 
-   The origin, then, from which Plato derived his theory in the TimÃ¦us, is
+   The origin, then, from which Plato derived his theory in the Timæus, is
    (the) wisdom of the Egyptians. [651] For from this source, by some
    ancient and prophetical tradition, Solon [652] taught his entire system
    concerning the generation and destruction of the world, as Plato says,
@@ -7827,7 +7827,7 @@ The Refutation of All Heresies.
    to Silence conjoined with the Father.
      __________________________________________________________________
 
-   [651] See TimÃ¦us, c. vii. ed. Bekker.
+   [651] See Timæus, c. vii. ed. Bekker.
 
    [652] Or, "Solomon," evidently a mistake.
      __________________________________________________________________
@@ -7947,7 +7947,7 @@ The Refutation of All Heresies.
    asunder, and evinces numerous attempts by subdividing to form the
    world. It is just as if one severs into small parts, and divides
    arithmetically, the myriad into thousands, and hundreds, and tens; and
-   drachmÃ¦ into oboli and small farthings. In this manner, he says,
+   drachmæ into oboli and small farthings. In this manner, he says,
    Discord severs the substance of the world into animals, plants, metals
    and things similar to these. And the fabricator of the generation of
    all things produced is, according to them, Discord; whereas Love, on
@@ -8007,7 +8007,7 @@ The Refutation of All Heresies.
    [659] Cruice thinks that the following words are taken from Heraclitus,
    and refers to Plutarch, De Exilio, c. xi.
 
-   [660] PhÃ¦do, vol. i. p. 89, ed. Bekker.
+   [660] Phædo, vol. i. p. 89, ed. Bekker.
      __________________________________________________________________
 
    Chapter XXII.--The "Sayings" Of Pythagoras.
@@ -8156,7 +8156,7 @@ The Refutation of All Heresies.
    we have proved, has collected the (materials of) heresy--I mean his own
    (heresy)--and may (therefore) justly be reckoned a Pythagorean and
    Platonist, not a Christian. Valentinus, therefore, and Heracleon, and
-   PtolemÃ¦us, and the entire school of these (heretics), as disciples of
+   Ptolemæus, and the entire school of these (heretics), as disciples of
    Pythagoras and Plato, (and) following these guides, have laid down as a
    fundamental principle of their doctrine the arithmetical system. For,
    likewise, according to these (Valentinians), the originating cause of
@@ -8190,14 +8190,14 @@ The Refutation of All Heresies.
    except there may be some object of affection. The Father Himself, then,
    as He was solitary, projected and produced Nous and Aletheia, that is,
    a duad which became mistress, [673] and origin, and mother of all the
-   Ã†ons computed by them (as existing) within the Pleroma. Nous and
+   Æons computed by them (as existing) within the Pleroma. Nous and
    Aletheia being projected from the Father, [674] one capable of
    continuing generation, deriving existence from a productive being,
    (Nous) himself likewise, in imitation of the Father, projected Logos
    and Zoe; and Logos and Zoe project Anthropos and Ecclesia. But Nous and
    Aletheia, when they beheld that their own offspring had been born
    productive, returned thanks to the Father of the universe, and offer
-   unto Him a perfect number, viz., ten Ã†ons. For, he says, Nous and
+   unto Him a perfect number, viz., ten Æons. For, he says, Nous and
    Aletheia could not offer unto the Father a more perfect (one) than this
    number. For the Father, who is perfect, ought to be celebrated by a
    perfect number, and ten is a perfect number, because this is first of
@@ -8236,7 +8236,7 @@ The Refutation of All Heresies.
      __________________________________________________________________
 
    Chapter XXV.--The Tenet of the Duad Made the Foundation of Valentinus'
-   System of the Emanation of Ã†ons.
+   System of the Emanation of Æons.
 
    Logos himself also, and Zoe, then saw that Nous and Aletheia had
    celebrated the Father of the universe by a perfect number; and Logos
@@ -8245,23 +8245,23 @@ The Refutation of All Heresies.
    begotten, and did not possess paternal (and) perfect uncreatedness,
    Logos and Zoe do not glorify Nous their father with a perfect number,
    but far from it, with an imperfect one. [676] For Logos and Zoe offer
-   twelve Ã†ons unto Nous and Aletheia. For, according to Valentinus,
+   twelve Æons unto Nous and Aletheia. For, according to Valentinus,
    these--namely, Nous and Aletheia, Logos and Zoe, Anthropos and
-   Ecclesia--have been the primary roots of the Ã†ons. But there are ten
-   Ã†ons proceeding from Nous and Aletheia, and twelve from Logos and
+   Ecclesia--have been the primary roots of the Æons. But there are ten
+   Æons proceeding from Nous and Aletheia, and twelve from Logos and
    Zoe--twenty and eight in all. [677] And to these (ten) they give these
    following denominations: [678] Bythus and Mixis, Ageratus and Henosis,
    Autophyes and Hedone, Acinetus and Syncrasis, Monogenes and Macaria.
-   [679] These are ten Ã†ons whom some say (have been projected) by Nous
+   [679] These are ten Æons whom some say (have been projected) by Nous
    and Aletheia, but some by Logos and Zoe. Others, however, affirm that
-   the twelve (Ã†ons have been projected) by Anthropos and Ecclesia, while
+   the twelve (Æons have been projected) by Anthropos and Ecclesia, while
    others by Logos and Zoe. And upon these they bestow these following
    names: [680]   Paracletus and Pistis, Patricus and Elpis, Metricus and
-   Agape, Ã†inous and Synesis, Ecclesiasticus and Macariotes, Theletus and
+   Agape, Æinous and Synesis, Ecclesiasticus and Macariotes, Theletus and
    Sophia. But of the twelve, the twelfth and youngest of all the
-   twenty-eight Ã†ons, being a female, and called Sophia, observed the
-   multitude and power of the begetting Ã†ons, and hurried back into the
-   depth of the Father. And she perceived that all the rest of the Ã†ons,
+   twenty-eight Æons, being a female, and called Sophia, observed the
+   multitude and power of the begetting Æons, and hurried back into the
+   depth of the Father. And she perceived that all the rest of the Æons,
    as being begotten, generate by conjugal intercourse. The Father, on the
    other hand, alone, without copulation, has produced (an offspring). She
    wished to emulate the Father, [681] and to produce (offspring) of
@@ -8270,9 +8270,9 @@ The Refutation of All Heresies.
    ignorant that the Unbegotten One, being an originating principle of the
    universe, as well as root and depth and abyss, alone possesses the
    power of self-generation. But Sophia, being begotten, and born after
-   many more (Ã†ons), is not able to acquire possession of the power
+   many more (Æons), is not able to acquire possession of the power
    inherent in the Unbegotten One. For in the Unbegotten One, he says, all
-   things exist simultaneously, but in the begotten (Ã†ons) the female is
+   things exist simultaneously, but in the begotten (Æons) the female is
    projective of substance, and the male is formative of the substance
    which is projected by the female. Sophia, therefore, prepared to
    project that only which she was capable (of projecting), viz., a
@@ -8289,23 +8289,23 @@ The Refutation of All Heresies.
    (1) Bythus, Sige, Nous, and Aletheia; (2) Logos, Zoe, Ecclesia, and
    Anthropos. Some, as we learn from Hippolytus, made up the number to
    thirty, by the addition of Christ and the Holy Ghost,--a fact which
-   Bunsen thinks conclusively proves that the alleged generation of Ã†ons
+   Bunsen thinks conclusively proves that the alleged generation of Æons
    was a subsequent addition to Valentinus' system.
 
    [678] There is some confusion in Hippolytus' text, which is, however,
-   removeable by a reference to IrenÃ¦us (i. 1).
+   removeable by a reference to Irenæus (i. 1).
 
-   [679] We subjoin the meanings of these names:-- Ten Ã†ons from Nous and
+   [679] We subjoin the meanings of these names:-- Ten Æons from Nous and
    Aletheia, (or) Logos and Zoe, viz.:-- 1. Bythus = Profundity. 2. Mixis
    = Mixture. 3. Ageratos = Ever-young. 4. Henosis = Unification. 5.
    Autophyes = Self-grown. 6. Hedone = Voluptuousness. 7. Acinetus =
    Motionless. 8. Syncrasis = Composition. 9. Monogenes = Only-begotten.
    10. Macaria = Blessedness.
 
-   [680] The following are the meanings of these names:-- Twelve Ã†ons from
+   [680] The following are the meanings of these names:-- Twelve Æons from
    Anthropos and Ecclesia, (or) Logos and Zoe:-- 1. Paracletus =
    Comforter. 2. Pistis = Faith. 3.  Patricus = Paternal. 4. Elpis = Hope.
-   5. Metricus = Temperate. 6. Agape = Love. 7. Ã†inous = Ever-thinking. 8.
+   5. Metricus = Temperate. 6. Agape = Love. 7. Æinous = Ever-thinking. 8.
    Synesis = Intelligence. 9. Ecclesiasticus = Ecclesiastical. 10.
    Makariotes = Felicity. 11. Theletus = Volition. 12. Sophia = Wisdom.
 
@@ -8324,7 +8324,7 @@ The Refutation of All Heresies.
 
    [683] Miller's text has, "a well-formed and properly-digested
    substance." This reading is, however, obviously wrong, as is proved by
-   a reference to what Epiphanius states (HÃ¦r., xxxi.) concerning
+   a reference to what Epiphanius states (Hær., xxxi.) concerning
    Valentinus.
      __________________________________________________________________
 
@@ -8333,70 +8333,70 @@ The Refutation of All Heresies.
 
    Ignorance, therefore, having arisen within the Pleroma in consequence
    of Sophia, and shapelessness in consequence of the offspring of Sophia,
-   confusion arose in the Pleroma. (For all) the Ã†ons that were begotten
+   confusion arose in the Pleroma. (For all) the Æons that were begotten
    (became overwhelmed with apprehension, imagining) that in like manner
-   formless and incomplete progenies of the Ã†ons should be generated; and
+   formless and incomplete progenies of the Æons should be generated; and
    that some destruction, at no distant period, should at length seize
-   upon the Ã†ons. All the Ã†ons, then, betook themselves to supplication of
+   upon the Æons. All the Æons, then, betook themselves to supplication of
    the Father, that he would tranquillize the sorrowing Sophia; for she
    continued weeping and bewailing on account of the abortion produced by
    her,--for so they term it. The Father, then, compassionating the tears
-   of Sophia, and accepting the supplication of the Ã†ons, orders a further
+   of Sophia, and accepting the supplication of the Æons, orders a further
    projection. For he did not, (Valentinus) says, himself project, but
    Nous and Aletheia (projected) Christ and the Holy Spirit for the
    restoration of Form, and the destruction of the abortion, and (for) the
-   consolation and cessation of the groans of Sophia. And thirty Ã†ons came
+   consolation and cessation of the groans of Sophia. And thirty Æons came
    into existence along with Christ and the Holy Spirit. Some of these
-   (Valentinians) wish that this should be a triacontad of Ã†ons, whereas
+   (Valentinians) wish that this should be a triacontad of Æons, whereas
    others desire that Sige should exist along with the Father, and that
-   the Ã†ons should be reckoned along with them.
+   the Æons should be reckoned along with them.
 
    Christ, therefore, being additionally projected, and the Holy Spirit,
    by Nous and Aletheia, immediately this abortion of Sophia, (which was)
    shapeless, (and) born of herself only, and generated without conjugal
-   intercourse, separates from the entire of the Ã†ons, lest the perfect
-   Ã†ons, beholding this (abortion), should be disturbed by reason of its
+   intercourse, separates from the entire of the Æons, lest the perfect
+   Æons, beholding this (abortion), should be disturbed by reason of its
    shapelessness. In order, then, that the shapelessness of the abortion
-   might not at all manifest itself to the perfect Ã†ons, the Father also
-   again projects additionally one Ã†on, viz., Staurus. And he being
+   might not at all manifest itself to the perfect Æons, the Father also
+   again projects additionally one Æon, viz., Staurus. And he being
    begotten great, as from a mighty and perfect father, and being
-   projected for the guardianship and defence of the Ã†ons, becomes a limit
-   of the Pleroma, having within itself all the thirty Ã†ons together, for
-   these are they that had been projected. Now this (Ã†on) is styled Horos,
+   projected for the guardianship and defence of the Æons, becomes a limit
+   of the Pleroma, having within itself all the thirty Æons together, for
+   these are they that had been projected. Now this (Æon) is styled Horos,
    because he separates from the Pleroma the Hysterema that is outside.
    And (he is called) Metocheus, because he shares also in the Hysterema.
    And (he is denominated) Staurus, because he is fixed inflexibly and
-   inexorably, so that nothing of the Hysterema can come near the Ã†ons who
+   inexorably, so that nothing of the Hysterema can come near the Æons who
    are within the Pleroma. Outside, then, Horos, (or) Metocheus, [684]
    (or) Staurus, is the Ogdoad, as it is called, according to them, and is
    that Sophia which is outside the Pleroma, which (Sophia) Christ, who
    was additionally projected by Nous and Aletheia, formed and made a
-   perfect Ã†on so that in no respect she should be inferior in power to
-   any of the Ã†ons within the Pleroma. [685] Since, however, Sophia was
+   perfect Æon so that in no respect she should be inferior in power to
+   any of the Æons within the Pleroma. [685] Since, however, Sophia was
    formed outside, and it was not possible and equitable that Christ and
    the Holy Spirit, who were projected from Nous and Aletheia, should
    remain outside the Pleroma, Christ hurried away, and the Holy Spirit,
    from her who had had shape imparted to her, unto Nous and Aletheia
-   within the Limit, in order that with the rest of the Ã†ons they might
+   within the Limit, in order that with the rest of the Æons they might
    glorify the Father.
      __________________________________________________________________
 
-   [684] Or, "Metagogeus"(see IrenÃ¦us, i. 1, 2, iii. 1).
+   [684] Or, "Metagogeus"(see Irenæus, i. 1, 2, iii. 1).
 
    [685] Bunsen corrects the passage, "So that she should not be inferior
-   to any of the Ã†ons, or unequal (in power) to any (of them)."
+   to any of the Æons, or unequal (in power) to any (of them)."
      __________________________________________________________________
 
    Chapter XXVII.--Valentinus' Explanation of the Existence of Jesus;
    Power of Jesus Over Humanity.
 
    After, then, there ensued some one (treaty of) peace and harmony
-   between all the Ã†ons within the Pleroma, it appeared expedient to them
+   between all the Æons within the Pleroma, it appeared expedient to them
    not only by a conjugal union to have magnified the Son, but also that
    by an offering of ripe fruits they should glorify the Father. Then all
-   the thirty Ã†ons consented to project one Ã†on, joint fruit of the
+   the thirty Æons consented to project one Æon, joint fruit of the
    Pleroma, that he might be (an earnest) of their union, [686] and
-   unanimity, and peace. And he alone was projected by all the Ã†ons in
+   unanimity, and peace. And he alone was projected by all the Æons in
    honour of the Father.  This (one) is styled among them "Joint Fruit of
    the Pleroma." These (matters), then, took place within the Pleroma in
    this way. And the "Joint Fruit of the Pleroma" was projected, (that
@@ -8412,7 +8412,7 @@ The Refutation of All Heresies.
    sufferings such as these, she turns herself to prayer and supplication
    of him who had deserted her. During the utterance of her entreaties,
    Christ, who is within the Pleroma, had mercy upon (her), and all the
-   rest of the Ã†ons (were similarly affected); and they send forth beyond
+   rest of the Æons (were similarly affected); and they send forth beyond
    the Pleroma "the Joint Fruit of the Pleroma" as a spouse for Sophia,
    who was outside, and as a rectifier of those sufferings which she
    underwent in searching after Christ.
@@ -8424,7 +8424,7 @@ The Refutation of All Heresies.
    proper to destroy these, inasmuch as they are (in their nature)
    eternal, and peculiar to Sophia; and yet that neither was it seemly
    that Sophia should exist in the midst of such passions, in fear and
-   sorrow, supplication (and) perplexity. He therefore, as an Ã†on so
+   sorrow, supplication (and) perplexity. He therefore, as an Æon so
    great, and (as) offspring of the entire Pleroma, caused the passions to
    depart from her, and he made these substantially-existent essences.
    [687] He altered fear into animal desire, [688] and (made) grief
@@ -8439,7 +8439,7 @@ The Refutation of All Heresies.
    the animal essence is, he says, of a fiery nature, and is also termed
    by them the super-celestial Topos, and Hebdomad, [693] and "Ancient of
    Days." [694] And whatever other such statements they advance respecting
-   this (Ã†on), these they allege to hold good of the animalish (one), whom
+   this (Æon), these they allege to hold good of the animalish (one), whom
    they assert to be creator of the world. Now he is of the appearance of
    fire. Moses also, he says, expresses himself thus: "The Lord thy God is
    a burning and consuming fire." [695] For he, likewise, wishes (to
@@ -8463,14 +8463,14 @@ The Refutation of All Heresies.
    [687] This is Bunsen's text, hupostatous.  Duncker reads hupostatikas,
    hypostatic.
 
-   [688] Some read ousian (see Theodoret, HÃ¦r., c. vii.).
+   [688] Some read ousian (see Theodoret, Hær., c. vii.).
 
    [689] epistrophen; or it may be rendered "solicitude." Literally, it
    means a turning towards, as in this instance, for the purpose of prayer
-   (see IrenÃ¦us, i. 5).
+   (see Irenæus, i. 5).
 
    [690] Valentinus denominates what is psychical (natural) right, and
-   what is material or pathematic left (see IrenÃ¦us, i. 5).
+   what is material or pathematic left (see Irenæus, i. 5).
 
    [691] Cruice renders the passage thus: "which is denominated right, or
    Demiurge, while fear it is that accomplishes this transformation." The
@@ -8481,7 +8481,7 @@ The Refutation of All Heresies.
    [692] Ps. cxi. 10; Prov. i. 7; ix. 10.
 
    [693] Schneidewin fills up the hiatus thus: "Place of Mediation." The
-   above translation adopts the emendation of Cruice (see IrenÃ¦us, i. 5).
+   above translation adopts the emendation of Cruice (see Irenæus, i. 5).
 
    [694] Dan. vii. 9, 13, 22.
 
@@ -8513,7 +8513,7 @@ The Refutation of All Heresies.
 
    [698] The opening sentence in this chapter is confused in Miller's
    text. The sense, however, as given above, is deducible from a reference
-   to a corresponding passage in IrenÃ¦us (i. 5).
+   to a corresponding passage in Irenæus (i. 5).
 
    [699] Deut. iv. 35; Isa. xlv. 5, 14, 18, 21, 22.
      __________________________________________________________________
@@ -8529,8 +8529,8 @@ The Refutation of All Heresies.
    demons."  These are the statements which they put forward. But further,
    in addition to these, rendering, as I have previously mentioned, their
    entire system of doctrine (akin to the) arithmetical (art), (they
-   determine) that the thirty Ã†ons within the Pleroma have again, in
-   addition to these, projected other Ã†ons, according to the (numerical)
+   determine) that the thirty Æons within the Pleroma have again, in
+   addition to these, projected other Æons, according to the (numerical)
    proportion (adopted by the Pythagoreans), in order that the Pleroma
    might be formed into an aggregate, according to a perfect number. For
    how the Pythagoreans divided (the celestial sphere) into twelve and
@@ -8541,7 +8541,7 @@ The Refutation of All Heresies.
    within the Pleroma. Now likewise the parts in the Ogdoad have been
    subdivided, and there has been projected Sophia, which is, according to
    them, mother of all living creatures, and the "Joint Fruit of the
-   Pleroma," (who is) the Logos, [701] (and other Ã†ons,) who are celestial
+   Pleroma," (who is) the Logos, [701] (and other Æons,) who are celestial
    angels that have their citizenship in Jerusalem which is above, which
    is in heaven. For this Jerusalem is Sophia, she (that is) outside (the
    Pleroma), and her spouse is the "Joint Fruit of the Pleroma." And the
@@ -8566,7 +8566,7 @@ The Refutation of All Heresies.
    is, the natural (man), not the corporeal (one),--"that you may be able
    to understand what is the depth," which is the Father of the universe,
    "and what is the breadth," which is Staurus, the limit of the Pleroma,
-   "or what is the length," that is, the Pleroma of the Ã†ons. Wherefore,
+   "or what is the length," that is, the Pleroma of the Æons. Wherefore,
    he says, "the natural man receiveth not the things of the Spirit of
    God, for they are foolishness unto him;" [706] but folly, he says, is
    the power of the Demiurge, for he was foolish and devoid of
@@ -8580,7 +8580,7 @@ The Refutation of All Heresies.
    tis aenaou phuseos rhizomat' echousa--(48).
 
    [701] The Abbe Cruise thinks that a comparison of this passage with the
-   corresponding one in IrenÃ¦us suggests the addition of hoi doruphoroi
+   corresponding one in Irenæus suggests the addition of hoi doruphoroi
    after Logos, i.e., the Logos and his satellites. [Vol. i. p. 381, this
    series.]
 
@@ -8588,7 +8588,7 @@ The Refutation of All Heresies.
 
    [703] Or, "subterranean" (Cruice).
 
-   [704] Epiphanius, HÃ¦r., xxxi. sec. 7.
+   [704] Epiphanius, Hær., xxxi. sec. 7.
 
    [705] Eph. iii. 14-18.
 
@@ -8597,7 +8597,7 @@ The Refutation of All Heresies.
 
    Chapter XXX.--Valentinus' Explanation of the Birth of Jesus; Twofold
    Doctrine on the Nature of Jesus' Body; Opinion of the Italians, that
-   Is, Heracleon and PtolemÃ¦us; Opinion of the Orientals, that Is,
+   Is, Heracleon and Ptolemæus; Opinion of the Orientals, that Is,
    Axionicus and Bardesanes.
 
    All the prophets, therefore, and the law, spoke by means of the
@@ -8631,7 +8631,7 @@ The Refutation of All Heresies.
    occasion both of divisions and dissension.  And hence the doctrine of
    these has become divided: and one doctrine, according to them, is
    termed Oriental, and the other Italian. They from Italy, of whom is
-   Heracleon and PtolemÃ¦us, say that the body of Jesus was (an) animal
+   Heracleon and Ptolemæus, say that the body of Jesus was (an) animal
    (one).  And on account of this, (they maintain) that at his baptism the
    Holy Spirit as a dove came down--that is, the Logos of the mother
    above, (I mean Sophia)--and became (a voice) to the animal (man), and
@@ -8646,7 +8646,7 @@ The Refutation of All Heresies.
    given to Mary by the Spirit might be fashioned.
      __________________________________________________________________
 
-   [707] Epiphanius, HÃ¦r., xxxi. 22.
+   [707] Epiphanius, Hær., xxxi. 22.
 
    [708] John x. 8.
 
@@ -8665,14 +8665,14 @@ The Refutation of All Heresies.
    the same with Bardesanes, mentioned by Eusebius and St. Jerome.
      __________________________________________________________________
 
-   Chapter XXXI.--Further Doctrines of Valentinus Respecting the Ã†ons;
+   Chapter XXXI.--Further Doctrines of Valentinus Respecting the Æons;
    Reasons for the Incarnation.
 
    Let, then, those (heretics) pursue these inquiries among themselves,
    (and let others do so likewise,) if it should prove agreeable to
    anybody else to investigate (such points.  Valentinus) subjoins,
    however, the following statement: That the trespasses appertaining to
-   the Ã†ons within (the Pleroma) had been corrected; and likewise had been
+   the Æons within (the Pleroma) had been corrected; and likewise had been
    rectified the trespasses appertaining to the Ogdoad, (that is,) Sophia,
    outside (the Pleroma); and also (the trespasses) appertaining to the
    Hebdomad (had been rectified).  For the Demiurge had been taught by
@@ -8680,7 +8680,7 @@ The Refutation of All Heresies.
    except Himself there is not another (Deity). But when taught by Sophia,
    He was made to recognise the superior (Deity). For He was instructed
    [715] by her, and initiated and indoctrinated into the great mystery of
-   the Father and of the Ã†ons, and divulged this to none. This is, as he
+   the Father and of the Æons, and divulged this to none. This is, as he
    says, what (God) declares to Moses: "I am the God of Abraham, and the
    God of Isaac, and the God of Jacob; and my name I have not announced to
    them;" [716] that is, I have not declared the mystery, nor explained
@@ -8751,8 +8751,8 @@ The Refutation of All Heresies.
    Valentinus, falling in with these (remarks), has made a fundamental
    principle in his system "the King of all," whom Plato mentioned, and
    whom this heretic styles Pater, and Bythos, and Proarche [722] over the
-   rest of the Ã†ons. And when Plato uses the words, "what is second about
-   things that are second," Valentinus supposes to be second all the Ã†ons
+   rest of the Æons. And when Plato uses the words, "what is second about
+   things that are second," Valentinus supposes to be second all the Æons
    that are within the limit (of the Pleroma, as well as) the limit
    (itself). And when Plato uses the words, "what is third about what is
    third," he has (constituted as third) the entire of the arrangement
@@ -8761,16 +8761,16 @@ The Refutation of All Heresies.
    from below, not as Plato does, from above, expressing himself thus: "I
    behold [724] all things suspended in air by spirit, and I perceive all
    things wafted by spirit; the flesh (I see) suspended from soul, but the
-   soul shining out from air, and air depending from Ã†ther, and fruits
+   soul shining out from air, and air depending from Æther, and fruits
    produced from Bythus, and the foetus borne from the womb." Thus
    (Valentinus) formed his opinion on such (points). Flesh, according to
    these (heretics), is matter which is suspended from the soul of the
    Demiurge. And soul shines out from air; that is, the Demiurge emerges
    from the spirit, (which is) outside the Pleroma. But air springs forth
-   from Ã†ther; that is, Sophia, which is outside (the Pleroma, is
+   from Æther; that is, Sophia, which is outside (the Pleroma, is
    projected from the Pleroma) which is within the limit, and (from) the
    entire Pleroma (generally). And from Bythus fruits are produced; (that
-   is,) the entire projection of the Ã†ons is made from the Father. The
+   is,) the entire projection of the Æons is made from the Father. The
    opinions, then, advanced by Valentinus have been sufficiently declared.
    It remains for us to explain the tenets of those who have emanated from
    his school, though each adherent (of Valentinus) entertains different
@@ -8798,13 +8798,13 @@ The Refutation of All Heresies.
 
    [723] The word "limit" occurs twice in this sentence, and Bunsen alters
    the second into "Pleroma," so that the words may be rendered thus:
-   "Valentinus supposes to be second all the Ã†ons that are within the
+   "Valentinus supposes to be second all the Æons that are within the
    Pleroma."
 
    [724] This is a Gnostic hymn, and is arranged metrically by Cruice, of
    which the following is a translation:-- All things whirled on by spirit
    I see, Flesh from soul depending, And soul from air forth flashing, And
-   air from Ã¦ther hanging, And fruits from Bythus streaming, And from womb
+   air from æther hanging, And fruits from Bythus streaming, And from womb
    the infant growing.
 
    [725] The text here is corrupt, but the above rendering follows the
@@ -8812,13 +8812,13 @@ The Refutation of All Heresies.
    untenable.
      __________________________________________________________________
 
-   Chapter XXXIII.--Secundus' System of Ã†ons; Epiphanes; PtolemÃ¦us.
+   Chapter XXXIII.--Secundus' System of Æons; Epiphanes; Ptolemæus.
 
    A certain (heretic) Secundus, [726] born about the same time with
-   PtolemÃ¦us, expresses himself thus: (he says) that there is a right
+   Ptolemæus, expresses himself thus: (he says) that there is a right
    tetrad and a left tetrad,--namely, light and darkness.  And he affirms
    that the power which withdrew and laboured under deficiency, was not
-   produced from the thirty Ã†ons, but from the fruits of these. Some other
+   produced from the thirty Æons, but from the fruits of these. Some other
    (heretic), however--Epiphanes, a teacher among them--expresses himself
    thus: "The earliest originating principle was inconceivable, ineffable,
    and unnameable;" and he calls this Monotes. And (he maintains) that
@@ -8828,7 +8828,7 @@ The Refutation of All Heresies.
    intelligibles; (and this was) both unbegotten and invisible, and he
    styles it a Monad. "With this power co-exists a power of the same
    essence, which very (power) I call Unity. These four powers sent forth
-   the remainder of the projections of the Ã†ons." But others, again,
+   the remainder of the projections of the Æons." But others, again,
    denominate the chief and originating Ogdoad, (which is) fourth (and)
    invisible, by the following names: first, Proarche; next, Anennoetus;
    third, Arrhetus; and fourth, Aoratus. And that from the first,
@@ -8842,7 +8842,7 @@ The Refutation of All Heresies.
    is a female, is present with him, and that this constitutes the first
    conjugal union.
 
-   But the followers of PtolemÃ¦us [727] assert that (Bythus) has two
+   But the followers of Ptolemæus [727] assert that (Bythus) has two
    spouses, which they call likewise dispositions, viz., Ennoia and
    Thelesis (conception and volition). For first the notion was conceived
    of projecting anything; next followed, as they say, the will to do so.
@@ -8850,7 +8850,7 @@ The Refutation of All Heresies.
    Thelesis--being, as it were, mingled one with the other, there ensued a
    projection of Monogenes and Aletheia by means of a conjugal union. And
    the consequence was, that visible types and images of those two
-   dispositions of the Father came forth from the invisible (Ã†ons), viz.,
+   dispositions of the Father came forth from the invisible (Æons), viz.,
    from Thelema, Nous, and from Ennoia, Aletheia. And on this account the
    image of the subsequently generated Thelema is (that of a) male; but
    (the image) of the unbegotten Ennoia is (that of a) female, since
@@ -8861,14 +8861,14 @@ The Refutation of All Heresies.
    which had been conceived.
      __________________________________________________________________
 
-   [726] Concerning Secundus and Epiphanes, see IrenÃ¦us, i. 11; Theodoret,
-   HÃ¦r. Fab., i. 5-9; Epiphanius, xxxii. 1, 3, 4; Tertullian, Adv.
-   Valent., c. xxxviii.; and St. Augustine, HÃ¦r., xi. Hippolytus, in his
-   remarks on Secundus and Epiphanes, borrows from St. IrenÃ¦us.
+   [726] Concerning Secundus and Epiphanes, see Irenæus, i. 11; Theodoret,
+   Hær. Fab., i. 5-9; Epiphanius, xxxii. 1, 3, 4; Tertullian, Adv.
+   Valent., c. xxxviii.; and St. Augustine, Hær., xi. Hippolytus, in his
+   remarks on Secundus and Epiphanes, borrows from St. Irenæus.
 
-   [727] Concerning PtolemÃ¦us, see IrenÃ¦us, i. 12; Tertullian, De
-   PrÃ¦script., c. xlix.; and Advers. Valent., c. viii.; Epiphanius, HÃ¦r.,
-   xxxiii. 3-7; and Theodoret, HÃ¦ret. Fab., i. 8.
+   [727] Concerning Ptolemæus, see Irenæus, i. 12; Tertullian, De
+   Præscript., c. xlix.; and Advers. Valent., c. viii.; Epiphanius, Hær.,
+   xxxiii. 3-7; and Theodoret, Hæret. Fab., i. 8.
      __________________________________________________________________
 
    Chapter XXXIV.--System of Marcus; A Mere Impostor; His Wicked Devices
@@ -8899,9 +8899,9 @@ The Refutation of All Heresies.
    become aware of the deceit of Marcus.
      __________________________________________________________________
 
-   [728] Concerning Marcus, see IrenÃ¦us, i. 12-18; Tertullian, PrÃ¦script.,
-   c. l.; Epiphanius, HÃ¦r., xxxiv.; Theodoret, HÃ¦ret. Fab., i. 9; St.
-   Augustine, HÃ¦r., c. xiv.; and St. Jerome's 29th Epistle.
+   [728] Concerning Marcus, see Irenæus, i. 12-18; Tertullian, Præscript.,
+   c. l.; Epiphanius, Hær., xxxiv.; Theodoret, Hæret. Fab., i. 9; St.
+   Augustine, Hær., c. xiv.; and St. Jerome's 29th Epistle.
 
    [729] energon: Bunsen reads dron, which has the same meaning. Cruice
    reads aioron, but makes no attempt at translation. Miller's reading is
@@ -9008,14 +9008,14 @@ The Refutation of All Heresies.
    [734] [Bunsen (vol. i. p 72-75) makes useful comments.]
      __________________________________________________________________
 
-   Chapter XXXVII.--Marcus' System Explained by IrenÃ¦us; Marcus' Vision;
+   Chapter XXXVII.--Marcus' System Explained by Irenæus; Marcus' Vision;
    The Vision of Valentinus Revealing to Him His System.
 
-   For also the blessed presbyter IrenÃ¦us, having approached the subject
+   For also the blessed presbyter Irenæus, having approached the subject
    of a refutation in a more unconstrained spirit, has explained such
    washings and redemptions, stating more in the way of a rough digest
    [735] what are their practices. (And it appears that some of the
-   Marcosians,) on meeting with (IrenÃ¦us' work), deny that they have so
+   Marcosians,) on meeting with (Irenæus' work), deny that they have so
    received (the secret word just alluded to), but they have learned that
    always they should deny. Wherefore our anxiety has been more accurately
    to investigate, and to discover minutely what are the (instructions)
@@ -9068,7 +9068,7 @@ The Refutation of All Heresies.
    down into the one letter, sounded one and the same pronunciation, and
    an image of the pronunciation he supposed to exist when we
    simultaneously utter the word Amen. [738] And that these sounds are
-   those which gave form to the insubstantial and unbegotten Ã†on, and that
+   those which gave form to the insubstantial and unbegotten Æon, and that
    those forms are what the Lord declared to be angels--the (forms) that
    uninterruptedly behold the face of the Father.
      __________________________________________________________________
@@ -9077,15 +9077,15 @@ The Refutation of All Heresies.
    Prooemium. It literally means, of strong or compact parts. Hippolytus,
    however, uses it in contrast to the expression leptomeres, in reference
    to his Summary of Heresies. Bunsen thinks that Hippolytus means to say
-   that IrenÃ¦us expressed himself rather too strongly, and that the
-   Marcosians, on meeting with IrenÃ¦us' assertions, indignantly repudiated
+   that Irenæus expressed himself rather too strongly, and that the
+   Marcosians, on meeting with Irenæus' assertions, indignantly repudiated
    them. Dr. Wordsworth translates hadromeros (in the Prooemium), "with
    rude generality,"--a rendering scarcely in keeping with the passage
    above.
 
-   [736] The largest extract from IrenÃ¦us is that which follows--the
+   [736] The largest extract from Irenæus is that which follows--the
    explanation of the heresy of Marcus. From this to the end of book vi.
-   occurs in IrenÃ¦us likewise. Hippolytus' text does not always accurately
+   occurs in Irenæus likewise. Hippolytus' text does not always accurately
    correspond with that of his master. The divergence, however, is
    inconsiderable, and may sometimes be traceable to the error of the
    transcriber.
@@ -9101,7 +9101,7 @@ The Refutation of All Heresies.
 
    Chapter XXXVIII.--Marcus' System of Letters.
 
-   But the generic and expressed names of the elements he called Ã†ons, and
+   But the generic and expressed names of the elements he called Æons, and
    Logoi, and Roots, and Seeds, and Pleromas, and Fruits. (And he
    maintains) that every one of these, and what was peculiar to each, is
    perceived as being contained in the name of "Ecclesia." And the final
@@ -9132,12 +9132,12 @@ The Refutation of All Heresies.
    the vain toil of Marcus wishes that the Progenitor (of things) should
    consist! Wherefore also (he maintains) that the Father, who knew that
    He was inseparable from Himself, gave (this depth) to the elements,
-   which he likewise denominates Ã†ons. And he uttered aloud to each one of
+   which he likewise denominates Æons. And he uttered aloud to each one of
    them its own peculiar pronunciation, from the fact that one could not
    pronounce the entire.
      __________________________________________________________________
 
-   [739] This is Duncker's emendation, suggested by IrenÃ¦us' text. Miller
+   [739] This is Duncker's emendation, suggested by Irenæus' text. Miller
    reads ton topon, which yields scarcely any meaning.
      __________________________________________________________________
 
@@ -9163,12 +9163,12 @@ The Refutation of All Heresies.
    Progenitor. [742]
      __________________________________________________________________
 
-   [740] Hippolytus' text has been here corrected from that of IrenÃ¦us.
+   [740] Hippolytus' text has been here corrected from that of Irenæus.
 
-   [741] This is a correction from Progenitor, on the authority of IrenÃ¦us
+   [741] This is a correction from Progenitor, on the authority of Irenæus
    and Epiphanius.
 
-   [742] Propatora:  IrenÃ¦us reads Patrodora, which is adopted by
+   [742] Propatora:  Irenæus reads Patrodora, which is adopted by
    Schneidewin, and translated patrium.
      __________________________________________________________________
 
@@ -9187,7 +9187,7 @@ The Refutation of All Heresies.
    ignorant of the power. For Jesus is a remarkable name, having six
    letters, [744] invoked [745] by all belonging to the called (of
    Christ); whereas the other (name, that is, Christ,) consists of many
-   parts, and is among the (five) Ã†ons of the Pleroma. (This name) is of
+   parts, and is among the (five) Æons of the Pleroma. (This name) is of
    another form and a different type, and is recognised by those
    existences who are connate with him, and whose magnitudes subsist with
    him continually.
@@ -9196,12 +9196,12 @@ The Refutation of All Heresies.
    [743] The reading is doubtful. The translator adopts Scott's
    emendation.
 
-   [744] [See note 1, p. 94 supra, on "Amen."  Comp. IrenÃ¦us, vol. i. p.
+   [744] [See note 1, p. 94 supra, on "Amen."  Comp. Irenæus, vol. i. p.
    393, this series. This name of Jesus does, indeed, run through all
    Scripture, in verbal and other forms; Gen. xlix. 18 and in Joshua, as a
    foreshadowing.]
 
-   [745] IrenÃ¦us has "known."
+   [745] Irenæus has "known."
      __________________________________________________________________
 
    Chapter XLI.--Marcus' Mystic Interpretation of the Alphabet.
@@ -9247,12 +9247,12 @@ The Refutation of All Heresies.
    the number thirty.
      __________________________________________________________________
 
-   [746] eikonikas.  This is IrenÃ¦us' reading. Miller has eikonas
+   [746] eikonikas.  This is Irenæus' reading. Miller has eikonas
    (representations).
 
    [747] aporrhoian:  some read aporian, which is obviously erroneous.
 
-   [748] hup' auta:  IrenÃ¦us reads huper auten, and Massuet hupenerthen.
+   [748] hup' auta:  Irenæus reads huper auten, and Massuet hupenerthen.
 
    [749] The deficiency consisted in there not being three ogdoads. The
    sum total was twenty-four, but there was only one ogdoad--Logos and
@@ -9260,7 +9260,7 @@ The Refutation of All Heresies.
    one above and one below an ogdoad.
 
    [750] ton okto has been substituted for to noeto, an obviously corrupt
-   reading. The correction is supplied by IrenÃ¦us.
+   reading. The correction is supplied by Irenæus.
      __________________________________________________________________
 
    Chapter XLII.--His System Applied to Explain Our Lord's Life and Death.
@@ -9341,18 +9341,18 @@ The Refutation of All Heresies.
    send down one to help this (earthly soul).
      __________________________________________________________________
 
-   [755] Supplied from IrenÃ¦us.
+   [755] Supplied from Irenæus.
 
-   [756] This should be altered into Hebdomad if we follow IrenÃ¦us.
+   [756] This should be altered into Hebdomad if we follow Irenæus.
 
-   [757] tade diakonei. This is the text of IrenÃ¦us, and corrects the
+   [757] tade diakonei. This is the text of Irenæus, and corrects the
    common reading, ta di eikonon.
 
-   [758] phthengetai (IrenÃ¦us). The common reading is phainetai.
+   [758] phthengetai (Irenæus). The common reading is phainetai.
 
-   [759] mesou: in IrenÃ¦us we have merous.
+   [759] mesou: in Irenæus we have merous.
 
-   [760] IrenÃ¦us has the sentence thus: "so also the soul in babes,
+   [760] Irenæus has the sentence thus: "so also the soul in babes,
    lamenting and bewailing Marcus, glorifies him."
 
    [761] Ps. viii. 2.
@@ -9360,7 +9360,7 @@ The Refutation of All Heresies.
    [762] Ps. xix. 1.
 
    [763] Hippolytus here omits some passages which are to be found in
-   IrenÃ¦us.
+   Irenæus.
      __________________________________________________________________
 
    Chapter XLIV.--Respecting the Generation of the Twenty-Four Letters.
@@ -9397,30 +9397,30 @@ The Refutation of All Heresies.
      __________________________________________________________________
 
    [764] Literally, "being twice two:" some for ousai read ousiai.
-   IrenÃ¦us has epi duo ousai, i.e., "which being (added) into two."
+   Irenæus has epi duo ousai, i.e., "which being (added) into two."
 
    [765] Hippolytus has only the word "twenty-four," to which Schneidewin
-   supplies "letters," and IrenÃ¦us "forms," as given above. Hippolytus
-   likewise omits the word "produced," which IrenÃ¦us supplies. The text of
+   supplies "letters," and Irenæus "forms," as given above. Hippolytus
+   likewise omits the word "produced," which Irenæus supplies. The text of
    the latter is tas eikositessaras apekusan morphas.
 
-   [766] IrenÃ¦us adds, "which being added together, I mean the twice five
+   [766] Irenæus adds, "which being added together, I mean the twice five
    and twice seven, complete the number of the twenty-four (forms)."
 
    [767] The parenthetical words had fallen into a wrong part of the
    sentence, and are placed here by Schneidewin.
 
-   [768] This is a correction for "expressed" from IrenÃ¦us.  Marcus
+   [768] This is a correction for "expressed" from Irenæus.  Marcus
    observes the distinction afterwards.
 
-   [769] kata hen grammaton.  The ms.. has engramaton.  IrenÃ¦us omits
+   [769] kata hen grammaton.  The ms.. has engramaton.  Irenæus omits
    these words.
 
-   [770] This entire sentence is wanting in IrenÃ¦us.
+   [770] This entire sentence is wanting in Irenæus.
 
    [771] Corrected from Chri, which is in the ms.
 
-   [772] IrenÃ¦us has the passage thus: "And for this reason He says that
+   [772] Irenæus has the passage thus: "And for this reason He says that
    He is Alpha and Omega, that He may manifest the dove, inasmuch as this
    bird (symbolically) involves this number (801)." See a previous note in
    chap. xlii. p. 95, supra.
@@ -9445,9 +9445,9 @@ The Refutation of All Heresies.
    indicating His generation (to be) from all. [774]
      __________________________________________________________________
 
-   [773] Part of this sentence is supplied from IrenÃ¦us.
+   [773] Part of this sentence is supplied from Irenæus.
 
-   [774] Hippolytus here omits the following sentence found in IrenÃ¦us:
+   [774] Hippolytus here omits the following sentence found in Irenæus:
    "And again thus--of the first quarternion, when added into itself, in
    accordance with a progression of number, appeared the number ten, and
    so forth."
@@ -9468,7 +9468,7 @@ The Refutation of All Heresies.
    and that descend with (Him), and ascend with (Him). And that this power
    which descended upon Him, he says, is the seed of the Pleroma, which
    contains in itself both the Father and the Son, and the unnameable
-   power of Sige, which is recognised through these and all the Ã†ons. And
+   power of Sige, which is recognised through these and all the Æons. And
    that this (seed) is the spirit which is in Him and spoke in Him through
    the mouth of the Son, the confession of Himself as Son of man, and of
    His being one who would manifest the Father; (and that) when this
@@ -9487,9 +9487,9 @@ The Refutation of All Heresies.
 
    [776] Or, "of the Son," an obvious mistake.
 
-   [777] IrenÃ¦us has, "And the Virgin exhibited the place of Ecclesia."
+   [777] Irenæus has, "And the Virgin exhibited the place of Ecclesia."
 
-   [778] IrenÃ¦us adds, "whom the Father of the universe selected, for
+   [778] Irenæus adds, "whom the Father of the universe selected, for
    passage through the womb, by means of the Logos, for recognition of
    Himself."
      __________________________________________________________________
@@ -9548,8 +9548,8 @@ The Refutation of All Heresies.
    time they subtract twelve, and reckon it at eleven. And in like manner,
    (they subtract) ten and make it nine. And connecting these one into the
    other, and multiplying them tenfold, they complete the number
-   ninety-nine. Since, however, the twelfth Ã†on, having left the eleven
-   (Ã†ons above), and departing downwards, withdrew, they allege that even
+   ninety-nine. Since, however, the twelfth Æon, having left the eleven
+   (Æons above), and departing downwards, withdrew, they allege that even
    this is correlative (with the letters). For the figure of the letters
    teaches (us as much). For L is placed eleventh of the letters, and this
    L is the number thirty. And (they say) that this is placed according to
@@ -9575,28 +9575,28 @@ The Refutation of All Heresies.
    numbers, might refer to "the astrological phenomena" deducible by means
    of numerical calculations.
 
-   [780] A comparison of Hippolytus with IrenÃ¦us, as regards what follows,
+   [780] A comparison of Hippolytus with Irenæus, as regards what follows,
    manifests many omissions in the former.
 
-   [781] Following IrenÃ¦us, the passage would be rendered thus:  "And
+   [781] Following Irenæus, the passage would be rendered thus:  "And
    therefore, on account of its having the remarkable (letter) concomitant
    with it, they style the dodecade a remarkable passion." Massuet, in his
-   Annotations on IrenÃ¦us, gives the following explanation of the above
+   Annotations on Irenæus, gives the following explanation of the above
    statement, which is made by Hippolytus likewise. From the twelfth
    number, by once abstracting the remarkable (number), which does not
    come into the order and number of the letters, eleven letters remain.
    Hence in the dodecade, the pathos, or what elsewhere the heretics call
    the "Hysterema," is a defect of one letter. And this is a symbol of the
-   defect or suffering which, upon the withdrawal of one Ã†on, happened
-   unto the last dodecade of Ã†ons.
+   defect or suffering which, upon the withdrawal of one Æon, happened
+   unto the last dodecade of Æons.
 
    [782] Hippolytus' statement is less copious and less clear than that of
-   IrenÃ¦us, who explains the defect of the letter to be symbolical of an
-   apostasy of one of the Ã†ons, and that this one was a female.
+   Irenæus, who explains the defect of the letter to be symbolical of an
+   apostasy of one of the Æons, and that this one was a female.
 
    [783] Luke xv. 4-10.
 
-   [784] Marcus' explanation of this, as furnished by IrenÃ¦us, is more
+   [784] Marcus' explanation of this, as furnished by Irenæus, is more
    copious than Hippolytus'.
 
    [785] The allusion here seems to be to the habit among the ancients of
@@ -9632,7 +9632,7 @@ The Refutation of All Heresies.
    therefore assert that this (heaven) is an image of Horos, who encircles
    the mother of these, who has thirty names. And, again, (they affirm)
    that the moon, which traverses the heaven in thirty days, by reason of
-   (these) days portrays the number of the Ã†ons. And (they say) that the
+   (these) days portrays the number of the Æons. And (they say) that the
    sun, performing its circuit, and terminating its exact return to its
    first position in its orbit in twelve months, manifests the dodecade.
    And also (they say) that the days themselves, involving the measure of
@@ -9649,7 +9649,7 @@ The Refutation of All Heresies.
    reason) they assert that earth is a type of the Dodecade above.
      __________________________________________________________________
 
-   [786] Or, "sketched out" (IrenÃ¦us).
+   [786] Or, "sketched out" (Irenæus).
 
    [787] Or, "radiant."
 
@@ -9683,7 +9683,7 @@ The Refutation of All Heresies.
    [791] Or, "blamelessness."
      __________________________________________________________________
 
-   Chapter L.--Marcus and Colarbasus Refuted by IrenÃ¦us.
+   Chapter L.--Marcus and Colarbasus Refuted by Irenæus.
 
    These assertions, then, those who are of the school of Valentinus
    advance concerning both the creation and the universe, in each case
@@ -9693,10 +9693,10 @@ The Refutation of All Heresies.
    finding, (as they insinuate,) each of the particulars of Scripture to
    accord with the aforesaid numbers, they (attempt to) criminate Moses
    and the prophets, alleging that these speak allegorically of the
-   measures of the Ã†ons. And inasmuch as these statements are trifling and
+   measures of the Æons. And inasmuch as these statements are trifling and
    unstable, it does not appear to me expedient to bring them before (the
    reader. This, however, is the less requisite,) as now the blessed
-   presbyter [793] IrenÃ¦us has powerfully and elaborately refuted the
+   presbyter [793] Irenæus has powerfully and elaborately refuted the
    opinions of these (heretics). And to him we are indebted for a
    knowledge of their inventions, (and have thereby succeeded in) proving
    that these heretics, appropriating these opinions from the Pythagorean
@@ -9747,11 +9747,11 @@ The Refutation of All Heresies.
    That Cerinthus, in no wise indebted to the Scriptures, formed his
    opinion (not out of them), but from the tenets of the Egyptians. [796]
 
-   What are the opinions propounded by the EbionÃ¦ans, and that they in
+   What are the opinions propounded by the Ebionæans, and that they in
    preference adhere to Jewish customs.
 
    How Theodotus has been a victim of error, deriving contributions to his
-   system partly from the EbionÃ¦ans, (partly from Cerinthus.) [797]
+   system partly from the Ebionæans, (partly from Cerinthus.) [797]
 
    And what were the opinions of Cerdon, [798] who both enunciated the
    doctrines of Empedocles, and who wickedly induced Marcion to step
@@ -9776,7 +9776,7 @@ The Refutation of All Heresies.
    from the tenets propounded by the Egyptians."
 
    [797] Cruice would prefer, "from the Gnostics," on account of Cerinthus
-   being coupled with the Gnostics and EbionÃ¦ans by Hippolytus, when he
+   being coupled with the Gnostics and Ebionæans by Hippolytus, when he
    afterwards indicates the source from which Theodotus derived his
    heretical notions of Christ.
 
@@ -9845,11 +9845,11 @@ The Refutation of All Heresies.
      __________________________________________________________________
 
    [804] What Hippolytus now states in regard of the opinions of
-   Basilides, is quite new (compare IrenÃ¦us, i. 24; Clemens Alexandrinus,
-   Strom., iii. and vii.; Tertullian, PrÃ¦script., xlvi.; Epiphanius, HÃ¦r.,
+   Basilides, is quite new (compare Irenæus, i. 24; Clemens Alexandrinus,
+   Strom., iii. and vii.; Tertullian, Præscript., xlvi.; Epiphanius, Hær.,
    xxiv.; Theodoret, i. 4; Eusebius, Ecclesiast. Hist., iv. 7; and
    Philastrius, c. xxxii.). Abbe Cruice refers us to Basilidis philosophi
-   Gnostici SententiÃ¦, by Jacobi (Berlin, 1852), and to Das
+   Gnostici Sententiæ, by Jacobi (Berlin, 1852), and to Das
    Basilidianische System, etc., by Ulhorn (Gottingen, 1855).
      __________________________________________________________________
 
@@ -10043,7 +10043,7 @@ The Refutation of All Heresies.
    [812] Literally, "out of tune."
 
    [813] These works must be among Aristotle's lost writings (see
-   Fabricius' Bibl. GrÃ¦c., t. iii. pp. 232, 404).  We have no work of
+   Fabricius' Bibl. Græc., t. iii. pp. 232, 404).  We have no work of
    Aristotle's expressly treating "of God." However, the Stagyrite's
    theology, such as it is, is unfolded in his Metaphysics. See Macmahon's
    analysis prefixed to his translation of Aristotle's Metaphysics, Bohn's
@@ -10208,7 +10208,7 @@ The Refutation of All Heresies.
    through itself hurried upwards, (and so the more gross portion) was
    left behind. Therefore the more gross Sonship equipped itself with some
    such wing as Plato, the Preceptor of Aristotle, fastens on the soul in
-   (his) PhÃ¦drus. [824] And Basilides styles such, not a wing, but Holy
+   (his) Phædrus. [824] And Basilides styles such, not a wing, but Holy
    Spirit; and Sonship invested in this (Spirit) confers benefits, and
    receives them in turn. He confers benefits, because, as a wing of a
    bird, when removed from the bird, would not of itself soar high up and
@@ -10266,7 +10266,7 @@ The Refutation of All Heresies.
 
    [823] Odyssey, vii. 36.
 
-   [824] See Plato, vol. i. p. 75 et seq., ed. Bekker. Miller has "PhÃ¦do;"
+   [824] See Plato, vol. i. p. 75 et seq., ed. Bekker. Miller has "Phædo;"
    an obvious mistake.
 
    [825] [Foretaste of Cent. IV.] Miller's text has, instead of tou ouk
@@ -10315,7 +10315,7 @@ The Refutation of All Heresies.
    appeared [828] to the Great Archon to belong to the Son, and the Archon
    caused Him to sit on his right (hand). This is, according to these
    (heretics), what is denominated the Ogdoad, where the Great Archon has
-   his throne. The entire celestial creation, then, that is, the Ã†ther, He
+   his throne. The entire celestial creation, then, that is, the Æther, He
    Himself, the Great Wise Demiurge formed. The Son, however, begotten of
    this (Archon), operates in Him, and offered Him suggestions, being
    endued with far greater wisdom than the Demiurge Himself.
@@ -10341,9 +10341,9 @@ The Refutation of All Heresies.
    according to Basilides, controls the God that is more ineffable than
    ineffable (entities). All things, therefore, have been provided for,
    and managed by the majesty [830] of the Great Archon; (I mean) whatever
-   objects exist in the Ã¦thereal region of space as far as the moon, for
-   from that quarter onwards air is separated from Ã¦ther. When all objects
-   in the Ã¦thereal regions, then, were arranged, again from (the
+   objects exist in the æthereal region of space as far as the moon, for
+   from that quarter onwards air is separated from æther. When all objects
+   in the æthereal regions, then, were arranged, again from (the
    conglomeration of) all germs another Archon ascended, greater, of
    course, than all subjacent (entities), with the exception, however, of
    the Sonship that had been left behind, but far inferior to the First
@@ -10703,9 +10703,9 @@ The Refutation of All Heresies.
      __________________________________________________________________
 
    [854] See [vol. i. p. 348, this series, where it is Saturninus];
-   IrenÃ¦us, i. 24; [vol. iii., this series, p. 649]; Tertullian,
-   PrÃ¦script. xlvi.; Epiphanius, HÃ¦r., xxiii.; Theodoret, HÃ¦r. Fab., i. 3;
-   St. Augustine, HÃ¦r., iii. Eusebius styles this heretic Saturninus.
+   Irenæus, i. 24; [vol. iii., this series, p. 649]; Tertullian,
+   Præscript. xlvi.; Epiphanius, Hær., xxiii.; Theodoret, Hær. Fab., i. 3;
+   St. Augustine, Hær., iii. Eusebius styles this heretic Saturninus.
 
    [855] Epiphanius makes Basilides and Saturnilus belong to the same
    school.
@@ -10862,19 +10862,19 @@ The Refutation of All Heresies.
    souls are involved in all descriptions of punishment by Discord being
    changed from body to body. He says:--
 
-   "Ã†thereal force to ocean drives the souls,
+   "Æthereal force to ocean drives the souls,
 
    And ocean spurts them forth on earth's expanse,
 
    And earth on beams of blazing sun, who flings
 
-   (The souls) on Ã¦ther's depths, and each from each
+   (The souls) on æther's depths, and each from each
 
    (A spirit) takes, and all with hatred burn." [870]
 
    This is the punishment which the Demiurge inflicts, just as some
    brazier moulding (a piece of) iron, and dipping it successively from
-   fire into water. For fire is the Ã¦ther whence the Demiurge transfers
+   fire into water. For fire is the æther whence the Demiurge transfers
    the souls into the sea; and land is the earth: whence he uses the
    words, from water into earth, and from earth into air. This is what
    (Empedocles) says:--
@@ -10883,7 +10883,7 @@ The Refutation of All Heresies.
 
    Of blazing sun, who flings (the souls)
 
-   On Ã¦ther's depths, and each from each
+   On æther's depths, and each from each
 
    A (spirit) takes, and all with hatred burn."
 
@@ -10950,10 +10950,10 @@ The Refutation of All Heresies.
    For know that all possess perception and a share of mind." [872]
      __________________________________________________________________
 
-   [860] See [vol. i. p. 352, this series]; IrenÃ¦us i. 27; [vol. iii.,
-   this series especially p. 257], Tertullian, Adv. Marc., and PrÃ¦script.,
-   xxx.; Epiphanius, HÃ¦r., xlii.; Theodoret, HÃ¦r. Fab., i. 24; Eusebius.,
-   Hist. Ecclesiast., v. 13, 16; and St. Augustine, HÃ¦r., xxii.
+   [860] See [vol. i. p. 352, this series]; Irenæus i. 27; [vol. iii.,
+   this series especially p. 257], Tertullian, Adv. Marc., and Præscript.,
+   xxx.; Epiphanius, Hær., xlii.; Theodoret, Hær. Fab., i. 24; Eusebius.,
+   Hist. Ecclesiast., v. 13, 16; and St. Augustine, Hær., xxii.
 
    [861] Or, "quarrelsome," or, "frantic."
 
@@ -11074,7 +11074,7 @@ The Refutation of All Heresies.
    Logos that was an auxiliary to Friendship--that is, the Good Deity.
    (His doctrine,) however, was that, independent of birth, (the Logos)
    Himself descended from above in the fifteenth year of the reign of
-   Tiberius CÃ¦sar, and that, as being intermediate between the good and
+   Tiberius Cæsar, and that, as being intermediate between the good and
    bad Deity, He proceeded to give instruction in the synagogues. For if
    He [877] is a Mediator, He has been, he says, liberated from the entire
    nature of the Evil Deity. Now, as he affirms, the Demiurge is evil, and
@@ -11096,7 +11096,7 @@ The Refutation of All Heresies.
      __________________________________________________________________
 
    [875] What Hippolytus communicates concerning Prepon is quite new. The
-   only writer who mentions him is Theodoret (HÃ¦r. Fab., i. 25), in his
+   only writer who mentions him is Theodoret (Hær. Fab., i. 25), in his
    article on Apelles.
 
    [876] Schneidewin gives a restored version of these lines. They are
@@ -11178,11 +11178,11 @@ The Refutation of All Heresies.
    fashioned) by Pilate. [883]
      __________________________________________________________________
 
-   [880] See [vol. i. p. 350] IrenÃ¦us, i. 25; [vol. iii. p. 203]
-   Tertullian, De Anima, c. xxiii.-xxv., and PrÃ¦script., c. xlviii.;
-   Eusebius, Hist. Ecclesiast., iv. 7, Epiphanius, HÃ¦r., xxvii. sec. 2;
-   Theodoret, HÃ¦r. Fab., i. 5; and St. Augustine, HÃ¦r., c. vii. The entire
-   of this article is taken from IrenÃ¦us, and equally coincides with the
+   [880] See [vol. i. p. 350] Irenæus, i. 25; [vol. iii. p. 203]
+   Tertullian, De Anima, c. xxiii.-xxv., and Præscript., c. xlviii.;
+   Eusebius, Hist. Ecclesiast., iv. 7, Epiphanius, Hær., xxvii. sec. 2;
+   Theodoret, Hær. Fab., i. 5; and St. Augustine, Hær., c. vii. The entire
+   of this article is taken from Irenæus, and equally coincides with the
    account given of Carpocrates by Epiphanius.
 
    [881] Or, "came."
@@ -11212,41 +11212,41 @@ The Refutation of All Heresies.
    suffering.
      __________________________________________________________________
 
-   [884] See [vol. i. pp. 351, 415] IrenÃ¦us, i. 26, iii. 2, 3; [vol. iii.
-   p. 651] Tertullian, PrÃ¦script., c. xlviii.; Eusebius, Hist.
-   Ecclesiast., iii. 28, vii. 25; Epiphanius, HÃ¦r., xxviii.; Theodoret,
-   HÃ¦r. Fab., ii. 3; St. Augustine, HÃ¦r., c. viii.; and St. Jerome, Ep.,
-   lxxxix. We have here, as in the preceding articles, IrenÃ¦us in the
+   [884] See [vol. i. pp. 351, 415] Irenæus, i. 26, iii. 2, 3; [vol. iii.
+   p. 651] Tertullian, Præscript., c. xlviii.; Eusebius, Hist.
+   Ecclesiast., iii. 28, vii. 25; Epiphanius, Hær., xxviii.; Theodoret,
+   Hær. Fab., ii. 3; St. Augustine, Hær., c. viii.; and St. Jerome, Ep.,
+   lxxxix. We have here, as in the preceding articles, Irenæus in the
    Greek, as Hippolytus' text corresponds with the Latin version of this
-   portion of IrenÃ¦us' work.
+   portion of Irenæus' work.
 
    [885] Acts xvii. 23.
 
    [886] Or, "paternal."
      __________________________________________________________________
 
-   Chapter XXII.--Doctrine of the EbionÃ¦ans.
+   Chapter XXII.--Doctrine of the Ebionæans.
 
-   The EbionÃ¦ans, [887] however, acknowledge that the world was made by
+   The Ebionæans, [887] however, acknowledge that the world was made by
    Him Who is in reality God, but they propound legends concerning the
    Christ similarly with Cerinthus and Carpocrates.  They live conformably
    to the customs of the Jews, alleging that they are justified according
    to the law, and saying that Jesus was justified by fulfilling the law.
-   And therefore it was, (according to the EbionÃ¦ans,) that (the Saviour)
+   And therefore it was, (according to the Ebionæans,) that (the Saviour)
    was named (the) Christ of God and Jesus, [888] since not one of the
    rest (of mankind) had observed completely the law. For if even any
    other had fulfilled the commandments (contained) in the law, he would
-   have been that Christ. And the (EbionÃ¦ans allege) that they themselves
+   have been that Christ. And the (Ebionæans allege) that they themselves
    also, when in like manner they fulfil (the law), are able to become
    Christs; for they assert that our Lord Himself was a man in a like
    sense with all (the rest of the human family).
      __________________________________________________________________
 
-   [887] See [vol. i. p. 352] IrenÃ¦us, i. 26; [vol. iii. p. 651]
-   Tertullian, PrÃ¦script., c. xlviii.; [vol. iv. p. 429, this series]
+   [887] See [vol. i. p. 352] Irenæus, i. 26; [vol. iii. p. 651]
+   Tertullian, Præscript., c. xlviii.; [vol. iv. p. 429, this series]
    Origen, Contr. Cels. ii. 1; Eusebius, Hist. Ecclesiast., iii. 27;
-   Epiphanius, HÃ¦r., xxx.; and Theodoret, HÃ¦r. Fab., ii. 2. Hippolytus is
-   indebted in this article partly to IrenÃ¦us, and partly to original
+   Epiphanius, Hær., xxx.; and Theodoret, Hær. Fab., ii. 2. Hippolytus is
+   indebted in this article partly to Irenæus, and partly to original
    sources.
 
    [888] Or, "that the Christ of God was named Jesus" (Bunsen).
@@ -11275,9 +11275,9 @@ The Refutation of All Heresies.
    God) after the resurrection from the dead.
      __________________________________________________________________
 
-   [889] See [vol. iii. p. 654, "two Theodoti"] Tertullian, PrÃ¦script., c.
-   liii.; Eusebius, Hist. Ecclesiast, v. 27; Epiphanius, HÃ¦r., liv.; and
-   Theodoret, HÃ¦r. Fab., ii. 5. Clemens Alexandrinus seems to have been
+   [889] See [vol. iii. p. 654, "two Theodoti"] Tertullian, Præscript., c.
+   liii.; Eusebius, Hist. Ecclesiast, v. 27; Epiphanius, Hær., liv.; and
+   Theodoret, Hær. Fab., ii. 5. Clemens Alexandrinus seems to have been
    greatly indebted to Theodotus, whose system he has explained and
    commented upon.
      __________________________________________________________________
@@ -11312,16 +11312,16 @@ The Refutation of All Heresies.
      __________________________________________________________________
 
    [890] Concerning the younger Theodotus, see [vol. iii. p. 654]
-   Tertullian, PrÃ¦script., c. liii.; Epiphanius, HÃ¦r., lv.; and Theodoret,
-   HÃ¦r. Fab., ii. 6.
+   Tertullian, Præscript., c. liii.; Epiphanius, Hær., lv.; and Theodoret,
+   Hær. Fab., ii. 6.
 
    [891] Or, "in reference to" (Bunsen).
 
    [892] Or, "have been adduced" (Miller).
 
-   [893] See [ut supra] IrenÃ¦us, i. 26; [ut supra] Tertullian, PrÃ¦script.,
-   c. xlv.; Epiphanius, HÃ¦r., c. xxv.; Eusebius, Hist. Ecclesiast., iii.
-   29; Theodoret, HÃ¦r. Fab., i. 15; and St. Augustine, HÃ¦r., c. v. [But
+   [893] See [ut supra] Irenæus, i. 26; [ut supra] Tertullian, Præscript.,
+   c. xlv.; Epiphanius, Hær., c. xxv.; Eusebius, Hist. Ecclesiast., iii.
+   29; Theodoret, Hær. Fab., i. 15; and St. Augustine, Hær., c. v. [But
    see Clement, vol. ii. p. 373, this series.]
 
    [894] [He understands that the seven (Acts vi. 5) were deacons. Bunsen,
@@ -11347,17 +11347,17 @@ The Refutation of All Heresies.
    (heretic).
      __________________________________________________________________
 
-   [897] IrenÃ¦us, i. 27; Eusebius (who here gives IrenÃ¦us' Greek), Hist.
-   Ecclesiast., iv. 2; Epiphanius, c. xli.; Theodoret, HÃ¦r. Fab., i. 24;
+   [897] Irenæus, i. 27; Eusebius (who here gives Irenæus' Greek), Hist.
+   Ecclesiast., iv. 2; Epiphanius, c. xli.; Theodoret, Hær. Fab., i. 24;
    and Philastrius, c. xliv.
 
-   [898] Hippolytus follows IrenÃ¦us but introduces some alterations.
+   [898] Hippolytus follows Irenæus but introduces some alterations.
 
    [899] 'Antitheseis.  This is the emendation proposed by the Abbe
    Cruice. The textual reading is antiparatheseis (comparisons).
 
-   [900] See [ut supra, p. 353], Tertullian, PrÃ¦script., c. li., and
-   Epiphanius, HÃ¦r., c. xliii.
+   [900] See [ut supra, p. 353], Tertullian, Præscript., c. li., and
+   Epiphanius, Hær., c. xliii.
      __________________________________________________________________
 
    Chapter XXVI.--The Doctrines of Apelles; Philumene, His Prophetess.
@@ -11401,15 +11401,15 @@ The Refutation of All Heresies.
    It appears to us that these (tenets) have been sufficiently explained.
    Since, however, we have determined to leave unrefuted not one of those
    opinions that have been advanced by any (of the heretics), let us see
-   what (system) also has been invented by the DocetÃ¦.
+   what (system) also has been invented by the Docetæ.
      __________________________________________________________________
 
-   [901] See [vol. iii. p. 257] Tertullian, PrÃ¦script., c. xxx.; Eusebius,
-   Hist. Ecclesiast., v. 13; Epiphanius, HÃ¦r., c. xliv.; Theodoret, HÃ¦r.
-   Fab., i. 25; and St. Augustine, HÃ¦r., c. xxiv.
+   [901] See [vol. iii. p. 257] Tertullian, Præscript., c. xxx.; Eusebius,
+   Hist. Ecclesiast., v. 13; Epiphanius, Hær., c. xliv.; Theodoret, Hær.
+   Fab., i. 25; and St. Augustine, Hær., c. xxiv.
 
    [902] phanerosesi.  Miller's text reads phaneros, the error of which is
-   obvious from Tertullian's PrÃ¦script., c. xxx. Cruice considers the word
+   obvious from Tertullian's Præscript., c. xxx. Cruice considers the word
    to signify the title of a work written by Apelles.
      __________________________________________________________________
      __________________________________________________________________
@@ -11424,10 +11424,10 @@ The Refutation of All Heresies.
    The following are the contents of the eighth book of the Refutation of
    all Heresies:--
 
-   What are the opinions of the DocetÃ¦, and that they have formed the
+   What are the opinions of the Docetæ, and that they have formed the
    doctrines which they assert from natural philosophy.
 
-   How MonoÃ¯mus [904] trifles, devoting his attention to poets, and
+   How Monoïmus [904] trifles, devoting his attention to poets, and
    geometricians, and arithmeticians.
 
    How (the system of) Tatian has arisen from the opinions of Valentinus
@@ -11447,7 +11447,7 @@ The Refutation of All Heresies.
 
    [903] Much that we have in this book is quite new. Hippolytus derives
    his article on Tatian, and in a measure that on the Encratites, from
-   IrenÃ¦us. The rest is probably from original sources.
+   Irenæus. The rest is probably from original sources.
 
    [904] Or, "Noimus."
 
@@ -11455,7 +11455,7 @@ The Refutation of All Heresies.
    Fathers.]
      __________________________________________________________________
 
-   Chapter I.--Heresies Hitherto Refuted; Opinions of the DocetÃ¦.
+   Chapter I.--Heresies Hitherto Refuted; Opinions of the Docetæ.
 
    Since the great body of (the heretics) do not employ the counsel of the
    Lord, by having the beam in the eye, [906] and announce that they see
@@ -11471,11 +11471,11 @@ The Refutation of All Heresies.
    exhibit the abundance of the grace of the Holy Spirit; and we shall
    refute those (who suppose) that they have acquired stedfastness of
    doctrine, when it is only in appearance. Now these have styled
-   themselves DocetÃ¦, [907] and propound the following opinions:--
+   themselves Docetæ, [907] and propound the following opinions:--
 
-   (The DocetÃ¦ maintain) that God is the primal (Being), as it were a seed
+   (The Docetæ maintain) that God is the primal (Being), as it were a seed
    of a fig-tree, which is altogether very diminutive in size, but
-   infinite in power. (This seed constitutes, according to the DocetÃ¦,) a
+   infinite in power. (This seed constitutes, according to the Docetæ,) a
    lowly magnitude, incalculable in multitude, [908] (and) labouring under
    no deficiency as regards generation. (This seed is) a refuge for the
    terror-stricken, a shelter of the naked, a veil for modesty, (and) the
@@ -11489,24 +11489,24 @@ The Refutation of All Heresies.
    became tender, leaves budded (first), as one may (generally) see, and
    next in succession the fruit. Now, in this (fruit) is preserved
    treasured the infinite and incalculable seed of the fig-tree. We think,
-   therefore, (say the DocetÃ¦,) that there are three (parts) which are
+   therefore, (say the Docetæ,) that there are three (parts) which are
    primarily produced by the seed of the fig-tree, (viz.,) stem, which
    constitutes the fig-tree, leaves, and fruit--the fig itself, as we have
    previously declared. In this manner, the (Docetic) affirms, have been
-   produced three Ã†ons, which are principles from the primal originating
+   produced three Æons, which are principles from the primal originating
    cause of the universe. And Moses has not been silent on this point,
    when he says, that there are three words of God, "darkness, gloom,
    tempest, and added no more." [911] For the (Docetic) says, God has made
-   no addition to the three Ã†ons; but these, in every respect, have been
+   no addition to the three Æons; but these, in every respect, have been
    sufficient for (the exigencies of) those who have been begotten and are
    sufficient. God Himself, however, remains with Himself, far separated
-   from the three Ã†ons. When each of these Ã†ons had obtained an
+   from the three Æons. When each of these Æons had obtained an
    originating cause of generation, he grew, as has been declared, by
    little and little, and (by degrees) was magnified, and (ultimately)
    became perfect. But they think that that is perfect which is reckoned
-   at ten. When, therefore, the Ã†ons had become equal in number and in
-   perfection, they were, as (the DocetÃ¦) are of opinion, constituted
-   thirty Ã†ons in all, while each of them attains full perfection in a
+   at ten. When, therefore, the Æons had become equal in number and in
+   perfection, they were, as (the Docetæ) are of opinion, constituted
+   thirty Æons in all, while each of them attains full perfection in a
    decade. And the three are mutually distinct, and hold one (degree of)
    honour relatively to one another, differing in position merely, because
    one of them is first, and the other second, and the other of these
@@ -11518,13 +11518,13 @@ The Refutation of All Heresies.
    inasmuch as he is the incomprehensible one, comprehended himself
    sixfold. But he who is now third in position is conveyed to an infinite
    distance, in consequence of the dilatation of his brethren. (And when
-   this third Ã†on) had thrice realized himself in thought, he encircled
+   this third Æon) had thrice realized himself in thought, he encircled
    himself with, as it were, some eternal chain of union.
      __________________________________________________________________
 
    [906] Matt. vii. 3, 4; Luke vi. 41, 42.
 
-   [907] See [vol. i. p. 526] IrenÃ¦us v. 1; Theodoret, HÃ¦r.  Fab., v. 12;
+   [907] See [vol. i. p. 526] Irenæus v. 1; Theodoret, Hær.  Fab., v. 12;
    and [vol. ii. p. 398, and Elucidation XIV. p. 407] Clemens Alexandrinus
    (Strom., iii.), who informs us that Julius Cassianus--a pupil of
    Valentinus--was founder of the Docetic heresy.
@@ -11547,7 +11547,7 @@ The Refutation of All Heresies.
      __________________________________________________________________
 
    Chapter II.--Docetic Notion of the Incarnation; Their Doctrines of
-   Ã†ons; Their Account of Creation; Their Notion of a Fiery God.
+   Æons; Their Account of Creation; Their Notion of a Fiery God.
 
    And these (heretics) suppose that this is what is spoken by the
    Saviour: "A sower went forth to sow; and that which fell on the fair
@@ -11555,48 +11555,48 @@ The Refutation of All Heresies.
    some thirty-fold." [912] And for this reason, the (Docetic) says, (that
    the Saviour) has spoken the words, "He that hath ears to hear, let him
    hear," because these (truths)are not altogether rumours. All these
-   Ã†ons, both the three and all those infinite (Ã†ons which proceed) from
-   these indefinitely, are hermaphrodite Ã†ons. All these, then, after they
+   Æons, both the three and all those infinite (Æons which proceed) from
+   these indefinitely, are hermaphrodite Æons. All these, then, after they
    had been increased and magnified, and had sprung from that one primary
    seed, (were actuated by a spirit) of concord and union, and they all
-   coalesced into one Ã†on. And in this manner they begot of a single
+   coalesced into one Æon. And in this manner they begot of a single
    virgin, Mary, [913] a joint offspring, who is a Mediator, (that is,)
    the Saviour of all who are in the (covenant of) mediation. (And this
    Saviour is,) in every respect, coequal in power with the seed of the
    fig-tree, with the exception that he was generated. Whereas that
    primary seed, from whence the fig-tree sprung, is unbegotten. When,
-   therefore, those three Ã†ons were adorned with all virtue and with all
+   therefore, those three Æons were adorned with all virtue and with all
    sanctity, so these teachers suppose, as well as that only begotten
-   child--for he alone was begotten by those infinite Ã†ons from three
-   immediately concerned in his birth, for three immeasurable Ã†ons being
-   unanimous procreated him;--(after, I say, the Ã†ons and only Son were
+   child--for he alone was begotten by those infinite Æons from three
+   immediately concerned in his birth, for three immeasurable Æons being
+   unanimous procreated him;--(after, I say, the Æons and only Son were
    thus adorned,) the entire nature, which is cognised by intellect, was
    fashioned free from deficiency. Now, all those intelligible and eternal
    (entities) constituted light. Light, however, was not devoid of form,
    nor inoperative, nor in want, as it were, of the assistance of any
    (other power). But (light) proportionately with the multitude of those
-   infinite (Ã†ons) indefinitely (generated) in conformity with the
+   infinite (Æons) indefinitely (generated) in conformity with the
    exemplar of the fig-tree, possesses in itself infinite species of
    various animals indigenous to that quarter of creation, and it shone
    down upon the underlying chaos. And when this (chaos) was
    simultaneously illuminated, and had form imparted to it by those
    diversified species from above, it derived (thereby) solidity, and
-   acquired all those supernal species from the third Ã†on, who had made
+   acquired all those supernal species from the third Æon, who had made
    himself threefold.
 
-   This third Ã†on, however, beholding all his own distinctive attributes
+   This third Æon, however, beholding all his own distinctive attributes
    laid hold on collectively by the underlying darkness (which was)
    beneath, and not being ignorant of the power of darkness, and at the
    same time of the security [914] and profusion of light, did not allow
    his brilliant attributes (which he derived) from above for any length
    of time to be snatched away by the darkness beneath. But (he acted in
-   quite a contrary manner), for he subjected (darkness) to the Ã†ons.
+   quite a contrary manner), for he subjected (darkness) to the Æons.
    After, then, he had formed the firmament over the nether world, "he
    both divided the darkness from the light, and called the light which
    was above the firmament day, and the darkness he called night." [915]
-   When all the infinite species, then, as I have said, of the third Ã†on
+   When all the infinite species, then, as I have said, of the third Æon
    were intercepted in this the lowest darkness, the figure also of the
-   Ã†on himself, such as he has been described, was impressed (upon them)
+   Æon himself, such as he has been described, was impressed (upon them)
    along with the rest (of his attributes). (Now this figure is) a
    life-giving fire, which is generated from light, from whence the Great
    Archon originated. And respecting this (Archon) Moses observes: "In the
@@ -11634,7 +11634,7 @@ The Refutation of All Heresies.
 
    [917] Ex. iii. 2.
 
-   [918] The DocetÃ¦ here attempted to substantiate their system from
+   [918] The Docetæ here attempted to substantiate their system from
    Scripture by a play upon words.
      __________________________________________________________________
 
@@ -11650,23 +11650,23 @@ The Refutation of All Heresies.
    beneath. Up to the time, therefore, of the appearance of the Saviour,
    there prevailed, by reason of the Deity of fiery light, (that is,) the
    Demiurge, a certain extensive delusion of souls. For the species are
-   styled souls, because they are refrigerations [919] from the (Ã†ons)
+   styled souls, because they are refrigerations [919] from the (Æons)
    above, and continue in darkness. But when (the souls) are altered from
    bodies to bodies, they remain under the guardianship of the Demiurge.
    And that these things are so, says (the Docetic), it is possible also
    to perceive from Job, when he uses the following words: "And I am a
    wanderer, changing both place after place, and house after house."
-   [920] And (we may learn, according to the DocetÃ¦, the same) from the
+   [920] And (we may learn, according to the Docetæ, the same) from the
    expressions of the Saviour, "And if ye will receive it, this is Elias
    that was for to come. He that hath ears to hear, let him hear." [921]
    But by the instrumentality of the Saviour this transference of souls
    from body to body was made to cease, and faith is preached for
    remission of sins. After some such manner, that only begotten Son, when
-   He gazes upon the forms of the supernal Ã†ons, which were transferred
+   He gazes upon the forms of the supernal Æons, which were transferred
    from above into darkish bodies, coming down, wished to descend and
-   deliver them. When (the Son), however, became aware that the Ã†ons,
+   deliver them. When (the Son), however, became aware that the Æons,
    those (that subsist) collectively, are unable to behold the Pleroma of
-   all the Ã†ons, but that in a state of consternation they fear lest they
+   all the Æons, but that in a state of consternation they fear lest they
    may undergo corruption as being themselves perishable, and that they
    are overwhelmed by the magnitude and splendour of power;--(when the
    Son, I say, perceived this,) He contracted Himself--as it were a very
@@ -11684,11 +11684,11 @@ The Refutation of All Heresies.
    the eye, and enveloped in which it lies concealed.
 
    Thus, says (the Docetic), the only-begotten (and) eternal Child from
-   above arrayed Himself in a form to correspond with each individual Ã†on
-   of the three Ã†ons; [923] and while he was within the triacontad of
-   Ã†ons, He entered into this world [924] just as we have described Him,
+   above arrayed Himself in a form to correspond with each individual Æon
+   of the three Æons; [923] and while he was within the triacontad of
+   Æons, He entered into this world [924] just as we have described Him,
    unnoticed, unknown, obscure, and disbelieved. In order, therefore, say
-   the DocetÃ¦, that He may be clad in the darkness that is prevalent in
+   the Docetæ, that He may be clad in the darkness that is prevalent in
    more distant quarters of creation--(now by darkness he means) flesh--an
    angel journeyed with Him from above, and announced the glad tidings to
    Mary, says (the Docetic), as it has been written.  And the (child) from
@@ -11706,12 +11706,12 @@ The Refutation of All Heresies.
    had been represented in the water when he was being baptized. This is,
    says (the Docetic), what the Saviour affirms: "Except a man be born of
    water and spirit, he will not enter into the kingdom of heaven, because
-   that which is born of the flesh is flesh." [926] From the thirty Ã†ons,
+   that which is born of the flesh is flesh." [926] From the thirty Æons,
    therefore, (the Son) assumed thirty forms. And for this reason that
-   eternal One existed for thirty years on the earth, because each Ã†on was
+   eternal One existed for thirty years on the earth, because each Æon was
    in a peculiar manner manifested during (his own) year. And the souls
    are all those forms that have been laid hold on by each of the thirty
-   Ã†ons; and each of these is so constituted as to discern Jesus, who is
+   Æons; and each of these is so constituted as to discern Jesus, who is
    of a nature (similar to their own). (And it was the nature of this
    Jesus) which that only-begotten and eternal One assumed from
    everlasting places.  These (places), however, are diverse.
@@ -11726,7 +11726,7 @@ The Refutation of All Heresies.
    derive their nature from the places below, are not able to see the
    forms of the Saviour which are above them. Those, however, he says, who
    are from above, from the intermediate decade and the most excellent
-   ogdoad--whence, say (the DocetÃ¦), we are--have themselves known not in
+   ogdoad--whence, say (the Docetæ), we are--have themselves known not in
    part, but entirely, Jesus the Saviour. And those, who are from above,
    are alone perfect, but all the rest are only partially so.
      __________________________________________________________________
@@ -11746,7 +11746,7 @@ The Refutation of All Heresies.
 
    [922] Or, "a fleshly membrane."
 
-   [923] Miller reads, "of the third Ã†on."
+   [923] Miller reads, "of the third Æon."
 
    [924] The Abbe Cruice considers that the mention of the period of our
    Lord's birth has accidentally dropt out of the ms. here. See book vii.
@@ -11763,38 +11763,38 @@ The Refutation of All Heresies.
 
    These (statements), therefore, I consider sufficient to
    properly-constituted minds for the purpose of attaining unto a
-   knowledge of the complicated and unstable heresy of the DocetÃ¦. (But)
+   knowledge of the complicated and unstable heresy of the Docetæ. (But)
    those who have propounded attempted arguments about inaccessible and
-   incomprehensible Matter, have styled themselves DocetÃ¦. Now, we
+   incomprehensible Matter, have styled themselves Docetæ. Now, we
    consider that some of these are acting foolishly, we will not say in
    appearance, but in reality. At all events, we have proved that a beam
    from such matter is carried in the eye, if by any means they may be
    enabled to perceive it. If, however, they do not (discern it, our
    object is) that they should not make others blind. But the fact is,
    that the sophists of the Greeks in ancient times have previously
-   devised, in many particulars, the doctrines of these (DocetÃ¦), as it is
+   devised, in many particulars, the doctrines of these (Docetæ), as it is
    possible for my readers (who take the trouble) to ascertain. These,
-   then, are the opinions propounded by the DocetÃ¦. As to what likewise,
-   however, are the tenets of MonoÃ¯mus, we shall not be silent.
+   then, are the opinions propounded by the Docetæ. As to what likewise,
+   however, are the tenets of Monoïmus, we shall not be silent.
      __________________________________________________________________
 
-   Chapter V.--MonoÃ¯mus; Man the Universe, According to MonoÃ¯mus; His
+   Chapter V.--Monoïmus; Man the Universe, According to Monoïmus; His
    System of the Monad.
 
-   MonoÃ¯mus [928] the Arabian was far removed from the glory of the
-   high-sounding poet. (For MonoÃ¯mus) supposes that there is some such man
+   Monoïmus [928] the Arabian was far removed from the glory of the
+   high-sounding poet. (For Monoïmus) supposes that there is some such man
    as the poet (calls) Oceanus, expressing himself somehow thus:--
 
    "Oceans, source of gods and source of men." [929]
 
-   Changing these (sentiments) into other words, MonoÃ¯mus says that man is
+   Changing these (sentiments) into other words, Monoïmus says that man is
    the universe. Now the universe is the originating cause of all things,
    unbegotten, incorruptible, (and) eternal. And (he says) that the son of
    (the) man previously spoken of is begotten, and subject to passion,
    (and) that he is generated independently of time, (as well as)
    undesignedly, [930] (and) without being predestinated.  For such, he
    says, is the power of that man. And he being thus constituted in power,
-   (MonoÃ¯mus alleges) that the son was born quicker than thought and
+   (Monoïmus alleges) that the son was born quicker than thought and
    volition.  And this, he says, is what has been spoken in the
    Scriptures, "He was, and was generated." [931] And the meaning of this
    is: Man was, and his son was generated; just as one may say, Fire was,
@@ -11819,8 +11819,8 @@ The Refutation of All Heresies.
    this (tittle) is an image of that perfect invisible man.
      __________________________________________________________________
 
-   [928] What is given here by Hippolytus respecting MonoÃ¯mus is quite
-   new. The only writer that mentions him is Theodoret, HÃ¦r. Fab., i. 18.
+   [928] What is given here by Hippolytus respecting Monoïmus is quite
+   new. The only writer that mentions him is Theodoret, Hær. Fab., i. 18.
    [See Bunsen, vol. i. p. 103.]
 
    [929] Iliad, xiv. 201, 246.
@@ -11829,11 +11829,11 @@ The Refutation of All Heresies.
    alters abasileutos into abouletos.
 
    [931] An allusion is evidently made to the opening chapter of St.
-   John's Gospel. MonoÃ¯mus, like Basilides, seems to have formed his
+   John's Gospel. Monoïmus, like Basilides, seems to have formed his
    system from the prologue to the fourth Gospel.
      __________________________________________________________________
 
-   Chapter VI.--MonoÃ¯mus' "Iota;" His Notion of the "Son of Man."
+   Chapter VI.--Monoïmus' "Iota;" His Notion of the "Son of Man."
 
    The monad, (that is,) the one tittle, is [932] therefore, he says, also
    a decade.  For by the actual power of this one tittle, are produced
@@ -11867,7 +11867,7 @@ The Refutation of All Heresies.
    [933] Col. i. 19.
      __________________________________________________________________
 
-   Chapter VII.--MonoÃ¯mus on the Sabbath; Allegorizes the Rod of Moses;
+   Chapter VII.--Monoïmus on the Sabbath; Allegorizes the Rod of Moses;
    Notion Concerning the Decalogue.
 
    The world, then, as Moses says, was made in six days, that is, by six
@@ -11936,7 +11936,7 @@ The Refutation of All Heresies.
    simply altered the disposition of already existing elements. [Gen. i.
    2. See Dr. Chalmers' Astronomical Discourses.]
 
-   [936] It is very much after this allegorical mode that Philo JudÃ¦us
+   [936] It is very much after this allegorical mode that Philo Judæus
    interprets the Mosaic law and history.
 
    [937] [Exod. xii. 17. Comp. 1 Cor. v. 7, 8.]
@@ -11944,10 +11944,10 @@ The Refutation of All Heresies.
    [938] Isa. xl. 6.
      __________________________________________________________________
 
-   Chapter VIII.--MonoÃ¯mus Explains His Opinions in a Letter to
+   Chapter VIII.--Monoïmus Explains His Opinions in a Letter to
    Theophrastus; Where to Find God; His System Derived from Pythagoras.
 
-   MonoÃ¯mus himself, accordingly, in his letter to Theophrastus, expressly
+   Monoïmus himself, accordingly, in his letter to Theophrastus, expressly
    makes the following statement:  "Omitting to seek after God, and
    creation, and things similar to these, seek for Him from (out of)
    thyself, and learn who it is that absolutely appropriates (unto
@@ -11967,7 +11967,7 @@ The Refutation of All Heresies.
    excellent method, [939] as our readers may ascertain by consulting
    those passages (of our work) in which we have previously furnished
    expositions of the entire wisdom of the Greeks. But since the heresy of
-   MonoÃ¯mus has been sufficiently refuted, let us see what are the
+   Monoïmus has been sufficiently refuted, let us see what are the
    fictitious doctrines which the rest also (of these heretics) devise, in
    their desire to set up for themselves an empty name.
      __________________________________________________________________
@@ -11980,7 +11980,7 @@ The Refutation of All Heresies.
    Tatian, [940] however, although being himself a disciple of Justinus
    the Martyr, did not entertain similar opinions with his master. But he
    attempted (to establish) certain novel (tenets), and affirmed that
-   there existed certain invisible Ã†ons. And he framed a legendary account
+   there existed certain invisible Æons. And he framed a legendary account
    (of them), similarly to those (spoken of) by Valentinus. And similarly
    with Marcion, he asserts that marriage is destruction.  But he alleges
    that Adam is not saved on account of his having been the author of
@@ -11988,9 +11988,9 @@ The Refutation of All Heresies.
      __________________________________________________________________
 
    [940] See [vol. i. pp. 353, 457. But see his works, vol. ii. p. 61,
-   this series]; IrenÃ¦us, i. 28; Eusebius, Hist. Ecclesiast., iv. 16, v.
-   13; Epiphanius, HÃ¦r., xlvi.; Jerome, Vir. Illustr., c. xxix.; and
-   Theodoret, HÃ¦r. Fab., i. 20.
+   this series]; Irenæus, i. 28; Eusebius, Hist. Ecclesiast., iv. 16, v.
+   13; Epiphanius, Hær., xlvi.; Jerome, Vir. Illustr., c. xxix.; and
+   Theodoret, Hær. Fab., i. 20.
      __________________________________________________________________
 
    Chapter X.--Hermogenes; Adopts the Socratic Philosophy; His Notion
@@ -12028,10 +12028,10 @@ The Refutation of All Heresies.
    opinions which also Hermogenes attempted to establish.
      __________________________________________________________________
 
-   [941] See [vol. iii. p. 257, also p. 477] Tertullian, PrÃ¦script., c.
+   [941] See [vol. iii. p. 257, also p. 477] Tertullian, Præscript., c.
    xxx.; [vol. iv. p. 245, this series] Origen, Peri arch., i. 2;
-   Eusebius, De PrÃ¦p., vii. 8, 9; St. Augustine, HÃ¦r., lix.; Theodoret,
-   HÃ¦r. Fab., i. 19; and Philastrius, HÃ¦r., lv.
+   Eusebius, De Præp., vii. 8, 9; St. Augustine, Hær., lix.; Theodoret,
+   Hær. Fab., i. 19; and Philastrius, Hær., lv.
 
    [942] Literally, "unadorned."
 
@@ -12059,8 +12059,8 @@ The Refutation of All Heresies.
      __________________________________________________________________
 
    [944] They were therefore called "Quartodecimans."  (See Eusebius,
-   Hist. Ecclesiast., v. c. xxii. xxv.; Epiphanius, HÃ¦r., l.; and
-   Theodoret, HÃ¦r. Fab., iii. 4.)
+   Hist. Ecclesiast., v. c. xxii. xxv.; Epiphanius, Hær., l.; and
+   Theodoret, Hær. Fab., iii. 4.)
 
    [945] [Bunsen, i. p. 105.] The chapter on the Quartodecimans agrees
    with the arguments which, we are informed in an extract from
@@ -12114,9 +12114,9 @@ The Refutation of All Heresies.
    [948] These heretics had several denominations: (1) Phrygians and
    Cataphrygians, from Phrygia; (2) Pepuzians, from a village in Phrygia
    of this name; (3) Priscillianists; (4) Quintillists. See Eusebius,
-   Hist. Ecclesiast., iv. 27, v. 16, 18; Epiphanius, HÃ¦r., xlviii.;
-   Theodoret, HÃ¦r. Fab., iii. 2; Philastrius, xlix.; and St. Augustine,
-   HÃ¦r., xxvi. [The "Tertullianists" were a class by themselves, which is
+   Hist. Ecclesiast., iv. 27, v. 16, 18; Epiphanius, Hær., xlviii.;
+   Theodoret, Hær. Fab., iii. 2; Philastrius, xlix.; and St. Augustine,
+   Hær., xxvi. [The "Tertullianists" were a class by themselves, which is
    a fact going far to encourage the idea that they did not share the
    worst of these delusions.]
 
@@ -12273,8 +12273,8 @@ The Refutation of All Heresies.
      __________________________________________________________________
 
    [960] See Fragments of Hippolytus' Works (p. 235 et seq.), edited by
-   Fabricius; Theodoret, HÃ¦r. Fab., iii. 3; Epiphanius, HÃ¦r., lvii.; and
-   Philastrius, HÃ¦ret., liv. Theodoret mentions Epigonus and Cleomenes,
+   Fabricius; Theodoret, Hær. Fab., iii. 3; Epiphanius, Hær., lvii.; and
+   Philastrius, Hæret., liv. Theodoret mentions Epigonus and Cleomenes,
    and his account is obviously adopted by Hippolytus.
 
    [961] [See Tatian, vol. ii. p. 66, this series.]
@@ -12368,7 +12368,7 @@ The Refutation of All Heresies.
    we neither have seen nor seized, these we carry away.'"
      __________________________________________________________________
 
-   [971] This addition seems necessary from StobÃ¦us' account of
+   [971] This addition seems necessary from Stobæus' account of
    Heraclitus. (See Eclog. Phys., i. 47, where we have Heraclitus
    affirming that "unity is from plurality, and plurality from unity;" or,
    in other words, "that all things are one.")
@@ -12376,9 +12376,9 @@ The Refutation of All Heresies.
    [972] Dr. Wordsworth for dikaion suggests eikaion, i.e., "but that the
    Deity is by chance." There is some difficulty in arriving at the
    correct text, and consequently at the meaning of Hippolytus' extracts
-   from Heraclitus. The Heraclitean philosophy is explained by StobÃ¦us,
+   from Heraclitus. The Heraclitean philosophy is explained by Stobæus,
    already mentioned. See likewise Bernays' "Critical Epistle" in Bunsen's
-   Analect. Ante-NicÃ¦n. (vol. iii. p. 331 et seq. of Hippolytus and his
+   Analect. Ante-Nicæn. (vol. iii. p. 331 et seq. of Hippolytus and his
    Age), and Schleiermacher in Museum der Alterthumswissenschaft, t. i. p.
    408 et seq.
 
@@ -12393,7 +12393,7 @@ The Refutation of All Heresies.
 
    [975] See Lucian, Vit. Auct., vol. i. p. 554, ed. Hemsterh.
 
-   [976] This word seems necessary, see Plutarch, De Procreat. animÃ¦, c.
+   [976] This word seems necessary, see Plutarch, De Procreat. animæ, c.
    xxvii.
 
    [977] This is a well-known anecdote in the life of Homer. See
@@ -12531,7 +12531,7 @@ The Refutation of All Heresies.
    thought agreeable to any individual is mingled with them."
 
    [985] Hippolytus repeats this opinion in his summary in book x.  (See
-   Theodoret, HÃ¦r. Fab., iii. 3.)
+   Theodoret, Hær. Fab., iii. 3.)
      __________________________________________________________________
 
    Chapter VI.--Conduct of Callistus and Zephyrinus in the Matter of
@@ -12624,7 +12624,7 @@ The Refutation of All Heresies.
    Practices; This Sect in Existence in Hippolytus' Time.
 
    Callistus happened to be a domestic of one Carpophorus, a man of the
-   faith belonging to the household of CÃ¦sar. To this Callistus, as being
+   faith belonging to the household of Cæsar. To this Callistus, as being
    of the faith, Carpophorus committed no inconsiderable amount of money,
    and directed him to bring in profitable returns from the banking
    business. And he, receiving the money, tried (the experiment of) a bank
@@ -12927,8 +12927,8 @@ The Refutation of All Heresies.
    into this business. And considering himself a more formidable
    character, and more ingenious in such tricks, than Callistus, he
    repaired to Rome; and he brought some book, alleging that a certain
-   just man, Elchasai, [1018] had received this from SerÃ¦, a town of
-   Parthia, and that he gave it to one called SobiaÃ¯. And the contents of
+   just man, Elchasai, [1018] had received this from Seræ, a town of
+   Parthia, and that he gave it to one called Sobiaï. And the contents of
    this volume, he alleged, had been revealed by an angel whose height was
    24 schoenoi, which make 96 miles, and whose breadth is 4 schoenoi, and
    from shoulder to shoulder 6 schoenoi; and the tracks of his feet extend
@@ -12968,8 +12968,8 @@ The Refutation of All Heresies.
    man.
      __________________________________________________________________
 
-   [1018] See Eusebius, Hist. Ecclesiast., vi. 38; Epiphanius, HÃ¦r, xix.;
-   and Theodoret, HÃ¦r. Fab., ii. 7.
+   [1018] See Eusebius, Hist. Ecclesiast., vi. 38; Epiphanius, Hær, xix.;
+   and Theodoret, Hær. Fab., ii. 7.
 
    [1019] For planethenai Dr. Wordsworth reads platunthenai, i.e., did not
    suffer the heresy to spread wide.
@@ -13358,7 +13358,7 @@ The Refutation of All Heresies.
    slay him if he refuses to undergo the rite of circumcision. Now, if the
    latter does not wish to comply with this request, an Essene spares not,
    but even slaughters. And it is from this occurrence that they have
-   received their appellation, being denominated (by some) ZelotÃ¦, but by
+   received their appellation, being denominated (by some) Zelotæ, but by
    others Sicarii. And the adherents of another party call no one Lord
    except the Deity, even though one should put them to the torture, or
    even kill them. But there are others of a later period, who have to
@@ -13737,7 +13737,7 @@ The Refutation of All Heresies.
    he also delivers six principles of the universe, four of them
    material--earth, water, fire, and air; but two of them
    formative--Friendship and Discord. The followers, however, of
-   Anaxagoras of ClazomenÃ¦, and of Democritus, and of Epicurus, and
+   Anaxagoras of Clazomenæ, and of Democritus, and of Epicurus, and
    multitudes of others, have given it as their opinion that the
    generation of the universe proceeds from infinite numbers of atoms; and
    we have previously made partial mention of these philosophers. But
@@ -13805,9 +13805,9 @@ The Refutation of All Heresies.
    statement belying both.
      __________________________________________________________________
 
-   Chapter VI.--The PeratÃ¦.
+   Chapter VI.--The Peratæ.
 
-   The PeratÃ¦, however, viz., Ademes the Carystian, and Euphrates the
+   The Peratæ, however, viz., Ademes the Carystian, and Euphrates the
    Peratic, say that there is some one world,--this is the denomination
    they use,--and affirming that it is divided into three parts. But of
    the threefold division, according to them, there is one principle, just
@@ -13839,7 +13839,7 @@ The Refutation of All Heresies.
    sent away to be punished. And the Peratic states that there are two
    parts which are saved--that is, those that are situated above--by
    having been separated from corruption, and that the third is destroyed,
-   which he calls a formal world. These also are the tenets of the PeratÃ¦.
+   which he calls a formal world. These also are the tenets of the Peratæ.
      __________________________________________________________________
 
    [1044] Cruice supplies from Theodoret: "and the second which is good is
@@ -13994,7 +13994,7 @@ The Refutation of All Heresies.
    within the Pleroma;" and the second are "those without the Pleroma;"
    and the third, "those without the Limit." Now the generation of these
    constitutes the Hysterema Acamoth. And he asserts that what has been
-   generated from an Ã†on, that exists in the Hysterema and has been
+   generated from an Æon, that exists in the Hysterema and has been
    projected (beyond the Limit), is the Creator.  But Valentinus is not
    disposed to affirm what is thus generated to be primal Deity, but
    speaks in detractive terms both of Him and the things made by Him. And
@@ -14051,18 +14051,18 @@ The Refutation of All Heresies.
    (this Spirit) has in itself the fragrance of the Sonship.
 
    From the conglomeration of all germs of the cosmical seed burst forth
-   and was begotten the Great Archon, the head of the world, an Ã†on of
+   and was begotten the Great Archon, the head of the world, an Æon of
    inexpressible beauty and size. This (Archon) having raised Himself as
    far as the firmament, supposed that there was not another above
    Himself. And accordingly He became more brilliant and powerful than all
-   the underlying Ã†ons, with the exception of the Sonship that had been
+   the underlying Æons, with the exception of the Sonship that had been
    left beneath, but which He was not aware was more wise than Himself.
    This one having His attention turned to the creation of the world,
    first begat a son unto Himself, superior to Himself; and this son He
    caused to sit on His own right hand, and this these Basilidians allege
    is the Ogdoad. The Great Archon Himself, then, produces the entire
    celestial creation. And other Archon ascended from (the conglomeration
-   of) all the germs, who was greater than all the underlying Ã†on, except
+   of) all the germs, who was greater than all the underlying Æon, except
    the Sonship that had been left behind, yet far inferior to the former
    one. And they style this second Archon a Hebdomad.  He is Maker, and
    Creator, and Controller of all things that are beneath Him, and this
@@ -14132,53 +14132,53 @@ The Refutation of All Heresies.
    the foolish Justinus calls this (Edem) Earth.
      __________________________________________________________________
 
-   Chapter XII.--The DocetÃ¦.
+   Chapter XII.--The Docetæ.
 
-   Now the DocetÃ¦ advance assertions of this description: that the primal
+   Now the Docetæ advance assertions of this description: that the primal
    Deity is as a seed of the fig-tree; and that from this proceeded three
-   Ã†ons as the stem, and the leaves and the fruit; and that these
-   projected thirty Ã†ons, each (of them) ten; and that they were all
+   Æons as the stem, and the leaves and the fruit; and that these
+   projected thirty Æons, each (of them) ten; and that they were all
    united in decades, but differed only in positions, as some were before
-   others. And (the DocetÃ¦ assert) that infinite Ã†ons were indefinitely
+   others. And (the Docetæ assert) that infinite Æons were indefinitely
    projected, and that all these were hermaphrodites. And (they say) that
-   these Ã†ons formed a design of simultaneously going together into one
-   Ã†on, and that from this the intermediate Ã†on and from the Virgin Mary
+   these Æons formed a design of simultaneously going together into one
+   Æon, and that from this the intermediate Æon and from the Virgin Mary
    they begot a Saviour of all. And this Redeemer was like in every
    respect to the first seed of the fig-tree, but inferior in this
    respect, from the fact of His having been begotten; for the seed whence
    the fig-tree springs is unbegotten. This, then, was the great light of
-   the Ã†ons--it was entirely radiance--which receives no adornment, and
-   comprises in itself the forms of all animals. And the DocetÃ¦ maintain
+   the Æons--it was entirely radiance--which receives no adornment, and
+   comprises in itself the forms of all animals. And the Docetæ maintain
    that this light, on proceeding into the underlying chaos, afforded a
    cause (of existence) to the things that were produced, and those
    actually existing, and that on coming down from above it impressed on
-   chaos beneath the forms of everlasting species. For the third Ã†on,
+   chaos beneath the forms of everlasting species. For the third Æon,
    which had tripled itself, when he perceives that all his characteristic
    attributes were forcibly drawn off into the nether darkness, and not
    being ignorant both of the terror of darkness and the simplicity of
    light, proceeded to create heaven; and after having rendered firm what
    intervened, He separated the darkness from the light. As all the
-   species of the third Ã†on were, he says, overcome by the darkness, the
-   figure even of this Ã†on became a living fire, having been generated by
+   species of the third Æon were, he says, overcome by the darkness, the
+   figure even of this Æon became a living fire, having been generated by
    light. And from this (source), they allege, was generated the Great
    Archon, regarding whom Moses converses, saying that He is a fiery Deity
-   and Demiurge, who also continually alters the forms of all (Ã†ons) into
-   bodies. And the (DocetÃ¦) allege that these are the souls for whose sake
+   and Demiurge, who also continually alters the forms of all (Æons) into
+   bodies. And the (Docetæ) allege that these are the souls for whose sake
    the Saviour was begotten, and that He points out the way through which
    the souls will escape that are (now) overpowered (by darkness). And
-   (the DocetÃ¦ maintain) that Jesus arrayed Himself in that only-begotten
+   (the Docetæ maintain) that Jesus arrayed Himself in that only-begotten
    power, and that for this reason He could not be seen by any, on account
    of the excessive magnitude of His glory. And they say that all the
    occurrences took place with Him as it has been written in the Gospels.
      __________________________________________________________________
 
-   Chapter XIII.--MonoÃ¯mus.
+   Chapter XIII.--Monoïmus.
 
-   But the followers of MonoÃ¯mus the Arabian assert that the originating
+   But the followers of Monoïmus the Arabian assert that the originating
    principle of the universe is a primal man and son of man; and that, as
    Moses states, the things that have been produced were produced not by
    the primal man, but by the Son of that primal man, yet not by the
-   entire Son, but by part of Him. And (MonoÃ¯mus asserts) that the Son of
+   entire Son, but by part of Him. And (Monoïmus asserts) that the Son of
    man is iota, which stands for ten, the principal number in which is
    (inherent) the subsistence of all number (in general, and) through
    which every number (in particular) consists, as well as the generation
@@ -14192,7 +14192,7 @@ The Refutation of All Heresies.
    and octahedrons, and pyramids, and all figures similar to these, having
    equal superficies, out of which consist fire, air, water, and earth,
    have been produced from numbers comprehended in that simple tittle of
-   the iota, which is Son of man. When, therefore, says (MonoÃ¯mus), Moses
+   the iota, which is Son of man. When, therefore, says (Monoïmus), Moses
    mentions the rod's being brandished for the purpose of bringing the
    plagues upon Egypt, he alludes allegorically to the (alterations of
    the) world of iota; nor did he frame more than ten plagues. If,
@@ -14202,13 +14202,13 @@ The Refutation of All Heresies.
    another (would do) for himself. Understand that this is a perfect one
    arising from (one that is) perfect, and that he considers as his own
    all so-called nonentities and all entities. These, then, are the
-   opinions of MonoÃ¯mus also.
+   opinions of Monoïmus also.
      __________________________________________________________________
 
    Chapter XIV.--Tatian.
 
    Tatian, however, similarly with Valentinus and the others, says that
-   there are certain invisible Ã†ons, and that by some one of these the
+   there are certain invisible Æons, and that by some one of these the
    world below has been created, and the things existing in it. And he
    habituates himself to a very cynical [1050] mode of life, and almost in
    nothing differs from Marcion, as appertaining both to his slanders, and
@@ -14295,9 +14295,9 @@ The Refutation of All Heresies.
    [1053] Or, "the Son;" or, "the Son of Mary" (Cruice).
      __________________________________________________________________
 
-   Chapter XVIII.--The EbionÃ¦ans.
+   Chapter XVIII.--The Ebionæans.
 
-   But the EbionÃ¦ans assert that the world is made by the true God, and
+   But the Ebionæans assert that the world is made by the true God, and
    they speak of Christ in a similar manner with Cerinthus. They live,
    however, in all respects according to the law of Moses, alleging that
    they are thus justified.
@@ -14426,7 +14426,7 @@ The Refutation of All Heresies.
    out of existent things.
      __________________________________________________________________
 
-   [1058] Cruice considers that Theodoret has taken his account (HÃ¦r.
+   [1058] Cruice considers that Theodoret has taken his account (Hær.
    Fab., i. 19) from this tenth book of The Refutation.
      __________________________________________________________________
 
@@ -14481,8 +14481,8 @@ The Refutation of All Heresies.
    are of a studious disposition the love which we cherish towards the
    Divinity, and the indubitable knowledge respecting the Truth, which in
    the course of our labours [1066] we have acquired possession of. But of
-   this Heber the father is Salah; and of this Salah the father is CaÃ¯nan;
-   and of this CaÃ¯nan the father is Arphaxad, whose father is Shem; and of
+   this Heber the father is Salah; and of this Salah the father is Caïnan;
+   and of this Caïnan the father is Arphaxad, whose father is Shem; and of
    this Shem the father is Noah. And in Noah's time there occurred a flood
    throughout the entire world, which neither Egyptians, nor Chaldeans,
    nor Greeks recollect; for the inundations which took place in the age
@@ -14512,8 +14512,8 @@ The Refutation of All Heresies.
    they are intended to be subservient to Hippolytus' Demonstration of the
    Truth, by proving the superior antiquity, as coming down from Abraham,
    of revelation above all pagan philosophy. [See cap. xxvii. infra.] Abbe
-   Cruice refers us to his work (pp. 72-77), Ã‰tudes sur de Nouveaux
-   Documents Historiques empruntÃ©s Ã  L'Ouvrage des philosophoumena, Paris,
+   Cruice refers us to his work (pp. 72-77), Études sur de Nouveaux
+   Documents Historiques empruntés Ã  L'Ouvrage des philosophoumena, Paris,
    1853.
 
    [1060] [Vol. ii. p. 306, this series.]
@@ -14846,14 +14846,14 @@ The Refutation of All Heresies.
    [1084] [Nicene doctrine, ruling out all conditions of time from the
    idea of the generation of the Logos.]
 
-   [1085] autexousios. Hippolytus here follows his master IrenÃ¦us (HÃ¦r.,
+   [1085] autexousios. Hippolytus here follows his master Irenæus (Hær.,
    iv. 9), and in doing so enunciates an opinion, and uses an expression
    adopted universally by patristic writers, up to the period of St.
    Augustine. This great philosopher and divine, however, shook the entire
    fabric of existing theology respecting the will, and started
    difficulties, speculative ones at least, which admit of no solution
    short of the annihilation of finite thought and volition. See
-   translator's Treatise on Metaphysics, chap. x.  [Also compare IrenÃ¦us,
+   translator's Treatise on Metaphysics, chap. x.  [Also compare Irenæus,
    vol. i. p. 518, and Clement, vol. ii. pp. 319 passim to 525; also vol.
    iii. 301, and vol. iv. Tertullian and Origen. See Indexes on
    Free-will.]
@@ -14893,9 +14893,9 @@ The Refutation of All Heresies.
    pephorekota , the reading of the ms., and translates it, "to have put
    on the old man through a new formation."  Sauppe reads pephurekota. See
    Hippolytus, De Antichristo, sec. 26, in Danielem (p. 205, Mai); and
-   IrenÃ¦us, v. 6.
+   Irenæus, v. 6.
 
-   [1095] [See IrenÃ¦us (a very beautiful passage), vol. i. p. 391.]
+   [1095] [See Irenæus (a very beautiful passage), vol. i. p. 391.]
 
    [1096] [See vol. iv. pp. 255 and 383.]
 
@@ -15052,18 +15052,18 @@ The Refutation of All Heresies.
 
    (Caulacau, p. 52.)
 
-   See IrenÃ¦us, p. 350, vol. i., this series, where I have explained this
+   See Irenæus, p. 350, vol. i., this series, where I have explained this
    jargon of heresy. But I think it worth while to make use here of two
    notes on the subject, which I made in 1845, [1109] with little
    foresight of these tasks in 1885.
 
    Fleury (tom. ii.) makes this statement:  "Les Nicolaites donnaient une
-   infinitÃ© de noms barbares aux princes et aux puissances qu'ils
+   infinité de noms barbares aux princes et aux puissances qu'ils
    mettaient en chaque ciel. Ils en nommaient un caulaucauch, abusant d'un
-   passage d'Isaie, oÃ¹ se lisent ces mots hebreux: cau-la-cau, cau-la-cau,
+   passage d'Isaie, où se lisent ces mots hebreux: cau-la-cau, cau-la-cau,
    pour representer l'insolence avec laquelle les impies se moquaient du
-   prophÃ¨te, en rÃ©pÃ©tant plusieurs fois quelques-unes de ses paroles."
-   Compare Guerricus, thus:  "Vox illa tÃ¦dii et desperationis, quÃ¦ apud
+   prophète, en répétant plusieurs fois quelques-unes de ses paroles."
+   Compare Guerricus, thus:  "Vox illa tædii et desperationis, quæ apud
    Isaiam (xxviii. 13) legitur, quia, viz., moram faciente Domino,
    frequentibus nuntiis ejus increduli et illusores insultare videntur:
    manda remanda," etc. See the spurious Bernardina, "de Adventu Dom.,
@@ -15074,7 +15074,7 @@ The Refutation of All Heresies.
    (The Phrygians call Papa, p. 54.)
 
    Hippolytus had little idea, when he wrote this, what the word Papa was
-   destined to signify in mediÃ¦val Rome. The Abba of Holy Writ has its
+   destined to signify in mediæval Rome. The Abba of Holy Writ has its
    equivalent in many Oriental languages, as well as in the Greek and
    Latin, through which it has passed into all the dialects of Europe. It
    was originally given to all presbyters, as implied in their name of
@@ -15086,7 +15086,7 @@ The Refutation of All Heresies.
    Saviour's words (Matt. xxiii.), "Call no man your father upon the
    earth." Thus interpreted, these words seem to be a warning against the
    sense to which this name, Papa, became, long afterwards, restricted, in
-   Western Europe: Notre St. PÃ¨re, le Pape, as they say in France. This
+   Western Europe: Notre St. Père, le Pape, as they say in France. This
    was done by the decree of the ambitious Hildebrand, Gregory VII. (who
    died a.d. 1085), when, in a synod held at Rome, he defined that "the
    title Pope should be peculiar to one only in the Christian world." The
@@ -15163,7 +15163,7 @@ The Refutation of All Heresies.
    preliminary remarks [1115] are excellent. But when he comes to note an
    "exceptional system" in the Roman "presbytery," he certainly confuses
    all things. Let us recur to Tertullian. [1116] See how much was already
-   established in his day, which the Council of NicÃ¦a recognised a century
+   established in his day, which the Council of Nicæa recognised a century
    later as (ta archaia ethe) old primitive institutions. In all things
    the Greek churches were the exemplar and the model for other churches
    to follow. "Throughout the provinces of Greece," he says, "there are
@@ -15255,7 +15255,7 @@ The Refutation of All Heresies.
    (We offered them opposition, p. 125.)
 
    Here we see that Hippolytus had no idea of the sense some put upon the
-   convenire of his master IrenÃ¦us. [1122] It was not "necessary" for them
+   convenire of his master Irenæus. [1122] It was not "necessary" for them
    to conform their doctrines to that of the Bishop of Rome, evidently;
    nor to "the Church of Rome" as represented by him. To the church which
    presided over a province, indeed, recourse was to be had by all
@@ -15350,7 +15350,7 @@ The Refutation of All Heresies.
 
    (Unskilled in ecclesiastical definitions, p. 128.)
 
-   It has been sufficiently demonstrated by the learned DÃ¶llinger, than
+   It has been sufficiently demonstrated by the learned Döllinger, than
    whom a more competent and qualified witness could not be named, that
    the late pontiff, Pius IX., was in this respect, as a bishop, very much
    like Callistus. Moreover, his chief adviser and prime minister,
@@ -15500,7 +15500,7 @@ The Refutation of All Heresies.
    obscure, defile, and destroy the revelations of Holy Scripture, who can
    but wonder at the miracle of orthodoxy? Note with what fidelity the
    good fight of faith was maintained, the depositum preserved, and the
-   Gospel epitomized at last in the NicÃ¦no-Constantinopolitan definitions,
+   Gospel epitomized at last in the Nicæno-Constantinopolitan definitions,
    which Professor Shedd, as I have previously noted, declares to be the
    accepted confession of all the reformed, reputed orthodox, as well as
    of Greeks and Latins. Let us not be surprised, that, during these
@@ -15562,7 +15562,7 @@ The Refutation of All Heresies.
    [1109] I venture to state this to encourage young students to keep pen
    in hand in all their researches, and always to make notes.
 
-   [1110] Pompey and others were called imperatores before the CÃ¦sars, but
+   [1110] Pompey and others were called imperatores before the Cæsars, but
    who includes them with the Roman emperors?
 
    [1111] How St. Peter would regard it, see 1 Pet. v. 1-3. I am sorry to

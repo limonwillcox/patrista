@@ -148,6 +148,18 @@ export function ReadPage() {
   const [hl, setHl] = useState<{ x: number; y: number; para: HTMLElement; range: Range } | null>(null);
   const jumpedRef = useRef<string | null>(null);
 
+  function openChapter(n: number) {
+    setReady((prev) => {
+      if (prev.has(n)) return prev;
+      const next = new Set(prev);
+      next.add(n);
+      return next;
+    });
+    jumpedRef.current = `${workId}:${n}`;
+    const el = document.getElementById("ch-" + n);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   useEffect(() => {
     let cancelled = false;
     setPayload(null);
@@ -384,30 +396,23 @@ export function ReadPage() {
           </div>
         </div>
       </div>
-      <nav className="book-toc" aria-label="Chapters">
-        {payload.chapters.map((p) => {
-          const label = (p.heading || "").replace(/^Book\s+/i, "") || String(p.chapter);
-          return (
-            <a
-              key={p.chapter}
-              href={"#ch-" + p.chapter}
-              onClick={() => {
-                setReady((prev) => {
-                  if (prev.has(p.chapter)) return prev;
-                  const next = new Set(prev);
-                  next.add(p.chapter);
-                  return next;
-                });
-                jumpedRef.current = `${workId}:${p.chapter}`;
-                const el = document.getElementById("ch-" + p.chapter);
-                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-              }}
-            >
-              {label}
-            </a>
-          );
-        })}
-      </nav>
+      {payload.chapters.length > 1 ? (
+        <details className="chapter-index">
+          <summary>Chapters ({payload.chapters.length})</summary>
+          <nav className="chapter-index-list" aria-label="Chapters">
+            {payload.chapters.map((p) => (
+              <a
+                key={p.chapter}
+                href={"#ch-" + p.chapter}
+                title={p.heading}
+                onClick={() => openChapter(p.chapter)}
+              >
+                {p.heading || String(p.chapter)}
+              </a>
+            ))}
+          </nav>
+        </details>
+      ) : null}
       {payload.chapters.map((p) => (
         <section className="book-chapter" id={"ch-" + p.chapter} data-ch={p.chapter} key={p.chapter}>
           <h2 className="heading">{p.heading}</h2>

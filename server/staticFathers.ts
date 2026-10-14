@@ -254,6 +254,23 @@ function jsonScript(data: unknown): string {
   return '<script type="application/ld+json">' + JSON.stringify(data).replace(/</g, "\\u003c") + "</script>";
 }
 
+const WORK_PAGE_CSS = [
+  "body{font-family:Georgia,serif;max-width:42rem;margin:1.5rem auto;padding:0 1rem;line-height:1.55;color:#1a1a1a}",
+  "h1{font-family:system-ui,sans-serif;font-size:1.6rem}",
+  "a{color:#952004}",
+  ".static-kicker{font-family:system-ui,sans-serif}",
+  ".start-reading{display:inline-block;margin:8px 0 16px;padding:12px 20px;background:#952004;color:#fff;font-family:system-ui,sans-serif;font-size:16px;font-weight:700;border-radius:3px;text-decoration:none}",
+  ".start-reading:hover{background:#6f1602;color:#fff}",
+  ".chapter-index{margin:8px 0 0;max-width:36rem}",
+  ".chapter-index>summary{cursor:pointer;list-style:none;font-family:system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#666;user-select:none}",
+  ".chapter-index>summary::-webkit-details-marker{display:none}",
+  '.chapter-index>summary::before{content:"▸";display:inline-block;width:1em;color:#952004;transition:transform .12s ease}',
+  ".chapter-index[open]>summary::before{transform:rotate(90deg)}",
+  ".chapter-index-list{display:block;margin:8px 0 0;padding:4px 0;border:1px solid #d9d9d9;max-height:11em;overflow:auto}",
+  ".chapter-index-list a{display:block;height:2.2em;line-height:2.2em;padding:0 10px;font-family:system-ui,sans-serif;font-size:14px;color:#1a1a1a;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
+  ".chapter-index-list a:hover{background:#f6f6f6;color:#952004}"
+].join("");
+
 export function renderWorkPage(opts: {
   origin: string;
   author: Author;
@@ -288,11 +305,23 @@ export function renderWorkPage(opts: {
       "</p>"
   );
   if (split) {
-    body.push('<nav class="static-toc" aria-label="Contents"><ol>');
+    const first = refs[0]!;
+    body.push('<p><a class="start-reading" href="' + escapeHtml(first.path) + '">Start reading</a></p>');
+    body.push('<details class="chapter-index">');
+    body.push("<summary>Chapters (" + refs.length + ")</summary>");
+    body.push('<nav class="chapter-index-list" aria-label="Chapters">');
     for (const ref of refs) {
-      body.push('<li><a href="' + escapeHtml(ref.path) + '">' + escapeHtml(ref.heading) + "</a></li>");
+      body.push(
+        '<a href="' +
+          escapeHtml(ref.path) +
+          '" title="' +
+          escapeHtml(ref.heading) +
+          '">' +
+          escapeHtml(ref.heading) +
+          "</a>"
+      );
     }
-    body.push("</ol></nav>");
+    body.push("</nav></details>");
   } else if (opts.chapters[0]) {
     body.push('<div class="static-text">');
     body.push(paragraphsHtml(opts.chapters[0]));
@@ -310,7 +339,7 @@ export function renderWorkPage(opts: {
     '  <meta name="description" content="' + escapeHtml(description) + '" />',
     '  <link rel="canonical" href="' + escapeHtml(url) + '" />',
     "  " + jsonScript(ld),
-    "  <style>body{font-family:Georgia,serif;max-width:42rem;margin:1.5rem auto;padding:0 1rem;line-height:1.55;color:#1a1a1a}h1{font-family:system-ui,sans-serif;font-size:1.6rem}a{color:#952004}.static-kicker,.static-toc{font-family:system-ui,sans-serif}.static-toc ol{padding-left:1.2rem}li{margin:0.2rem 0}</style>",
+    "  <style>" + WORK_PAGE_CSS + "</style>",
     "</head>",
     "<body>",
     body.join("\n"),

@@ -397,32 +397,21 @@ export function ReadPage() {
         </div>
       </div>
       {payload.chapters.length > 1 ? (
-        <>
-          <p>
-            <a
-              className="start-reading"
-              href={"#ch-" + payload.chapters[0]!.chapter}
-              onClick={() => openChapter(payload.chapters[0]!.chapter)}
-            >
-              Start reading
-            </a>
-          </p>
-          <details className="chapter-index">
-            <summary>Chapters ({payload.chapters.length})</summary>
-            <nav className="chapter-index-list" aria-label="Chapters">
-              {payload.chapters.map((p) => (
-                <a
-                  key={p.chapter}
-                  href={"#ch-" + p.chapter}
-                  title={p.heading}
-                  onClick={() => openChapter(p.chapter)}
-                >
-                  {p.heading || String(p.chapter)}
-                </a>
-              ))}
-            </nav>
-          </details>
-        </>
+        <details className="chapter-index">
+          <summary>Chapters ({payload.chapters.length})</summary>
+          <nav className="chapter-index-list" aria-label="Chapters">
+            {payload.chapters.map((p) => (
+              <a
+                key={p.chapter}
+                href={"#ch-" + p.chapter}
+                title={p.heading}
+                onClick={() => openChapter(p.chapter)}
+              >
+                {p.heading || String(p.chapter)}
+              </a>
+            ))}
+          </nav>
+        </details>
       ) : null}
       {payload.chapters.map((p) => (
         <section className="book-chapter" id={"ch-" + p.chapter} data-ch={p.chapter} key={p.chapter}>

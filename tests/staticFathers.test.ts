@@ -200,6 +200,8 @@ describe("static chapter and work pages", () => {
     expect(page.path).toBe("/fathers/cyprian/on-the-lapsed.html");
     expect(page.chapterPaths).toHaveLength(0);
     expect(page.html).toContain("Treatise III. The lapsed are called back.");
+    expect(page.html).not.toContain("Start reading");
+    expect(page.html).not.toMatch(/<details class="chapter-index">/);
     expect(page.html.match(/<h1[\s>]/g)).toHaveLength(1);
     expect(page.html).toContain('rel="canonical" href="https://patrista.com/fathers/cyprian/on-the-lapsed.html"');
   });

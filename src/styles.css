@@ -1276,23 +1276,6 @@ html[data-theme="night"] .journal-note-tools button {
   color: var(--muted);
   font-weight: 700;
 }
-.start-reading {
-  display: inline-block;
-  margin: 8px 0 16px;
-  padding: 12px 20px;
-  background: var(--burgundy);
-  color: #fff;
-  font-family: var(--sans);
-  font-size: 16px;
-  font-weight: 700;
-  border-radius: 3px;
-  text-decoration: none;
-}
-.start-reading:hover {
-  background: #6f1602;
-  color: #fff;
-  text-decoration: none;
-}
 .chapter-index {
   margin: 8px 0 0;
   max-width: 36rem;
@@ -1660,8 +1643,7 @@ body.ios-shell .site-footer,
 body.ios-shell .hamburger,
 body.ios-shell .read-toolbar,
 body.ios-shell .book-toc,
-body.ios-shell .chapter-index,
-body.ios-shell .start-reading {
+body.ios-shell .chapter-index {
   display: none !important;
 }
 body.ios-shell .page {

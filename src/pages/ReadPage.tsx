@@ -1,16 +1,11 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { translationsOf } from "../../server/query";
-import type { Passage, WorkPayload } from "../../server/types";
-import { fetchWork } from "../api/client";
+import type { Passage, WorkChapterMeta, WorkOutline } from "../../server/types";
+import { fetchChapter, fetchWork } from "../api/client";
 import { DictionaryDock } from "../components/DictionaryDock";
 import { useApp } from "../context/AppContext";
-import {
-  assignChapterSlugs,
-  chapterNumberForSlug,
-  chapterPublicPath,
-  parseFatherChapterPath
-} from "../lib/fatherPaths";
+import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from "../lib/fatherPaths";
 
 const HL_COLORS = ["hl-yellow", "hl-green", "hl-blue", "hl-pink"] as const;
 
@@ -118,6 +113,15 @@ function saveHighlights(work: string, root: HTMLElement) {
   localStorage.setItem("fg-hl-" + work, JSON.stringify({ v: 2, list }));
 }
 
+function aroundChapter(chapters: WorkChapterMeta[], n: number): number[] {
+  const index = chapters.findIndex((c) => c.chapter === n);
+  if (index < 0) return [];
+  const nums = [chapters[index].chapter];
+  if (index > 0) nums.push(chapters[index - 1].chapter);
+  if (index + 1 < chapters.length) nums.push(chapters[index + 1].chapter);
+  return nums;
+}
+
 function restoreHighlights(work: string, root: HTMLElement) {
   try {
     const raw = JSON.parse(localStorage.getItem("fg-hl-" + work) || "{}") as { v?: number; list?: { key: string; start: number; end: number; color: string }[] };
@@ -141,104 +145,128 @@ export function ReadPage() {
   const [params] = useSearchParams();
   const workId = chapterRoute?.workId || params.get("work") || "confessions";
   const jumpChapter = params.get("chapter") || "";
-  const [payload, setPayload] = useState<WorkPayload | null>(null);
+  const [outline, setOutline] = useState<WorkOutline | null>(null);
+  const [texts, setTexts] = useState<Map<number, Passage>>(new Map());
   const [error, setError] = useState<string | null>(null);
-  const [ready, setReady] = useState<Set<number>>(new Set());
   const pageRef = useRef<HTMLDivElement>(null);
+  const textsRef = useRef(texts);
+  const inflightRef = useRef<Set<number>>(new Set());
+  const generationRef = useRef(0);
   const [hl, setHl] = useState<{ x: number; y: number; para: HTMLElement; range: Range } | null>(null);
   const jumpedRef = useRef<string | null>(null);
-
-  function openChapter(n: number) {
-    setReady((prev) => {
-      if (prev.has(n)) return prev;
-      const next = new Set(prev);
-      next.add(n);
-      return next;
-    });
-    jumpedRef.current = `${workId}:${n}`;
-    const el = document.getElementById("ch-" + n);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  textsRef.current = texts;
 
   useEffect(() => {
-    let cancelled = false;
-    setPayload(null);
+    const generation = generationRef.current + 1;
+    generationRef.current = generation;
+    setOutline(null);
+    setTexts(new Map());
+    textsRef.current = new Map();
+    inflightRef.current = new Set();
+    setError(null);
+    const hashTarget = onChapterRoute ? "" : location.hash.replace(/^#ch-/, "");
+    const hinted = Number(hashTarget || (onChapterRoute ? "" : jumpChapter));
+    if (!onChapterRoute) loadChapter(hinted || 1);
     fetchWork(workId)
       .then((data) => {
-        if (!cancelled) setPayload(data);
+        if (generationRef.current === generation) setOutline(data);
       })
       .catch((err: unknown) => {
-        if (!cancelled) setError(err instanceof Error ? err.message : String(err));
+        if (generationRef.current === generation) setError(err instanceof Error ? err.message : String(err));
       });
     return () => {
-      cancelled = true;
+      if (generationRef.current === generation) generationRef.current += 1;
     };
-  }, [workId]);
+  }, [workId, onChapterRoute, location.hash, jumpChapter]);
 
-  const first = payload?.chapters[0] || null;
   const versions = catalog?.versions || [];
-  const trans = first ? translationsOf(first, versions) : [];
+  const sample = useMemo(() => {
+    if (!outline) return null;
+    for (const ch of outline.chapters) {
+      const passage = texts.get(ch.chapter);
+      if (passage) return passage;
+    }
+    return null;
+  }, [outline, texts]);
+  const trans = sample ? translationsOf(sample, versions) : [];
   const preferred = useMemo(() => {
     if (!trans.length) return version;
     return trans.some((v) => v.id === version) ? version : trans[0].id;
   }, [trans, version]);
 
   const entryChapter = useMemo(() => {
-    if (!payload) return null;
+    if (!outline) return null;
     if (onChapterRoute) {
-      const fromSlug = chapterNumberForSlug(payload.chapters, routeSlug);
+      const fromSlug = chapterNumberForSlug(outline.chapters, routeSlug);
       if (fromSlug) return fromSlug;
     }
     const hashTarget = location.hash.replace(/^#ch-/, "");
     const target = hashTarget || jumpChapter;
     const n = Number(target);
-    if (n && payload.chapters.some((c) => c.chapter === n)) return n;
-    return payload.chapters[0]?.chapter ?? null;
-  }, [payload, onChapterRoute, routeSlug, location.hash, jumpChapter]);
+    if (n && outline.chapters.some((c) => c.chapter === n)) return n;
+    return outline.chapters[0]?.chapter ?? null;
+  }, [outline, onChapterRoute, routeSlug, location.hash, jumpChapter]);
+
+  const loadChapter = useCallback((n: number) => {
+    if (textsRef.current.has(n) || inflightRef.current.has(n)) return;
+    const generation = generationRef.current;
+    inflightRef.current.add(n);
+    fetchChapter(workId, n)
+      .then((passage) => {
+        if (generationRef.current !== generation) return;
+        inflightRef.current.delete(n);
+        setTexts((prev) => {
+          if (prev.has(n)) return prev;
+          const next = new Map(prev);
+          next.set(n, passage);
+          textsRef.current = next;
+          return next;
+        });
+      })
+      .catch(() => {
+        if (generationRef.current === generation) inflightRef.current.delete(n);
+      });
+  }, [workId]);
+
+  const loadAround = useCallback((n: number) => {
+    if (!outline) return;
+    aroundChapter(outline.chapters, n).forEach(loadChapter);
+  }, [outline, loadChapter]);
 
   useEffect(() => {
     if (preferred && preferred !== version) setVersion(preferred);
   }, [preferred, version, setVersion]);
 
   useEffect(() => {
-    setActivePassage(first);
+    const passage = entryChapter != null ? texts.get(entryChapter) || null : null;
+    setActivePassage(passage);
     return () => setActivePassage(null);
-  }, [first, setActivePassage]);
+  }, [entryChapter, texts, setActivePassage]);
 
   useEffect(() => {
-    setReady(new Set());
     jumpedRef.current = null;
   }, [workId]);
 
   useEffect(() => {
-    if (!payload) return;
-    const hashTarget = onChapterRoute ? "" : location.hash.replace(/^#ch-/, "");
-    const target = hashTarget || (onChapterRoute ? "" : jumpChapter);
-    const openCh = Number(target) || entryChapter || payload.chapters[0]?.chapter || 1;
-    setReady((prev) => {
-      const next = new Set(prev);
-      next.add(openCh);
-      if (payload.chapters.some((c) => c.chapter === openCh - 1)) next.add(openCh - 1);
-      if (payload.chapters.some((c) => c.chapter === openCh + 1)) next.add(openCh + 1);
-      return next;
-    });
-  }, [payload, jumpChapter, location.hash, onChapterRoute, entryChapter]);
+    if (entryChapter == null || !texts.has(entryChapter)) return;
+    loadAround(entryChapter);
+  }, [entryChapter, texts, loadAround]);
 
   useLayoutEffect(() => {
-    if (!payload || !onChapterRoute || entryChapter == null) return;
+    if (!outline || !onChapterRoute || entryChapter == null) return;
     const jumpKey = workId + ":path:" + entryChapter;
     if (jumpedRef.current === jumpKey) return;
     const el = document.getElementById("ch-" + entryChapter);
     if (!el) return;
     jumpedRef.current = jumpKey;
     el.scrollIntoView({ behavior: "auto", block: "start" });
-  }, [payload, onChapterRoute, entryChapter, workId]);
+  }, [outline, onChapterRoute, entryChapter, workId]);
 
   useEffect(() => {
-    if (!payload || !onChapterRoute || !pageRef.current) return;
-    const slugs = assignChapterSlugs(payload.chapters);
-    const authorId = payload.work.author;
-    const id = payload.work.id;
+    if (!outline || !onChapterRoute || !pageRef.current) return;
+    const slugs = new Map(outline.chapters.map((c) => [c.chapter, c.slug]));
+    const authorId = outline.work.author;
+    const id = outline.work.id;
     const update = () => {
       const root = pageRef.current;
       if (!root) return;
@@ -275,51 +303,41 @@ export function ReadPage() {
       window.removeEventListener("scroll", onScroll);
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, [payload, onChapterRoute]);
+  }, [outline, onChapterRoute]);
 
   useEffect(() => {
-    if (!payload || !pageRef.current) return;
+    if (!outline || entryChapter == null || !texts.has(entryChapter) || !pageRef.current) return;
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((en) => {
           if (!en.isIntersecting) return;
           const ch = Number((en.target as HTMLElement).dataset.ch);
-          if (ch) {
-            setReady((prev) => {
-              if (prev.has(ch)) return prev;
-              const next = new Set(prev);
-              next.add(ch);
-              return next;
-            });
-          }
+          if (ch) loadAround(ch);
         });
       },
       { rootMargin: "900px 0px" }
     );
     pageRef.current.querySelectorAll(".book-chapter").forEach((sec) => io.observe(sec));
     return () => io.disconnect();
-  }, [payload]);
+  }, [outline, entryChapter, texts, loadAround]);
 
   useEffect(() => {
-    if (onChapterRoute) return;
+    if (onChapterRoute || !outline) return;
     const hashTarget = location.hash.replace(/^#ch-/, "");
     const target = hashTarget || jumpChapter;
     if (!target) return;
     const jumpKey = `${workId}:${target}`;
     if (jumpedRef.current === jumpKey) return;
-
-    const targetNum = Number(target);
-    if (targetNum && !ready.has(targetNum)) return;
-
     const el = document.getElementById("ch-" + target);
-    if (el) {
-      jumpedRef.current = jumpKey;
-      const t = window.setTimeout(() => {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 50);
-      return () => window.clearTimeout(t);
-    }
-  }, [jumpChapter, location.hash, workId, payload, ready, onChapterRoute]);
+    if (!el) return;
+    jumpedRef.current = jumpKey;
+    const n = Number(target);
+    if (n) loadAround(n);
+    const t = window.setTimeout(() => {
+      el.scrollIntoView({ behavior: "auto", block: "start" });
+    }, 50);
+    return () => window.clearTimeout(t);
+  }, [jumpChapter, location.hash, workId, outline, onChapterRoute, loadAround]);
 
   function onMouseUp(e: React.MouseEvent) {
     if (document.body.classList.contains("read-dict-pick")) return;
@@ -347,7 +365,7 @@ export function ReadPage() {
   }
 
   function applyHighlight(color: string) {
-    if (!hl || !payload) return;
+    if (!hl || !outline) return;
     if (!color) {
       hl.para.querySelectorAll(".w").forEach((el) => {
         const text = document.createTextNode(el.textContent || "");
@@ -366,17 +384,17 @@ export function ReadPage() {
         hl.range.insertNode(span);
       }
     }
-    if (pageRef.current) saveHighlights(payload.work.id, pageRef.current);
+    if (pageRef.current) saveHighlights(outline.work.id, pageRef.current);
     window.getSelection()?.removeAllRanges();
     setHl(null);
   }
 
   if (error) return <p className="empty">{error}</p>;
-  if (!payload) return <p className="empty">Loading…</p>;
-  if (!payload.chapters.length) return <p className="empty">This work did not load.</p>;
+  if (!outline) return <p className="empty">Loading…</p>;
+  if (!outline.chapters.length) return <p className="empty">This work did not load.</p>;
 
-  const isConfessions = payload.work.id === "confessions";
-  const unitLabel = isConfessions ? "books" : payload.chapters.length === 1 ? "part" : "chapters";
+  const isConfessions = outline.work.id === "confessions";
+  const unitLabel = isConfessions ? "books" : outline.chapters.length === 1 ? "part" : "chapters";
   const editionNote = preferred ? versionLabel(preferred, versions) : "";
 
   return (
@@ -390,22 +408,32 @@ export function ReadPage() {
           ›
         </span>
         <div>
-          <h1 className="read-title">{payload.work.title}</h1>
+          <h1 className="read-title">{outline.work.title}</h1>
           <div className="version-name">
-            {payload.author.name} · {payload.chapters.length} {unitLabel}
+            {outline.author.name} · {outline.chapters.length} {unitLabel}
           </div>
         </div>
       </div>
-      {payload.chapters.length > 1 ? (
+      {outline.chapters.length > 1 ? (
         <details className="chapter-index">
-          <summary>Chapters ({payload.chapters.length})</summary>
+          <summary>Chapters ({outline.chapters.length})</summary>
           <nav className="chapter-index-list" aria-label="Chapters">
-            {payload.chapters.map((p) => (
+            {outline.chapters.map((p) => (
               <a
                 key={p.chapter}
                 href={"#ch-" + p.chapter}
                 title={p.heading}
-                onClick={() => openChapter(p.chapter)}
+                onClick={(event) => {
+                  event.preventDefault();
+                  loadAround(p.chapter);
+                  jumpedRef.current = `${workId}:${p.chapter}`;
+                  const el = document.getElementById("ch-" + p.chapter);
+                  if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
+                  const hash = "#ch-" + p.chapter;
+                  if (window.location.hash !== hash) {
+                    window.history.replaceState(window.history.state, "", hash);
+                  }
+                }}
               >
                 {p.heading || String(p.chapter)}
               </a>
@@ -413,16 +441,26 @@ export function ReadPage() {
           </nav>
         </details>
       ) : null}
-      {payload.chapters.map((p) => (
-        <section className="book-chapter" id={"ch-" + p.chapter} data-ch={p.chapter} key={p.chapter}>
-          <h2 className="heading">{p.heading}</h2>
-          <ChapterMount workId={payload.work.id}>
-            {ready.has(p.chapter) || p.chapter === entryChapter ? (
-              <ChapterBody passage={p} preferred={preferred} versions={versions} />
-            ) : null}
-          </ChapterMount>
-        </section>
-      ))}
+      {outline.chapters.map((p) => {
+        const passage = texts.get(p.chapter);
+        return (
+          <section
+            className={"book-chapter" + (passage ? "" : " is-unloaded")}
+            id={"ch-" + p.chapter}
+            data-ch={p.chapter}
+            key={p.chapter}
+          >
+            <h2 className="heading">{p.heading}</h2>
+            <ChapterMount workId={outline.work.id}>
+              {passage ? (
+                <ChapterBody passage={passage} preferred={preferred} versions={versions} />
+              ) : (
+                <div className="chapter-placeholder" />
+              )}
+            </ChapterMount>
+          </section>
+        );
+      })}
       <p className="copyright">
         <strong>{editionNote}</strong>
         {isConfessions ? (
@@ -431,11 +469,11 @@ export function ReadPage() {
           </>
         ) : (
           <>
-            . Public-domain English from the Schaff ANF/NPNF editions. Series: {payload.work.series || "Schaff"}.
+            . Public-domain English from the Schaff ANF/NPNF editions. Series: {outline.work.series || "Schaff"}.
           </>
         )}{" "}
         Highlighting is stored only in this browser.{" "}
-        <Link className="read-full" to={"/read?work=" + encodeURIComponent(payload.work.id)}>
+        <Link className="read-full" to={"/read?work=" + encodeURIComponent(outline.work.id)}>
           The whole work
         </Link>
       </p>

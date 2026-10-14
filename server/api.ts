@@ -1,8 +1,9 @@
 import { getBibleChapterPayload, getBibleManifest } from "./bible";
 import { getLibrary, repoRoot } from "./corpus";
 import { authorById, parseQuery, searchKeyword, workById } from "./query";
-import type { ApiResult, Passage, WorkPayload } from "./types";
+import type { ApiResult, Passage, WorkOutline, WorkPayload } from "./types";
 import { bibleRef, bookById, loadBooks } from "../src/links/books";
+import { assignChapterSlugs } from "../src/lib/fatherPaths";
 import { loadLinkStore, type LinkStore } from "../src/links/store";
 
 export function getCatalog() {
@@ -19,6 +20,21 @@ export function getWork(workId: string): WorkPayload | null {
     .filter((p) => p.work === work.id)
     .sort((a, b) => a.chapter - b.chapter);
   return { work, author, chapters };
+}
+
+export function getWorkOutline(workId: string): WorkOutline | null {
+  const payload = getWork(workId);
+  if (!payload) return null;
+  const slugs = assignChapterSlugs(payload.chapters);
+  return {
+    work: payload.work,
+    author: payload.author,
+    chapters: payload.chapters.map((ch) => ({
+      chapter: ch.chapter,
+      heading: ch.heading,
+      slug: slugs.get(ch.chapter) || "chapter-" + ch.chapter
+    }))
+  };
 }
 
 export function getChapter(workId: string, chapter: number): Passage | null {
@@ -69,12 +85,20 @@ export function handleApiRequest(urlOrPath: string): ApiResult {
     return { status: 200, json: chapter };
   }
 
-  const workMatch = path.match(/^\/api\/works\/([^/]+)$/);
-  if (workMatch) {
-    const workId = decodeURIComponent(workMatch[1]);
+  const textMatch = path.match(/^\/api\/works\/([^/]+)\/text$/);
+  if (textMatch) {
+    const workId = decodeURIComponent(textMatch[1]);
     const payload = getWork(workId);
     if (!payload) return { status: 404, json: { error: "Work not found" } };
     return { status: 200, json: payload };
+  }
+
+  const workMatch = path.match(/^\/api\/works\/([^/]+)$/);
+  if (workMatch) {
+    const workId = decodeURIComponent(workMatch[1]);
+    const outline = getWorkOutline(workId);
+    if (!outline) return { status: 404, json: { error: "Work not found" } };
+    return { status: 200, json: outline };
   }
 
   if (path === "/api/search") {

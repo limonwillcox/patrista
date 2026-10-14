@@ -155,10 +155,25 @@ describe("Existing routes remain intact", () => {
     expect((res.json as { works: unknown[] }).works.length).toBeGreaterThan(0);
   }, 60_000);
 
-  it("GET /api/works/:id is unchanged", () => {
+  it("GET /api/works/:id returns an outline without chapter text", () => {
     const res = handleApiRequest("/api/works/confessions");
     expect(res.status).toBe(200);
-    expect((res.json as { work: { id: string } }).work.id).toBe("confessions");
+    const json = res.json as {
+      work: { id: string };
+      chapters: { chapter: number; heading: string; slug: string; versions?: unknown }[];
+    };
+    expect(json.work.id).toBe("confessions");
+    expect(json.chapters.length).toBeGreaterThan(5);
+    expect(json.chapters[0]?.heading).toBeTruthy();
+    expect(json.chapters[0]?.slug).toBeTruthy();
+    expect(json.chapters[0]?.versions).toBeUndefined();
+  });
+
+  it("GET /api/works/:id/text still returns full passages", () => {
+    const res = handleApiRequest("/api/works/confessions/text");
+    expect(res.status).toBe(200);
+    const json = res.json as { chapters: { versions: { pusey: string[] } }[] };
+    expect(json.chapters[0]?.versions.pusey.join(" ").length).toBeGreaterThan(40);
   });
 
   it("GET /api/search is unchanged", () => {

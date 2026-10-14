@@ -1,5 +1,5 @@
 import { parseQuery, searchKeyword } from "../../server/query";
-import type { Catalog, Passage, SearchHit, Query, WorkPayload } from "../../server/types";
+import type { Catalog, Passage, SearchHit, Query, WorkOutline, WorkPayload } from "../../server/types";
 import { fetchRemoteBibleVerses } from "./bibleApi";
 
 export function jsonFallbackPath(path: string): string | null {
@@ -23,12 +23,24 @@ export function fetchCatalog(): Promise<Catalog> {
   return getJson<Catalog>("/api/catalog");
 }
 
-export function fetchWork(id: string): Promise<WorkPayload> {
-  return getJson<WorkPayload>("/api/works/" + encodeURIComponent(id));
+export function fetchWork(id: string): Promise<WorkOutline> {
+  return getJson<WorkOutline>("/api/works/" + encodeURIComponent(id));
+}
+
+/** Full passages for the static-site search fallback. The reader does not call this. */
+export function fetchWorkText(id: string): Promise<WorkPayload> {
+  return getJson<WorkPayload>("/api/works/" + encodeURIComponent(id) + "/text");
+}
+
+/** Extensionless in dev (Vite API). The built file on a static host. */
+export function chapterFetchPath(workId: string, chapter: number, dev = import.meta.env.DEV): string {
+  const extensionless = "/api/works/" + encodeURIComponent(workId) + "/chapters/" + chapter;
+  if (dev) return extensionless;
+  return jsonFallbackPath(extensionless) ?? extensionless;
 }
 
 export function fetchChapter(workId: string, chapter: number): Promise<Passage> {
-  return getJson<Passage>("/api/works/" + encodeURIComponent(workId) + "/chapters/" + chapter);
+  return getJson<Passage>(chapterFetchPath(workId, chapter));
 }
 
 export type BibleManifestBook = { id: string; name: string; chapters: number };
@@ -98,8 +110,21 @@ export async function fetchSearch(q: string): Promise<{ query: Query; hits: Sear
   const passages: Passage[] = [];
   for (const w of catalog.works) {
     try {
-      const payload = await fetchWork(w.id);
+      const payload = await fetchWorkText(w.id);
       passages.push(...payload.chapters);
+      continue;
+    } catch {
+      /* outline-only deploy: read each chapter file */
+    }
+    try {
+      const outline = await fetchWork(w.id);
+      for (const ch of outline.chapters) {
+        try {
+          passages.push(await fetchChapter(w.id, ch.chapter));
+        } catch {
+          /* skip a missing chapter */
+        }
+      }
     } catch {
       /* skip missing work JSON */
     }

@@ -123,6 +123,19 @@ export type WorkPayload = {
   chapters: Passage[];
 };
 
+/** Reader index: chapter identity only. Passage text stays on fetchChapter. */
+export type WorkChapterMeta = {
+  chapter: number;
+  heading: string;
+  slug: string;
+};
+
+export type WorkOutline = {
+  work: Work;
+  author: Author;
+  chapters: WorkChapterMeta[];
+};
+
 export type ApiResult = {
   status: number;
   json: unknown;

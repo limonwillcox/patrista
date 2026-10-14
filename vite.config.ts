@@ -1,7 +1,7 @@
 /// <reference types="vitest/config" />
 import { copyFileSync, createReadStream, cpSync, existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "fs";
 import type { IncomingMessage, ServerResponse } from "http";
-import { getCatalog, getWork } from "./server/api";
+import { getCatalog, getWork, getWorkOutline } from "./server/api";
 import {
   CHURCH_HISTORY_CANONICAL_PATH,
   CHURCH_HISTORY_DESCRIPTION,
@@ -239,9 +239,17 @@ function extrasPlugin() {
 
       for (const w of catalog.works) {
         const payload = getWork(w.id);
-        if (!payload) continue;
-        writeFileSync(join(worksDir, w.id + ".json"), JSON.stringify(payload));
+        const outline = getWorkOutline(w.id);
+        if (!payload || !outline) continue;
+        writeFileSync(join(worksDir, w.id + ".json"), JSON.stringify(outline));
+        writeFileSync(join(worksDir, w.id + ".text.json"), JSON.stringify(payload));
         redirectLines.push("/api/works/" + w.id + "  /api/works/" + w.id + ".json  200");
+        redirectLines.push("/api/works/" + w.id + "/text  /api/works/" + w.id + ".text.json  200");
+        const chapterDir = join(worksDir, w.id, "chapters");
+        mkdirSync(chapterDir, { recursive: true });
+        for (const chapter of payload.chapters) {
+          writeFileSync(join(chapterDir, chapter.chapter + ".json"), JSON.stringify(chapter));
+        }
       }
 
       const directory = writeFatherDirectoryPages(dist, shell, catalog, SITE_ORIGIN, FATHER_IMAGES);

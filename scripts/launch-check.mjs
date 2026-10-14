@@ -58,12 +58,8 @@ else {
   console.log("CHAPTERS", chapters.length);
   if (chapters.length < 5) fail("expected multiple Confessions books, got " + chapters.length);
   const ch1 = chapters.find((c) => c.chapter === 1) || chapters[0];
-  const pusey = (ch1.versions?.pusey || []).join(" ");
-  const latin = (ch1.versions?.lat || []).join(" ");
-  if (!/great art thou/i.test(pusey) && pusey.length < 40) fail("Pusey English missing from chapter 1");
-  if (!/Magnus es/i.test(latin)) fail("Latin Magnus es missing from chapter 1");
-  console.log("PUSEY_OPEN", pusey.slice(0, 70));
-  console.log("LATIN_OPEN", latin.slice(0, 70));
+  if (ch1.versions) fail("work outline should not include chapter text");
+  if (!ch1.heading || !ch1.slug) fail("work outline missing heading or slug");
 }
 
 const ch = await get("/api/works/confessions/chapters/1");

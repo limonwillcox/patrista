@@ -1343,6 +1343,13 @@ html[data-theme="night"] .journal-note-tools button {
   content-visibility: auto;
   contain-intrinsic-size: auto 360px;
 }
+.book-chapter.is-unloaded {
+  content-visibility: visible;
+  contain-intrinsic-size: none;
+}
+.chapter-placeholder {
+  height: 360px;
+}
 .book-chapter:first-of-type { border-top: 0; margin-top: 12px; }
 .chap-kicker {
   font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;

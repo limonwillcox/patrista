@@ -1,6 +1,10 @@
 import { existsSync, readdirSync, readFileSync } from "fs";
 import { join } from "path";
+import { isLinkDumpParagraph, trimTrailingJunk, uniqueChapterHeadings } from "./chapterQuality";
 import type { Author, Footnote, Passage, Work } from "./types";
+
+export type JunkTrimNote = { id: string; author: string; title: string; cut: number; reason: string };
+export const junkTrimLog: JunkTrimNote[] = [];
 
 export type ChunkMode = "book" | "chapter" | "sermon" | "letter" | "homily";
 
@@ -66,7 +70,8 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
   "wars-of-the-jews": { chunk: "blob" },
   "against-apion": { chunk: "blob" },
   "life-of-flavius-josephus": { chunk: "blob" },
-  "discourse-to-the-greeks-concerning-hades": { chunk: "blob", authorshipDisputed: true }
+  "discourse-to-the-greeks-concerning-hades": { chunk: "blob", authorshipDisputed: true },
+  "homilies-on-matthew": { chunk: "homily", expectUnits: 90 }
 };
 
 /** Skip these under *_English (already shipped elsewhere, or non-Schaff). */
@@ -141,11 +146,14 @@ const AUTHOR_META: Record<string, AuthorMeta> = {
 };
 
 const BOOK_NUM = "([IVXLCDM]+|\\d+|First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth)";
-const BOOK_RE = new RegExp("^\\s*Book\\s+" + BOOK_NUM + "\\s*[\\.\\—\\-.]", "im");
+const BOOK_RE = new RegExp(
+  "^\\s*Book\\s+" + BOOK_NUM + "(?:\\s*\\[\\d+\\])?\\s*[\\.\\—\\-.](?:\\s*\\[\\d+\\])?(?:\\s*--.{0,80})?\\s*$",
+  "im"
+);
 const CHAPTER_RE = /^\s*Chapter\s+([IVXLCDM]+|\d+)\s*[\.—\-.]/im;
 const SERMON_RE = /^\s*Sermon\s+([IVXLCDM]+|\d+)\s*\./im;
 const LETTER_RE = /^\s*Letter\s+([IVXLCDM]+|\d+)\s*[\.\:\-]/im;
-const HOMILY_RE = /^\s*Homily\s+([IVXLCDM]+|\d+)\s*[\.\:\-]/im;
+const HOMILY_RE = /^\s*Homily\s+([IVXLCDM]+|\d+)\s*\.(?:\s*\[\d+\])?\s*$/im;
 
 function slugify(s: string): string {
   return s
@@ -203,6 +211,7 @@ export function stripEditorialSections(block: string): string {
   for (const line of lines) {
     if (RULE_LINE_RE.test(line)) continue;
     if (/ccel\.org/i.test(line)) continue;
+    if (/file:\/\//i.test(line)) continue;
     if (/^\s*[a-z0-9_]+(?:[ _-][a-z0-9_]+)+\s+anf\d+\b/i.test(line)) continue;
     if (EDITORIAL_HEADING_RE.test(line)) {
       skipping = TERMINAL_EDITORIAL_RE.test(line) ? "end" : "until";
@@ -517,6 +526,7 @@ export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: W
           footnotes: chunkNotes
         });
       }
+      applyPassageCleanup(spec, passages);
       return { work: workFromSpec(spec, passages), passages };
     }
     const blobPassages: Passage[] = [
@@ -528,6 +538,7 @@ export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: W
         footnotes
       }
     ];
+    applyPassageCleanup(spec, blobPassages);
     return { work: workFromSpec(spec, blobPassages), passages: blobPassages };
   }
 
@@ -544,6 +555,7 @@ export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: W
         footnotes
       }
     ];
+    applyPassageCleanup(spec, blobPassages);
     return { work: workFromSpec(spec, blobPassages), passages: blobPassages };
   }
 
@@ -580,6 +592,8 @@ export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: W
     });
   }
 
+  applyPassageCleanup(spec, passages);
+
   if (spec.expectUnits != null && passages.length !== spec.expectUnits) {
     throw new Error(
       spec.id + ": expected " + spec.expectUnits + " " + mode + " units, found " + passages.length
@@ -589,7 +603,53 @@ export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: W
   return { work: workFromSpec(spec, passages), passages };
 }
 
+function englishVersionId(passage: Passage): string | undefined {
+  return Object.keys(passage.versions).find((id) => id !== "lat" && id !== "grk");
+}
+
+function applyPassageCleanup(spec: EnglishWorkSpec, passages: Passage[]): void {
+  if (!passages.length) return;
+  for (const passage of passages) {
+    const versionId = englishVersionId(passage);
+    if (!versionId || !passage.versions[versionId]) continue;
+    const trimmed = trimTrailingJunk(passage.versions[versionId]);
+    if (trimmed.cut > 0) {
+      passage.versions[versionId] = trimmed.paras;
+      junkTrimLog.push({
+        id: spec.id,
+        author: spec.author,
+        title: spec.title,
+        cut: trimmed.cut,
+        reason: trimmed.reason
+      });
+    }
+  }
+  while (passages.length > 1) {
+    const last = passages[passages.length - 1];
+    const versionId = englishVersionId(last);
+    const left = versionId ? (last.versions[versionId] || []).filter((p) => p.trim()) : [];
+    if (left.length === 0 || left.every(isLinkDumpParagraph)) {
+      junkTrimLog.push({
+        id: spec.id,
+        author: spec.author,
+        title: spec.title,
+        cut: left.length,
+        reason: "dropped leftover junk unit"
+      });
+      passages.pop();
+      continue;
+    }
+    break;
+  }
+  const labels = uniqueChapterHeadings(passages);
+  for (const p of passages) {
+    const label = labels.get(p.chapter);
+    if (label) p.heading = label;
+  }
+}
+
 export function loadEnglishAppWorks(root: string): { works: Work[]; passages: Passage[]; authors: Author[] } {
+  junkTrimLog.length = 0;
   const specs = discoverEnglishWorkSpecs(root);
   const works: Work[] = [];
   const passages: Passage[] = [];
@@ -613,6 +673,7 @@ export function loadEnglishAppWorks(root: string): { works: Work[]; passages: Pa
           footnotes
         }
       ];
+      applyPassageCleanup(spec, fallback);
       works.push(workFromSpec(spec, fallback));
       passages.push(...fallback);
     }

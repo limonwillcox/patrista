@@ -47,11 +47,16 @@ export function ChapterDock({
 
   if (chapters.length <= 1 || !current) return null;
 
-  function openList() {
-    setOpen(true);
+  function toggleList() {
+    setOpen((was) => !was);
   }
 
   function jump(n: number) {
+    if (n === current.chapter) {
+      setOpen(false);
+      queueMicrotask(() => currentBtn.current?.focus());
+      return;
+    }
     onJump(n);
     setOpen(false);
     queueMicrotask(() => currentBtn.current?.focus());
@@ -60,7 +65,7 @@ export function ChapterDock({
   return (
     <div className="read-chapter-dock">
       <div className="read-chapter-field">
-        <button type="button" className="read-dict-label" onClick={openList} aria-expanded={open}>
+        <button type="button" className="read-dict-label" onClick={toggleList} aria-expanded={open}>
           Chapters
         </button>
         <div className="read-chapter-bar">
@@ -79,7 +84,7 @@ export function ChapterDock({
             ref={currentBtn}
             aria-expanded={open}
             aria-controls="read-chapter-list"
-            onClick={openList}
+            onClick={toggleList}
           >
             {chapterDockLabel(current.heading, current.chapter)}
           </button>

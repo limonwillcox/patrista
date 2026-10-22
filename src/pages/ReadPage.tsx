@@ -5,7 +5,6 @@ import type { Passage, WorkChapterMeta, WorkOutline } from "../../server/types";
 import { fetchChapter, fetchWork } from "../api/client";
 import { ChapterDock } from "../components/ChapterDock";
 import { DictionaryDock } from "../components/DictionaryDock";
-import { WorkDownload } from "../components/WorkDownload";
 import { useApp } from "../context/AppContext";
 import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from "../lib/fatherPaths";
 import { chapterAtReadingLine } from "../lib/readDocks";
@@ -473,10 +472,7 @@ export function ReadPage() {
       </div>
       <div className="read-toolbar">
         <div>
-          <div className="read-title-row">
-            <h1 className="read-title">{outline.work.title}</h1>
-            <WorkDownload outline={outline} version={preferred} versions={versions} />
-          </div>
+          <h1 className="read-title">{outline.work.title}</h1>
           <div className="version-name">
             {outline.author.name} · {outline.chapters.length} {unitLabel}
           </div>

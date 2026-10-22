@@ -8,6 +8,7 @@ import {
   type DictionaryMode,
   type WebsterEntry
 } from "../lib/dictionary";
+import { announceReadDock, subscribeReadDock } from "../lib/readDocks";
 
 export function DictionaryDock({ workId }: { workId?: string }) {
   const [mode, setMode] = useState<DictionaryMode>("idle");
@@ -18,6 +19,22 @@ export function DictionaryDock({ workId }: { workId?: string }) {
   useEffect(() => {
     document.body.classList.toggle("read-dict-pick", mode === "pick");
     return () => document.body.classList.remove("read-dict-pick");
+  }, [mode]);
+
+  useEffect(
+    () =>
+      subscribeReadDock((dock) => {
+        if (dock === "chapter") {
+          setMode("idle");
+          setEntry(null);
+          setQuery("");
+        }
+      }),
+    []
+  );
+
+  useEffect(() => {
+    if (mode === "pick" || mode === "show") announceReadDock("dictionary");
   }, [mode]);
 
   useEffect(() => {
@@ -60,6 +77,7 @@ export function DictionaryDock({ workId }: { workId?: string }) {
       setEntry(null);
       setQuery("");
     }
+    if (next === "pick") announceReadDock("dictionary");
     setMode(next);
   }
 

@@ -3,9 +3,11 @@ import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { translationsOf } from "../../server/query";
 import type { Passage, WorkChapterMeta, WorkOutline } from "../../server/types";
 import { fetchChapter, fetchWork } from "../api/client";
+import { ChapterDock } from "../components/ChapterDock";
 import { DictionaryDock } from "../components/DictionaryDock";
 import { useApp } from "../context/AppContext";
 import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from "../lib/fatherPaths";
+import { chapterAtReadingLine } from "../lib/readDocks";
 
 const HL_COLORS = ["hl-yellow", "hl-green", "hl-blue", "hl-pink"] as const;
 
@@ -151,14 +153,17 @@ export function ReadPage() {
   const pageRef = useRef<HTMLDivElement>(null);
   const textsRef = useRef(texts);
   const inflightRef = useRef<Set<number>>(new Set());
+  const inflightPromises = useRef(new Map<number, Promise<void>>());
   const generationRef = useRef(0);
   const [hl, setHl] = useState<{ x: number; y: number; para: HTMLElement; range: Range } | null>(null);
+  const [currentChapter, setCurrentChapter] = useState(1);
   const jumpedRef = useRef<string | null>(null);
   const pendingJump = useRef<number | null>(null);
   textsRef.current = texts;
 
   function jumpToChapter(n: number) {
     pendingJump.current = n;
+    setCurrentChapter(n);
     loadAround(n);
     jumpedRef.current = `${workId}:${n}`;
     const el = document.getElementById("ch-" + n);
@@ -176,6 +181,7 @@ export function ReadPage() {
     setTexts(new Map());
     textsRef.current = new Map();
     inflightRef.current = new Set();
+    inflightPromises.current = new Map();
     setError(null);
     const hashTarget = onChapterRoute ? "" : location.hash.replace(/^#ch-/, "");
     const hinted = Number(hashTarget || (onChapterRoute ? "" : jumpChapter));
@@ -221,10 +227,12 @@ export function ReadPage() {
   }, [outline, onChapterRoute, routeSlug, location.hash, jumpChapter]);
 
   const loadChapter = useCallback((n: number) => {
-    if (textsRef.current.has(n) || inflightRef.current.has(n)) return;
+    if (textsRef.current.has(n)) return Promise.resolve();
+    const existing = inflightPromises.current.get(n);
+    if (existing) return existing;
     const generation = generationRef.current;
     inflightRef.current.add(n);
-    fetchChapter(workId, n)
+    const pending = fetchChapter(workId, n)
       .then((passage) => {
         if (generationRef.current !== generation) return;
         inflightRef.current.delete(n);
@@ -238,7 +246,12 @@ export function ReadPage() {
       })
       .catch(() => {
         if (generationRef.current === generation) inflightRef.current.delete(n);
+      })
+      .finally(() => {
+        inflightPromises.current.delete(n);
       });
+    inflightPromises.current.set(n, pending);
+    return pending;
   }, [workId]);
 
   const loadAround = useCallback((n: number) => {
@@ -276,7 +289,13 @@ export function ReadPage() {
   }, [outline, onChapterRoute, entryChapter, workId]);
 
   useEffect(() => {
-    if (!outline || !onChapterRoute || !pageRef.current) return;
+    if (!outline) return;
+    if (entryChapter != null) setCurrentChapter(entryChapter);
+    else if (outline.chapters[0]) setCurrentChapter(outline.chapters[0].chapter);
+  }, [outline, entryChapter]);
+
+  useEffect(() => {
+    if (!outline || !pageRef.current) return;
     const slugs = new Map(outline.chapters.map((c) => [c.chapter, c.slug]));
     const authorId = outline.work.author;
     const id = outline.work.id;
@@ -286,15 +305,13 @@ export function ReadPage() {
       const line = window.innerHeight * 0.33;
       const sections = root.querySelectorAll<HTMLElement>(".book-chapter");
       if (!sections.length) return;
-      let containing: HTMLElement | null = null;
-      let above: HTMLElement | null = null;
-      sections.forEach((sec) => {
+      const rects = Array.from(sections).map((sec) => {
         const rect = sec.getBoundingClientRect();
-        if (rect.top <= line && rect.bottom > line) containing = sec;
-        if (rect.top <= line) above = sec;
+        return { chapter: Number(sec.dataset.ch), top: rect.top, bottom: rect.bottom };
       });
-      const current = containing || above || sections[0];
-      const n = Number(current.dataset.ch);
+      const n = chapterAtReadingLine(rects, line);
+      if (n != null) setCurrentChapter(n);
+      if (!onChapterRoute || n == null) return;
       const slug = slugs.get(n);
       if (!slug) return;
       const path = chapterPublicPath(authorId, id, slug);
@@ -449,14 +466,11 @@ export function ReadPage() {
 
   return (
     <div ref={pageRef} onMouseUp={onMouseUp}>
-      <DictionaryDock workId={workId} />
+      <div className="read-docks">
+        <ChapterDock chapters={outline.chapters} currentChapter={currentChapter} onJump={jumpToChapter} />
+        <DictionaryDock workId={workId} />
+      </div>
       <div className="read-toolbar">
-        <span className="nav-chap" style={{ opacity: 0.35, display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
-          ‹
-        </span>
-        <span className="nav-chap" style={{ opacity: 0.35, display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
-          ›
-        </span>
         <div>
           <h1 className="read-title">{outline.work.title}</h1>
           <div className="version-name">

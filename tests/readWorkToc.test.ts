@@ -12,4 +12,11 @@ describe("in-app work chapter index", () => {
     expect(src).not.toContain("start-reading");
     expect(src).toContain('className="chapter-index"');
   });
+
+  it("mounts ChapterDock in a shared read-docks stack and drops inert toolbar nav", () => {
+    const src = readFileSync(join(here, "../src/pages/ReadPage.tsx"), "utf8");
+    expect(src).toContain("ChapterDock");
+    expect(src).toContain('className="read-docks"');
+    expect(src).not.toMatch(/className="nav-chap"/);
+  });
 });

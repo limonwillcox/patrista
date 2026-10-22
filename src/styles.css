@@ -826,6 +826,7 @@ html[data-theme="night"] .starter-card--soon {
   pointer-events: auto;
 }
 .read-dict-label {
+  font-family: var(--sans);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -839,12 +840,13 @@ button.read-dict-label {
   padding: 0;
   text-align: left;
   cursor: pointer;
-  font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-  color: inherit;
-  font-size: inherit;
-  font-weight: inherit;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: inherit;
 }
 .read-dict-bar {
   display: flex;

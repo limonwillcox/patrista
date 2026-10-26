@@ -22,6 +22,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/read" element={<ReadPage />} />
+          <Route path="/augustines-confessions" element={<ReadPage />} />
           <Route path="/fathers" element={<FathersPage />} />
           <Route path="/fathers/:authorId" element={<FathersPage />} />
           <Route path="/fathers/:authorId/:workId/:chapterSlug" element={<ReadPage />} />

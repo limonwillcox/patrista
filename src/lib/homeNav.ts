@@ -20,7 +20,7 @@ export type LandingNavItem = {
 
 /** Hero tiles on `/`. Timeline stays on the rail; Fathers takes its home slot. */
 export const LANDING_NAV: readonly LandingNavItem[] = [
-  { id: "read", href: "/read", label: "Read" },
+  { id: "read", href: "/augustines-confessions", label: "Read" },
   { id: "bible", href: "/bible", label: "Bible" },
   { id: "browse", href: "/church-fathers", label: "Browse", featured: true },
   { id: "fathers", href: "/fathers/", label: "Fathers" },

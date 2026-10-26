@@ -45,7 +45,7 @@ describe("landing hero nav tiles", () => {
 
   it("uses the same hrefs as the rail and omits Home, Give, and Fixes", () => {
     expect(LANDING_NAV.map((item) => item.href)).toEqual([
-      "/read",
+      "/augustines-confessions",
       "/bible",
       "/church-fathers",
       "/fathers/",

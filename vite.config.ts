@@ -225,6 +225,11 @@ function extrasPlugin() {
         "/church-fathers  /church-fathers/index.html  200",
         "/church-fathers/  /church-fathers/index.html  200"
       ];
+      // Renamed works: keep old static URLs working.
+      redirectLines.push(
+        "/fathers/didache/teaching-of-the-twelve-apostles.html  /fathers/didache/didache.html  301",
+        "/fathers/didache/teaching-of-the-twelve-apostles/*  /fathers/didache/didache/:splat  301"
+      );
       const sitemapUrls = [
         SITE_ORIGIN + "/",
         SITE_ORIGIN + CHURCH_FATHERS_CANONICAL_PATH,

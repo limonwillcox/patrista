@@ -22,7 +22,7 @@ export type EnglishWorkSpec = {
 const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
   "city-of-god": { chunk: "book", expectUnits: 22 },
   "concerning-virgins": { chunk: "chapter" },
-  "teaching-of-the-twelve-apostles": {
+  didache: {
     chunk: "chapter",
     expectUnits: 16,
     endAt: /^\s*Elucidations\.?\s*$/im

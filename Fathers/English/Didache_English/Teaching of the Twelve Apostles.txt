@@ -2,7 +2,7 @@
 # series: ANF
 # volume: Volume VII.
 # father: didache
-# work: Teaching of the Twelve Apostles
+# work: Didache
 # latin_match_candidate: (none)
 # extracted: 2026-09-01
 # note: Public-domain Schaff English extract. Volume archives retained under ANF/NPNF1/NPNF2.

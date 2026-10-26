@@ -5,6 +5,7 @@ import type { Passage, WorkChapterMeta, WorkOutline } from "../../server/types";
 import { fetchChapter, fetchWork } from "../api/client";
 import { ChapterDock } from "../components/ChapterDock";
 import { DictionaryDock } from "../components/DictionaryDock";
+import { HardcoverDock } from "../components/HardcoverDock";
 import { useApp } from "../context/AppContext";
 import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from "../lib/fatherPaths";
 import { chapterAtReadingLine } from "../lib/readDocks";
@@ -476,6 +477,7 @@ export function ReadPage() {
           <div className="version-name">
             {outline.author.name} · {outline.chapters.length} {unitLabel}
           </div>
+          <HardcoverDock />
         </div>
       </div>
       {outline.chapters.length > 1 ? (

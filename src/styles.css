@@ -5727,41 +5727,22 @@ html[data-theme="night"] .fathers-hero-credit {
   color: #f3e2a8;
 }
 
-/* Hardcover placeholder: left gutter under the logo on wide screens, inline row otherwise */
+/* Hardcover placeholder: left gutter under the logo on wide screens, hidden otherwise */
 .read-hardcover-dock {
-  margin-top: 8px;
-}
-.read-hardcover-dock .read-dict-field {
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-}
-.read-hardcover-bar {
-  width: auto;
-  min-height: 28px;
-  padding: 3px 10px;
-  font-size: 14px;
-  cursor: default;
+  display: none;
 }
 @media (min-width: 1280px) {
   .read-hardcover-dock {
+    display: block;
     position: fixed;
     top: calc(var(--header) + 12px);
     left: calc(var(--rail) + 12px);
     z-index: 32;
     width: 156px;
-    margin: 0;
-  }
-  .read-hardcover-dock .read-dict-field {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
   }
   .read-hardcover-bar {
-    width: 100%;
-    min-height: 36px;
     padding: 6px 10px;
-    font-size: 15px;
     white-space: nowrap;
+    cursor: default;
   }
 }

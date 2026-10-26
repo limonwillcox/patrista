@@ -132,9 +132,9 @@ describe("parseEnglishWork cleanup integration", () => {
 
   it("does not open Didache on Schaff Introductory Notice", () => {
     const spec: EnglishWorkSpec = {
-      id: "teaching-of-the-twelve-apostles",
+      id: "didache",
       author: "didache",
-      title: "Teaching of the Twelve Apostles",
+      title: "Didache",
       short: "Didache",
       series: "ANF",
       path: "Fathers/English/Didache_English/Teaching of the Twelve Apostles.txt",
@@ -207,7 +207,7 @@ describe("parseEnglishWork cleanup integration", () => {
   }, 60_000);
 
   it("Word-Check: Didache is 16 chapters and does not swallow Constitutions", () => {
-    const spec = discoverEnglishWorkSpecs(ROOT).find((s) => s.id === "teaching-of-the-twelve-apostles");
+    const spec = discoverEnglishWorkSpecs(ROOT).find((s) => s.id === "didache");
     expect(spec).toBeTruthy();
     const { passages } = parseEnglishWork(spec!, ROOT);
     expect(passages).toHaveLength(16);

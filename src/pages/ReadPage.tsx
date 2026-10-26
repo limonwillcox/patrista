@@ -6,6 +6,7 @@ import { fetchChapter, fetchWork } from "../api/client";
 import { ChapterDock } from "../components/ChapterDock";
 import { DictionaryDock } from "../components/DictionaryDock";
 import { HardcoverDock } from "../components/HardcoverDock";
+import { readPath, resolveWorkId, workIdForReadPath } from "../lib/workSlugs";
 import { useApp } from "../context/AppContext";
 import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from "../lib/fatherPaths";
 import { chapterAtReadingLine } from "../lib/readDocks";
@@ -146,7 +147,9 @@ export function ReadPage() {
   const onChapterRoute = chapterRoute != null;
   const routeSlug = chapterRoute?.chapterSlug || "";
   const [params] = useSearchParams();
-  const workId = chapterRoute?.workId || params.get("work") || "confessions";
+  const workId = resolveWorkId(
+    chapterRoute?.workId || workIdForReadPath(location.pathname) || params.get("work") || "confessions"
+  );
   const jumpChapter = params.get("chapter") || "";
   const [outline, setOutline] = useState<WorkOutline | null>(null);
   const [texts, setTexts] = useState<Map<number, Passage>>(new Map());
@@ -532,7 +535,7 @@ export function ReadPage() {
           </>
         )}{" "}
         Highlighting is stored only in this browser.{" "}
-        <Link className="read-full" to={"/read?work=" + encodeURIComponent(outline.work.id)}>
+        <Link className="read-full" to={readPath(outline.work.id)}>
           The whole work
         </Link>
       </p>

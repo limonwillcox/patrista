@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ICONS } from "../components/Icons";
 import { useApp } from "../context/AppContext";
 import { LANDING_NAV } from "../lib/homeNav";
+import { readPath } from "../lib/workSlugs";
 
 type Starter = {
   id: string;
@@ -25,7 +26,7 @@ const ERAS: EraGroup[] = [
     label: "Apostolic age",
     range: "33–150",
     works: [
-      { id: "didache", title: "The Didache", author: "Teaching of the Twelve Apostles", workId: "teaching-of-the-twelve-apostles" },
+      { id: "didache", title: "Didache", author: "Teaching of the Twelve Apostles", workId: "didache" },
       { id: "ignatius-epistles", title: "Epistles of Ignatius", author: "Ignatius of Antioch", workId: "epistles-of-ignatius" },
       { id: "polycarp-martyrdom", title: "The Martyrdom of Polycarp", author: "Polycarp of Smyrna", workId: "martyrdom-of-polycarp" },
       { id: "1-clement", title: "First Epistle of Clement", author: "Clement of Rome", workId: "first-epistle-of-clement" }
@@ -73,7 +74,7 @@ const ERAS: EraGroup[] = [
 function StarterCard({ work }: { work: Starter }) {
   if (work.workId) {
     return (
-      <Link className="starter-card" to={"/read?work=" + encodeURIComponent(work.workId)}>
+      <Link className="starter-card" to={readPath(work.workId)}>
         <strong>{work.title}</strong>
         <span className="starter-author">{work.author}</span>
       </Link>

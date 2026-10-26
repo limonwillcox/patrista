@@ -23,6 +23,7 @@ function Rail() {
   const homeActive = isHomePath(location.pathname);
   const readActive =
     location.pathname === "/read" ||
+    location.pathname === "/augustines-confessions" ||
     (location.pathname.startsWith("/fathers/") && !isFathersTabPath(location.pathname));
   const fathersActive = isFathersTabPath(location.pathname);
   const bibleActive = location.pathname === "/bible";
@@ -37,7 +38,7 @@ function Rail() {
           {ICONS.home}
           <span>Home</span>
         </NavLink>
-        <NavLink to="/read" className={() => (readActive ? "active" : "")} onClick={() => setNavOpen(false)}>
+        <NavLink to="/augustines-confessions" className={() => (readActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.read}
           <span>Read</span>
         </NavLink>

@@ -67,7 +67,14 @@ export function focusBox(srcW, srcH, aspect, focus) {
   }
   const left = Math.min(Math.max(0, focus.x * srcW - w / 2), srcW - w);
   const top = Math.min(Math.max(0, focus.y * srcH - h * 0.3), srcH - h);
-  return { left: Math.round(left), top: Math.round(top), width: Math.round(w), height: Math.round(h) };
+  const width = Math.min(srcW, Math.round(w));
+  const height = Math.min(srcH, Math.round(h));
+  return {
+    left: Math.min(Math.round(left), srcW - width),
+    top: Math.min(Math.round(top), srcH - height),
+    width,
+    height
+  };
 }
 
 async function encode(input, width, height, targetBytes, box) {

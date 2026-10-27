@@ -179,6 +179,21 @@
       "zoom": 0.55
     }
   },
+  "commodianus": {
+    "title": "Commodianus",
+    "source": "provided by site owner",
+    "file": "commodianus.jpg",
+    "artist": "",
+    "license": "",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "",
+    "focus": {
+      "x": 0.5,
+      "y": 0.36,
+      "zoom": 0.38
+    }
+  },
   "councils": {
     "title": "First Council of Nicaea",
     "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/%CE%9C%CE%B9%CF%87%CE%B1%CE%AE%CE%BB_%CE%94%CE%B1%CE%BC%CE%B1%CF%83%CE%BA%CE%B7%CE%BD%CF%8C%CF%82_-_%CE%91%CE%84_%CE%9F%CE%B9%CE%BA%CE%BF%CF%85%CE%BC%CE%B5%CE%BD%CE%B9%CE%BA%CE%AE_%CE%A3%CF%8D%CE%BD%CE%BF%CE%B4%CE%BF%CF%82_7741.jpg/330px-%CE%9C%CE%B9%CF%87%CE%B1%CE%AE%CE%BB_%CE%94%CE%B1%CE%BC%CE%B1%CF%83%CE%BA%CE%B7%CE%BD%CF%8C%CF%82_-_%CE%91%CE%84_%CE%9F%CE%B9%CE%BA%CE%BF%CF%85%CE%BC%CE%B5%CE%BD%CE%B9%CE%BA%CE%AE_%CE%A3%CF%8D%CE%BD%CE%BF%CE%B4%CE%BF%CF%82_7741.jpg",
@@ -359,6 +374,21 @@
       "zoom": 0.45
     }
   },
+  "hippolytus": {
+    "title": "Hippolytus",
+    "source": "provided by site owner",
+    "file": "hippolytus.jpg",
+    "artist": "",
+    "license": "",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "",
+    "focus": {
+      "x": 0.5,
+      "y": 0.26,
+      "zoom": 0.3
+    }
+  },
   "ignatius": {
     "title": "Ignatius of Antioch",
     "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Hosios_Loukas_%28south_west_chapel%2C_south_side%29_-_Ignatios.jpg/330px-Hosios_Loukas_%28south_west_chapel%2C_south_side%29_-_Ignatios.jpg",
@@ -509,6 +539,51 @@
       "zoom": 0.3
     }
   },
+  "minucius_felix": {
+    "title": "Minucius Felix",
+    "source": "provided by site owner",
+    "file": "minucius_felix.jpg",
+    "artist": "",
+    "license": "",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "",
+    "focus": {
+      "x": 0.55,
+      "y": 0.33,
+      "zoom": 0.5
+    }
+  },
+  "novatian": {
+    "title": "Novatian",
+    "source": "provided by site owner",
+    "file": "novatian.jpg",
+    "artist": "",
+    "license": "",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "",
+    "focus": {
+      "x": 0.5,
+      "y": 0.28,
+      "zoom": 0.55
+    }
+  },
+  "origen": {
+    "title": "Origen",
+    "source": "provided by site owner",
+    "file": "origen.jpg",
+    "artist": "",
+    "license": "",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "",
+    "focus": {
+      "x": 0.55,
+      "y": 0.24,
+      "zoom": 0.3
+    }
+  },
   "pantocrator": {
     "title": "Christ Pantocrator (Saint Catherine's Monastery, Sinai)",
     "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Spas_vsederzhitel_sinay.jpg",
@@ -567,6 +642,21 @@
       "x": 0.42,
       "y": 0.15,
       "zoom": 0.4
+    }
+  },
+  "tatian": {
+    "title": "Tatian",
+    "source": "provided by site owner",
+    "file": "tatian.jpg",
+    "artist": "",
+    "license": "",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "",
+    "focus": {
+      "x": 0.5,
+      "y": 0.36,
+      "zoom": 0.3
     }
   },
   "tertullian": {

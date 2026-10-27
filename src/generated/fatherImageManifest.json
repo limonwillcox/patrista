@@ -257,6 +257,22 @@
       "attributionRequired": false
     }
   },
+  "commodianus": {
+    "alt": "Portrait of Commodianus",
+    "tile": {
+      "src": "/assets/father-img/commodianus-120-589cf33bde.webp",
+      "srcset": "/assets/father-img/commodianus-120-589cf33bde.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/commodianus-247-1c9381cd9e.webp",
+      "srcset": "/assets/father-img/commodianus-247-1c9381cd9e.webp 247w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
   "councils": {
     "alt": "Portrait of Ecumenical Councils",
     "tile": {
@@ -515,6 +531,22 @@
       "attributionRequired": false
     }
   },
+  "hippolytus": {
+    "alt": "Portrait of Hippolytus",
+    "tile": {
+      "src": "/assets/father-img/hippolytus-240-0c99ccd1db.webp",
+      "srcset": "/assets/father-img/hippolytus-120-cceb6cda37.webp 120w, /assets/father-img/hippolytus-240-0c99ccd1db.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/hippolytus-360-066bc9a24f.webp",
+      "srcset": "/assets/father-img/hippolytus-360-066bc9a24f.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
   "ignatius": {
     "alt": "Portrait of Ignatius of Antioch",
     "tile": {
@@ -729,6 +761,54 @@
       "attributionRequired": false
     }
   },
+  "minucius_felix": {
+    "alt": "Portrait of Minucius Felix",
+    "tile": {
+      "src": "/assets/father-img/minucius_felix-120-d8723cbbcf.webp",
+      "srcset": "/assets/father-img/minucius_felix-120-d8723cbbcf.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/minucius_felix-200-792349f5da.webp",
+      "srcset": "/assets/father-img/minucius_felix-200-792349f5da.webp 200w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
+  "novatian": {
+    "alt": "Portrait of Novatian",
+    "tile": {
+      "src": "/assets/father-img/novatian-120-fc938b68d3.webp",
+      "srcset": "/assets/father-img/novatian-120-fc938b68d3.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/novatian-150-dd9906e805.webp",
+      "srcset": "/assets/father-img/novatian-150-dd9906e805.webp 150w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
+  "origen": {
+    "alt": "Portrait of Origen",
+    "tile": {
+      "src": "/assets/father-img/origen-120-806915f3b1.webp",
+      "srcset": "/assets/father-img/origen-120-806915f3b1.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/origen-320-091d94813b.webp",
+      "srcset": "/assets/father-img/origen-320-091d94813b.webp 320w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
   "pantocrator": {
     "alt": "Portrait of Christ Pantocrator (Saint Catherine's Monastery, Sinai)",
     "tile": {
@@ -816,6 +896,22 @@
       "source": "https://commons.wikimedia.org/wiki/File:Rufinus%20Aquileiensis.jpg",
       "attributionRequired": false
     }
+  },
+  "tatian": {
+    "alt": "Portrait of Tatian",
+    "tile": {
+      "src": "/assets/father-img/tatian-120-bf61615df6.webp",
+      "srcset": "/assets/father-img/tatian-120-bf61615df6.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/tatian-234-82b2697aa7.webp",
+      "srcset": "/assets/father-img/tatian-234-82b2697aa7.webp 234w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
   },
   "tertullian": {
     "alt": "Portrait of Tertullian",

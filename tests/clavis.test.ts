@@ -243,22 +243,12 @@ describe("schema → import fixture → attach english → author works text", (
 });
 
 describe("clavis worker", () => {
-  it("returns 503 without CLAVIS_DB and leaves donate on its own path", async () => {
+  it("returns 503 without CLAVIS_DB and 404 for unknown API paths", async () => {
     const authors = await handleClavisFetch(new Request("https://patrista.com/api/clavis/authors"));
     expect(authors?.status).toBe(503);
     expect(await authors.json()).toEqual({
       error: "Clavis database is not connected. Bind D1 CLAVIS_DB."
     });
-
-    const donate = await worker.fetch(
-      new Request("https://patrista.com/api/donate/checkout", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ amountCents: 500, interval: "once", feeCover: false })
-      })
-    );
-    expect(donate.status).toBe(503);
-    expect(String((await donate.json()).error)).toMatch(/not connected/i);
 
     const viaWorker = await worker.fetch(new Request("https://patrista.com/api/clavis/authors"));
     expect(viaWorker.status).toBe(503);
@@ -266,7 +256,16 @@ describe("clavis worker", () => {
     const other = await worker.fetch(new Request("https://patrista.com/api/catalog"));
     expect(other.status).toBe(404);
 
-    const ignored = await handleClavisFetch(new Request("https://patrista.com/api/donate/checkout"));
+    const removedDonate = await worker.fetch(
+      new Request("https://patrista.com/api/donate/checkout", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ amountCents: 500, interval: "once", feeCover: false })
+      })
+    );
+    expect(removedDonate.status).toBe(404);
+
+    const ignored = await handleClavisFetch(new Request("https://patrista.com/api/catalog"));
     expect(ignored).toBeNull();
   });
 

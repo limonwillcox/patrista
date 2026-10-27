@@ -6,6 +6,7 @@ import { fetchChapter, fetchWork } from "../api/client";
 import { ChapterDock } from "../components/ChapterDock";
 import { DictionaryDock } from "../components/DictionaryDock";
 import { HardcoverDock } from "../components/HardcoverDock";
+import { BookIcon, DockNotch } from "../components/DockNotch";
 import { readPath, resolveWorkId, staticWorkId, workIdForReadPath } from "../lib/workSlugs";
 import { useApp } from "../context/AppContext";
 import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from "../lib/fatherPaths";
@@ -471,8 +472,14 @@ export function ReadPage() {
   return (
     <div ref={pageRef} onMouseUp={onMouseUp}>
       <div className="read-docks">
-        <ChapterDock chapters={outline.chapters} currentChapter={currentChapter} onJump={jumpToChapter} />
-        <DictionaryDock workId={workId} />
+        {outline.chapters.length > 1 ? (
+          <DockNotch id="chapters" name="chapters" icon={BookIcon}>
+            <ChapterDock chapters={outline.chapters} currentChapter={currentChapter} onJump={jumpToChapter} />
+          </DockNotch>
+        ) : null}
+        <DockNotch id="dictionary" name="dictionary" icon="α">
+          <DictionaryDock workId={workId} />
+        </DockNotch>
       </div>
       <div className="read-toolbar">
         <div>

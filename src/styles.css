@@ -171,10 +171,10 @@ img { max-width: 100%; display: block; }
 .hamburger { display: none; }
 
 /* Left rail. The strip under it runs the full document height so the rail never ends abruptly. */
-#root,
-#root > div {
+body {
   background-image: linear-gradient(to right, var(--nav) var(--rail), transparent var(--rail));
 }
+#root { background: transparent; }
 /* Left rail */
 .rail {
   position: fixed; left: 0; top: 0; bottom: 0; width: var(--rail);

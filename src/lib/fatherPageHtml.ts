@@ -1,7 +1,8 @@
 /** Crawlable Fathers index and profile markup. The React page mirrors this. */
 
 import type { Author } from "../../server/types";
-import { escapeHtml, workPublicPath } from "./fatherPaths";
+import { escapeHtml } from "./fatherPaths";
+import { readPath } from "./workSlugs";
 import { fatherEntry, fatherSections, type FatherSection } from "./fathersDirectory";
 import { HERO_SIZES, TILE_SIZES, type FatherImage, type FatherImageCredit, type FatherImageMap } from "./fatherImages";
 import { answerFirstBio, fatherProfilePath } from "./fatherPageMeta";
@@ -147,7 +148,7 @@ export function renderFatherProfileBody(
     .map(
       (work) =>
         '<li><a href="' +
-        escapeHtml(workPublicPath(author.id, work.id)) +
+        escapeHtml(readPath(work.id)) +
         '">' +
         escapeHtml(work.title) +
         "</a></li>"

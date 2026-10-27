@@ -2,6 +2,7 @@ import { mkdirSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { getWork } from "./api";
 import type { Author, Catalog, Passage, Work } from "./types";
+import { readPath } from "../src/lib/workSlugs";
 import {
   assignChapterSlugs,
   authorAnchorId,
@@ -294,6 +295,7 @@ export function renderWorkPage(opts: {
   });
 
   const body: string[] = [];
+  body.push("<script>location.replace(" + JSON.stringify(readPath(opts.work.id)) + ")</script>");
   body.push(
     '<p class="static-kicker"><a href="/">Patrista</a> · <a href="/church-fathers/">Church Fathers</a></p>'
   );

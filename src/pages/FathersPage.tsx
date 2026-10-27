@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useApp } from "../context/AppContext";
-import { workPublicPath } from "../lib/fatherPaths";
+import { readPath } from "../lib/workSlugs";
 import { HERO_SIZES, TILE_SIZES, fatherImage, type FatherImage, type FatherImageCredit } from "../lib/fatherImages";
 import { fatherEntry, fatherSections } from "../lib/fathersDirectory";
 import { FATHER_PROFILES } from "../lib/fatherProfiles";
@@ -214,7 +214,7 @@ export function FathersPage() {
                 <ul className="fathers-writings">
                   {works.map((work) => (
                     <li key={work.id}>
-                      <Link to={workPublicPath(author.id, work.id)}>{work.title}</Link>
+                      <Link to={readPath(work.id)}>{work.title}</Link>
                     </li>
                   ))}
                 </ul>

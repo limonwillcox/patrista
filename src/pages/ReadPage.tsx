@@ -483,26 +483,6 @@ export function ReadPage() {
           <HardcoverDock workId={outline.work.id} />
         </div>
       </div>
-      {outline.chapters.length > 1 ? (
-        <details className="chapter-index">
-          <summary>Chapters ({outline.chapters.length})</summary>
-          <nav className="chapter-index-list" aria-label="Chapters">
-            {outline.chapters.map((p) => (
-              <a
-                key={p.chapter}
-                href={"#ch-" + p.chapter}
-                title={p.heading}
-                onClick={(event) => {
-                  event.preventDefault();
-                  jumpToChapter(p.chapter);
-                }}
-              >
-                {p.heading || String(p.chapter)}
-              </a>
-            ))}
-          </nav>
-        </details>
-      ) : null}
       {outline.chapters.map((p) => {
         const passage = texts.get(p.chapter);
         return (

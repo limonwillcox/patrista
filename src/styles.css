@@ -5746,10 +5746,4 @@ html[data-theme="night"] .fathers-hero-credit {
     text-decoration: none;
   }
   .read-hardcover-bar:hover { color: #fff; text-decoration: none; }
-  .read-hardcover-note {
-    font-family: var(--sans);
-    font-size: 11px;
-    line-height: 1.35;
-    color: var(--muted);
-  }
 }

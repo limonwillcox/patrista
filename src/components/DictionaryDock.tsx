@@ -95,7 +95,6 @@ export function DictionaryDock({ workId }: { workId?: string }) {
   return (
     <div className="read-dict-dock">
       <div className="read-dict-field">
-        <span className="read-dict-label">Dictionary</span>
         <button
           type="button"
           className={"read-dict-bar" + (mode === "pick" ? " is-pick" : "")}

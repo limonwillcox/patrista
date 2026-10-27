@@ -1,12 +1,18 @@
-export function HardcoverDock() {
+import { PRINT_EDITIONS } from "../lib/printEditions";
+
+export function HardcoverDock({ workId }: { workId: string }) {
+  const edition = PRINT_EDITIONS[workId];
+  if (!edition) return null;
   return (
     <div className="read-hardcover-dock">
-      <div className="read-dict-field">
-        <span className="read-dict-label">Hardcover</span>
-        <button type="button" className="read-dict-bar read-hardcover-bar" title="Coming soon" aria-disabled="true">
-          Get the Hardcover
-        </button>
-      </div>
+      <a
+        className="read-dict-bar read-hardcover-bar"
+        href={edition.url}
+        target="_blank"
+        rel="sponsored nofollow noopener"
+      >
+        Get the Hardcover
+      </a>
     </div>
   );
 }

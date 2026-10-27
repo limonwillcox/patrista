@@ -65,9 +65,6 @@ export function ChapterDock({
   return (
     <div className="read-chapter-dock">
       <div className="read-chapter-field">
-        <button type="button" className="read-dict-label" onClick={toggleList} aria-expanded={open}>
-          Chapters
-        </button>
         <div className="read-chapter-bar">
           <button
             type="button"

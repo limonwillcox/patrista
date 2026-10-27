@@ -5328,8 +5328,10 @@ html[data-theme="night"] .lib-era-next {
   object-position: center 18%;
 }
 .fathers-portrait {
-  width: 230px;
-  height: 178px;
+  width: 120px;
+  height: 120px;
+  object-position: center;
+  border-radius: 4px;
 }
 .fathers-portrait-fallback {
   display: flex;

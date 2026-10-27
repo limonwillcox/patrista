@@ -20,21 +20,9 @@ import sameAsData from "../data/fatherSameAs.json";
 
 const SAME_AS = sameAsData as Record<string, string[]>;
 
-function Dove({ variant }: { variant: "tile" | "hero" }) {
-  const className = (variant === "tile" ? "fathers-portrait" : "fathers-hero-photo") + " fathers-portrait-fallback";
-  return (
-    <div className={className} aria-hidden="true">
-      <svg viewBox="0 0 64 48">
-        <path d="M6 30c8-2 14-10 18-16 3-6 10-8 18-8 1 6-2 11-7 14 6 2 12 6 15 11-8 1-14-2-19-6-2 6-7 11-13 13l-4 8 1-8C10 36 6 33 6 30z" />
-        <circle cx="40" cy="14" r="1.4" fill="currentColor" stroke="none" />
-      </svg>
-    </div>
-  );
-}
-
 function Portrait({ image, variant, eager }: { image: FatherImage | null; variant: "tile" | "hero"; eager: boolean }) {
   const [failed, setFailed] = useState(false);
-  if (!image || failed) return <Dove variant={variant} />;
+  if (!image || failed) return null;
   const spec = variant === "tile" ? image.tile : image.hero;
   return (
     <img

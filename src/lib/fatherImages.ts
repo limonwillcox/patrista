@@ -26,9 +26,17 @@ export type FatherImageMap = Record<string, FatherImage>;
 
 export const FATHER_IMAGES = manifest as FatherImageMap;
 
+/** Fathers without a portrait show Christ Pantocrator (Sinai) instead. */
 export function fatherImage(id: string): FatherImage | null {
-  return FATHER_IMAGES[id] ?? null;
+  return fatherImageFrom(FATHER_IMAGES, id);
 }
 
-export const TILE_SIZES = "230px";
+export function fatherImageFrom(images: Record<string, FatherImage>, id: string): FatherImage | null {
+  const own = images[id];
+  if (own) return own;
+  const fallback = images.pantocrator;
+  return fallback ? { ...fallback, alt: "Christ Pantocrator" } : null;
+}
+
+export const TILE_SIZES = "120px";
 export const HERO_SIZES = "(max-width: 735px) 92vw, (max-width: 1100px) 360px, 489px";

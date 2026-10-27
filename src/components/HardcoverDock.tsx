@@ -1,4 +1,4 @@
-import { PRINT_EDITIONS, amazonUrl } from "../lib/printEditions";
+import { PRINT_EDITIONS } from "../lib/printEditions";
 
 export function HardcoverDock({ workId }: { workId: string }) {
   const edition = PRINT_EDITIONS[workId];
@@ -7,7 +7,7 @@ export function HardcoverDock({ workId }: { workId: string }) {
     <div className="read-hardcover-dock">
       <a
         className="read-dict-bar read-hardcover-bar"
-        href={amazonUrl(edition.asin)}
+        href={edition.url}
         target="_blank"
         rel="sponsored nofollow noopener"
       >

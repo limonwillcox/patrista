@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-import { readPathForStaticWork } from "./lib/workSlugs";
+import { staticWorkId } from "./lib/workSlugs";
 import { Layout } from "./components/Layout";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { AboutPage } from "./pages/AboutPage";
@@ -45,8 +45,9 @@ export function App() {
   );
 }
 
-/** Old static work links (/fathers/<author>/<work>.html) open the reader; anything else goes home. */
+/** Static work URLs (/fathers/<author>/<work>.html) are the reader for that work; anything else goes home. */
 function CatchAll() {
   const location = useLocation();
-  return <Navigate to={readPathForStaticWork(location.pathname) || "/"} replace />;
+  if (staticWorkId(location.pathname)) return <ReadPage />;
+  return <Navigate to="/" replace />;
 }

@@ -122,6 +122,18 @@ describe("descriptions and titles", () => {
 describe("static chapter and work pages", () => {
   const origin = "https://patrista.com";
 
+  it("boots the app reader on the work URL with the first chapter inline and no redirect", () => {
+    const shell =
+      '<html><head><title>x</title><meta name="description" content="x" /></head><body><div id="root"></div><script type="module" src="/app.js"></script></body></html>';
+    const chapters = [passage(1, "Homily I", ["Opening of the first homily."]), passage(2, "Homily II", ["Second."])];
+    const page = renderWorkPage({ origin, author, work: work(2), chapters, indexHtml: shell });
+    expect(page.html).toContain('src="/app.js"');
+    expect(page.html).toContain("Opening of the first homily.");
+    expect(page.html).toContain('rel="canonical" href="https://patrista.com/fathers/chrysostom/homilies-on-matthew.html"');
+    expect(page.html).not.toContain("location.replace");
+    expect(page.html).not.toContain("Start reading");
+  });
+
   it("puts the full chapter in the shell with one h1, canonical, pager, and JSON-LD", () => {
     const chapters = [
       passage(1, "Homily I", ["Opening of the first homily."]),
@@ -178,8 +190,9 @@ describe("static chapter and work pages", () => {
     expect(page.html).toContain('href="/fathers/chrysostom/homilies-on-matthew/homily-ii/"');
     expect(page.html).toContain('"@type":"Book"');
     expect(page.html).not.toContain("Second homily sentence one.");
+    expect(page.html).not.toContain("location.replace");
     expect(page.chapterPaths).toHaveLength(2);
-    expect(page.html).toContain(">Start reading</a>");
+    expect(page.html).not.toContain("Start reading");
     expect(page.html).toContain('href="/fathers/chrysostom/homilies-on-matthew/homily-i/"');
     expect(page.html).toMatch(/<details class="chapter-index">/);
     expect(page.html).not.toMatch(/<details[^>]*\sopen\b/);

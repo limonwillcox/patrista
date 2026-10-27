@@ -2,7 +2,6 @@ import { mkdirSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { getWork } from "./api";
 import type { Author, Catalog, Passage, Work } from "./types";
-import { readPath } from "../src/lib/workSlugs";
 import {
   assignChapterSlugs,
   authorAnchorId,
@@ -277,6 +276,8 @@ export function renderWorkPage(opts: {
   author: Author;
   work: Work;
   chapters: Passage[];
+  /** Vite shell; when set, the page boots the app reader on this URL. */
+  indexHtml?: string;
 }): { html: string; path: string; chapterPaths: string[] } {
   const path = workPublicPath(opts.author.id, opts.work.id);
   const url = opts.origin + path;
@@ -295,7 +296,6 @@ export function renderWorkPage(opts: {
   });
 
   const body: string[] = [];
-  body.push("<script>location.replace(" + JSON.stringify(readPath(opts.work.id)) + ")</script>");
   body.push(
     '<p class="static-kicker"><a href="/">Patrista</a> · <a href="/church-fathers/">Church Fathers</a></p>'
   );
@@ -308,7 +308,6 @@ export function renderWorkPage(opts: {
   );
   if (split) {
     const first = refs[0]!;
-    body.push('<p><a class="start-reading" href="' + escapeHtml(first.path) + '">Start reading</a></p>');
     body.push('<details class="chapter-index">');
     body.push("<summary>Chapters (" + refs.length + ")</summary>");
     body.push('<nav class="chapter-index-list" aria-label="Chapters">');
@@ -324,11 +323,28 @@ export function renderWorkPage(opts: {
       );
     }
     body.push("</nav></details>");
+    // The book opens on its first chapter, like the reader.
+    body.push("<h2>" + escapeHtml(opts.chapters[0]!.heading) + "</h2>");
+    body.push('<div class="static-text">');
+    body.push(paragraphsHtml(opts.chapters[0]!));
+    body.push("</div>");
+    body.push(notesHtml(opts.chapters[0]!));
   } else if (opts.chapters[0]) {
     body.push('<div class="static-text">');
     body.push(paragraphsHtml(opts.chapters[0]));
     body.push("</div>");
     body.push(notesHtml(opts.chapters[0]));
+  }
+
+  if (opts.indexHtml) {
+    const html = prerenderShell(opts.indexHtml, opts.origin, {
+      canonicalPath: path,
+      title,
+      description,
+      jsonLd: ld,
+      bodyHtml: body.join("\n")
+    });
+    return { html, path, chapterPaths: split ? refs.map((r) => r.path) : [] };
   }
 
   const html = [
@@ -522,7 +538,8 @@ export function writeFatherPages(
       origin,
       author: payload.author,
       work: payload.work,
-      chapters: payload.chapters
+      chapters: payload.chapters,
+      indexHtml
     });
     const workFile = join(dist, page.path.replace(/^\//, ""));
     mkdirSync(dirname(workFile), { recursive: true });

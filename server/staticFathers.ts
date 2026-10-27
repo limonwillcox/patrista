@@ -127,7 +127,7 @@ function chapterRefs(authorId: string, workId: string, chapters: Passage[]): Cha
 function paragraphsHtml(passage: Passage): string {
   return englishParagraphs(passage.versions)
     .filter((p) => p.trim())
-    .map((p) => "<p>" + escapeHtml(p) + "</p>")
+    .map((p) => '<p class="para">' + escapeHtml(p) + "</p>")
     .join("\n");
 }
 
@@ -255,6 +255,11 @@ function jsonScript(data: unknown): string {
 }
 
 const WORK_PAGE_CSS = [
+  '@font-face{font-family:"Junicode";src:url("/fonts/Junicode-Regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap;size-adjust:108%}',
+  '@font-face{font-family:"Junicode";src:url("/fonts/Junicode-Italic.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap;size-adjust:108%}',
+  '@font-face{font-family:"Junicode";src:url("/fonts/Junicode-Bold.woff2") format("woff2");font-style:normal;font-weight:700;font-display:swap;size-adjust:108%}',
+  '@font-face{font-family:"Junicode";src:url("/fonts/Junicode-BoldItalic.woff2") format("woff2");font-style:italic;font-weight:700;font-display:swap;size-adjust:108%}',
+  '.para{font-family:Junicode,Georgia,serif}',
   "body{font-family:Georgia,serif;max-width:42rem;margin:1.5rem auto;padding:0 1rem;line-height:1.55;color:#1a1a1a}",
   "h1{font-family:system-ui,sans-serif;font-size:1.6rem}",
   "a{color:#952004}",

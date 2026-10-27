@@ -1668,6 +1668,12 @@ html[data-theme="night"] .heading { color: #e07a55; }
   vertical-align: super; cursor: pointer; margin-left: 1px;
 }
 .para { margin: 0 0 14px; }
+/* Author text only: the works themselves are set in Junicode (OFL, public/fonts). */
+@font-face{font-family:"Junicode";src:url("/fonts/Junicode-Regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap;size-adjust:108%}
+@font-face{font-family:"Junicode";src:url("/fonts/Junicode-Italic.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap;size-adjust:108%}
+@font-face{font-family:"Junicode";src:url("/fonts/Junicode-Bold.woff2") format("woff2");font-style:normal;font-weight:700;font-display:swap;size-adjust:108%}
+@font-face{font-family:"Junicode";src:url("/fonts/Junicode-BoldItalic.woff2") format("woff2");font-style:italic;font-weight:700;font-display:swap;size-adjust:108%}
+.para { font-family: "Junicode", var(--serif); }
 .w { border-radius: 2px; }
 .w.hl-yellow { background: #fff3b0; color: #1a1408; }
 .w.hl-green { background: #c8efc2; color: #0e1a0c; }

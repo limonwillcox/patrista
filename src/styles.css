@@ -5743,6 +5743,13 @@ html[data-theme="night"] .fathers-hero-credit {
   .read-hardcover-bar {
     padding: 6px 10px;
     white-space: nowrap;
-    cursor: default;
+    text-decoration: none;
+  }
+  .read-hardcover-bar:hover { color: #fff; text-decoration: none; }
+  .read-hardcover-note {
+    font-family: var(--sans);
+    font-size: 11px;
+    line-height: 1.35;
+    color: var(--muted);
   }
 }

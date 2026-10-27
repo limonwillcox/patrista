@@ -480,7 +480,7 @@ export function ReadPage() {
           <div className="version-name">
             {outline.author.name} · {outline.chapters.length} {unitLabel}
           </div>
-          <HardcoverDock />
+          <HardcoverDock workId={outline.work.id} />
         </div>
       </div>
       {outline.chapters.length > 1 ? (

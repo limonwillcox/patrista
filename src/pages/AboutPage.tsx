@@ -1,3 +1,4 @@
+import { AMAZON_DISCLOSURE } from "../lib/printEditions";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useApp } from "../context/AppContext";
@@ -41,6 +42,7 @@ export function AboutPage() {
             appreciate it — but it is absolutely not necessary.
           </p>
         </section>
+        <p className="fineprint">{AMAZON_DISCLOSURE}</p>
       </article>
     </div>
   );

@@ -16,7 +16,10 @@ const OUT_DIR = join(ROOT, "public", "assets", "father-img");
 const MANIFEST = join(ROOT, "src", "generated", "fatherImageManifest.json");
 const CREDITS = join(SRC_DIR, "credits.json");
 const STAMP = join(OUT_DIR, "stamp.json");
-const VERSION = 2;
+const VERSION = 3;
+/** focus.zoom frames the face; portraits widen it to head-and-shoulders. */
+const TILE_ZOOM = 1.9;
+const HERO_ZOOM = 2.6;
 
 const TILE_ASPECT = 1;
 const HERO_ASPECT = 336 / 489;
@@ -53,7 +56,7 @@ function creditOf(raw) {
 
 /**
  * Crop box around a manual focal point (face). focus.x/y are fractions of the source,
- * focus.zoom is the crop width as a fraction of the source width. The face sits ~40% down.
+ * focus.zoom is the crop width as a fraction of the source width. The face sits ~30% down (head in the upper third).
  */
 export function focusBox(srcW, srcH, aspect, focus) {
   let w = Math.min(srcW, Math.max(1, (focus.zoom || 1) * srcW));
@@ -63,7 +66,7 @@ export function focusBox(srcW, srcH, aspect, focus) {
     w = h / aspect;
   }
   const left = Math.min(Math.max(0, focus.x * srcW - w / 2), srcW - w);
-  const top = Math.min(Math.max(0, focus.y * srcH - h * 0.4), srcH - h);
+  const top = Math.min(Math.max(0, focus.y * srcH - h * 0.3), srcH - h);
   return { left: Math.round(left), top: Math.round(top), width: Math.round(w), height: Math.round(h) };
 }
 
@@ -147,9 +150,11 @@ async function main() {
     const srcWidth = meta.width || 0;
     const focus = credits[id]?.focus;
     const srcHeight = meta.height || 0;
-    const tileBox = focus ? focusBox(srcWidth, srcHeight, TILE_ASPECT, focus) : null;
+    const tileBox = focus
+      ? focusBox(srcWidth, srcHeight, TILE_ASPECT, { ...focus, zoom: Math.min(1, (focus.zoom || 1) * TILE_ZOOM) })
+      : null;
     const heroBox = focus
-      ? focusBox(srcWidth, srcHeight, HERO_ASPECT, { ...focus, zoom: Math.min(1, (focus.zoom || 1) * 1.6) })
+      ? focusBox(srcWidth, srcHeight, HERO_ASPECT, { ...focus, zoom: Math.min(1, (focus.zoom || 1) * HERO_ZOOM) })
       : null;
     const tiles = await variants(input, Math.min(srcWidth, tileBox?.width || srcWidth), 240, TILE_ASPECT, 14 * 1024, tileBox);
     const heroes = await variants(input, Math.min(srcWidth, heroBox?.width || srcWidth), 720, HERO_ASPECT, 70 * 1024, heroBox);

@@ -2,14 +2,14 @@
   "ambrose": {
     "alt": "Portrait of Ambrose of Milan",
     "tile": {
-      "src": "/assets/father-img/ambrose-240-941cd32d60.webp",
-      "srcset": "/assets/father-img/ambrose-120-4ad3a100d3.webp 120w, /assets/father-img/ambrose-240-941cd32d60.webp 240w",
+      "src": "/assets/father-img/ambrose-240-4f6cc60cc5.webp",
+      "srcset": "/assets/father-img/ambrose-120-dc45d082ce.webp 120w, /assets/father-img/ambrose-240-4f6cc60cc5.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/ambrose-720-15b724bde6.webp",
-      "srcset": "/assets/father-img/ambrose-360-faecd30de5.webp 360w, /assets/father-img/ambrose-720-15b724bde6.webp 720w",
+      "src": "/assets/father-img/ambrose-720-f824ab2968.webp",
+      "srcset": "/assets/father-img/ambrose-360-67b6cd284e.webp 360w, /assets/father-img/ambrose-720-f824ab2968.webp 720w",
       "width": 489,
       "height": 336
     },
@@ -24,14 +24,14 @@
   "aphrahat": {
     "alt": "Portrait of Aphrahat",
     "tile": {
-      "src": "/assets/father-img/aphrahat-240-fb30fd996b.webp",
-      "srcset": "/assets/father-img/aphrahat-120-cc19d388f4.webp 120w, /assets/father-img/aphrahat-240-fb30fd996b.webp 240w",
+      "src": "/assets/father-img/aphrahat-240-bcad904e3a.webp",
+      "srcset": "/assets/father-img/aphrahat-120-2360332f6a.webp 120w, /assets/father-img/aphrahat-240-bcad904e3a.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/aphrahat-360-0a386fb2d2.webp",
-      "srcset": "/assets/father-img/aphrahat-360-0a386fb2d2.webp 360w",
+      "src": "/assets/father-img/aphrahat-720-e073d0b03c.webp",
+      "srcset": "/assets/father-img/aphrahat-360-cf49614ee7.webp 360w, /assets/father-img/aphrahat-720-e073d0b03c.webp 720w",
       "width": 489,
       "height": 336
     },
@@ -46,14 +46,14 @@
   "arnobius": {
     "alt": "Portrait of Arnobius of Sicca",
     "tile": {
-      "src": "/assets/father-img/arnobius-240-2a81c073b4.webp",
-      "srcset": "/assets/father-img/arnobius-120-41f9ab5858.webp 120w, /assets/father-img/arnobius-240-2a81c073b4.webp 240w",
+      "src": "/assets/father-img/arnobius-240-0326a68012.webp",
+      "srcset": "/assets/father-img/arnobius-120-4b86d712d7.webp 120w, /assets/father-img/arnobius-240-0326a68012.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/arnobius-360-7e23b029d5.webp",
-      "srcset": "/assets/father-img/arnobius-360-7e23b029d5.webp 360w",
+      "src": "/assets/father-img/arnobius-360-9e77381c58.webp",
+      "srcset": "/assets/father-img/arnobius-360-9e77381c58.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -68,14 +68,14 @@
   "athanasius": {
     "alt": "Portrait of Athanasius of Alexandria",
     "tile": {
-      "src": "/assets/father-img/athanasius-120-5c7ee18408.webp",
-      "srcset": "/assets/father-img/athanasius-120-5c7ee18408.webp 120w",
+      "src": "/assets/father-img/athanasius-240-a825726067.webp",
+      "srcset": "/assets/father-img/athanasius-120-2ff12ca999.webp 120w, /assets/father-img/athanasius-240-a825726067.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/athanasius-355-4b2cce30c8.webp",
-      "srcset": "/assets/father-img/athanasius-355-4b2cce30c8.webp 355w",
+      "src": "/assets/father-img/athanasius-360-0a1bbdffc7.webp",
+      "srcset": "/assets/father-img/athanasius-360-0a1bbdffc7.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -90,14 +90,14 @@
   "athenagoras": {
     "alt": "Portrait of Athenagoras",
     "tile": {
-      "src": "/assets/father-img/athenagoras-240-4e35bacc4d.webp",
-      "srcset": "/assets/father-img/athenagoras-120-6d066bbaf6.webp 120w, /assets/father-img/athenagoras-240-4e35bacc4d.webp 240w",
+      "src": "/assets/father-img/athenagoras-240-0c194cae0e.webp",
+      "srcset": "/assets/father-img/athenagoras-120-56e8254427.webp 120w, /assets/father-img/athenagoras-240-0c194cae0e.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/athenagoras-360-56e25b3992.webp",
-      "srcset": "/assets/father-img/athenagoras-360-56e25b3992.webp 360w",
+      "src": "/assets/father-img/athenagoras-360-5583bed3cb.webp",
+      "srcset": "/assets/father-img/athenagoras-360-5583bed3cb.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -112,14 +112,14 @@
   "augustine": {
     "alt": "Portrait of Augustine of Hippo",
     "tile": {
-      "src": "/assets/father-img/augustine-240-4dfa149e4a.webp",
-      "srcset": "/assets/father-img/augustine-120-714c3fe767.webp 120w, /assets/father-img/augustine-240-4dfa149e4a.webp 240w",
+      "src": "/assets/father-img/augustine-240-7a7f973091.webp",
+      "srcset": "/assets/father-img/augustine-120-70c6a7b893.webp 120w, /assets/father-img/augustine-240-7a7f973091.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/augustine-360-2791a57557.webp",
-      "srcset": "/assets/father-img/augustine-360-2791a57557.webp 360w",
+      "src": "/assets/father-img/augustine-360-4352ad58a1.webp",
+      "srcset": "/assets/father-img/augustine-360-4352ad58a1.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -134,14 +134,14 @@
   "basil": {
     "alt": "Portrait of Basil the Great",
     "tile": {
-      "src": "/assets/father-img/basil-240-9051aaefec.webp",
-      "srcset": "/assets/father-img/basil-120-dc36e29fc4.webp 120w, /assets/father-img/basil-240-9051aaefec.webp 240w",
+      "src": "/assets/father-img/basil-240-99f71dcd70.webp",
+      "srcset": "/assets/father-img/basil-120-a7f920f13e.webp 120w, /assets/father-img/basil-240-99f71dcd70.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/basil-360-6a18e0b4e4.webp",
-      "srcset": "/assets/father-img/basil-360-6a18e0b4e4.webp 360w",
+      "src": "/assets/father-img/basil-360-b906c7e000.webp",
+      "srcset": "/assets/father-img/basil-360-b906c7e000.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -156,14 +156,14 @@
   "cassian": {
     "alt": "Portrait of John Cassian",
     "tile": {
-      "src": "/assets/father-img/cassian-120-2d746b84a7.webp",
-      "srcset": "/assets/father-img/cassian-120-2d746b84a7.webp 120w",
+      "src": "/assets/father-img/cassian-240-8bbcae879b.webp",
+      "srcset": "/assets/father-img/cassian-120-e7ce158475.webp 120w, /assets/father-img/cassian-240-8bbcae879b.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/cassian-358-7215958961.webp",
-      "srcset": "/assets/father-img/cassian-358-7215958961.webp 358w",
+      "src": "/assets/father-img/cassian-360-a51cd7d76e.webp",
+      "srcset": "/assets/father-img/cassian-360-a51cd7d76e.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -178,14 +178,14 @@
   "chrysostom": {
     "alt": "Portrait of John Chrysostom",
     "tile": {
-      "src": "/assets/father-img/chrysostom-120-bb0d3aff03.webp",
-      "srcset": "/assets/father-img/chrysostom-120-bb0d3aff03.webp 120w",
+      "src": "/assets/father-img/chrysostom-240-ba69f06fca.webp",
+      "srcset": "/assets/father-img/chrysostom-120-36d1211d43.webp 120w, /assets/father-img/chrysostom-240-ba69f06fca.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/chrysostom-360-6431b0302e.webp",
-      "srcset": "/assets/father-img/chrysostom-360-6431b0302e.webp 360w",
+      "src": "/assets/father-img/chrysostom-360-f8ac4459ed.webp",
+      "srcset": "/assets/father-img/chrysostom-360-f8ac4459ed.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -200,14 +200,14 @@
   "clement_alexandria": {
     "alt": "Portrait of Clement of Alexandria",
     "tile": {
-      "src": "/assets/father-img/clement_alexandria-240-7ff85c9417.webp",
-      "srcset": "/assets/father-img/clement_alexandria-120-3f4d26cff8.webp 120w, /assets/father-img/clement_alexandria-240-7ff85c9417.webp 240w",
+      "src": "/assets/father-img/clement_alexandria-240-5d635e75a9.webp",
+      "srcset": "/assets/father-img/clement_alexandria-120-088347b71e.webp 120w, /assets/father-img/clement_alexandria-240-5d635e75a9.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/clement_alexandria-360-e11d9d45d6.webp",
-      "srcset": "/assets/father-img/clement_alexandria-360-e11d9d45d6.webp 360w",
+      "src": "/assets/father-img/clement_alexandria-360-3324b45598.webp",
+      "srcset": "/assets/father-img/clement_alexandria-360-3324b45598.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -222,14 +222,14 @@
   "clement_rome": {
     "alt": "Portrait of Clement of Rome",
     "tile": {
-      "src": "/assets/father-img/clement_rome-240-6061c6987c.webp",
-      "srcset": "/assets/father-img/clement_rome-120-c1a4dccfa1.webp 120w, /assets/father-img/clement_rome-240-6061c6987c.webp 240w",
+      "src": "/assets/father-img/clement_rome-240-67542ec275.webp",
+      "srcset": "/assets/father-img/clement_rome-120-eec5e2f01a.webp 120w, /assets/father-img/clement_rome-240-67542ec275.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/clement_rome-360-948d486335.webp",
-      "srcset": "/assets/father-img/clement_rome-360-948d486335.webp 360w",
+      "src": "/assets/father-img/clement_rome-360-dc9c2ec327.webp",
+      "srcset": "/assets/father-img/clement_rome-360-dc9c2ec327.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -244,14 +244,14 @@
   "councils": {
     "alt": "Portrait of Ecumenical Councils",
     "tile": {
-      "src": "/assets/father-img/councils-240-76fea4ee93.webp",
-      "srcset": "/assets/father-img/councils-120-6839513d3c.webp 120w, /assets/father-img/councils-240-76fea4ee93.webp 240w",
+      "src": "/assets/father-img/councils-240-dd3c1c6a76.webp",
+      "srcset": "/assets/father-img/councils-120-0436b92bf1.webp 120w, /assets/father-img/councils-240-dd3c1c6a76.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/councils-360-f3521202a6.webp",
-      "srcset": "/assets/father-img/councils-360-f3521202a6.webp 360w",
+      "src": "/assets/father-img/councils-360-788f547e9a.webp",
+      "srcset": "/assets/father-img/councils-360-788f547e9a.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -266,14 +266,14 @@
   "cyprian": {
     "alt": "Portrait of Cyprian of Carthage",
     "tile": {
-      "src": "/assets/father-img/cyprian-240-5c7a4e1df3.webp",
-      "srcset": "/assets/father-img/cyprian-120-3f884fc973.webp 120w, /assets/father-img/cyprian-240-5c7a4e1df3.webp 240w",
+      "src": "/assets/father-img/cyprian-240-043e5f7eaa.webp",
+      "srcset": "/assets/father-img/cyprian-120-d745462f5c.webp 120w, /assets/father-img/cyprian-240-043e5f7eaa.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/cyprian-360-6fee382a90.webp",
-      "srcset": "/assets/father-img/cyprian-360-6fee382a90.webp 360w",
+      "src": "/assets/father-img/cyprian-360-1d4a75ae4b.webp",
+      "srcset": "/assets/father-img/cyprian-360-1d4a75ae4b.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -288,14 +288,14 @@
   "cyril_jerusalem": {
     "alt": "Portrait of Cyril of Jerusalem",
     "tile": {
-      "src": "/assets/father-img/cyril_jerusalem-240-2c2a534fba.webp",
-      "srcset": "/assets/father-img/cyril_jerusalem-120-0309dae620.webp 120w, /assets/father-img/cyril_jerusalem-240-2c2a534fba.webp 240w",
+      "src": "/assets/father-img/cyril_jerusalem-240-ea4fecef1d.webp",
+      "srcset": "/assets/father-img/cyril_jerusalem-120-bea53a0cfb.webp 120w, /assets/father-img/cyril_jerusalem-240-ea4fecef1d.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/cyril_jerusalem-360-8df8503194.webp",
-      "srcset": "/assets/father-img/cyril_jerusalem-360-8df8503194.webp 360w",
+      "src": "/assets/father-img/cyril_jerusalem-720-42818b013c.webp",
+      "srcset": "/assets/father-img/cyril_jerusalem-360-c4e8702565.webp 360w, /assets/father-img/cyril_jerusalem-720-42818b013c.webp 720w",
       "width": 489,
       "height": 336
     },
@@ -332,14 +332,14 @@
   "dionysius": {
     "alt": "Portrait of Dionysius",
     "tile": {
-      "src": "/assets/father-img/dionysius-240-7bbaeac01a.webp",
-      "srcset": "/assets/father-img/dionysius-120-36ffb15a75.webp 120w, /assets/father-img/dionysius-240-7bbaeac01a.webp 240w",
+      "src": "/assets/father-img/dionysius-240-a7abe524bf.webp",
+      "srcset": "/assets/father-img/dionysius-120-d1c4c18c48.webp 120w, /assets/father-img/dionysius-240-a7abe524bf.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/dionysius-360-a34d6f2430.webp",
-      "srcset": "/assets/father-img/dionysius-360-a34d6f2430.webp 360w",
+      "src": "/assets/father-img/dionysius-360-dba8f9188e.webp",
+      "srcset": "/assets/father-img/dionysius-360-dba8f9188e.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -354,14 +354,14 @@
   "ephraim": {
     "alt": "Portrait of Ephraim the Syrian",
     "tile": {
-      "src": "/assets/father-img/ephraim-240-4999e5e843.webp",
-      "srcset": "/assets/father-img/ephraim-120-fdaff7302d.webp 120w, /assets/father-img/ephraim-240-4999e5e843.webp 240w",
+      "src": "/assets/father-img/ephraim-240-ceabc2b5c9.webp",
+      "srcset": "/assets/father-img/ephraim-120-358af55695.webp 120w, /assets/father-img/ephraim-240-ceabc2b5c9.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/ephraim-360-245cb5f835.webp",
-      "srcset": "/assets/father-img/ephraim-360-245cb5f835.webp 360w",
+      "src": "/assets/father-img/ephraim-360-3241a52131.webp",
+      "srcset": "/assets/father-img/ephraim-360-3241a52131.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -376,14 +376,14 @@
   "eusebius": {
     "alt": "Portrait of Eusebius of Caesarea",
     "tile": {
-      "src": "/assets/father-img/eusebius-117-4311e3d1ea.webp",
-      "srcset": "/assets/father-img/eusebius-117-4311e3d1ea.webp 117w",
+      "src": "/assets/father-img/eusebius-120-c771b024bc.webp",
+      "srcset": "/assets/father-img/eusebius-120-c771b024bc.webp 120w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/eusebius-187-3cb3899c48.webp",
-      "srcset": "/assets/father-img/eusebius-187-3cb3899c48.webp 187w",
+      "src": "/assets/father-img/eusebius-304-0b4db15480.webp",
+      "srcset": "/assets/father-img/eusebius-304-0b4db15480.webp 304w",
       "width": 489,
       "height": 336
     },
@@ -398,14 +398,14 @@
   "gregory_nazianzen": {
     "alt": "Portrait of Gregory Nazianzen",
     "tile": {
-      "src": "/assets/father-img/gregory_nazianzen-120-138b5b9c4b.webp",
-      "srcset": "/assets/father-img/gregory_nazianzen-120-138b5b9c4b.webp 120w",
+      "src": "/assets/father-img/gregory_nazianzen-240-3076143f51.webp",
+      "srcset": "/assets/father-img/gregory_nazianzen-120-9ab4317649.webp 120w, /assets/father-img/gregory_nazianzen-240-3076143f51.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/gregory_nazianzen-278-ea642039ec.webp",
-      "srcset": "/assets/father-img/gregory_nazianzen-278-ea642039ec.webp 278w",
+      "src": "/assets/father-img/gregory_nazianzen-360-d7372f242a.webp",
+      "srcset": "/assets/father-img/gregory_nazianzen-360-d7372f242a.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -420,14 +420,14 @@
   "gregory_nyssa": {
     "alt": "Portrait of Gregory of Nyssa",
     "tile": {
-      "src": "/assets/father-img/gregory_nyssa-240-12d15b53f4.webp",
-      "srcset": "/assets/father-img/gregory_nyssa-120-7543c267c9.webp 120w, /assets/father-img/gregory_nyssa-240-12d15b53f4.webp 240w",
+      "src": "/assets/father-img/gregory_nyssa-240-a93c830da5.webp",
+      "srcset": "/assets/father-img/gregory_nyssa-120-a75516ce27.webp 120w, /assets/father-img/gregory_nyssa-240-a93c830da5.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/gregory_nyssa-360-202d207d4e.webp",
-      "srcset": "/assets/father-img/gregory_nyssa-360-202d207d4e.webp 360w",
+      "src": "/assets/father-img/gregory_nyssa-360-9c31c54b69.webp",
+      "srcset": "/assets/father-img/gregory_nyssa-360-9c31c54b69.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -442,14 +442,14 @@
   "gregory_thaumaturgus": {
     "alt": "Portrait of Gregory Thaumaturgus",
     "tile": {
-      "src": "/assets/father-img/gregory_thaumaturgus-120-ca773ff612.webp",
-      "srcset": "/assets/father-img/gregory_thaumaturgus-120-ca773ff612.webp 120w",
+      "src": "/assets/father-img/gregory_thaumaturgus-240-4c1719a08a.webp",
+      "srcset": "/assets/father-img/gregory_thaumaturgus-120-007f19fa67.webp 120w, /assets/father-img/gregory_thaumaturgus-240-4c1719a08a.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/gregory_thaumaturgus-349-5e51aa10ae.webp",
-      "srcset": "/assets/father-img/gregory_thaumaturgus-349-5e51aa10ae.webp 349w",
+      "src": "/assets/father-img/gregory_thaumaturgus-360-30f8596ad9.webp",
+      "srcset": "/assets/father-img/gregory_thaumaturgus-360-30f8596ad9.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -464,14 +464,14 @@
   "hilary": {
     "alt": "Portrait of Hilary of Poitiers",
     "tile": {
-      "src": "/assets/father-img/hilary-240-dcd33e9224.webp",
-      "srcset": "/assets/father-img/hilary-120-9d0a086c38.webp 120w, /assets/father-img/hilary-240-dcd33e9224.webp 240w",
+      "src": "/assets/father-img/hilary-240-2a183052d0.webp",
+      "srcset": "/assets/father-img/hilary-120-bee5ea0f84.webp 120w, /assets/father-img/hilary-240-2a183052d0.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/hilary-360-43450b2bfd.webp",
-      "srcset": "/assets/father-img/hilary-360-43450b2bfd.webp 360w",
+      "src": "/assets/father-img/hilary-360-8d87af4eda.webp",
+      "srcset": "/assets/father-img/hilary-360-8d87af4eda.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -486,14 +486,14 @@
   "ignatius": {
     "alt": "Portrait of Ignatius of Antioch",
     "tile": {
-      "src": "/assets/father-img/ignatius-120-24227a07c7.webp",
-      "srcset": "/assets/father-img/ignatius-120-24227a07c7.webp 120w",
+      "src": "/assets/father-img/ignatius-240-b999523c21.webp",
+      "srcset": "/assets/father-img/ignatius-120-5762125f75.webp 120w, /assets/father-img/ignatius-240-b999523c21.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/ignatius-209-ec60454eda.webp",
-      "srcset": "/assets/father-img/ignatius-209-ec60454eda.webp 209w",
+      "src": "/assets/father-img/ignatius-340-adbfae5b41.webp",
+      "srcset": "/assets/father-img/ignatius-340-adbfae5b41.webp 340w",
       "width": 489,
       "height": 336
     },
@@ -508,14 +508,14 @@
   "irenaeus": {
     "alt": "Portrait of Irenaeus of Lyons",
     "tile": {
-      "src": "/assets/father-img/irenaeus-119-200d8cf651.webp",
-      "srcset": "/assets/father-img/irenaeus-119-200d8cf651.webp 119w",
+      "src": "/assets/father-img/irenaeus-120-9b7a213bc5.webp",
+      "srcset": "/assets/father-img/irenaeus-120-9b7a213bc5.webp 120w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/irenaeus-190-3f627a0943.webp",
-      "srcset": "/assets/father-img/irenaeus-190-3f627a0943.webp 190w",
+      "src": "/assets/father-img/irenaeus-308-49e1f4b5e1.webp",
+      "srcset": "/assets/father-img/irenaeus-308-49e1f4b5e1.webp 308w",
       "width": 489,
       "height": 336
     },
@@ -530,14 +530,14 @@
   "jerome": {
     "alt": "Portrait of Jerome",
     "tile": {
-      "src": "/assets/father-img/jerome-240-927beb4537.webp",
-      "srcset": "/assets/father-img/jerome-120-b8abb4d76a.webp 120w, /assets/father-img/jerome-240-927beb4537.webp 240w",
+      "src": "/assets/father-img/jerome-240-6ae24e60e4.webp",
+      "srcset": "/assets/father-img/jerome-120-198fb48e4e.webp 120w, /assets/father-img/jerome-240-6ae24e60e4.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/jerome-360-61ab63735e.webp",
-      "srcset": "/assets/father-img/jerome-360-61ab63735e.webp 360w",
+      "src": "/assets/father-img/jerome-360-7a091f31a1.webp",
+      "srcset": "/assets/father-img/jerome-360-7a091f31a1.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -552,14 +552,14 @@
   "john_damascus": {
     "alt": "Portrait of John of Damascus",
     "tile": {
-      "src": "/assets/father-img/john_damascus-240-5c46f4956f.webp",
-      "srcset": "/assets/father-img/john_damascus-120-b392f76864.webp 120w, /assets/father-img/john_damascus-240-5c46f4956f.webp 240w",
+      "src": "/assets/father-img/john_damascus-240-5a4b40d056.webp",
+      "srcset": "/assets/father-img/john_damascus-120-2a6a3e90bf.webp 120w, /assets/father-img/john_damascus-240-5a4b40d056.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/john_damascus-360-d5bf0718aa.webp",
-      "srcset": "/assets/father-img/john_damascus-360-d5bf0718aa.webp 360w",
+      "src": "/assets/father-img/john_damascus-360-ad2cf23b71.webp",
+      "srcset": "/assets/father-img/john_damascus-360-ad2cf23b71.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -574,14 +574,14 @@
   "josephus": {
     "alt": "Portrait of Flavius Josephus",
     "tile": {
-      "src": "/assets/father-img/josephus-240-d5fb8c4b48.webp",
-      "srcset": "/assets/father-img/josephus-120-6373f4ac9e.webp 120w, /assets/father-img/josephus-240-d5fb8c4b48.webp 240w",
+      "src": "/assets/father-img/josephus-240-4b2be99a84.webp",
+      "srcset": "/assets/father-img/josephus-120-985e984a62.webp 120w, /assets/father-img/josephus-240-4b2be99a84.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/josephus-360-f3f0320930.webp",
-      "srcset": "/assets/father-img/josephus-360-f3f0320930.webp 360w",
+      "src": "/assets/father-img/josephus-360-a178054235.webp",
+      "srcset": "/assets/father-img/josephus-360-a178054235.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -596,14 +596,14 @@
   "justin": {
     "alt": "Portrait of Justin Martyr",
     "tile": {
-      "src": "/assets/father-img/justin-240-93f76a0119.webp",
-      "srcset": "/assets/father-img/justin-120-149ff51f91.webp 120w, /assets/father-img/justin-240-93f76a0119.webp 240w",
+      "src": "/assets/father-img/justin-240-3ad11968c3.webp",
+      "srcset": "/assets/father-img/justin-120-eb883c1820.webp 120w, /assets/father-img/justin-240-3ad11968c3.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/justin-360-abd505faab.webp",
-      "srcset": "/assets/father-img/justin-360-abd505faab.webp 360w",
+      "src": "/assets/father-img/justin-360-4ecec81e7c.webp",
+      "srcset": "/assets/father-img/justin-360-4ecec81e7c.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -618,14 +618,14 @@
   "lactantius": {
     "alt": "Portrait of Lactantius",
     "tile": {
-      "src": "/assets/father-img/lactantius-240-011b10c936.webp",
-      "srcset": "/assets/father-img/lactantius-120-b0807b1773.webp 120w, /assets/father-img/lactantius-240-011b10c936.webp 240w",
+      "src": "/assets/father-img/lactantius-240-216b170c35.webp",
+      "srcset": "/assets/father-img/lactantius-120-9df6f72866.webp 120w, /assets/father-img/lactantius-240-216b170c35.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/lactantius-720-c55eadaa43.webp",
-      "srcset": "/assets/father-img/lactantius-360-e110f77d02.webp 360w, /assets/father-img/lactantius-720-c55eadaa43.webp 720w",
+      "src": "/assets/father-img/lactantius-720-f4f0ed008f.webp",
+      "srcset": "/assets/father-img/lactantius-360-53fa455431.webp 360w, /assets/father-img/lactantius-720-f4f0ed008f.webp 720w",
       "width": 489,
       "height": 336
     },
@@ -640,14 +640,14 @@
   "leo": {
     "alt": "Portrait of Leo the Great",
     "tile": {
-      "src": "/assets/father-img/leo-240-618f28d18a.webp",
-      "srcset": "/assets/father-img/leo-120-5c4e0d72ef.webp 120w, /assets/father-img/leo-240-618f28d18a.webp 240w",
+      "src": "/assets/father-img/leo-240-855ad1072d.webp",
+      "srcset": "/assets/father-img/leo-120-fa5de86d00.webp 120w, /assets/father-img/leo-240-855ad1072d.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/leo-360-575be45f5b.webp",
-      "srcset": "/assets/father-img/leo-360-575be45f5b.webp 360w",
+      "src": "/assets/father-img/leo-360-89f6d7faed.webp",
+      "srcset": "/assets/father-img/leo-360-89f6d7faed.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -662,14 +662,14 @@
   "methodius": {
     "alt": "Portrait of Methodius of Olympus",
     "tile": {
-      "src": "/assets/father-img/methodius-120-4c1d2b6447.webp",
-      "srcset": "/assets/father-img/methodius-120-4c1d2b6447.webp 120w",
+      "src": "/assets/father-img/methodius-240-3259bdeed6.webp",
+      "srcset": "/assets/father-img/methodius-120-4f2295b4be.webp 120w, /assets/father-img/methodius-240-3259bdeed6.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/methodius-359-1ad59ccc72.webp",
-      "srcset": "/assets/father-img/methodius-359-1ad59ccc72.webp 359w",
+      "src": "/assets/father-img/methodius-360-2078a0196b.webp",
+      "srcset": "/assets/father-img/methodius-360-2078a0196b.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -684,14 +684,14 @@
   "pantocrator": {
     "alt": "Portrait of Christ Pantocrator (Saint Catherine's Monastery, Sinai)",
     "tile": {
-      "src": "/assets/father-img/pantocrator-240-01b867d685.webp",
-      "srcset": "/assets/father-img/pantocrator-120-b445d26e27.webp 120w, /assets/father-img/pantocrator-240-01b867d685.webp 240w",
+      "src": "/assets/father-img/pantocrator-240-32c211e2f8.webp",
+      "srcset": "/assets/father-img/pantocrator-120-3ab2c573bd.webp 120w, /assets/father-img/pantocrator-240-32c211e2f8.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/pantocrator-720-7edc280f78.webp",
-      "srcset": "/assets/father-img/pantocrator-360-967aa11ad9.webp 360w, /assets/father-img/pantocrator-720-7edc280f78.webp 720w",
+      "src": "/assets/father-img/pantocrator-720-0163931457.webp",
+      "srcset": "/assets/father-img/pantocrator-360-2cc20fe4f8.webp 360w, /assets/father-img/pantocrator-720-0163931457.webp 720w",
       "width": 489,
       "height": 336
     },
@@ -706,14 +706,14 @@
   "papias": {
     "alt": "Portrait of Papias of Hierapolis",
     "tile": {
-      "src": "/assets/father-img/papias-240-7284579704.webp",
-      "srcset": "/assets/father-img/papias-120-c43fc985f5.webp 120w, /assets/father-img/papias-240-7284579704.webp 240w",
+      "src": "/assets/father-img/papias-240-dca761ff99.webp",
+      "srcset": "/assets/father-img/papias-120-8cda92e097.webp 120w, /assets/father-img/papias-240-dca761ff99.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/papias-360-316282727f.webp",
-      "srcset": "/assets/father-img/papias-360-316282727f.webp 360w",
+      "src": "/assets/father-img/papias-360-4c4b25cb46.webp",
+      "srcset": "/assets/father-img/papias-360-4c4b25cb46.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -728,14 +728,14 @@
   "polycarp": {
     "alt": "Portrait of Polycarp of Smyrna",
     "tile": {
-      "src": "/assets/father-img/polycarp-120-29af54eceb.webp",
-      "srcset": "/assets/father-img/polycarp-120-29af54eceb.webp 120w",
+      "src": "/assets/father-img/polycarp-240-8642a89fdc.webp",
+      "srcset": "/assets/father-img/polycarp-120-1d87306da2.webp 120w, /assets/father-img/polycarp-240-8642a89fdc.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/polycarp-358-f1abe8cc21.webp",
-      "srcset": "/assets/father-img/polycarp-358-f1abe8cc21.webp 358w",
+      "src": "/assets/father-img/polycarp-360-27fba0b4fa.webp",
+      "srcset": "/assets/father-img/polycarp-360-27fba0b4fa.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -750,14 +750,14 @@
   "rufinus": {
     "alt": "Portrait of Rufinus of Aquileia",
     "tile": {
-      "src": "/assets/father-img/rufinus-120-e5f857b048.webp",
-      "srcset": "/assets/father-img/rufinus-120-e5f857b048.webp 120w",
+      "src": "/assets/father-img/rufinus-240-bcb39e96f7.webp",
+      "srcset": "/assets/father-img/rufinus-120-8e0dca7d52.webp 120w, /assets/father-img/rufinus-240-bcb39e96f7.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/rufinus-314-43fd103ecb.webp",
-      "srcset": "/assets/father-img/rufinus-314-43fd103ecb.webp 314w",
+      "src": "/assets/father-img/rufinus-360-d139a38574.webp",
+      "srcset": "/assets/father-img/rufinus-360-d139a38574.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -772,14 +772,14 @@
   "tertullian": {
     "alt": "Portrait of Tertullian",
     "tile": {
-      "src": "/assets/father-img/tertullian-240-531ed768b7.webp",
-      "srcset": "/assets/father-img/tertullian-120-d16fafc0f2.webp 120w, /assets/father-img/tertullian-240-531ed768b7.webp 240w",
+      "src": "/assets/father-img/tertullian-240-8892f9d4c4.webp",
+      "srcset": "/assets/father-img/tertullian-120-1950d7d5a2.webp 120w, /assets/father-img/tertullian-240-8892f9d4c4.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/tertullian-360-4a4b6a87cd.webp",
-      "srcset": "/assets/father-img/tertullian-360-4a4b6a87cd.webp 360w",
+      "src": "/assets/father-img/tertullian-360-1f73badfc8.webp",
+      "srcset": "/assets/father-img/tertullian-360-1f73badfc8.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -794,14 +794,14 @@
   "theodoret": {
     "alt": "Portrait of Theodoret of Cyrus",
     "tile": {
-      "src": "/assets/father-img/theodoret-240-4a499b99f0.webp",
-      "srcset": "/assets/father-img/theodoret-120-13bea81130.webp 120w, /assets/father-img/theodoret-240-4a499b99f0.webp 240w",
+      "src": "/assets/father-img/theodoret-240-7545227439.webp",
+      "srcset": "/assets/father-img/theodoret-120-b97c752d6b.webp 120w, /assets/father-img/theodoret-240-7545227439.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/theodoret-360-9d3cbaa807.webp",
-      "srcset": "/assets/father-img/theodoret-360-9d3cbaa807.webp 360w",
+      "src": "/assets/father-img/theodoret-360-e7396436b5.webp",
+      "srcset": "/assets/father-img/theodoret-360-e7396436b5.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -816,14 +816,14 @@
   "theophilus": {
     "alt": "Portrait of Theophilus of Antioch",
     "tile": {
-      "src": "/assets/father-img/theophilus-240-459c4a509e.webp",
-      "srcset": "/assets/father-img/theophilus-120-0c2f763e19.webp 120w, /assets/father-img/theophilus-240-459c4a509e.webp 240w",
+      "src": "/assets/father-img/theophilus-240-ca6e63c83a.webp",
+      "srcset": "/assets/father-img/theophilus-120-25b7427f11.webp 120w, /assets/father-img/theophilus-240-ca6e63c83a.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/theophilus-360-0daeb7f4ac.webp",
-      "srcset": "/assets/father-img/theophilus-360-0daeb7f4ac.webp 360w",
+      "src": "/assets/father-img/theophilus-360-56ddb77ab7.webp",
+      "srcset": "/assets/father-img/theophilus-360-56ddb77ab7.webp 360w",
       "width": 489,
       "height": 336
     },
@@ -838,14 +838,14 @@
   "vincent": {
     "alt": "Portrait of Vincent of Lérins",
     "tile": {
-      "src": "/assets/father-img/vincent-240-aba16fc024.webp",
-      "srcset": "/assets/father-img/vincent-120-c1129c5bf3.webp 120w, /assets/father-img/vincent-240-aba16fc024.webp 240w",
+      "src": "/assets/father-img/vincent-240-0a49300a6f.webp",
+      "srcset": "/assets/father-img/vincent-120-e9a58a24fd.webp 120w, /assets/father-img/vincent-240-0a49300a6f.webp 240w",
       "width": 120,
       "height": 120
     },
     "hero": {
-      "src": "/assets/father-img/vincent-360-5d22199d27.webp",
-      "srcset": "/assets/father-img/vincent-360-5d22199d27.webp 360w",
+      "src": "/assets/father-img/vincent-360-7578757482.webp",
+      "srcset": "/assets/father-img/vincent-360-7578757482.webp 360w",
       "width": 489,
       "height": 336
     },

@@ -5712,9 +5712,10 @@ html:not([data-theme="night"]) .lib-inspect-era {
   display: inline-flex;
   width: auto;
   min-height: 0;
-  padding: 3px 10px;
-  vertical-align: 0.1em;
-  font-size: 15px;
+  padding: 0.12em 0.45em 0.16em;
+  vertical-align: middle;
+  font-size: 0.62em;
+  line-height: 1.2;
   white-space: nowrap;
   cursor: default;
 }

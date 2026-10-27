@@ -174,12 +174,20 @@ describe("father directory HTML", () => {
     expect(body).not.toMatch(/href="\/fathers\/augustine"/);
     expect(body).toContain('width="230"');
     expect(body).toContain('height="178"');
-    expect(body).toContain('sizes="230px"');
+    expect(body).toContain('sizes="120px"');
     const eager = body.split('fetchpriority="high"').length - 1;
     expect(eager).toBe(1);
     expect(body).toContain('loading="lazy"');
-    expect(body).toContain("fathers-portrait-fallback");
+    expect(body).not.toContain("fathers-portrait-fallback");
     expect(body).not.toContain("/assets/fathers/");
     expect(body).not.toContain("/read?work=");
+  });
+});
+
+describe("father portrait fallback", () => {
+  it("uses Christ Pantocrator for fathers without a portrait", async () => {
+    const { fatherImage } = await import("../src/lib/fatherImages");
+    expect(fatherImage("tatian")?.alt).toBe("Christ Pantocrator");
+    expect(fatherImage("augustine")?.alt).toContain("Augustine");
   });
 });

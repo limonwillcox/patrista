@@ -4,15 +4,9 @@ import type { Author } from "../../server/types";
 import { escapeHtml } from "./fatherPaths";
 import { readPath } from "./workSlugs";
 import { fatherEntry, fatherSections, type FatherSection } from "./fathersDirectory";
-import { HERO_SIZES, TILE_SIZES, type FatherImage, type FatherImageCredit, type FatherImageMap } from "./fatherImages";
+import { HERO_SIZES, TILE_SIZES, fatherImageFrom, type FatherImage, type FatherImageCredit, type FatherImageMap } from "./fatherImages";
 import { answerFirstBio, fatherProfilePath } from "./fatherPageMeta";
 
-const DOVE =
-  '<div class="fathers-portrait fathers-portrait-fallback" aria-hidden="true">' +
-  '<svg viewBox="0 0 64 48"><path d="M6 30c8-2 14-10 18-16 3-6 10-8 18-8 1 6-2 11-7 14 6 2 12 6 15 11-8 1-14-2-19-6-2 6-7 11-13 13l-4 8 1-8C10 36 6 33 6 30z"/>' +
-  '<circle cx="40" cy="14" r="1.4" fill="currentColor" stroke="none"/></svg></div>';
-
-const DOVE_HERO = DOVE.replace('class="fathers-portrait ', 'class="fathers-hero-photo ');
 
 export function eagerFatherIds(sections: FatherSection[], count = 4): Set<string> {
   const ids: string[] = [];
@@ -87,10 +81,10 @@ export function renderFathersIndexBody(authors: Author[], images: FatherImageMap
   const blocks = sections.map((section) => {
     const cards = section.fathers
       .map((father) => {
-        const image = images[father.id];
+        const image = fatherImageFrom(images, father.id);
         const portrait = image
           ? portraitImgHtml(image, "tile", eager.has(father.id))
-          : DOVE;
+          : "";
         const credit = creditHtml(image?.credit ?? null, "fathers-tile-credit");
         return (
           '<li class="fathers-card">' +
@@ -139,8 +133,8 @@ export function renderFatherProfileBody(
 ): string {
   const entry = fatherEntry(author);
   const bio = answerFirstBio(entry.paragraphs);
-  const image = images[author.id];
-  const portrait = image ? portraitImgHtml(image, "hero", true) : DOVE_HERO;
+  const image = fatherImageFrom(images, author.id);
+  const portrait = image ? portraitImgHtml(image, "hero", true) : "";
   const credit = creditHtml(image?.credit ?? null, "fathers-hero-credit");
   const writings = works
     .slice()

@@ -16,9 +16,9 @@ const OUT_DIR = join(ROOT, "public", "assets", "father-img");
 const MANIFEST = join(ROOT, "src", "generated", "fatherImageManifest.json");
 const CREDITS = join(SRC_DIR, "credits.json");
 const STAMP = join(OUT_DIR, "stamp.json");
-const VERSION = 1;
+const VERSION = 2;
 
-const TILE_ASPECT = 178 / 230;
+const TILE_ASPECT = 1;
 const HERO_ASPECT = 336 / 489;
 
 function sha256(buf) {
@@ -51,12 +51,30 @@ function creditOf(raw) {
   };
 }
 
-async function encode(input, width, height, targetBytes) {
+/**
+ * Crop box around a manual focal point (face). focus.x/y are fractions of the source,
+ * focus.zoom is the crop width as a fraction of the source width. The face sits ~40% down.
+ */
+export function focusBox(srcW, srcH, aspect, focus) {
+  let w = Math.min(srcW, Math.max(1, (focus.zoom || 1) * srcW));
+  let h = w * aspect;
+  if (h > srcH) {
+    h = srcH;
+    w = h / aspect;
+  }
+  const left = Math.min(Math.max(0, focus.x * srcW - w / 2), srcW - w);
+  const top = Math.min(Math.max(0, focus.y * srcH - h * 0.4), srcH - h);
+  return { left: Math.round(left), top: Math.round(top), width: Math.round(w), height: Math.round(h) };
+}
+
+async function encode(input, width, height, targetBytes, box) {
   let quality = 64;
   let buf = Buffer.alloc(0);
   for (;;) {
-    buf = await sharp(input)
-      .resize(width, height, { fit: "cover", position: "attention" })
+    const img = sharp(input);
+    if (box) img.extract(box);
+    buf = await img
+      .resize(width, height, { fit: "cover", position: box ? "centre" : "attention" })
       .webp({ quality })
       .toBuffer();
     if (buf.length <= targetBytes || quality <= 42) break;
@@ -72,12 +90,12 @@ function plannedWidths(srcWidth, maxWidth) {
   return srcWidth > 0 ? [srcWidth] : [];
 }
 
-async function variants(input, srcWidth, maxWidth, aspect, targetBytes) {
+async function variants(input, srcWidth, maxWidth, aspect, targetBytes, box) {
   const widths = plannedWidths(srcWidth, maxWidth);
   const files = [];
   for (const width of widths) {
     const height = Math.max(1, Math.round(width * aspect));
-    const bytes = await encode(input, width, height, width >= maxWidth ? targetBytes : Math.round(targetBytes * 0.55));
+    const bytes = await encode(input, width, height, width >= maxWidth ? targetBytes : Math.round(targetBytes * 0.55), box);
     const hash = sha256(bytes).slice(0, 10);
     files.push({ width, height, hash, bytes });
   }
@@ -127,8 +145,14 @@ async function main() {
     const input = readFileSync(join(SRC_DIR, fileName));
     const meta = await sharp(input).metadata();
     const srcWidth = meta.width || 0;
-    const tiles = await variants(input, srcWidth, 460, TILE_ASPECT, 30 * 1024);
-    const heroes = await variants(input, srcWidth, 720, HERO_ASPECT, 70 * 1024);
+    const focus = credits[id]?.focus;
+    const srcHeight = meta.height || 0;
+    const tileBox = focus ? focusBox(srcWidth, srcHeight, TILE_ASPECT, focus) : null;
+    const heroBox = focus
+      ? focusBox(srcWidth, srcHeight, HERO_ASPECT, { ...focus, zoom: Math.min(1, (focus.zoom || 1) * 1.6) })
+      : null;
+    const tiles = await variants(input, Math.min(srcWidth, tileBox?.width || srcWidth), 240, TILE_ASPECT, 14 * 1024, tileBox);
+    const heroes = await variants(input, Math.min(srcWidth, heroBox?.width || srcWidth), 720, HERO_ASPECT, 70 * 1024, heroBox);
     if (!tiles.length || !heroes.length) {
       console.log("[father-img] skip " + id + " (no pixels)");
       continue;
@@ -144,8 +168,8 @@ async function main() {
       tile: {
         src: url(tileSrc.name),
         srcset: tileFiles.map((file) => url(file.name) + " " + file.width + "w").join(", "),
-        width: 230,
-        height: 178
+        width: 120,
+        height: 120
       },
       hero: {
         src: url(heroSrc.name),

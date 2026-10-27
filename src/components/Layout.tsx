@@ -29,8 +29,6 @@ function Rail() {
   const bibleActive = location.pathname === "/bible";
   const writingsActive =
     location.pathname === "/church-fathers" || location.pathname === "/church-fathers/" || location.pathname === "/browse";
-  const journalActive = location.pathname === "/journal";
-  const timelineActive = location.pathname.startsWith("/church-history/timeline");
   return (
     <nav className={"rail" + (navOpen ? " open" : "")} id="rail" aria-label="Primary">
       <div className="rail-pages">
@@ -57,18 +55,6 @@ function Rail() {
         <NavLink to="/fathers/" className={() => (fathersActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.fathers}
           <span>Fathers</span>
-        </NavLink>
-        <NavLink to="/journal" className={() => (journalActive ? "active" : "")} onClick={() => setNavOpen(false)}>
-          {ICONS.journal}
-          <span>Journal</span>
-        </NavLink>
-        <NavLink
-          to="/church-history/timeline#nativity"
-          className={() => (timelineActive ? "active" : "")}
-          onClick={() => setNavOpen(false)}
-        >
-          {ICONS.timeline}
-          <span>Timeline</span>
         </NavLink>
         <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.about}

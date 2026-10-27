@@ -5764,3 +5764,9 @@ html:not([data-theme="night"]) .dock-notch {
 @media (prefers-reduced-motion: reduce) {
   .dock-notched-body, .dock-notched.is-closed .dock-notched-body { transition: none; }
 }
+
+/* Keep reader text clear of the edge notches (11px tab + gap) at every width.
+   Wide screens already have a gutter wider than this; phones get it as padding. */
+@media (max-width: 760px) {
+  .read-page { padding-right: 14px; }
+}

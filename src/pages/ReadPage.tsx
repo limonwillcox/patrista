@@ -470,7 +470,7 @@ export function ReadPage() {
   const editionNote = preferred ? versionLabel(preferred, versions) : "";
 
   return (
-    <div ref={pageRef} onMouseUp={onMouseUp}>
+    <div ref={pageRef} className="read-page" onMouseUp={onMouseUp}>
       <div className="read-docks">
         {outline.chapters.length > 1 ? (
           <DockNotch id="chapters" name="chapters" icon={BookIcon}>

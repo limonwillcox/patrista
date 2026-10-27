@@ -41,8 +41,8 @@ export const BookIcon = (
   </svg>
 );
 
-export const BookmarkIcon = (
+export const GlassesIcon = (
   <svg viewBox="0 0 16 16" width="10" height="10" aria-hidden="true">
-    <path d="M4.5 2.5h7v11L8 10.8l-3.5 2.7z" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+    <path d="M1.5 9a2.6 2.6 0 1 0 5.2 0 2.6 2.6 0 1 0-5.2 0zm7.8 0a2.6 2.6 0 1 0 5.2 0 2.6 2.6 0 1 0-5.2 0zM6.7 8.6c.8-.6 1.8-.6 2.6 0M1.6 8.4 2.6 5m11.8 3.4L13.4 5" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
   </svg>
 );

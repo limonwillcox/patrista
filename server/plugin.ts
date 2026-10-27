@@ -6,7 +6,6 @@ import {
   handleBibleRemoteChapter,
   isBibleRemotePath
 } from "./bibleRemote";
-import { donateCorsHeaders, handleDonateCheckout, isDonateCheckoutPath } from "./donate";
 import {
   dictionaryMissCorsHeaders,
   handleDictionaryMissList,
@@ -25,7 +24,6 @@ function apiMiddleware(req: IncomingMessage, res: ServerResponse, next: () => vo
   if (!url.startsWith("/api/")) return next();
   const path = url.split("?")[0].replace(/\/+$/, "") || "/";
   if (
-    isDonateCheckoutPath(path) ||
     isFixesPath(path) ||
     isBibleRemotePath(path) ||
     isDictionaryMissPath(path)
@@ -52,52 +50,6 @@ function readBody(req: IncomingMessage): Promise<string> {
     req.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
     req.on("error", reject);
   });
-}
-
-function donateMiddleware(env: Record<string, string>) {
-  return async (req: IncomingMessage, res: ServerResponse, next: () => void) => {
-    const path = (req.url || "").split("?")[0].replace(/\/+$/, "") || "/";
-    if (!isDonateCheckoutPath(path)) return next();
-
-    const origin =
-      (typeof req.headers.origin === "string" && req.headers.origin) ||
-      env.DONATE_PUBLIC_ORIGIN ||
-      "http://127.0.0.1:5173";
-    const cors = donateCorsHeaders(origin);
-    for (const [k, v] of Object.entries(cors)) res.setHeader(k, v);
-    res.setHeader("Cache-Control", "no-store");
-
-    if (req.method === "OPTIONS") {
-      res.statusCode = 204;
-      res.end();
-      return;
-    }
-    if (req.method !== "POST") {
-      res.statusCode = 405;
-      res.setHeader("Content-Type", "application/json; charset=utf-8");
-      res.end(JSON.stringify({ error: "Method not allowed" }));
-      return;
-    }
-
-    let body: unknown = null;
-    try {
-      const raw = await readBody(req);
-      body = raw ? JSON.parse(raw) : null;
-    } catch {
-      res.statusCode = 400;
-      res.setHeader("Content-Type", "application/json; charset=utf-8");
-      res.end(JSON.stringify({ error: "Invalid JSON" }));
-      return;
-    }
-
-    const result = await handleDonateCheckout(body, {
-      secretKey: env.STRIPE_SECRET_KEY,
-      publicOrigin: env.DONATE_PUBLIC_ORIGIN || origin
-    });
-    res.statusCode = result.status;
-    res.setHeader("Content-Type", "application/json; charset=utf-8");
-    res.end(JSON.stringify(result.json));
-  };
 }
 
 function fixesMiddleware(env: Record<string, string>) {
@@ -248,7 +200,6 @@ export function fathersApiPlugin(): Plugin {
     name: "fathers-api",
     configureServer(server) {
       const env = loadEnv(server.config.mode, server.config.root, "");
-      server.middlewares.use(donateMiddleware(env));
       server.middlewares.use(fixesMiddleware(env));
       server.middlewares.use(dictionaryMissMiddleware());
       server.middlewares.use(bibleRemoteMiddleware(env));
@@ -256,7 +207,6 @@ export function fathersApiPlugin(): Plugin {
     },
     configurePreviewServer(server) {
       const env = loadEnv(server.config.mode, server.config.root, "");
-      server.middlewares.use(donateMiddleware(env));
       server.middlewares.use(fixesMiddleware(env));
       server.middlewares.use(dictionaryMissMiddleware());
       server.middlewares.use(bibleRemoteMiddleware(env));

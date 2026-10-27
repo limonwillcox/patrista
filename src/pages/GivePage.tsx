@@ -44,19 +44,24 @@ export function GivePage() {
       </section>
 
       <div className="give-body">
-        <p className="give-ask">
-          <span>
-            The easiest way to support the site is to enable ads by flipping this switch -&gt;
-          </span>{" "}
-          <button
-            type="button"
-            className={"give-ads-switch" + (adsOn ? " on" : "")}
-            role="switch"
-            aria-checked={adsOn}
-            aria-label="Enable ads"
-            onClick={toggleAds}
-          />
-        </p>
+        <div className="give-ask">
+          <p className="give-ask-text">
+            The easiest way to support the site is to enable ads by flipping this switch
+          </p>
+          <div className="give-ask-cue">
+            <span className="give-ask-arrow" aria-hidden="true">
+              ↓
+            </span>
+            <button
+              type="button"
+              className={"give-ads-switch" + (adsOn ? " on" : "")}
+              role="switch"
+              aria-checked={adsOn}
+              aria-label="Enable ads"
+              onClick={toggleAds}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

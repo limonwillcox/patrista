@@ -6,7 +6,7 @@ import { fetchChapter, fetchWork } from "../api/client";
 import { ChapterDock } from "../components/ChapterDock";
 import { DictionaryDock } from "../components/DictionaryDock";
 import { HardcoverDock } from "../components/HardcoverDock";
-import { readPath, resolveWorkId, workIdForReadPath } from "../lib/workSlugs";
+import { readPath, resolveWorkId, staticWorkId, workIdForReadPath } from "../lib/workSlugs";
 import { useApp } from "../context/AppContext";
 import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from "../lib/fatherPaths";
 import { chapterAtReadingLine } from "../lib/readDocks";
@@ -148,7 +148,7 @@ export function ReadPage() {
   const routeSlug = chapterRoute?.chapterSlug || "";
   const [params] = useSearchParams();
   const workId = resolveWorkId(
-    chapterRoute?.workId || workIdForReadPath(location.pathname) || params.get("work") || "confessions"
+    chapterRoute?.workId || workIdForReadPath(location.pathname) || staticWorkId(location.pathname) || params.get("work") || "confessions"
   );
   const jumpChapter = params.get("chapter") || "";
   const [outline, setOutline] = useState<WorkOutline | null>(null);

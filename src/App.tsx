@@ -1,4 +1,5 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { staticWorkId } from "./lib/workSlugs";
 import { Layout } from "./components/Layout";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { AboutPage } from "./pages/AboutPage";
@@ -37,9 +38,16 @@ export function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/give" element={<GivePage />} />
           <Route path="/fixes" element={<FixesPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<CatchAll />} />
         </Routes>
       </ErrorBoundary>
     </Layout>
   );
+}
+
+/** Static work URLs (/fathers/<author>/<work>.html) are the reader for that work; anything else goes home. */
+function CatchAll() {
+  const location = useLocation();
+  if (staticWorkId(location.pathname)) return <ReadPage />;
+  return <Navigate to="/" replace />;
 }

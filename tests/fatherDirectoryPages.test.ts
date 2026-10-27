@@ -105,7 +105,7 @@ describe("father directory HTML", () => {
     author({ id, name: id, deathYear: 90 + index })
   );
 
-  it("prerenders the profile with one h1, facts, a static work link, and Person JSON-LD", () => {
+  it("prerenders the profile with one h1, facts, a reader work link, and Person JSON-LD", () => {
     const body = renderFatherProfileBody(
       augustine,
       [
@@ -120,9 +120,9 @@ describe("father directory HTML", () => {
     expect(body).toContain("<dt>Dates</dt><dd>354–430</dd>");
     expect(body).toContain("<dt>Role</dt><dd>Bishop of Hippo</dd>");
     expect(body).toContain("<dt>See</dt><dd>North Africa</dd>");
-    expect(body).toContain('href="/fathers/augustine/confessions.html"');
-    expect(body).toContain('href="/fathers/augustine/city-of-god.html"');
-    expect(body).not.toContain("/read?work=");
+    expect(body).toContain('href="/augustines-confessions"');
+    expect(body).toContain('href="/read?work=city-of-god"');
+    expect(body).not.toContain(".html\"");
     expect(body).toContain('alt="Portrait of Augustine of Hippo"');
     expect(body).toContain('loading="eager" fetchpriority="high"');
     expect(body).toContain('width="489"');

@@ -18,6 +18,12 @@ export function workIdForReadPath(pathname: string): string | null {
   return null;
 }
 
+/** Work id for a static work page like /fathers/<author>/<work>.html, else null. */
+export function staticWorkId(pathname: string): string | null {
+  const m = pathname.match(/^\/fathers\/[^/]+\/([^/]+)\.html$/);
+  return m ? resolveWorkId(decodeURIComponent(m[1])) : null;
+}
+
 export function readPath(id: string): string {
   return WORK_READ_PATHS[id] || "/read?work=" + encodeURIComponent(id);
 }

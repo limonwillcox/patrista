@@ -170,6 +170,11 @@ img { max-width: 100%; display: block; }
 .icon-btn:hover { background: var(--panel); }
 .hamburger { display: none; }
 
+/* Left rail. The strip under it runs the full document height so the rail never ends abruptly. */
+#root,
+#root > div {
+  background-image: linear-gradient(to right, var(--nav) var(--rail), transparent var(--rail));
+}
 /* Left rail */
 .rail {
   position: fixed; left: 0; top: 0; bottom: 0; width: var(--rail);
@@ -2166,13 +2171,12 @@ html[data-theme="night"] body.about-read-dim .page {
   background: color-mix(in srgb, var(--bg) 62%, #000);
 }
 
-.give-page { max-width: 860px; margin: 0 auto; }
+.give-page { --give-gap: 120px; max-width: 860px; margin: 0 auto; padding-top: var(--give-gap); }
 .give-hero {
-  min-height: calc(100dvh - var(--header) - 8.5rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 8px 48px;
+  padding: 0 8px;
 }
 .give-quote {
   margin: 0;
@@ -2182,32 +2186,18 @@ html[data-theme="night"] body.about-read-dim .page {
   line-height: 1.25;
   letter-spacing: -0.01em;
   color: var(--text);
-  font-size: 42px;
-  opacity: 0;
-  animation:
-    giveQuoteFade 1.2s ease-out forwards,
-    giveQuoteGrow 1.5s linear 1.2s forwards;
+  font-size: 45px;
 }
 .give-quote.rest {
   animation: none;
   opacity: 1;
   font-size: 45px;
 }
-@keyframes giveQuoteFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes giveQuoteGrow {
-  from { font-size: 42px; }
-  to { font-size: 45px; }
-}
 .give-body {
-  padding: 8px 0 32px;
-  animation: giveBodyIn 0.9s ease 2.7s both;
-}
-@keyframes giveBodyIn {
-  from { opacity: 0.28; filter: grayscale(1); }
-  to { opacity: 1; filter: none; }
+  display: flex;
+  flex-direction: column;
+  gap: var(--give-gap);
+  padding: var(--give-gap) 0 var(--give-gap);
 }
 .give-ask {
   display: flex;
@@ -2221,7 +2211,7 @@ html[data-theme="night"] body.about-read-dim .page {
   letter-spacing: -0.01em;
   color: var(--text);
   font-size: 45px;
-  margin: 0 auto 28px;
+  margin: 0 auto;
   max-width: 52rem;
 }
 .give-ask-text {
@@ -2276,7 +2266,7 @@ html[data-theme="night"] body.about-read-dim .page {
 .give-card p { color: var(--muted); margin: 0; }
 
 @media (max-width: 760px) {
-  .give-hero { min-height: 70dvh; }
+  .give-page { --give-gap: 72px; }
 }
 
 /* About — the room hushes so the letter can be read. */
@@ -5715,4 +5705,17 @@ html:not([data-theme="night"]) .lib-inspect-era {
   background: var(--linen);
   border-color: var(--linen-border);
   box-shadow: 0 8px 24px rgba(58, 36, 18, 0.18);
+}
+
+/* Give: inline sample of the reader's Get the Hardcover button */
+.give-hardcover-sample {
+  display: inline-flex;
+  width: auto;
+  min-height: 0;
+  padding: 0.12em 0.45em 0.16em;
+  vertical-align: middle;
+  font-size: 0.62em;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: default;
 }

@@ -1,35 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { loadAdsEnabled, saveAdsEnabled } from "../lib/adsPreference";
 import { useApp } from "../context/AppContext";
 
 export function GivePage() {
   const { setActivePassage } = useApp();
-  const heroRef = useRef<HTMLElement>(null);
   const [adsOn, setAdsOn] = useState(() => loadAdsEnabled());
 
   useEffect(() => {
     setActivePassage(null);
   }, [setActivePassage]);
-
-  useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) return;
-    const hero = heroRef.current;
-    if (!hero) return;
-    document.body.classList.add("give-chrome-dim");
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        const on = entry.isIntersecting && entry.intersectionRatio > 0.35;
-        document.body.classList.toggle("give-chrome-dim", on);
-      },
-      { threshold: [0, 0.35, 0.6, 1] }
-    );
-    io.observe(hero);
-    return () => {
-      io.disconnect();
-      document.body.classList.remove("give-chrome-dim");
-    };
-  }, []);
 
   function toggleAds() {
     const next = !adsOn;
@@ -39,7 +18,7 @@ export function GivePage() {
 
   return (
     <div className="give-page">
-      <section className="give-hero" ref={heroRef} aria-label="Patrista funding">
+      <section className="give-hero" aria-label="Patrista funding">
         <h1 className="give-quote">This is 100% personally funded</h1>
       </section>
 
@@ -61,6 +40,13 @@ export function GivePage() {
               onClick={toggleAds}
             />
           </div>
+        </div>
+        <div className="give-ask give-ask--hardcover">
+          <p className="give-ask-text">
+            If you enjoy reading the Church Fathers with a physical book, using the link through the{" "}
+            <span className="read-dict-bar read-hardcover-bar give-hardcover-sample">Get the Hardcover</span> button also
+            substantially helps support the site.
+          </p>
         </div>
       </div>
     </div>

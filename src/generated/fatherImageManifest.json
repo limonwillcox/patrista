@@ -131,6 +131,22 @@
       "attributionRequired": false
     }
   },
+  "barnabas": {
+    "alt": "Portrait of Barnabas (Epistle)",
+    "tile": {
+      "src": "/assets/father-img/barnabas-240-f6461e71eb.webp",
+      "srcset": "/assets/father-img/barnabas-120-789ed80821.webp 120w, /assets/father-img/barnabas-240-f6461e71eb.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/barnabas-360-c50f0ab5c3.webp",
+      "srcset": "/assets/father-img/barnabas-360-c50f0ab5c3.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
   "basil": {
     "alt": "Portrait of Basil the Great",
     "tile": {
@@ -460,6 +476,22 @@
       "source": "https://commons.wikimedia.org/wiki/File:Grigorii%20chudotvoretz.jpg",
       "attributionRequired": false
     }
+  },
+  "hermas": {
+    "alt": "Portrait of Hermas",
+    "tile": {
+      "src": "/assets/father-img/hermas-120-0d36c3c391.webp",
+      "srcset": "/assets/father-img/hermas-120-0d36c3c391.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/hermas-239-6505bb1aa3.webp",
+      "srcset": "/assets/father-img/hermas-239-6505bb1aa3.webp 239w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
   },
   "hilary": {
     "alt": "Portrait of Hilary of Poitiers",

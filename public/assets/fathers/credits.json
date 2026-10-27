@@ -479,6 +479,21 @@
       "zoom": 0.5
     }
   },
+  "mathetes": {
+    "title": "Mathetes",
+    "source": "provided by site owner",
+    "file": "mathetes.jpg",
+    "artist": "",
+    "license": "",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "",
+    "focus": {
+      "x": 0.33,
+      "y": 0.14,
+      "zoom": 0.2
+    }
+  },
   "methodius": {
     "title": "Methodius of Olympus",
     "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Methodius_of_Olympus.jpg/330px-Methodius_of_Olympus.jpg",

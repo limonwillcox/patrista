@@ -691,6 +691,22 @@
       "attributionRequired": false
     }
   },
+  "mathetes": {
+    "alt": "Portrait of Mathetes (to Diognetus)",
+    "tile": {
+      "src": "/assets/father-img/mathetes-72-cab6f4b652.webp",
+      "srcset": "/assets/father-img/mathetes-72-cab6f4b652.webp 72w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/mathetes-99-4268c8a7a1.webp",
+      "srcset": "/assets/father-img/mathetes-99-4268c8a7a1.webp 99w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
   "methodius": {
     "alt": "Portrait of Methodius of Olympus",
     "tile": {

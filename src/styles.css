@@ -23,6 +23,11 @@
   --sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
   --read-size: 18px;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  /* Light-mode surface for reader docks and library panels (linen) */
+  --linen: #f7f1e4;
+  --linen-hover: #efe5d1;
+  --linen-text: #3a2412;
+  --linen-border: rgba(90, 58, 34, 0.22);
 }
 
 html[data-theme="night"] {
@@ -5668,4 +5673,46 @@ html[data-theme="night"] .fathers-hero-credit {
     text-decoration: none;
   }
   .read-hardcover-bar:hover { color: #fff; text-decoration: none; }
+}
+
+/* Light mode: linen docks and library panels. Night mode keeps the dark wood look above. */
+html:not([data-theme="night"]) .read-chapter-bar,
+html:not([data-theme="night"]) .read-chapter-list,
+html:not([data-theme="night"]) .read-dict-bar,
+html:not([data-theme="night"]) .read-dict-senses,
+html:not([data-theme="night"]) .read-note-tools button,
+html:not([data-theme="night"]) .lib-hover-readout {
+  background: var(--linen);
+  color: var(--linen-text);
+  border-color: var(--linen-border);
+  box-shadow: var(--shadow);
+}
+html:not([data-theme="night"]) .read-chapter-list a { color: var(--linen-text); }
+html:not([data-theme="night"]) .read-chapter-list a:hover,
+html:not([data-theme="night"]) .read-chapter-list a.is-current {
+  background: var(--linen-hover);
+  color: var(--linen-text);
+}
+html:not([data-theme="night"]) .read-chapter-prev:hover:not(:disabled),
+html:not([data-theme="night"]) .read-chapter-next:hover:not(:disabled),
+html:not([data-theme="night"]) .read-dict-bar:hover,
+html:not([data-theme="night"]) .read-note-tools button:hover {
+  background: var(--linen-hover);
+  color: var(--linen-text);
+}
+html:not([data-theme="night"]) .read-dict-bar.is-pick { border-color: var(--burgundy); }
+html:not([data-theme="night"]) .read-dict-source { color: var(--muted) !important; }
+html:not([data-theme="night"]) .read-note-editor:empty::before { color: var(--muted); }
+html:not([data-theme="night"]) .lib-chip span {
+  background: var(--linen);
+  color: var(--linen-text);
+  border-color: var(--linen-border);
+}
+html:not([data-theme="night"]) .lib-inspect-back { background: rgba(58, 36, 18, 0.35); }
+html:not([data-theme="night"]) .lib-inspect-grid { color: var(--linen-text); }
+html:not([data-theme="night"]) .lib-inspect-author,
+html:not([data-theme="night"]) .lib-inspect-era {
+  background: var(--linen);
+  border-color: var(--linen-border);
+  box-shadow: 0 8px 24px rgba(58, 36, 18, 0.18);
 }

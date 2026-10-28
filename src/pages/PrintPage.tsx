@@ -177,8 +177,10 @@ export function PrintPage() {
               {paras.map((p, i) => {
                 if (!keep(i)) return null;
                 const sub = subAt.get(i);
-                if (sub) return <h3 key={i}>{sub.label}{sub.title ? " — " + sub.title : ""}</h3>;
-                return <p className="para" key={i}>{p.replace(/\s*\[\d+\]/g, "")}</p>;
+                const head = sub ? <h3 key={i + "h"}>{sub.label}{sub.title ? " — " + sub.title : ""}</h3> : null;
+                if (sub && !sub.inline) return head;
+                const para = <p className="para" key={i}>{p.replace(/\s*\[\d+\]/g, "")}</p>;
+                return head ? [head, para] : para;
               })}
             </section>
           );

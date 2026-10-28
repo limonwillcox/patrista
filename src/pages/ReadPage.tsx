@@ -25,19 +25,19 @@ function renderParas(passage: Passage, version: string) {
     const key = passage.work + "-" + passage.chapter + "-" + version + "-" + i;
     const section = `${passage.work}:${passage.chapter}:p${i}`;
     const sub = version === "schaff" ? subAt.get(i) : undefined;
-    if (sub) {
-      return (
-        <h3 className="read-subchapter" id={"ch-" + passage.chapter + "-" + sub.n} key={key}>
-          {sub.label}
-          {sub.title ? " — " + sub.title : ""}
-        </h3>
-      );
-    }
-    return (
+    const subHead = sub ? (
+      <h3 className="read-subchapter" id={"ch-" + passage.chapter + "-" + sub.n} key={key + "-h"}>
+        {sub.label}
+        {sub.title ? " — " + sub.title : ""}
+      </h3>
+    ) : null;
+    if (sub && !sub.inline) return subHead;
+    const body = (
       <p className="para" data-key={key} data-section={section} key={key}>
         {text}
       </p>
     );
+    return subHead ? [subHead, body] : body;
   });
 }
 

@@ -35,6 +35,10 @@ export type EnglishWorkSpec = {
   dropFootnotes?: boolean;
   /** Chapter markers start a body paragraph ("1. I suppose…"): keep the paragraph, add a "Chapter N" heading before it. */
   subChapterInline?: boolean;
+  /** Label chapters by their order ("Chapter 5") instead of the source numeral (fixes stray "CHAPTER V."). */
+  subChapterSequence?: boolean;
+  /** Chapter-mode headings are just "Chapter N" (no first-line title), for numbered-paragraph works. */
+  bareHeadings?: boolean;
 };
 
 /** Hand overrides for works that need a fixed chunk mode / unit count. */
@@ -100,7 +104,23 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
     dropFootnotes: true,
     subChapters: /^CHAPTER\s+(\d+)\b/
   },
-  "wars-of-the-jews": { chunk: "blob" },
+  // Wars: Preface + Books I–VII with "CHAPTER N." nested; numbered sections stay body text.
+  // Indented lines are book/chapter descriptions; "N (return) [ … ]" blocks are Whiston's notes.
+  "wars-of-the-jews": {
+    chunk: "book",
+    startAt: /^\s*PREFACE\s*$(?=\s*^1\. )/m,
+    unitRe: /^\s*(?:BOOK\s+([IVX]+)\.|(PREFACE))\s*$/m,
+    dropBlocks: [
+      { start: /^(?:.*FOOTNOTES\s+)?\d+ \(return\)/, until: /^\s*(?:CHAPTER\s+\w+\.?|BOOK\s+[IVX]+\.)\s*$/ },
+      { start: /^ {5}\S/, until: /^\s*$/ }
+    ],
+    endAt: /^\s*End of (?:the )?Project Gutenberg/im,
+    dropParas: /^(?:WAR\b.*)?FOOTNOTES:?$/i,
+    stripNoteMarks: /(?<=[A-Za-z\]\)\.,;:'"])\d{1,3}(?=[\s,.;:'"\]]|$)|(?<=[A-Za-z,;:.\]])\s\d{1,3}(?=\s[A-Za-z\[])/g,
+    dropFootnotes: true,
+    subChapters: /^CHAPTER\s+([IVXL]+|\d+)\b/,
+    subChapterSequence: true
+  },
   // Against Apion: 2 books; chapters are the numbered paragraphs ("1. I suppose…").
   "against-apion": {
     chunk: "book",
@@ -111,8 +131,24 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
     subChapters: /^(\d+)\.\s/,
     subChapterInline: true
   },
-  "life-of-flavius-josephus": { chunk: "blob" },
-  "discourse-to-the-greeks-concerning-hades": { chunk: "blob", authorshipDisputed: true },
+  // Life: single level, one chapter per numbered section; Whiston's footnotes (from "[Footnote 1:") removed.
+  "life-of-flavius-josephus": {
+    chunk: "chapter",
+    startAt: /^1\. The family from which I am derived/m,
+    unitRe: /^(\d+)\.\s/m,
+    bareHeadings: true,
+    dropParas: /^Footnotes:?$/i,
+    endAt: /^\[Footnote 1:|^\s*End of (?:the )?Project Gutenberg/m,
+    dropFootnotes: true
+  },
+  "discourse-to-the-greeks-concerning-hades": {
+    chunk: "chapter",
+    authorshipDisputed: true,
+    startAt: /^1\. Now as to Hades/m,
+    unitRe: /^(\d+)\.\s/m,
+    bareHeadings: true,
+    endAt: /^\s*End of (?:the )?Project Gutenberg/im
+  },
   // ANF VII–VIII collections with no "Chapter N" marks: one section per titled block between rules.
   "early-liturgies": { chunk: "section", endAt: /^\s*Indexes\s*$/m },
   "memoirs-of-edessa": { chunk: "section", endAt: /^\s*Remains of the Second and Third Centuries\s*$/m },
@@ -596,7 +632,7 @@ function dropLineBlocks(raw: string, blocks: { start: RegExp; until: RegExp }[])
 export const SUBCHAPTER_RE = /^Chapter\s+([IVXLCDM]+|\d+)\b\.?\s*(?:--|—|-|\.|:)?\s*(.*?)\.?$/;
 
 /** Mark chapter-heading paragraphs inside each book passage (headings stay in the text). */
-export function addSubChapters(passages: Passage[], re: RegExp = SUBCHAPTER_RE, inline = false): Passage[] {
+export function addSubChapters(passages: Passage[], re: RegExp = SUBCHAPTER_RE, inline = false, sequence = false): Passage[] {
   return passages.map((p) => {
     let paras = Object.values(p.versions)[0] ?? [];
     if (!inline) {
@@ -614,7 +650,8 @@ export function addSubChapters(passages: Passage[], re: RegExp = SUBCHAPTER_RE, 
       if (!inline && text.length > 600) return;
       const m = text.trim().match(re);
       if (!m) return;
-      const sub: SubChapter = { n: sections.length + 1, label: "Chapter " + m[1], title: (m[2] || "").trim(), para: i };
+      const n = sections.length + 1;
+      const sub: SubChapter = { n, label: "Chapter " + (sequence ? n : m[1]), title: (m[2] || "").trim(), para: i };
       if (inline) sub.inline = true;
       sections.push(sub);
     });
@@ -627,7 +664,12 @@ export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: W
   if (!spec.subChapters && !spec.dropParas && !spec.stripNoteMarks && !spec.dropFootnotes) return parsed;
   let passages = parsed.passages.map((p) => cleanPassage(spec, p));
   if (spec.subChapters) {
-    passages = addSubChapters(passages, spec.subChapters === true ? SUBCHAPTER_RE : spec.subChapters, spec.subChapterInline);
+    passages = addSubChapters(
+      passages,
+      spec.subChapters === true ? SUBCHAPTER_RE : spec.subChapters,
+      spec.subChapterInline,
+      spec.subChapterSequence
+    );
   }
   return { work: workFromSpec(spec, passages), passages };
 }
@@ -744,7 +786,7 @@ function parseEnglishWorkFlat(spec: EnglishWorkSpec, root: string): { work: Work
         .split(/\r?\n/)
         .map((l) => l.trim())
         .find((l) => l.length > 0 && !RULE_LINE_RE.test(l) && !FOOTNOTE_BODY_RE.test(l)) || "";
-      const titleBit = firstLine.replace(/^\[(\d+)\]\s*/, "").replace(/^[\.—\-\s]+/, "").slice(0, 120);
+      const titleBit = spec.bareHeadings ? "" : firstLine.replace(/^\[(\d+)\]\s*/, "").replace(/^[\.—\-\s]+/, "").slice(0, 120);
       heading = (bookLabel ? "Book " + bookLabel + " · " : "") + heading + (titleBit ? " — " + titleBit : "");
     }
     passages.push({

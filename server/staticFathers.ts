@@ -528,7 +528,7 @@ export function renderSitemaps(urls: string[], origin: string): { name: string; 
 }
 
 export function robotsTxt(origin: string): string {
-  return ["User-agent: *", "Allow: /", "Sitemap: " + origin + "/sitemap.xml", ""].join("\n");
+  return ["User-agent: *", "Allow: /", "Disallow: /print", "Sitemap: " + origin + "/sitemap.xml", ""].join("\n");
 }
 
 export function writeFatherPages(

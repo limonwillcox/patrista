@@ -11,7 +11,7 @@ export type EnglishWorkSpec = {
   short: string;
   series: string;
   path: string;
-  chunk: ChunkMode | "auto" | "blob";
+  chunk: ChunkMode | "auto" | "blob" | "section";
   expectUnits?: number;
   authorshipDisputed?: boolean;
   /** Slice the extract before this heading (Word-Check: drop glued-on works / elucidations). */
@@ -66,7 +66,12 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
   "wars-of-the-jews": { chunk: "blob" },
   "against-apion": { chunk: "blob" },
   "life-of-flavius-josephus": { chunk: "blob" },
-  "discourse-to-the-greeks-concerning-hades": { chunk: "blob", authorshipDisputed: true }
+  "discourse-to-the-greeks-concerning-hades": { chunk: "blob", authorshipDisputed: true },
+  // ANF VII–VIII collections with no "Chapter N" marks: one section per titled block between rules.
+  "early-liturgies": { chunk: "section", endAt: /^\s*Indexes\s*$/m },
+  "memoirs-of-edessa": { chunk: "section", endAt: /^\s*Remains of the Second and Third Centuries\s*$/m },
+  "testaments-of-the-twelve-patriarchs": { chunk: "section" },
+  decretals: { chunk: "section", endAt: /^\s*Memoirs of Edessa And Other Ancient Syriac Documents\s*$/m }
 };
 
 /** Skip these under *_English (already shipped elsewhere, or non-Schaff). */
@@ -476,6 +481,31 @@ export function authorsFromSpecs(specs: EnglishWorkSpec[]): Author[] {
 /** Allow trailing note markers e.g. "Book IV. [160]" — see unit regexes above. */
 
 /** Split English Schaff extract into Passage units (translation id: schaff). */
+/**
+ * Split a CCEL extract on its horizontal rules. Each titled block is a section; blocks that are only
+ * footnote bodies ("[123] ...") belong to the section before them.
+ */
+export function ruleSections(raw: string): { heading: string; body: string }[] {
+  const parts = raw.replace(/\r\n/g, "\n").split(/^\s*_{10,}\s*$/m);
+  const out: { heading: string; body: string }[] = [];
+  for (const part of parts) {
+    const text = part.trim();
+    if (!text) continue;
+    if (/^\[\d+\]/.test(text) && out.length) {
+      out[out.length - 1].body += "\n\n" + part;
+      continue;
+    }
+    const first = text
+      .split(/\n\s*\n/)[0]
+      .replace(/\s*\[\d+\]/g, "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .replace(/\.$/, "");
+    out.push({ heading: first.length <= 120 ? first : "", body: part });
+  }
+  return out;
+}
+
 export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: Work; passages: Passage[] } {
   const file = join(root, spec.path);
   if (!existsSync(file)) throw new Error("Missing English work file: " + spec.path);
@@ -485,7 +515,21 @@ export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: W
     if (cut >= 0) raw = raw.slice(0, cut);
   }
 
-  let mode: ChunkMode | "blob" = spec.chunk === "auto" ? detectChunk(raw) : spec.chunk;
+  if (spec.chunk === "section") {
+    const passages = ruleSections(raw)
+      .map((sec) => ({ heading: sec.heading, ...parasAndNotesFromBlock(sec.body) }))
+      .filter((sec) => sec.paras.length > 0)
+      .map((sec, i) => ({
+        work: spec.id,
+        chapter: i + 1,
+        heading: sec.heading,
+        versions: { schaff: sec.paras },
+        footnotes: sec.footnotes
+      }));
+    if (passages.length) return { work: workFromSpec(spec, passages), passages };
+  }
+
+  let mode: ChunkMode | "blob" = spec.chunk === "auto" || spec.chunk === "section" ? detectChunk(raw) : spec.chunk;
 
   // Soft-cap ultra-dense chapter scans (e.g. verse/psalm dumps) for MVP memory.
   if (mode !== "blob" && mode !== "book") {

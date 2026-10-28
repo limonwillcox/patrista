@@ -299,6 +299,36 @@
       "zoom": 0.35
     }
   },
+  "gennadius": {
+    "title": "Gennadius",
+    "source": "provided by site owner",
+    "file": "gennadius.jpg",
+    "artist": "",
+    "license": "",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "",
+    "focus": {
+      "x": 0.5,
+      "y": 0.3,
+      "zoom": 0.28
+    }
+  },
+  "gregory": {
+    "title": "Gregory the Great",
+    "source": "provided by site owner",
+    "file": "gregory.jpg",
+    "artist": "",
+    "license": "",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "",
+    "focus": {
+      "x": 0.41,
+      "y": 0.12,
+      "zoom": 0.25
+    }
+  },
   "gregory_nazianzen": {
     "title": "Gregory of Nazianzus",
     "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Gregor-Chora_%28cropped%29.jpg/330px-Gregor-Chora_%28cropped%29.jpg",
@@ -642,6 +672,51 @@
       "x": 0.42,
       "y": 0.15,
       "zoom": 0.4
+    }
+  },
+  "socrates": {
+    "title": "Socrates Scholasticus",
+    "source": "provided by site owner",
+    "file": "socrates.jpg",
+    "artist": "",
+    "license": "",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "",
+    "focus": {
+      "x": 0.5,
+      "y": 0.07,
+      "zoom": 0.4
+    }
+  },
+  "sozomen": {
+    "title": "Sozomen",
+    "source": "provided by site owner",
+    "file": "sozomen.jpg",
+    "artist": "",
+    "license": "",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "",
+    "focus": {
+      "x": 0.5,
+      "y": 0.45,
+      "zoom": 0.45
+    }
+  },
+  "sulpicius_severus": {
+    "title": "Sulpicius Severus",
+    "source": "provided by site owner",
+    "file": "sulpicius_severus.jpg",
+    "artist": "",
+    "license": "",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "",
+    "focus": {
+      "x": 0.5,
+      "y": 0.5,
+      "zoom": 0.27
     }
   },
   "tatian": {

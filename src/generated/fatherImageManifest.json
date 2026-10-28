@@ -427,6 +427,38 @@
       "attributionRequired": false
     }
   },
+  "gennadius": {
+    "alt": "Portrait of Gennadius",
+    "tile": {
+      "src": "/assets/father-img/gennadius-120-a1d9ec2c76.webp",
+      "srcset": "/assets/father-img/gennadius-120-a1d9ec2c76.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/gennadius-182-a4da82f308.webp",
+      "srcset": "/assets/father-img/gennadius-182-a4da82f308.webp 182w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
+  "gregory": {
+    "alt": "Portrait of Gregory the Great",
+    "tile": {
+      "src": "/assets/father-img/gregory-120-92dceca6bd.webp",
+      "srcset": "/assets/father-img/gregory-120-92dceca6bd.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/gregory-228-157ee58954.webp",
+      "srcset": "/assets/father-img/gregory-228-157ee58954.webp 228w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
   "gregory_nazianzen": {
     "alt": "Portrait of Gregory Nazianzen",
     "tile": {
@@ -896,6 +928,54 @@
       "source": "https://commons.wikimedia.org/wiki/File:Rufinus%20Aquileiensis.jpg",
       "attributionRequired": false
     }
+  },
+  "socrates": {
+    "alt": "Portrait of Socrates Scholasticus",
+    "tile": {
+      "src": "/assets/father-img/socrates-240-6b590b60ca.webp",
+      "srcset": "/assets/father-img/socrates-120-8ad91c3b51.webp 120w, /assets/father-img/socrates-240-6b590b60ca.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/socrates-720-d9d2868b88.webp",
+      "srcset": "/assets/father-img/socrates-360-ca1028303d.webp 360w, /assets/father-img/socrates-720-d9d2868b88.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
+  "sozomen": {
+    "alt": "Portrait of Sozomen",
+    "tile": {
+      "src": "/assets/father-img/sozomen-120-09c4bf8777.webp",
+      "srcset": "/assets/father-img/sozomen-120-09c4bf8777.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/sozomen-200-48b0e61881.webp",
+      "srcset": "/assets/father-img/sozomen-200-48b0e61881.webp 200w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
+  "sulpicius_severus": {
+    "alt": "Portrait of Sulpicius Severus",
+    "tile": {
+      "src": "/assets/father-img/sulpicius_severus-240-b81c7df9d7.webp",
+      "srcset": "/assets/father-img/sulpicius_severus-120-f2fefe844a.webp 120w, /assets/father-img/sulpicius_severus-240-b81c7df9d7.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/sulpicius_severus-720-050f470644.webp",
+      "srcset": "/assets/father-img/sulpicius_severus-360-16e1080e95.webp 360w, /assets/father-img/sulpicius_severus-720-050f470644.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
   },
   "tatian": {
     "alt": "Portrait of Tatian",

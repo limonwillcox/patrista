@@ -38,7 +38,8 @@ export function JournalPage() {
     return { work, father };
   }, [workId, catalog]);
 
-  const loggedIn = Boolean(user);
+  // Accounts are gone; notes live in this browser, so the journal is always open.
+  const loggedIn = true;
   const canNext = !workId && !turning && leaf + 2 < pages.length;
   const canPrev = !turning && (workId ? true : leaf > 0);
 

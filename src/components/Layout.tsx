@@ -187,14 +187,6 @@ function Header({ searchQ, setSearchQ }: { searchQ: string; setSearchQ: (q: stri
           </svg>
         </button>
         {location.pathname === "/bible" ? <RailSettings /> : null}
-        {user ? (
-          <>
-            <span style={{ fontSize: 15, fontWeight: 600 }}>{user}</span>
-            <button className="linkish" id="signOut" onClick={() => setUser(null)}>
-              Sign out
-            </button>
-          </>
-        ) : null}
       </div>
     </header>
   );
@@ -258,97 +250,6 @@ function RailSettings() {
   );
 }
 
-function AuthModal() {
-  const { loginOpen, loginTab, setLoginOpen, setLoginTab, setUser, showToast } = useApp();
-  const [signinEmail, setSigninEmail] = useState("");
-  const [createName, setCreateName] = useState("");
-  const [createEmail, setCreateEmail] = useState("");
-  if (!loginOpen) {
-    return (
-      <div className="modal-back" id="loginModal">
-        <div className="modal" role="dialog" aria-labelledby="loginTitle" />
-      </div>
-    );
-  }
-  return (
-    <div
-      className="modal-back open"
-      id="loginModal"
-      onClick={(e) => {
-        if ((e.target as HTMLElement).id === "loginModal") setLoginOpen(false);
-      }}
-    >
-      <div className="modal" role="dialog" aria-labelledby="loginTitle">
-        <h2 id="loginTitle">{loginTab === "create" ? "Create account" : "Sign in"}</h2>
-        <div className="auth-tabs">
-          <button type="button" className={loginTab === "signin" ? "active" : ""} data-auth="signin" onClick={() => setLoginTab("signin")}>
-            Sign in
-          </button>
-          <button type="button" className={loginTab === "create" ? "active" : ""} data-auth="create" onClick={() => setLoginTab("create")}>
-            Create account
-          </button>
-        </div>
-        {loginTab === "signin" ? (
-          <div className="auth-panel active" id="panel-signin">
-            <label>Email</label>
-            <input id="signinEmail" type="email" placeholder="you@example.org" value={signinEmail} onChange={(e) => setSigninEmail(e.target.value)} />
-            <label>Password</label>
-            <input id="signinPass" type="password" placeholder="Password" />
-            <button
-              className="btn-burgundy"
-              id="signinSubmit"
-              style={{ width: "100%" }}
-              onClick={() => {
-                const email = signinEmail.trim();
-                setUser(email ? email.split("@")[0] : "Reader");
-                setLoginOpen(false);
-              }}
-            >
-              Sign in
-            </button>
-          </div>
-        ) : (
-          <div className="auth-panel active" id="panel-create">
-            <label>Display name</label>
-            <input id="loginName" placeholder="e.g. Paula of Bethlehem" value={createName} onChange={(e) => setCreateName(e.target.value)} />
-            <label>Email</label>
-            <input id="loginEmail" type="email" placeholder="you@example.org" value={createEmail} onChange={(e) => setCreateEmail(e.target.value)} />
-            <label>Password</label>
-            <input id="loginPass" type="password" placeholder="Create a password" />
-            <button
-              className="btn-burgundy"
-              id="loginSubmit"
-              style={{ width: "100%" }}
-              onClick={() => {
-                const name = (createName || createEmail || "Reader").trim();
-                setUser(name.includes("@") ? name.split("@")[0] : name);
-                setLoginOpen(false);
-              }}
-            >
-              Create account
-            </button>
-          </div>
-        )}
-        <div className="oauth-block">
-          <p className="fineprint" style={{ marginTop: 0 }}>
-            OAuth is optional and not required. It is not connected in this mock.
-          </p>
-          <button type="button" className="btn-oauth" data-oauth="google" onClick={() => showToast("OAuth is optional and not connected in this mock.")}>
-            Continue with Google
-          </button>
-          <button type="button" className="btn-oauth" data-oauth="microsoft" onClick={() => showToast("OAuth is optional and not connected in this mock.")}>
-            Continue with Microsoft
-          </button>
-        </div>
-        <p style={{ textAlign: "center", margin: "12px 0 0" }}>
-          <button className="linkish" id="loginCancel" onClick={() => setLoginOpen(false)}>
-            Cancel
-          </button>
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export function Layout({ children }: { children: ReactNode }) {
   const { setNavOpen, setBooklistOpen, setLoginOpen, toast, navOpen } = useApp();
@@ -411,7 +312,6 @@ export function Layout({ children }: { children: ReactNode }) {
       >
         {children}
       </main>
-      <AuthModal />
       <div className={"toast" + (toast ? " open" : "")} id="toast">
         {toast}
       </div>

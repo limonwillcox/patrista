@@ -819,8 +819,9 @@ html[data-theme="night"] .starter-card--soon {
   font-size: 14px;
   text-decoration: none;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  width: max-content;
+  min-width: 100%;
+  box-sizing: border-box;
 }
 .read-chapter-list a:hover,
 .read-chapter-list a.is-current {
@@ -5656,6 +5657,8 @@ html[data-theme="night"] .fathers-hero-credit {
 .read-hardcover-dock {
   display: none;
 }
+/* The dock wrappers pass clicks through (pointer-events: none); the link itself must take them. */
+.read-hardcover-bar { pointer-events: auto; }
 @media (min-width: 1280px) {
   .read-hardcover-dock {
     display: block;
@@ -5725,7 +5728,8 @@ html:not([data-theme="night"]) .lib-inspect-era {
   font-size: 0.62em;
   line-height: 1.2;
   white-space: nowrap;
-  cursor: default;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 /* Dock tabs: each box carries its icon tab on its outer edge. Closed, the box rolls up into the tab. */

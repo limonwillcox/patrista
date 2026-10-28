@@ -1,14 +1,24 @@
 export const AMAZON_DISCLOSURE = "As an Amazon Associate I earn from qualifying purchases.";
+export const AMAZON_TAG = "patrista-20";
 
-/** Amazon SiteStripe links for the Hardcover box, keyed by work id. */
-export const PRINT_EDITIONS: Record<string, { url: string }> = {
-  confessions: { url: "https://link.amazon/B0cYwg8bx" },
-  "on-the-incarnation-of-the-word": { url: "https://link.amazon/B068sRmKM" },
-  "epistles-of-ignatius": { url: "https://link.amazon/B0dRv2JCp" },
-  "church-history": { url: "https://link.amazon/B08d3oCLE" },
-  "first-apology": { url: "https://link.amazon/B0gSFec0q" },
-  "second-apology": { url: "https://link.amazon/B0gSFec0q" },
-  "epistle-to-the-philippians": { url: "https://link.amazon/B0cQJQpvz" },
-  "martyrdom-of-polycarp": { url: "https://link.amazon/B0cQJQpvz" },
-  didache: { url: "https://link.amazon/B0dEb8Vwc" }
+/** Clean Amazon product link with the Associates tag. */
+export function amazonUrl(asin: string): string {
+  return "https://www.amazon.com/dp/" + asin + "?tag=" + AMAZON_TAG;
+}
+
+/** Hardcover editions, keyed by work id. */
+const ASINS: Record<string, string> = {
+  confessions: "014044114X",
+  "on-the-incarnation-of-the-word": "8397939008",
+  "epistles-of-ignatius": "B0D123HLY7",
+  "church-history": "0140445358",
+  "first-apology": "B0DZVKC7XM",
+  "second-apology": "B0DZVKC7XM",
+  "epistle-to-the-philippians": "B0DK9W3VWW",
+  "martyrdom-of-polycarp": "B0DK9W3VWW",
+  didache: "B0C6W1HCNR"
 };
+
+export const PRINT_EDITIONS: Record<string, { url: string }> = Object.fromEntries(
+  Object.entries(ASINS).map(([id, asin]) => [id, { url: amazonUrl(asin) }])
+);

@@ -56,7 +56,7 @@ export type Passage = {
   sections?: SubChapter[];
 };
 
-export type SubChapter = { n: number; label: string; title: string; para: number };
+export type SubChapter = { n: number; label: string; title: string; para: number; inline?: boolean };
 
 export type VerseRelation = "cites" | "alludes" | "comments";
 

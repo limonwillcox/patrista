@@ -39,6 +39,8 @@ export type EnglishWorkSpec = {
   subChapterSequence?: boolean;
   /** Chapter-mode headings are just "Chapter N" (no first-line title), for numbered-paragraph works. */
   bareHeadings?: boolean;
+  /** Use the unitRe match itself as the heading (e.g. an epistle title) instead of "Book N". */
+  keepUnitLabel?: boolean;
 };
 
 /** Hand overrides for works that need a fixed chunk mode / unit count. */
@@ -155,6 +157,13 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
   "testaments-of-the-twelve-patriarchs": { chunk: "section" },
   // Two-level (Book > Chapter). For a "Chapter bug" work, add `subChapters: true` (or a custom RegExp).
   // Column-start "Book IV." (optionally "[674]") only, so a wrapped "Book V." mid-text is not a unit.
+  "spurious-epistles-of-ignatius": {
+    chunk: "book",
+    startAt: /^The Epistle of Ignatius to the Tarsians/m,
+    unitRe: /^((?:The|A Second) Epistle of [^\n]+|Reply of the Blessed Virgin[^\n]*)$/m,
+    keepUnitLabel: true,
+    subChapters: true
+  },
   "recognitions-of-clement": { chunk: "book", unitRe: /^\s*Book\s+([IVX]+)\.(?:\s*\[\d+\])?\s*$/m, subChapters: true },
   decretals: { chunk: "section", endAt: /^\s*Memoirs of Edessa And Other Ancient Syriac Documents\s*$/m }
 };
@@ -773,7 +782,7 @@ function parseEnglishWorkFlat(spec: EnglishWorkSpec, root: string): { work: Work
     const stop = i + 1 < marks.length ? marks[i + 1].index : raw.length;
     const block = raw.slice(start, stop);
     const { paras, footnotes } = parasAndNotesFromBlock(block);
-    let heading = unitLabel(mode, marks[i].label);
+    let heading = spec.keepUnitLabel ? marks[i].label.trim().replace(/\.$/, "") : unitLabel(mode, marks[i].label);
     if (mode === "chapter") {
       let bookLabel = "";
       for (let b = bookMarks.length - 1; b >= 0; b--) {

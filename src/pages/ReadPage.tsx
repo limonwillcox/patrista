@@ -31,13 +31,14 @@ function renderParas(passage: Passage, version: string) {
         {sub.title ? " — " + sub.title : ""}
       </h3>
     ) : null;
-    if (sub && !sub.inline) return subHead;
+    if (sub && !sub.inline && !sub.hidden) return subHead;
+    const anchor = sub?.hidden ? "ch-" + passage.chapter + "-" + sub.n : undefined;
     const body = (
-      <p className="para" data-key={key} data-section={section} key={key}>
+      <p className="para" id={anchor} data-key={key} data-section={section} key={key}>
         {text}
       </p>
     );
-    return subHead ? [subHead, body] : body;
+    return subHead && !sub?.hidden ? [subHead, body] : body;
   });
 }
 

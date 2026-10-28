@@ -131,6 +131,22 @@
       "attributionRequired": false
     }
   },
+  "barnabas": {
+    "alt": "Portrait of Barnabas (Epistle)",
+    "tile": {
+      "src": "/assets/father-img/barnabas-240-f6461e71eb.webp",
+      "srcset": "/assets/father-img/barnabas-120-789ed80821.webp 120w, /assets/father-img/barnabas-240-f6461e71eb.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/barnabas-360-c50f0ab5c3.webp",
+      "srcset": "/assets/father-img/barnabas-360-c50f0ab5c3.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
   "basil": {
     "alt": "Portrait of Basil the Great",
     "tile": {
@@ -240,6 +256,22 @@
       "source": "https://commons.wikimedia.org/wiki/File:Clemens%20Romanus.jpg",
       "attributionRequired": false
     }
+  },
+  "commodianus": {
+    "alt": "Portrait of Commodianus",
+    "tile": {
+      "src": "/assets/father-img/commodianus-120-589cf33bde.webp",
+      "srcset": "/assets/father-img/commodianus-120-589cf33bde.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/commodianus-247-1c9381cd9e.webp",
+      "srcset": "/assets/father-img/commodianus-247-1c9381cd9e.webp 247w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
   },
   "councils": {
     "alt": "Portrait of Ecumenical Councils",
@@ -395,6 +427,38 @@
       "attributionRequired": false
     }
   },
+  "gennadius": {
+    "alt": "Portrait of Gennadius",
+    "tile": {
+      "src": "/assets/father-img/gennadius-120-a1d9ec2c76.webp",
+      "srcset": "/assets/father-img/gennadius-120-a1d9ec2c76.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/gennadius-182-a4da82f308.webp",
+      "srcset": "/assets/father-img/gennadius-182-a4da82f308.webp 182w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
+  "gregory": {
+    "alt": "Portrait of Gregory the Great",
+    "tile": {
+      "src": "/assets/father-img/gregory-120-92dceca6bd.webp",
+      "srcset": "/assets/father-img/gregory-120-92dceca6bd.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/gregory-228-157ee58954.webp",
+      "srcset": "/assets/father-img/gregory-228-157ee58954.webp 228w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
   "gregory_nazianzen": {
     "alt": "Portrait of Gregory Nazianzen",
     "tile": {
@@ -461,6 +525,22 @@
       "attributionRequired": false
     }
   },
+  "hermas": {
+    "alt": "Portrait of Hermas",
+    "tile": {
+      "src": "/assets/father-img/hermas-120-0d36c3c391.webp",
+      "srcset": "/assets/father-img/hermas-120-0d36c3c391.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/hermas-239-6505bb1aa3.webp",
+      "srcset": "/assets/father-img/hermas-239-6505bb1aa3.webp 239w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
   "hilary": {
     "alt": "Portrait of Hilary of Poitiers",
     "tile": {
@@ -482,6 +562,22 @@
       "source": "https://commons.wikimedia.org/wiki/File:Hilaryofpoitiers.jpg",
       "attributionRequired": false
     }
+  },
+  "hippolytus": {
+    "alt": "Portrait of Hippolytus",
+    "tile": {
+      "src": "/assets/father-img/hippolytus-240-0c99ccd1db.webp",
+      "srcset": "/assets/father-img/hippolytus-120-cceb6cda37.webp 120w, /assets/father-img/hippolytus-240-0c99ccd1db.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/hippolytus-360-066bc9a24f.webp",
+      "srcset": "/assets/father-img/hippolytus-360-066bc9a24f.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
   },
   "ignatius": {
     "alt": "Portrait of Ignatius of Antioch",
@@ -659,6 +755,22 @@
       "attributionRequired": false
     }
   },
+  "mathetes": {
+    "alt": "Portrait of Mathetes (to Diognetus)",
+    "tile": {
+      "src": "/assets/father-img/mathetes-72-cab6f4b652.webp",
+      "srcset": "/assets/father-img/mathetes-72-cab6f4b652.webp 72w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/mathetes-99-4268c8a7a1.webp",
+      "srcset": "/assets/father-img/mathetes-99-4268c8a7a1.webp 99w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
   "methodius": {
     "alt": "Portrait of Methodius of Olympus",
     "tile": {
@@ -680,6 +792,54 @@
       "source": "https://commons.wikimedia.org/wiki/File:Methodius%20of%20Olympus.jpg",
       "attributionRequired": false
     }
+  },
+  "minucius_felix": {
+    "alt": "Portrait of Minucius Felix",
+    "tile": {
+      "src": "/assets/father-img/minucius_felix-120-d8723cbbcf.webp",
+      "srcset": "/assets/father-img/minucius_felix-120-d8723cbbcf.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/minucius_felix-200-792349f5da.webp",
+      "srcset": "/assets/father-img/minucius_felix-200-792349f5da.webp 200w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
+  "novatian": {
+    "alt": "Portrait of Novatian",
+    "tile": {
+      "src": "/assets/father-img/novatian-120-fc938b68d3.webp",
+      "srcset": "/assets/father-img/novatian-120-fc938b68d3.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/novatian-150-dd9906e805.webp",
+      "srcset": "/assets/father-img/novatian-150-dd9906e805.webp 150w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
+  "origen": {
+    "alt": "Portrait of Origen",
+    "tile": {
+      "src": "/assets/father-img/origen-120-806915f3b1.webp",
+      "srcset": "/assets/father-img/origen-120-806915f3b1.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/origen-320-091d94813b.webp",
+      "srcset": "/assets/father-img/origen-320-091d94813b.webp 320w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
   },
   "pantocrator": {
     "alt": "Portrait of Christ Pantocrator (Saint Catherine's Monastery, Sinai)",
@@ -768,6 +928,70 @@
       "source": "https://commons.wikimedia.org/wiki/File:Rufinus%20Aquileiensis.jpg",
       "attributionRequired": false
     }
+  },
+  "socrates": {
+    "alt": "Portrait of Socrates Scholasticus",
+    "tile": {
+      "src": "/assets/father-img/socrates-240-6b590b60ca.webp",
+      "srcset": "/assets/father-img/socrates-120-8ad91c3b51.webp 120w, /assets/father-img/socrates-240-6b590b60ca.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/socrates-720-d9d2868b88.webp",
+      "srcset": "/assets/father-img/socrates-360-ca1028303d.webp 360w, /assets/father-img/socrates-720-d9d2868b88.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
+  "sozomen": {
+    "alt": "Portrait of Sozomen",
+    "tile": {
+      "src": "/assets/father-img/sozomen-120-09c4bf8777.webp",
+      "srcset": "/assets/father-img/sozomen-120-09c4bf8777.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/sozomen-200-48b0e61881.webp",
+      "srcset": "/assets/father-img/sozomen-200-48b0e61881.webp 200w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
+  "sulpicius_severus": {
+    "alt": "Portrait of Sulpicius Severus",
+    "tile": {
+      "src": "/assets/father-img/sulpicius_severus-240-b81c7df9d7.webp",
+      "srcset": "/assets/father-img/sulpicius_severus-120-f2fefe844a.webp 120w, /assets/father-img/sulpicius_severus-240-b81c7df9d7.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/sulpicius_severus-720-050f470644.webp",
+      "srcset": "/assets/father-img/sulpicius_severus-360-16e1080e95.webp 360w, /assets/father-img/sulpicius_severus-720-050f470644.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
+  },
+  "tatian": {
+    "alt": "Portrait of Tatian",
+    "tile": {
+      "src": "/assets/father-img/tatian-120-bf61615df6.webp",
+      "srcset": "/assets/father-img/tatian-120-bf61615df6.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/tatian-234-82b2697aa7.webp",
+      "srcset": "/assets/father-img/tatian-234-82b2697aa7.webp 234w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": null
   },
   "tertullian": {
     "alt": "Portrait of Tertullian",

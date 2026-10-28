@@ -486,6 +486,10 @@ export function ReadPage() {
           <h1 className="read-title">{outline.work.title}</h1>
           <div className="version-name">
             {outline.author.name} · {outline.chapters.length} {unitLabel}
+            {" · "}
+            <Link className="read-print-link" to={"/print?work=" + encodeURIComponent(outline.work.id)}>
+              Download PDF
+            </Link>
           </div>
           <HardcoverDock workId={outline.work.id} />
         </div>

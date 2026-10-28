@@ -11,6 +11,7 @@ import { FixesPage } from "./pages/FixesPage";
 import { GivePage } from "./pages/GivePage";
 import { HomePage } from "./pages/HomePage";
 import { JournalPage } from "./pages/JournalPage";
+import { PrintPage } from "./pages/PrintPage";
 import { ReadPage } from "./pages/ReadPage";
 import { SearchPage } from "./pages/SearchPage";
 import { StudyPage } from "./pages/StudyPage";
@@ -23,6 +24,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/read" element={<ReadPage />} />
+          <Route path="/print" element={<PrintPage />} />
           <Route path="/augustines-confessions" element={<ReadPage />} />
           <Route path="/fathers" element={<FathersPage />} />
           <Route path="/fathers/:authorId" element={<FathersPage />} />

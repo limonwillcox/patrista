@@ -32,7 +32,8 @@ export function getWorkOutline(workId: string): WorkOutline | null {
     chapters: payload.chapters.map((ch) => ({
       chapter: ch.chapter,
       heading: ch.heading,
-      slug: slugs.get(ch.chapter) || "chapter-" + ch.chapter
+      slug: slugs.get(ch.chapter) || "chapter-" + ch.chapter,
+      ...(ch.sections?.length ? { subs: ch.sections.map(({ n, label, title }) => ({ n, label, title })) } : {})
     }))
   };
 }

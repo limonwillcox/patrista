@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from "fs";
 import { join } from "path";
-import type { Author, Footnote, Passage, Work } from "./types";
+import type { Author, Footnote, Passage, SubChapter, Work } from "./types";
 
 export type ChunkMode = "book" | "chapter" | "sermon" | "letter" | "homily";
 
@@ -16,6 +16,13 @@ export type EnglishWorkSpec = {
   authorshipDisputed?: boolean;
   /** Slice the extract before this heading (Word-Check: drop glued-on works / elucidations). */
   endAt?: RegExp;
+  /**
+   * Two-level works: inside each book, paragraphs matching this pattern are chapter headings.
+   * `true` uses SUBCHAPTER_RE ("Chapter IV.--Title."). Group 1 = number, group 2 = title.
+   */
+  subChapters?: true | RegExp;
+  /** Override the unit heading pattern for this work (group 1 = number), e.g. "Chap. iv.--". */
+  unitRe?: RegExp;
 };
 
 /** Hand overrides for works that need a fixed chunk mode / unit count. */
@@ -28,7 +35,15 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
     endAt: /^\s*Elucidations\.?\s*$/im
   },
   "pastor-of-hermas": { chunk: "book", expectUnits: 3 },
-  "clementine-homilies": { chunk: "homily" },
+  // Column-start "Homily IV." only; wrapped footnotes like "Homily XVIII. chap. 20" are not units.
+  "clementine-homilies": {
+    chunk: "homily",
+    unitRe: /^\s*Homily\s+([IVXLC]+)\.\s*$/m,
+    subChapters: true,
+    endAt: /^\s*Apocrypha of the New Testament\s*$/m
+  },
+  // 2 Clement (ANF VII): lower-case "Chap. iv.--title" headings.
+  homily: { chunk: "chapter", unitRe: /^\s*Chap\.\s+([ivxlc]+)\.\s*--/im },
   "martyrdom-of-justin": {
     chunk: "chapter",
     expectUnits: 5,
@@ -71,6 +86,9 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
   "early-liturgies": { chunk: "section", endAt: /^\s*Indexes\s*$/m },
   "memoirs-of-edessa": { chunk: "section", endAt: /^\s*Remains of the Second and Third Centuries\s*$/m },
   "testaments-of-the-twelve-patriarchs": { chunk: "section" },
+  // Two-level (Book > Chapter). For a "Chapter bug" work, add `subChapters: true` (or a custom RegExp).
+  // Column-start "Book IV." (optionally "[674]") only, so a wrapped "Book V." mid-text is not a unit.
+  "recognitions-of-clement": { chunk: "book", unitRe: /^\s*Book\s+([IVX]+)\.(?:\s*\[\d+\])?\s*$/m, subChapters: true },
   decretals: { chunk: "section", endAt: /^\s*Memoirs of Edessa And Other Ancient Syriac Documents\s*$/m }
 };
 
@@ -506,7 +524,32 @@ export function ruleSections(raw: string): { heading: string; body: string }[] {
   return out;
 }
 
+/** Default chapter-heading paragraph: "Chapter IV.--Title." / "Chapter 4. Title" / "Chapter IV" */
+export const SUBCHAPTER_RE = /^Chapter\s+([IVXLCDM]+|\d+)\b\.?\s*(?:--|—|-|\.|:)?\s*(.*?)\.?$/;
+
+/** Mark chapter-heading paragraphs inside each book passage (headings stay in the text). */
+export function addSubChapters(passages: Passage[], re: RegExp = SUBCHAPTER_RE): Passage[] {
+  return passages.map((p) => {
+    const paras = Object.values(p.versions)[0] ?? [];
+    const sections: SubChapter[] = [];
+    paras.forEach((text, i) => {
+      if (text.length > 200) return;
+      const m = text.trim().match(re);
+      if (!m) return;
+      sections.push({ n: sections.length + 1, label: "Chapter " + m[1], title: (m[2] || "").trim(), para: i });
+    });
+    return sections.length ? { ...p, sections } : p;
+  });
+}
+
 export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: Work; passages: Passage[] } {
+  const parsed = parseEnglishWorkFlat(spec, root);
+  if (!spec.subChapters) return parsed;
+  const passages = addSubChapters(parsed.passages, spec.subChapters === true ? SUBCHAPTER_RE : spec.subChapters);
+  return { work: parsed.work, passages };
+}
+
+function parseEnglishWorkFlat(spec: EnglishWorkSpec, root: string): { work: Work; passages: Passage[] } {
   const file = join(root, spec.path);
   if (!existsSync(file)) throw new Error("Missing English work file: " + spec.path);
   let raw = stripMetaHeaders(readFileSync(file, "utf8"));
@@ -533,7 +576,7 @@ export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: W
 
   // Soft-cap ultra-dense chapter scans (e.g. verse/psalm dumps) for MVP memory.
   if (mode !== "blob" && mode !== "book") {
-    const previewMarks = findMarks(raw, unitRegex(mode));
+    const previewMarks = findMarks(raw, spec.unitRe ?? unitRegex(mode));
     if (previewMarks.length > 400) {
       const books = findMarks(raw, BOOK_RE).length;
       mode = books >= 2 ? "book" : "blob";
@@ -575,7 +618,7 @@ export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: W
     return { work: workFromSpec(spec, blobPassages), passages: blobPassages };
   }
 
-  const unitRe = unitRegex(mode);
+  const unitRe = spec.unitRe ?? unitRegex(mode);
   const marks = findMarks(raw, unitRe);
   if (!marks.length) {
     const { paras, footnotes } = parasAndNotesFromBlock(raw);

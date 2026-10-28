@@ -20,9 +20,19 @@ function versionLabel(id: string, versions: { id: string; label: string }[]): st
 
 function renderParas(passage: Passage, version: string) {
   const paras = passage.versions[version] || [];
+  const subAt = new Map((passage.sections ?? []).map((s) => [s.para, s]));
   return paras.map((text, i) => {
     const key = passage.work + "-" + passage.chapter + "-" + version + "-" + i;
     const section = `${passage.work}:${passage.chapter}:p${i}`;
+    const sub = version === "schaff" ? subAt.get(i) : undefined;
+    if (sub) {
+      return (
+        <h3 className="read-subchapter" id={"ch-" + passage.chapter + "-" + sub.n} key={key}>
+          {sub.label}
+          {sub.title ? " — " + sub.title : ""}
+        </h3>
+      );
+    }
     return (
       <p className="para" data-key={key} data-section={section} key={key}>
         {text}
@@ -177,6 +187,17 @@ export function ReadPage() {
     if (window.location.hash !== hash) {
       window.history.replaceState(window.history.state, "", hash);
     }
+  }
+
+  function jumpToSub(book: number, n: number) {
+    jumpToChapter(book);
+    const id = "ch-" + book + "-" + n;
+    const tryScroll = (tries: number) => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
+      if (tries < 30 && (!el || pendingJump.current === book)) window.setTimeout(() => tryScroll(tries + 1), 100);
+    };
+    tryScroll(0);
   }
 
   useEffect(() => {
@@ -466,7 +487,15 @@ export function ReadPage() {
   if (!outline.chapters.length) return <p className="empty">This work did not load.</p>;
 
   const isConfessions = outline.work.id === "confessions";
-  const unitLabel = isConfessions ? "books" : outline.chapters.length === 1 ? "part" : "chapters";
+  const subCount = outline.chapters.reduce((n, c) => n + (c.subs?.length ?? 0), 0);
+  const firstWord = (outline.chapters[0]?.heading.split(" ")[0] || "").toLowerCase();
+  const unitLabel = subCount
+    ? (firstWord === "homily" ? "homilies" : "books") + " · " + subCount + " chapters"
+    : isConfessions
+      ? "books"
+      : outline.chapters.length === 1
+        ? "part"
+        : "chapters";
   const editionNote = preferred ? versionLabel(preferred, versions) : "";
 
   return (
@@ -474,7 +503,12 @@ export function ReadPage() {
       <div className="read-docks">
         {outline.chapters.length > 1 ? (
           <DockNotch id="chapters" name="chapters" icon={BookIcon}>
-            <ChapterDock chapters={outline.chapters} currentChapter={currentChapter} onJump={jumpToChapter} />
+            <ChapterDock
+              chapters={outline.chapters}
+              currentChapter={currentChapter}
+              onJump={jumpToChapter}
+              onJumpSub={jumpToSub}
+            />
           </DockNotch>
         ) : null}
         <DockNotch id="dictionary" name="dictionary" icon="α">

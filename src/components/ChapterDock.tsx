@@ -5,13 +5,17 @@ import { announceReadDock, chapterDockLabel, subscribeReadDock } from "../lib/re
 export function ChapterDock({
   chapters,
   currentChapter,
-  onJump
+  onJump,
+  onJumpSub
 }: {
   chapters: WorkChapterMeta[];
   currentChapter: number;
   onJump: (n: number) => void;
+  onJumpSub?: (book: number, n: number) => void;
 }) {
   const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState<Set<number>>(() => new Set([currentChapter]));
+  const nested = chapters.some((c) => c.subs?.length);
   const currentBtn = useRef<HTMLButtonElement>(null);
   const index = chapters.findIndex((c) => c.chapter === currentChapter);
   const current = index >= 0 ? chapters[index] : chapters[0];
@@ -48,7 +52,22 @@ export function ChapterDock({
   if (chapters.length <= 1 || !current) return null;
 
   function toggleList() {
+    if (!open) setExpanded((was) => new Set(was).add(current.chapter));
     setOpen((was) => !was);
+  }
+
+  function toggleBook(n: number) {
+    setExpanded((was) => {
+      const next = new Set(was);
+      if (next.has(n)) next.delete(n);
+      else next.add(n);
+      return next;
+    });
+  }
+
+  function jumpSub(book: number, n: number) {
+    setOpen(false);
+    onJumpSub?.(book, n);
   }
 
   function jump(n: number) {
@@ -98,7 +117,58 @@ export function ChapterDock({
       </div>
       {open ? (
         <nav id="read-chapter-list" className="read-chapter-list" aria-label="Chapters">
-          {chapters.map((p) => (
+          {nested
+            ? chapters.map((p) => {
+                const isOpen = expanded.has(p.chapter);
+                return (
+                  <div className="read-chapter-book" key={p.chapter}>
+                    <div className="read-chapter-book-row">
+                      {p.subs?.length ? (
+                        <button
+                          type="button"
+                          className="read-chapter-disclose"
+                          aria-expanded={isOpen}
+                          aria-label={(isOpen ? "Hide chapters of " : "Show chapters of ") + p.heading}
+                          onClick={() => toggleBook(p.chapter)}
+                        >
+                          {isOpen ? "▾" : "▸"}
+                        </button>
+                      ) : (
+                        <span className="read-chapter-disclose" aria-hidden="true" />
+                      )}
+                      <a
+                        href={"#ch-" + p.chapter}
+                        title={p.heading}
+                        className={p.chapter === current.chapter ? "is-current" : undefined}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          jump(p.chapter);
+                        }}
+                      >
+                        {p.heading || String(p.chapter)}
+                      </a>
+                    </div>
+                    {isOpen
+                      ? p.subs?.map((s) => (
+                          <a
+                            key={s.n}
+                            className="read-chapter-sub"
+                            href={"#ch-" + p.chapter + "-" + s.n}
+                            title={s.label + (s.title ? " — " + s.title : "")}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              jumpSub(p.chapter, s.n);
+                            }}
+                          >
+                            {s.label}
+                            {s.title ? " — " + s.title : ""}
+                          </a>
+                        ))
+                      : null}
+                  </div>
+                );
+              })
+            : chapters.map((p) => (
             <a
               key={p.chapter}
               href={"#ch-" + p.chapter}

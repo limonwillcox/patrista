@@ -52,7 +52,11 @@ export type Passage = {
   footnotes: Footnote[];
   /** Cross-ref tags attached at library load (optional). */
   tags?: QuoteTag[];
+  /** Two-level works (Book > Chapter): chapter headings inside this passage, by paragraph index. */
+  sections?: SubChapter[];
 };
+
+export type SubChapter = { n: number; label: string; title: string; para: number };
 
 export type VerseRelation = "cites" | "alludes" | "comments";
 
@@ -128,6 +132,8 @@ export type WorkChapterMeta = {
   chapter: number;
   heading: string;
   slug: string;
+  /** Chapters inside this book, for two-level works. */
+  subs?: { n: number; label: string; title: string }[];
 };
 
 export type WorkOutline = {

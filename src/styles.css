@@ -5663,7 +5663,7 @@ html[data-theme="night"] .fathers-hero-credit {
     top: calc(var(--header) + 12px);
     left: calc(var(--rail) + 12px);
     z-index: 32;
-    width: 156px;
+    width: 172px;
   }
   .read-hardcover-bar {
     padding: 6px 10px;
@@ -5728,44 +5728,53 @@ html:not([data-theme="night"]) .lib-inspect-era {
   cursor: default;
 }
 
-/* Dock notches: a tiny edge tab that slides a dock out of view and back */
-.dock-notched { position: relative; pointer-events: none; }
-.dock-notched-body {
-  transition: transform 0.22s ease, opacity 0.18s ease, visibility 0s linear 0s;
+/* Dock tabs: each box carries its icon tab on its outer edge. Closed, the box rolls up into the tab. */
+.dock-notched {
+  display: grid;
+  grid-template-columns: 1fr 16px;
+  justify-content: end;
+  align-items: start;
+  pointer-events: none;
+  transition: grid-template-columns 0.24s ease;
 }
+.dock-notched--left { grid-template-columns: 16px 1fr; justify-content: start; }
+.dock-notched--right .dock-notch { order: 2; }
+.dock-notched.is-closed { grid-template-columns: 0fr 16px; }
+.dock-notched--left.is-closed { grid-template-columns: 16px 0fr; }
+.dock-notched-body {
+  min-width: 0;
+  overflow-x: clip;
+  transition: opacity 0.2s ease, visibility 0s linear 0s;
+}
+.read-docks .dock-notched-body > * { min-width: calc(min(280px, calc(100vw - var(--rail) - 32px)) - 16px); }
+.read-hardcover-dock .dock-notched-body > * { min-width: 156px; }
 .dock-notched.is-closed .dock-notched-body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: transform 0.22s ease, opacity 0.18s ease, visibility 0s linear 0.22s;
+  transition: opacity 0.2s ease, visibility 0s linear 0.24s;
 }
-.dock-notched--right.is-closed .dock-notched-body { transform: translateX(calc(100% + 24px)); }
-.dock-notched--left.is-closed .dock-notched-body { transform: translateX(calc(-100% - 24px)); }
 .dock-notch {
-  position: absolute;
-  top: 7px;
-  z-index: 1;
-  width: 11px;
-  height: 22px;
+  width: 16px;
+  height: 36px;
+  box-sizing: border-box;
   padding: 0;
   display: grid;
   place-items: center;
   pointer-events: auto;
   cursor: pointer;
   font-family: var(--serif);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1;
   border: 1px solid rgba(232, 212, 154, 0.4);
   background: #24150c;
   color: #f3e2a8;
-  opacity: 0.7;
-  transition: opacity 0.15s ease;
 }
-.dock-notch:hover, .dock-notch:focus-visible { opacity: 1; }
-.dock-notch svg { width: 9px; height: 9px; }
-.dock-notched--right .dock-notch { right: -14px; border-right: 0; border-radius: 3px 0 0 3px; }
-.dock-notched--left .dock-notch { left: -12px; border-left: 0; border-radius: 0 3px 3px 0; }
-.dock-notched.is-closed .dock-notch { opacity: 0.9; }
+.dock-notch svg { width: 10px; height: 10px; opacity: 0.75; transition: opacity 0.15s ease; }
+.dock-notch:hover svg, .dock-notch:focus-visible svg { opacity: 1; }
+.dock-notched--right .dock-notch { border-left: 0; border-radius: 0 3px 3px 0; }
+.dock-notched--left .dock-notch { border-right: 0; border-radius: 3px 0 0 3px; }
+.dock-notched.is-closed .dock-notch { border-style: solid; border-width: 1px; border-radius: 3px; }
 html:not([data-theme="night"]) .dock-notch {
   background: var(--linen);
   color: var(--linen-text);
@@ -5773,11 +5782,12 @@ html:not([data-theme="night"]) .dock-notch {
   box-shadow: var(--shadow);
 }
 @media (prefers-reduced-motion: reduce) {
-  .dock-notched-body, .dock-notched.is-closed .dock-notched-body { transition: none; }
+  .dock-notched, .dock-notched-body, .dock-notched.is-closed .dock-notched-body { transition: none; }
 }
 
-/* Keep reader text clear of the edge notches (11px tab + gap) at every width.
-   Wide screens already have a gutter wider than this; phones get it as padding. */
+/* Keep reader text clear of the collapsed tabs at every width.
+   Wide screens already have a gutter; on phones the docks sit flush to the edge and the text keeps a tab-wide buffer. */
 @media (max-width: 760px) {
-  .read-page { padding-right: 14px; }
+  .read-docks { right: 0; }
+  .read-page { padding-right: 22px; }
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ICONS } from "../components/Icons";
 import { useApp } from "../context/AppContext";
 import { LANDING_NAV } from "../lib/homeNav";
+import { useReadTabHref } from "../lib/useReadTabHref";
 import { readPath } from "../lib/workSlugs";
 
 type Starter = {
@@ -91,6 +92,7 @@ function StarterCard({ work }: { work: Starter }) {
 
 export function HomePage() {
   const { setActivePassage } = useApp();
+  const readHref = useReadTabHref();
 
   useEffect(() => {
     setActivePassage(null);
@@ -121,7 +123,7 @@ export function HomePage() {
               <Link
                 key={item.id}
                 className={"landing-tile" + (item.featured ? " landing-tile--featured" : "")}
-                to={item.href}
+                to={item.id === "read" ? readHref : item.href}
               >
                 {ICONS[item.id]}
                 <span>{item.label}</span>

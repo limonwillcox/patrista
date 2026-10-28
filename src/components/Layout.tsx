@@ -4,6 +4,7 @@ import { parseQuery } from "../../server/query";
 import { isExactAuthorQuery } from "../lib/catalogPreview";
 import { isFathersTabPath } from "../lib/fathersDirectory";
 import { HOME_HREF, isHomePath, showSiteRail } from "../lib/homeNav";
+import { useReadTabHref } from "../lib/useReadTabHref";
 import { useApp } from "../context/AppContext";
 import { Booklist } from "./Booklist";
 import { ICONS } from "./Icons";
@@ -20,6 +21,7 @@ function Brand() {
 function Rail() {
   const { navOpen, setNavOpen } = useApp();
   const location = useLocation();
+  const readHref = useReadTabHref();
   const homeActive = isHomePath(location.pathname);
   const readActive =
     location.pathname === "/read" ||
@@ -36,7 +38,7 @@ function Rail() {
           {ICONS.home}
           <span>Home</span>
         </NavLink>
-        <NavLink to="/augustines-confessions" className={() => (readActive ? "active" : "")} onClick={() => setNavOpen(false)}>
+        <NavLink to={readHref} className={() => (readActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.read}
           <span>Read</span>
         </NavLink>

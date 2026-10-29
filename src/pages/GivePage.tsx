@@ -1,21 +1,13 @@
-import { useEffect, useState } from "react";
-import { loadAdsEnabled, saveAdsEnabled } from "../lib/adsPreference";
+import { useEffect } from "react";
 import { useApp } from "../context/AppContext";
 import { PRINT_EDITIONS } from "../lib/printEditions";
 
 export function GivePage() {
   const { setActivePassage } = useApp();
-  const [adsOn, setAdsOn] = useState(() => loadAdsEnabled());
 
   useEffect(() => {
     setActivePassage(null);
   }, [setActivePassage]);
-
-  function toggleAds() {
-    const next = !adsOn;
-    setAdsOn(next);
-    saveAdsEnabled(next);
-  }
 
   return (
     <div className="give-page">
@@ -24,24 +16,6 @@ export function GivePage() {
       </section>
 
       <div className="give-body">
-        <div className="give-ask">
-          <p className="give-ask-text">
-            The easiest way to support the site is to enable ads by flipping this switch
-          </p>
-          <div className="give-ask-cue">
-            <span className="give-ask-arrow" aria-hidden="true">
-              ↓
-            </span>
-            <button
-              type="button"
-              className={"give-ads-switch" + (adsOn ? " on" : "")}
-              role="switch"
-              aria-checked={adsOn}
-              aria-label="Enable ads"
-              onClick={toggleAds}
-            />
-          </div>
-        </div>
         <div className="give-ask give-ask--hardcover">
           <p className="give-ask-text">
             If you enjoy reading the Church Fathers with a physical book, using the link through the{" "}
@@ -52,8 +26,7 @@ export function GivePage() {
               rel="sponsored nofollow noopener"
             >
               Get the Hardcover
-            </a> button also
-            substantially helps support the site.
+            </a> button helps support the site.
           </p>
         </div>
       </div>

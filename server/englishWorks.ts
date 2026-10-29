@@ -165,7 +165,25 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
     subChapters: true
   },
   "recognitions-of-clement": { chunk: "book", unitRe: /^\s*Book\s+([IVX]+)\.(?:\s*\[\d+\])?\s*$/m, subChapters: true },
-  decretals: { chunk: "section", endAt: /^\s*Memoirs of Edessa And Other Ancient Syriac Documents\s*$/m }
+  decretals: { chunk: "section", endAt: /^\s*Memoirs of Edessa And Other Ancient Syriac Documents\s*$/m },
+  // The default unit patterns are case-insensitive and also match wrapped footnote lines
+  // ("Homily LXXXVIII.--R.]", "Letter xli. (ha anegnon...)", "book iv. ..."), which created stray,
+  // duplicated or out-of-order units. These works take only real, case-sensitive heading lines.
+  "homilies-on-matthew": { chunk: "homily", unitRe: /^\s*Homily\s+([IVXLC]+)\.(?:\s*\[\d+\])?\s*$/m },
+  "augustine-letters": { chunk: "letter", unitRe: /^\s*Letter\s+([IVXLCDM]+)\.(?:\s*\[\d+\])?\s*$/m },
+  "basil-letters": { chunk: "letter", unitRe: /^\s*Letter\s+([IVXLCDM]+)\.(?:\s*\[\d+\])?\s*$/m },
+  // Jerome's headings carry the addressee ("Letter XXXIII. To Paula."); footnote lines follow with "§", ")" or nothing.
+  "jerome-letters": { chunk: "letter", unitRe: /^\s*Letter\s+([IVXLCDM]+)\.[ \t]+(?!§|is\b)[A-Z][a-z][^\n]*$/m },
+  // Books II and III are lost in the original; only the column-start "Book N." lines are units.
+  "refutation-of-all-heresies": { chunk: "book", unitRe: /^\s*Book\s+([IVX]+)\.(?:\s*\[\d+\])?\s*$/m },
+  // 48 numbered chapters; the file continues with the Donatist volume's "Introductory Essay", whose
+  // "Book II." summaries were being read as the work's units.
+  "concerning-the-nature-of-good": {
+    chunk: "chapter",
+    unitRe: /^\s*Chapter\s+(\d+)\.--/m,
+    endAt: /^\s*Introductory Essay\.\s*$/m,
+    expectUnits: 48
+  }
 };
 
 /** Skip these under *_English (already shipped elsewhere, or non-Schaff). */

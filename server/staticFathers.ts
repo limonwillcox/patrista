@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from "fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { getWork } from "./api";
 import type { Author, Catalog, Passage, Work } from "./types";
@@ -300,7 +300,7 @@ export function renderWorkPage(opts: {
     units: opts.chapters.length,
     noun: unitNoun(opts.chapters.map((c) => c.heading)),
     series: opts.work.series,
-    opening: opts.chapters[0] ? pickOpening(englishParagraphs(opts.chapters[0].versions)) : ""
+    opening: opts.chapters[0] ? pickOpening(englishParagraphs(opts.chapters[0].versions), [opts.work.title, opts.chapters[0].heading]) : ""
   });
   const ld = bookJsonLd({
     origin: opts.origin,
@@ -573,7 +573,12 @@ export function writeFatherPages(
       const prev = index > 0 ? refs[index - 1] : null;
       const next = index + 1 < refs.length ? refs[index + 1] : null;
       const label = ref.label;
-      const description = chapterSeoDescription(ref.n, payload.author.name, payload.work.title, pickOpening(englishParagraphs(chapter.versions)) || chapter.heading);
+      const description = chapterSeoDescription(
+        ref.n,
+        payload.author.name,
+        payload.work.title,
+        pickOpening(englishParagraphs(chapter.versions), [payload.work.title, chapter.heading])
+      );
       const extra: string[] = [];
       if (prev) extra.push('    <link rel="prev" href="' + escapeHtml(origin + prev.path) + '" />');
       if (next) extra.push('    <link rel="next" href="' + escapeHtml(origin + next.path) + '" />');
@@ -608,6 +613,14 @@ export function writeFatherPages(
     // Old heading-based chapter URLs (e.g. .../homily-xxxii/) become stubs pointing at .../chapter-<n>/.
     const legacy = legacyChapterSlugs(payload.chapters);
     const live = new Set(refs.map((r) => r.path));
+    const done = new Set<string>();
+    const writeStub = (oldPath: string, target: string) => {
+      const file = join(dist, oldPath.replace(/^\//, ""), "index.html");
+      mkdirSync(dirname(file), { recursive: true });
+      writeFileSync(file, renderStubPage(origin + target, target));
+      stubs.push(oldPath);
+      done.add(oldPath);
+    };
     for (const ref of refs) {
       const oldSlug = legacy.get(ref.chapter);
       if (!oldSlug || oldSlug === ref.slug) continue;
@@ -617,14 +630,38 @@ export function writeFatherPages(
         reused.push(oldPath + " -> " + ref.path);
         continue;
       }
-      const file = join(dist, oldPath.replace(/^\//, ""), "index.html");
-      mkdirSync(dirname(file), { recursive: true });
-      writeFileSync(file, renderStubPage(origin + ref.path, ref.path));
-      stubs.push(oldPath);
+      writeStub(oldPath, ref.path);
+    }
+    // URLs from the pre-renumbering sitemap that today's headings no longer produce (parser fixes
+    // removed or renamed a unit): point at the chapter with the same base heading, else the work page.
+    const byBase = new Map<string, string>();
+    for (const ref of refs) {
+      const slug = legacy.get(ref.chapter);
+      if (slug && !byBase.has(slug)) byBase.set(slug, ref.path);
+    }
+    const prefix = chapterPublicPath(payload.author.id, payload.work.id, "x").slice(0, -"x/".length);
+    for (const oldPath of legacyChapterUrls(prefix)) {
+      if (live.has(oldPath) || done.has(oldPath)) continue;
+      const slug = oldPath.slice(prefix.length, -1);
+      const target = byBase.get(slug.replace(/-\d+(?:-\d+)?$/, "")) ?? page.path;
+      writeStub(oldPath, target);
     }
   }
 
   return { urls, notes, stubs, reused };
+}
+
+let legacyUrlCache: string[] | null = null;
+
+/** Chapter URLs from the sitemap before renumbering (data/seo/legacy-chapter-urls.txt) under `prefix`. */
+export function legacyChapterUrls(prefix: string, root = process.cwd()): string[] {
+  if (!legacyUrlCache) {
+    const file = join(root, "data", "seo", "legacy-chapter-urls.txt");
+    legacyUrlCache = existsSync(file)
+      ? readFileSync(file, "utf8").split("\n").map((l) => l.trim()).filter((l) => l.startsWith("/fathers/"))
+      : [];
+  }
+  return legacyUrlCache.filter((u) => u.startsWith(prefix) && !u.slice(prefix.length, -1).includes("/"));
 }
 
 /** A moved chapter: canonical + instant refresh + a plain link. Not listed in the sitemap. */

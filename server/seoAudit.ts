@@ -1,10 +1,33 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "fs";
 import { join, relative, sep } from "path";
-import { DESCRIPTION_MIN, TITLE_MAX } from "../src/lib/seoMeta";
+import { chapterPublicPath, legacyChapterSlugs } from "../src/lib/fatherPaths";
+import { DESCRIPTION_HARD_MAX, DESCRIPTION_MIN, TITLE_MAX } from "../src/lib/seoMeta";
 
 export type SeoAuditResult = { checked: number; stubs: number; errors: string[] };
 
 const CHAPTER_PATH = /^\/fathers\/([^/]+)\/([^/]+)\/([^/]+)\/$/;
+const WORK_PATH = /^\/fathers\/[^/]+\/[^/]+\.html$/;
+
+/**
+ * Old chapter URLs that must keep resolving, worked out here rather than taken from the page
+ * generator: the pre-renumbering sitemap snapshot (data/seo/legacy-chapter-urls.txt) plus the
+ * heading-based slugs today's catalog would have produced before chapters were numbered.
+ */
+export function oldChapterUrls(
+  works: { authorId: string; workId: string; chapters: { chapter: number; heading: string }[] }[],
+  root = process.cwd()
+): string[] {
+  const out = new Set<string>();
+  const file = join(root, "data", "seo", "legacy-chapter-urls.txt");
+  if (existsSync(file)) {
+    for (const line of readFileSync(file, "utf8").split("\n")) if (line.startsWith("/fathers/")) out.add(line.trim());
+  }
+  for (const w of works) {
+    if (w.chapters.length < 2) continue;
+    for (const slug of legacyChapterSlugs(w.chapters).values()) out.add(chapterPublicPath(w.authorId, w.workId, slug));
+  }
+  return [...out].sort();
+}
 
 function htmlFiles(dir: string, out: string[] = []): string[] {
   for (const name of readdirSync(dir)) {
@@ -30,35 +53,47 @@ function servedPath(dist: string, file: string): string {
 
 /**
  * Fail the build on SEO regressions in dist/:
- * duplicate titles or descriptions, titles over 65 chars, descriptions under 100 chars,
- * chapter slugs over 20 chars or not numbered 1..N per work, internal links or sitemap entries
- * that point at moved-chapter stubs, and old chapter URLs without a stub.
+ * /fathers/ work or chapter pages that are noindex or not self-canonical, duplicate titles or
+ * descriptions, titles over 65 chars, descriptions under 100 or over 160 chars, chapter slugs over
+ * 20 chars or not numbered 1..N per work, internal links or sitemap entries that point at
+ * moved-chapter stubs, stubs that point at no live page, and old chapter URLs that no longer resolve.
  */
-export function auditSeo(dist: string, origin: string, expectedStubs: string[] = []): SeoAuditResult {
+export function auditSeo(dist: string, origin: string, oldUrls: string[] = []): SeoAuditResult {
   const errors: string[] = [];
   const titles = new Map<string, string>();
   const descs = new Map<string, string>();
   const stubPaths = new Set<string>();
+  const stubTargets = new Map<string, string>();
   const pages: { path: string; html: string }[] = [];
+  const indexable = new Set<string>();
   const chapterNums = new Map<string, number[]>();
 
   for (const file of htmlFiles(dist)) {
     const html = readFileSync(file, "utf8");
     const path = servedPath(dist, file);
+    const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
     if (/<meta\s+http-equiv="refresh"/i.test(html)) {
+      // Only /fathers/ refresh pages are moved-chapter stubs (e.g. /get-app.html is a plain redirect page).
+      if (!path.startsWith("/fathers/")) continue;
       stubPaths.add(path);
+      stubTargets.set(path, canonical ? decode(canonical[1]!).replace(origin, "") : "");
       continue;
     }
-    const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
-    // Indexable = self-canonical and not noindex. SPA shells and alias copies are skipped.
-    if (!canonical || decode(canonical[1]!) !== origin + path) continue;
-    if (/<meta\s+name="robots"[^>]*noindex/i.test(html)) continue;
+    const noindex = /<meta\s+name="robots"[^>]*noindex/i.test(html);
+    const selfCanonical = !!canonical && decode(canonical[1]!) === origin + path;
+    const fathersPage = WORK_PATH.test(path) || CHAPTER_PATH.test(path);
+    if (fathersPage && noindex) errors.push("noindex on a /fathers/ page: " + path);
+    if (fathersPage && !selfCanonical) errors.push("canonical is not itself: " + path + " -> " + (canonical ? decode(canonical[1]!) : "(none)"));
+    // Indexable = self-canonical and not noindex. SPA shells and alias copies elsewhere are skipped.
+    if (!selfCanonical || noindex) continue;
     pages.push({ path, html });
+    indexable.add(path);
     const title = decode(html.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? "").trim();
     const desc = decode(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "").trim();
     if (!title) errors.push("missing <title>: " + path);
     if (title.length > TITLE_MAX) errors.push("title over " + TITLE_MAX + " chars: " + path + " (" + title + ")");
     if (desc.length < DESCRIPTION_MIN) errors.push("description under " + DESCRIPTION_MIN + " chars: " + path + " (" + desc + ")");
+    if (desc.length > DESCRIPTION_HARD_MAX) errors.push("description over " + DESCRIPTION_HARD_MAX + " chars: " + path + " (" + desc + ")");
     if (titles.has(title)) errors.push("duplicate title: " + path + " and " + titles.get(title) + " (" + title + ")");
     else titles.set(title, path);
     if (descs.has(desc)) errors.push("duplicate description: " + path + " and " + descs.get(desc));
@@ -90,8 +125,12 @@ export function auditSeo(dist: string, origin: string, expectedStubs: string[] =
     }
   }
 
-  for (const old of expectedStubs) {
-    if (!stubPaths.has(old)) errors.push("old chapter URL has no stub: " + old);
+  for (const [stub, target] of stubTargets) {
+    if (!indexable.has(target)) errors.push("stub points at no indexable page: " + stub + " -> " + (target || "(none)"));
+  }
+
+  for (const old of oldUrls) {
+    if (!stubPaths.has(old) && !indexable.has(old)) errors.push("old chapter URL no longer resolves (no stub, no page): " + old);
   }
 
   for (const name of existsSync(dist) ? readdirSync(dist) : []) {

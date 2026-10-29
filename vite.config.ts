@@ -33,7 +33,8 @@ import {
   writeSplitNotes
 } from "./server/staticFathers";
 import { writeFatherDirectoryPages } from "./server/fatherDirectoryPages";
-import { auditSeo } from "./server/seoAudit";
+import { auditSeo, oldChapterUrls } from "./server/seoAudit";
+import { assignChapterSlugs, chapterPublicPath, legacyChapterSlugs } from "./src/lib/fatherPaths";
 import { FATHER_IMAGES } from "./src/lib/fatherImages";
 import { dirname, extname, join, resolve } from "path";
 import { fileURLToPath } from "url";
@@ -228,11 +229,22 @@ function extrasPlugin() {
         "/church-fathers  /church-fathers/index.html  200",
         "/church-fathers/  /church-fathers/index.html  200"
       ];
-      // Renamed works: keep old static URLs working.
-      redirectLines.push(
-        "/fathers/didache/teaching-of-the-twelve-apostles.html  /fathers/didache/didache.html  301",
-        "/fathers/didache/teaching-of-the-twelve-apostles/*  /fathers/didache/didache/:splat  301"
-      );
+      // Renamed works: keep old static URLs working. Each old Didache chapter URL goes straight to its
+      // numbered page (/fathers/didache/didache/chapter-<N>/), not through a second stub hop.
+      redirectLines.push("/fathers/didache/teaching-of-the-twelve-apostles.html  /fathers/didache/didache.html  301");
+      const didache = getWork("didache");
+      if (didache && didache.chapters.length > 1) {
+        const numbered = assignChapterSlugs(didache.chapters);
+        const legacy = legacyChapterSlugs(didache.chapters);
+        const oldBase = "/fathers/didache/teaching-of-the-twelve-apostles/";
+        for (const ch of didache.chapters) {
+          const target = chapterPublicPath("didache", "didache", numbered.get(ch.chapter)!);
+          for (const slug of new Set([legacy.get(ch.chapter)!, numbered.get(ch.chapter)!])) {
+            redirectLines.push(oldBase + slug + "/  " + target + "  301", oldBase + slug + "  " + target + "  301");
+          }
+        }
+      }
+      redirectLines.push("/fathers/didache/teaching-of-the-twelve-apostles/*  /fathers/didache/didache.html  301");
       const sitemapUrls = [
         SITE_ORIGIN + "/",
         SITE_ORIGIN + CHURCH_FATHERS_CANONICAL_PATH,
@@ -307,7 +319,16 @@ function extrasPlugin() {
         writeFileSync(join(dist, file.name), file.body);
       }
       writeFileSync(join(dist, "robots.txt"), robotsTxt(SITE_ORIGIN));
-      const seo = auditSeo(dist, SITE_ORIGIN, fathers.stubs);
+      const seo = auditSeo(
+        dist,
+        SITE_ORIGIN,
+        oldChapterUrls(
+          catalog.works.flatMap((w) => {
+            const p = getWork(w.id);
+            return p ? [{ authorId: p.author.id, workId: p.work.id, chapters: p.chapters }] : [];
+          })
+        )
+      );
       console.log("[seo] " + seo.checked + " indexable pages checked, " + seo.stubs + " stubs, " + seo.errors.length + " problems");
       if (seo.errors.length) {
         for (const e of seo.errors.slice(0, 50)) console.error("[seo] " + e);

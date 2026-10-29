@@ -2,7 +2,9 @@ import { describe, expect, it } from "vitest";
 import { getCatalog, getWork } from "../server/api";
 import { assignChapterSlugs, englishParagraphs } from "../src/lib/fatherPaths";
 import {
+  DESCRIPTION_MAX,
   DESCRIPTION_MIN,
+  SHORT_TITLE_KEYS,
   TITLE_MAX,
   chapterSeoDescription,
   chapterSeoTitle,
@@ -22,16 +24,23 @@ describe("SEO titles and descriptions across the catalog", () => {
     const add = (page: string, title: string, desc: string) => {
       if (title.length > TITLE_MAX) problems.push("title>" + TITLE_MAX + " " + page + ": " + title);
       if (desc.length < DESCRIPTION_MIN) problems.push("desc<" + DESCRIPTION_MIN + " " + page + ": " + desc);
+      if (desc.length > DESCRIPTION_MAX) problems.push("desc>" + DESCRIPTION_MAX + " " + page + ": " + desc);
+      if (/…\./.test(desc)) problems.push("period after a cut " + page + ": " + desc);
+      if (/(?: -|,|:|;)$|\bby the Apostolic Fathers$/.test(title)) problems.push("bad title ending " + page + ": " + title);
+      if (((title.match(/["“”]/g) || []).length % 2) !== 0) problems.push("unmatched quote " + page + ": " + title);
+      if (/[\[\]¶]/.test(desc)) problems.push("bracket or pilcrow in desc " + page + ": " + desc);
       if (titles.has(title)) problems.push("dup title " + page + " = " + titles.get(title) + ": " + title);
       if (descs.has(desc)) problems.push("dup desc " + page + " = " + descs.get(desc) + ": " + desc);
       titles.set(title, page);
       descs.set(desc, page);
     };
+    const catalogTitles = new Set<string>();
     let pages = 0;
     for (const w of cat.works) {
       const p = getWork(w.id);
       if (!p) continue;
-      const prose = (i: number) => pickOpening(englishParagraphs(p.chapters[i]!.versions));
+      catalogTitles.add(p.work.title);
+      const prose = (i: number) => pickOpening(englishParagraphs(p.chapters[i]!.versions), [p.work.title, p.chapters[i]!.heading]);
       add(
         w.id,
         workSeoTitle(p.work.title, p.author.name),
@@ -54,10 +63,15 @@ describe("SEO titles and descriptions across the catalog", () => {
         add(
           w.id + "/" + slug,
           chapterSeoTitle(i + 1, p.work.title, p.author.name),
-          chapterSeoDescription(i + 1, p.author.name, p.work.title, prose(i) || c.heading)
+          chapterSeoDescription(i + 1, p.author.name, p.work.title, prose(i))
         );
         pages++;
       });
+    }
+    for (const k of SHORT_TITLE_KEYS) if (!catalogTitles.has(k)) problems.push("short-title entry matches no work: " + k);
+    for (const [desc, page] of descs) {
+      const t = cat.works.find((w) => w.id === page)?.title;
+      if (t && desc.trim().toLowerCase() === t.trim().toLowerCase()) problems.push("description is the work title: " + page);
     }
     console.log("SEO pages checked", pages, "problems", problems.length);
     for (const k of ["confessions/chapter-3", "on-the-mysteries/chapter-8", "homilies-on-matthew/chapter-32", "jerome-letters/chapter-57"]) console.log("SAMPLE", k, [...titles].find(([, v]) => v === k)?.[0], "|", [...descs].find(([, v]) => v === k)?.[0]);

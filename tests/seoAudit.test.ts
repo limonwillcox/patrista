@@ -47,6 +47,20 @@ describe("SEO build check", () => {
     expect(errors).toMatch(/title over 65/);
     expect(errors).toMatch(/1\.\.N/);
     expect(errors).toMatch(/internal link to a moved chapter/);
-    expect(errors).toMatch(/no stub: \/fathers\/a\/w\/missing\//);
+    expect(errors).toMatch(/no longer resolves.*\/fathers\/a\/w\/missing\//);
+  });
+
+  it("flags noindex or non-self-canonical /fathers/ pages, long descriptions, and stubs to nowhere", () => {
+    const dist = mkdtempSync(join(tmpdir(), "seo-"));
+    write(dist, "/fathers/a/w.html", page("/fathers/a/w.html", "W by A", desc("W")).replace("<head>", '<head><meta name="robots" content="noindex" />'));
+    write(dist, "/fathers/a/w/chapter-1/", page("/fathers/a/w/chapter-2/", "Chapter 1 - W by A", desc("One")));
+    write(dist, "/fathers/a/v.html", page("/fathers/a/v.html", "V by A", "x".repeat(161)));
+    write(dist, "/fathers/a/v/old/", renderStubPage(O + "/fathers/a/v/chapter-9/", "/fathers/a/v/chapter-9/"));
+    const errors = auditSeo(dist, O, ["/fathers/a/v/old/"]).errors.join("\n");
+    expect(errors).toMatch(/noindex on a \/fathers\/ page: \/fathers\/a\/w\.html/);
+    expect(errors).toMatch(/canonical is not itself: \/fathers\/a\/w\/chapter-1\//);
+    expect(errors).toMatch(/description over 160/);
+    expect(errors).toMatch(/stub points at no indexable page: \/fathers\/a\/v\/old\//);
+    expect(errors).not.toMatch(/no longer resolves/);
   });
 });

@@ -41,6 +41,13 @@ export type EnglishWorkSpec = {
   bareHeadings?: boolean;
   /** Use the unitRe match itself as the heading (e.g. an epistle title) instead of "Book N". */
   keepUnitLabel?: boolean;
+  /**
+   * Units are "Sec. N.--Title" sections that restart at Sec. I in each book: headings become
+   * "Book II · Sec. 3 — Title" (unitRe group 1 = section numeral, group 2 = title).
+   */
+  bookSections?: boolean;
+  /** Sub-chapters are navigation anchors only: no heading is added to the reader text. */
+  subChapterHidden?: boolean;
 };
 
 /** Hand overrides for works that need a fixed chunk mode / unit count. */
@@ -163,6 +170,17 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
     unitRe: /^((?:The|A Second) Epistle of [^\n]+|Reply of the Blessed Virgin[^\n]*)$/m,
     keepUnitLabel: true,
     subChapters: true
+  },
+  "constitutions-of-the-holy-apostles": {
+    chunk: "chapter",
+    startAt: /^ {4,6}Sec\. I\.--/m,
+    // Book VIII closes with the Apostolic Canons, a unit of their own (no Sec. number).
+    unitRe: /^ {4,6}Sec\. ([IVX]+)\.--([^\n]*(?:\n {4,8}\S[^\n]*)*)|^ {4}(The Ecclesiastical Canons of the Same Holy Apostles)\./m,
+    bookSections: true,
+    dropBlocks: [{ start: /^constitutions of the holy apostles/i, until: /^ {4,6}Sec\. I\.--/ }],
+    endAt: /^\s*Elucidations\.\s*$|^\s*AN ANCIENT HOMILY,?\s*$/m,
+    subChapters: /^([IVXLC]+)\.(?:\s+\S|\d)/,
+    subChapterHidden: true
   },
   "recognitions-of-clement": { chunk: "book", unitRe: /^\s*Book\s+([IVX]+)\.(?:\s*\[\d+\])?\s*$/m, subChapters: true },
   decretals: { chunk: "section", endAt: /^\s*Memoirs of Edessa And Other Ancient Syriac Documents\s*$/m },
@@ -438,6 +456,18 @@ function toRoman(n: number): string {
   return out;
 }
 
+function romanToInt(r: string): number {
+  const v: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100 };
+  let n = 0;
+  const s = r.toUpperCase();
+  for (let i = 0; i < s.length; i++) {
+    const a = v[s[i]] ?? 0;
+    const b = v[s[i + 1]] ?? 0;
+    n += a < b ? -a : a;
+  }
+  return n;
+}
+
 function unitLabel(mode: ChunkMode, label: string): string {
   if (label && !/^([IVXLCDM]+|\d+)$/i.test(label)) return label.charAt(0).toUpperCase() + label.slice(1).toLowerCase();
   if (mode === "book") return "Book " + (/^\d+$/.test(label) ? toRoman(Number(label)) : romanOrNum(label));
@@ -659,6 +689,36 @@ function dropLineBlocks(raw: string, blocks: { start: RegExp; until: RegExp }[])
 export const SUBCHAPTER_RE = /^Chapter\s+([IVXLCDM]+|\d+)\b\.?\s*(?:--|—|-|\.|:)?\s*(.*?)\.?$/;
 
 /** Mark chapter-heading paragraphs inside each book passage (headings stay in the text). */
+/** A short, mostly Title-Case paragraph (e.g. "Concerning a Person Falsely Accused."). */
+function isTitleLine(t: string): boolean {
+  if (t.length > 260) return false;
+  const words = t.replace(/[^A-Za-z\s]/g, " ").split(/\s+/).filter((w) => w.length > 3);
+  if (!words.length) return false;
+  return words.filter((w) => /^[A-Z]/.test(w)).length / words.length >= 0.6;
+}
+
+/** Hidden sub-chapters: a paragraph starting "IV. …" marks a chapter; its preceding title line (if any) is the anchor and box title. */
+function addHiddenSubChapters(passages: Passage[], re: RegExp): Passage[] {
+  return passages.map((p) => {
+    const paras = Object.values(p.versions)[0] ?? [];
+    const sections: SubChapter[] = [];
+    paras.forEach((text, i) => {
+      const m = text.trim().match(re);
+      if (!m) return;
+      const prev = i > 0 ? paras[i - 1].trim() : "";
+      const titled = prev && !re.test(prev) && isTitleLine(prev);
+      sections.push({
+        n: sections.length + 1,
+        label: "Chapter " + m[1].toUpperCase(),
+        title: titled ? prev.replace(/\s*\[\d+\]/g, "").replace(/\.$/, "") : "",
+        para: titled ? i - 1 : i,
+        hidden: true
+      });
+    });
+    return sections.length ? { ...p, sections } : p;
+  });
+}
+
 export function addSubChapters(passages: Passage[], re: RegExp = SUBCHAPTER_RE, inline = false, sequence = false): Passage[] {
   return passages.map((p) => {
     let paras = Object.values(p.versions)[0] ?? [];
@@ -690,7 +750,9 @@ export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: W
   const parsed = parseEnglishWorkFlat(spec, root);
   if (!spec.subChapters && !spec.dropParas && !spec.stripNoteMarks && !spec.dropFootnotes) return parsed;
   let passages = parsed.passages.map((p) => cleanPassage(spec, p));
-  if (spec.subChapters) {
+  if (spec.subChapters && spec.subChapterHidden && spec.subChapters !== true) {
+    passages = addHiddenSubChapters(passages, spec.subChapters);
+  } else if (spec.subChapters) {
     passages = addSubChapters(
       passages,
       spec.subChapters === true ? SUBCHAPTER_RE : spec.subChapters,
@@ -800,6 +862,19 @@ function parseEnglishWorkFlat(spec: EnglishWorkSpec, root: string): { work: Work
     const stop = i + 1 < marks.length ? marks[i + 1].index : raw.length;
     const block = raw.slice(start, stop);
     const { paras, footnotes } = parasAndNotesFromBlock(block);
+    if (spec.bookSections) {
+      const book = marks.slice(0, i + 1).filter((m) => m.label.toUpperCase() === "I").length;
+      const g = new RegExp(unitRe.source, unitRe.flags.replace("g", "")).exec(raw.slice(marks[i].index));
+      const title = (g?.[2] ?? g?.[3] ?? "").replace(/\s*\[\d+\]\s*/g, " ").replace(/\s+/g, " ").trim().replace(/\.$/, "");
+      passages.push({
+        work: spec.id,
+        chapter: i + 1,
+        heading: "Book " + toRoman(book) + (marks[i].label ? " · Sec. " + romanToInt(marks[i].label) + (title ? " — " + title : "") : " · " + title),
+        versions: { schaff: paras.length ? paras : [spec.title] },
+        footnotes
+      });
+      continue;
+    }
     let heading = spec.keepUnitLabel ? marks[i].label.trim().replace(/\.$/, "") : unitLabel(mode, marks[i].label);
     if (mode === "chapter") {
       let bookLabel = "";

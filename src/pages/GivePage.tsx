@@ -11,9 +11,6 @@ export function GivePage() {
 
   return (
     <div className="give-page">
-      <section className="give-hero" aria-label="Patrista funding">
-        <h1 className="give-quote">This is 100% personally funded</h1>
-      </section>
 
       <div className="give-body">
         <div className="give-ask give-ask--hardcover">

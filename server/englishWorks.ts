@@ -102,7 +102,10 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
   // Column-0 "Appendix I." only — indented "See / Appendix I." mid-notes must not cut early.
   commonitory: { chunk: "chapter", endAt: /^Appendix I\.\s*$/m },
   "institutes-and-conferences": { endAt: /^\s*THE SEVEN BOOKS OF JOHN CASSIAN\s*$/im },
-  "book-of-pastoral-rule": { endAt: /^\s*Register of the Epistles of Saint Gregory/im },
+  "book-of-pastoral-rule": {
+    unitRe: /^\s*(?:Chapter\s+([IVXL]+)\.|(Introduction)\.)\s*$/m,
+    endAt: /^\s*Register of the Epistles of Saint Gregory/im
+  },
   sermons: { chunk: "sermon", endAt: /^\s*Prolegomena\.?\s*$/im },
   "ecclesiastical-history": { chunk: "book", expectUnits: 7, endAt: /^\s*Memoir of Sozomen\.?\s*$/im },
   "ecclesiastical-history-and-dialogues": { endAt: /^\s*Jerome and Gennadius\.?\s*$/im },

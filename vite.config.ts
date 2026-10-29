@@ -30,9 +30,11 @@ import {
   robotsTxt,
   workCanonicalMap,
   writeFatherPages,
-  writeSplitNotes
+  writeSplitNotes,
+  writeReadPathAliases
 } from "./server/staticFathers";
 import { writeFatherDirectoryPages } from "./server/fatherDirectoryPages";
+import { WORK_READ_PATHS } from "./src/lib/workSlugs";
 import { auditSeo, oldChapterUrls } from "./server/seoAudit";
 import { assignChapterSlugs, chapterPublicPath, legacyChapterSlugs } from "./src/lib/fatherPaths";
 import { FATHER_IMAGES } from "./src/lib/fatherImages";
@@ -279,6 +281,7 @@ function extrasPlugin() {
 
       const fathers = writeFatherPages(dist, shell, catalog, SITE_ORIGIN);
       writeSplitNotes(dist, fathers.notes);
+      writeReadPathAliases(dist, catalog, WORK_READ_PATHS);
       sitemapUrls.push(...fathers.urls);
       console.log("[fathers] " + fathers.stubs.length + " old chapter URLs now stub pages, " + fathers.reused.length + " reused as new chapter numbers");
       console.log(

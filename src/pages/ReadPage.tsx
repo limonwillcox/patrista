@@ -301,10 +301,13 @@ export function ReadPage() {
     jumpedRef.current = null;
   }, [workId]);
 
+  // Load the entry chapter (and its neighbours) as soon as the outline is known. This must not wait
+  // for the entry chapter's own text: on a cold landing at /fathers/<author>/<work>/<chapter>/ nothing
+  // else fetches it, so gating on texts.has(entryChapter) left every chapter body blank.
   useEffect(() => {
-    if (entryChapter == null || !texts.has(entryChapter)) return;
+    if (entryChapter == null) return;
     loadAround(entryChapter);
-  }, [entryChapter, texts, loadAround]);
+  }, [entryChapter, loadAround]);
 
   useLayoutEffect(() => {
     if (!outline || !onChapterRoute || entryChapter == null) return;
@@ -313,6 +316,8 @@ export function ReadPage() {
     const el = document.getElementById("ch-" + entryChapter);
     if (!el) return;
     jumpedRef.current = jumpKey;
+    // Keep the chapter pinned while its text and the chapter above it load in.
+    pendingJump.current = entryChapter;
     el.scrollIntoView({ behavior: "auto", block: "start" });
   }, [outline, onChapterRoute, entryChapter, workId]);
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { chapterFetchPath, jsonFallbackPath } from "../src/api/client";
+import { chapterFetchPath, jsonFallbackPath, staticApiPath } from "../src/api/client";
 
 describe("jsonFallbackPath", () => {
   it("appends .json to extensionless API paths", () => {
@@ -24,5 +24,11 @@ describe("jsonFallbackPath", () => {
     expect(chapterFetchPath("homilies-on-acts-and-romans", 30, true)).toBe(
       "/api/works/homilies-on-acts-and-romans/chapters/30"
     );
+  });
+
+  it("requests the catalog and work outline files directly on a static deploy", () => {
+    expect(staticApiPath("/api/catalog", false)).toBe("/api/catalog.json");
+    expect(staticApiPath("/api/works/confessions", false)).toBe("/api/works/confessions.json");
+    expect(staticApiPath("/api/works/confessions", true)).toBe("/api/works/confessions");
   });
 });

@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from "fs";
+import { copyFileSync, existsSync, mkdirSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { getWork } from "./api";
 import type { Author, Catalog, Passage, Work } from "./types";
@@ -597,6 +597,26 @@ export function writeFatherPages(
   }
 
   return { urls, notes };
+}
+
+/**
+ * Short reader paths (e.g. /augustines-confessions, the Read tab's default) have no file of their own,
+ * so GitHub Pages answered them with 404.html and an HTTP 404. Give each one a copy of its work page:
+ * full text in the HTML, and the canonical still points at /fathers/<author>/<work>.html.
+ */
+export function writeReadPathAliases(dist: string, catalog: Catalog, readPaths: Record<string, string>): string[] {
+  const written: string[] = [];
+  for (const [workId, path] of Object.entries(readPaths)) {
+    const work = catalog.works.find((w) => w.id === workId);
+    if (!work) continue;
+    const source = join(dist, "fathers", work.author, workId + ".html");
+    if (!existsSync(source)) continue;
+    const target = join(dist, path.replace(/^\/+/, "").replace(/\/+$/, "") + ".html");
+    mkdirSync(dirname(target), { recursive: true });
+    copyFileSync(source, target);
+    written.push(path);
+  }
+  return written;
 }
 
 export function writeSplitNotes(dist: string, notes: SplitNote[]): void {

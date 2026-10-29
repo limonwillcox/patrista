@@ -28,9 +28,11 @@ import {
   robotsTxt,
   workCanonicalMap,
   writeFatherPages,
-  writeSplitNotes
+  writeSplitNotes,
+  writeReadPathAliases
 } from "./server/staticFathers";
 import { writeFatherDirectoryPages } from "./server/fatherDirectoryPages";
+import { WORK_READ_PATHS } from "./src/lib/workSlugs";
 import { FATHER_IMAGES } from "./src/lib/fatherImages";
 import { dirname, extname, join, resolve } from "path";
 import { fileURLToPath } from "url";
@@ -264,6 +266,7 @@ function extrasPlugin() {
 
       const fathers = writeFatherPages(dist, shell, catalog, SITE_ORIGIN);
       writeSplitNotes(dist, fathers.notes);
+      writeReadPathAliases(dist, catalog, WORK_READ_PATHS);
       sitemapUrls.push(...fathers.urls);
       console.log(
         "[fathers] " +

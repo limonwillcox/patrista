@@ -19,12 +19,21 @@ async function getJson<T>(path: string): Promise<T> {
   throw new Error(path + " failed: " + res.status);
 }
 
+/**
+ * Extensionless in dev (Vite API). The built .json file on a static host, so GitHub Pages is not asked
+ * for /api/works/<id> first (a directory there: 301, then 404) on every cold landing.
+ */
+export function staticApiPath(path: string, dev = import.meta.env.DEV): string {
+  if (dev) return path;
+  return jsonFallbackPath(path) ?? path;
+}
+
 export function fetchCatalog(): Promise<Catalog> {
-  return getJson<Catalog>("/api/catalog");
+  return getJson<Catalog>(staticApiPath("/api/catalog"));
 }
 
 export function fetchWork(id: string): Promise<WorkOutline> {
-  return getJson<WorkOutline>("/api/works/" + encodeURIComponent(id));
+  return getJson<WorkOutline>(staticApiPath("/api/works/" + encodeURIComponent(id)));
 }
 
 /** Full passages for the static-site search fallback. The reader does not call this. */
@@ -34,9 +43,7 @@ export function fetchWorkText(id: string): Promise<WorkPayload> {
 
 /** Extensionless in dev (Vite API). The built file on a static host. */
 export function chapterFetchPath(workId: string, chapter: number, dev = import.meta.env.DEV): string {
-  const extensionless = "/api/works/" + encodeURIComponent(workId) + "/chapters/" + chapter;
-  if (dev) return extensionless;
-  return jsonFallbackPath(extensionless) ?? extensionless;
+  return staticApiPath("/api/works/" + encodeURIComponent(workId) + "/chapters/" + chapter, dev);
 }
 
 export function fetchChapter(workId: string, chapter: number): Promise<Passage> {

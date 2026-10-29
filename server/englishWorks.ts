@@ -169,7 +169,7 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
   // The default unit patterns are case-insensitive and also match wrapped footnote lines
   // ("Homily LXXXVIII.--R.]", "Letter xli. (ha anegnon...)", "book iv. ..."), which created stray,
   // duplicated or out-of-order units. These works take only real, case-sensitive heading lines.
-  "homilies-on-matthew": { chunk: "homily", unitRe: /^\s*Homily\s+([IVXLC]+)\.(?:\s*\[\d+\])?\s*$/m },
+  "homilies-on-matthew": { chunk: "homily", expectUnits: 90, unitRe: /^\s*Homily\s+([IVXLC]+)\.(?:\s*\[\d+\])?\s*$/m },
   "augustine-letters": { chunk: "letter", unitRe: /^\s*Letter\s+([IVXLCDM]+)\.(?:\s*\[\d+\])?\s*$/m },
   "basil-letters": { chunk: "letter", unitRe: /^\s*Letter\s+([IVXLCDM]+)\.(?:\s*\[\d+\])?\s*$/m },
   // Jerome's headings carry the addressee ("Letter XXXIII. To Paula."); footnote lines follow with "§", ")" or nothing.

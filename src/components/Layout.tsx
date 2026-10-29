@@ -38,7 +38,7 @@ function Rail() {
           {ICONS.home}
           <span>Home</span>
         </NavLink>{" "}
-        <NavLink to="/augustines-confessions" className={() => (readActive ? "active" : "")} onClick={() => setNavOpen(false)}>
+        <NavLink to={readHref} className={() => (readActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.read}
           <span>Read</span>
         </NavLink>{" "}

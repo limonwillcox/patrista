@@ -63,6 +63,10 @@ export const CHURCH_HISTORY_PATH = "/church-history";
 export const CHURCH_HISTORY_CANONICAL_PATH = "/church-history/";
 export const CHURCH_HISTORY_TIMELINE_PATH = "/church-history/timeline";
 export const CHURCH_HISTORY_TITLE = "Church History Timeline: Pentecost to the Great Schism";
+/** The /church-history/ intro page; distinct from the timeline so the two never share a title or description. */
+export const CHURCH_HISTORY_INTRO_TITLE = "Church History: Pentecost to the Great Schism";
+export const CHURCH_HISTORY_INTRO_DESCRIPTION =
+  "The story of the early Church from Pentecost to the Great Schism of 1054, told era by era, with the Church Fathers' own words at each turning point.";
 export const CHURCH_HISTORY_HEADING = "Church history timeline";
 export const CHURCH_HISTORY_DESCRIPTION =
   "A timeline of church history from Pentecost to the Great Schism of 1054 — the persecutions, Nicaea, and the councils, linked to the Church Fathers' own words.";

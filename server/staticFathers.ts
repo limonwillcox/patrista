@@ -5,15 +5,14 @@ import type { Author, Catalog, Passage, Work } from "./types";
 import {
   assignChapterSlugs,
   authorAnchorId,
-  chapterPageTitle,
   chapterPublicPath,
   englishParagraphs,
   escapeHtml,
-  metaDescription,
+  legacyChapterSlugs,
   slugifyHeading,
-  workPageTitle,
   workPublicPath
 } from "../src/lib/fatherPaths";
+import { chapterSeoDescription, chapterSeoTitle, pickOpening, unitNoun, workSeoDescription, workSeoTitle } from "../src/lib/seoMeta";
 
 export const SITEMAP_URL_LIMIT = 50_000;
 
@@ -29,6 +28,10 @@ export type SplitNote = {
 
 type ChapterRef = {
   chapter: number;
+  /** Reading-order number of the static page, 1..N. */
+  n: number;
+  /** Link text for the static TOC and pager: "Chapter <n>". */
+  label: string;
   heading: string;
   slug: string;
   path: string;
@@ -95,7 +98,7 @@ export function describeSplit(work: Work, chapters: Passage[]): SplitNote[] {
       reason: "Unit numbers skip " + missing.join(", ") + " (headings run to " + headings[headings.length - 1] + ")."
     });
   }
-  const slugs = assignChapterSlugs(chapters);
+  const slugs = legacyChapterSlugs(chapters);
   const collided: string[] = [];
   for (const ch of chapters) {
     const plain = slugifyHeading(ch.heading) || "chapter-" + ch.chapter;
@@ -113,10 +116,12 @@ export function describeSplit(work: Work, chapters: Passage[]): SplitNote[] {
 
 function chapterRefs(authorId: string, workId: string, chapters: Passage[]): ChapterRef[] {
   const slugs = assignChapterSlugs(chapters);
-  return chapters.map((ch) => {
-    const slug = slugs.get(ch.chapter) || "chapter-" + ch.chapter;
+  return chapters.map((ch, i) => {
+    const slug = slugs.get(ch.chapter) || "chapter-" + (i + 1);
     return {
       chapter: ch.chapter,
+      n: i + 1,
+      label: "Chapter " + (i + 1),
       heading: ch.heading,
       slug,
       path: chapterPublicPath(authorId, workId, slug)
@@ -225,11 +230,11 @@ export function renderChapterBody(opts: {
 }): string {
   const links: string[] = [];
   if (opts.prev) {
-    links.push('<a href="' + escapeHtml(opts.prev.path) + '" rel="prev">Previous</a>');
+    links.push('<a href="' + escapeHtml(opts.prev.path) + '" rel="prev">' + escapeHtml(opts.prev.label) + "</a>");
   }
-  links.push('<a href="' + escapeHtml(opts.workPath) + '">Up</a>');
+  links.push('<a href="' + escapeHtml(opts.workPath) + '">Contents</a>');
   if (opts.next) {
-    links.push('<a href="' + escapeHtml(opts.next.path) + '" rel="next">Next</a>');
+    links.push('<a href="' + escapeHtml(opts.next.path) + '" rel="next">' + escapeHtml(opts.next.label) + "</a>");
   }
   return [
     '<article class="static-chapter">',
@@ -288,16 +293,21 @@ export function renderWorkPage(opts: {
   const url = opts.origin + path;
   const refs = chapterRefs(opts.author.id, opts.work.id, opts.chapters);
   const split = opts.chapters.length > 1;
-  const title = workPageTitle(opts.author.name, opts.work.title);
-  const description = split
-    ? metaDescription("Contents of " + opts.work.title + " by " + opts.author.name + ".")
-    : metaDescription(proseOf(opts.chapters[0]) || opts.work.title);
+  const title = workSeoTitle(opts.work.title, opts.author.name);
+  const description = workSeoDescription({
+    authorName: opts.author.name,
+    workTitle: opts.work.title,
+    units: opts.chapters.length,
+    noun: unitNoun(opts.chapters.map((c) => c.heading)),
+    series: opts.work.series,
+    opening: opts.chapters[0] ? pickOpening(englishParagraphs(opts.chapters[0].versions)) : ""
+  });
   const ld = bookJsonLd({
     origin: opts.origin,
     authorName: opts.author.name,
     workTitle: opts.work.title,
     workPath: path,
-    parts: split ? refs.map((r) => ({ name: r.heading, path: r.path })) : []
+    parts: split ? refs.map((r) => ({ name: r.label, path: r.path })) : []
   });
 
   const body: string[] = [];
@@ -320,10 +330,8 @@ export function renderWorkPage(opts: {
       body.push(
         '<a href="' +
           escapeHtml(ref.path) +
-          '" title="' +
-          escapeHtml(ref.heading) +
           '">' +
-          escapeHtml(ref.heading) +
+          escapeHtml(ref.label) +
           "</a>"
       );
     }
@@ -536,9 +544,11 @@ export function writeFatherPages(
   indexHtml: string,
   catalog: Catalog,
   origin: string
-): { urls: string[]; notes: SplitNote[] } {
+): { urls: string[]; notes: SplitNote[]; stubs: string[]; reused: string[] } {
   const urls: string[] = [];
   const notes: SplitNote[] = [];
+  const stubs: string[] = [];
+  const reused: string[] = [];
 
   for (const work of catalog.works) {
     const payload = getWork(work.id);
@@ -562,14 +572,14 @@ export function writeFatherPages(
       const ref = refs[index];
       const prev = index > 0 ? refs[index - 1] : null;
       const next = index + 1 < refs.length ? refs[index + 1] : null;
-      const label = chapter.heading;
-      const description = metaDescription(proseOf(chapter) || label);
+      const label = ref.label;
+      const description = chapterSeoDescription(ref.n, payload.author.name, payload.work.title, pickOpening(englishParagraphs(chapter.versions)) || chapter.heading);
       const extra: string[] = [];
       if (prev) extra.push('    <link rel="prev" href="' + escapeHtml(origin + prev.path) + '" />');
       if (next) extra.push('    <link rel="next" href="' + escapeHtml(origin + next.path) + '" />');
       const html = prerenderShell(indexHtml, origin, {
         canonicalPath: ref.path,
-        title: chapterPageTitle(payload.author.name, payload.work.title, label),
+        title: chapterSeoTitle(ref.n, payload.work.title, payload.author.name),
         description,
         bodyHtml: renderChapterBody({
           authorName: payload.author.name,
@@ -594,9 +604,46 @@ export function writeFatherPages(
       writeFileSync(file, html);
       urls.push(origin + ref.path);
     });
+
+    // Old heading-based chapter URLs (e.g. .../homily-xxxii/) become stubs pointing at .../chapter-<n>/.
+    const legacy = legacyChapterSlugs(payload.chapters);
+    const live = new Set(refs.map((r) => r.path));
+    for (const ref of refs) {
+      const oldSlug = legacy.get(ref.chapter);
+      if (!oldSlug || oldSlug === ref.slug) continue;
+      const oldPath = chapterPublicPath(payload.author.id, payload.work.id, oldSlug);
+      if (live.has(oldPath)) {
+        // The old slug is now another chapter's number (e.g. old "chapter-2" is now page 3).
+        reused.push(oldPath + " -> " + ref.path);
+        continue;
+      }
+      const file = join(dist, oldPath.replace(/^\//, ""), "index.html");
+      mkdirSync(dirname(file), { recursive: true });
+      writeFileSync(file, renderStubPage(origin + ref.path, ref.path));
+      stubs.push(oldPath);
+    }
   }
 
-  return { urls, notes };
+  return { urls, notes, stubs, reused };
+}
+
+/** A moved chapter: canonical + instant refresh + a plain link. Not listed in the sitemap. */
+export function renderStubPage(absoluteUrl: string, path: string): string {
+  const u = escapeHtml(absoluteUrl);
+  return [
+    "<!DOCTYPE html>",
+    '<html lang="en">',
+    "<head>",
+    '  <meta charset="utf-8" />',
+    '  <link rel="canonical" href="' + u + '" />',
+    '  <meta http-equiv="refresh" content="0; url=' + u + '" />',
+    "</head>",
+    "<body>",
+    '  <p><a href="' + escapeHtml(path) + '">' + u + "</a></p>",
+    "</body>",
+    "</html>",
+    ""
+  ].join("\n");
 }
 
 export function writeSplitNotes(dist: string, notes: SplitNote[]): void {

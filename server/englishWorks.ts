@@ -41,6 +41,8 @@ export type EnglishWorkSpec = {
   bareHeadings?: boolean;
   /** Use the unitRe match itself as the heading (e.g. an epistle title) instead of "Book N". */
   keepUnitLabel?: boolean;
+  /** Fixed headings for the units in order (e.g. two recensions marked only by a title line). */
+  unitTitles?: string[];
   /**
    * Units are "Sec. N.--Title" sections that restart at Sec. I in each book: headings become
    * "Book II · Sec. 3 — Title" (unitRe group 1 = section numeral, group 2 = title).
@@ -49,6 +51,9 @@ export type EnglishWorkSpec = {
   /** Sub-chapters are navigation anchors only: no heading is added to the reader text. */
   subChapterHidden?: boolean;
 };
+
+/** A chapter numeral opening an indented paragraph: "   IV.  And she saw…". */
+const ROMAN_PARA_RE = /^ {3,4}([IVXL]+)\.\s{1,3}(?=\S)/m;
 
 /** Hand overrides for works that need a fixed chunk mode / unit count. */
 const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
@@ -170,6 +175,62 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
     unitRe: /^((?:The|A Second) Epistle of [^\n]+|Reply of the Blessed Virgin[^\n]*)$/m,
     keepUnitLabel: true,
     subChapters: true
+  },
+  // ANF IX apocrypha: each piece is its own work; chapters are the Roman-numeral paragraphs.
+  "apocalypse-of-peter": {
+    chunk: "chapter",
+    startAt: /^\s*The Apocalypse of Peter\.\s*\n\s*\n\s*-{6,}/m,
+    unitRe: /^\s*(The Apocalypse of Peter)\.\s*$/m,
+    keepUnitLabel: true,
+    bareHeadings: true,
+    endAt: /^\s*Fragments of the Apocalypse of Peter\.?\s*$/m
+  },
+  "apocalypse-of-the-virgin": {
+    chunk: "chapter",
+    startAt: /^\s*The Apocalypse of the Holy Mother of God Concerning the Chastisements/m,
+    unitRe: ROMAN_PARA_RE,
+    bareHeadings: true
+  },
+  "apocalypse-of-sedrach": {
+    chunk: "chapter",
+    startAt: /^\s*The Word of the holy and blessed Sedrach/m,
+    unitRe: ROMAN_PARA_RE,
+    bareHeadings: true
+  },
+  "testament-of-abraham": {
+    chunk: "book",
+    // The title line repeats (intro, then text); the later one starts Version I.
+    unitRe: /^\s*(?:The Testament of (Abraham)|Version (II))\.\s*$/m,
+    unitTitles: ["Version I", "Version II"],
+    dropParas: /^Version I\.$/,
+    subChapters: /^([IVXL]+)\.\s/,
+    subChapterHidden: true
+  },
+  "acts-of-xanthippe-and-polyxena": {
+    chunk: "chapter",
+    startAt: /^\s*Life and Conduct of the Holy Women/m,
+    unitRe: ROMAN_PARA_RE,
+    bareHeadings: true
+  },
+  "narrative-of-zosimus": {
+    chunk: "chapter",
+    startAt: /^\s*The Narrative of Zosimus Concerning the Life of the Blessed/m,
+    unitRe: ROMAN_PARA_RE,
+    bareHeadings: true
+  },
+  "apology-of-aristides": {
+    chunk: "book",
+    unitRe: /^\s*Translated from the (Greek|Syriac)\.\s*$/m,
+    unitTitles: ["Greek (Barlaam and Josaphat)", "Syriac"],
+    subChapters: /^([IVXL]+)\.\s/,
+    subChapterHidden: true
+  },
+  "passion-of-the-scillitan-martyrs": {
+    chunk: "chapter",
+    // Title repeats (part title, intro, text); the last one opens the Acts.
+    unitRe: /^\s*(The Passion of the Scillitan Martyrs)\.\s*$/m,
+    keepUnitLabel: true,
+    bareHeadings: true
   },
   "constitutions-of-the-holy-apostles": {
     chunk: "chapter",
@@ -862,6 +923,8 @@ function parseEnglishWorkFlat(spec: EnglishWorkSpec, root: string): { work: Work
     const stop = i + 1 < marks.length ? marks[i + 1].index : raw.length;
     const block = raw.slice(start, stop);
     const { paras, footnotes } = parasAndNotesFromBlock(block);
+    let heading = spec.unitTitles?.[i] ?? (spec.keepUnitLabel ? marks[i].label.trim().replace(/\.$/, "") : unitLabel(mode, marks[i].label));
+    if (mode === "chapter" && !spec.unitTitles) {
     if (spec.bookSections) {
       const book = marks.slice(0, i + 1).filter((m) => m.label.toUpperCase() === "I").length;
       const g = new RegExp(unitRe.source, unitRe.flags.replace("g", "")).exec(raw.slice(marks[i].index));
@@ -875,8 +938,6 @@ function parseEnglishWorkFlat(spec: EnglishWorkSpec, root: string): { work: Work
       });
       continue;
     }
-    let heading = spec.keepUnitLabel ? marks[i].label.trim().replace(/\.$/, "") : unitLabel(mode, marks[i].label);
-    if (mode === "chapter") {
       let bookLabel = "";
       for (let b = bookMarks.length - 1; b >= 0; b--) {
         if (bookMarks[b].index <= marks[i].index) {

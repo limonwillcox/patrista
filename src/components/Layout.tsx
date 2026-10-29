@@ -37,15 +37,15 @@ function Rail() {
         <NavLink to={HOME_HREF} className={() => (homeActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.home}
           <span>Home</span>
-        </NavLink>
-        <NavLink to={readHref} className={() => (readActive ? "active" : "")} onClick={() => setNavOpen(false)}>
+        </NavLink>{" "}
+        <NavLink to="/augustines-confessions" className={() => (readActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.read}
           <span>Read</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink to="/bible" className={() => (bibleActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.bible}
           <span>Bible</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink
           to="/church-fathers"
           className={() => (writingsActive ? "active" : "")}
@@ -53,23 +53,23 @@ function Rail() {
         >
           {ICONS.browse}
           <span>Browse</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink to="/fathers/" className={() => (fathersActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.fathers}
           <span>Fathers</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.about}
           <span>About</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink to="/give" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.give}
           <span>Give</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink to="/fixes" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.fixes}
           <span>Fixes</span>
-        </NavLink>
+        </NavLink>{" "}
       </div>
     </nav>
   );

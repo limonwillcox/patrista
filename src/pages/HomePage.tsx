@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ICONS } from "../components/Icons";
 import { useApp } from "../context/AppContext";
@@ -77,6 +77,7 @@ function StarterCard({ work }: { work: Starter }) {
     return (
       <Link className="starter-card" to={readPath(work.workId)}>
         <strong>{work.title}</strong>
+        <span className="sr-only"> by </span>
         <span className="starter-author">{work.author}</span>
       </Link>
     );
@@ -84,7 +85,9 @@ function StarterCard({ work }: { work: Starter }) {
   return (
     <div className="starter-card starter-card--soon" data-starter-id={work.id} aria-disabled="true">
       <strong>{work.title}</strong>
+      <span className="sr-only"> by </span>
       <span className="starter-author">{work.author}</span>
+      <span className="sr-only">. </span>
       <span className="starter-soon">Coming soon</span>
     </div>
   );
@@ -128,7 +131,7 @@ export function HomePage() {
                 {ICONS[item.id]}
                 <span>{item.label}</span>
               </Link>
-            ))}
+            )).flatMap((el, i) => (i ? [" ", el] : [el]))}
           </nav>
         </div>
       </section>
@@ -148,7 +151,9 @@ export function HomePage() {
                 </header>
                 <div className="starter-list">
                   {era.works.map((w) => (
-                    <StarterCard key={w.id} work={w} />
+                    <Fragment key={w.id}>
+                      <StarterCard work={w} />{" "}
+                    </Fragment>
                   ))}
                 </div>
               </div>

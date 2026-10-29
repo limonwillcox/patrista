@@ -6,7 +6,8 @@ import {
   ACT_ONE_SCENES as ACT_ONE,
   CHURCH_HISTORY_CANONICAL_PATH,
   CHURCH_HISTORY_DESCRIPTION,
-  CHURCH_HISTORY_TITLE
+  CHURCH_HISTORY_INTRO_DESCRIPTION,
+  CHURCH_HISTORY_INTRO_TITLE
 } from "../../server/churchHistory";
 import { useApp } from "../context/AppContext";
 
@@ -114,7 +115,7 @@ export function ChurchHistoryPage() {
   }, [navigate]);
 
   const origin = typeof window === "undefined" ? "https://patrista.com" : window.location.origin;
-  useDocumentMeta(CHURCH_HISTORY_TITLE, CHURCH_HISTORY_DESCRIPTION, origin + CHURCH_HISTORY_CANONICAL_PATH);
+  useDocumentMeta(CHURCH_HISTORY_INTRO_TITLE, CHURCH_HISTORY_INTRO_DESCRIPTION, origin + CHURCH_HISTORY_CANONICAL_PATH);
 
   return (
     <div className="ch-page ch-page--cinematic">

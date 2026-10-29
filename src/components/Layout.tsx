@@ -4,6 +4,7 @@ import { parseQuery } from "../../server/query";
 import { isExactAuthorQuery } from "../lib/catalogPreview";
 import { isFathersTabPath } from "../lib/fathersDirectory";
 import { HOME_HREF, isHomePath, showSiteRail } from "../lib/homeNav";
+import { useReadTabHref } from "../lib/useReadTabHref";
 import { useApp } from "../context/AppContext";
 import { Booklist } from "./Booklist";
 import { ICONS } from "./Icons";
@@ -20,6 +21,7 @@ function Brand() {
 function Rail() {
   const { navOpen, setNavOpen } = useApp();
   const location = useLocation();
+  const readHref = useReadTabHref();
   const homeActive = isHomePath(location.pathname);
   const readActive =
     location.pathname === "/read" ||
@@ -35,15 +37,15 @@ function Rail() {
         <NavLink to={HOME_HREF} className={() => (homeActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.home}
           <span>Home</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink to="/augustines-confessions" className={() => (readActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.read}
           <span>Read</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink to="/bible" className={() => (bibleActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.bible}
           <span>Bible</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink
           to="/church-fathers"
           className={() => (writingsActive ? "active" : "")}
@@ -51,23 +53,23 @@ function Rail() {
         >
           {ICONS.browse}
           <span>Browse</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink to="/fathers/" className={() => (fathersActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.fathers}
           <span>Fathers</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.about}
           <span>About</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink to="/give" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.give}
           <span>Give</span>
-        </NavLink>
+        </NavLink>{" "}
         <NavLink to="/fixes" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
           {ICONS.fixes}
           <span>Fixes</span>
-        </NavLink>
+        </NavLink>{" "}
       </div>
     </nav>
   );

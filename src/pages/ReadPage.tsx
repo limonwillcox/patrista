@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { translationsOf } from "../../server/query";
+import { saveLastRead } from "../lib/lastRead";
 import type { Passage, WorkChapterMeta, WorkOutline } from "../../server/types";
 import { fetchChapter, fetchWork } from "../api/client";
 import { ChapterDock } from "../components/ChapterDock";
@@ -314,6 +315,12 @@ export function ReadPage() {
     jumpedRef.current = jumpKey;
     el.scrollIntoView({ behavior: "auto", block: "start" });
   }, [outline, onChapterRoute, entryChapter, workId]);
+
+  // Remember the open work and chapter so the Read tab returns here.
+  useEffect(() => {
+    if (!outline || outline.work.id !== workId) return;
+    saveLastRead(workId, currentChapter);
+  }, [outline, workId, currentChapter]);
 
   useEffect(() => {
     if (!outline) return;

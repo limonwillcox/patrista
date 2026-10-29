@@ -43,6 +43,11 @@ export type EnglishWorkSpec = {
   keepUnitLabel?: boolean;
   /** Fixed headings for the units in order (e.g. two recensions marked only by a title line). */
   unitTitles?: string[];
+  /**
+   * Units are "Sec. N.--Title" sections that restart at Sec. I in each book: headings become
+   * "Book II · Sec. 3 — Title" (unitRe group 1 = section numeral, group 2 = title).
+   */
+  bookSections?: boolean;
   /** Sub-chapters are navigation anchors only: no heading is added to the reader text. */
   subChapterHidden?: boolean;
 };
@@ -227,8 +232,37 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
     keepUnitLabel: true,
     bareHeadings: true
   },
+  "constitutions-of-the-holy-apostles": {
+    chunk: "chapter",
+    startAt: /^ {4,6}Sec\. I\.--/m,
+    // Book VIII closes with the Apostolic Canons, a unit of their own (no Sec. number).
+    unitRe: /^ {4,6}Sec\. ([IVX]+)\.--([^\n]*(?:\n {4,8}\S[^\n]*)*)|^ {4}(The Ecclesiastical Canons of the Same Holy Apostles)\./m,
+    bookSections: true,
+    dropBlocks: [{ start: /^constitutions of the holy apostles/i, until: /^ {4,6}Sec\. I\.--/ }],
+    endAt: /^\s*Elucidations\.\s*$|^\s*AN ANCIENT HOMILY,?\s*$/m,
+    subChapters: /^([IVXLC]+)\.(?:\s+\S|\d)/,
+    subChapterHidden: true
+  },
   "recognitions-of-clement": { chunk: "book", unitRe: /^\s*Book\s+([IVX]+)\.(?:\s*\[\d+\])?\s*$/m, subChapters: true },
-  decretals: { chunk: "section", endAt: /^\s*Memoirs of Edessa And Other Ancient Syriac Documents\s*$/m }
+  decretals: { chunk: "section", endAt: /^\s*Memoirs of Edessa And Other Ancient Syriac Documents\s*$/m },
+  // The default unit patterns are case-insensitive and also match wrapped footnote lines
+  // ("Homily LXXXVIII.--R.]", "Letter xli. (ha anegnon...)", "book iv. ..."), which created stray,
+  // duplicated or out-of-order units. These works take only real, case-sensitive heading lines.
+  "homilies-on-matthew": { chunk: "homily", expectUnits: 90, unitRe: /^\s*Homily\s+([IVXLC]+)\.(?:\s*\[\d+\])?\s*$/m },
+  "augustine-letters": { chunk: "letter", unitRe: /^\s*Letter\s+([IVXLCDM]+)\.(?:\s*\[\d+\])?\s*$/m },
+  "basil-letters": { chunk: "letter", unitRe: /^\s*Letter\s+([IVXLCDM]+)\.(?:\s*\[\d+\])?\s*$/m },
+  // Jerome's headings carry the addressee ("Letter XXXIII. To Paula."); footnote lines follow with "§", ")" or nothing.
+  "jerome-letters": { chunk: "letter", unitRe: /^\s*Letter\s+([IVXLCDM]+)\.[ \t]+(?!§|is\b)[A-Z][a-z][^\n]*$/m },
+  // Books II and III are lost in the original; only the column-start "Book N." lines are units.
+  "refutation-of-all-heresies": { chunk: "book", unitRe: /^\s*Book\s+([IVX]+)\.(?:\s*\[\d+\])?\s*$/m },
+  // 48 numbered chapters; the file continues with the Donatist volume's "Introductory Essay", whose
+  // "Book II." summaries were being read as the work's units.
+  "concerning-the-nature-of-good": {
+    chunk: "chapter",
+    unitRe: /^\s*Chapter\s+(\d+)\.--/m,
+    endAt: /^\s*Introductory Essay\.\s*$/m,
+    expectUnits: 48
+  }
 };
 
 /** Skip these under *_English (already shipped elsewhere, or non-Schaff). */
@@ -481,6 +515,18 @@ function toRoman(n: number): string {
   let out = "";
   for (const [v, r] of table) while (n >= v) { out += r; n -= v; }
   return out;
+}
+
+function romanToInt(r: string): number {
+  const v: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100 };
+  let n = 0;
+  const s = r.toUpperCase();
+  for (let i = 0; i < s.length; i++) {
+    const a = v[s[i]] ?? 0;
+    const b = v[s[i + 1]] ?? 0;
+    n += a < b ? -a : a;
+  }
+  return n;
 }
 
 function unitLabel(mode: ChunkMode, label: string): string {
@@ -879,6 +925,19 @@ function parseEnglishWorkFlat(spec: EnglishWorkSpec, root: string): { work: Work
     const { paras, footnotes } = parasAndNotesFromBlock(block);
     let heading = spec.unitTitles?.[i] ?? (spec.keepUnitLabel ? marks[i].label.trim().replace(/\.$/, "") : unitLabel(mode, marks[i].label));
     if (mode === "chapter" && !spec.unitTitles) {
+    if (spec.bookSections) {
+      const book = marks.slice(0, i + 1).filter((m) => m.label.toUpperCase() === "I").length;
+      const g = new RegExp(unitRe.source, unitRe.flags.replace("g", "")).exec(raw.slice(marks[i].index));
+      const title = (g?.[2] ?? g?.[3] ?? "").replace(/\s*\[\d+\]\s*/g, " ").replace(/\s+/g, " ").trim().replace(/\.$/, "");
+      passages.push({
+        work: spec.id,
+        chapter: i + 1,
+        heading: "Book " + toRoman(book) + (marks[i].label ? " · Sec. " + romanToInt(marks[i].label) + (title ? " — " + title : "") : " · " + title),
+        versions: { schaff: paras.length ? paras : [spec.title] },
+        footnotes
+      });
+      continue;
+    }
       let bookLabel = "";
       for (let b = bookMarks.length - 1; b >= 0; b--) {
         if (bookMarks[b].index <= marks[i].index) {

@@ -25,7 +25,15 @@ export function slugifyHeading(heading: string): string {
   return slug;
 }
 
+/** Static chapter pages are numbered 1..N in reading order: /fathers/<author>/<work>/chapter-<N>/. */
 export function assignChapterSlugs(chapters: { chapter: number; heading: string }[]): Map<number, string> {
+  const out = new Map<number, string>();
+  [...chapters].sort((a, b) => a.chapter - b.chapter).forEach((ch, i) => out.set(ch.chapter, "chapter-" + (i + 1)));
+  return out;
+}
+
+/** Heading-based slugs used before Oct 2026 (e.g. "homily-xxxii"); old URLs get a stub page. */
+export function legacyChapterSlugs(chapters: { chapter: number; heading: string }[]): Map<number, string> {
   const used = new Set<string>();
   const out = new Map<number, string>();
   const ordered = [...chapters].sort((a, b) => a.chapter - b.chapter);
@@ -47,9 +55,10 @@ export function chapterNumberForSlug(
   chapters: { chapter: number; heading: string }[],
   slug: string
 ): number | null {
-  const slugs = assignChapterSlugs(chapters);
-  for (const ch of chapters) {
-    if (slugs.get(ch.chapter) === slug) return ch.chapter;
+  for (const map of [assignChapterSlugs(chapters), legacyChapterSlugs(chapters)]) {
+    for (const ch of chapters) {
+      if (map.get(ch.chapter) === slug) return ch.chapter;
+    }
   }
   return null;
 }
@@ -113,10 +122,3 @@ export function metaDescription(text: string, max = 155): string {
   return clipped;
 }
 
-export function chapterPageTitle(authorName: string, workTitle: string, chapterLabel: string): string {
-  return authorName + ", " + workTitle + ", " + chapterLabel + " | Patrista";
-}
-
-export function workPageTitle(authorName: string, workTitle: string): string {
-  return authorName + ", " + workTitle + " | Patrista";
-}

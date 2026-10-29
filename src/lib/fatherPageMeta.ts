@@ -3,7 +3,7 @@
 import { metaDescription } from "./fatherPaths";
 
 export const FATHERS_INDEX_PATH = "/fathers/";
-export const FATHERS_INDEX_TITLE = "Church Fathers: Lives and Writings | Patrista";
+export const FATHERS_INDEX_TITLE = "Church Fathers: Lives and Writings";
 export const FATHERS_INDEX_DESCRIPTION =
   "Lives, dates, and writings of the Church Fathers, arranged by century, with portraits and links to the English texts.";
 
@@ -14,7 +14,7 @@ export function fatherProfilePath(authorId: string): string {
 export function fatherProfileTitle(name: string, dates: string): string {
   const when = dates.trim();
   const head = when ? name + " (" + when + ")" : name;
-  return head + ": Life and Writings | Patrista";
+  return head + ": Life and Writings";
 }
 
 export type LifeDates = { birthDate?: string; deathDate?: string };
@@ -57,7 +57,17 @@ export function answerFirstBio(paragraphs: string[]): { lede: string; rest: stri
 }
 
 export function fatherProfileDescription(lede: string): string {
-  return metaDescription(lede);
+  const base = metaDescription(lede);
+  if (base.length >= 120) return base;
+  // Short bios would fall under the 100-character floor; add a plain line about the texts.
+  for (const tail of [
+    " Read the English translations of these writings, free and in full, chapter by chapter.",
+    " Read the writings in English, free and in full.",
+    " Free English texts."
+  ]) {
+    if (base.length + tail.length <= 155) return base + tail;
+  }
+  return base;
 }
 
 export type FatherJsonLdInput = {

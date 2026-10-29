@@ -72,7 +72,7 @@ const SHELL =
 describe("father directory copy", () => {
   it("builds the Augustine title, dates, and trailing-slash path", () => {
     expect(fatherProfileTitle("Augustine of Hippo", "354–430")).toBe(
-      "Augustine of Hippo (354–430): Life and Writings | Patrista"
+      "Augustine of Hippo (354–430): Life and Writings"
     );
     expect(fatherProfilePath("augustine")).toBe("/fathers/augustine/");
     expect(FATHERS_INDEX_PATH).toBe("/fathers/");
@@ -156,7 +156,7 @@ describe("father directory HTML", () => {
         ) +
         "</script>"
     });
-    expect(html).toContain("<title>Augustine of Hippo (354–430): Life and Writings | Patrista</title>");
+    expect(html).toContain("<title>Augustine of Hippo (354–430): Life and Writings</title>");
     expect(html).toContain('rel="canonical" href="https://patrista.com/fathers/augustine/"');
     expect(html).toContain('"@type":"Person"');
     expect(html).toContain('"birthDate":"354"');

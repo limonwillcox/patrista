@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { translationsOf } from "../../server/query";
+import { saveLastRead } from "../lib/lastRead";
 import type { Passage, WorkChapterMeta, WorkOutline } from "../../server/types";
 import { fetchChapter, fetchWork } from "../api/client";
 import { ChapterDock } from "../components/ChapterDock";
@@ -31,13 +32,14 @@ function renderParas(passage: Passage, version: string) {
         {sub.title ? " — " + sub.title : ""}
       </h3>
     ) : null;
-    if (sub && !sub.inline) return subHead;
+    if (sub && !sub.inline && !sub.hidden) return subHead;
+    const anchor = sub?.hidden ? "ch-" + passage.chapter + "-" + sub.n : undefined;
     const body = (
-      <p className="para" data-key={key} data-section={section} key={key}>
+      <p className="para" id={anchor} data-key={key} data-section={section} key={key}>
         {text}
       </p>
     );
-    return subHead ? [subHead, body] : body;
+    return subHead && !sub?.hidden ? [subHead, body] : body;
   });
 }
 
@@ -318,6 +320,12 @@ export function ReadPage() {
     pendingJump.current = entryChapter;
     el.scrollIntoView({ behavior: "auto", block: "start" });
   }, [outline, onChapterRoute, entryChapter, workId]);
+
+  // Remember the open work and chapter so the Read tab returns here.
+  useEffect(() => {
+    if (!outline || outline.work.id !== workId) return;
+    saveLastRead(workId, currentChapter);
+  }, [outline, workId, currentChapter]);
 
   useEffect(() => {
     if (!outline) return;

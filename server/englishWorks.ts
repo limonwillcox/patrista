@@ -41,7 +41,19 @@ export type EnglishWorkSpec = {
   bareHeadings?: boolean;
   /** Use the unitRe match itself as the heading (e.g. an epistle title) instead of "Book N". */
   keepUnitLabel?: boolean;
+  /** Fixed headings for the units in order (e.g. two recensions marked only by a title line). */
+  unitTitles?: string[];
+  /**
+   * Units are "Sec. N.--Title" sections that restart at Sec. I in each book: headings become
+   * "Book II · Sec. 3 — Title" (unitRe group 1 = section numeral, group 2 = title).
+   */
+  bookSections?: boolean;
+  /** Sub-chapters are navigation anchors only: no heading is added to the reader text. */
+  subChapterHidden?: boolean;
 };
+
+/** A chapter numeral opening an indented paragraph: "   IV.  And she saw…". */
+const ROMAN_PARA_RE = /^ {3,4}([IVXL]+)\.\s{1,3}(?=\S)/m;
 
 /** Hand overrides for works that need a fixed chunk mode / unit count. */
 const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
@@ -164,8 +176,93 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
     keepUnitLabel: true,
     subChapters: true
   },
+  // ANF IX apocrypha: each piece is its own work; chapters are the Roman-numeral paragraphs.
+  "apocalypse-of-peter": {
+    chunk: "chapter",
+    startAt: /^\s*The Apocalypse of Peter\.\s*\n\s*\n\s*-{6,}/m,
+    unitRe: /^\s*(The Apocalypse of Peter)\.\s*$/m,
+    keepUnitLabel: true,
+    bareHeadings: true,
+    endAt: /^\s*Fragments of the Apocalypse of Peter\.?\s*$/m
+  },
+  "apocalypse-of-the-virgin": {
+    chunk: "chapter",
+    startAt: /^\s*The Apocalypse of the Holy Mother of God Concerning the Chastisements/m,
+    unitRe: ROMAN_PARA_RE,
+    bareHeadings: true
+  },
+  "apocalypse-of-sedrach": {
+    chunk: "chapter",
+    startAt: /^\s*The Word of the holy and blessed Sedrach/m,
+    unitRe: ROMAN_PARA_RE,
+    bareHeadings: true
+  },
+  "testament-of-abraham": {
+    chunk: "book",
+    // The title line repeats (intro, then text); the later one starts Version I.
+    unitRe: /^\s*(?:The Testament of (Abraham)|Version (II))\.\s*$/m,
+    unitTitles: ["Version I", "Version II"],
+    dropParas: /^Version I\.$/,
+    subChapters: /^([IVXL]+)\.\s/,
+    subChapterHidden: true
+  },
+  "acts-of-xanthippe-and-polyxena": {
+    chunk: "chapter",
+    startAt: /^\s*Life and Conduct of the Holy Women/m,
+    unitRe: ROMAN_PARA_RE,
+    bareHeadings: true
+  },
+  "narrative-of-zosimus": {
+    chunk: "chapter",
+    startAt: /^\s*The Narrative of Zosimus Concerning the Life of the Blessed/m,
+    unitRe: ROMAN_PARA_RE,
+    bareHeadings: true
+  },
+  "apology-of-aristides": {
+    chunk: "book",
+    unitRe: /^\s*Translated from the (Greek|Syriac)\.\s*$/m,
+    unitTitles: ["Greek (Barlaam and Josaphat)", "Syriac"],
+    subChapters: /^([IVXL]+)\.\s/,
+    subChapterHidden: true
+  },
+  "passion-of-the-scillitan-martyrs": {
+    chunk: "chapter",
+    // Title repeats (part title, intro, text); the last one opens the Acts.
+    unitRe: /^\s*(The Passion of the Scillitan Martyrs)\.\s*$/m,
+    keepUnitLabel: true,
+    bareHeadings: true
+  },
+  "constitutions-of-the-holy-apostles": {
+    chunk: "chapter",
+    startAt: /^ {4,6}Sec\. I\.--/m,
+    // Book VIII closes with the Apostolic Canons, a unit of their own (no Sec. number).
+    unitRe: /^ {4,6}Sec\. ([IVX]+)\.--([^\n]*(?:\n {4,8}\S[^\n]*)*)|^ {4}(The Ecclesiastical Canons of the Same Holy Apostles)\./m,
+    bookSections: true,
+    dropBlocks: [{ start: /^constitutions of the holy apostles/i, until: /^ {4,6}Sec\. I\.--/ }],
+    endAt: /^\s*Elucidations\.\s*$|^\s*AN ANCIENT HOMILY,?\s*$/m,
+    subChapters: /^([IVXLC]+)\.(?:\s+\S|\d)/,
+    subChapterHidden: true
+  },
   "recognitions-of-clement": { chunk: "book", unitRe: /^\s*Book\s+([IVX]+)\.(?:\s*\[\d+\])?\s*$/m, subChapters: true },
-  decretals: { chunk: "section", endAt: /^\s*Memoirs of Edessa And Other Ancient Syriac Documents\s*$/m }
+  decretals: { chunk: "section", endAt: /^\s*Memoirs of Edessa And Other Ancient Syriac Documents\s*$/m },
+  // The default unit patterns are case-insensitive and also match wrapped footnote lines
+  // ("Homily LXXXVIII.--R.]", "Letter xli. (ha anegnon...)", "book iv. ..."), which created stray,
+  // duplicated or out-of-order units. These works take only real, case-sensitive heading lines.
+  "homilies-on-matthew": { chunk: "homily", expectUnits: 90, unitRe: /^\s*Homily\s+([IVXLC]+)\.(?:\s*\[\d+\])?\s*$/m },
+  "augustine-letters": { chunk: "letter", unitRe: /^\s*Letter\s+([IVXLCDM]+)\.(?:\s*\[\d+\])?\s*$/m },
+  "basil-letters": { chunk: "letter", unitRe: /^\s*Letter\s+([IVXLCDM]+)\.(?:\s*\[\d+\])?\s*$/m },
+  // Jerome's headings carry the addressee ("Letter XXXIII. To Paula."); footnote lines follow with "§", ")" or nothing.
+  "jerome-letters": { chunk: "letter", unitRe: /^\s*Letter\s+([IVXLCDM]+)\.[ \t]+(?!§|is\b)[A-Z][a-z][^\n]*$/m },
+  // Books II and III are lost in the original; only the column-start "Book N." lines are units.
+  "refutation-of-all-heresies": { chunk: "book", unitRe: /^\s*Book\s+([IVX]+)\.(?:\s*\[\d+\])?\s*$/m },
+  // 48 numbered chapters; the file continues with the Donatist volume's "Introductory Essay", whose
+  // "Book II." summaries were being read as the work's units.
+  "concerning-the-nature-of-good": {
+    chunk: "chapter",
+    unitRe: /^\s*Chapter\s+(\d+)\.--/m,
+    endAt: /^\s*Introductory Essay\.\s*$/m,
+    expectUnits: 48
+  }
 };
 
 /** Skip these under *_English (already shipped elsewhere, or non-Schaff). */
@@ -420,6 +517,18 @@ function toRoman(n: number): string {
   return out;
 }
 
+function romanToInt(r: string): number {
+  const v: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100 };
+  let n = 0;
+  const s = r.toUpperCase();
+  for (let i = 0; i < s.length; i++) {
+    const a = v[s[i]] ?? 0;
+    const b = v[s[i + 1]] ?? 0;
+    n += a < b ? -a : a;
+  }
+  return n;
+}
+
 function unitLabel(mode: ChunkMode, label: string): string {
   if (label && !/^([IVXLCDM]+|\d+)$/i.test(label)) return label.charAt(0).toUpperCase() + label.slice(1).toLowerCase();
   if (mode === "book") return "Book " + (/^\d+$/.test(label) ? toRoman(Number(label)) : romanOrNum(label));
@@ -641,6 +750,36 @@ function dropLineBlocks(raw: string, blocks: { start: RegExp; until: RegExp }[])
 export const SUBCHAPTER_RE = /^Chapter\s+([IVXLCDM]+|\d+)\b\.?\s*(?:--|—|-|\.|:)?\s*(.*?)\.?$/;
 
 /** Mark chapter-heading paragraphs inside each book passage (headings stay in the text). */
+/** A short, mostly Title-Case paragraph (e.g. "Concerning a Person Falsely Accused."). */
+function isTitleLine(t: string): boolean {
+  if (t.length > 260) return false;
+  const words = t.replace(/[^A-Za-z\s]/g, " ").split(/\s+/).filter((w) => w.length > 3);
+  if (!words.length) return false;
+  return words.filter((w) => /^[A-Z]/.test(w)).length / words.length >= 0.6;
+}
+
+/** Hidden sub-chapters: a paragraph starting "IV. …" marks a chapter; its preceding title line (if any) is the anchor and box title. */
+function addHiddenSubChapters(passages: Passage[], re: RegExp): Passage[] {
+  return passages.map((p) => {
+    const paras = Object.values(p.versions)[0] ?? [];
+    const sections: SubChapter[] = [];
+    paras.forEach((text, i) => {
+      const m = text.trim().match(re);
+      if (!m) return;
+      const prev = i > 0 ? paras[i - 1].trim() : "";
+      const titled = prev && !re.test(prev) && isTitleLine(prev);
+      sections.push({
+        n: sections.length + 1,
+        label: "Chapter " + m[1].toUpperCase(),
+        title: titled ? prev.replace(/\s*\[\d+\]/g, "").replace(/\.$/, "") : "",
+        para: titled ? i - 1 : i,
+        hidden: true
+      });
+    });
+    return sections.length ? { ...p, sections } : p;
+  });
+}
+
 export function addSubChapters(passages: Passage[], re: RegExp = SUBCHAPTER_RE, inline = false, sequence = false): Passage[] {
   return passages.map((p) => {
     let paras = Object.values(p.versions)[0] ?? [];
@@ -672,7 +811,9 @@ export function parseEnglishWork(spec: EnglishWorkSpec, root: string): { work: W
   const parsed = parseEnglishWorkFlat(spec, root);
   if (!spec.subChapters && !spec.dropParas && !spec.stripNoteMarks && !spec.dropFootnotes) return parsed;
   let passages = parsed.passages.map((p) => cleanPassage(spec, p));
-  if (spec.subChapters) {
+  if (spec.subChapters && spec.subChapterHidden && spec.subChapters !== true) {
+    passages = addHiddenSubChapters(passages, spec.subChapters);
+  } else if (spec.subChapters) {
     passages = addSubChapters(
       passages,
       spec.subChapters === true ? SUBCHAPTER_RE : spec.subChapters,
@@ -782,8 +923,21 @@ function parseEnglishWorkFlat(spec: EnglishWorkSpec, root: string): { work: Work
     const stop = i + 1 < marks.length ? marks[i + 1].index : raw.length;
     const block = raw.slice(start, stop);
     const { paras, footnotes } = parasAndNotesFromBlock(block);
-    let heading = spec.keepUnitLabel ? marks[i].label.trim().replace(/\.$/, "") : unitLabel(mode, marks[i].label);
-    if (mode === "chapter") {
+    let heading = spec.unitTitles?.[i] ?? (spec.keepUnitLabel ? marks[i].label.trim().replace(/\.$/, "") : unitLabel(mode, marks[i].label));
+    if (mode === "chapter" && !spec.unitTitles) {
+    if (spec.bookSections) {
+      const book = marks.slice(0, i + 1).filter((m) => m.label.toUpperCase() === "I").length;
+      const g = new RegExp(unitRe.source, unitRe.flags.replace("g", "")).exec(raw.slice(marks[i].index));
+      const title = (g?.[2] ?? g?.[3] ?? "").replace(/\s*\[\d+\]\s*/g, " ").replace(/\s+/g, " ").trim().replace(/\.$/, "");
+      passages.push({
+        work: spec.id,
+        chapter: i + 1,
+        heading: "Book " + toRoman(book) + (marks[i].label ? " · Sec. " + romanToInt(marks[i].label) + (title ? " — " + title : "") : " · " + title),
+        versions: { schaff: paras.length ? paras : [spec.title] },
+        footnotes
+      });
+      continue;
+    }
       let bookLabel = "";
       for (let b = bookMarks.length - 1; b >= 0; b--) {
         if (bookMarks[b].index <= marks[i].index) {

@@ -19,13 +19,14 @@ import {
 import {
   assignChapterSlugs,
   chapterNumberForSlug,
-  chapterPageTitle,
   chapterPublicPath,
+  legacyChapterSlugs,
   metaDescription,
   parseFatherChapterPath,
   slugifyHeading,
   workPublicPath
 } from "../src/lib/fatherPaths";
+import { chapterSeoTitle } from "../src/lib/seoMeta";
 
 const author: Author = {
   id: "chrysostom",
@@ -72,14 +73,19 @@ describe("chapter slugs", () => {
     expect(slugifyHeading("Book IV · Chapter 3 — The city of God")).toBe("book-iv-chapter-3-the-city-of-god");
   });
 
-  it("keeps duplicate headings distinct", () => {
-    const slugs = assignChapterSlugs([
+  it("numbers static chapter pages 1..N and still resolves the old heading slugs", () => {
+    const chs = [
       { chapter: 1, heading: "Chapter I" },
       { chapter: 2, heading: "Chapter I" }
-    ]);
-    expect(slugs.get(1)).toBe("chapter-i");
-    expect(slugs.get(2)).toBe("chapter-i-2");
-    expect(chapterNumberForSlug([{ chapter: 1, heading: "Chapter I" }, { chapter: 2, heading: "Chapter I" }], "chapter-i-2")).toBe(2);
+    ];
+    const slugs = assignChapterSlugs(chs);
+    expect(slugs.get(1)).toBe("chapter-1");
+    expect(slugs.get(2)).toBe("chapter-2");
+    const legacy = legacyChapterSlugs(chs);
+    expect(legacy.get(1)).toBe("chapter-i");
+    expect(legacy.get(2)).toBe("chapter-i-2");
+    expect(chapterNumberForSlug(chs, "chapter-2")).toBe(2);
+    expect(chapterNumberForSlug(chs, "chapter-i-2")).toBe(2);
   });
 
   it("parses a chapter path with or without the trailing slash", () => {
@@ -113,9 +119,7 @@ describe("descriptions and titles", () => {
   });
 
   it("uses the chapter title form", () => {
-    expect(chapterPageTitle("John Chrysostom", "Homilies on Matthew", "Homily XC")).toBe(
-      "John Chrysostom, Homilies on Matthew, Homily XC | Patrista"
-    );
+    expect(chapterSeoTitle(90, "Homilies on Matthew", "John Chrysostom")).toBe("Chapter 90 - Homilies on Matthew by Chrysostom");
   });
 });
 
@@ -140,8 +144,10 @@ describe("static chapter and work pages", () => {
       passage(2, "Homily II", ["Second homily sentence one.", "Second homily sentence two."])
     ];
     const page = renderWorkPage({ origin, author, work: work(2), chapters });
-    const refs = ["homily-i", "homily-ii"].map((slug, i) => ({
+    const refs = ["chapter-1", "chapter-2"].map((slug, i) => ({
       chapter: i + 1,
+      n: i + 1,
+      label: "Chapter " + (i + 1),
       heading: chapters[i].heading,
       slug,
       path: chapterPublicPath(author.id, "homilies-on-matthew", slug)
@@ -159,27 +165,28 @@ describe("static chapter and work pages", () => {
       author,
       workTitle: "Homilies on Matthew",
       workPath: page.path,
-      chapterLabel: "Homily II",
+      chapterLabel: "Chapter 2",
       chapterPath: refs[1].path
     });
     const html = prerenderShell(SHELL, origin, {
       canonicalPath: refs[1].path,
-      title: chapterPageTitle(author.name, "Homilies on Matthew", "Homily II"),
+      title: chapterSeoTitle(2, "Homilies on Matthew", author.name),
       description: metaDescription("Second homily sentence one. Second homily sentence two."),
       bodyHtml: body,
       jsonLd: ld,
       extraHead: '<link rel="prev" href="' + origin + refs[0].path + '" />'
     });
 
-    expect(html).toContain("<title>John Chrysostom, Homilies on Matthew, Homily II | Patrista</title>");
-    expect(html).toContain('rel="canonical" href="https://patrista.com/fathers/chrysostom/homilies-on-matthew/homily-ii/"');
+    expect(html).toContain("<title>Chapter 2 - Homilies on Matthew by Chrysostom</title>");
+    expect(html).toContain('rel="canonical" href="https://patrista.com/fathers/chrysostom/homilies-on-matthew/chapter-2/"');
     expect(html.match(/<h1[\s>]/g)).toHaveLength(1);
     expect(html).toContain("<h1>Homily II</h1>");
     expect(html).toContain("Second homily sentence one.");
     expect(html).toContain("Second homily sentence two.");
     expect(html).not.toContain("Opening of the first homily.");
     expect(html).toContain('rel="prev"');
-    expect(html).toContain(">Up</a>");
+    expect(html).toContain(">Contents</a>");
+    expect(html).toContain('rel="prev">Chapter 1</a>');
     expect(html).not.toContain('rel="next"');
     expect(html).toContain('"@type":"Chapter"');
     expect(html).toContain('"@type":"Book"');
@@ -187,18 +194,19 @@ describe("static chapter and work pages", () => {
     expect(html).toContain('"@type":"BreadcrumbList"');
     expect(html).toContain('"isPartOf"');
     expect(page.html.match(/<h1[\s>]/g)).toHaveLength(1);
-    expect(page.html).toContain('href="/fathers/chrysostom/homilies-on-matthew/homily-ii/"');
+    expect(page.html).toContain('href="/fathers/chrysostom/homilies-on-matthew/chapter-2/"');
     expect(page.html).toContain('"@type":"Book"');
     expect(page.html).not.toContain("Second homily sentence one.");
     expect(page.html).not.toContain("location.replace");
     expect(page.chapterPaths).toHaveLength(2);
     expect(page.html).not.toContain("Start reading");
-    expect(page.html).toContain('href="/fathers/chrysostom/homilies-on-matthew/homily-i/"');
+    expect(page.html).toContain('href="/fathers/chrysostom/homilies-on-matthew/chapter-1/"');
     expect(page.html).toMatch(/<details class="chapter-index">/);
     expect(page.html).not.toMatch(/<details[^>]*\sopen\b/);
     expect(page.html).toContain("<summary>Chapters (2)</summary>");
-    expect(page.html).toContain('title="Homily I"');
-    expect(page.html).toContain('title="Homily II"');
+    expect(page.html).toContain(">Chapter 1</a>");
+    expect(page.html).toContain(">Chapter 2</a>");
+    expect(page.html).not.toContain(">Homily I</a>");
     expect(page.html).not.toContain('<nav class="static-toc"');
   });
 

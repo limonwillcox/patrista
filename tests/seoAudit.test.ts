@@ -2,7 +2,7 @@ import { mkdirSync, mkdtempSync, writeFileSync } from "fs";
 import { tmpdir } from "os";
 import { join } from "path";
 import { describe, expect, it } from "vitest";
-import { auditSeo } from "../server/seoAudit";
+import { auditSeo, oldChapterUrls } from "../server/seoAudit";
 import { renderStubPage } from "../server/staticFathers";
 
 const O = "https://patrista.com";
@@ -44,7 +44,7 @@ describe("SEO build check", () => {
     expect(errors).toMatch(/duplicate title/);
     expect(errors).toMatch(/duplicate description/);
     expect(errors).toMatch(/description under 100/);
-    expect(errors).toMatch(/title over 65/);
+    expect(errors).toMatch(/title over 60/);
     expect(errors).toMatch(/1\.\.N/);
     expect(errors).toMatch(/internal link to a moved chapter/);
     expect(errors).toMatch(/no longer resolves.*\/fathers\/a\/w\/missing\//);
@@ -62,5 +62,10 @@ describe("SEO build check", () => {
     expect(errors).toMatch(/description over 160/);
     expect(errors).toMatch(/stub points at no indexable page: \/fathers\/a\/v\/old\//);
     expect(errors).not.toMatch(/no longer resolves/);
+  });
+
+  it("fails when the old-URL snapshot is missing", () => {
+    const root = mkdtempSync(join(tmpdir(), "seo-root-"));
+    expect(() => oldChapterUrls([], root)).toThrow(/legacy-chapter-urls\.txt is missing/);
   });
 });

@@ -19,9 +19,10 @@ export function oldChapterUrls(
 ): string[] {
   const out = new Set<string>();
   const file = join(root, "data", "seo", "legacy-chapter-urls.txt");
-  if (existsSync(file)) {
-    for (const line of readFileSync(file, "utf8").split("\n")) if (line.startsWith("/fathers/")) out.add(line.trim());
-  }
+  // The snapshot is the only record of URLs the old parser produced; never fall back to "no old URLs".
+  if (!existsSync(file)) throw new Error("SEO audit: " + file + " is missing; old chapter URLs cannot be checked");
+  for (const line of readFileSync(file, "utf8").split("\n")) if (line.startsWith("/fathers/")) out.add(line.trim());
+  if (!out.size) throw new Error("SEO audit: " + file + " lists no /fathers/ URLs");
   for (const w of works) {
     if (w.chapters.length < 2) continue;
     for (const slug of legacyChapterSlugs(w.chapters).values()) out.add(chapterPublicPath(w.authorId, w.workId, slug));
@@ -54,7 +55,7 @@ function servedPath(dist: string, file: string): string {
 /**
  * Fail the build on SEO regressions in dist/:
  * /fathers/ work or chapter pages that are noindex or not self-canonical, duplicate titles or
- * descriptions, titles over 65 chars, descriptions under 100 or over 160 chars, chapter slugs over
+ * descriptions, titles over 60 chars, descriptions under 100 or over 160 chars, chapter slugs over
  * 20 chars or not numbered 1..N per work, internal links or sitemap entries that point at
  * moved-chapter stubs, stubs that point at no live page, and old chapter URLs that no longer resolve.
  */

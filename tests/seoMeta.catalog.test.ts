@@ -5,6 +5,8 @@ import {
   DESCRIPTION_MAX,
   DESCRIPTION_MIN,
   SHORT_TITLE_KEYS,
+  handShortTitle,
+  shortTitleKey,
   TITLE_MAX,
   chapterSeoDescription,
   chapterSeoTitle,
@@ -68,7 +70,16 @@ describe("SEO titles and descriptions across the catalog", () => {
         pages++;
       });
     }
-    for (const k of SHORT_TITLE_KEYS) if (!catalogTitles.has(k)) problems.push("short-title entry matches no work: " + k);
+    // Match the map keys the way the lookup does, and check each such work really gets its short form.
+    const keyed = new Map([...catalogTitles].map((t) => [shortTitleKey(t), t]));
+    for (const k of SHORT_TITLE_KEYS) if (!keyed.has(k)) problems.push("short-title entry matches no work: " + k);
+    for (const w of cat.works) {
+      const p = getWork(w.id);
+      if (!p) continue;
+      const hand = handShortTitle(p.work.title);
+      if (hand && !workSeoTitle(p.work.title, p.author.name).startsWith(hand)) problems.push("short title not used: " + w.id);
+      if (/Ecumenical Council -/.test(workSeoTitle(p.work.title, p.author.name))) problems.push("long council title: " + w.id);
+    }
     for (const [desc, page] of descs) {
       const t = cat.works.find((w) => w.id === page)?.title;
       if (t && desc.trim().toLowerCase() === t.trim().toLowerCase()) problems.push("description is the work title: " + page);

@@ -614,6 +614,16 @@ export function writeFatherPages(
     const legacy = legacyChapterSlugs(payload.chapters);
     const live = new Set(refs.map((r) => r.path));
     const done = new Set<string>();
+    // Old URLs whose text was a different unit than their slug says (stray headings before the parser
+    // fixes): send them to the chapter that actually holds that text.
+    const byHeading = new Map<string, string>();
+    for (const ref of refs) if (!byHeading.has(ref.heading)) byHeading.set(ref.heading, ref.path);
+    const heldBy = (oldPath: string): string | undefined => {
+      const t = legacyChapterTargets();
+      if (!(oldPath in t)) return undefined;
+      const h = t[oldPath];
+      return (h && byHeading.get(h)) || page.path;
+    };
     const writeStub = (oldPath: string, target: string) => {
       const file = join(dist, oldPath.replace(/^\//, ""), "index.html");
       mkdirSync(dirname(file), { recursive: true });
@@ -630,7 +640,7 @@ export function writeFatherPages(
         reused.push(oldPath + " -> " + ref.path);
         continue;
       }
-      writeStub(oldPath, ref.path);
+      writeStub(oldPath, heldBy(oldPath) ?? ref.path);
     }
     // URLs from the pre-renumbering sitemap that today's headings no longer produce (parser fixes
     // removed or renamed a unit): point at the chapter with the same base heading, else the work page.
@@ -643,7 +653,7 @@ export function writeFatherPages(
     for (const oldPath of legacyChapterUrls(prefix)) {
       if (live.has(oldPath) || done.has(oldPath)) continue;
       const slug = oldPath.slice(prefix.length, -1);
-      const target = byBase.get(slug.replace(/-\d+(?:-\d+)?$/, "")) ?? page.path;
+      const target = heldBy(oldPath) ?? byBase.get(slug.replace(/-\d+(?:-\d+)?$/, "")) ?? page.path;
       writeStub(oldPath, target);
     }
   }
@@ -652,6 +662,18 @@ export function writeFatherPages(
 }
 
 let legacyUrlCache: string[] | null = null;
+let legacyTargetCache: Record<string, string | null> | null = null;
+
+/** data/seo/legacy-chapter-targets.json: old URL -> heading of the unit whose text it held (null = work page). */
+export function legacyChapterTargets(root = process.cwd()): Record<string, string | null> {
+  if (!legacyTargetCache) {
+    const file = join(root, "data", "seo", "legacy-chapter-targets.json");
+    const raw = existsSync(file) ? (JSON.parse(readFileSync(file, "utf8")) as Record<string, string | null>) : {};
+    delete raw["//"];
+    legacyTargetCache = raw;
+  }
+  return legacyTargetCache;
+}
 
 /** Chapter URLs from the sitemap before renumbering (data/seo/legacy-chapter-urls.txt) under `prefix`. */
 export function legacyChapterUrls(prefix: string, root = process.cwd()): string[] {

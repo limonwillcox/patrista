@@ -1,7 +1,7 @@
 /** Static-page <title> and meta description rules (SEO desk spec, Oct 2026). */
 
 export const TITLE_TARGET = 60;
-export const TITLE_MAX = 65;
+export const TITLE_MAX = 60;
 export const DESCRIPTION_MIN = 100;
 /** Descriptions aim for 140–155 chars and never exceed 155; the build audit fails over 160. */
 export const DESCRIPTION_TARGET = 140;
@@ -112,12 +112,29 @@ const WORK_SHORT: Record<string, { short: string; chapter?: string }> = {
   "Of the Manner in Which the Persecutors Died": { short: "Deaths of the Persecutors" },
   // Not on the desk's list, but still over TITLE_MAX on chapter pages without a hand-written form.
   "On the Councils of Ariminum and Seleucia (De Synodis)": { short: "Councils of Ariminum and Seleucia" },
-  "In Defence of His Flight to Pontus (Oration II)": { short: "Defence of His Flight to Pontus" },
-  "Discourse on the End of the World and Antichrist": { short: "On the End of the World and Antichrist" }
+  "In Defence of His Flight to Pontus (Oration II)": { short: "On His Flight to Pontus" },
+  "Discourse on the End of the World and Antichrist": { short: "End of the World and Antichrist" },
+  "Against Eunomius (Books I-XII)": { short: "Against Eunomius" },
+  "Discourse to the Greeks Concerning Hades": { short: "Discourse on Hades" },
+  // 2 Clement; the bare catalog title "The Homily" read as just "Homily".
+  "The Homily": { short: "Second Clement (An Ancient Homily)" }
 };
 
 /** Catalog titles that have a hand-written short form (for audits and tests). */
 export const SHORT_TITLE_KEYS: readonly string[] = Object.keys(WORK_SHORT);
+
+/**
+ * Lookup key for WORK_SHORT: the raw catalog title with whitespace collapsed only. clean() is not
+ * used here because it strips "(553)"-style numbers, which broke the council lookups.
+ */
+export function shortTitleKey(title: string): string {
+  return String(title).replace(/\s+/g, " ").trim();
+}
+
+/** The hand-written short form for a catalog title, if the desk gave one. */
+export function handShortTitle(title: string): string | undefined {
+  return WORK_SHORT[shortTitleKey(title)]?.short;
+}
 
 /** Possessive for descriptions: "Augustine's", "the Apostles'". */
 export function possessive(name: string): string {
@@ -131,14 +148,24 @@ function clean(text: string): string {
     .replace(/\[\d+\]|\(\d+\)(?=\s|$)/g, "")
     .replace(/[¶§†‡*_^~|<>{}\\]/g, " ")
     .replace(/[\u00b9\u00b2\u00b3\u2070-\u2079]+/g, "")
+    // Schaff's "--" is an em dash.
+    .replace(/\s*-{2,3}\s*/g, "—")
     .replace(/\s+([,.;:!?])/g, "$1")
     .replace(/\s+/g, " ")
     .trim();
 }
 
 /** Opening-text cleanup on top of clean(): drop bracketed editorial text and leading verse/section numbers. */
-function cleanProse(text: string): string {
-  let t = clean(text).replace(/\s*\[[^\]]*\]/g, "");
+function cleanProse(text: string, keepBrackets = false): string {
+  let t = clean(text);
+  t = keepBrackets ? t.replace(/[\[\]]/g, "") : t.replace(/\s*\[[^\]]*\]/g, "");
+  // Editorial lead-ins such as Cyprian's "Argument.—" (from "Argument.--").
+  t = t.replace(/^[\s,.;:—–-]+/, "");
+  t = t.replace(/^\s*(?:Argument|Argt|Summary|Analysis)(?:\s+[IVXL]+)?(?:\.\s*[—:]?|\s*[—:])\s*/, "");
+  // Footnote digits glued to a word ("dihelthen6").
+  t = t.replace(/([a-z])\d{1,3}(?=[\s,.;:!?]|$)/g, "$1");
+  // Dialogue paragraphs that open with a detached quote mark ('" These philosophers').
+  t = t.replace(/^(["“'‘])\s+/, "$1");
   // Verse-numbered text ("1 And when the sabbath was past ... 2 And very early"): drop the verse numbers.
   if (/^\d{1,3}\s/.test(t)) t = t.replace(/(^|\s)\d{1,3}(?=\s+[A-Z"'“‘])/g, "$1");
   return clean(t)
@@ -159,7 +186,7 @@ export function cutAtWord(text: string, max: number): string {
 /** The one short form of a work title: hand-written where the desk gave one, else the title without a leading "The". */
 export function workShortTitle(workTitle: string): string {
   const t = clean(workTitle);
-  const hand = WORK_SHORT[t];
+  const hand = WORK_SHORT[shortTitleKey(workTitle)];
   if (hand) return hand.short;
   let short = t.replace(/^The\s+/, "");
   // No hand-written form: drop a trailing parenthetical (e.g. a Latin title) when the longest
@@ -173,7 +200,7 @@ const CHAPTER_WORST = "Chapter 999 - ";
 const LONGEST_BY = " by Gregory Nazianzen".length;
 
 function chapterShortTitle(workTitle: string): string {
-  const hand = WORK_SHORT[clean(workTitle)];
+  const hand = WORK_SHORT[shortTitleKey(workTitle)];
   return hand?.chapter ?? workShortTitle(workTitle);
 }
 
@@ -191,33 +218,71 @@ export function chapterSeoTitle(n: number, workTitle: string, authorName: string
 
 /** "Augustine's Confessions" or, for anonymous works, "the Gospel of Peter". */
 function workInProse(workTitle: string, authorName: string, short = false): string {
-  const t = short ? workShortTitle(workTitle) : clean(workTitle);
+  // Council titles ("First Ecumenical Council - Nicea I (325)") read badly in a sentence: use the short form.
+  const t = short || / - /.test(workTitle) ? workShortTitle(workTitle) : clean(workTitle);
   const bare = t.replace(/^The\s+/, "");
   if (!hasAuthorLine(authorName)) return "the " + bare;
   return possessive(authorShortName(authorName)) + " " + bare;
 }
 
 const JUNK_START =
-  /^(?:translated|translation|edited|introduction|introductory|note\b|notes\b|preface|prolegomena|footnotes?\b|sources?\b|from the retractations|the following is|p\.\s*\d|pp?\.\s|cf\.|see\b|chap\.|c\.\s|vol\.|ibid|and note|addressed to|(?:chapter|book|letter|homily|sermon|lecture|oration|epistle)\s+[ivxlcdm\d]+\b)/i;
+  /^(?:translated|translation|edited|introduction|introductory|note\b|notes\b|preface|prolegomena|footnotes?\b|sources?\b|from the retractations|the following is|p\.\s*\d|pp?\.\s|cf\.|see\s+(?:note|also|above|below|vol|pp?\.|chap|c\.|cap|letter|book|introduction|the note)\b|chap\.|c\.\s|vol\.|ibid|and note|addressed to|(?:chapter|book|letter|homily|sermon|lecture|oration|epistle)\s+[ivxlcdm\d]+\b)/i;
 const JUNK_ANY =
-  /translated by|translated,? with|with introduction|\bM\.\s?A\.,|\/ccel\/|\.html\b|prebendary|\bvol\.\s*[ivx]+\b|\bp\.\s*\d+|\bpp\.\s*\d|\bcap\.\s*\d|\bmss\b|the translator|\bed\.\s|--R\.\]?/i;
+  /translated by|translated,? with|with introduction|\bM\.\s?A\.,|\/ccel\/|\.html\b|prebendary|\bvol\.\s*[ivx]+\b|\bp\.\s*\d+|\bpp\.\s*\d|\bcap\.\s*\d|\bmss\b|the translator|\bed\.\s|(?:--|—)R\.\]?/i;
 
 /** True for a paragraph that reads as prose: not a credit, note, heading echo, or OCR noise. */
-function isProse(p: string, avoid: string[]): boolean {
+function isProse(p: string, avoid: string[][]): boolean {
   if (p.length < 60) return false;
   if (!/^["'“‘(]?[A-Z]/.test(p)) return false;
-  if (JUNK_START.test(p) || JUNK_ANY.test(p)) return false;
+  // Only the part that can reach a description is checked for credits and notes.
+  if (JUNK_START.test(p) || JUNK_ANY.test(p.slice(0, 220))) return false;
   const letters = p.replace(/[^A-Za-z]/g, "");
   if (letters.length < p.length * 0.7) return false;
   const caps = p.replace(/[^A-Z]/g, "").length;
   if (caps > letters.length * 0.3) return false;
   // OCR case noise like "fIVE" or "saME".
   if (/\b[a-z]+[A-Z]{2,}/.test(p)) return false;
-  // Digits glued to words ("dihelthen6") are footnote debris.
-  if (/[a-z]\d|\d[a-z]{2,}/.test(p)) return false;
-  const low = p.toLowerCase().replace(/[^a-z ]/g, "").trim();
-  if (avoid.some((a) => a && low.startsWith(a))) return false;
+  // Digits glued to words that survive cleanup are OCR debris.
+  if (/[a-z]\d|\d[a-z]{2,}/.test(p.replace(/\b\d+(?:st|nd|rd|th)\b/g, ""))) return false;
+  if (opensWith(p, avoid)) return false;
   return true;
+}
+
+/** Lower-case words for prefix comparison: letters only, parentheticals and a leading "the"/"a" dropped. */
+function words(text: string): string[] {
+  return text
+    .replace(/\([^)]*\)/g, " ")
+    .toLowerCase()
+    .replace(/\bst\b\.?|\bs\.(?=\s)/g, "saint")
+    .replace(/[^a-z ]/g, " ")
+    .split(/\s+/)
+    .filter(Boolean)
+    .filter((w, i) => !(i === 0 && (w === "the" || w === "a" || w === "an")));
+}
+
+/** True when `p` opens by repeating one of the `avoid` titles (its first four words, or all of a shorter one). */
+function opensWith(p: string, avoid: string[][]): boolean {
+  const pw = words(p);
+  return avoid.some((a) => {
+    const k = Math.min(4, a.length);
+    if (k === 0 || (k === 1 && pw.length > 3)) return false;
+    return a.slice(0, k).every((w, i) => pw[i] === w);
+  });
+}
+
+/** Credits and editor sign-offs; the fallback tolerates page references but never these. */
+const JUNK_CREDIT = /translated by|translated,? with|with introduction|\bM\.\s?A\.,|\/ccel\/|\.html\b|prebendary|the translator|(?:--|—)R\.\]?/i;
+
+const TITLE_LIKE = /^(?:a\s+)?(?:selection|selections|extracts?)\s+from\b/i;
+
+/** Weaker test for the fallback: short addresses or summaries ("To Maximus.") still count, junk does not. */
+function isFallbackText(p: string, avoid: string[][]): boolean {
+  if (p.length < 8 || !/^["'“‘(]?[A-Z]/.test(p)) return false;
+  if (JUNK_START.test(p) || JUNK_CREDIT.test(p.slice(0, 220)) || TITLE_LIKE.test(p)) return false;
+  const letters = p.replace(/[^A-Za-z]/g, "");
+  if (letters.length < p.length * 0.6) return false;
+  if (/\b[a-z]+[A-Z]{2,}/.test(p) || /[a-z]\d|\d[a-z]{2,}/.test(p)) return false;
+  return !opensWith(p, avoid);
 }
 
 /**
@@ -226,12 +291,21 @@ function isProse(p: string, avoid: string[]): boolean {
  * `avoid` lists strings (work title, heading) the opening must not just repeat.
  */
 export function pickOpening(paras: string[], avoid: string[] = []): string {
-  const av = avoid.map((a) => a.toLowerCase().replace(/[^a-z ]/g, "").trim()).filter((a) => a.length > 3);
-  for (const raw of paras.slice(0, 25)) {
+  const av = avoid.map(words).filter((a) => a.length > 0);
+  for (const raw of paras.slice(0, 60)) {
     const p = cleanProse(raw);
-    if (isProse(p, av)) return p;
+    if (isProse(p, av) && !TITLE_LIKE.test(p)) return p;
   }
-  return "";
+  // No full prose paragraph: join the chapter's short real text (an address, a one-line summary,
+  // verse lines), keeping the words inside editorial brackets but not the brackets.
+  const bits: string[] = [];
+  for (const raw of paras.slice(0, 12)) {
+    const p = cleanProse(raw, true);
+    if (!isFallbackText(p, av)) continue;
+    bits.push(/[.!?;:,"”’)]$/.test(p) ? p : p + ".");
+    if (bits.join(" ").length >= 100) break;
+  }
+  return bits.join(" ");
 }
 
 const NO_STOP = /\b(?:St|Mt|Dr|Mr|Mrs|cf|ch|chap|vol|ver|viz|i\.e|e\.g|p|pp|A\.D|B\.C|[A-Z])$/i;

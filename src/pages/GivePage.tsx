@@ -15,7 +15,7 @@ export function GivePage() {
       <div className="give-body">
         <div className="give-ask give-ask--hardcover">
           <p className="give-ask-text">
-            If you enjoy reading the Church Fathers with a physical book, using the link through the{" "}
+            If you enjoy reading the Church Fathers with a physical book, in the top left corner any given work there will be a {" "}
             <a
               className="read-dict-bar read-hardcover-bar give-hardcover-sample"
               href={PRINT_EDITIONS.confessions.url}
@@ -23,7 +23,7 @@ export function GivePage() {
               rel="sponsored nofollow noopener"
             >
               Get the Hardcover
-            </a> button helps support the site.
+            </a> button. If you buy the book through this link, it will help support the site. Thank you :)
           </p>
         </div>
       </div>

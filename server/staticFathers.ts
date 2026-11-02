@@ -407,7 +407,12 @@ export function prerenderShell(indexHtml: string, origin: string, opts: Prerende
     '    <meta property="og:type" content="article" />',
     '    <meta property="og:url" content="' + escapeHtml(canonical) + '" />',
     '    <meta property="og:title" content="' + escapeHtml(opts.title) + '" />',
-    '    <meta property="og:description" content="' + escapeHtml(opts.description) + '" />'
+    '    <meta property="og:description" content="' + escapeHtml(opts.description) + '" />',
+    '    <meta property="og:image" content="' + escapeHtml(origin + "/og-image.png") + '" />',
+    '    <meta property="og:image:width" content="1200" />',
+    '    <meta property="og:image:height" content="630" />',
+    '    <meta name="twitter:card" content="summary_large_image" />',
+    '    <meta name="twitter:image" content="' + escapeHtml(origin + "/og-image.png") + '" />'
   ];
   if (opts.extraHead) headParts.push(opts.extraHead);
   if (opts.jsonLd) headParts.push("    " + jsonScript(opts.jsonLd));

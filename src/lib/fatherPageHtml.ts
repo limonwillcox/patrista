@@ -1,11 +1,14 @@
 /** Crawlable Fathers index and profile markup. The React page mirrors this. */
 
-import type { Author } from "../../server/types";
+import type { Author, Catalog } from "../../server/types";
+import { readLinks, type HistoryEra } from "../../server/churchHistory";
+import { centuryBlocks } from "./centuries";
 import { escapeHtml } from "./fatherPaths";
 import { readPath } from "./workSlugs";
 import { fatherEntry, fatherSections, type FatherSection } from "./fathersDirectory";
 import { HERO_SIZES, TILE_SIZES, fatherImageFrom, type FatherImage, type FatherImageCredit, type FatherImageMap } from "./fatherImages";
 import { answerFirstBio, fatherProfilePath } from "./fatherPageMeta";
+import { shelfGroups } from "./shelfGroups";
 
 
 export function eagerFatherIds(sections: FatherSection[], count = 4): Set<string> {
@@ -75,8 +78,40 @@ function factsHtml(dates: string, office: string, region: string): string {
   );
 }
 
-export function renderFathersIndexBody(authors: Author[], images: FatherImageMap): string {
-  const sections = fatherSections(authors);
+/** A century's events, for the static Fathers page: the crawlable text of the church history timeline. */
+function eventsHtml(events: HistoryEra[], catalog: Catalog | null): string {
+  if (!events.length) return "";
+  const items = events
+    .map((era) => {
+      const date = era.datetime
+        ? '<time datetime="' + escapeHtml(era.datetime) + '">' + escapeHtml(era.display) + "</time>"
+        : escapeHtml(era.display);
+      const links = readLinks(catalog, era)
+        .map((l) => '<a href="' + escapeHtml(l.href) + '">' + escapeHtml(l.name) + "</a>")
+        .join(", ");
+      return (
+        '<li class="fx-event" id="' + escapeHtml(era.id) + '">' +
+        '<p class="fx-event-date">' + date + "</p>" +
+        '<h4 class="fx-event-title">' + escapeHtml(era.title) + "</h4>" +
+        '<p class="fx-event-body">' + escapeHtml(era.body) + "</p>" +
+        (era.refs && era.refs.length ? '<p class="fx-event-refs">' + escapeHtml(era.refs.join(" · ")) + "</p>" : "") +
+        (links ? '<p class="fx-event-read"><span>Read</span> ' + links + "</p>" : "") +
+        "</li>"
+      );
+    })
+    .join("\n");
+  const count = events.length + (events.length === 1 ? " event" : " events");
+  return (
+    '<details class="fx-events"><summary class="fx-events-title">What happened <span>' +
+    count +
+    '</span></summary><ol class="fx-events-list">' +
+    items +
+    "</ol></details>"
+  );
+}
+
+export function renderFathersIndexBody(authors: Author[], images: FatherImageMap, catalog: Catalog | null = null): string {
+  const sections = centuryBlocks(authors);
   const eager = eagerFatherIds(sections);
   const blocks = sections.map((section) => {
     const cards = section.fathers
@@ -112,9 +147,9 @@ export function renderFathersIndexBody(authors: Author[], images: FatherImageMap
       '" class="fathers-century">' +
       escapeHtml(section.title) +
       "</h2>" +
-      '<ul class="fathers-grid">' +
-      cards +
-      "</ul></div></section>"
+      (cards ? '<ul class="fathers-grid">' + cards + "</ul>" : "") +
+      eventsHtml(section.events, catalog) +
+      "</div></section>"
     );
   });
   return [
@@ -136,16 +171,17 @@ export function renderFatherProfileBody(
   const image = fatherImageFrom(images, author.id);
   const portrait = image ? portraitImgHtml(image, "hero", true) : "";
   const credit = creditHtml(image?.credit ?? null, "fathers-hero-credit");
-  const writings = works
-    .slice()
-    .sort((a, b) => a.title.localeCompare(b.title))
+  // Same shelves as the bookcase: key works first, then one list per kind of writing.
+  const writings = shelfGroups(works)
     .map(
-      (work) =>
-        '<li><a href="' +
-        escapeHtml(readPath(work.id)) +
-        '">' +
-        escapeHtml(work.title) +
-        "</a></li>"
+      (group) =>
+        "<h3>" +
+        escapeHtml(group.label) +
+        '</h3><ul class="fathers-writings">' +
+        group.works
+          .map((work) => '<li><a href="' + escapeHtml(readPath(work.id)) + '">' + escapeHtml(work.title) + "</a></li>")
+          .join("\n") +
+        "</ul>"
     )
     .join("\n");
   const rest = bio.rest.map((paragraph) => "<p>" + escapeHtml(paragraph) + "</p>").join("\n");
@@ -163,7 +199,7 @@ export function renderFatherProfileBody(
     '<article class="fathers-bio"><div class="fathers-bio-col">',
     rest,
     writings
-      ? '<h2 class="fathers-writings-title">Writings</h2><ul class="fathers-writings">' + writings + "</ul>"
+      ? '<h2 class="fathers-writings-title">Writings</h2>' + writings
       : "",
     "</div></article>",
     "</div>"

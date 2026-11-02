@@ -1,0 +1,253 @@
+/* Connections: the study-panel tab in the Bible reader. Colours come from the site tokens in styles.css. */
+:root { --cx-type: #b98317; }
+html[data-theme="night"] { --cx-type: #e2b85a; }
+.cx-panel { padding: 4px 2px 40px; font-family: var(--sans); color: var(--text); }
+.cx-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+.cx-head h2 { font-family: var(--serif); font-size: 1.35rem; margin: 0; font-weight: 600; }
+.cx-head h2 span { font-weight: 400; font-style: italic; color: var(--muted); margin-left: 6px; }
+.cx-close { border: 0; background: none; font-size: 1.5rem; line-height: 1; color: var(--muted); cursor: pointer; }
+.cx-section { border-top: 1px solid var(--border); padding: 12px 0 6px; }
+.cx-section h3 { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; font-weight: 600; }
+/* A section that folds: its heading is the button, with a count beside it and an arrow at the end. */
+.cx-fold { padding: 0; }
+.cx-fold > summary {
+  list-style: none; display: flex; align-items: baseline; gap: 8px; padding: 12px 0 10px; cursor: pointer; user-select: none;
+}
+.cx-fold > summary::-webkit-details-marker { display: none; }
+.cx-fold > summary h3 { margin: 0; }
+.cx-fold > summary:hover h3 { color: var(--text); }
+.cx-fold > summary::after {
+  content: ""; margin-left: auto; align-self: center; width: 7px; height: 7px; border-right: 1.5px solid var(--muted);
+  border-bottom: 1.5px solid var(--muted); transform: rotate(-45deg); transition: transform 0.15s ease;
+}
+.cx-fold[open] > summary::after { transform: rotate(45deg); }
+.cx-count { font-size: 0.74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.cx-fold-body { padding: 0 0 12px; }
+.cx-meta { color: var(--muted); font-size: 0.86rem; margin: 4px 0; }
+.cx-links { list-style: none; padding: 0; margin: 0; }
+.cx-link { padding: 8px 0; border-bottom: 1px dashed var(--border); }
+.cx-link:last-child { border-bottom: 0; }
+.cx-link-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.cx-ref { font-family: var(--serif); font-weight: 600; font-size: 1.02rem; color: var(--link); text-decoration: none; border: 0; background: none; padding: 0; cursor: pointer; text-align: left; }
+.cx-ref:hover { text-decoration: underline; }
+.cx-snippet { font-family: var(--serif); font-size: 0.95rem; line-height: 1.45; margin: 4px 0; color: var(--text); opacity: 0.9; }
+.cx-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 2px; }
+.cx-chip { display: inline-flex; gap: 6px; align-items: baseline; border: 1px solid var(--border); background: var(--panel); border-radius: var(--radius-pill); padding: 2px 10px; font-size: 0.8rem; cursor: pointer; color: var(--text); }
+.cx-chip i { font-family: var(--serif); }
+.cx-chip span { color: var(--muted); }
+.cx-chip:hover { border-color: var(--accent); }
+.cx-witness { margin-top: 4px; }
+.cx-witness-btn { border: 0; background: none; padding: 0; color: var(--muted); font-size: 0.84rem; cursor: pointer; text-align: left; }
+.cx-witness-btn::before { content: "✠ "; color: var(--accent); }
+.cx-witness-btn:hover { color: var(--text); }
+.cx-witness-body blockquote { margin: 6px 0 0; padding-left: 10px; border-left: 2px solid var(--border); font-family: var(--serif); font-size: 0.9rem; color: var(--text); }
+.cx-works { font-size: 0.78rem; color: var(--muted); margin: 4px 0 0; }
+.cx-occ { font-size: 0.86rem; margin-top: 8px; }
+.cx-occ summary { cursor: pointer; color: var(--muted); }
+.cx-occ p { margin: 4px 0; line-height: 1.5; }
+.cx-more { border: 1px solid var(--border); background: none; border-radius: var(--radius-pill); padding: 4px 12px; font-size: 0.84rem; cursor: pointer; color: var(--text); }
+
+/* strength of a link */
+.cx-strength { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; border-radius: var(--radius-pill); padding: 1px 8px; white-space: nowrap; border: 1px solid var(--border); color: var(--muted); }
+.cx-strength.is-strong { background: var(--gold); color: var(--gold-text); border-color: transparent; }
+.cx-strength.is-moderate { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+
+/* why a passage is linked */
+.cx-why { font-size: 0.84rem; color: var(--muted); margin: 4px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.cx-why .cx-chips { margin: 0; }
+.cx-why.is-type { color: var(--text); }
+.cx-why.is-type::before { content: "◆"; color: var(--cx-type); }
+
+/* the map: Genesis to Revelation, seen from above */
+.cx-map { margin: 4px 0 8px; }
+.cx-map svg { width: 100%; height: auto; display: block; }
+.cx-map-nt { stroke: var(--muted); stroke-dasharray: 2 2; stroke-width: 0.6; }
+.cx-map-label { font: 8px var(--sans); fill: var(--muted); }
+.cx-map-here { fill: var(--text); stroke: var(--bg); stroke-width: 1.2; }
+.cx-arc { fill: none; stroke-linecap: round; opacity: 0.75; transition: opacity 0.15s; }
+.cx-arc.is-type { stroke: var(--cx-type); opacity: 0.9; }
+.cx-arc.is-fathers { stroke: var(--accent); }
+.cx-arc.is-words { stroke: var(--muted); opacity: 0.55; }
+.cx-arc.is-hot { opacity: 1; }
+.cx-arc.is-away { opacity: 0.18; }
+.cx-arc-hit { fill: none; stroke: transparent; stroke-width: 9; cursor: pointer; }
+.cx-legend { margin: 0 0 6px; display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 0.74rem; color: var(--muted); margin-top: 2px; }
+.cx-legend i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 4px; }
+.cx-legend i.is-type { background: var(--cx-type); }
+.cx-legend i.is-fathers { background: var(--accent); }
+.cx-legend i.is-words { background: var(--muted); }
+
+
+/* the Fathers on this verse, and their types */
+.cx-fathers { list-style: none; padding: 0; margin: 6px 0; }
+.cx-fathers li { padding: 6px 0; border-bottom: 1px dashed var(--border); }
+.cx-fathers li:last-child { border-bottom: 0; }
+.cx-father { display: flex; align-items: baseline; gap: 10px; }
+.cx-father b { font-family: var(--serif); font-size: 1rem; }
+.cx-father .cx-meta { margin: 0; }
+.cx-father .cx-witness-btn { margin-left: auto; }
+/* The Fathers on a verse, like the comments under a post: portrait, name, what he said. */
+.cx-who-select {
+  display: block; margin: 0 0 6px; max-width: 100%; padding: 4px 26px 4px 10px; border: 1px solid var(--border);
+  border-radius: var(--radius-pill); background: var(--bg); color: var(--text); font: 600 0.8rem var(--sans); cursor: pointer;
+}
+.cx-thread-tools { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px; }
+.cx-thread-tools .cx-who-select { margin: 0; }
+.cm-thread { margin-top: 12px; }
+.cx-thread { list-style: none; padding: 0; margin: 0; }
+.cx-comment { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 10px; padding: 10px 0; }
+.cx-comment + .cx-comment { border-top: 1px solid var(--border); }
+.cx-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background: var(--panel); }
+.cx-comment-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
+.cx-comment-head b, .cx-comment-father { font-family: var(--serif); font-size: 0.98rem; font-weight: 700; color: var(--text); }
+.cx-comment-father { text-decoration: none; }
+.cx-comment-father:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.cx-avatar-link { display: block; align-self: start; border-radius: 50%; }
+.cx-avatar-link:hover .cx-avatar { box-shadow: 0 0 0 2px var(--accent); }
+.cx-comment-src { min-width: 0; font-size: 0.76rem; color: var(--muted); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cx-comment-src:hover { color: var(--link); text-decoration: underline; }
+.cx-comment-v { font-size: 0.76rem; color: var(--muted); }
+.cx-comment-text { margin: 3px 0 0; font-family: var(--serif); font-size: 0.95rem; line-height: 1.55; color: var(--text); }
+.cx-comment-text.is-full p { margin: 0 0 8px; }
+.cx-comment-text mark { background: var(--hl-gold); color: inherit; border-radius: 2px; padding: 0 1px; }
+.cx-comment-more { margin-top: 2px; border: 0; background: none; padding: 0; font: 600 0.78rem var(--sans); color: var(--muted); cursor: pointer; }
+.cx-comment-more:hover { color: var(--accent); }
+/* Replies: a later Father who names an earlier one, set in under his comment. */
+.cx-replies { list-style: none; padding: 0; margin: 8px 0 0; }
+.cx-comment.is-reply { grid-template-columns: 28px minmax(0, 1fr); gap: 8px; padding: 8px 0 0; border-top: 0; }
+.cx-comment.is-reply .cx-avatar { width: 28px; height: 28px; }
+.cx-comment.is-reply .cx-comment-head b, .cx-comment.is-reply .cx-comment-father { font-size: 0.92rem; }
+.cx-comment.is-reply .cx-comment-text { font-size: 0.92rem; }
+.cx-reply-to { font-size: 0.78rem; font-weight: 600; color: var(--accent); cursor: help; }
+.cx-replies-more { margin: 6px 0 0 36px; }
+/* "Cited together by…": the same thread, set in under the pattern. */
+.cx-why.is-fathers .cx-thread, .cx-why.is-fathers .cx-who-select { margin-top: 6px; }
+.cx-quote { margin: 6px 0 0; padding-left: 10px; border-left: 2px solid var(--border); font-family: var(--serif); font-size: 0.9rem; }
+.cx-type { font-family: var(--serif); font-weight: 600; font-size: 1rem; margin: 0; padding: 0; border: 0; background: none; color: var(--text); cursor: pointer; text-align: left; }
+.cx-type:hover { color: var(--link); text-decoration: underline; }
+.cx-type::before { content: "◆ "; color: var(--cx-type); }
+
+.cx-how { font-size: 0.84rem; color: var(--muted); margin-top: 16px; border-top: 1px solid var(--border); padding-top: 10px; }
+.cx-how summary { cursor: pointer; }
+.cx-how li { margin: 4px 0; line-height: 1.5; }
+
+/* moving around */
+.cx-head h2 { flex: 1; min-width: 0; }
+.cx-nav { display: inline-flex; gap: 4px; }
+.cx-nav button { width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 50%; background: var(--panel); color: var(--text); cursor: pointer; font-size: 0.95rem; line-height: 1; }
+.cx-nav button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.cx-nav button:disabled { opacity: 0.35; cursor: default; }
+.cx-where { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; margin: 0 0 6px; font-size: 0.9rem; color: var(--muted); }
+.cx-where .cx-snippet { flex-basis: 100%; margin: 0; }
+.cx-def { font-family: var(--serif); font-size: 0.98rem; line-height: 1.45; margin: 0 0 6px; color: var(--text); }
+.cx-snippet mark { background: color-mix(in srgb, var(--cx-type, #c9a227) 28%, transparent); color: inherit; border-radius: 2px; padding: 0 1px; }
+.cx-lemma { font-family: "Noto Serif Hebrew", var(--serif); font-size: 1.25rem; color: var(--text); }
+.cx-inline { border: 0; background: none; padding: 0; color: var(--link); cursor: pointer; font: inherit; }
+.cx-inline:hover { text-decoration: underline; }
+
+/* the chart: zoom and move */
+.cx-map { position: relative; }
+.cx-map svg { touch-action: pan-y; cursor: grab; user-select: none; }
+.cx-map svg:active { cursor: grabbing; }
+.cx-zoom { position: absolute; top: 0; right: 0; display: flex; gap: 4px; z-index: 1; }
+.cx-zoom button { min-width: 26px; height: 24px; padding: 0 8px; border: 1px solid var(--border); border-radius: var(--radius-pill); background: var(--panel); color: var(--text); cursor: pointer; font: 600 0.78rem var(--sans); }
+.cx-zoom button:disabled { opacity: 0.35; cursor: default; }
+.cx-hint { font-size: 0.72rem; color: var(--muted); text-align: right; margin-top: -2px; }
+.cx-dot { fill: var(--muted); opacity: 0.55; cursor: pointer; }
+.cx-dot.is-family { fill: none; stroke: var(--muted); stroke-width: 0.8; opacity: 0.6; }
+.cx-dot.is-cited { fill: var(--accent); opacity: 0.85; }
+.cx-dot.is-family.is-cited { fill: none; stroke: var(--accent); }
+.cx-arc.is-saved { stroke-dasharray: none; filter: drop-shadow(0 0 1.5px var(--cx-type)); opacity: 1; }
+.cx-legend i.is-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); }
+.cx-legend i.is-dot.is-cited { background: var(--accent); }
+.cx-legend i.is-dot.is-family { background: none; border: 1px solid var(--muted); box-sizing: border-box; }
+
+/* saving */
+.cx-star { margin-left: auto; border: 0; background: none; cursor: pointer; font-size: 1.1rem; line-height: 1; color: var(--muted); padding: 0 2px; }
+.cx-star.is-on, .cx-star:hover { color: var(--cx-type); }
+.cx-link.is-saved { background: color-mix(in srgb, var(--cx-type) 9%, transparent); border-radius: var(--radius-sm); padding-left: 6px; padding-right: 6px; }
+.cx-link-head .cx-type { flex: 1; }
+.cx-saved { font-size: 0.86rem; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
+.cx-saved summary { cursor: pointer; color: var(--text); font-weight: 600; }
+.cx-saved ul { list-style: none; padding: 0; margin: 6px 0 0; }
+.cx-saved li { padding: 4px 0; border-bottom: 1px dashed var(--border); }
+.cx-remove { border: 0; background: none; color: var(--muted); cursor: pointer; float: right; font-size: 1rem; line-height: 1; }
+.cx-notes .journal-notes { min-height: 0; margin: 0; }
+.cx-notes .journal-note-editor { min-height: 3.2rem; padding: 8px 10px; border: 1px dashed var(--border); border-radius: var(--radius); font-size: 0.98rem; color: var(--text); background: var(--bg); }
+.cx-notes .journal-note-editor.is-editing { border-style: solid; border-color: var(--accent); }
+.cx-notes .journal-note-editor:empty::before { color: var(--muted); font-weight: 400; }
+.cx-notes .journal-note-tools button { border-color: var(--border); color: var(--text); }
+
+/* a type the Fathers draw */
+.cx-type-def { font-family: var(--serif); font-size: 0.98rem; line-height: 1.5; margin: 4px 0 8px; }
+.cx-quotes { list-style: none; padding: 0; margin: 0; }
+.cx-quotes li { font-family: var(--serif); font-size: 0.94rem; line-height: 1.5; padding: 6px 0 6px 12px; border-left: 2px solid var(--cx-type); margin: 6px 0; }
+
+/* ---------- the reader: the mark toolbar, highlights, the pen and margin notes ---------- */
+:root { --hl-gold: #f7e6a6; --hl-green: #d9eec9; --hl-blue: #d3e4f7; --hl-rose: #f6d6dc; }
+html[data-theme="night"] { --hl-gold: rgba(226, 184, 90, 0.3); --hl-green: rgba(120, 180, 90, 0.28); --hl-blue: rgba(90, 140, 210, 0.3); --hl-rose: rgba(210, 100, 120, 0.3); }
+
+.cx-seltip {
+  position: fixed; z-index: 60; transform: translate(-50%, calc(-100% - 8px)); display: flex; align-items: center; gap: 4px;
+  padding: 5px 6px; border-radius: var(--radius-pill); background: var(--nav); box-shadow: var(--pop-shadow); white-space: nowrap;
+}
+.cx-seltip button { border: 0; background: none; color: #fff; font: 600 0.84rem var(--sans); cursor: pointer; padding: 4px 10px; border-radius: var(--radius-pill); }
+.cx-seltip button:hover { background: rgba(255, 255, 255, 0.16); }
+.cx-seltip .hl-swatch { width: 20px; height: 20px; padding: 0; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.85); }
+.cx-seltip .hl-swatch:hover { transform: scale(1.12); background: inherit; }
+.hl-swatch.hl-gold { background: #f2d36b; }
+.hl-swatch.hl-green { background: #9fd27f; }
+.hl-swatch.hl-blue { background: #8fbbea; }
+.hl-swatch.hl-rose { background: #ec9fae; }
+.cx-seltip .hl-clear { padding: 2px 8px; font-size: 1rem; line-height: 1; }
+
+.bible-verse { position: relative; }
+.bible-verse.hl-gold, .bible-verse.hl-gold:hover { background: var(--hl-gold); }
+.bible-verse.hl-green, .bible-verse.hl-green:hover { background: var(--hl-green); }
+.bible-verse.hl-blue, .bible-verse.hl-blue:hover { background: var(--hl-blue); }
+.bible-verse.hl-rose, .bible-verse.hl-rose:hover { background: var(--hl-rose); }
+
+/* The pen: a small mark at the right edge of a verse, shown when the pointer is over the verse. */
+/* The verse keeps a right gutter for it, so the text never runs under the pen. */
+.bible-verse { padding-right: 40px; }
+.verse-pen {
+  position: absolute; right: 6px; top: 6px; width: 28px; height: 28px; padding: 0; border: 0; border-radius: 999px;
+  display: grid; place-items: center; background: none; color: var(--muted);
+  cursor: pointer; opacity: 0; transition: opacity 0.15s, background 0.15s, color 0.15s;
+  user-select: none; -webkit-user-select: none;
+}
+.verse-pen svg {
+  width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.bible-verse:hover .verse-pen, .bible-verse.is-active .verse-pen, .verse-pen:focus-visible { opacity: 0.7; }
+.verse-pen:hover, .verse-pen:focus-visible { opacity: 1; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.verse-pen:focus-visible { outline: none; box-shadow: var(--ring); }
+@media (hover: none) { .bible-verse.is-active .verse-pen { opacity: 0.8; } }
+
+/* A drag across verses: whole verses shaded, the browser's highlight of the letters hidden. */
+/* ...everywhere on the page, since a drag often runs on past the verses into the heading above. */
+body:has(.bible-verses.is-picking) ::selection { background: transparent; color: inherit; }
+.bible-verse.is-picked, .bible-verse.is-picked:hover { background: color-mix(in srgb, var(--accent) 16%, transparent); box-shadow: inset 3px 0 0 var(--accent); }
+
+/* The passage open in the Connections tab. */
+.bible-verse.in-span { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
+
+.verse-margin-note { margin: 0 0 8px 18px; padding: 2px 0 2px 12px; border-left: 2px solid var(--cx-type); }
+.verse-margin-note .journal-notes { min-height: 0; }
+.verse-margin-note .journal-note-editor { min-height: 1.6em; font-size: 15px; font-style: italic; color: var(--text); }
+.verse-margin-note .journal-note-editor.is-editing { font-style: normal; }
+.verse-margin-note .journal-note-editor:empty::before { color: var(--muted); font-weight: 400; }
+.verse-margin-note .journal-note-tools button { border-color: var(--border); color: var(--text); }
+
+/* The KJV translators' margin notes: a dagger after the verse that opens the note beneath it. */
+.kjv-note-mark {
+  border: 0; background: none; padding: 0 2px; margin-left: 2px; cursor: pointer;
+  font: 600 0.72em var(--sans); color: var(--muted); vertical-align: super; line-height: 1;
+}
+.kjv-note-mark:hover, .kjv-note-mark[aria-expanded="true"] { color: var(--link); }
+.kjv-note-text {
+  display: block; margin: 4px 0 2px; padding: 4px 10px; border-left: 2px solid var(--border);
+  font: 0.82rem/1.45 var(--sans); color: var(--muted); cursor: text;
+}
+.kjv-note-label { font-weight: 700; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 4px; }

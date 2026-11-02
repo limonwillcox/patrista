@@ -9,18 +9,8 @@ export function AboutPage() {
     setActivePassage(null);
   }, [setActivePassage]);
 
-  useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) return;
-    document.body.classList.add("about-read-dim");
-    return () => {
-      document.body.classList.remove("about-read-dim");
-    };
-  }, []);
-
   return (
     <div className="about-page">
-      <div className="about-vignette" aria-hidden="true" />
       <article className="about-letter">
         <section className="about-block about-what">
           <h1 className="about-q">What is Patrista?</h1>
@@ -38,8 +28,7 @@ export function AboutPage() {
           <p>
             This is a pretty small operation, so any{" "}
             <Link to="/fixes">feedback</Link> you can give is gold, and unbelievably helpful in making the site better for
-            everyone. If you want to <Link to="/give">support this site</Link> with more than just feedback, I would really
-            appreciate it — but it is absolutely not necessary.
+            everyone.
           </p>
         </section>
         <p className="fineprint">{AMAZON_DISCLOSURE}</p>

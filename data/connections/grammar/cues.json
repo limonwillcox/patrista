@@ -1,0 +1,454 @@
+{
+ "about": "Word cues for tagging every verse automatically with the symbolic grammar. A cue is a Strong's number that signals a grammar entry when it appears in a verse. Some acts need two words together ('requires'): 'pass through' counts as passing through water only when a water word is in the same verse. Draft: check against the lexicon with scripts/connections/auto_tag.py --check. Keys like 'pass-through-water#2' are a second way to signal the same act.",
+ "acts": {
+  "descend": [
+   "H3381",
+   "G2597",
+   "H7363"
+  ],
+  "ascend": [
+   "H5927",
+   "G305",
+   "G1453"
+  ],
+  "pass-through-water": {
+   "any": [
+    "H5674",
+    "G1224",
+    "G1330",
+    "G907",
+    "G908"
+   ],
+   "requires": "water"
+  },
+  "separate": [
+   "H914",
+   "H1234",
+   "G873",
+   "G4977"
+  ],
+  "name": {
+   "any": [
+    "H8034",
+    "G3686"
+   ],
+   "requires_any": [
+    "H7121",
+    "G2564"
+   ]
+  },
+  "send-bird": {
+   "any": [
+    "H7971",
+    "G649",
+    "G3992"
+   ],
+   "requires": "messenger"
+  },
+  "seize": [
+   "H8610",
+   "H1497",
+   "H5377",
+   "G3985",
+   "G726",
+   "G2902",
+   "H2530",
+   "H7291",
+   "G1377"
+  ],
+  "eat": [
+   "H398",
+   "G5315",
+   "G2068",
+   "H8354",
+   "G4095"
+  ],
+  "cover": [
+   "H3680",
+   "H3847",
+   "G1746",
+   "G4016",
+   "G2572",
+   "H5844"
+  ],
+  "expel": [
+   "H1644",
+   "G1544",
+   "H5080"
+  ],
+  "deep-sleep": [
+   "H8639",
+   "H7290",
+   "G5258",
+   "H3462",
+   "G2518"
+  ],
+  "offer": [
+   "H5930",
+   "H2076",
+   "H7133",
+   "G4374",
+   "G2378",
+   "H4503"
+  ],
+  "anoint": [
+   "H4886",
+   "G5548",
+   "G218"
+  ],
+  "give-thanks": [
+   "H3034",
+   "H8426",
+   "G2168",
+   "G2169"
+  ],
+  "evaluate": [
+   "H8199",
+   "H6485",
+   "G2919",
+   "G2920"
+  ],
+  "build-house": [
+   "H1129",
+   "G3618"
+  ],
+  "strike": [
+   "H5221",
+   "H5062",
+   "G3960",
+   "G4141",
+   "H5061"
+  ],
+  "mix": [
+   "H6148",
+   "H1101",
+   "G3396"
+  ],
+  "rest": [
+   "H5117",
+   "H7673",
+   "H7676",
+   "G373",
+   "G4521",
+   "G2663"
+  ],
+  "pass-through-water#2": {
+   "any": [
+    "H935",
+    "H1980",
+    "H3212",
+    "H3318"
+   ],
+   "requires": "water",
+   "requires_any": [
+    "H8432",
+    "H3004",
+    "H2724"
+   ]
+  },
+  "name#2": {
+   "any": [
+    "G5456",
+    "H6963"
+   ],
+   "requires_any": [
+    "G3772",
+    "H8064"
+   ]
+  },
+  "evaluate#2": {
+   "any": [
+    "H7200"
+   ],
+   "requires_any": [
+    "H2896"
+   ]
+  }
+ },
+ "groups": {
+  "water": [
+   "H4325",
+   "H3220",
+   "H8415",
+   "H5104",
+   "H2975",
+   "G5204",
+   "G2281",
+   "G4215",
+   "H3383",
+   "G2446"
+  ],
+  "messenger": [
+   "H3123",
+   "H6158",
+   "G4058",
+   "G2876",
+   "H7270",
+   "H8446"
+  ]
+ },
+ "figures": {
+  "dove": [
+   "H3123",
+   "G4058"
+  ],
+  "raven": [
+   "H6158",
+   "G2876"
+  ],
+  "vessel": [
+   "H8392",
+   "G2787",
+   "H591",
+   "G4143"
+  ],
+  "sea-monster": [
+   "H8577",
+   "H3882",
+   "G2785",
+   "H1709",
+   "G1404"
+  ],
+  "serpent": [
+   "H5175",
+   "G3789",
+   "H8314"
+  ],
+  "world-axis": [
+   "H6086",
+   "H4676",
+   "H5982",
+   "H4294",
+   "G3586",
+   "G4464"
+  ],
+  "altar": [
+   "H4196",
+   "G2379"
+  ],
+  "rock": [
+   "H6697",
+   "G4073",
+   "H5553"
+  ],
+  "three-stones": [
+   "H68",
+   "G3037"
+  ],
+  "glory-cloud": [
+   "H6051",
+   "H3519",
+   "G3507",
+   "G1391"
+  ],
+  "olive": [
+   "H2132",
+   "H8081",
+   "G1636",
+   "G1637"
+  ],
+  "rainbow": [
+   "G2463"
+  ],
+  "garment": [
+   "H899",
+   "H3801",
+   "H8071",
+   "G2440",
+   "G5509",
+   "G4749"
+  ],
+  "bread-and-wine": [
+   "H3899",
+   "H3196",
+   "G740",
+   "G3631"
+  ],
+  "manna": [
+   "H4478",
+   "G3131"
+  ],
+  "seed": [
+   "H2233",
+   "G4690",
+   "G4703"
+  ],
+  "blood": [
+   "H1818",
+   "G129"
+  ],
+  "fire": [
+   "H784",
+   "G4442"
+  ],
+  "river": [
+   "H5104",
+   "H2975",
+   "G4215"
+  ],
+  "lamb": [
+   "H3532",
+   "H7716",
+   "H6453",
+   "G286",
+   "G721",
+   "G3957"
+  ],
+  "lights-as-rulers": [
+   "H3974",
+   "H8121",
+   "H3394",
+   "H3556",
+   "G2246",
+   "G4582",
+   "G792"
+  ]
+ },
+ "roles": {
+  "mediator-from-above": [
+   "H7307",
+   "G4151",
+   "H4397",
+   "G32"
+  ],
+  "bride": [
+   "H3618",
+   "G3565"
+  ],
+  "bridegroom": [
+   "H2860",
+   "G3566"
+  ],
+  "tyrant": [
+   "H6547",
+   "G2264"
+  ],
+  "deliverer": [
+   "H3467",
+   "H5337",
+   "G4506",
+   "G4982"
+  ],
+  "stranger": [
+   "H1616",
+   "H5237",
+   "G3581"
+  ],
+  "barren-mother": [
+   "H6135",
+   "G4723"
+  ],
+  "elder-passed-over": [
+   "H1060",
+   "G4416"
+  ],
+  "younger-chosen": [
+   "H6810"
+  ],
+  "remnant": [
+   "H7611",
+   "G2640",
+   "G3005"
+  ],
+  "guardian": [
+   "H3742",
+   "G5502"
+  ],
+  "priest-king-prophet": [
+   "H3548",
+   "H5030",
+   "G2409",
+   "G4396",
+   "G749"
+  ],
+  "fool": [
+   "H5036",
+   "H191",
+   "G3474"
+  ],
+  "beast": [
+   "G2342"
+  ]
+ },
+ "zones": {
+  "the-deep": [
+   "H8415",
+   "H3220",
+   "H4325",
+   "H4688",
+   "G12",
+   "G2281",
+   "G5204",
+   "G899"
+  ],
+  "dry-land": [
+   "H3004",
+   "H2724",
+   "H3006",
+   "G3584"
+  ],
+  "holy-mountain": [
+   "H2022",
+   "G3735"
+  ],
+  "garden-sanctuary": [
+   "H1588",
+   "H5731",
+   "G2779",
+   "G3857"
+  ],
+  "wilderness": [
+   "H4057",
+   "G2048"
+  ],
+  "house-of-bondage": [
+   "H4714",
+   "G125",
+   "H5656"
+  ],
+  "city-of-man": [
+   "H4026",
+   "H894",
+   "G4444"
+  ],
+  "pit": [
+   "H953",
+   "H7585",
+   "H7845",
+   "G86",
+   "G5438"
+  ],
+  "well": [
+   "H875",
+   "G4077",
+   "G5421"
+  ],
+  "firmament": [
+   "H7549",
+   "H8064",
+   "G3772"
+  ],
+  "gate": [
+   "H8179",
+   "G4439"
+  ]
+ },
+ "numbers": {
+  "three": [
+   "H7992",
+   "G5154"
+  ],
+  "forty": [
+   "H705",
+   "G5062"
+  ],
+  "six-seven": [
+   "H7651",
+   "H7637",
+   "G2033"
+  ],
+  "twelve": [
+   "G1427"
+  ]
+ }
+}

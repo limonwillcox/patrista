@@ -155,5 +155,5 @@ describe("Mt 16:18 golden fixture", () => {
     expect(fromDisk.map((n) => n.century)).toEqual(
       expect.arrayContaining(fromFixture.map((n) => n.century))
     );
-  });
+  }, 30_000); // loads the whole library: slow when the suite runs in parallel
 });

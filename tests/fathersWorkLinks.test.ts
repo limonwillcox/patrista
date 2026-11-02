@@ -10,9 +10,9 @@ describe("father work links open the reader", () => {
     expect(staticWorkId("/fathers/josephus/wars-of-the-jews/book-i/")).toBeNull();
   });
 
-  it("Fathers page links each work to the reader, not the static page", () => {
-    const src = readFileSync("src/pages/FathersPage.tsx", "utf8");
-    expect(src).toContain("to={readPath(work.id)}");
+  it("the Fathers bookcase opens each work in the reader, not the static page", () => {
+    const src = readFileSync("src/components/shelf/BookViewer.tsx", "utf8");
+    expect(src).toContain("readPath(work.id)");
     expect(src).not.toContain("workPublicPath");
   });
 });

@@ -21,4 +21,11 @@ describe("dock notch state", () => {
   it("treats missing storage as open", () => {
     expect(readDockOpen("chapters", null)).toBe(true);
   });
+
+  it("uses the screen-size default only until the reader chooses", () => {
+    const store = memoryStore();
+    expect(readDockOpen("chapters", store, false)).toBe(false);
+    writeDockOpen("chapters", true, store);
+    expect(readDockOpen("chapters", store, false)).toBe(true);
+  });
 });

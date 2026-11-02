@@ -99,6 +99,18 @@ function loadChapterPack(book: string, chapter: number): Promise<ChapterLinksPac
   return promise;
 }
 
+/**
+ * How many passages of the Fathers comment on each verse of a chapter, from the chapter's pack.
+ * Null when the chapter has no pack yet (commentary covers the four Gospels so far).
+ */
+export async function fetchChapterCounts(book: string, chapter: number): Promise<Record<number, number> | null> {
+  const pack = await loadChapterPack(book, chapter);
+  if (!pack) return null;
+  const counts: Record<number, number> = {};
+  for (const [verse, ids] of Object.entries(pack.verses)) counts[Number(verse)] = ids.length;
+  return counts;
+}
+
 export function verseCacheKey(book: string, chapter: number, verse: number): string {
   return `verse:${book.trim().toLowerCase()}.${chapter}.${verse}`;
 }

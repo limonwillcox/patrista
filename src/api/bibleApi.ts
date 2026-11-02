@@ -1,7 +1,8 @@
-import { bookIdToUsfm } from "./bibleTranslations";
+import { bookIdToUsfm, esvQuery, parseEsvPassage } from "./bibleTranslations";
 
 const BIBLE_API_URL = "https://api.scripture.api.bible/v1";
-const CACHE_PREFIX = "piblia_bible_cache_v1_";
+// v2: verses saved by v1 lost the space between poetry lines, and ESV verses after an omitted one were misnumbered.
+const CACHE_PREFIX = "piblia_bible_cache_v2_";
 // 14 days in milliseconds: 14 * 24 * 60 * 60 * 1000 = 1,209,600,000 ms
 const CACHE_TTL_MS = 14 * 24 * 60 * 60 * 1000;
 
@@ -37,6 +38,9 @@ function parseJsonTreeVerses(content: unknown[]): string[] {
     const n = node as Record<string, unknown>;
 
     let isHeading = inHeading;
+    // A new paragraph or poetry line: the text before it ends there. Without this space the lines run
+    // together ("sound the alarm on my holy mountain" after "Blow the trumpet in Zion;").
+    if (n.name === "para" && currentVerse > 0 && verseMap.has(currentVerse)) verseMap.get(currentVerse)!.push(" ");
     if (n.name === "para" && n.attrs && typeof n.attrs === "object") {
       const style = String((n.attrs as Record<string, unknown>).style || "");
       if (
@@ -60,7 +64,8 @@ function parseJsonTreeVerses(content: unknown[]): string[] {
       return; // Skip verse number label inside verse element
     }
 
-    if (!isHeading && typeof n.text === "string" && n.text.trim()) {
+    // A text that is only a space still parts two words ("descending" | " " | "on the Son of Man").
+    if (!isHeading && typeof n.text === "string" && n.text !== "") {
       let vNum = currentVerse;
       if (n.attrs && typeof n.attrs === "object" && typeof (n.attrs as Record<string, unknown>).verseId === "string") {
         const verseId = (n.attrs as Record<string, unknown>).verseId as string;
@@ -193,7 +198,7 @@ export async function fetchRemoteBibleVerses(
     let passageText = "";
 
     if (esvKey) {
-      const query = `${usfm} ${chapter}`;
+      const query = esvQuery(usfm, chapter);
       const url = `https://api.esv.org/v3/passage/text/?q=${encodeURIComponent(query)}&include-passage-references=false&include-verse-numbers=true&include-first-verse-numbers=true&include-footnotes=false&include-headings=false`;
       const res = await fetch(url, { headers: { Authorization: `Token ${esvKey}` } });
       if (!res.ok) {
@@ -228,11 +233,7 @@ export async function fetchRemoteBibleVerses(
       throw new Error(`Could not fetch ESV text for ${usfm} ${chapter}`);
     }
     
-    // Parse ESV verse text (verses are marked with [1], [2], etc.)
-    const verses = passageText
-      .split(/\[\d+\]/)
-      .map((v: string) => v.trim())
-      .filter(Boolean);
+    const verses = parseEsvPassage(passageText);
 
     if (typeof localStorage !== "undefined" && verses.length > 0) {
       try {

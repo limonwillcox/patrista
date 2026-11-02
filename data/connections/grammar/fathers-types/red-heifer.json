@@ -1,0 +1,40 @@
+{
+  "src": "04:red-heifer",
+  "tradition": "fathers",
+  "work": "Church Fathers in the Patrista corpus (ANF/NPNF translations)",
+  "label": "The red heifer",
+  "kind": "role",
+  "def": "A spotless red heifer that had never borne a yoke was slain and burned whole outside the camp, and its ashes, mixed with water, cleansed those defiled by the dead.",
+  "texts": "Num 19:1-10; Heb 9:13-14; Heb 13:11-12; John 19:17-20.",
+  "christ": "Christ, the spotless victim who suffered outside the gate: \"The calf is Jesus\" (Barnabas, *Ep.* 8). The ashes cleansed only the flesh; His blood, and the baptism it gives, cleanse the soul (Justin, Athanasius, Gregory Nazianzen).",
+  "where": [
+    "Barnabas, *Ep.* 8 — “The calf is Jesus: the sinful men offering it are those who led Him to the slaughter.”",
+    "Theodoret, *Eranistes* III — “The image of the archetype is very distinctly exhibited by the lamb slain in Egypt, and by the red heifer burned without the camp”",
+    "Justin, *Dial.* 13 — “or by the ashes of an heifer, or by the offerings of fine flour, but by faith through the blood of Christ”",
+    "Athanasius, *Festal Letter* 14 — “Of old time, the blood of he-goats and the ashes of a heifer, sprinkled upon those who were unclean, were fit only to purify the flesh”",
+    "Gregory Nazianzen, *Or.* 40.11 — “let us partake of the cleansing waters, more purifying than hyssop, purer than the legal blood, more sacred than the ashes of the heifer sprinkling the unclean”"
+  ],
+  "links": [
+    {
+      "label": "Barnabas, Ep. 8",
+      "href": "/fathers/barnabas/epistle-of-barnabas/chapter-8/"
+    },
+    {
+      "label": "Theodoret, Eranistes III",
+      "href": "/fathers/theodoret/dialogues-eranistes/chapter-37/"
+    },
+    {
+      "label": "Justin, Dial. 13",
+      "href": "/fathers/justin/dialogue-with-trypho/chapter-13/"
+    },
+    {
+      "label": "Athanasius, Festal Letter 14",
+      "href": "/fathers/athanasius/festal-letters-and-index/chapter-11/"
+    },
+    {
+      "label": "Gregory Nazianzen, Or. 40.11",
+      "href": "/fathers/gregory_nazianzen/select-orations/chapter-16/"
+    }
+  ],
+  "confidence": ""
+}

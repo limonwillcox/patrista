@@ -1,4 +1,3 @@
-import { authorAnchorId } from "../src/lib/fatherPaths";
 import { ERAS, workRefId, type HistoryEra } from "./churchHistory";
 import type { Catalog } from "./types";
 
@@ -239,89 +238,6 @@ export function packAuthorCatalog(catalog: { authors: PackAuthor[]; works: PackW
     }
     return { authorId: a.id, shelves };
   });
-}
-
-/** Router path. React Router ignores a trailing slash. */
-export const CHURCH_FATHERS_PATH = "/church-fathers";
-/**
- * Canonical path. The build emits church-fathers/index.html, which GitHub Pages
- * serves at the trailing-slash URL and 301s the bare form to.
- */
-export const CHURCH_FATHERS_CANONICAL_PATH = "/church-fathers/";
-export const CHURCH_FATHERS_TITLE = "Church Writings: the Fathers by period";
-export const CHURCH_FATHERS_DESCRIPTION =
-  "Browse the public-domain Church Fathers by period of church history — Apostolic era to John of Damascus — and read the English texts.";
-
-function escapeHtml(s: string): string {
-  return String(s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
-/** Crawlable catalog: period → author → works. React replaces this on desktop. */
-export function renderChurchFathersHtml(catalog: Catalog): string {
-  const out: string[] = [];
-  out.push("<div class=\"browse-prerender\">");
-  out.push("<h1>Church Writings</h1>");
-  out.push("<p>" + escapeHtml(CHURCH_FATHERS_DESCRIPTION) + "</p>");
-  out.push('<p><a href="/fathers/">Fathers</a></p>');
-  const worksByAuthor = new Map<string, typeof catalog.works>();
-  for (const w of catalog.works) {
-    const list = worksByAuthor.get(w.author);
-    if (list) list.push(w);
-    else worksByAuthor.set(w.author, [w]);
-  }
-  const authorsInPeriod = (periodId: ShelfPeriodId) =>
-    catalog.authors
-      .filter((a) => periodIdForAuthor(a) === periodId && (worksByAuthor.get(a.id) || []).length)
-      .sort((a, b) => a.deathYear - b.deathYear || a.id.localeCompare(b.id));
-
-  for (const period of SHELF_PERIODS) {
-    const authors = authorsInPeriod(period.id);
-    if (!authors.length) continue;
-    out.push("<section id=\"" + period.id + "\">");
-    out.push("<h2>" + escapeHtml(period.label) + "</h2>");
-    for (const a of authors) {
-      out.push('<h3 id="' + escapeHtml(authorAnchorId(a.id)) + '">' + escapeHtml(a.name) + "</h3>");
-      if (a.bio) out.push("<p>" + escapeHtml(a.bio) + "</p>");
-      out.push("<p>" + escapeHtml([a.dates, a.region].filter(Boolean).join(" · ")) + "</p>");
-      out.push("<ul>");
-      for (const w of worksByAuthor.get(a.id) || []) {
-        const href = "/fathers/" + encodeURIComponent(a.id) + "/" + encodeURIComponent(w.id) + ".html";
-        out.push("<li><a href=\"" + href + "\">" + escapeHtml(w.title) + "</a></li>");
-      }
-      out.push("</ul>");
-    }
-    out.push("</section>");
-  }
-  out.push("</div>");
-  return out.join("\n");
-}
-
-export function churchFathersJsonLd(origin: string, catalog: Catalog): unknown {
-  const url = origin + CHURCH_FATHERS_CANONICAL_PATH;
-  return {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: CHURCH_FATHERS_TITLE,
-    description: CHURCH_FATHERS_DESCRIPTION,
-    url,
-    mainEntity: {
-      "@type": "ItemList",
-      numberOfItems: catalog.works.length,
-      itemListElement: catalog.works.map((w, i) => {
-        const author = catalog.authors.find((a) => a.id === w.author);
-        return {
-          "@type": "ListItem",
-          position: i + 1,
-          url: origin + "/fathers/" + w.author + "/" + w.id + ".html",
-          name: w.title + (author ? " — " + author.name : "")
-        };
-      })
-    }
-  };
 }
 
 export function inspectTimelineEra(workId: string, periodId: ShelfPeriodId, deathYear: number): HistoryEra {

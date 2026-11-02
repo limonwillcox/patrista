@@ -38,3 +38,30 @@ export function readTabHref(last: LastRead | null = loadLastRead(), workIds?: Se
   if (last.chapter == null || last.chapter === 1) return base;
   return base + (base.includes("?") ? "&" : "?") + "chapter=" + last.chapter;
 }
+
+/** localStorage key for the Bible chapter last open, as its query string (book, chapter, version). */
+export const LAST_BIBLE_KEY = "patrista-last-bible";
+
+export function saveLastBible(params: URLSearchParams): void {
+  try {
+    const keep = new URLSearchParams();
+    for (const k of ["book", "chapter", "section", "version"]) {
+      const v = params.get(k);
+      if (v) keep.set(k, v);
+    }
+    localStorage.setItem(LAST_BIBLE_KEY, keep.toString());
+  } catch {
+    /* storage unavailable */
+  }
+}
+
+/** Where the Bible tab opens: the chapter last read, else the Bible's own default. */
+export function bibleHref(): string {
+  try {
+    const q = localStorage.getItem(LAST_BIBLE_KEY);
+    return q ? "/bible?" + q : "/bible";
+  } catch {
+    return "/bible";
+  }
+}
+

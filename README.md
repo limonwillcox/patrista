@@ -61,13 +61,22 @@ The React app talks to `/api/catalog`, `/api/works/:id`, `/api/works/:id/chapter
 
 | Action | What it does |
 | --- | --- |
-| Search `Confessions 1` | Passage lookup → reader |
-| Search `restless` | Keyword results (titles and text only) |
-| **Translation** / **Original** | Pusey English or the Latin *Confessiones* |
-| Edition chips under search | Appear only after a work is open in Translation, and only for editions that work actually has |
-| Split | Latin in a fixed column on the right of the English |
-| **Sign in** | Sign in or create account; OAuth buttons are optional stubs |
-| Writings list | Era → father → work/chapter |
+| **Fathers** (`/fathers/`) | Every Father by century. Jump bar, a filter box, and work counts on each card |
+| A Father's page | Life, then a bookcase of their works grouped by kind (Start here, Treatises, Letters…). **Shelf** / **List** toggle |
+| A book on the shelf | Opens the book viewer: first page, contents, length and reading time, the era it belongs to, Start / Continue reading. ← → step along the shelf |
+| Header search, Enter | Full-text search (`/search?q=`). A title and number (`Confessions 1`) opens the reader; a Father's name opens their page |
+| Search filters | One chip per Father, with counts. Results open the reader at the chapter with the words marked |
+| Paragraph number (margin) | Copy a link to that paragraph, a citation, or the paragraph with its citation |
+| **notes** button after a paragraph | The translator's footnotes. Bible references in them link to that verse on `/bible` |
+| **English** / **Latin** / **Side by side** | Shown when the work has the original (the *Confessions*) |
+| Writings list (header) | Era → father → work/chapter; with a query, a "Search every text" row on top |
+| The book viewer's 3D object | The work in the form it had in its own time, carrying its real text: letters as a papyrus roll (drag to unroll), books as a papyrus codex before 300 and a parchment codex after (tap to turn pages). Rule in `src/lib/manuscriptForm.ts` |
+| **The road to Rome** (on `/fathers/ignatius/`) | A globe with Ignatius's route, the letters written at each stop, and the chapter each fact comes from. Data in `src/data/journeys.ts`; a test checks every quotation against the chapter it cites |
+| **See the manuscript** | A real manuscript page from the holding library's IIIF server, as a leaf you can tilt and light. Only libraries that allow any use and send CORS headers. Data in `src/data/manuscripts.ts` |
+
+All 3D is three.js, loaded only when a 3D view opens (`src/three/`). Without WebGL each feature falls back to plain HTML. "Reduce motion" turns the animations off.
+
+Search on the static site is a [Pagefind](https://pagefind.app/) index written to `dist/pagefind/` at build time (about 100 seconds). Set `SKIP_SEARCH_INDEX=1` for a faster local build without search. The dev server answers `/api/search` from the files on disk instead.
 
 Reading plans and audio are archived under `archive/`.
 

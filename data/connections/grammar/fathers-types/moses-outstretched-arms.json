@@ -1,0 +1,25 @@
+{
+  "src": "04:moses-outstretched-arms",
+  "tradition": "fathers",
+  "work": "Church Fathers in the Patrista corpus (ANF/NPNF translations)",
+  "label": "Moses' arms stretched out",
+  "kind": "object",
+  "def": "While Joshua fights Amalek, Moses holds his hands out on the hilltop; Israel wins while they stay up and loses when they drop, so Aaron and Hur hold them up until sunset.",
+  "texts": "Exod 17:8-16; Isa 65:2; Rom 10:21; Col 2:14-15.",
+  "christ": "The outstretched arms make the shape of the cross, and the battle is won by the one named Jesus (Joshua): \"he who prevailed prevailed by the cross\" (Justin, *Dial.* 90). Cyprian reads Amalek as the devil, overcome by Christ.",
+  "where": [
+    "Justin, *Dial.* 90 — “For if he gave up any part of this sign, which was an imitation of the cross, the people were beaten”",
+    "Justin, *Dial.* 111 — “stretching out his hands, remained till evening on the hill, his hands being supported; and this reveals a type of no other thing than of the cross”",
+    "Barnabas, *Ep.* 12 — “the Spirit speaks to the heart of Moses, that he should make a figure of the cross, and of Him about to suffer thereon”",
+    "Tertullian, *Adv. Jud.* 10 — “the figure of the cross was also necessary, (that figure) through which Jesus was to win the victory?”",
+    "Cyprian, *Test.* 2.21 — “By this sign of the cross also Amalek was conquered by Jesus through Moses.”"
+  ],
+  "links": [
+    { "label": "Justin, Dialogue with Trypho 90", "href": "/fathers/justin/dialogue-with-trypho/chapter-90/" },
+    { "label": "Justin, Dialogue with Trypho 111", "href": "/fathers/justin/dialogue-with-trypho/chapter-111/" },
+    { "label": "Barnabas, Epistle 12", "href": "/fathers/barnabas/epistle-of-barnabas/chapter-12/" },
+    { "label": "Tertullian, An Answer to the Jews 10", "href": "/fathers/tertullian/answer-to-the-jews/chapter-10/" },
+    { "label": "Cyprian, Testimonies 2.21", "href": "/fathers/cyprian/three-books-of-testimonies-against-the-jews/chapter-4/" }
+  ],
+  "confidence": ""
+}

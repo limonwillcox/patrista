@@ -205,7 +205,7 @@ export const ERAS: HistoryEra[] = [
     title: "The Decian Persecution",
     period: "pre-nicene",
     scene: "persecution",
-    works: ["treatises-of-cyprian", "epistles-of-cyprian"],
+    works: ["on-the-lapsed", "epistles-of-cyprian"],
     body:
       "Decius required every citizen to sacrifice and produce a certificate proving it. This was the first empire-wide, systematic persecution, and it broke a great many. What to do with the lapsed occupied Cyprian of Carthage for the rest of his life; he was beheaded in 258."
   },
@@ -262,7 +262,7 @@ export const ERAS: HistoryEra[] = [
     datetime: "0381",
     title: "The First Council of Constantinople",
     period: "post-nicene",
-    works: ["seven-ecumenical-councils", "select-orations", "dogmatic-treatises-select-writings-and-letters"],
+    works: ["seven-ecumenical-councils", "select-orations", "last-farewell-in-the-presence-of-the-one-hundred-and-fifty-bishops-oration-xlii"],
     body:
       "A second council confirmed Nicaea and completed the creed, adding the articles on the Holy Spirit. The Nicene Creed as it is actually recited is the creed of 381, shaped by the Cappadocians — the two Gregorys, who were there, and Basil, whose work on the Spirit had prepared the ground before his death two years earlier."
   },

@@ -1,0 +1,213 @@
+/* /print: a settings panel beside a paper preview on screen; a book-set PDF on paper.
+   The sheet keeps paper colours in both themes, because it previews paper. */
+
+.pv {
+  --pv-ink: #1f1f1f;
+  --pv-soft: #6b645a;
+  --pv-faint: #8a8174;
+  --pv-rule: #e2dacb;
+  --pv-red: #952004;
+  --pv-paper: #fffdf8;
+  display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 40px; width: 100%;
+  max-width: 1180px; margin: 0 auto; padding: 28px 24px 80px; align-items: start;
+}
+/* Wider than the site's usual 860px column: the panel and the sheet sit side by side. */
+.page > .pv { max-width: 1180px; }
+.pv-state { max-width: 640px; margin: 60px auto; padding: 0 24px; color: var(--muted); font-family: var(--sans); }
+
+/* ----- Settings panel ----- */
+.pv-panel {
+  position: sticky; top: calc(var(--header, 70px) + 16px);
+  max-height: calc(100vh - var(--header, 70px) - 32px); overflow: auto;
+  font-family: var(--sans); font-size: 14px; color: var(--text);
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 18px 18px 16px;
+}
+.pv-back { display: inline-block; color: var(--muted); font-size: 13px; text-decoration: none; margin-bottom: 14px; }
+.pv-back:hover { color: var(--accent); }
+.pv-kicker { margin: 0 0 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+.pv-title { margin: 0; font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.25; }
+.pv-author { margin: 4px 0 0; color: var(--muted); }
+
+.pv-group { border-top: 1px solid var(--border); margin-top: 16px; padding-top: 14px; }
+.pv-group-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.pv-group-head h2 { margin: 0; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.pv-count { font-size: 12px; color: var(--muted); }
+
+.pv-quick { display: flex; gap: 6px; margin-bottom: 8px; }
+.pv-quick button {
+  font: inherit; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: var(--radius-pill);
+  border: 1px solid var(--border); background: none; color: var(--text); cursor: pointer;
+}
+.pv-quick button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.pv-quick button:disabled { opacity: 0.45; cursor: default; }
+
+.pv-chapters {
+  list-style: none; margin: 0; padding: 4px; max-height: 280px; overflow: auto;
+  border: 1px solid var(--border); border-radius: var(--radius); background: var(--panel);
+}
+.pv-subs { list-style: none; margin: 0 0 4px; padding-left: 22px; }
+.pv-check {
+  display: flex; gap: 9px; align-items: flex-start; padding: 5px 6px; border-radius: var(--radius-sm);
+  cursor: pointer; line-height: 1.35;
+}
+.pv-chapters .pv-check:hover { background: var(--bg); }
+.pv-check input { flex: none; width: 15px; height: 15px; margin: 1px 0 0; accent-color: var(--burgundy); cursor: pointer; }
+.pv-check input:disabled, .pv-check input:disabled + span { opacity: 0.5; cursor: default; }
+.pv-dim { color: var(--muted); }
+
+.pv-seg { display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius-pill); overflow: hidden; }
+.pv-seg button {
+  border: 0; background: none; padding: 6px 16px; cursor: pointer;
+  font: inherit; font-size: 13px; font-weight: 700; color: var(--muted);
+}
+.pv-seg button[aria-pressed="true"] { background: var(--nav); color: #fff; }
+html[data-theme="night"] .pv-seg button[aria-pressed="true"] { background: #e8e4dc; color: #1b1b1b; }
+
+.pv-go { width: 100%; margin-top: 18px; border-radius: var(--radius); font-family: var(--sans); font-size: 15px; }
+.pv-go:disabled { opacity: 0.55; cursor: default; }
+.pv-hint { margin: 8px 0 0; font-size: 12px; line-height: 1.45; color: var(--muted); }
+
+/* ----- Paper preview ----- */
+.pv-preview { min-width: 0; }
+.pv-doc { display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.pv-sheet {
+  box-sizing: border-box; width: 100%; max-width: 680px; background: var(--pv-paper); color: var(--pv-ink);
+  border-radius: 3px; box-shadow: 0 1px 2px rgba(40, 30, 20, 0.08), 0 8px 28px rgba(40, 30, 20, 0.12);
+  padding: 64px 68px 72px 76px;
+}
+html[data-theme="night"] .pv-sheet { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+
+/* Title page */
+.pv-cover {
+  aspect-ratio: 8.5 / 11; display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 56px 56px 44px;
+}
+.pv--a4 .pv-cover { aspect-ratio: 210 / 297; }
+.pv-cover-logo { width: 44px; height: 44px; border-radius: 8px; }
+.pv-cover-main { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; }
+.pv-cover-author {
+  margin: 0; font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--pv-red);
+}
+.pv-cover-dates { margin: 6px 0 0; font-family: var(--sans); font-size: 12px; color: var(--pv-faint); letter-spacing: 0.06em; }
+.pv-cover-title {
+  margin: 26px 0 22px; font-family: var(--serif); font-size: 40px; font-weight: 600; line-height: 1.15;
+  max-width: 14em; text-wrap: balance;
+}
+.pv-ornament { width: 120px; height: 12px; fill: var(--pv-red); stroke: var(--pv-red); stroke-width: 0.8; }
+.pv-ornament path:first-child { fill: none; }
+.pv-cover-tr { margin: 24px 0 0; font-family: "Junicode", var(--serif); font-style: italic; font-size: 17px; color: var(--pv-soft); }
+.pv-cover-series { margin: 6px 0 0; font-family: "Junicode", var(--serif); font-size: 14px; color: var(--pv-soft); }
+.pv-cover-part {
+  margin: 22px 0 0; padding: 4px 12px; border: 1px solid var(--pv-rule); border-radius: 999px;
+  font-family: var(--sans); font-size: 12px; font-weight: 600; color: var(--pv-soft);
+}
+.pv-cover-foot { font-family: var(--sans); font-size: 11px; line-height: 1.5; color: var(--pv-faint); }
+.pv-cover-foot p { margin: 0; }
+.pv-cover-foot strong { color: var(--pv-ink); letter-spacing: 0.04em; }
+
+/* Text pages */
+.pv-chapter + .pv-chapter { margin-top: 56px; }
+.pv-chapter-head {
+  display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 8px 0 30px; text-align: center;
+  font-family: var(--serif); font-size: 24px; font-weight: 600; line-height: 1.25; color: var(--pv-ink);
+  text-wrap: balance; break-after: avoid; page-break-after: avoid;
+}
+.pv-chapter-rule { display: block; width: 32px; height: 2px; background: var(--pv-red); }
+.pv-sub {
+  margin: 26px 0 10px; font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--pv-red); break-after: avoid; page-break-after: avoid;
+}
+.pv-para {
+  position: relative; margin: 0; font-family: "Junicode", var(--serif); font-size: 17px; line-height: 1.6;
+  text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3;
+}
+.pv-para + .pv-para { text-indent: 1.5em; }
+.pv-num {
+  position: absolute; left: -40px; top: 0.3em; width: 28px; text-align: right; text-indent: 0;
+  font-family: var(--sans); font-size: 10px; font-weight: 700; line-height: 1.6; color: var(--pv-faint);
+}
+.pv-drop::first-letter {
+  float: left; font-size: 3.4em; line-height: 0.82; margin: 0.08em 0.08em 0 0; color: var(--pv-red);
+}
+@supports (initial-letter: 2) {
+  .pv-drop::first-letter { float: none; font-size: inherit; line-height: inherit; margin: 0 0.1em 0 0; initial-letter: 2; }
+}
+.pv-loading { color: var(--pv-faint); font-family: var(--sans); font-size: 13px; }
+
+.pv-notes { margin: 28px 0 0; padding-top: 12px; border-top: 1px solid var(--pv-rule); }
+.pv-notes h4 {
+  margin: 0 0 8px; font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--pv-faint);
+}
+.pv-notes ol { list-style: none; margin: 0; padding: 0; }
+.pv-notes li {
+  display: grid; grid-template-columns: 34px 1fr; gap: 4px; margin: 0 0 5px;
+  font-family: "Junicode", var(--serif); font-size: 13px; line-height: 1.45; color: var(--pv-soft); break-inside: avoid;
+}
+.pv-note-sep { color: var(--pv-red); }
+.pv-note-at { font-family: var(--sans); font-size: 10px; font-weight: 700; color: var(--pv-faint); padding-top: 2px; }
+
+.pv-colophon { margin-top: 64px; text-align: center; font-family: var(--sans); font-size: 11px; line-height: 1.6; color: var(--pv-faint); break-inside: avoid; }
+.pv-colophon p { margin: 0; }
+.pv-colophon .pv-ornament { margin-bottom: 12px; }
+
+@media (max-width: 900px) {
+  .pv { grid-template-columns: 1fr; gap: 24px; padding: 16px 16px 60px; }
+  .pv-panel { position: static; max-height: none; }
+  .pv-sheet { padding: 36px 26px 44px 40px; }
+  .pv-cover { padding: 36px 24px 28px; }
+  .pv-cover-title { font-size: 30px; }
+  .pv-num { left: -32px; width: 24px; }
+  .pv-para { font-size: 16px; }
+}
+
+/* ----- On paper ----- */
+@media print {
+  body.print-route .tabbar,
+  body.print-route .site-header,
+  body.print-route .promo-bar,
+  body.print-route .read-docks,
+  body.print-route .read-hardcover-dock,
+  body.print-route .toast,
+  body.print-route .pv-panel { display: none !important; }
+  body.print-route, body.print-route #root, body.print-route #root > div { background: #fff !important; }
+  body.print-route main, body.print-route #page { margin: 0 !important; padding: 0 !important; max-width: none !important; }
+
+  .pv { display: block; max-width: none; margin: 0; padding: 0; }
+  .pv-doc { display: block; }
+  .pv-sheet { max-width: none; box-shadow: none; border-radius: 0; padding: 0; background: #fff; }
+  .pv-cover {
+    /* The page height less the @page margins (20mm top and bottom), so the cover fills one page exactly. */
+    aspect-ratio: auto; height: calc(11in - 40mm - 2px); padding: 6mm 0 0;
+    break-after: page; page-break-after: always;
+  }
+  .pv--a4 .pv-cover { height: calc(297mm - 40mm - 2px); }
+  .pv-cover-logo { width: 12mm; height: 12mm; border-radius: 2mm; }
+  .pv-cover-author { font-size: 10pt; }
+  .pv-cover-dates { font-size: 9pt; }
+  .pv-cover-title { font-size: 32pt; }
+  .pv-cover-tr { font-size: 13pt; }
+  .pv-cover-series { font-size: 10.5pt; }
+  .pv-cover-part { font-size: 9pt; }
+  .pv-cover-foot { font-size: 8pt; }
+
+  .pv-chapter + .pv-chapter { margin-top: 18mm; }
+  .pv-chapter--page { break-before: page; page-break-before: always; }
+  .pv-chapter + .pv-chapter--page { margin-top: 0; }
+  .pv-chapter-head { font-size: 18pt; margin: 14mm 0 9mm; gap: 4mm; }
+  .pv-chapter-rule { width: 10mm; height: 0.6mm; }
+  .pv-sub { font-size: 9.5pt; margin: 7mm 0 2.5mm; }
+  .pv-para { font-size: 11pt; line-height: 1.5; color: #000; }
+  /* Chrome clips whatever falls in the page margin, so the numbers get a gutter inside the text area. */
+  .pv-body.has-nums { padding-left: 8mm; }
+  .pv-body.has-nums .pv-chapter-head, .pv-body.has-nums .pv-colophon { margin-left: -8mm; }
+  .pv-num { left: -8mm; width: 5.5mm; font-size: 6.5pt; top: 0.35em; }
+  .pv-body.has-nums .pv-notes { margin-left: -8mm; }
+  .pv-notes { margin-top: 8mm; padding-top: 3mm; }
+  .pv-notes h4 { font-size: 7pt; }
+  .pv-notes li { font-size: 8.5pt; grid-template-columns: 9mm 1fr; }
+  .pv-note-at { font-size: 7pt; }
+  .pv-colophon { margin-top: 18mm; font-size: 8pt; }
+}

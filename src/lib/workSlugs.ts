@@ -1,7 +1,20 @@
 /** Old work ids kept working after a rename. */
 export const WORK_ID_ALIASES: Record<string, string> = {
-  "teaching-of-the-twelve-apostles": "didache"
+  "teaching-of-the-twelve-apostles": "didache",
+  "apology-in-defence-of-himself": "rufinus-apology-in-defence-of-himself"
 };
+
+/**
+ * Works removed because they were filed under the wrong Father. The build sends each old URL to the
+ * same chapter of the copy that stays. Rufinus wrote the Apology against Jerome; an import also put
+ * it in Jerome's folder. Jerome's reply is his own work, "apology-against-rufinus".
+ */
+export const MOVED_WORKS: { from: { author: string; work: string }; to: { author: string; work: string } }[] = [
+  {
+    from: { author: "jerome", work: "apology-in-defence-of-himself" },
+    to: { author: "rufinus", work: "rufinus-apology-in-defence-of-himself" }
+  }
+];
 
 /** Works with their own reader path instead of /read?work=<id>. */
 export const WORK_READ_PATHS: Record<string, string> = {

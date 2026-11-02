@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useApp } from "../context/AppContext";
 import { loadLastRead, readTabHref } from "./lastRead";
 
-/** Read tab target, recomputed on every navigation so it follows the reader. */
+/** Study tab target: the Father's work last open, at its chapter. Recomputed on every navigation. */
 export function useReadTabHref(): string {
   const { catalog } = useApp();
   const location = useLocation();

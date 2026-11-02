@@ -12,6 +12,8 @@ export type BibleBook = {
   id: string;
   name: string;
   chapters: string[][];
+  /** The translators' margin notes, "chapter:verse" -> note, kept apart from the text (scripts/kjv-split-notes.py). */
+  notes?: Record<string, string>;
 };
 
 function rootBible(root: string): string {
@@ -55,6 +57,8 @@ export type BibleChapterPayload = {
   book: BibleManifestBook;
   chapter: number;
   verses: string[];
+  /** The translators' margin notes on this chapter, by verse: "he goats: Heb. great he goats". */
+  notes?: Record<number, string>;
   /** Section index for this chapter when we have one (John first). Block ids stay server-side. */
   sections?: { id: string; label: string; verses: { start: number; end: number } }[];
   comments: BibleCommentWire[];
@@ -72,6 +76,11 @@ export function getBibleChapterPayload(
   if (!bookMeta || !book) return null;
   if (chapter < 1 || chapter > book.chapters.length) return null;
   const verses = book.chapters[chapter - 1] || [];
+  const notes: Record<number, string> = {};
+  for (const [key, note] of Object.entries(book.notes ?? {})) {
+    const [c, v] = key.split(":").map(Number);
+    if (c === chapter) notes[v] = note;
+  }
   const from = opts?.from ?? 1;
   const to = opts?.to ?? verses.length;
 
@@ -106,6 +115,7 @@ export function getBibleChapterPayload(
     book: bookMeta,
     chapter,
     verses,
+    ...(Object.keys(notes).length ? { notes } : {}),
     sections: sections?.map((s) => ({
       id: s.id,
       label: s.label,

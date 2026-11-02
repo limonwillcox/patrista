@@ -1,0 +1,40 @@
+{
+  "src": "04:closed-gate",
+  "tradition": "fathers",
+  "work": "Church Fathers in the Patrista corpus (ANF/NPNF translations)",
+  "label": "The shut east gate",
+  "kind": "object",
+  "def": "The outer east gate of the sanctuary in Ezekiel's vision, kept shut for ever because the Lord God of Israel has entered by it, and opened to no one else.",
+  "texts": "Ezek 44:1-3; Isa 7:14; Matt 1:23; Luke 1:34-35; John 20:19-26.",
+  "christ": "The gate is the Virgin Mary: the Lord came into the world through her and left her a virgin still, as He later came in to the apostles through shut doors. She is \"the east gate, spoken of by the prophet Ezekiel, always shut and always shining\" (Jerome, *Ep.* 48.21).",
+  "where": [
+    "Jerome, *Ep.* 48.21 — “She is the east gate, spoken of by the prophet Ezekiel, always shut and always shining, and either concealing or revealing the Holy of Holies”",
+    "Rufinus, *Symb.* 9 — “That Gate of Virginity was closed; through it the Lord God of Israel entered; through it He came forth from the Virgin's womb into this world”",
+    "Cassian, *Incarn.* 7.25 (quoting Ambrose) — “As is said in Ezekiel: \"And the gate was shut and not opened, because the Lord passed through it.\" A splendid Virginity, and wondrous fruitfulness!”",
+    "Methodius, *Simeon and Anna* 10 — “the gate through which God appears in the flesh”",
+    "John of Damascus, *De Fide* 4.14 — “He who was born preserved her virginity intact, only passing through her and keeping her closed”"
+  ],
+  "links": [
+    {
+      "label": "Jerome, Letter 48.21",
+      "href": "/fathers/jerome/jerome-letters/chapter-48/"
+    },
+    {
+      "label": "Rufinus, Commentary on the Apostles' Creed 9",
+      "href": "/fathers/rufinus/commentary-on-the-apostles-creed/chapter-2/"
+    },
+    {
+      "label": "Cassian, On the Incarnation 7.25",
+      "href": "/fathers/cassian/on-the-incarnation-of-the-lord-against-nestorius/chapter-7/"
+    },
+    {
+      "label": "Methodius, Oration Concerning Simeon and Anna 10",
+      "href": "/fathers/methodius/oration-concerning-simeon-and-anna/chapter-1/"
+    },
+    {
+      "label": "John of Damascus, Exposition of the Orthodox Faith 4.14",
+      "href": "/fathers/john_damascus/exposition-of-the-orthodox-faith/chapter-4/"
+    }
+  ],
+  "confidence": ""
+}

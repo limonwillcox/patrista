@@ -1,0 +1,40 @@
+{
+  "src": "04:ark-of-the-covenant",
+  "tradition": "fathers",
+  "work": "Church Fathers in the Patrista corpus (ANF/NPNF translations)",
+  "label": "Ark of the covenant",
+  "kind": "object",
+  "def": "The chest of incorruptible wood overlaid with gold within and without, holding the tablets of the Law, the jar of manna and Aaron's rod, beneath the cherubim of the mercy seat.",
+  "texts": "Exod 25:10-22; Heb 9:4-5; Luke 1:35; Ps 132:8.",
+  "christ": "Christ's sinless flesh, made of incorruptible wood and clothed in the gold of His Godhead: His body is \"adorned within by the Word, and shielded on the outside by the Spirit\" (Irenaeus, *Fragments* 48). Some read it also of the Virgin who bore Him (Hippolytus; Gregory Thaumaturgus).",
+  "where": [
+    "Irenaeus, *Fragments* 48 — “so is that ark declared a type of the body of Christ, which is both pure and immaculate”",
+    "Hippolytus, *On Daniel* II.6 — “(born) of the Virgin, who was the \"ark overlaid with pure gold,\" with the Word within and the Holy Spirit without”",
+    "Hippolytus, *On Ps. 23* (in Theodoret, *Eranistes* I) — “And an ark of incorruptible wood was the Saviour Himself”",
+    "Gregory Thaumaturgus, *Hom. 1 on the Annunciation* — “For the holy Virgin is in truth an ark, wrought with gold both within and without, that has received the whole treasury of the sanctuary.”",
+    "Augustine, *Enarr. Ps.* 132.8 — “The Body of Christ, that was born of Mary, hath been understood by some to be the ark of sanctification”"
+  ],
+  "links": [
+    {
+      "label": "Irenaeus, Fragments 48",
+      "href": "/fathers/irenaeus/against-heresies/chapter-168/"
+    },
+    {
+      "label": "Hippolytus, On Daniel II.6",
+      "href": "/fathers/hippolytus/commentary-on-daniel/chapter-1/"
+    },
+    {
+      "label": "Theodoret, Eranistes I (Hippolytus)",
+      "href": "/fathers/theodoret/dialogues-eranistes/chapter-8/"
+    },
+    {
+      "label": "Gregory Thaumaturgus, Hom. 1 on the Annunciation",
+      "href": "/fathers/gregory_thaumaturgus/four-homilies/chapter-1/"
+    },
+    {
+      "label": "Augustine, Enarr. Ps. 132.8",
+      "href": "/fathers/augustine/expositions-on-the-psalms/chapter-67/"
+    }
+  ],
+  "confidence": ""
+}

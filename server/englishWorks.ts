@@ -57,6 +57,16 @@ const ROMAN_PARA_RE = /^ {3,4}([IVXL]+)\.\s{1,3}(?=\S)/m;
 
 /** Hand overrides for works that need a fixed chunk mode / unit count. */
 const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
+  // The file holds all of NPNF1 VII: the 124 Tractates on John, then the Homilies on 1 John and the Soliloquies
+  // (each also has its own file). Without this the split found only the Soliloquies' "Book I/II".
+  "homilies-on-the-gospel-of-john": {
+    chunk: "chapter",
+    unitRe: /^\s*(Tractate\s+[IVXLC]+)\.\s*$/m,
+    keepUnitLabel: true,
+    endAt: /^\s*St\. AUGUSTIN:\s*\n\s*ten homilies\s*$/im
+  },
+  // The file holds all of Sulpicius (NPNF2 XI): the Life, then his Letters, Dialogues and Sacred History (EXTRA_SPECS).
+  "on-the-life-of-st-martin": { chunk: "chapter", endAt: /^The Letters of Sulpitius Severus\.\s*$/m },
   "city-of-god": { chunk: "book", expectUnits: 22 },
   "concerning-virgins": { chunk: "chapter" },
   didache: {
@@ -101,6 +111,121 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
   },
   // Column-0 "Appendix I." only — indented "See / Appendix I." mid-notes must not cut early.
   commonitory: { chunk: "chapter", endAt: /^Appendix I\.\s*$/m },
+  // Three Parts, each a preface and its Conferences. The automatic split caught "Book VI. c. xxxvii." in the
+  // footnotes and made three chunks starting mid-note; here each Part's preface and each Conference is a unit
+  // (Conference headings sit at a two-space indent), with the Conference's own chapters inside it.
+  // No chapter headings, so it had been cut into four 40-paragraph "Parts", the first a table of contents
+  // (the 3D book opened on it). Its own contents group the 94 numbered sections under titles: each group is a
+  // chapter, after the Prologue. One footnote line in the Prologue also starts "63. ", so it is skipped.
+  "life-of-antony": {
+    chunk: "chapter",
+    startAt: /^\s*The life and conversation of our holy Father, Antony/m,
+    unitRe: /^(\s*The life and conversation of our holy Father, Antony[\s\S]*?Athanasius, Bishop of Alexandria\.| {3}(?!63\. The preface)(?:1|3|5|7|8|11|12|14|16|44|45|46|47|48|49|51|54|55|57|58|59|60|61|63|65|66|67|68|69|70|72|80|81|82|83|85|86|87|88|89|91|92|93|94)\. (?=\S))/m,
+    unitTitles: [
+      "Prologue",
+      "§§1–2 — Birth and beginnings of Antony",
+      "§§3–4 — His early ascetic life",
+      "§§5–6 — Early conflicts with the devil",
+      "§7 — Details of his life at this time (271–285?)",
+      "§§8–10 — His life in the tombs, and combats with demons there",
+      "§11 — He goes to the desert and overcomes temptations on the way",
+      "§§12–13 — How Antony took up his abode in a ruined fort across the Nile, and how he defeated the demons",
+      "§§14–15 — How he left the fort, and how monasticism began to flourish in Egypt",
+      "§§16–43 — His address to monks, exhorting them to perseverance against the wiles of Satan",
+      "§44 — The growth of the monastic life at this time (about A.D. 305)",
+      "§45 — How Antony renewed his ascetic endeavours at this time",
+      "§46 — How he sought martyrdom at Alexandria during the Persecution (311)",
+      "§47 — How he lived at this time",
+      "§48 — How he delivered a woman from an evil spirit",
+      "§§49–50 — How at this time he betook himself to his inner mountain",
+      "§§51–53 — How he there combated the demons",
+      "§54 — Of the miraculous spring, and of Antony's sister",
+      "§§55–56 — How humanely he counselled those who resorted to him",
+      "§57 — Of the case of Fronto, healed by faith and prayer",
+      "§58 — Of a certain virgin, and of Paphnutius the confessor",
+      "§59 — Of the two brethren, and how one perished of thirst",
+      "§60 — Of the death of Amun, and Antony's vision thereof",
+      "§§61–62 — Of Count Archelaus and the virgin Polycration",
+      "§§63–64 — Strange tales of the casting out of demons",
+      "§65 — Of Antony's vision concerning the forgiveness of his sins",
+      "§66 — Of the passage of souls, and how some were hindered of Satan",
+      "§67 — How Antony reverenced all ordained persons",
+      "§68 — How he rejected the schism of Meletius and the heresies of Manes and Arius",
+      "§69 — How he confuted the Arians",
+      "§§70–71 — How he visited Alexandria, and how Athanasius escorted him from the city",
+      "§§72–79 — How he reasoned with divers Greeks and philosophers",
+      "§80 — How he confuted the philosophers by healing certain vexed with demons",
+      "§81 — How the Emperors wrote to Antony, and of his answer",
+      "§82 — How he saw in a vision the present doings of the Arians",
+      "§§83–84 — That his healings were done by Christ alone, through prayer",
+      "§85 — How wisely he answered a certain duke",
+      "§86 — Of the Duke Balacius, and how, warned by Antony, he met with a miserable end",
+      "§87 — How he bore the infirmities of the weak, and of his great benefits to all Egypt",
+      "§88 — Of his discernment, and how he was a counsellor to all",
+      "§§89–90 — How, when now 105 years old, he counselled the monks, and gave advice concerning burial",
+      "§91 — Of his sickness and his last will",
+      "§92 — Of Antony's death",
+      "§93 — How Antony remained hale until his death, and how his fame filled all the world",
+      "§94 — The end"
+    ]
+  },
+  // The Preface, then Books I–XII. Only a "Book N." alone on its line is a book: footnotes such as
+  // "Book IV. c. xxi.)" had been read as two extra books, and the Preface was dropped.
+  "institutes-of-the-coenobia": {
+    chunk: "chapter",
+    unitRe: /^(Preface\.|\s{1,4}Book [IVXL]+\.)\s*$/m,
+    unitTitles: [
+      "Preface",
+      "Book I — Of the Dress of the Monks",
+      "Book II — Of the Canonical System of the Nocturnal Prayers and Psalms",
+      "Book III — Of the Canonical System of the Daily Prayers and Psalms",
+      "Book IV — Of the Institutes of the Renunciants",
+      "Book V — Of the Spirit of Gluttony",
+      "Book VI — On the Spirit of Fornication",
+      "Book VII — Of the Spirit of Covetousness",
+      "Book VIII — Of the Spirit of Anger",
+      "Book IX — Of the Spirit of Dejection",
+      "Book X — Of the Spirit of Accidie",
+      "Book XI — Of the Spirit of Vainglory",
+      "Book XII — Of the Spirit of Pride"
+    ],
+    subChapters: true
+  },
+  conferences: {
+    chunk: "chapter",
+    // One capture group: the splitter drops a unit whose label repeats the next one's, so each needs its own.
+    unitRe: /^(Part [IVX]+\.|  [IVXL]+\. (?:The )?(?:First |Second |Third )?Conference of Abbot [^\n]*)\s*$/m,
+    unitTitles: [
+      "Preface to Part I (Conferences I–X)",
+      "Conference I — Abbot Moses (1)",
+      "Conference II — Abbot Moses (2)",
+      "Conference III — Abbot Paphnutius",
+      "Conference IV — Abbot Daniel",
+      "Conference V — Abbot Serapion",
+      "Conference VI — Abbot Theodore",
+      "Conference VII — Abbot Serenus (1)",
+      "Conference VIII — Abbot Serenus (2)",
+      "Conference IX — Abbot Isaac (1)",
+      "Conference X — Abbot Isaac (2)",
+      "Preface to Part II (Conferences XI–XVII)",
+      "Conference XI — Abbot Chaeremon (1)",
+      "Conference XII — Abbot Chaeremon (2)",
+      "Conference XIII — Abbot Chaeremon (3)",
+      "Conference XIV — Abbot Nesteros (1)",
+      "Conference XV — Abbot Nesteros (2)",
+      "Conference XVI — Abbot Joseph (1)",
+      "Conference XVII — Abbot Joseph (2)",
+      "Preface to Part III (Conferences XVIII–XXIV)",
+      "Conference XVIII — Abbot Piamun",
+      "Conference XIX — Abbot John",
+      "Conference XX — Abbot Pinufius",
+      "Conference XXI — Abbot Theonas (1)",
+      "Conference XXII — Abbot Theonas (2)",
+      "Conference XXIII — Abbot Theonas (3)",
+      "Conference XXIV — Abbot Abraham"
+    ],
+    subChapters: true
+  },
   "institutes-and-conferences": { endAt: /^\s*THE SEVEN BOOKS OF JOHN CASSIAN\s*$/im },
   "book-of-pastoral-rule": {
     unitRe: /^\s*(?:Chapter\s+([IVXL]+)\.|(Introduction)\.)\s*$/m,
@@ -266,6 +391,16 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
     endAt: /^\s*Introductory Essay\.\s*$/m,
     expectUnits: 48
   }
+};
+
+/**
+ * Work ids that must not change when another Father's file with the same title is added or removed.
+ * Without this, ids depend on folder order: the first file with a title gets the plain slug.
+ * Key: "<Folder>_English/<file>.txt".
+ */
+const PINNED_IDS: Record<string, string> = {
+  // Jerome's misfiled copy of this Apology was removed in Oct 2026. Rufinus keeps the id his URLs use.
+  "Rufinus_English/Apology in Defence of Himself.txt": "rufinus-apology-in-defence-of-himself"
 };
 
 /** Skip these under *_English (already shipped elsewhere, or non-Schaff). */
@@ -580,7 +715,7 @@ export function discoverEnglishWorkSpecs(root: string): EnglishWorkSpec[] {
     return empty;
   }
   const specs: EnglishWorkSpec[] = [];
-  const usedIds = new Set<string>();
+  const usedIds = new Set<string>(Object.values(PINNED_IDS));
 
   for (const folder of readdirSync(englishRoot).sort()) {
     if (!folder.endsWith("_English")) continue;
@@ -593,11 +728,12 @@ export function discoverEnglishWorkSpecs(root: string): EnglishWorkSpec[] {
       const raw = readFileSync(abs, "utf8");
       const meta = parseMetaHeaders(raw);
       const title = (meta.work || file.replace(/\.txt$/i, "")).trim();
-      let id = slugify(title);
+      const pinned = PINNED_IDS[folder + "/" + file];
+      let id = pinned || slugify(title);
       if (!id) id = slugify(file.replace(/\.txt$/i, "")) || "work";
       // Disambiguate collisions (e.g. Letters.txt under multiple fathers)
-      if (usedIds.has(id)) id = slugify(author + "-" + title) || id + "-" + author;
-      if (usedIds.has(id)) id = id + "-" + usedIds.size;
+      if (!pinned && usedIds.has(id)) id = slugify(author + "-" + title) || id + "-" + author;
+      if (!pinned && usedIds.has(id)) id = id + "-" + usedIds.size;
       usedIds.add(id);
 
       const series = meta.series || "Schaff";
@@ -615,9 +751,51 @@ export function discoverEnglishWorkSpecs(root: string): EnglishWorkSpec[] {
       specs.push(over ? { ...base, ...over, id, path, author, title: over.title || title } : base);
     }
   }
+  for (const extra of EXTRA_SPECS) if (specs.some((x) => x.path === extra.path)) specs.push(extra);
   specsByRoot.set(root, specs);
   return specs;
 }
+
+/** Further works that share a source file with another: the same path, cut at their own headings. */
+const SULPICIUS = "Fathers/English/Sulpicius_Severus_English/On the Life of St. Martin.txt";
+const EXTRA_SPECS: EnglishWorkSpec[] = [
+  {
+    id: "letters-of-sulpicius-severus",
+    author: "sulpicius_severus",
+    title: "Letters",
+    short: "Letters",
+    series: "NPNF2",
+    path: SULPICIUS,
+    chunk: "letter",
+    startAt: /^The Letters of Sulpitius Severus\.\s*$/m,
+    endAt: /^Dialogues of Sulpitius Severus\.\s*$/m
+  },
+  {
+    id: "dialogues-of-sulpicius-severus",
+    author: "sulpicius_severus",
+    title: "Dialogues",
+    short: "Dialogues",
+    series: "NPNF2",
+    path: SULPICIUS,
+    // Three dialogues, each with its own Chapter I, II…: Dialogue > Chapter, like a book of chapters.
+    chunk: "book",
+    unitRe: /^\s*(Dialogue\s+[IVX]+)\.\s*$/m,
+    keepUnitLabel: true,
+    subChapters: true,
+    startAt: /^Dialogues of Sulpitius Severus\.\s*$/m,
+    endAt: /^The Sacred History Of Sulpitius Severus\.\s*$/m
+  },
+  {
+    id: "sacred-history",
+    author: "sulpicius_severus",
+    title: "Sacred History",
+    short: "Sacred History",
+    series: "NPNF2",
+    path: SULPICIUS,
+    chunk: "book",
+    startAt: /^The Sacred History Of Sulpitius Severus\.\s*$/m
+  }
+];
 
 /** @deprecated Prefer discoverEnglishWorkSpecs — kept for tests / explicit pin of Virgins + City. */
 export const ENGLISH_APP_WORKS: EnglishWorkSpec[] = [

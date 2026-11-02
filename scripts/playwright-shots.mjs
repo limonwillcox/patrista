@@ -14,10 +14,10 @@ page.on("console", (msg) => {
 });
 
 await page.goto(base + "/", { waitUntil: "networkidle" });
-if (!(await page.locator(".landing-hero").count())) errors.push("Home missing landing hero");
-if (!(await page.locator('a[href="/church-history/timeline#nativity"]').count())) errors.push("Missing Church History button");
-if (!(await page.locator('a[href="/church-fathers"]').count())) errors.push("Missing Church Writings button");
-if (!(await page.locator("#great-places").count())) errors.push("Missing Great places to start section");
+if (!(await page.locator(".fathers-index .fx-verse").count())) errors.push("Front page missing the Fathers library and its verse");
+if (!(await page.locator(".site-tab", { hasText: "Bible" }).count())) errors.push("Missing Bible tab");
+if (!(await page.locator(".fx-events").count())) errors.push("Fathers page missing the century events");
+if (!(await page.locator("a[href=\"/fathers/\"]").count())) errors.push("Missing Fathers tab");
 await page.screenshot({ path: out + "/home.png", fullPage: true });
 
 await page.goto(base + "/read?work=confessions&chapter=1", { waitUntil: "networkidle" });

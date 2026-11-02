@@ -1,10 +1,12 @@
 import { getBibleChapterPayload, getBibleManifest } from "./bible";
+import { getBibleTextChapter } from "./bibleText";
 import { getLibrary, repoRoot } from "./corpus";
 import { authorById, parseQuery, searchKeyword, workById } from "./query";
 import type { ApiResult, Passage, WorkOutline, WorkPayload } from "./types";
 import { bibleRef, bookById, loadBooks } from "../src/links/books";
 import { assignChapterSlugs } from "../src/lib/fatherPaths";
 import { loadLinkStore, type LinkStore } from "../src/links/store";
+import { chapterCitations, citationCounts, kjvText, scriptureCitations, type KjvText } from "./scriptureIndex";
 
 export function getCatalog() {
   return getLibrary().catalog;
@@ -53,6 +55,7 @@ export function runSearch(q: string) {
 }
 
 let cachedLinkStore: LinkStore | null = null;
+let cachedKjv: KjvText | null = null;
 
 export function getLinkStore(root = repoRoot()): LinkStore {
   if (!cachedLinkStore) {
@@ -102,6 +105,22 @@ export function handleApiRequest(urlOrPath: string): ApiResult {
     return { status: 200, json: outline };
   }
 
+  // The Scripture-aware search and the Connections tab: chapters citing each verse of a Bible chapter, and the KJV text.
+  const scripture = path.match(/^\/api\/scripture\/(kjv|counts)\.json$/);
+  if (scripture) {
+    if (scripture[1] === "kjv") {
+      cachedKjv ??= kjvText(repoRoot());
+      return { status: 200, json: cachedKjv };
+    }
+    return { status: 200, json: citationCounts(getLibrary().catalog) };
+  }
+  const scriptureChapter = path.match(/^\/api\/scripture\/([a-z0-9]+)\/(\d+)\.json$/);
+  if (scriptureChapter)
+    return {
+      status: 200,
+      json: chapterCitations(scriptureCitations(getLibrary().catalog).get(scriptureChapter[1]), Number(scriptureChapter[2]))
+    };
+
   if (path === "/api/search") {
     const q = url.searchParams.get("q") || "";
     return { status: 200, json: runSearch(q) };
@@ -124,7 +143,46 @@ export function handleApiRequest(urlOrPath: string): ApiResult {
       to: to ? Number(to) : undefined
     });
     if (!payload) return { status: 404, json: { error: "Bible chapter not found" } };
+    // ?translation=bsb: the same chapter with a local translation's verses (the KJV's margin notes dropped).
+    const translation = url.searchParams.get("translation");
+    if (translation && translation !== "kjv") {
+      const text = getBibleTextChapter(repoRoot(), translation, bookId, n);
+      if (!text) return { status: 404, json: { error: "Translation not found" } };
+      return { status: 200, json: { ...payload, notes: undefined, verses: text.verses } };
+    }
     return { status: 200, json: payload };
+  }
+
+  // A local translation's text alone, as the static build writes it: /api/bible/text/<translation>/<book>/<chapter>.
+  const bibleText = path.match(/^\/api\/bible\/text\/([a-z0-9]+)\/([a-z0-9]+)\/(\d+)(?:\.json)?$/);
+  if (bibleText) {
+    const text = getBibleTextChapter(repoRoot(), bibleText[1], bibleText[2], Number(bibleText[3]));
+    if (!text) return { status: 404, json: { error: "Bible chapter not found" } };
+    return { status: 200, json: text };
+  }
+
+  // The per-chapter commentary pack the static build writes, made on request in development.
+  const packMatch = path.match(/^\/api\/links\/chapter\/([a-z0-9]+)\/(\d+)\.json$/);
+  if (packMatch) {
+    const root = repoRoot();
+    const meta = bookById(root, packMatch[1]);
+    const ch = Number(packMatch[2]);
+    if (!meta) return { status: 404, json: { error: "Unknown book" } };
+    const store = getLinkStore(root);
+    const links: Record<string, unknown> = {};
+    const verses: Record<string, string[]> = {};
+    // 176 is the longest chapter in the Bible (Psalm 119).
+    for (let v = 1; v <= 176; v++) {
+      const hits = store.getLinksForVerse(meta.bookId, ch, v);
+      if (!hits.length) continue;
+      verses[String(v)] = hits.map((l) => l.id);
+      for (const l of hits) links[l.id] = l;
+    }
+    if (!Object.keys(verses).length) return { status: 404, json: { error: "No commentary for this chapter" } };
+    return {
+      status: 200,
+      json: { bookId: meta.bookId, bookNum: meta.bookNum, canon: meta.canon, chapter: ch, links, verses }
+    };
   }
 
   if (path === "/api/links/verse") {

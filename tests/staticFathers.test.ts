@@ -1,7 +1,6 @@
 import { matchPath } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import type { Author, Catalog, Passage, Work } from "../server/types";
-import { CHURCH_FATHERS_CANONICAL_PATH, churchFathersJsonLd, renderChurchFathersHtml } from "../server/shelf";
 import {
   applyReadCanonical,
   breadcrumbJsonLd,
@@ -266,7 +265,7 @@ describe("home, read shell, and sitemap", () => {
     expect(html).toContain('rel="canonical" href="https://patrista.com/"');
     expect(html.match(/<h1[\s>]/g)).toHaveLength(1);
     expect(html).toContain("<h1>Patrista</h1>");
-    expect(html).toContain('href="/church-fathers/"');
+    expect(html).toContain('href="/fathers/"');
   });
 
   it("gives the home page one h1 and links to the fathers index", () => {
@@ -274,24 +273,15 @@ describe("home, read shell, and sitemap", () => {
     expect(html.match(/<h1[\s>]/g)).toHaveLength(1);
     expect(html).toContain("<h1>Patrista</h1>");
     expect(html).toContain('href="/fathers/"');
-    expect(html).toContain('href="/church-fathers/"');
-    expect(html).toContain('href="/church-fathers/#author-augustine"');
+    expect(html).toContain('href="/fathers/augustine/"');
+    expect(html).not.toContain("/church-fathers");
     expect(html.indexOf("Augustine of Hippo")).toBeLessThan(html.indexOf("Cyprian"));
   });
 
-  it("points the church fathers canonical at the trailing slash and keeps one h1", () => {
-    const html = renderChurchFathersHtml(catalog);
-    expect(html.match(/<h1[\s>]/g)).toHaveLength(1);
-    expect(html).toContain('id="author-augustine"');
-    const ld = churchFathersJsonLd("https://patrista.com", catalog) as { url: string };
-    expect(ld.url).toBe("https://patrista.com" + CHURCH_FATHERS_CANONICAL_PATH);
-    expect(CHURCH_FATHERS_CANONICAL_PATH).toBe("/church-fathers/");
-  });
-
   it("serves /read as noindex and rewrites the canonical for a work", () => {
-    const shell = renderReadShell(SHELL, { "on-the-lapsed": "https://patrista.com/fathers/cyprian/on-the-lapsed.html" }, "https://patrista.com/church-fathers/");
+    const shell = renderReadShell(SHELL, { "on-the-lapsed": "https://patrista.com/fathers/cyprian/on-the-lapsed.html" }, "https://patrista.com/fathers/");
     expect(shell).toContain('<meta name="robots" content="noindex" />');
-    expect(shell).toContain('href="https://patrista.com/church-fathers/"');
+    expect(shell).toContain('href="https://patrista.com/fathers/"');
     const html = applyReadCanonical(shell, "on-the-lapsed", readCanonMap(shell));
     expect(html).toContain('href="https://patrista.com/fathers/cyprian/on-the-lapsed.html"');
     expect(html).toContain('content="noindex"');

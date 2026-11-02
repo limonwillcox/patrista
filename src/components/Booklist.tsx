@@ -2,6 +2,7 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { previewCatalog, type CatalogPreviewGroup } from "../lib/catalogPreview";
 import { useApp } from "../context/AppContext";
+import { bibleHref } from "../lib/lastRead";
 
 type BooklistProps = {
   query: string;
@@ -55,7 +56,7 @@ export function Booklist({ query, onQueryChange }: BooklistProps) {
 
   function onAuthorClick(id: string) {
     if (clickedId === id) {
-      navigate("/church-fathers?author=" + encodeURIComponent(id));
+      navigate("/fathers/" + encodeURIComponent(id) + "/");
       setBooklistOpen(false);
       return;
     }
@@ -64,9 +65,25 @@ export function Booklist({ query, onQueryChange }: BooklistProps) {
 
   const eraLabel = (id: string) => catalog.eras.find((e) => e.id === id)?.label || id;
 
+  const trimmed = query.trim();
+  // Scripture sits at the top of the list, so the Bible is always one click from search.
+  const showBible = !trimmed || /^(the\s+)?(holy\s+)?(bi|bib|bibl|bible|scr|scripture|gospels?)/i.test(trimmed);
   return (
     <div className="booklist open" id="booklist">
+      {trimmed ? (
+        <Link className="booklist-fulltext" to={"/search?q=" + encodeURIComponent(trimmed)} onClick={onOpenWork}>
+          Search every text for <strong>“{trimmed}”</strong> <span aria-hidden="true">→</span>
+        </Link>
+      ) : null}
       <div className="booklist-eras">
+        {showBible ? (
+          <div>
+            <div className="era-label">Scripture</div>
+            <Link className="booklist-bible" to={bibleHref()} onClick={onOpenWork}>
+              The Bible <span>with the Fathers' commentary</span>
+            </Link>
+          </div>
+        ) : null}
         {groups.map((g, i) => {
           const showEra = i === 0 || groups[i - 1].author.era !== g.author.era;
           return (

@@ -1,28 +1,23 @@
-export const HOME_HREF = "/";
+import { isFathersTabPath } from "./fathersDirectory";
 
-export function isHomePath(pathname: string): boolean {
-  return pathname === "/";
+/** The site's three places, shown as header tabs. */
+export type SiteTab = "fathers" | "study" | "bible" | "types";
+
+/**
+ * Which tab a path belongs to:
+ * - fathers: the front page, the library at /fathers/, each Father's page, and church history
+ *   (whose timeline is part of the Fathers page);
+ * - study: the Fathers' writings open in the reader, and the study desk;
+ * - bible: the Bible with the Fathers' commentary beside it;
+ * - types: the atlas of the types the Fathers draw from Scripture.
+ * Other pages (About, Search, Report…) belong to no tab.
+ */
+export function siteTab(pathname: string): SiteTab | null {
+  if (pathname === "/bible") return "bible";
+  if (pathname === "/types") return "types";
+  if (pathname === "/church-history" || pathname.startsWith("/church-history/")) return "fathers";
+  if (pathname === "/" || isFathersTabPath(pathname)) return "fathers";
+  if (pathname === "/study" || pathname === "/read" || pathname === "/augustines-confessions" || pathname.startsWith("/fathers/"))
+    return "study";
+  return null;
 }
-
-/** Left rail is omitted on `/` so the hero tiles are the only site nav there. */
-export function showSiteRail(pathname: string): boolean {
-  return !isHomePath(pathname);
-}
-
-export type LandingNavId = "read" | "bible" | "browse" | "fathers" | "about";
-
-export type LandingNavItem = {
-  id: LandingNavId;
-  href: string;
-  label: string;
-  featured?: boolean;
-};
-
-/** Hero tiles on `/`. Timeline stays on the rail; Fathers takes its home slot. */
-export const LANDING_NAV: readonly LandingNavItem[] = [
-  { id: "read", href: "/augustines-confessions", label: "Read" },
-  { id: "bible", href: "/bible", label: "Bible" },
-  { id: "browse", href: "/church-fathers", label: "Browse", featured: true },
-  { id: "fathers", href: "/fathers/", label: "Fathers" },
-  { id: "about", href: "/about", label: "About" }
-];

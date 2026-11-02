@@ -9,7 +9,6 @@ import {
   packCatalog,
   packShelves,
   periodIdForAuthor,
-  renderChurchFathersHtml,
   spineBandPlace,
   spineBin,
   spineScale
@@ -267,13 +266,6 @@ describe("catalog shelf fields", () => {
       expect(byPeriod.get(period.id)!.works, period.id + " empty").toBeGreaterThan(0);
     }
 
-    const html = renderChurchFathersHtml(lib.catalog);
-    expect(html).toContain("Apostolic era");
-    expect(html).toContain("The Golden Age");
-    for (const w of lib.catalog.works) {
-      expect(html).toContain("/fathers/" + w.author + "/" + w.id + ".html");
-      expect(html).toContain(w.title);
-    }
   }, 120_000);
 });
 

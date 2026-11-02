@@ -9,15 +9,25 @@ import {
   toggleNoteFormat
 } from "../lib/readerNotes";
 
-export function NotesBar({ workId, onSave }: { workId: string; onSave?: () => void }) {
+export function NotesBar({ workId, onSave, autoEdit }: { workId: string; onSave?: () => void; /** start in the editor */ autoEdit?: boolean }) {
   const [editing, setEditing] = useState(false);
   const [formats, setFormats] = useState({ bold: false, underline: false, list: false });
   const editor = useRef<HTMLDivElement>(null);
+  /** Opened in the editor from code: place the cursor once the box has become editable. */
+  const focusWhenEditable = useRef(false);
 
   useEffect(() => {
-    setEditing(false);
+    setEditing(!!autoEdit);
+    focusWhenEditable.current = !!autoEdit;
     if (editor.current) editor.current.innerHTML = loadNoteHtml(workId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [workId]);
+
+  useEffect(() => {
+    if (!editing || !focusWhenEditable.current) return;
+    focusWhenEditable.current = false;
+    focusEnd();
+  }, [editing]);
 
   useEffect(() => {
     if (!editing) return;
@@ -32,20 +42,23 @@ export function NotesBar({ workId, onSave }: { workId: string; onSave?: () => vo
     return () => document.removeEventListener("selectionchange", sync);
   }, [editing]);
 
+  /** Focus the note with the cursor at its end. */
+  function focusEnd() {
+    const el = editor.current;
+    if (!el) return;
+    el.focus();
+    const sel = window.getSelection();
+    if (!sel) return;
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    range.collapse(false);
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+
   function startEdit() {
     setEditing(true);
-    requestAnimationFrame(() => {
-      const el = editor.current;
-      if (!el) return;
-      el.focus();
-      const sel = window.getSelection();
-      if (!sel) return;
-      const range = document.createRange();
-      range.selectNodeContents(el);
-      range.collapse(false);
-      sel.removeAllRanges();
-      sel.addRange(range);
-    });
+    requestAnimationFrame(focusEnd);
   }
 
   function finish() {

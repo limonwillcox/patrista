@@ -1,0 +1,40 @@
+{
+  "src": "04:temple-veil",
+  "tradition": "fathers",
+  "work": "Church Fathers in the Patrista corpus (ANF/NPNF translations)",
+  "label": "The veil torn in two",
+  "kind": "object",
+  "def": "The woven curtain that hung before the holy of holies in the tabernacle and temple, shutting it off from all but the high priest once a year.",
+  "texts": "Exod 26:31-33; Lev 16:2; Matt 27:51; 2 Cor 3:14-16; Heb 6:19-20; Heb 10:19-20.",
+  "christ": "The veil is Christ's flesh: when it was torn on the cross, the way into the holy place was opened and the hidden mysteries were laid bare. \"Because His flesh, this veil, was dishonoured, therefore the typical veil of the temple was rent asunder\" (Cyril, *Cat.* 13.32).",
+  "where": [
+    "Cyril, *Cat.* 13.32 — “And because His flesh, this veil, was dishonoured, therefore the typical veil of the temple was rent asunder”",
+    "Chrysostom, *Hom. Heb.* 19 — “For this flesh first cut that way, by this He inaugurated it [the way] by which He walked.”",
+    "Leo, *Serm.* 68.3 — “the High Pontiff was entering the Holy of Holies, and to intercede with God the spotless Priest was passing in through the veil of His flesh”",
+    "Gregory Nazianzen, *Or.* 29.20 — “and the veil is rent, for the mysterious doors of Heaven are opened”",
+    "Augustine, *C. Faust.* 12.11 — “at the crucifixion of Christ, the veil was rent in twain, that by the passion of Christ hidden mysteries might be revealed to believers”"
+  ],
+  "links": [
+    {
+      "label": "Cyril of Jerusalem, Catechetical Lectures 13.32",
+      "href": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-10/"
+    },
+    {
+      "label": "Chrysostom, Homilies on Hebrews 19",
+      "href": "/fathers/chrysostom/homilies-on-john-and-hebrews/chapter-107/"
+    },
+    {
+      "label": "Leo, Sermon 68.3",
+      "href": "/fathers/leo/sermons/chapter-35/"
+    },
+    {
+      "label": "Gregory Nazianzen, Oration 29.20",
+      "href": "/fathers/gregory_nazianzen/five-theological-orations-orations-xxvii-xxxi/chapter-3/"
+    },
+    {
+      "label": "Augustine, Reply to Faustus 12.11",
+      "href": "/fathers/augustine/reply-to-faustus-the-manichaean/chapter-12/"
+    }
+  ],
+  "confidence": ""
+}

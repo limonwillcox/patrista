@@ -1,0 +1,125 @@
+{
+  "about": "Bible stories tagged as ordered steps in the symbolic grammar (data/connections/grammar/grammar.json). Each step: act, who (roles or figures), where (zone), sense (+ blessed, - cursed), ref, names (the actual people or things), note. 'odd' marks a detail worth asking about (METHOD rule 10). Status 'draft' means an AI drafted it and no person has reviewed it.",
+  "stories": [
+    {"id": "creation", "title": "Creation: the waters and the dry land", "ref": "Gen 1:1-10", "status": "draft",
+     "steps": [
+       {"ref": "Gen 1:2", "act": "descend", "who": ["mediator-from-above"], "names": "the Spirit of God hovering", "where": "the-deep", "sense": "+"},
+       {"ref": "Gen 1:3-5", "act": "name", "names": "'Let there be light'; light called Day", "sense": "+"},
+       {"ref": "Gen 1:6-8", "act": "separate", "names": "waters above from waters below", "sense": "+"},
+       {"ref": "Gen 1:9-10", "act": "ascend", "names": "dry land appears out of the waters", "where": "dry-land", "sense": "+"},
+       {"ref": "Gen 1:10", "act": "evaluate", "names": "'God saw that it was good'", "sense": "+"}
+     ]},
+
+    {"id": "flood", "title": "The flood", "ref": "Gen 6:1-9:17", "status": "draft",
+     "steps": [
+       {"ref": "Gen 6:1-4", "act": "mix", "names": "sons of God and daughters of men; the giants", "sense": "-"},
+       {"ref": "Gen 6:5-7", "act": "evaluate", "names": "God sees the wickedness of man", "sense": "-"},
+       {"ref": "Gen 7:11-12", "act": "descend", "names": "fountains of the great deep burst; windows of heaven open", "where": "the-deep", "sense": "-"},
+       {"ref": "Gen 7:17-18", "act": "pass-through-water", "who": ["remnant", "vessel"], "names": "Noah and his house in the ark (tevah)", "sense": "+"},
+       {"ref": "Gen 8:1", "act": "descend", "who": ["mediator-from-above"], "names": "God makes a wind (ruach) pass over the earth", "sense": "+", "note": "the same word as the Spirit over the waters in Gen 1:2"},
+       {"ref": "Gen 8:4", "act": "rest", "who": ["vessel"], "names": "the ark rests (nuach) on the mountains of Ararat", "where": "holy-mountain", "sense": "+", "odd": "'rested' is the root of Noah's name"},
+       {"ref": "Gen 8:6-12", "act": "send-bird", "who": ["raven", "dove"], "names": "raven, then dove three times; olive leaf", "sense": "+"},
+       {"ref": "Gen 8:13-19", "act": "ascend", "who": ["remnant"], "names": "Noah comes out onto dry ground", "where": "dry-land", "sense": "+"},
+       {"ref": "Gen 8:20-21", "act": "offer", "who": ["human-mediator", "altar"], "names": "Noah's altar; a pleasing aroma", "sense": "+"},
+       {"ref": "Gen 9:8-17", "act": "name", "who": ["rainbow"], "names": "covenant word; the bow in the cloud", "sense": "+"}
+     ]},
+
+    {"id": "moses-basket", "title": "Moses drawn out of the water", "ref": "Exod 1:22-2:10", "status": "draft",
+     "steps": [
+       {"ref": "Exod 1:22", "act": "seize", "who": ["tyrant"], "names": "Pharaoh orders every son thrown into the Nile", "sense": "-"},
+       {"ref": "Exod 2:2", "act": "evaluate", "names": "she saw that he was good", "sense": "+", "odd": "the same words as 'God saw that it was good' (Gen 1)"},
+       {"ref": "Exod 2:3", "act": "pass-through-water", "who": ["remnant", "vessel"], "names": "the child in a basket (tevah) sealed with pitch, among the reeds", "sense": "+"},
+       {"ref": "Exod 2:5-6", "act": "ascend", "who": ["stranger"], "names": "Pharaoh's daughter draws him out", "sense": "+"},
+       {"ref": "Exod 2:10", "act": "name", "names": "'Moses, because I drew him out of the water'", "sense": "+"}
+     ]},
+
+    {"id": "red-sea", "title": "Through the Red Sea", "ref": "Exod 14:5-15:25", "status": "draft",
+     "steps": [
+       {"ref": "Exod 14:5-9", "act": "seize", "who": ["tyrant"], "names": "Pharaoh pursues with chariots", "sense": "-"},
+       {"ref": "Exod 14:19-20", "act": "descend", "who": ["mediator-from-above", "glory-cloud"], "names": "the angel and the pillar of cloud move behind them", "sense": "+"},
+       {"ref": "Exod 14:21", "act": "separate", "names": "a strong east wind (ruach) divides the waters", "where": "the-deep", "sense": "+"},
+       {"ref": "Exod 14:22", "act": "pass-through-water", "who": ["deliverer"], "names": "Moses and Israel through on dry ground", "where": "dry-land", "sense": "+"},
+       {"ref": "Exod 14:27-28", "act": "strike", "who": ["tyrant"], "names": "the waters return over Pharaoh's army", "sense": "-"},
+       {"ref": "Exod 15:1-21", "act": "offer", "names": "the song of Moses and Miriam on the shore", "sense": "+"},
+       {"ref": "Exod 15:23-25", "act": "eat", "who": ["saving-wood"], "names": "bitter water at Marah made sweet by a piece of wood", "where": "wilderness", "sense": "+"}
+     ]},
+
+    {"id": "jordan-crossing", "title": "Crossing the Jordan", "ref": "Josh 3:1-4:24", "status": "draft",
+     "steps": [
+       {"ref": "Josh 3:15", "act": "descend", "who": ["world-model"], "names": "priests carrying the ark step into the flooded river", "sense": "+"},
+       {"ref": "Josh 3:16", "act": "separate", "names": "the waters stand up in a heap", "sense": "+"},
+       {"ref": "Josh 3:17", "act": "pass-through-water", "who": ["deliverer"], "names": "Joshua and all Israel cross on dry ground", "where": "dry-land", "sense": "+"},
+       {"ref": "Josh 4:18", "act": "ascend", "names": "the priests come up out of the Jordan", "sense": "+"},
+       {"ref": "Josh 4:20-24", "act": "build-house", "who": ["twelve"], "names": "twelve stones set up at Gilgal", "sense": "+", "note": "who lists a number: the step is about twelve stones"}
+     ]},
+
+    {"id": "naaman", "title": "Naaman washed in the Jordan", "ref": "2 Kgs 5:1-15", "status": "draft",
+     "steps": [
+       {"ref": "2 Kgs 5:2-3", "act": "name", "who": ["stranger"], "names": "a captive Israelite girl tells of the prophet", "sense": "+"},
+       {"ref": "2 Kgs 5:11-12", "act": "evaluate", "names": "Naaman scorns the Jordan: 'Are not the rivers of Damascus better?'", "sense": "-"},
+       {"ref": "2 Kgs 5:14", "act": "descend", "names": "he goes down and dips seven times in the Jordan", "sense": "+"},
+       {"ref": "2 Kgs 5:14", "act": "ascend", "names": "his flesh restored like a little child's", "sense": "+"},
+       {"ref": "2 Kgs 5:15", "act": "offer", "names": "'there is no God in all the earth but in Israel'", "sense": "+"}
+     ]},
+
+    {"id": "jonah", "title": "Jonah in the sea", "ref": "Jonah 1:1-3:2", "status": "draft",
+     "steps": [
+       {"ref": "Jonah 1:3", "act": "descend", "names": "Jonah goes down to Joppa and down into the ship", "sense": "-"},
+       {"ref": "Jonah 1:5", "act": "deep-sleep", "names": "he lies down and is fast asleep (radam)", "sense": "-"},
+       {"ref": "Jonah 1:7", "act": "evaluate", "names": "the lot falls on Jonah", "sense": "-"},
+       {"ref": "Jonah 1:15", "act": "descend", "names": "they throw him into the sea; the sea is still", "where": "the-deep", "sense": "+"},
+       {"ref": "Jonah 1:17", "act": "pass-through-water", "who": ["sea-monster", "three"], "names": "a great fish swallows him; three days and three nights", "sense": "+"},
+       {"ref": "Jonah 2:1-9", "act": "offer", "names": "prayer from the belly of Sheol; 'salvation belongs to the LORD'", "where": "pit", "sense": "+"},
+       {"ref": "Jonah 2:10", "act": "ascend", "names": "the fish vomits him onto dry land", "where": "dry-land", "sense": "+"},
+       {"ref": "Jonah 3:1-2", "act": "name", "names": "the word of the LORD comes a second time", "sense": "+"}
+     ]},
+
+    {"id": "baptism-of-jesus", "title": "The baptism of Jesus", "ref": "Matt 3:11-4:11", "status": "draft",
+     "steps": [
+       {"ref": "Matt 3:11", "act": "name", "who": ["forerunner", "man-of-the-margin"], "names": "John: 'he who comes after me is mightier'", "sense": "+"},
+       {"ref": "Matt 3:16", "act": "pass-through-water", "who": ["new-adam"], "names": "Jesus is baptized in the Jordan", "sense": "+"},
+       {"ref": "Matt 3:16", "act": "ascend", "who": ["new-adam"], "names": "he went up out of the water", "sense": "+"},
+       {"ref": "Matt 3:16", "act": "descend", "who": ["mediator-from-above", "dove"], "names": "the heavens open; the Spirit descends like a dove", "sense": "+"},
+       {"ref": "Matt 3:17", "act": "name", "names": "the voice: 'This is my beloved Son'", "sense": "+"},
+       {"ref": "Matt 4:1-11", "act": "seize", "who": ["serpent", "forty"], "names": "forty days; the tempter's offers refused", "where": "wilderness", "sense": "+", "note": "sense + because the grasping is refused"}
+     ]},
+
+    {"id": "fall", "title": "The fall (control)", "ref": "Gen 3:1-24", "status": "draft",
+     "steps": [
+       {"ref": "Gen 3:1-5", "act": "seize", "who": ["serpent"], "names": "'you will not surely die'", "sense": "-"},
+       {"ref": "Gen 3:6", "act": "eat", "who": ["tree-of-knowledge"], "names": "she took and ate, and gave to her husband", "sense": "-"},
+       {"ref": "Gen 3:7", "act": "cover", "names": "eyes opened; fig leaves sewn together", "sense": "-"},
+       {"ref": "Gen 3:8-19", "act": "evaluate", "names": "God walks in the garden and judges", "where": "garden-sanctuary", "sense": "-"},
+       {"ref": "Gen 3:21", "act": "cover", "who": ["garment"], "names": "God makes garments of skin", "sense": "+"},
+       {"ref": "Gen 3:23-24", "act": "expel", "who": ["guardian"], "names": "driven out east; cherubim at the gate", "where": "outer-world", "sense": "-"}
+     ]},
+
+    {"id": "noah-vineyard", "title": "Noah's drunkenness (control)", "ref": "Gen 9:20-27", "status": "draft",
+     "steps": [
+       {"ref": "Gen 9:20-21", "act": "eat", "who": ["bread-and-wine"], "names": "Noah plants a vineyard, drinks, lies uncovered", "sense": "-"},
+       {"ref": "Gen 9:22", "act": "seize", "names": "Ham sees his father's nakedness and tells", "sense": "-"},
+       {"ref": "Gen 9:23", "act": "cover", "who": ["garment"], "names": "Shem and Japheth cover him, walking backward", "sense": "+"},
+       {"ref": "Gen 9:25-27", "act": "evaluate", "names": "curse on Canaan; blessing on Shem and Japheth", "sense": "-"}
+     ]},
+
+    {"id": "joseph", "title": "Joseph stripped and raised (control)", "ref": "Gen 37-41", "status": "draft",
+     "steps": [
+       {"ref": "Gen 37:3", "act": "cover", "who": ["garment"], "names": "the robe of many colors", "sense": "+"},
+       {"ref": "Gen 37:23-24", "act": "descend", "names": "stripped and thrown into the pit", "where": "pit", "sense": "-"},
+       {"ref": "Gen 37:28", "act": "descend", "names": "sold down to Egypt", "where": "house-of-bondage", "sense": "-"},
+       {"ref": "Gen 39:7-12", "act": "seize", "names": "refuses Potiphar's wife", "sense": "+"},
+       {"ref": "Gen 39:20", "act": "descend", "names": "thrown into prison", "where": "pit", "sense": "-"},
+       {"ref": "Gen 40-41", "act": "name", "names": "interprets the dreams", "sense": "+"},
+       {"ref": "Gen 41:42", "act": "ascend", "who": ["servant-raised", "garment"], "names": "robed in fine linen, set over Egypt", "sense": "+"}
+     ]},
+
+    {"id": "abram-egypt", "title": "Abram and Sarai in Egypt (control)", "ref": "Gen 12:10-13:2", "status": "draft",
+     "steps": [
+       {"ref": "Gen 12:10", "act": "descend", "names": "famine; Abram goes down to Egypt", "where": "house-of-bondage", "sense": "-"},
+       {"ref": "Gen 12:15", "act": "seize", "who": ["tyrant", "bride"], "names": "Sarai taken into Pharaoh's house", "sense": "-"},
+       {"ref": "Gen 12:17", "act": "strike", "who": ["tyrant"], "names": "the LORD strikes Pharaoh with plagues", "sense": "+"},
+       {"ref": "Gen 12:18-19", "act": "evaluate", "names": "Pharaoh rebukes Abram", "sense": "-"},
+       {"ref": "Gen 13:1-2", "act": "ascend", "who": ["bride"], "names": "Abram goes up from Egypt, rich in livestock, silver and gold", "sense": "+"}
+     ]}
+  ]
+}

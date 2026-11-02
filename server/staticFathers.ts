@@ -4,7 +4,6 @@ import { getWork } from "./api";
 import type { Author, Catalog, Passage, Work } from "./types";
 import {
   assignChapterSlugs,
-  authorAnchorId,
   chapterPublicPath,
   englishParagraphs,
   escapeHtml,
@@ -179,12 +178,12 @@ export function breadcrumbJsonLd(opts: {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Patrista", item: opts.origin + "/" },
-          { "@type": "ListItem", position: 2, name: "Church Fathers", item: opts.origin + "/church-fathers/" },
+          { "@type": "ListItem", position: 2, name: "Church Fathers", item: opts.origin + "/fathers/" },
           {
             "@type": "ListItem",
             position: 3,
             name: opts.author.name,
-            item: opts.origin + "/church-fathers/#" + authorAnchorId(opts.author.id)
+            item: opts.origin + "/fathers/" + encodeURIComponent(opts.author.id) + "/"
           },
           { "@type": "ListItem", position: 4, name: opts.workTitle, item: workUrl },
           { "@type": "ListItem", position: 5, name: opts.chapterLabel, item: chapterUrl }
@@ -312,7 +311,11 @@ export function renderWorkPage(opts: {
 
   const body: string[] = [];
   body.push(
-    '<p class="static-kicker"><a href="/">Patrista</a> · <a href="/church-fathers/">Church Fathers</a></p>'
+    '<p class="static-kicker"><a href="/">Patrista</a> · <a href="/fathers/">Church Fathers</a> · <a href="/fathers/' +
+      escapeHtml(encodeURIComponent(opts.author.id)) +
+      '/">' +
+      escapeHtml(opts.author.name) +
+      "</a></p>"
   );
   body.push("<h1>" + escapeHtml(opts.work.title) + "</h1>");
   body.push(
@@ -447,7 +450,7 @@ export function renderHomeStaticHtml(catalog: Catalog, limit = 8): string {
 
   const items = fathers
     .map((row) => {
-      const href = "/church-fathers/#" + authorAnchorId(row.author.id);
+      const href = "/fathers/" + encodeURIComponent(row.author.id) + "/";
       return '<li><a href="' + escapeHtml(href) + '">' + escapeHtml(row.author.name) + "</a></li>";
     })
     .join("\n");
@@ -456,8 +459,7 @@ export function renderHomeStaticHtml(catalog: Catalog, limit = 8): string {
     '<div class="static-home">',
     "<h1>Patrista</h1>",
     "<p>A searchable library of the public-domain Church Fathers. The full English text of every work is published here, one chapter to a page.</p>",
-    '<p><a href="/fathers/">Fathers</a></p>',
-    '<p><a href="/church-fathers/">Church Fathers</a></p>',
+    '<p><a href="/fathers/">Church Fathers</a></p>',
     "<ul>",
     items,
     "</ul>",
@@ -484,7 +486,7 @@ export function renderReadShell(indexHtml: string, map: Record<string, string>, 
   let html = indexHtml.replace("</head>", "    " + tags + "\n  </head>");
   if (html === indexHtml) throw new Error("read shell: could not find </head>");
   const noscript =
-    '<noscript><p><a href="/church-fathers/">Church Fathers</a> lists the full text of every work.</p></noscript>';
+    '<noscript><p><a href="/fathers/">Church Fathers</a> lists the full text of every work.</p></noscript>';
   html = html.replace('<div id="root"></div>', '<div id="root"></div>\n    ' + noscript);
   return html;
 }

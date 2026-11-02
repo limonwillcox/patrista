@@ -1,0 +1,123 @@
+/* /types: the atlas of the types the Fathers draw. */
+
+.page > .ty-page { max-width: 1120px; }
+.ty-page { padding-bottom: 60px; }
+.ty-state { color: var(--muted); font-family: var(--sans); padding: 24px 0; }
+
+.ty-hero { max-width: 720px; margin: 0 auto; padding: 28px 0 8px; text-align: center; }
+.ty-kicker { margin: 0; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.ty-hero h1 { margin: 8px 0 12px; font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 600; line-height: 1.15; text-wrap: balance; }
+.ty-rule {
+  margin: 14px auto 0; max-width: 620px; padding: 9px 14px; border: 1px solid var(--border); border-radius: var(--radius);
+  font: 13.5px/1.5 var(--sans); color: var(--muted); background: var(--panel);
+}
+.ty-rule b { color: var(--text); }
+.ty-lede { margin: 0; font-family: var(--serif); font-size: 17px; line-height: 1.6; color: var(--muted); text-wrap: pretty; }
+
+/* The strip */
+.ty-strip {
+  margin: 24px 0 8px; padding: 10px 12px 4px; border: 1px solid var(--border); border-radius: var(--radius-lg);
+  background: var(--panel);
+}
+.ty-strip svg { display: block; width: 100%; height: auto; overflow: visible; }
+.ty-strip-base { stroke: var(--text); stroke-width: 1; opacity: 0.35; }
+.ty-strip-divide { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 4; opacity: 0.6; }
+.ty-strip-testament { font: 700 9px var(--sans); letter-spacing: 0.14em; text-transform: uppercase; fill: var(--muted); }
+.ty-strip-group { font: 600 10px var(--sans); fill: var(--muted); }
+.ty-arc {
+  fill: none; stroke: var(--accent); stroke-width: 1.3; opacity: 0.32; cursor: pointer;
+  transition: opacity 0.15s, stroke-width 0.15s;
+}
+.ty-arc:hover, .ty-arc.is-on { opacity: 1; stroke-width: 2.6; }
+.ty-arc.is-dim { opacity: 0.1; }
+
+/* Filters */
+.ty-tools { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; margin: 18px 0 14px; }
+.ty-kinds { display: flex; flex-wrap: wrap; gap: 6px; }
+.ty-kinds button {
+  font: 600 13px var(--sans); padding: 5px 12px; border-radius: var(--radius-pill); cursor: pointer;
+  border: 1px solid var(--border); background: var(--bg); color: var(--text);
+}
+.ty-kinds button span { color: var(--muted); font-weight: 400; margin-left: 2px; }
+.ty-kinds button:hover { border-color: var(--accent); }
+.ty-kinds button[aria-pressed="true"] { background: var(--nav); border-color: var(--nav); color: #fff; }
+.ty-kinds button[aria-pressed="true"] span { color: rgba(255, 255, 255, 0.7); }
+html[data-theme="night"] .ty-kinds button[aria-pressed="true"] { background: #e8e4dc; border-color: #e8e4dc; color: #1b1b1b; }
+html[data-theme="night"] .ty-kinds button[aria-pressed="true"] span { color: #555; }
+.ty-search {
+  flex: 0 1 240px; min-width: 0; height: 36px; padding: 0 14px; border-radius: var(--radius-pill);
+  border: 1px solid var(--border); background: var(--bg); color: var(--text); font: 14px var(--sans);
+}
+.ty-find { display: flex; gap: 8px; flex: 0 1 460px; min-width: 0; }
+.ty-find .ty-search { flex: 1 1 200px; }
+.ty-book {
+  height: 36px; padding: 0 12px; border-radius: var(--radius-pill); border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); font: 600 13px var(--sans); cursor: pointer;
+}
+.ty-book:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
+.ty-search:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
+
+/* Cards and the chosen type */
+.ty-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-items: start; }
+.ty-body.has-chosen { grid-template-columns: minmax(0, 1fr) minmax(0, 420px); }
+.ty-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+.ty-card {
+  display: flex; flex-direction: column; gap: 5px; width: 100%; height: 100%; text-align: left; cursor: pointer;
+  padding: 14px 15px 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); color: var(--text);
+  font: inherit; transition: border-color 0.15s, box-shadow 0.15s;
+}
+.ty-card:hover, .ty-card.is-hot { border-color: var(--accent); }
+.ty-card.is-on { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent), var(--ring); }
+.ty-card:focus-visible { outline: none; box-shadow: var(--ring); }
+.ty-card-kind { font: 700 10px var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.ty-card-label { font: 600 17px/1.25 var(--serif); }
+.ty-card-def { font: 14px/1.45 var(--sans); color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.ty-card-span { margin-top: auto; padding-top: 4px; font: 600 12px var(--sans); color: var(--muted); }
+
+.ty-detail {
+  position: sticky; top: calc(var(--header, 70px) + 14px); max-height: calc(100vh - var(--header, 70px) - 28px); overflow: auto;
+  padding: 20px 22px 22px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--bg);
+  box-shadow: 0 10px 30px rgba(40, 30, 20, 0.08);
+}
+.ty-close {
+  position: sticky; top: 0; float: right; width: 30px; height: 30px; margin: -6px -8px 0 8px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--bg); color: var(--muted); font-size: 18px; line-height: 1; cursor: pointer;
+}
+.ty-close:hover { color: var(--accent); border-color: var(--accent); }
+.ty-detail-kind { margin: 0; font: 700 11px var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+.ty-detail h2 { margin: 4px 0 10px; font: 600 25px/1.2 var(--serif); }
+.ty-detail-def { margin: 0 0 10px; font: 16px/1.55 var(--serif); }
+.ty-detail-christ { margin: 0; padding: 10px 12px; border-radius: var(--radius); background: var(--accent-soft); font: 15px/1.55 var(--serif); }
+.ty-detail h3 { margin: 20px 0 8px; font: 700 11px var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.ty-passages { margin: 0; padding: 0; list-style: none; counter-reset: ty; }
+.ty-passages li { position: relative; padding: 0 0 10px 26px; counter-increment: ty; }
+.ty-passages li::before {
+  content: counter(ty); position: absolute; left: 0; top: 1px; width: 18px; height: 18px; border-radius: 999px;
+  background: var(--panel); color: var(--muted); font: 700 10px/18px var(--sans); text-align: center;
+}
+.ty-passage-ref { font: 700 14px var(--sans); color: var(--accent); text-decoration: none; }
+.ty-passage-ref:hover { text-decoration: underline; }
+.ty-passage-text { margin: 2px 0 0; font: 14px/1.5 var(--serif); color: var(--muted); }
+.ty-quotes { margin: 0; padding: 0; list-style: none; }
+.ty-quotes li { margin: 0 0 14px; }
+.ty-quotes blockquote { margin: 0; padding-left: 12px; border-left: 2px solid var(--accent); font: 16px/1.55 "Junicode", var(--serif); }
+.ty-quote-ref { margin: 4px 0 0 14px; font: 13px var(--sans); color: var(--muted); }
+.ty-quote-link {
+  display: block; margin: 0 -10px; padding: 6px 10px; border-radius: var(--radius); color: inherit; text-decoration: none;
+  transition: background 0.15s;
+}
+.ty-quote-link:hover { background: var(--panel); text-decoration: none; }
+.ty-quote-link:focus-visible { outline: none; box-shadow: var(--ring); }
+.ty-quote-go { color: var(--accent); font-weight: 600; white-space: nowrap; text-decoration: none; }
+.ty-quote-go:hover { text-decoration: underline; }
+.ty-father { color: var(--text); font-weight: 600; text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 2px; }
+.ty-father:hover { color: var(--accent); text-decoration-color: currentColor; }
+
+@media (max-width: 900px) {
+  .ty-body.has-chosen { grid-template-columns: minmax(0, 1fr); }
+  /* On a phone the chosen type opens above the list, where the reader is looking. */
+  .ty-detail { position: static; max-height: none; order: -1; }
+  .ty-find { flex-basis: 100%; }
+  .ty-book { max-width: 46%; }
+  .ty-strip { padding: 6px 4px 0; }
+}

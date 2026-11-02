@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import { journalPages, journalTree } from "../src/lib/journal";
-import { showSiteRail } from "../src/lib/homeNav";
 
 describe("journalTree", () => {
   it("nests works under fathers under centuries", () => {
@@ -105,9 +104,4 @@ describe("journalPages", () => {
   });
 });
 
-describe("journal route rail", () => {
-  it("keeps the site rail on /journal", () => {
-    expect(showSiteRail("/journal")).toBe(true);
-  });
-});
 

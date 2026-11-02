@@ -4,29 +4,19 @@ import type { IncomingMessage, ServerResponse } from "http";
 import { getCatalog, getWork, getWorkOutline } from "./server/api";
 import {
   CHURCH_HISTORY_CANONICAL_PATH,
-  CHURCH_HISTORY_DESCRIPTION,
   CHURCH_HISTORY_INTRO_DESCRIPTION,
   CHURCH_HISTORY_INTRO_TITLE,
-  CHURCH_HISTORY_TIMELINE_PATH,
-  CHURCH_HISTORY_TITLE,
-  churchHistoryJsonLd,
-  renderChurchHistoryCinematicHtml,
-  renderChurchHistoryHtml
+  renderChurchHistoryCinematicHtml
 } from "./server/churchHistory";
 import {
-  CHURCH_FATHERS_CANONICAL_PATH,
-  CHURCH_FATHERS_DESCRIPTION,
-  CHURCH_FATHERS_TITLE,
-  churchFathersJsonLd,
-  renderChurchFathersHtml
-} from "./server/shelf";
-import {
   applyReadCanonical,
+  legacyChapterUrls,
   prerenderShell,
   readCanonMap,
   renderHomeStaticHtml,
   renderReadShell,
   renderSitemaps,
+  renderStubPage,
   robotsTxt,
   workCanonicalMap,
   writeFatherPages,
@@ -34,9 +24,9 @@ import {
   writeReadPathAliases
 } from "./server/staticFathers";
 import { writeFatherDirectoryPages } from "./server/fatherDirectoryPages";
-import { WORK_READ_PATHS } from "./src/lib/workSlugs";
+import { MOVED_WORKS, WORK_READ_PATHS } from "./src/lib/workSlugs";
 import { auditSeo, oldChapterUrls } from "./server/seoAudit";
-import { assignChapterSlugs, chapterPublicPath, legacyChapterSlugs } from "./src/lib/fatherPaths";
+import { assignChapterSlugs, chapterPublicPath, legacyChapterSlugs, workPublicPath } from "./src/lib/fatherPaths";
 import { FATHER_IMAGES } from "./src/lib/fatherImages";
 import { dirname, extname, join, resolve } from "path";
 import { fileURLToPath } from "url";
@@ -45,6 +35,9 @@ import react from "@vitejs/plugin-react";
 import { fathersApiPlugin } from "./server/plugin";
 import { writeStaticBibleApi } from "./server/staticBible";
 import { writeStaticLinksApi } from "./server/staticLinks";
+import { writeSearchIndex } from "./server/searchIndex";
+import { writeScriptureIndex } from "./server/scriptureIndex";
+import { APP_PAGES } from "./server/appPages";
 
 const root = dirname(fileURLToPath(import.meta.url));
 
@@ -74,6 +67,7 @@ function writePrerenderedPage(
     title: string;
     description: string;
     jsonLd?: unknown;
+    extraHead?: string;
   }
 ): void {
   let html: string;
@@ -88,7 +82,7 @@ function writePrerenderedPage(
   writeFileSync(outFile, html);
 }
 
-function writeChurchHistoryPage(dist: string, indexHtml: string, catalog: ReturnType<typeof getCatalog>): void {
+function writeChurchHistoryPage(dist: string, indexHtml: string): void {
   writePrerenderedPage(dist, indexHtml, {
     outRel: join("church-history", "index.html"),
     canonicalPath: CHURCH_HISTORY_CANONICAL_PATH,
@@ -97,27 +91,36 @@ function writeChurchHistoryPage(dist: string, indexHtml: string, catalog: Return
     title: CHURCH_HISTORY_INTRO_TITLE,
     description: CHURCH_HISTORY_INTRO_DESCRIPTION
   });
-  writePrerenderedPage(dist, indexHtml, {
-    outRel: join("church-history", "timeline", "index.html"),
-    canonicalPath: CHURCH_HISTORY_TIMELINE_PATH,
-    bodyHtml: renderChurchHistoryHtml(catalog),
-    label: "church-history-timeline",
-    title: CHURCH_HISTORY_TITLE,
-    description: CHURCH_HISTORY_DESCRIPTION,
-    jsonLd: churchHistoryJsonLd(SITE_ORIGIN)
-  });
+  // The timeline now lives on the Fathers page, each event in its century. Old links get a stub that
+  // forwards there (GitHub Pages ignores _redirects); the browser keeps any #event fragment.
+  const timeline = join(dist, "church-history", "timeline", "index.html");
+  mkdirSync(dirname(timeline), { recursive: true });
+  writeFileSync(timeline, renderStubPage(SITE_ORIGIN + "/fathers/", "/fathers/"));
 }
 
-function writeChurchFathersPage(dist: string, indexHtml: string, catalog: ReturnType<typeof getCatalog>): void {
-  writePrerenderedPage(dist, indexHtml, {
-    outRel: join("church-fathers", "index.html"),
-    canonicalPath: CHURCH_FATHERS_CANONICAL_PATH,
-    bodyHtml: renderChurchFathersHtml(catalog),
-    label: "church-fathers",
-    title: CHURCH_FATHERS_TITLE,
-    description: CHURCH_FATHERS_DESCRIPTION,
-    jsonLd: churchFathersJsonLd(SITE_ORIGIN, catalog)
-  });
+/**
+ * App routes with no file of their own (/about, /bible, /search …) got 404.html and an HTTP 404 from
+ * GitHub Pages. GitHub Pages serves /about from about.html, so each gets a page with a 200.
+ */
+function writeAppPages(dist: string, indexHtml: string): void {
+  for (const page of APP_PAGES) {
+    writePrerenderedPage(dist, indexHtml, {
+      outRel: page.path.slice(1) + ".html",
+      canonicalPath: page.path,
+      bodyHtml: page.bodyHtml,
+      label: page.path,
+      title: page.title,
+      description: page.description,
+      extraHead: page.noindex ? '    <meta name="robots" content="noindex" />' : undefined
+    });
+  }
+}
+
+/** The old shelf page is now each Father's bookcase on /fathers/. */
+function writeLibraryRedirect(dist: string): void {
+  const file = join(dist, "church-fathers", "index.html");
+  mkdirSync(dirname(file), { recursive: true });
+  writeFileSync(file, renderStubPage(SITE_ORIGIN + "/fathers/", "/fathers/"));
 }
 
 function installReadCanonicalMiddleware(server: { middlewares: { stack: { route: string; handle: (req: IncomingMessage, res: ServerResponse, next: () => void) => void }[] } }): void {
@@ -146,6 +149,8 @@ function installReadCanonicalMiddleware(server: { middlewares: { stack: { route:
 }
 
 let fatherExtrasWritten = false;
+/** Set from the resolved config. The dev server also calls closeBundle when it restarts. */
+let isBuild = false;
 
 function extrasPlugin() {
   function serveAssets(middlewares: { use: (fn: (req: { url?: string }, res: { statusCode: number; setHeader: (k: string, v: string) => void; end: (s?: string) => void }, next: () => void) => void) => void }) {
@@ -168,6 +173,9 @@ function extrasPlugin() {
 
   return {
     name: "fathers-extras",
+    configResolved(config: { command: string }) {
+      isBuild = config.command === "build";
+    },
     configureServer(server: { middlewares: Parameters<typeof serveAssets>[0] }) {
       serveAssets(server.middlewares);
     },
@@ -179,9 +187,10 @@ function extrasPlugin() {
         );
       };
     },
-    closeBundle() {
+    async closeBundle() {
       // Vitest loads this config. Do not rebuild thousands of HTML files during unit tests.
-      if (process.env.VITEST || fatherExtrasWritten) return;
+      // The dev server also calls this hook when it restarts; only a real build writes dist/.
+      if (process.env.VITEST || !isBuild || fatherExtrasWritten) return;
       const dist = join(root, "dist");
       const indexPath = join(dist, "index.html");
       if (!existsSync(indexPath)) return;
@@ -226,10 +235,11 @@ function extrasPlugin() {
         // Serve the prerendered page rather than falling through to the SPA catch-all.
         "/church-history  /church-history/index.html  200",
         "/church-history/  /church-history/index.html  200",
-        "/church-history/timeline  /church-history/timeline/index.html  200",
-        "/church-history/timeline/  /church-history/timeline/index.html  200",
-        "/church-fathers  /church-fathers/index.html  200",
-        "/church-fathers/  /church-fathers/index.html  200"
+        "/church-history/timeline  /fathers/  301",
+        "/church-history/timeline/  /fathers/  301",
+        "/church-fathers  /fathers/  301",
+        "/church-fathers/  /fathers/  301",
+        "/browse  /fathers/  301"
       ];
       // Renamed works: keep old static URLs working. Each old Didache chapter URL goes straight to its
       // numbered page (/fathers/didache/didache/chapter-<N>/), not through a second stub hop.
@@ -247,17 +257,40 @@ function extrasPlugin() {
         }
       }
       redirectLines.push("/fathers/didache/teaching-of-the-twelve-apostles/*  /fathers/didache/didache.html  301");
+      // Works filed under the wrong Father: each old URL gets a 301 and a stub page (GitHub Pages
+      // ignores _redirects), pointing at the same chapter of the copy that stays.
+      for (const move of MOVED_WORKS) {
+        const target = getWork(move.to.work);
+        if (!target || target.author.id !== move.to.author) throw new Error("moved work: no " + move.to.author + "/" + move.to.work);
+        const toPage = workPublicPath(move.to.author, move.to.work);
+        const pairs: [string, string][] = [[workPublicPath(move.from.author, move.from.work), toPage]];
+        for (const slug of assignChapterSlugs(target.chapters).values()) {
+          pairs.push([chapterPublicPath(move.from.author, move.from.work, slug), chapterPublicPath(move.to.author, move.to.work, slug)]);
+        }
+        // Heading-based URLs from before renumbering (e.g. .../book-ii/) go to the chapter with that heading.
+        const numbered = assignChapterSlugs(target.chapters);
+        const byOldSlug = new Map<string, string>();
+        for (const [chapter, oldSlug] of legacyChapterSlugs(target.chapters)) {
+          byOldSlug.set(oldSlug, chapterPublicPath(move.to.author, move.to.work, numbered.get(chapter)!));
+        }
+        const oldPrefix = "/fathers/" + move.from.author + "/" + move.from.work + "/";
+        for (const old of legacyChapterUrls(oldPrefix)) pairs.push([old, byOldSlug.get(old.slice(oldPrefix.length, -1)) ?? toPage]);
+        for (const [from, to] of pairs) {
+          const file = from.endsWith(".html") ? join(dist, from.slice(1)) : join(dist, from.slice(1), "index.html");
+          mkdirSync(dirname(file), { recursive: true });
+          writeFileSync(file, renderStubPage(SITE_ORIGIN + to, to));
+          redirectLines.push(from + "  " + to + "  301");
+        }
+      }
       const sitemapUrls = [
         SITE_ORIGIN + "/",
-        SITE_ORIGIN + CHURCH_FATHERS_CANONICAL_PATH,
         SITE_ORIGIN + CHURCH_HISTORY_CANONICAL_PATH,
-        SITE_ORIGIN + CHURCH_HISTORY_TIMELINE_PATH,
-        SITE_ORIGIN + "/about",
-        SITE_ORIGIN + "/give"
+        ...APP_PAGES.filter((p) => !p.noindex).map((p) => SITE_ORIGIN + p.path)
       ];
 
-      writeChurchHistoryPage(dist, shell, catalog);
-      writeChurchFathersPage(dist, shell, catalog);
+      writeChurchHistoryPage(dist, shell);
+      writeLibraryRedirect(dist);
+      writeAppPages(dist, shell);
 
       for (const w of catalog.works) {
         const payload = getWork(w.id);
@@ -297,7 +330,7 @@ function extrasPlugin() {
 
       writeFileSync(
         join(dist, "read.html"),
-        renderReadShell(shell, workCanonicalMap(catalog, SITE_ORIGIN), SITE_ORIGIN + CHURCH_FATHERS_CANONICAL_PATH)
+        renderReadShell(shell, workCanonicalMap(catalog, SITE_ORIGIN), SITE_ORIGIN + "/fathers/")
       );
       writeFileSync(
         indexPath,
@@ -341,6 +374,15 @@ function extrasPlugin() {
         join(dist, "_headers"),
         ["/assets/father-img/*", "  Cache-Control: public, max-age=31536000, immutable", ""].join("\n")
       );
+      const cited = writeScriptureIndex(dist, catalog, root);
+      console.log("[scripture] " + cited + " verses cited by the Fathers");
+      if (process.env.SKIP_SEARCH_INDEX) {
+        console.log("[search] skipped (SKIP_SEARCH_INDEX)");
+      } else {
+        const started = Date.now();
+        const n = await writeSearchIndex(dist, catalog);
+        console.log("[search] " + n + " chapters indexed in " + Math.round((Date.now() - started) / 1000) + "s");
+      }
     }
   };
 }

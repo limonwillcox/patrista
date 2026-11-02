@@ -149,7 +149,8 @@ export function wordFromPoint(x: number, y: number): string | null {
     return null;
   }
   const el = node.parentElement;
-  if (!el?.closest(".para")) return null;
+  // Reader paragraphs and Bible verses; never the verse number.
+  if (!el?.closest(".para, .bible-verse") || el.closest(".vnum")) return null;
   return wordAtOffset(node.textContent || "", offset);
 }
 

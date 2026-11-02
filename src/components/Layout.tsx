@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
-import { Link, NavLink, useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { parseQuery } from "../../server/query";
-import { isExactAuthorQuery } from "../lib/catalogPreview";
-import { isFathersTabPath } from "../lib/fathersDirectory";
-import { HOME_HREF, isHomePath, showSiteRail } from "../lib/homeNav";
+import { exactAuthorId } from "../lib/catalogPreview";
+import { FATHERS_INDEX_PATH } from "../lib/fatherPageMeta";
+import { siteTab, type SiteTab } from "../lib/homeNav";
 import { useReadTabHref } from "../lib/useReadTabHref";
+import { bibleHref } from "../lib/lastRead";
 import { useApp } from "../context/AppContext";
 import { Booklist } from "./Booklist";
-import { ICONS } from "./Icons";
 
 function Brand() {
   return (
@@ -18,93 +18,209 @@ function Brand() {
   );
 }
 
-function Rail() {
-  const { navOpen, setNavOpen } = useApp();
-  const location = useLocation();
-  const readHref = useReadTabHref();
-  const homeActive = isHomePath(location.pathname);
-  const readActive =
-    location.pathname === "/read" ||
-    location.pathname === "/augustines-confessions" ||
-    (location.pathname.startsWith("/fathers/") && !isFathersTabPath(location.pathname));
-  const fathersActive = isFathersTabPath(location.pathname);
-  const bibleActive = location.pathname === "/bible";
-  const writingsActive =
-    location.pathname === "/church-fathers" || location.pathname === "/church-fathers/" || location.pathname === "/browse";
+/**
+ * The site's three places. Fathers: the library by century, with what happened in each century.
+ * Study: the Fathers' writings, reopened at the last one read. Bible: Scripture with the Fathers'
+ * commentary beside it, reopened at the last chapter read.
+ */
+function SiteTabs({ tab }: { tab: SiteTab | null }) {
+  const studyHref = useReadTabHref();
+  const item = (id: SiteTab, href: string, label: string) => (
+    <Link to={href} className={"site-tab" + (tab === id ? " is-on" : "")} aria-current={tab === id ? "page" : undefined}>
+      {label}
+    </Link>
+  );
   return (
-    <nav className={"rail" + (navOpen ? " open" : "")} id="rail" aria-label="Primary">
-      <div className="rail-pages">
-        <NavLink to={HOME_HREF} className={() => (homeActive ? "active" : "")} onClick={() => setNavOpen(false)}>
-          {ICONS.home}
-          <span>Home</span>
-        </NavLink>{" "}
-        <NavLink to={readHref} className={() => (readActive ? "active" : "")} onClick={() => setNavOpen(false)}>
-          {ICONS.read}
-          <span>Read</span>
-        </NavLink>{" "}
-        <NavLink to="/bible" className={() => (bibleActive ? "active" : "")} onClick={() => setNavOpen(false)}>
-          {ICONS.bible}
-          <span>Bible</span>
-        </NavLink>{" "}
-        <NavLink
-          to="/church-fathers"
-          className={() => (writingsActive ? "active" : "")}
-          onClick={() => setNavOpen(false)}
-        >
-          {ICONS.browse}
-          <span>Browse</span>
-        </NavLink>{" "}
-        <NavLink to="/fathers/" className={() => (fathersActive ? "active" : "")} onClick={() => setNavOpen(false)}>
-          {ICONS.fathers}
-          <span>Fathers</span>
-        </NavLink>{" "}
-        <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
-          {ICONS.about}
-          <span>About</span>
-        </NavLink>{" "}
-        <NavLink to="/give" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
-          {ICONS.give}
-          <span>Give</span>
-        </NavLink>{" "}
-        <NavLink to="/fixes" className={({ isActive }) => (isActive ? "active" : "")} onClick={() => setNavOpen(false)}>
-          {ICONS.fixes}
-          <span>Fixes</span>
-        </NavLink>{" "}
-      </div>
+    <nav className="site-tabs" aria-label="Primary">
+      {item("fathers", FATHERS_INDEX_PATH, "Fathers")}
+      {item("study", studyHref, "Study")}
+      {item("bible", bibleHref(), "Bible")}
+      {item("types", "/types", "Types")}
     </nav>
   );
 }
 
-function Header({ searchQ, setSearchQ }: { searchQ: string; setSearchQ: (q: string) => void }) {
-  const {
-    user,
-    theme,
-    setTheme,
-    setNavOpen,
-    setUser,
-    navOpen,
-    catalog,
-    font,
-    setFont,
-    booklistOpen,
-    setBooklistOpen
-  } = useApp();
-  const [params] = useSearchParams();
-  const [openedBySearch, setOpenedBySearch] = useState(false);
-  const navigate = useNavigate();
+const SearchIcon = (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+    <circle cx="11" cy="11" r="6.5" />
+    <path d="M20 20l-4.2-4.2" />
+  </svg>
+);
+
+/** The ⋯ menu: the pages and settings that do not need a tab of their own. */
+function SiteMenu() {
+  const { theme, setTheme, font, setFont } = useApp();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
   const location = useLocation();
+
+  useEffect(() => setOpen(false), [location.pathname, location.search]);
+  useEffect(() => {
+    if (!open) return;
+    function onDoc(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("click", onDoc);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("click", onDoc);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  const night = theme === "night";
+  return (
+    <div className="site-menu" ref={ref}>
+      <button
+        type="button"
+        className={"icon-btn site-menu-btn" + (open ? " active" : "")}
+        aria-label="More"
+        aria-haspopup="true"
+        aria-expanded={open}
+        onClick={() => setOpen(!open)}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <circle cx="5" cy="12" r="1.8" />
+          <circle cx="12" cy="12" r="1.8" />
+          <circle cx="19" cy="12" r="1.8" />
+        </svg>
+      </button>
+      {open ? (
+        <div className="site-menu-panel">
+          <Link className="site-menu-item" to="/about">
+            About Patrista
+          </Link>
+          <Link className="site-menu-item" to="/fixes">
+            Feedback
+          </Link>
+          <div className="site-menu-sep" role="separator" />
+          <div className="site-menu-row">
+            <span>Text size</span>
+            <span className="site-menu-steps">
+              <button type="button" aria-label="Decrease text size" onClick={() => setFont(Math.max(14, font - 2))}>
+                A−
+              </button>
+              <button type="button" aria-label="Increase text size" onClick={() => setFont(Math.min(26, font + 2))}>
+                A+
+              </button>
+            </span>
+          </div>
+          <button
+            type="button"
+            className="site-menu-row site-menu-toggle"
+            role="switch"
+            aria-checked={night}
+            onClick={() => setTheme(night ? "day" : "night")}
+          >
+            <span>Night mode</span>
+            <span className={"site-switch" + (night ? " is-on" : "")} aria-hidden="true" />
+          </button>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+/**
+ * Desktop: the same pages and settings as the ⋯ menu, laid out on the right of the header so it
+ * balances the logo and tabs on the left.
+ */
+function HeaderTools() {
+  const { theme, setTheme, font, setFont } = useApp();
+  const night = theme === "night";
+  return (
+    <div className="header-tools">
+      <Link className="header-link" to="/about">
+        About
+      </Link>
+      <Link className="header-link" to="/fixes">
+        Feedback
+      </Link>
+      <span className="header-sep" aria-hidden="true" />
+      <div className="header-size" role="group" aria-label="Text size">
+        <button type="button" id="fontDown" aria-label="Decrease text size" onClick={() => setFont(Math.max(14, font - 2))}>
+          A
+        </button>
+        <button type="button" id="fontUp" aria-label="Increase text size" onClick={() => setFont(Math.min(26, font + 2))}>
+          A
+        </button>
+      </div>
+      <button
+        type="button"
+        className="icon-btn header-theme"
+        id="themeBtn"
+        aria-label={night ? "Day mode" : "Night mode"}
+        aria-pressed={night}
+        title={night ? "Day mode" : "Night mode"}
+        onClick={() => setTheme(night ? "day" : "night")}
+      >
+        {night ? (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" />
+          </svg>
+        ) : (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+            <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z" />
+          </svg>
+        )}
+      </button>
+    </div>
+  );
+}
+
+/**
+ * Search, with the list of every writing as its dropdown: typing filters the list, the Writings
+ * button opens it without typing. On phones the field folds into an icon and opens over the header.
+ */
+function SiteSearch({
+  searchQ,
+  setSearchQ,
+  open,
+  setOpen
+}: {
+  searchQ: string;
+  setSearchQ: (q: string) => void;
+  open: boolean;
+  setOpen: (open: boolean) => void;
+}) {
+  const { catalog, booklistOpen, setBooklistOpen } = useApp();
+  const [params] = useSearchParams();
+  const navigate = useNavigate();
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const urlQ = params.get("q");
     if (urlQ != null) setSearchQ(urlQ);
   }, [params, setSearchQ]);
 
+  // A click anywhere outside the search closes its dropdown.
+  useEffect(() => {
+    if (!booklistOpen) return;
+    function onDoc(e: MouseEvent) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setBooklistOpen(false);
+    }
+    document.addEventListener("click", onDoc);
+    return () => document.removeEventListener("click", onDoc);
+  }, [booklistOpen, setBooklistOpen]);
+
+  useEffect(() => {
+    if (open) inputRef.current?.focus();
+  }, [open]);
+
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     const trimmed = searchQ.trim();
     if (!trimmed || !catalog) return;
-    if (isExactAuthorQuery(trimmed, catalog)) {
-      setBooklistOpen(true);
+    setBooklistOpen(false);
+    setOpen(false);
+    const authorId = exactAuthorId(trimmed, catalog);
+    if (authorId) {
+      navigate("/fathers/" + encodeURIComponent(authorId) + "/");
       return;
     }
     const parsed = parseQuery(trimmed, catalog);
@@ -115,201 +231,109 @@ function Header({ searchQ, setSearchQ }: { searchQ: string; setSearchQ: (q: stri
       );
       return;
     }
-    setBooklistOpen(true);
+    navigate("/search?q=" + encodeURIComponent(trimmed));
   }
 
+  // Typing no longer opens the Writings list: Enter goes to the search page. The list still filters
+  // as you type once the Writings button has opened it.
   function onQueryInput(value: string) {
     setSearchQ(value);
-    if (value.trim()) {
-      if (!booklistOpen) {
-        setOpenedBySearch(true);
-        setBooklistOpen(true);
-      }
-    } else if (openedBySearch) {
-      setBooklistOpen(false);
-      setOpenedBySearch(false);
-    }
   }
 
   return (
-    <header className="site-header">
-      <button
-        className="icon-btn hamburger"
-        id="hamburger"
-        aria-label="Open menu"
-        onClick={() => setNavOpen(!navOpen)}
-      >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M4 7h16M4 12h16M4 17h16" />
-        </svg>
-      </button>
-      <Brand />
-      <form className="header-search" id="searchForm" onSubmit={onSubmit}>
-        <button
-          type="button"
-          className={"writings-toggle" + (booklistOpen ? " active" : "")}
-          id="booklistBtn"
-          aria-pressed={booklistOpen}
-          onClick={() => {
-            setOpenedBySearch(false);
-            setBooklistOpen(!booklistOpen);
-          }}
-        >
-          Writings
-        </button>
+    <div className="site-search" ref={wrapRef}>
+      <form className="header-search" id="searchForm" role="search" onSubmit={onSubmit}>
+        <span className="header-search-icon">{SearchIcon}</span>
         <input
+          ref={inputRef}
           type="search"
           name="q"
           id="q"
-          placeholder="Find across the Fathers…"
+          placeholder="Search the Fathers…"
           value={searchQ}
           aria-label="Search writings"
+          autoComplete="off"
           onChange={(e) => onQueryInput(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") {
+              setBooklistOpen(false);
+              setOpen(false);
+            }
+          }}
         />
-      </form>
-      <div className="header-actions">
-        <div className="font-ctrl">
-          Aa{" "}
-          <button type="button" id="fontDown" aria-label="Decrease text size" onClick={() => setFont(Math.max(14, font - 2))}>
-            −
-          </button>
-          <button type="button" id="fontUp" aria-label="Increase text size" onClick={() => setFont(Math.min(26, font + 2))}>
-            +
-          </button>
-        </div>
         <button
-          className="icon-btn"
-          id="themeBtn"
-          title="Night mode"
-          aria-label="Toggle night mode"
-          onClick={() => setTheme(theme === "night" ? "day" : "night")}
+          type="button"
+          className={"header-search-browse" + (booklistOpen ? " is-open" : "")}
+          id="booklistBtn"
+          aria-expanded={booklistOpen}
+          aria-controls="booklist"
+          onClick={() => setBooklistOpen(!booklistOpen)}
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-            <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z" />
-          </svg>
+          Writings <span aria-hidden="true">▾</span>
         </button>
-        {location.pathname === "/bible" ? <RailSettings /> : null}
+      </form>
+      <button type="button" className="icon-btn header-search-close" aria-label="Close search" onClick={() => setOpen(false)}>
+        ×
+      </button>
+      <Booklist query={searchQ} onQueryChange={setSearchQ} />
+    </div>
+  );
+}
+
+function Header({ searchQ, setSearchQ, tab }: { searchQ: string; setSearchQ: (q: string) => void; tab: SiteTab | null }) {
+  const location = useLocation();
+  const [searchOpen, setSearchOpen] = useState(false);
+  useEffect(() => setSearchOpen(false), [location.pathname, location.search]);
+
+  return (
+    <header className={"site-header" + (searchOpen ? " is-searching" : "")}>
+      <div className="header-left">
+        <Brand />
+        <SiteTabs tab={tab} />
+      </div>
+      <SiteSearch searchQ={searchQ} setSearchQ={setSearchQ} open={searchOpen} setOpen={setSearchOpen} />
+      <div className="header-actions">
+        <button type="button" className="icon-btn header-search-open" aria-label="Search" onClick={() => setSearchOpen(true)}>
+          {SearchIcon}
+        </button>
+        <HeaderTools />
+        <SiteMenu />
       </div>
     </header>
   );
 }
 
-function RailSettings() {
-  const { railAutoFocus, railAutoCollapse, setRailAutoFocus, setRailAutoCollapse } = useApp();
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function onDocClick(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    }
-    if (open) document.addEventListener("click", onDocClick);
-    return () => document.removeEventListener("click", onDocClick);
-  }, [open]);
-
-  return (
-    <div className="rail-settings-wrap" ref={ref}>
-      <button
-        type="button"
-        className={"icon-btn" + (open ? " active" : "")}
-        id="railSettingsBtn"
-        title="Commentary scroll settings"
-        aria-label="Commentary scroll settings"
-        aria-expanded={open}
-        onClick={() => setOpen(!open)}
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-          <circle cx="12" cy="12" r="3" />
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
-        </svg>
-      </button>
-      {open ? (
-        <div className="rail-settings-popover" role="dialog" aria-label="Commentary scroll settings">
-          <p className="rail-settings-heading">Scroll Rail</p>
-          <label className="rail-setting-item">
-            <input
-              type="checkbox"
-              id="pref-rail-autofocus"
-              checked={railAutoFocus}
-              onChange={(e) => setRailAutoFocus(e.target.checked)}
-            />
-            <span>Auto-focus active section</span>
-          </label>
-          <label className="rail-setting-item">
-            <input
-              type="checkbox"
-              id="pref-rail-autocollapse"
-              checked={railAutoCollapse}
-              onChange={(e) => setRailAutoCollapse(e.target.checked)}
-            />
-            <span>Auto-collapse rail on section change</span>
-          </label>
-        </div>
-      ) : null}
-    </div>
-  );
-}
-
-
 export function Layout({ children }: { children: ReactNode }) {
-  const { setNavOpen, setBooklistOpen, setLoginOpen, toast, navOpen } = useApp();
+  const { setBooklistOpen, setLoginOpen, toast } = useApp();
   const location = useLocation();
   const [searchQ, setSearchQ] = useState("");
-  const isLanding = isHomePath(location.pathname);
+  const tab = siteTab(location.pathname);
   const isHistoryCinematic = location.pathname === "/church-history" || location.pathname === "/church-history/";
-  const isFathers =
-    location.pathname === "/church-fathers" || location.pathname === "/church-fathers/" || location.pathname === "/browse";
   const isJournal = location.pathname === "/journal";
 
   useEffect(() => {
-    document.body.classList.toggle("nav-open", navOpen);
-  }, [navOpen]);
-
-  useEffect(() => {
-    setNavOpen(false);
     setBooklistOpen(false);
-  }, [location.pathname, location.search, setNavOpen, setBooklistOpen]);
+  }, [location.pathname, location.search, setBooklistOpen]);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") {
         setLoginOpen(false);
         setBooklistOpen(false);
-        setNavOpen(false);
       }
     }
-    function onClick(e: MouseEvent) {
-      if (!navOpen) return;
-      const t = e.target as HTMLElement;
-      if (t.closest("#rail") || t.closest("#hamburger") || t.closest(".landing-menu")) return;
-      setNavOpen(false);
-    }
     document.addEventListener("keydown", onKey);
-    document.addEventListener("click", onClick);
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.removeEventListener("click", onClick);
-    };
-  }, [navOpen, setLoginOpen, setBooklistOpen, setNavOpen]);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [setLoginOpen, setBooklistOpen]);
 
   return (
     <>
       <a className="skip-link" href="#page">
         Skip to content
       </a>
-      {showSiteRail(location.pathname) ? <Rail /> : null}
-      {!isLanding ? <Header searchQ={searchQ} setSearchQ={setSearchQ} /> : null}
-      <Booklist query={searchQ} onQueryChange={setSearchQ} />
+      <Header searchQ={searchQ} setSearchQ={setSearchQ} tab={tab} />
       <main
-        className={
-          "page" +
-          (isLanding ? " page--landing" : "") +
-          (isHistoryCinematic ? " page--history-cinematic" : "") +
-          (isFathers ? " page--library" : "") +
-          (isJournal ? " page--journal" : "")
-        }
+        className={"page" + (isHistoryCinematic ? " page--history-cinematic" : "") + (isJournal ? " page--journal" : "")}
         id="page"
       >
         {children}

@@ -1,0 +1,27 @@
+{
+  "src": "04:eve-and-mary",
+  "tradition": "fathers",
+  "work": "Church Fathers in the Patrista corpus (ANF/NPNF translations)",
+  "label": "Eve and the Virgin Mary",
+  "kind": "role",
+  "def": "Eve, still a virgin in Paradise, listens to the serpent, disobeys God and becomes the mother of all who die.",
+  "texts": "Gen 3:1-20; Luke 1:26-38; Gal 4:4.",
+  "christ": "Mary, a virgin who believes the angel and obeys, undoes what Eve did, so that Christ is born the same way the fall came in and destroys the serpent's work: \"the knot of Eve's disobedience was loosed by the obedience of Mary\" (Irenaeus, *AH* 3.22.4).",
+  "where": [
+    "Justin, *Dial.* 100 — “For Eve, who was a virgin and undefiled, having conceived the word of the serpent, brought forth disobedience and death.”",
+    "Irenaeus, *AH* 3.22.4 — “For what the virgin Eve had bound fast through unbelief, this did the virgin Mary set free through faith.”",
+    "Irenaeus, *AH* 5.19.1 — “in order that the Virgin Mary might become the patroness (advocata) of the virgin Eve.”",
+    "Tertullian, *Carn.* 17 — “As Eve had believed the serpent, so Mary believed the angel.”",
+    "Jerome, *Ep.* 22.21 — “Death came through Eve, but life has come through Mary.”",
+    "Ephraim, *Hom. on Our Lord* 3 — “But Mary budded forth, a new shoot from Eve the ancient vine; and new life dwelt in her”"
+  ],
+  "links": [
+    { "label": "Justin, Dialogue with Trypho 100", "href": "/fathers/justin/dialogue-with-trypho/chapter-100/" },
+    { "label": "Irenaeus, Against Heresies 3.22.4", "href": "/fathers/irenaeus/against-heresies/chapter-88/" },
+    { "label": "Irenaeus, Against Heresies 5.19.1", "href": "/fathers/irenaeus/against-heresies/chapter-151/" },
+    { "label": "Tertullian, On the Flesh of Christ 17", "href": "/fathers/tertullian/on-the-flesh-of-christ/chapter-17/" },
+    { "label": "Jerome, Letter 22.21", "href": "/fathers/jerome/jerome-letters/chapter-22/" },
+    { "label": "Ephraim, Homily on Our Lord 3", "href": "/fathers/ephraim/three-homilies/chapter-1/" }
+  ],
+  "confidence": ""
+}

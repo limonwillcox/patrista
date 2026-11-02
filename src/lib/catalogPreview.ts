@@ -194,7 +194,12 @@ export function previewCatalog(raw: string, catalog: Catalog): CatalogPreview {
 }
 
 export function isExactAuthorQuery(raw: string, catalog: Catalog): boolean {
+  return exactAuthorId(raw, catalog) != null;
+}
+
+/** The author whose name (or id) the query is, exactly; else null. */
+export function exactAuthorId(raw: string, catalog: Catalog): string | null {
   const q = normalize(raw);
-  if (!q) return false;
-  return catalog.authors.some((a) => normalize(a.name) === q || a.id === q);
+  if (!q) return null;
+  return catalog.authors.find((a) => normalize(a.name) === q || a.id === q)?.id ?? null;
 }

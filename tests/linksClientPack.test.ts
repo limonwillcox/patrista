@@ -44,7 +44,7 @@ describe("verseResponseFromPack", () => {
     expect(got.ref).toEqual(expected.ref);
     expect(got.counts).toEqual(expected.counts);
     expect(got.tree).toEqual(expected.tree);
-  });
+  }, 30_000); // loads the whole library: slow when the suite runs in parallel
 
   it("matches GET /api/links/verse for John 1:1", () => {
     const api = handleApiRequest("/api/links/verse?book=jo&chapter=1&verse=1");

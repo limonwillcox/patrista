@@ -1,0 +1,1138 @@
+[
+ {
+  "a": "red-sea",
+  "b": "jordan-crossing",
+  "tier": "established",
+  "shape_score": 2.5,
+  "shape_p": 0.0629,
+  "verse_links": 9,
+  "words": [
+   "H5067 nêd",
+   "H2724 chârâbâh",
+   "H5488 çûwph",
+   "H3220 yâm",
+   "H3372 yârêʼ"
+  ],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Gregory Nazianzen",
+   "Origen",
+   "Tertullian"
+  ],
+  "witness_footnotes": 6,
+  "witness_curated": [
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "flood",
+  "b": "jonah",
+  "tier": "established",
+  "shape_score": 1.6,
+  "shape_p": 0.0659,
+  "verse_links": 3,
+  "words": [
+   "H1709 dâg",
+   "H7043 qâlal",
+   "H3123 yôwnâh"
+  ],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "Waters that drown"
+  ]
+ },
+ {
+  "a": "creation",
+  "b": "red-sea",
+  "tier": "established",
+  "shape_score": 1.15,
+  "shape_p": 0.041,
+  "verse_links": 12,
+  "words": [
+   "H3004 yabbâshâh",
+   "H8415 tᵉhôwm",
+   "H2822 chôshek",
+   "H3915 layil",
+   "H3220 yâm"
+  ],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Gregory Nyssa",
+   "Tertullian"
+  ],
+  "witness_footnotes": 1,
+  "witness_curated": [
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "red-sea",
+  "b": "jonah",
+  "tier": "established",
+  "shape_score": 0.8,
+  "shape_p": 0.0559,
+  "verse_links": 17,
+  "words": [
+   "H3004 yabbâshâh",
+   "H5488 çûwph",
+   "H8415 tᵉhôwm",
+   "H1272 bârach",
+   "H3220 yâm"
+  ],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "Waters that drown"
+  ]
+ },
+ {
+  "a": "creation",
+  "b": "flood",
+  "tier": "supported",
+  "shape_score": 1.3,
+  "shape_p": 0.4186,
+  "verse_links": 1,
+  "words": [
+   "H1254 bârâʼ",
+   "H8064 shâmayim"
+  ],
+  "witness": [
+   "Ambrose",
+   "Chrysostom",
+   "Cyril",
+   "Gregory",
+   "Jerome",
+   "John Damascus",
+   "Tertullian"
+  ],
+  "witness_footnotes": 3,
+  "witness_curated": [
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "creation",
+  "b": "baptism-of-jesus",
+  "tier": "supported",
+  "shape_score": 1.3,
+  "shape_p": 0.3207,
+  "verse_links": 3,
+  "words": [
+   "G5204 hýdōr",
+   "G3772 ouranós",
+   "G4151 pneûma"
+  ],
+  "witness": [
+   "Ambrose",
+   "Athanasius",
+   "Cyril",
+   "Gregory",
+   "Leo",
+   "Tertullian"
+  ],
+  "witness_footnotes": 2,
+  "witness_curated": [
+   "Spirit over the waters",
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "flood",
+  "b": "moses-basket",
+  "tier": "supported",
+  "shape_score": 1.1,
+  "shape_p": 1.0,
+  "verse_links": 16,
+  "words": [
+   "H8392 têbâh",
+   "H1323 bath",
+   "H3205 yâlad",
+   "H7760 sûwm",
+   "H7969 shâlôwsh"
+  ],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "Ark / ship (vessel through the waters)"
+  ]
+ },
+ {
+  "a": "jordan-crossing",
+  "b": "baptism-of-jesus",
+  "tier": "supported",
+  "shape_score": 1.0,
+  "shape_p": 0.1578,
+  "verse_links": 7,
+  "words": [
+   "G3037 líthos",
+   "G4228 poús",
+   "G2597 katabaínō",
+   "G5495 cheír",
+   "G5204 hýdōr"
+  ],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "The Jordan",
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "flood",
+  "b": "baptism-of-jesus",
+  "tier": "supported",
+  "shape_score": 0.95,
+  "shape_p": 0.2867,
+  "verse_links": 13,
+  "words": [
+   "G4058 peristerá",
+   "G5308 hypsēlós",
+   "G455 anoígō",
+   "G4228 poús",
+   "G5495 cheír"
+  ],
+  "witness": [
+   "Ambrose",
+   "Augustine",
+   "Cyril",
+   "Dionysius",
+   "Gregory",
+   "Irenaeus",
+   "John Damascus",
+   "Tertullian"
+  ],
+  "witness_footnotes": 3,
+  "witness_curated": [
+   "Dove (herald of peace; the Spirit)",
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "creation",
+  "b": "jordan-crossing",
+  "tier": "supported",
+  "shape_score": 0.85,
+  "shape_p": 0.2927,
+  "verse_links": 4,
+  "words": [
+   "H3220 yâm",
+   "H4725 mâqôwm",
+   "H8432 tâvek",
+   "H4325 mayim",
+   "H259 ʼechâd"
+  ],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "flood",
+  "b": "red-sea",
+  "tier": "supported",
+  "shape_score": 0.8,
+  "shape_p": 1.0,
+  "verse_links": 2,
+  "words": [
+   "H2724 chârâbâh",
+   "H8337 shêsh",
+   "H3967 mêʼâh"
+  ],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "The water series as one shape",
+   "Waters that drown"
+  ]
+ },
+ {
+  "a": "red-sea",
+  "b": "baptism-of-jesus",
+  "tier": "supported",
+  "shape_score": 0.7,
+  "shape_p": 1.0,
+  "verse_links": 6,
+  "words": [
+   "G5204 hýdōr",
+   "G4151 pneûma",
+   "G2478 ischyrós"
+  ],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "flood",
+  "b": "jordan-crossing",
+  "tier": "supported",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 20,
+  "words": [
+   "H2724 chârâbâh",
+   "H6654 tsad",
+   "H226 ʼôwth",
+   "H3001 yâbêsh",
+   "H7097 qâtseh"
+  ],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "flood",
+  "b": "fall",
+  "tier": "supported",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 4,
+  "words": [
+   "H5929 ʻâleh",
+   "H3978 maʼăkâl",
+   "H127 ʼădâmâh",
+   "H2416 chay",
+   "H398 ʼâkal"
+  ],
+  "witness": [
+   "Augustine",
+   "Clement Rome",
+   "John Damascus"
+  ],
+  "witness_footnotes": 5,
+  "witness_curated": []
+ },
+ {
+  "a": "red-sea",
+  "b": "naaman",
+  "tier": "supported",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 4,
+  "words": [
+   "H7393 rekeb",
+   "H5483 çûwç",
+   "H4264 machăneh",
+   "H5975 ʻâmad"
+  ],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "jordan-crossing",
+  "b": "naaman",
+  "tier": "supported",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 1,
+  "words": [
+   "H2881 ṭâbal",
+   "H3383 Yardên"
+  ],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "The Jordan",
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "naaman",
+  "b": "jonah",
+  "tier": "candidate",
+  "shape_score": 1.5,
+  "shape_p": 0.0659,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "moses-basket",
+  "b": "jonah",
+  "tier": "candidate",
+  "shape_score": 1.15,
+  "shape_p": 0.0589,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "moses-basket",
+  "b": "baptism-of-jesus",
+  "tier": "candidate",
+  "shape_score": 1.15,
+  "shape_p": 0.1459,
+  "verse_links": 1,
+  "words": [
+   "G906 bállō",
+   "G1781 entéllomai"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "creation",
+  "b": "jonah",
+  "tier": "candidate",
+  "shape_score": 1.1,
+  "shape_p": 0.5455,
+  "verse_links": 6,
+  "words": [
+   "H3004 yabbâshâh",
+   "H8415 tᵉhôwm",
+   "H3220 yâm",
+   "H4325 mayim",
+   "H8064 shâmayim"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "moses-basket",
+  "b": "red-sea",
+  "tier": "candidate",
+  "shape_score": 1.1,
+  "shape_p": 1.0,
+  "verse_links": 4,
+  "words": [
+   "H5488 çûwph",
+   "H3320 yâtsab",
+   "H6547 Parʻôh",
+   "H8432 tâvek",
+   "H1980 hâlak"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "fall",
+  "b": "noah-vineyard",
+  "tier": "candidate",
+  "shape_score": 1.1,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": [
+   "Methodius"
+  ],
+  "witness_footnotes": 1,
+  "witness_curated": []
+ },
+ {
+  "a": "fall",
+  "b": "joseph",
+  "tier": "candidate",
+  "shape_score": 1.1,
+  "shape_p": 1.0,
+  "verse_links": 14,
+  "words": [
+   "H3978 maʼăkâl",
+   "H3801 kᵉthôneth",
+   "H6779 tsâmach",
+   "H2233 zeraʻ",
+   "H7235 râbâh"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "noah-vineyard",
+  "b": "joseph",
+  "tier": "candidate",
+  "shape_score": 1.1,
+  "shape_p": 1.0,
+  "verse_links": 4,
+  "words": [
+   "H3364 yâqats",
+   "H8071 simlâh",
+   "H7760 sûwm"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "joseph",
+  "b": "abram-egypt",
+  "tier": "candidate",
+  "shape_score": 1.1,
+  "shape_p": 0.1998,
+  "verse_links": 24,
+  "words": [
+   "H3303 yâpheh",
+   "H3515 kâbêd",
+   "H7458 râʻâb",
+   "H4758 marʼeh",
+   "H3190 yâṭab"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "flood",
+  "b": "naaman",
+  "tier": "candidate",
+  "shape_score": 1.0,
+  "shape_p": 0.3976,
+  "verse_links": 0,
+  "words": [],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "creation",
+  "b": "joseph",
+  "tier": "candidate",
+  "shape_score": 0.85,
+  "shape_p": 0.1299,
+  "verse_links": 4,
+  "words": [
+   "H1242 bôqer",
+   "H3915 layil",
+   "H7121 qârâʼ",
+   "H259 ʼechâd",
+   "H8145 shênîy"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "moses-basket",
+  "b": "abram-egypt",
+  "tier": "candidate",
+  "shape_score": 0.8,
+  "shape_p": 1.0,
+  "verse_links": 8,
+  "words": [
+   "H269 ʼâchôwth",
+   "H6547 Parʻôh",
+   "H6680 tsâvâh",
+   "H802 ʼishshâh",
+   "H7121 qârâʼ"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "red-sea",
+  "b": "abram-egypt",
+  "tier": "candidate",
+  "shape_score": 0.8,
+  "shape_p": 1.0,
+  "verse_links": 2,
+  "words": [
+   "H269 ʼâchôwth",
+   "H6547 Parʻôh",
+   "H5046 nâgad",
+   "H802 ʼishshâh"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "jordan-crossing",
+  "b": "jonah",
+  "tier": "candidate",
+  "shape_score": 0.8,
+  "shape_p": 0.1389,
+  "verse_links": 4,
+  "words": [
+   "H3004 yabbâshâh",
+   "H5488 çûwph",
+   "H3220 yâm",
+   "H4325 mayim",
+   "H5975 ʻâmad"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "jonah",
+  "b": "baptism-of-jesus",
+  "tier": "candidate",
+  "shape_score": 0.8,
+  "shape_p": 0.5045,
+  "verse_links": 0,
+  "words": [],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Irenaeus"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "Going down, coming up"
+  ]
+ },
+ {
+  "a": "moses-basket",
+  "b": "naaman",
+  "tier": "candidate",
+  "shape_score": 0.7,
+  "shape_p": 0.2298,
+  "verse_links": 1,
+  "words": [
+   "H7364 râchats",
+   "H1980 hâlak",
+   "H7971 shâlach",
+   "H3381 yârad"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "baptism-of-jesus",
+  "b": "joseph",
+  "tier": "candidate",
+  "shape_score": 0.7,
+  "shape_p": 0.7353,
+  "verse_links": 2,
+  "words": [
+   "G4228 poús",
+   "G2597 katabaínō",
+   "G305 anabaínō",
+   "G142 aírō"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "naaman",
+  "b": "baptism-of-jesus",
+  "tier": "candidate",
+  "shape_score": 0.65,
+  "shape_p": 0.7173,
+  "verse_links": 0,
+  "words": [],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "The Jordan",
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "creation",
+  "b": "naaman",
+  "tier": "candidate",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": [
+   "Ambrose",
+   "Cyril",
+   "Gregory",
+   "Tertullian"
+  ],
+  "witness_footnotes": 0,
+  "witness_curated": [
+   "The water series as one shape"
+  ]
+ },
+ {
+  "a": "flood",
+  "b": "noah-vineyard",
+  "tier": "candidate",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 23,
+  "words": [
+   "H3315 Yepheth",
+   "H2526 Châm",
+   "H8035 Shêm",
+   "H5146 Nôach",
+   "H3196 yayin"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "flood",
+  "b": "joseph",
+  "tier": "candidate",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 14,
+  "words": [
+   "H3978 maʼăkâl",
+   "H2580 chên",
+   "H8210 shâphak",
+   "H7843 shâchath",
+   "H312 ʼachêr"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "flood",
+  "b": "abram-egypt",
+  "tier": "candidate",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 1,
+  "words": [
+   "H5315 nephesh",
+   "H2421 châyâh",
+   "H251 ʼâch"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "moses-basket",
+  "b": "fall",
+  "tier": "candidate",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 1,
+  "words": [
+   "H3205 yâlad",
+   "H802 ʼishshâh",
+   "H2029 hârâh"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "moses-basket",
+  "b": "joseph",
+  "tier": "candidate",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 12,
+  "words": [
+   "H5680 ʻIbrîy",
+   "H2975 yᵉʼôr",
+   "H3206 yeled",
+   "H8193 sâphâh",
+   "H6547 Parʻôh"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "naaman",
+  "b": "joseph",
+  "tier": "candidate",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 2,
+  "words": [
+   "H7167 qâraʻ",
+   "H899 beged"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "jonah",
+  "b": "joseph",
+  "tier": "candidate",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 2,
+  "words": [
+   "H1419 gâdôwl",
+   "H7451 raʻ",
+   "H7121 qârâʼ"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "baptism-of-jesus",
+  "b": "fall",
+  "tier": "candidate",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": [
+   "Augustine",
+   "Cassian",
+   "Chrysostom",
+   "Dionysius"
+  ],
+  "witness_footnotes": 7,
+  "witness_curated": []
+ },
+ {
+  "a": "red-sea",
+  "b": "joseph",
+  "tier": "candidate",
+  "shape_score": 0.4,
+  "shape_p": 0.4486,
+  "verse_links": 15,
+  "words": [
+   "H4818 merkâbâh",
+   "H1104 bâlaʻ",
+   "H6817 tsâʻaq",
+   "H631 ʼâçar",
+   "H7993 shâlak"
+  ],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "moses-basket",
+  "b": "jordan-crossing",
+  "tier": "none",
+  "shape_score": 1.0,
+  "shape_p": 0.1818,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "naaman",
+  "b": "abram-egypt",
+  "tier": "none",
+  "shape_score": 0.65,
+  "shape_p": 0.6643,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "noah-vineyard",
+  "b": "abram-egypt",
+  "tier": "none",
+  "shape_score": 0.65,
+  "shape_p": 0.3407,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "creation",
+  "b": "moses-basket",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "creation",
+  "b": "abram-egypt",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "moses-basket",
+  "b": "noah-vineyard",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "red-sea",
+  "b": "fall",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "red-sea",
+  "b": "noah-vineyard",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "jordan-crossing",
+  "b": "joseph",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "jordan-crossing",
+  "b": "abram-egypt",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "naaman",
+  "b": "fall",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "naaman",
+  "b": "noah-vineyard",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "jonah",
+  "b": "fall",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "jonah",
+  "b": "noah-vineyard",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "jonah",
+  "b": "abram-egypt",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "baptism-of-jesus",
+  "b": "abram-egypt",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "fall",
+  "b": "abram-egypt",
+  "tier": "none",
+  "shape_score": 0.5,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "creation",
+  "b": "fall",
+  "tier": "none",
+  "shape_score": 0.2,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "creation",
+  "b": "noah-vineyard",
+  "tier": "none",
+  "shape_score": 0.2,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "baptism-of-jesus",
+  "b": "noah-vineyard",
+  "tier": "none",
+  "shape_score": 0.2,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "jordan-crossing",
+  "b": "fall",
+  "tier": "none",
+  "shape_score": 0.0,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ },
+ {
+  "a": "jordan-crossing",
+  "b": "noah-vineyard",
+  "tier": "none",
+  "shape_score": 0.0,
+  "shape_p": 1.0,
+  "verse_links": 0,
+  "words": [],
+  "witness": null,
+  "witness_footnotes": 0,
+  "witness_curated": []
+ }
+]

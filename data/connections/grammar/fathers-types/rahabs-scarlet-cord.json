@@ -1,0 +1,27 @@
+{
+  "src": "04:rahabs-scarlet-cord",
+  "tradition": "fathers",
+  "work": "Church Fathers in the Patrista corpus (ANF/NPNF translations)",
+  "label": "Rahab's scarlet cord",
+  "kind": "object",
+  "def": "The scarlet cord the harlot Rahab tied in her window at Jericho, so that she and everyone gathered in her house were spared when the city fell.",
+  "texts": "Josh 2:1-21; Josh 6:22-25; Heb 11:31; Jas 2:25; Matt 21:31; Exod 12:13.",
+  "christ": "The scarlet cord is the blood of Christ, which saves sinners from all the nations, like the blood of the passover on the doors; Rahab's house, outside which no one was safe, is the Church. By the cord it was shown \"that redemption should flow through the blood of the Lord\" (Clement of Rome, *1 Clem.* 12).",
+  "where": [
+    "Clement of Rome, *1 Clem.* 12 — “she should hang forth from her house a scarlet thread. And thus they made it manifest that redemption should flow through the blood of the Lord”",
+    "Justin, *Dial.* 111 — “also manifested the symbol of the blood of Christ, by which those who were at one time harlots and unrighteous persons out of all nations are saved”",
+    "Irenaeus, *AH* 4.20.12 — “Rahab the harlot was preserved, when all was over [in ultimis], together with all her house, through faith of the scarlet sign”",
+    "Ambrose, *De Fide* 5.10.127 — “bound a scarlet thread in her window, and thus uplifted a sign of her faith and the banner of the Lord's Passion”",
+    "Augustine, *Faust.* 12.31 — “putting out of her window a scarlet line symbolical of blood, as confession is made with the mouth for the remission of sins”",
+    "Jerome, *Ep.* 52.3 — “it was a scarlet cord which the harlot Rahab (a type of the church) hung in her window to preserve her house in the destruction of Jericho”"
+  ],
+  "links": [
+    { "label": "Clement of Rome, First Epistle 12", "href": "/fathers/clement_rome/first-epistle-of-clement/chapter-12/" },
+    { "label": "Justin, Dialogue with Trypho 111", "href": "/fathers/justin/dialogue-with-trypho/chapter-111/" },
+    { "label": "Irenaeus, Against Heresies 4.20.12", "href": "/fathers/irenaeus/against-heresies/chapter-111/" },
+    { "label": "Ambrose, Exposition of the Christian Faith 5.10.127", "href": "/fathers/ambrose/exposition-of-the-christian-faith/chapter-5/" },
+    { "label": "Augustine, Reply to Faustus 12.31", "href": "/fathers/augustine/reply-to-faustus-the-manichaean/chapter-12/" },
+    { "label": "Jerome, Letter 52.3", "href": "/fathers/jerome/jerome-letters/chapter-52/" }
+  ],
+  "confidence": ""
+}

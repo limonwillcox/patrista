@@ -26,3 +26,4 @@ data/confessions.json
 CONTEXT.md
 WHAT-I-DID.md
 .wrangler/
+__pycache__/

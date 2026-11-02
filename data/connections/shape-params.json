@@ -1,0 +1,13 @@
+{
+ "offset": 0.5,
+ "gap_pattern": 0.5,
+ "gap_text": 0.2,
+ "gap_optional": 0.05,
+ "auc_train": 0.5365,
+ "auc_test": 0.5378,
+ "current_train": 0.5224,
+ "current_test": 0.5376,
+ "content_train": 0.5412,
+ "content_test": 0.5542,
+ "note": "chosen on odd-numbered books (train), checked on even-numbered books (test)"
+}

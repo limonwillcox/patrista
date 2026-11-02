@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-import { readDockOpen, writeDockOpen } from "../lib/dockState";
+import { DOCKS_OPEN_MIN_WIDTH, readDockOpen, writeDockOpen } from "../lib/dockState";
 
 /** A dock with a tiny edge notch that slides it out of view and back. */
 export function DockNotch({
@@ -15,7 +15,9 @@ export function DockNotch({
   side?: "left" | "right";
   children: ReactNode;
 }) {
-  const [open, setOpen] = useState(() => readDockOpen(id));
+  const [open, setOpen] = useState(() =>
+    readDockOpen(id, undefined, typeof window === "undefined" || window.innerWidth >= DOCKS_OPEN_MIN_WIDTH)
+  );
   const label = (open ? "Hide " : "Show ") + name;
   function toggle() {
     setOpen((was) => {

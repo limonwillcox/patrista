@@ -195,7 +195,7 @@ export function mountChromeBlackout(el: HTMLElement, className: string): () => v
   };
 }
 
-const CHROME_PEEK_SELECTOR = ".site-header, .rail";
+const CHROME_PEEK_SELECTOR = ".site-header, .tabbar";
 
 /**
  * Cover site chrome while `theatre` holds the viewport. Top/left hit zones

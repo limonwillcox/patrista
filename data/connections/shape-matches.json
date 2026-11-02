@@ -1,0 +1,1559 @@
+{
+ "note": "p = share of random step orders scoring at least as high (lower is stronger)",
+ "results": [
+  {
+   "a": "creation",
+   "b": "flood",
+   "score": 1.3,
+   "matched": 2,
+   "p": 0.4186
+  },
+  {
+   "a": "creation",
+   "b": "moses-basket",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "red-sea",
+   "score": 1.15,
+   "matched": 3,
+   "p": 0.041
+  },
+  {
+   "a": "creation",
+   "b": "jordan-crossing",
+   "score": 0.85,
+   "matched": 3,
+   "p": 0.2927
+  },
+  {
+   "a": "creation",
+   "b": "naaman",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "jonah",
+   "score": 1.1,
+   "matched": 2,
+   "p": 0.5455
+  },
+  {
+   "a": "creation",
+   "b": "baptism-of-jesus",
+   "score": 1.3,
+   "matched": 2,
+   "p": 0.3207
+  },
+  {
+   "a": "creation",
+   "b": "fall",
+   "score": 0.2,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "noah-vineyard",
+   "score": 0.2,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "joseph",
+   "score": 0.85,
+   "matched": 3,
+   "p": 0.1299
+  },
+  {
+   "a": "creation",
+   "b": "abram-egypt",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "seq:waters-passage",
+   "score": 1.55,
+   "matched": 2,
+   "p": 0.3317
+  },
+  {
+   "a": "creation",
+   "b": "seq:decreation-recreation",
+   "score": 1.05,
+   "matched": 2,
+   "p": 0.6324
+  },
+  {
+   "a": "creation",
+   "b": "seq:covenant-history",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "seq:exodus",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "seq:fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "seq:recapitulation",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "seq:attack-on-the-bride",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "seq:younger-over-elder",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "seq:humbled-then-robed",
+   "score": 0.8,
+   "matched": 3,
+   "p": 0.2288
+  },
+  {
+   "a": "creation",
+   "b": "seq:heaven-down-earth-up",
+   "score": 1.1,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "seq:pattern-from-the-mountain",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.2677
+  },
+  {
+   "a": "creation",
+   "b": "seq:work-week",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "creation",
+   "b": "seq:exile-and-return",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "moses-basket",
+   "score": 1.1,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "red-sea",
+   "score": 0.8,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "jordan-crossing",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "naaman",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.3976
+  },
+  {
+   "a": "flood",
+   "b": "jonah",
+   "score": 1.6,
+   "matched": 5,
+   "p": 0.0659
+  },
+  {
+   "a": "flood",
+   "b": "baptism-of-jesus",
+   "score": 0.95,
+   "matched": 2,
+   "p": 0.2867
+  },
+  {
+   "a": "flood",
+   "b": "fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "noah-vineyard",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "joseph",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "abram-egypt",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "seq:waters-passage",
+   "score": 3.95,
+   "matched": 6,
+   "p": 0.033
+  },
+  {
+   "a": "flood",
+   "b": "seq:decreation-recreation",
+   "score": 1.9,
+   "matched": 3,
+   "p": 0.039
+  },
+  {
+   "a": "flood",
+   "b": "seq:covenant-history",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.6074
+  },
+  {
+   "a": "flood",
+   "b": "seq:exodus",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "seq:fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "seq:recapitulation",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "seq:attack-on-the-bride",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "seq:younger-over-elder",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "seq:humbled-then-robed",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "seq:heaven-down-earth-up",
+   "score": 1.1,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "seq:pattern-from-the-mountain",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.2577
+  },
+  {
+   "a": "flood",
+   "b": "seq:work-week",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "flood",
+   "b": "seq:exile-and-return",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.3826
+  },
+  {
+   "a": "moses-basket",
+   "b": "red-sea",
+   "score": 1.1,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "moses-basket",
+   "b": "jordan-crossing",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.1818
+  },
+  {
+   "a": "moses-basket",
+   "b": "naaman",
+   "score": 0.7,
+   "matched": 3,
+   "p": 0.2298
+  },
+  {
+   "a": "moses-basket",
+   "b": "jonah",
+   "score": 1.15,
+   "matched": 3,
+   "p": 0.0589
+  },
+  {
+   "a": "moses-basket",
+   "b": "baptism-of-jesus",
+   "score": 1.15,
+   "matched": 3,
+   "p": 0.1459
+  },
+  {
+   "a": "moses-basket",
+   "b": "fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "moses-basket",
+   "b": "noah-vineyard",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "moses-basket",
+   "b": "joseph",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "moses-basket",
+   "b": "abram-egypt",
+   "score": 0.8,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:waters-passage",
+   "score": 1.65,
+   "matched": 3,
+   "p": 0.0969
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:decreation-recreation",
+   "score": 0.65,
+   "matched": 3,
+   "p": 0.0579
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:covenant-history",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.4136
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:exodus",
+   "score": 1.25,
+   "matched": 2,
+   "p": 0.3137
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:recapitulation",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:attack-on-the-bride",
+   "score": 1.4,
+   "matched": 3,
+   "p": 0.2547
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:younger-over-elder",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:humbled-then-robed",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:heaven-down-earth-up",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:pattern-from-the-mountain",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:work-week",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "moses-basket",
+   "b": "seq:exile-and-return",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "jordan-crossing",
+   "score": 2.5,
+   "matched": 3,
+   "p": 0.0629
+  },
+  {
+   "a": "red-sea",
+   "b": "naaman",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "jonah",
+   "score": 0.8,
+   "matched": 3,
+   "p": 0.0559
+  },
+  {
+   "a": "red-sea",
+   "b": "baptism-of-jesus",
+   "score": 0.7,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "noah-vineyard",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "joseph",
+   "score": 0.4,
+   "matched": 2,
+   "p": 0.4486
+  },
+  {
+   "a": "red-sea",
+   "b": "abram-egypt",
+   "score": 0.8,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:waters-passage",
+   "score": 0.8,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:decreation-recreation",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.1628
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:covenant-history",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:exodus",
+   "score": 1.7,
+   "matched": 3,
+   "p": 0.4086
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:recapitulation",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:attack-on-the-bride",
+   "score": 1.1,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:younger-over-elder",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:humbled-then-robed",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:heaven-down-earth-up",
+   "score": 0.8,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:pattern-from-the-mountain",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:work-week",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.2597
+  },
+  {
+   "a": "red-sea",
+   "b": "seq:exile-and-return",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "naaman",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "jonah",
+   "score": 0.8,
+   "matched": 3,
+   "p": 0.1389
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "baptism-of-jesus",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.1578
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "fall",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "noah-vineyard",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "joseph",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "abram-egypt",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:waters-passage",
+   "score": 1.1,
+   "matched": 3,
+   "p": 0.1369
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:decreation-recreation",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.1808
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:covenant-history",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.3686
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:exodus",
+   "score": 1.25,
+   "matched": 2,
+   "p": 0.5075
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:fall",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:recapitulation",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:attack-on-the-bride",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:younger-over-elder",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:humbled-then-robed",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:heaven-down-earth-up",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:pattern-from-the-mountain",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:work-week",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jordan-crossing",
+   "b": "seq:exile-and-return",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "naaman",
+   "b": "jonah",
+   "score": 1.5,
+   "matched": 4,
+   "p": 0.0659
+  },
+  {
+   "a": "naaman",
+   "b": "baptism-of-jesus",
+   "score": 0.65,
+   "matched": 3,
+   "p": 0.7173
+  },
+  {
+   "a": "naaman",
+   "b": "fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "naaman",
+   "b": "noah-vineyard",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "naaman",
+   "b": "joseph",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "naaman",
+   "b": "abram-egypt",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.6643
+  },
+  {
+   "a": "naaman",
+   "b": "seq:waters-passage",
+   "score": 1.35,
+   "matched": 3,
+   "p": 0.1828
+  },
+  {
+   "a": "naaman",
+   "b": "seq:decreation-recreation",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.3157
+  },
+  {
+   "a": "naaman",
+   "b": "seq:covenant-history",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "naaman",
+   "b": "seq:exodus",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "naaman",
+   "b": "seq:fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "naaman",
+   "b": "seq:recapitulation",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "naaman",
+   "b": "seq:attack-on-the-bride",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.7662
+  },
+  {
+   "a": "naaman",
+   "b": "seq:younger-over-elder",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "naaman",
+   "b": "seq:humbled-then-robed",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "naaman",
+   "b": "seq:heaven-down-earth-up",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.5355
+  },
+  {
+   "a": "naaman",
+   "b": "seq:pattern-from-the-mountain",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.4146
+  },
+  {
+   "a": "naaman",
+   "b": "seq:work-week",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.2527
+  },
+  {
+   "a": "naaman",
+   "b": "seq:exile-and-return",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.2587
+  },
+  {
+   "a": "jonah",
+   "b": "baptism-of-jesus",
+   "score": 0.8,
+   "matched": 3,
+   "p": 0.5045
+  },
+  {
+   "a": "jonah",
+   "b": "fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jonah",
+   "b": "noah-vineyard",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jonah",
+   "b": "joseph",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jonah",
+   "b": "abram-egypt",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jonah",
+   "b": "seq:waters-passage",
+   "score": 2.35,
+   "matched": 4,
+   "p": 0.1059
+  },
+  {
+   "a": "jonah",
+   "b": "seq:decreation-recreation",
+   "score": 1.4,
+   "matched": 2,
+   "p": 0.1638
+  },
+  {
+   "a": "jonah",
+   "b": "seq:covenant-history",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.6014
+  },
+  {
+   "a": "jonah",
+   "b": "seq:exodus",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jonah",
+   "b": "seq:fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jonah",
+   "b": "seq:recapitulation",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jonah",
+   "b": "seq:attack-on-the-bride",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jonah",
+   "b": "seq:younger-over-elder",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jonah",
+   "b": "seq:humbled-then-robed",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jonah",
+   "b": "seq:heaven-down-earth-up",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.5155
+  },
+  {
+   "a": "jonah",
+   "b": "seq:pattern-from-the-mountain",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.2348
+  },
+  {
+   "a": "jonah",
+   "b": "seq:work-week",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "jonah",
+   "b": "seq:exile-and-return",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "noah-vineyard",
+   "score": 0.2,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "joseph",
+   "score": 0.7,
+   "matched": 2,
+   "p": 0.7353
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "abram-egypt",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:waters-passage",
+   "score": 2.2,
+   "matched": 4,
+   "p": 0.031
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:decreation-recreation",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.3007
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:covenant-history",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:exodus",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.5145
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:fall",
+   "score": 0.8,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:recapitulation",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.2098
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:attack-on-the-bride",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.5485
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:younger-over-elder",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:humbled-then-robed",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.98
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:heaven-down-earth-up",
+   "score": 0.8,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:pattern-from-the-mountain",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.4246
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:work-week",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "baptism-of-jesus",
+   "b": "seq:exile-and-return",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "fall",
+   "b": "noah-vineyard",
+   "score": 1.1,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "fall",
+   "b": "joseph",
+   "score": 1.1,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "fall",
+   "b": "abram-egypt",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "fall",
+   "b": "seq:waters-passage",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "fall",
+   "b": "seq:decreation-recreation",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "fall",
+   "b": "seq:covenant-history",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.5864
+  },
+  {
+   "a": "fall",
+   "b": "seq:exodus",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "fall",
+   "b": "seq:fall",
+   "score": 3.15,
+   "matched": 5,
+   "p": 0.014
+  },
+  {
+   "a": "fall",
+   "b": "seq:recapitulation",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "fall",
+   "b": "seq:attack-on-the-bride",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "fall",
+   "b": "seq:younger-over-elder",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.5045
+  },
+  {
+   "a": "fall",
+   "b": "seq:humbled-then-robed",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "fall",
+   "b": "seq:heaven-down-earth-up",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "fall",
+   "b": "seq:pattern-from-the-mountain",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "fall",
+   "b": "seq:work-week",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.4426
+  },
+  {
+   "a": "fall",
+   "b": "seq:exile-and-return",
+   "score": 0.9,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "joseph",
+   "score": 1.1,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "abram-egypt",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.3407
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:waters-passage",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:decreation-recreation",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:covenant-history",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:exodus",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:fall",
+   "score": 1.15,
+   "matched": 3,
+   "p": 0.2867
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:recapitulation",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:attack-on-the-bride",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.3766
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:younger-over-elder",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:humbled-then-robed",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:heaven-down-earth-up",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:pattern-from-the-mountain",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:work-week",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "noah-vineyard",
+   "b": "seq:exile-and-return",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "joseph",
+   "b": "abram-egypt",
+   "score": 1.1,
+   "matched": 2,
+   "p": 0.1998
+  },
+  {
+   "a": "joseph",
+   "b": "seq:waters-passage",
+   "score": 1.05,
+   "matched": 4,
+   "p": 0.4076
+  },
+  {
+   "a": "joseph",
+   "b": "seq:decreation-recreation",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.2877
+  },
+  {
+   "a": "joseph",
+   "b": "seq:covenant-history",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "joseph",
+   "b": "seq:exodus",
+   "score": 1.4,
+   "matched": 2,
+   "p": 0.1838
+  },
+  {
+   "a": "joseph",
+   "b": "seq:fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "joseph",
+   "b": "seq:recapitulation",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "joseph",
+   "b": "seq:attack-on-the-bride",
+   "score": 1.4,
+   "matched": 2,
+   "p": 0.2018
+  },
+  {
+   "a": "joseph",
+   "b": "seq:younger-over-elder",
+   "score": 0.0,
+   "matched": 0,
+   "p": 1.0
+  },
+  {
+   "a": "joseph",
+   "b": "seq:humbled-then-robed",
+   "score": 2.5,
+   "matched": 5,
+   "p": 0.03
+  },
+  {
+   "a": "joseph",
+   "b": "seq:heaven-down-earth-up",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "joseph",
+   "b": "seq:pattern-from-the-mountain",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "joseph",
+   "b": "seq:work-week",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "joseph",
+   "b": "seq:exile-and-return",
+   "score": 0.65,
+   "matched": 2,
+   "p": 0.4206
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:waters-passage",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:decreation-recreation",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:covenant-history",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:exodus",
+   "score": 2.2,
+   "matched": 3,
+   "p": 0.034
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:fall",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:recapitulation",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.2368
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:attack-on-the-bride",
+   "score": 3.8,
+   "matched": 5,
+   "p": 0.01
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:younger-over-elder",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:humbled-then-robed",
+   "score": 1.0,
+   "matched": 2,
+   "p": 0.2158
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:heaven-down-earth-up",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:pattern-from-the-mountain",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:work-week",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  },
+  {
+   "a": "abram-egypt",
+   "b": "seq:exile-and-return",
+   "score": 0.5,
+   "matched": 1,
+   "p": 1.0
+  }
+ ]
+}

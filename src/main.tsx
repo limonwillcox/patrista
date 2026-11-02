@@ -5,6 +5,7 @@ import { App } from "./App";
 import { AppProvider } from "./context/AppContext";
 import { applyFont, applyTheme, storedFont, storedTheme } from "./lib/prefs";
 import "./styles.css";
+import "./styles/connections.css";
 
 applyTheme(storedTheme());
 applyFont(storedFont());

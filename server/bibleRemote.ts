@@ -1,3 +1,4 @@
+import { esvQuery } from "../src/api/bibleTranslations";
 const BIBLE_API_URL = "https://api.scripture.api.bible/v1";
 
 /** API.Bible bible IDs look like `a556c5305ee15c3f-01`. */
@@ -35,7 +36,8 @@ export function parseBibleRemoteQuery(
 ): { ok: true; bibleId: string; chapterId: string } | { ok: false; error: string } {
   const bid = (bibleId || "").trim().toLowerCase();
   const cid = (chapterId || "").trim().toUpperCase();
-  if (!bid) {
+  // "esv" goes to the ESV proxy; anything else must look like an API.Bible id, never a path.
+  if (!bid || (bid !== "esv" && !BIBLE_ID_RE.test(bid))) {
     return { ok: false, error: "Invalid or missing bibleId" };
   }
   if (!cid || !CHAPTER_ID_RE.test(cid)) {
@@ -55,7 +57,8 @@ export async function handleBibleRemoteChapter(
 
   // Handle ESV translation via Worker proxy
   if (bid === "esv") {
-    const key = options.esvKey?.trim() || options.apiKey?.trim();
+    // Only an ESV key: the API.Bible key is no good to the ESV API, which answers "Invalid application key".
+    const key = options.esvKey?.trim();
     if (!key) {
       return {
         status: 503,
@@ -66,7 +69,7 @@ export async function handleBibleRemoteChapter(
     }
 
     const [usfm, chapStr] = cid.split(".");
-    const query = `${usfm} ${chapStr || "1"}`;
+    const query = esvQuery(usfm, chapStr || "1");
     const url = `https://api.esv.org/v3/passage/text/?q=${encodeURIComponent(query)}&include-passage-references=false&include-verse-numbers=true&include-first-verse-numbers=true&include-footnotes=false&include-headings=false`;
     
     try {

@@ -26,6 +26,29 @@ export function isFathersTabPath(pathname: string): boolean {
   return parts[0] === "fathers" && parts.length === 2 && !parts[1].endsWith(".html");
 }
 
+/** One line under each century heading on /fathers/. Keyed by section id. */
+export const SECTION_NOTES: Record<string, string> = {
+  "century-1": "Letters and a church order from the generation that still remembered the Apostles.",
+  "century-2": "Bishops write to their churches on the road to martyrdom, and the Apologists answer pagan Rome.",
+  "century-3": "Irenaeus, Tertullian and Origen: the first great theologians, writing through the persecutions.",
+  "century-4": "The century of Nicaea: Athanasius, the Cappadocians, the desert monks and the first church histories.",
+  "century-5": "Augustine, Chrysostom and Jerome, the councils of Ephesus and Chalcedon, and the fall of Rome in the West.",
+  "century-6": "The West after Rome: rules for monks, letters of popes, and the first chronicles of a new Europe.",
+  "century-7": "Gregory the Great guides the Church of Rome through plague, war and the Lombard invasions.",
+  "century-8": "John of Damascus gathers the Greek Fathers into one summary of the faith.",
+  "century-9": "After the Fathers: Cyril and Methodius carry the faith to the Slavs, and Rome and Constantinople begin to part.",
+  "century-11": "East and West divide in 1054, the end of the story this library tells.",
+  councils: "The creeds and canons of the ecumenical councils, from Nicaea in 325 onward."
+};
+
+const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
+
+/** "I" for century-1; a short mark for named sections. */
+export function sectionMark(sectionId: string): string {
+  const m = sectionId.match(/^century-(\d+)$/);
+  return m ? ROMAN[Number(m[1])] || m[1] : "✠";
+}
+
 export function centuryHeading(n: number): string {
   const titled = centuryChapterTitle(n);
   const split = titled.indexOf(":");

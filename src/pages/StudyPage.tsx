@@ -36,15 +36,23 @@ export function StudyPage() {
 
       <h2>How to read</h2>
       <p>
-        Open any title from <Link to="/church-fathers">Browse</Link> or the Writings list in the header. The whole work sits on
-        one page; use the chapter strip to jump. <strong>Translation</strong> shows the English edition; <strong>Original</strong>{" "}
-        shows Latin (or Greek) when we have it. Scripture commentary lives in the right-hand scroll on the Bible reader, not as
-        inline tags in the Father text.
+        Pick a Father on <Link to="/fathers/">Fathers</Link> and take a book off their shelf, or use the Writings list in the
+        header. The whole work sits on one page; use the chapter box to jump. Where we have the original, choose{" "}
+        <strong>English</strong>, <strong>Latin</strong> or <strong>Side by side</strong> above the text.
       </p>
       <p>
-        Search accepts a keyword (<em>incarnation</em>, <em>restless</em>), a work and chapter (<em>Confessions 8</em>), or a
-        father&apos;s name. Results are ordered through the corpus the way a Bible app orders a Find — by era, then author, then
-        work and chapter.
+        Each paragraph has a number in the margin. Click it to copy a link to that paragraph or a ready-made citation. Where the
+        translator left notes, a small <em>notes</em> button opens them, and Bible references in the notes go straight to the
+        verse on the <Link to="/bible">Bible</Link> page, where the Fathers&apos; commentary sits beside the text.
+      </p>
+      <p>
+        <Link to="/types">Types of Christ</Link> gathers every figure the Fathers saw in the Old Testament, from the
+        paschal lamb to the bronze serpent, each with its passages from Genesis to Revelation and the Fathers&apos; own words.
+      </p>
+      <p>
+        <Link to="/search">Search</Link> takes a word or phrase (<em>incarnation</em>, <em>restless heart</em>) and looks
+        through every chapter of the English texts; narrow the results to one Father with the chips above them. A work and
+        chapter (<em>Confessions 8</em>) or a Father&apos;s name opens that page directly.
       </p>
 
       <h2>First paths</h2>
@@ -64,7 +72,7 @@ export function StudyPage() {
         </li>
         <li>
           <Link to="/church-history/">History</Link> for the cinematic;{" "}
-          <Link to="/church-history/timeline#nativity">Timeline</Link> for the dated eras from the Birth of Christ to 1054.
+          <Link to="/fathers/#nativity">The Fathers page</Link> shows each century's events, from the Birth of Christ to 1054, beside its Fathers.
         </li>
       </ul>
 

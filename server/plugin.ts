@@ -210,7 +210,11 @@ export function fathersApiPlugin(): Plugin {
       server.middlewares.use(fixesMiddleware(env));
       server.middlewares.use(dictionaryMissMiddleware());
       server.middlewares.use(bibleRemoteMiddleware(env));
-      server.middlewares.use(apiMiddleware);
+      // The built site asks for the static files (/api/catalog.json …); serve those from dist as GitHub Pages would.
+      server.middlewares.use((req, res, next) => {
+        if ((req.url || "").split("?")[0].endsWith(".json")) return next();
+        apiMiddleware(req, res, next);
+      });
     }
   };
 }

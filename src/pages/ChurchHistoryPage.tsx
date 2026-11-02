@@ -105,7 +105,7 @@ export function ChurchHistoryPage() {
         if (sentToTimeline.current) return;
         if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
           sentToTimeline.current = true;
-          navigate("/church-history/timeline", { replace: false });
+          navigate("/fathers/", { replace: false });
         }
       },
       { threshold: [0, 0.2, 0.5] }

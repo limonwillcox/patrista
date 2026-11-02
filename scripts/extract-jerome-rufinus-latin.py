@@ -12,7 +12,7 @@ Jerome (PL 23):
 8. Lives of Illustrious Men (CPL-616)
 
 Rufinus (PL 21):
-9. Apology in Defence of Himself (CPL-197) - placed in both Jerome_Latin and Rufinus_Latin
+9. Apology in Defence of Himself (CPL-197) - placed in Rufinus_Latin only (Rufinus wrote it, against Jerome)
 10. Commentary on the Apostles' Creed (CPL-198) - placed in Rufinus_Latin
 """
 import os
@@ -125,14 +125,6 @@ text_ana = extract_blocks(divs21[6])
 text_hiero = extract_blocks(divs21[5])
 text_apology = text_ana + "\n\n" + text_hiero
 
-header_apology_jerome = """# source: Patrologia Latina 21, cols. 541-624 (J.-P. Migne)
-# father: jerome
-# work: Apology in Defence of Himself
-# clavis: CPL-197
-# language: Latin
-# note: Complete Latin text of Rufini Apologia ad Anastasium and Apologia in Hieronymum from Patrologia Latina 21.
-
-"""
 header_apology_rufinus = """# source: Patrologia Latina 21, cols. 541-624 (J.-P. Migne)
 # father: rufinus
 # work: Apology in Defence of Himself
@@ -142,11 +134,7 @@ header_apology_rufinus = """# source: Patrologia Latina 21, cols. 541-624 (J.-P.
 
 """
 
-apology_jerome_path = os.path.join(JEROME_DIR, "Apology in Defence of Himself.txt")
-with open(apology_jerome_path, "w", encoding="utf-8") as f:
-    f.write(header_apology_jerome + text_apology + "\n")
-print(f"Wrote {apology_jerome_path} ({len(text_apology)} chars)")
-
+# Rufinus wrote this Apology against Jerome, so it goes in Rufinus' folder only.
 apology_rufinus_path = os.path.join(RUFINUS_DIR, "Apology in Defence of Himself.txt")
 with open(apology_rufinus_path, "w", encoding="utf-8") as f:
     f.write(header_apology_rufinus + text_apology + "\n")

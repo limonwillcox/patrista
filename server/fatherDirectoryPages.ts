@@ -50,7 +50,7 @@ export function writeFatherDirectoryPages(
     canonicalPath: FATHERS_INDEX_PATH,
     title: FATHERS_INDEX_TITLE,
     description: FATHERS_INDEX_DESCRIPTION,
-    bodyHtml: renderFathersIndexBody(catalog.authors, images),
+    bodyHtml: renderFathersIndexBody(catalog.authors, images, catalog),
     extraHead: "    " + jsonLdTag(fathersIndexJsonLd(origin, people))
   });
   const indexFile = join(dist, "fathers", "index.html");

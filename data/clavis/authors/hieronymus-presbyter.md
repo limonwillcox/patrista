@@ -1313,8 +1313,8 @@ English title: Letter de fide ad Hieronymum
 
 CPL-197
 English title: Apology in Defence of Himself
-- [x] Has English text?  `Fathers/English/Jerome_English/Apology in Defence of Himself.txt`
-- [x] Has original text?  `Fathers/Latin/Jerome_Latin/Apology in Defence of Himself.txt`
+- [x] Has English text?  `Fathers/English/Rufinus_English/Apology in Defence of Himself.txt`
+- [x] Has original text?  `Fathers/Latin/Rufinus_Latin/Apology in Defence of Himself.txt`
 - [ ] Formatted English text?
 - [ ] Formatted original text?
 - [ ] English tagged?

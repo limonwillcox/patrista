@@ -9,7 +9,9 @@ import {
   renderChurchHistoryCinematicHtml
 } from "./server/churchHistory";
 import {
+  addLegacyRedirect,
   applyReadCanonical,
+  clearLegacyRedirects,
   legacyChapterUrls,
   prerenderShell,
   readCanonMap,
@@ -20,9 +22,11 @@ import {
   robotsTxt,
   workCanonicalMap,
   writeFatherPages,
+  writeLegacyRedirects,
   writeSplitNotes,
   writeReadPathAliases
 } from "./server/staticFathers";
+import { packStaticChapters } from "./server/packChapters";
 import { writeFatherDirectoryPages } from "./server/fatherDirectoryPages";
 import { MOVED_CHAPTERS, MOVED_WORKS, WORK_READ_PATHS } from "./src/lib/workSlugs";
 import { auditSeo, oldChapterUrls } from "./server/seoAudit";
@@ -259,6 +263,7 @@ function extrasPlugin() {
       redirectLines.push("/fathers/didache/teaching-of-the-twelve-apostles/*  /fathers/didache/didache.html  301");
       // Works filed under the wrong Father: each old URL gets a 301 and a stub page (GitHub Pages
       // ignores _redirects), pointing at the same chapter of the copy that stays.
+      clearLegacyRedirects();
       for (const move of MOVED_WORKS) {
         const target = getWork(move.to.work);
         if (!target || target.author.id !== move.to.author) throw new Error("moved work: no " + move.to.author + "/" + move.to.work);
@@ -292,9 +297,7 @@ function extrasPlugin() {
         for (const [from, to] of pairs) {
           if (seen.has(from)) continue;
           seen.add(from);
-          const file = from.endsWith(".html") ? join(dist, from.slice(1)) : join(dist, from.slice(1), "index.html");
-          mkdirSync(dirname(file), { recursive: true });
-          writeFileSync(file, renderStubPage(SITE_ORIGIN + to, to));
+          addLegacyRedirect(from, to);
           redirectLines.push(from + "  " + to + "  301");
         }
       }
@@ -313,9 +316,7 @@ function extrasPlugin() {
         const outline = getWorkOutline(w.id);
         if (!payload || !outline) continue;
         writeFileSync(join(worksDir, w.id + ".json"), JSON.stringify(outline));
-        writeFileSync(join(worksDir, w.id + ".text.json"), JSON.stringify(payload));
         redirectLines.push("/api/works/" + w.id + "  /api/works/" + w.id + ".json  200");
-        redirectLines.push("/api/works/" + w.id + "/text  /api/works/" + w.id + ".text.json  200");
         const chapterDir = join(worksDir, w.id, "chapters");
         mkdirSync(chapterDir, { recursive: true });
         for (const chapter of payload.chapters) {
@@ -330,7 +331,7 @@ function extrasPlugin() {
 
       const fathers = writeFatherPages(dist, shell, catalog, SITE_ORIGIN);
       // Chapters cut out of a work that stays: the freed chapter numbers point at the work the text went to.
-      // Written after the Father pages, whose generic stubs for old URLs would otherwise replace these.
+      // Recorded after the Father pages, so these override their generic redirect to the work page.
       for (const move of MOVED_CHAPTERS) {
         const source = getWork(move.from.work);
         const target = getWork(move.to.work);
@@ -341,9 +342,7 @@ function extrasPlugin() {
         if (move.to.chapter > target.chapters.length) throw new Error("moved chapter: " + move.to.work + " has no chapter " + move.to.chapter);
         const from = chapterPublicPath(move.from.author, move.from.work, "chapter-" + move.from.chapter);
         const to = chapterPublicPath(move.to.author, move.to.work, "chapter-" + move.to.chapter);
-        const file = join(dist, from.slice(1), "index.html");
-        mkdirSync(dirname(file), { recursive: true });
-        writeFileSync(file, renderStubPage(SITE_ORIGIN + to, to));
+        addLegacyRedirect(from, to, true);
         redirectLines.push(from + "  " + to + "  301");
       }
       writeSplitNotes(dist, fathers.notes);
@@ -382,8 +381,8 @@ function extrasPlugin() {
 
       redirectLines.push(...writeStaticBibleApi(dist));
       redirectLines.push(...writeStaticLinksApi(dist));
-      redirectLines.push("/*    /index.html   200", "");
-      writeFileSync(join(dist, "_redirects"), redirectLines.join("\n"));
+      const legacyFiles = writeLegacyRedirects(dist);
+      console.log("[legacy] old URLs forwarded through " + legacyFiles + " lookup files");
       for (const file of renderSitemaps(sitemapUrls, SITE_ORIGIN)) {
         writeFileSync(join(dist, file.name), file.body);
       }
@@ -409,6 +408,20 @@ function extrasPlugin() {
       );
       const cited = writeScriptureIndex(dist, catalog, root);
       console.log("[scripture] " + cited + " verses cited by the Fathers");
+
+      // Per-chapter JSON -> size-capped group files (server/packChapters.ts), for hosts with a file limit.
+      const packed = packStaticChapters(dist);
+      console.log("[pack] " + packed.removed + " chapter files packed into " + packed.written + " files");
+
+      // _redirects last: drop rewrites whose target was packed away. No catch-all to index.html: an
+      // unknown path gets 404.html (the app shell), as on GitHub Pages, and the shell forwards old URLs.
+      const kept = redirectLines.filter((line) => {
+        const [, to, code] = line.trim().split(/\s+/);
+        if (code !== "200" || !to || !to.endsWith(".json")) return true;
+        return existsSync(join(dist, decodeURIComponent(to).slice(1)));
+      });
+      writeFileSync(join(dist, "_redirects"), kept.join("\n") + "\n");
+      console.log("[redirects] " + kept.length + " rules (" + (redirectLines.length - kept.length) + " dropped)");
       if (process.env.SKIP_SEARCH_INDEX) {
         console.log("[search] skipped (SKIP_SEARCH_INDEX)");
       } else {

@@ -1,4 +1,5 @@
 import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
+import { LEGACY_REDIRECTS_DIR, legacyRedirectKey } from "../src/lib/legacyRedirects";
 import { dirname, join } from "path";
 import { getWork } from "./api";
 import type { Author, Catalog, Passage, Work } from "./types";
@@ -651,9 +652,7 @@ export function writeFatherPages(
       // wrongly split in two) still resolve: each becomes a stub pointing at the work page.
       const prefix = chapterPublicPath(payload.author.id, payload.work.id, "x").slice(0, -"x/".length);
       for (const oldPath of legacyChapterUrls(prefix)) {
-        const file = join(dist, oldPath.replace(/^\//, ""), "index.html");
-        mkdirSync(dirname(file), { recursive: true });
-        writeFileSync(file, renderStubPage(origin + page.path, page.path));
+        addLegacyRedirect(oldPath, page.path);
         stubs.push(oldPath);
       }
       continue;
@@ -718,9 +717,7 @@ export function writeFatherPages(
       return (h && byHeading.get(h)) || page.path;
     };
     const writeStub = (oldPath: string, target: string) => {
-      const file = join(dist, oldPath.replace(/^\//, ""), "index.html");
-      mkdirSync(dirname(file), { recursive: true });
-      writeFileSync(file, renderStubPage(origin + target, target));
+      addLegacyRedirect(oldPath, target);
       stubs.push(oldPath);
       done.add(oldPath);
     };
@@ -752,6 +749,45 @@ export function writeFatherPages(
   }
 
   return { urls, notes, stubs, reused };
+}
+
+/**
+ * Old URL -> current URL, for chapter and work URLs that moved. Written as one lookup file per Father
+ * (dist/legacy-redirects/<author>.json) instead of one stub page per URL: a static host with a file
+ * limit (Cloudflare Pages Free, 20,000) cannot hold 9,000+ stubs. The page shell (index.html) looks
+ * the address up when it is served for a path that is not its own canonical page, and forwards.
+ * Keys are normalized by legacyRedirectKey().
+ */
+const legacyRedirects = new Map<string, string>();
+
+/** Record a moved URL. The first redirect for a URL wins unless `override` (a more specific target). */
+export function addLegacyRedirect(from: string, to: string, override = false): void {
+  const key = legacyRedirectKey(from);
+  if (override || !legacyRedirects.has(key)) legacyRedirects.set(key, to);
+}
+
+export function legacyRedirectEntries(): [string, string][] {
+  return [...legacyRedirects];
+}
+
+export function clearLegacyRedirects(): void {
+  legacyRedirects.clear();
+}
+
+/** Write dist/legacy-redirects/<author>.json. Returns the number of files written. */
+export function writeLegacyRedirects(dist: string): number {
+  const byAuthor = new Map<string, Record<string, string>>();
+  for (const [from, to] of legacyRedirects) {
+    const author = from.split("/")[2];
+    if (!from.startsWith("/fathers/") || !author) continue;
+    const shard = byAuthor.get(author) ?? {};
+    shard[from] = to;
+    byAuthor.set(author, shard);
+  }
+  const dir = join(dist, LEGACY_REDIRECTS_DIR);
+  mkdirSync(dir, { recursive: true });
+  for (const [author, shard] of byAuthor) writeFileSync(join(dir, author + ".json"), JSON.stringify(shard));
+  return byAuthor.size;
 }
 
 let legacyUrlCache: string[] | null = null;

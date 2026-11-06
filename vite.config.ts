@@ -24,7 +24,7 @@ import {
   writeReadPathAliases
 } from "./server/staticFathers";
 import { writeFatherDirectoryPages } from "./server/fatherDirectoryPages";
-import { MOVED_WORKS, WORK_READ_PATHS } from "./src/lib/workSlugs";
+import { MOVED_CHAPTERS, MOVED_WORKS, WORK_READ_PATHS } from "./src/lib/workSlugs";
 import { auditSeo, oldChapterUrls } from "./server/seoAudit";
 import { assignChapterSlugs, chapterPublicPath, legacyChapterSlugs, workPublicPath } from "./src/lib/fatherPaths";
 import { FATHER_IMAGES } from "./src/lib/fatherImages";
@@ -207,9 +207,9 @@ function extrasPlugin() {
       if (existsSync(nojekyll)) copyFileSync(nojekyll, join(dist, ".nojekyll"));
       else writeFileSync(join(dist, ".nojekyll"), "");
 
-      // Companion static pages (phone gate, settings) + assets they need.
+      // Companion static page (phone gate) + assets it needs.
       // Do not copy give.html: GitHub Pages serves it at /give and would hide the React Give route.
-      for (const name of ["get-app.html", "settings.html"]) {
+      for (const name of ["get-app.html"]) {
         const src = join(root, name);
         if (existsSync(src)) copyFileSync(src, join(dist, name));
       }
@@ -231,7 +231,7 @@ function extrasPlugin() {
         "/api/catalog  /api/catalog.json  200",
         "/get-app.html  /get-app.html  200",
         "/give.html  /give.html  200",
-        "/settings.html  /settings.html  200",
+        "/settings.html  /  301",
         // Serve the prerendered page rather than falling through to the SPA catch-all.
         "/church-history  /church-history/index.html  200",
         "/church-history/  /church-history/index.html  200",
@@ -264,8 +264,20 @@ function extrasPlugin() {
         if (!target || target.author.id !== move.to.author) throw new Error("moved work: no " + move.to.author + "/" + move.to.work);
         const toPage = workPublicPath(move.to.author, move.to.work);
         const pairs: [string, string][] = [[workPublicPath(move.from.author, move.from.work), toPage]];
-        for (const slug of assignChapterSlugs(target.chapters).values()) {
-          pairs.push([chapterPublicPath(move.from.author, move.from.work, slug), chapterPublicPath(move.to.author, move.to.work, slug)]);
+        if (move.chapters) {
+          // Chapters do not line up: map each old chapter number, or send it to the work page.
+          const count = target.chapters.length;
+          for (let n = 1; n <= (move.oldChapters ?? 0); n++) {
+            const to = move.chapters[n];
+            pairs.push([
+              chapterPublicPath(move.from.author, move.from.work, "chapter-" + n),
+              to && to <= count ? chapterPublicPath(move.to.author, move.to.work, "chapter-" + to) : toPage
+            ]);
+          }
+        } else {
+          for (const slug of assignChapterSlugs(target.chapters).values()) {
+            pairs.push([chapterPublicPath(move.from.author, move.from.work, slug), chapterPublicPath(move.to.author, move.to.work, slug)]);
+          }
         }
         // Heading-based URLs from before renumbering (e.g. .../book-ii/) go to the chapter with that heading.
         const numbered = assignChapterSlugs(target.chapters);
@@ -275,7 +287,11 @@ function extrasPlugin() {
         }
         const oldPrefix = "/fathers/" + move.from.author + "/" + move.from.work + "/";
         for (const old of legacyChapterUrls(oldPrefix)) pairs.push([old, byOldSlug.get(old.slice(oldPrefix.length, -1)) ?? toPage]);
+        // The first pair for an old URL is the most specific (a chapter, not the work page): keep it.
+        const seen = new Set<string>();
         for (const [from, to] of pairs) {
+          if (seen.has(from)) continue;
+          seen.add(from);
           const file = from.endsWith(".html") ? join(dist, from.slice(1)) : join(dist, from.slice(1), "index.html");
           mkdirSync(dirname(file), { recursive: true });
           writeFileSync(file, renderStubPage(SITE_ORIGIN + to, to));
@@ -313,6 +329,23 @@ function extrasPlugin() {
       console.log("[fathers] " + directory.urls.length + " directory URLs");
 
       const fathers = writeFatherPages(dist, shell, catalog, SITE_ORIGIN);
+      // Chapters cut out of a work that stays: the freed chapter numbers point at the work the text went to.
+      // Written after the Father pages, whose generic stubs for old URLs would otherwise replace these.
+      for (const move of MOVED_CHAPTERS) {
+        const source = getWork(move.from.work);
+        const target = getWork(move.to.work);
+        if (!target || target.author.id !== move.to.author) throw new Error("moved chapter: no " + move.to.author + "/" + move.to.work);
+        if (source && source.chapters.length >= move.from.chapter) {
+          throw new Error("moved chapter: " + move.from.work + " still has chapter " + move.from.chapter);
+        }
+        if (move.to.chapter > target.chapters.length) throw new Error("moved chapter: " + move.to.work + " has no chapter " + move.to.chapter);
+        const from = chapterPublicPath(move.from.author, move.from.work, "chapter-" + move.from.chapter);
+        const to = chapterPublicPath(move.to.author, move.to.work, "chapter-" + move.to.chapter);
+        const file = join(dist, from.slice(1), "index.html");
+        mkdirSync(dirname(file), { recursive: true });
+        writeFileSync(file, renderStubPage(SITE_ORIGIN + to, to));
+        redirectLines.push(from + "  " + to + "  301");
+      }
       writeSplitNotes(dist, fathers.notes);
       writeReadPathAliases(dist, catalog, WORK_READ_PATHS);
       sitemapUrls.push(...fathers.urls);

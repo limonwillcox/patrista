@@ -4,8 +4,9 @@ import { saveLastBible } from "../lib/lastRead";
 import { fetchBibleChapter, fetchBibleManifest, type BibleChapterPayload, type BibleManifestBook } from "../api/client";
 import { fetchChapterCounts } from "../api/links";
 import { fetchChapterCitations } from "../api/scripture";
-import { codeFor, fetchTaggedChapter, occurrenceAt } from "../api/strongs";
-import { BIBLE_TRANSLATIONS } from "../api/bibleTranslations";
+import { codeFor, fetchTaggedChapter, occurrenceAt, WORD_RE } from "../api/strongs";
+import { BIBLE_TRANSLATIONS, missingVerseReason } from "../api/bibleTranslations";
+import { remoteChapterExtras, reportFumsView } from "../api/bibleApi";
 import { BookPicker } from "../components/BookPicker";
 import { Commentary } from "../components/Commentary";
 import { KjvNote } from "../components/reader/KjvNote";
@@ -61,7 +62,7 @@ function wordInVerse(verseEl: HTMLElement, node: Node | null, offset: number): {
     text += n.textContent ?? "";
   }
   if (at < 0) return null;
-  const re = /[A-Za-z][A-Za-z'’]*/g;
+  const re = new RegExp(WORD_RE.source, "g");
   for (let m = re.exec(text); m; m = re.exec(text)) {
     if (at >= m.index && at <= m.index + m[0].length) return { word: m[0], occurrence: occurrenceAt(text, m[0], m.index) };
   }
@@ -298,6 +299,13 @@ export function BiblePage() {
   const bookName = bookMeta?.name || book;
   const chapterCount = bookMeta?.chapters || 1;
   const activeTranslation = BIBLE_TRANSLATIONS.find((t) => t.id === translation);
+  /** An API.Bible text: the publisher's own copyright line, and the token its licence asks us to report views with. */
+  const remote = payload && activeTranslation && !activeTranslation.isLocal ? remoteChapterExtras(translation, book, chapter) : undefined;
+  useEffect(() => {
+    if (payload && translation !== "esv") reportFumsView(remote?.fumsToken);
+    // One report per chapter shown.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [payload]);
 
   function go(next: { book?: string; chapter?: number; section?: string; version?: string }, replace = false) {
     const p: Record<string, string> = { book: next.book ?? book, chapter: String(next.chapter ?? chapter) };
@@ -359,7 +367,7 @@ export function BiblePage() {
     const from = Math.min(...hit);
     const to = Math.max(...hit);
     const rect = range.getBoundingClientRect();
-    const words = sel.toString().match(/[A-Za-z][A-Za-z'’]*/g) ?? [];
+    const words = sel.toString().match(new RegExp(WORD_RE.source, "g")) ?? [];
     let codes: string[] = [];
     // The Strong's tagging is of the KJV's words; another translation's words would find the wrong ones.
     if (from === to && words.length <= 12 && translation === "kjv") {
@@ -554,6 +562,8 @@ export function BiblePage() {
             {!payload ? (
               <p className="empty">Loading…</p>
             ) : (
+              <>
+              {activeTranslation?.notice ? <p className="bible-translation-note">{activeTranslation.notice}</p> : null}
               <div
                 className={"bible-verses" + (picking ? " is-picking" : "")}
                 onKeyUp={(e) => e.shiftKey && onTextMouseUp()}
@@ -664,7 +674,15 @@ export function BiblePage() {
                           <path d="M4 20l1.4-4.6L16.2 4.6a2 2 0 0 1 2.8 0l.4.4a2 2 0 0 1 0 2.8L8.6 18.6 4 20z" />
                         </svg>
                       </button>
-                      <sup className="vnum">{n}</sup> {text}
+                      <sup className="vnum">{n}</sup>{" "}
+                      {text ? (
+                        text
+                      ) : (
+                        <span className="verse-missing" title={missingVerseReason(translation, book, chapter, n)}>
+                          —<span className="sr-only"> {missingVerseReason(translation, book, chapter, n)}</span>
+                        </span>
+                      )}
+                      {translation === "esv" && n === payload.verses.length ? <span className="esv-mark"> (ESV)</span> : null}
                       {payload.notes?.[n] ? <KjvNote note={payload.notes[n]} /> : null}
                       {c ? (
                         <span className="verse-notes" aria-hidden="true">
@@ -688,6 +706,13 @@ export function BiblePage() {
                   );
                 })}
               </div>
+              {activeTranslation ? (
+                <p className="bible-credit">
+                  {/* API.Bible sends the publisher's current line with the text; ours is the fallback. */}
+                  {remote?.copyright || activeTranslation.credit}
+                </p>
+              ) : null}
+              </>
             )}
             <nav className="bible-pager" aria-label="Chapters">
               {prev ? (

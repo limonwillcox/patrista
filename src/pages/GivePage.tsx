@@ -9,13 +9,21 @@ export function GivePage() {
     setActivePassage(null);
   }, [setActivePassage]);
 
+  useEffect(() => {
+    const previous = document.title;
+    document.title = "Give — Patrista";
+    return () => {
+      document.title = previous;
+    };
+  }, []);
+
   return (
     <div className="give-page">
 
       <div className="give-body">
         <div className="give-ask give-ask--hardcover">
           <p className="give-ask-text">
-            If you enjoy reading the Church Fathers with a physical book, in the top left corner any given work there will be a {" "}
+            If you enjoy reading the Church Fathers with a physical book, in the top left corner of any given work there will be a{" "}
               <a
                 className="read-dict-bar read-hardcover-bar give-hardcover-sample"
                 href={PRINT_EDITIONS.confessions.url}

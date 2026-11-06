@@ -1,6 +1,8 @@
 import type { Journey } from "../journeys";
 
 const ath = (work: string, n: number) => "/fathers/athanasius/" + work + "/chapter-" + n + "/";
+// Defence Against the Arians, reader chapters: 1 the Introduction, 2 the Encyclical of the Council of Egypt (to 20), 3 Julius (21–36),
+// 4 Sardica (37–50), 5 Acts after Sardica (51–58), 6 the Meletian charges (59–70), 7 the Council of Tyre (71–90).
 const apol = (n: number) => ath("defense-against-the-arians-apologia-contra-arianos", n);
 const apolConst = ath("defense-before-constantius-apologia-ad-constantium", 1);
 const fuga = ath("defense-of-his-flight-apologia-de-fuga", 1);
@@ -75,7 +77,7 @@ export const journey: Journey = {
       text: "He succeeds Alexander as bishop in 328. Meletian enemies accuse him of breaking a chalice and of murdering a bishop, Arsenius, until Arsenius is “found to be alive”.",
       sources: [
         { label: "Socrates, Church History I.15", href: socrates(1) },
-        { label: "Defence Against the Arians 59–70", href: apol(4) },
+        { label: "Defence Against the Arians 59–70", href: apol(6) },
         { label: "Historia Acephala 17", href: acephala }
       ]
     },
@@ -87,7 +89,7 @@ export const journey: Journey = {
       lon: 35.2,
       when: "Summer 335",
       text: "Summoned before a council packed with his enemies, he and the Egyptian bishops protest, then withdraw “as from an assembly of treacherous men”. The council judges him in his absence.",
-      sources: [{ label: "Defence Against the Arians 77–85", href: apol(5) }]
+      sources: [{ label: "Defence Against the Arians 77–85", href: apol(7) }]
     },
     {
       id: "constantinople",
@@ -98,7 +100,7 @@ export const journey: Journey = {
       label: "above",
       when: "Autumn 335",
       text: "He hurries to the capital and stops Constantine in the street; the emperor writes that Athanasius “approached me in the middle of the road”. Then a new charge, that he threatened the grain ships from Alexandria, turns Constantine against him.",
-      sources: [{ label: "Defence Against the Arians 86–87", href: apol(5) }]
+      sources: [{ label: "Defence Against the Arians 86–87", href: apol(7) }]
     },
     {
       id: "trier",
@@ -109,7 +111,7 @@ export const journey: Journey = {
       when: "First exile, 335–337",
       text: "Constantine “sent me away into Gaul”. At Treveri the emperor's son keeps him “supplied abundantly with all necessaries” until Constantine's death in 337 frees him to go home.",
       sources: [
-        { label: "Defence Against the Arians 87", href: apol(5) },
+        { label: "Defence Against the Arians 87", href: apol(7) },
         { label: "Historia Acephala 17", href: acephala }
       ]
     },
@@ -124,7 +126,7 @@ export const journey: Journey = {
       text: "The younger Constantine sends him home. Within two years the Arians install Gregory of Cappadocia as bishop, and as soldiers sack the churches, “I withdrew myself from among them”.",
       wrote: [{ label: "Encyclical Letter to Bishops", href: ath("encyclical-letter-to-bishops-throughout-the-world", 1) }],
       sources: [
-        { label: "Defence Against the Arians 87", href: apol(5) },
+        { label: "Defence Against the Arians 87", href: apol(7) },
         { label: "Encyclical Letter 2–5", href: ath("encyclical-letter-to-bishops-throughout-the-world", 1) }
       ]
     },
@@ -140,8 +142,8 @@ export const journey: Journey = {
       sources: [
         { label: "Defence Before Constantius 4", href: apolConst },
         { label: "Festal Letter XIII", href: festal(10) },
-        { label: "Julius to the Eusebians", href: apol(1) },
-        { label: "Letters of the Council of Sardica", href: apol(2) }
+        { label: "Julius to the Eusebians", href: apol(3) },
+        { label: "Letters of the Council of Sardica", href: apol(4) }
       ]
     },
     {
@@ -155,7 +157,7 @@ export const journey: Journey = {
       text: "Recalled by Constantius, he sees the emperor at Antioch and the bishops at Jerusalem, and enters Alexandria on 21 October 346. Ten years later “more than five thousand soldiers” surround his church by night, and monks drag him to safety.",
       wrote: [{ label: "Defence of the Nicene Definition", href: ath("defense-of-the-nicene-definition-de-decretis", 1) }],
       sources: [
-        { label: "Defence Against the Arians 51–57", href: apol(3) },
+        { label: "Defence Against the Arians 51–57", href: apol(5) },
         { label: "History of the Arians 21–22", href: ath("history-of-the-arians-historia-arianorum", 4) },
         { label: "Defence Before Constantius 5", href: apolConst },
         { label: "Historia Acephala 1–5", href: acephala },
@@ -170,7 +172,7 @@ export const journey: Journey = {
       lon: 30.8,
       label: "right",
       when: "Third and fourth exiles, 356–363",
-      text: "He “turned back again into the desert” and hid among the monks for six years; just where is not recorded. Banished again by Julian in 362 (“it is but a small cloud which will soon pass away”, he told his friends), he went up the Nile as far as Hermopolis.",
+      text: "He “turned back again into the desert”. The Historia Acephala counts these six years as spent at Alexandria and “in uncertain places in hiding”; just where is not recorded. Recalled under Julian, he was back in his church on 21 February 362, but after eight months Julian banished him again (“it is but a small cloud which will soon pass away”, he told his friends), and in October 362 he went up the Nile as far as Hermopolis.",
       wrote: [
         { label: "Defence Before Constantius", href: apolConst },
         { label: "Defence of His Flight", href: fuga },
@@ -181,7 +183,7 @@ export const journey: Journey = {
         { label: "Defence Before Constantius 32", href: apolConst },
         { label: "Gregory Nazianzen, Oration 21.19", href: gregory },
         { label: "Socrates, Church History III.14", href: socrates(3) },
-        { label: "Historia Acephala 10–13", href: acephala }
+        { label: "Historia Acephala 10–13, 17", href: acephala }
       ]
     },
     {
@@ -192,7 +194,7 @@ export const journey: Journey = {
       lon: 29.92,
       label: "right",
       when: "Home, 364–373",
-      text: "When Julian dies he sails to Antioch to meet the new emperor, Jovian, and is home early in 364. Apart from four months hiding at a villa by the river in 365, he stays with his people until he dies on 3 May 373.",
+      text: "When Julian dies he sails to Antioch to meet the new emperor, Jovian, and is home early in 364. Apart from four months hiding at a villa by the river in 365, he stays with his people until he dies on 2 May 373 (3 May in the Historia Acephala).",
       sources: [
         { label: "Historia Acephala 13–19", href: acephala },
         { label: "Letter to the Emperor Jovian", href: ath("letter-to-the-emperor-jovian", 1) }

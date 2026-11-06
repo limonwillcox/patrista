@@ -36,6 +36,14 @@ export type Work = {
   cover?: string;
   /** When true, inspect overlay shows a disputed-authorship warning. */
   authorshipDisputed?: boolean;
+  /** Set from server/workMeta.ts when the shelf Father did not (certainly) write the work. */
+  authorship?: "disputed" | "spurious" | "anonymous";
+  /** The real or likely author in one plain line; use it instead of "by <Father>". */
+  attribution?: string;
+  /** Translator named in the source edition, e.g. "S. Thelwall". */
+  translator?: string;
+  /** Source edition, e.g. "Ante-Nicene Fathers, vol. III". */
+  edition?: string;
 };
 
 export type Footnote = {

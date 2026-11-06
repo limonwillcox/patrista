@@ -109,16 +109,53 @@ export function englishParagraphs(versions: Record<string, string[]>): string[] 
   return [];
 }
 
-/** Meta description: cleaned prose, cut on a word boundary at about 155 characters. */
-export function metaDescription(text: string, max = 155): string {
+/** Abbreviations that end in a period but do not end a sentence: "c. 96", "fl. 3rd c.", "d. 258", "St. Basil", "E. B. Pusey". */
+const NOT_A_STOP = /(?:^|[\s(“"'‘–—-])(?:c|ca|fl|d|b|r|St|Sts|Ep|ch|chs|cf|vol|ed|no|Mt|Dr|Mr|Mrs|e\.g|i\.e|[A-Z])\.$/;
+
+/** Split prose into sentences without breaking after an abbreviation or an initial. */
+export function sentences(paragraph: string): string[] {
+  const out: string[] = [];
+  const text = paragraph.trim();
+  let start = 0;
+  for (const m of text.matchAll(/[.!?]["”’)]*(?=\s+(\S))/g)) {
+    const end = m.index! + m[0].length;
+    const next = m[1] ?? "";
+    if (/^[a-z]/.test(next)) continue;
+    if (m[0][0] === "." && NOT_A_STOP.test(text.slice(0, m.index! + 1))) continue;
+    out.push(text.slice(start, end).trim());
+    start = end;
+  }
+  const tail = text.slice(start).trim();
+  if (tail) out.push(tail);
+  return out.filter(Boolean);
+}
+
+/** Words a cut must not end on: "…argued for the divinity of" reads as a different claim. */
+const DANGLING = /\s+(?:and|or|nor|but|the|a|an|of|to|in|on|for|with|by|as|at|that|which|who|from|his|her|its|their|is|was|were|be|not|than|this|these|those|into|after|before|under|over)$/i;
+
+/**
+ * Meta description: cleaned prose of at most `max` characters. Whole sentences when they fill at
+ * least `min` characters; otherwise a cut at a word boundary, never on a dangling word, ending "…".
+ */
+export function metaDescription(text: string, max = 155, min = 100): string {
   const clean = text
     .replace(/\[[0-9]+\]/g, "")
     .replace(/\s+/g, " ")
     .trim();
   if (clean.length <= max) return clean;
-  const cut = clean.slice(0, max);
-  const space = cut.lastIndexOf(" ");
-  const clipped = (space > 40 ? cut.slice(0, space) : cut).replace(/[.,;:]+$/, "");
-  return clipped;
+  let whole = "";
+  for (const s of sentences(clean)) {
+    const next = whole ? whole + " " + s : s;
+    if (next.length > max) break;
+    whole = next;
+  }
+  if (whole.length >= Math.min(min, max)) return whole;
+  // One character is kept for the ellipsis.
+  const room = max - 1;
+  const cut = clean.slice(0, room);
+  const space = clean[room] === " " ? room : cut.lastIndexOf(" ");
+  let clipped = (space > 40 ? cut.slice(0, space) : cut).replace(/[\s.,;:—–(-]+$/, "");
+  for (let k = 0; k < 4 && DANGLING.test(clipped); k++) clipped = clipped.replace(DANGLING, "").replace(/[\s.,;:—–(-]+$/, "");
+  return clipped + "…";
 }
 

@@ -9,13 +9,14 @@ reader can click. Vite serves public/ as-is in dev and copies it into dist/ on b
   word/<H|G><bucket>.json         per Hebrew/Greek word: verses, related words
   cited.json                      per verse: how many times the Fathers cite it
   types.json                      every type the Fathers draw: meaning, their words, and all its passages
-  glosses.json                    per Hebrew/Greek word: the English word the KJV most often uses for it
+  glosses.json                    per Hebrew/Greek word: the KJV's most frequent rendering of it ("mercy seat")
 
 Run after build_word_layer.py and build_witness.py.
 Usage:  python -I scripts/connections/pack_public.py
 """
 import json
 import os
+import re
 import shutil
 import sqlite3
 import sys
@@ -55,6 +56,105 @@ def fathers_types(grammar_dir):
             e = json.load(open(os.path.join(folder, name), encoding="utf-8"))
             out[e["src"]] = e
     return out
+
+# Words that ride along in a rendering ("the lilies", "shall arise", "to judge"): left off its ends.
+GLOSS_SMALL = set((
+    "a an the of to and in on at by for with from that this it is be his her their my thy thee thine unto upon "
+    "them ye you your our which who shall shalt will wilt was were are art have hast hath had did do doth let "
+    "may might should would not no all any he she they we i me us him thou also even so as then there when but "
+    "or nor if into").split())
+# Untagged words that sit before a rendering without being part of it ("now negligent", "O generation").
+GLOSS_NOT_BEFORE = GLOSS_SMALL | set(
+    "now what o how own yet therefore thus lo behold why where whom whose these those every saying said say".split())
+# Tokens of the tagged text that are formatting, not words, and the markers round a margin note.
+GLOSS_MARKS = {"p", "q", "q1", "q2", "q3", "nd", "add", "b", "m", "pi", "li", "wj", "sc", "tl", "qs", "d", "mi",
+               "nb", "pc", "fr", "ft", "fq", "fqa", "fk"}
+
+
+def kjv_glosses(tagged, lex_dir):
+    """Per Hebrew/Greek word, a short English gloss: Strong's own KJV rendering when Strong lists only one,
+    else the KJV's most frequent rendering of it, as a whole phrase. The tagged KJV
+    puts the number on the last word of a rendering and leaves the words before it untagged ("a mercy
+    seat/H3727", "a burnt offering/H5930", "rose up/H6965"), so a rendering is the tagged word with the
+    untagged words just before it, less the little words on its ends ("the lilies" -> "lilies"). Counting
+    single tagged words instead gave "the" for the lily and the key, "offering" for every kind of offering,
+    "seat" for the mercy seat and "up" for arise. A word whose renderings are all little words keeps its
+    usual one ("the" for the article)."""
+    phrases = defaultdict(lambda: defaultdict(int))
+    singles = defaultdict(lambda: defaultdict(int))
+
+    def close(before, run, code):
+        while run and run[-1].lower() in GLOSS_SMALL:  # the tagged words themselves, not those before them
+            run = run[:-1]
+        if not run:
+            return
+        words = before + run
+        while words and words[0].lower() in GLOSS_SMALL:
+            words.pop(0)
+        # An untagged word before a little word is not part of this rendering ("Abraham begat").
+        while len(words) > len(run) and any(w.lower() in GLOSS_NOT_BEFORE for w in words[: len(words) - len(run)]):
+            words.pop(0)
+        if words:
+            phrases[code][" ".join(words)] += 1
+
+    for bk in os.listdir(tagged):
+        for name in os.listdir(os.path.join(tagged, bk)):
+            ch = json.load(open(os.path.join(tagged, bk, name), encoding="utf-8"))
+            for toks in ch["v"].values():
+                before, run, code_now, in_note = [], [], None, False
+                for word, code in toks + [["", "end"]]:
+                    if code == "" and word == "f":
+                        in_note = not in_note
+                        continue
+                    if in_note or (code == "" and word in GLOSS_MARKS):
+                        continue
+                    tagged_word = code[:1] in "GH" and code[1:].isdigit()
+                    if tagged_word and code == code_now:
+                        run.append(word)
+                    else:
+                        if run:
+                            close(before, run, code_now)
+                            before = []
+                        if tagged_word:
+                            run, code_now = [word], code
+                        else:
+                            run, code_now = [], None
+                            before = [] if code == "+" else (before + [word])[-2:]
+                    if tagged_word:
+                        singles[code][word] += 1
+    # Strong's own list of the KJV's renderings, when it holds just one ("lily.", "mercy seat.", "which hath
+    # an husband."): that is the gloss, as Strong gives it.
+    strongs = {}
+    for name in os.listdir(lex_dir):
+        for code, e in json.load(open(os.path.join(lex_dir, name), encoding="utf-8")).items():
+            only = re.sub(r"\.$", "", (e.get("kjv") or "").strip()).strip()
+            # Not one with Strong's idiom mark "X", a note ("Compare ...") or a run-on ("also an Israelite:--Jacob").
+            if only and not re.search(r"[,;:()\[\]{}.]|[^\x00-\x7fæÆ]|\bX\b|\bCompare\b|\bAlso\b|--", only):
+                strongs[code] = only
+    glosses = {}
+    for code in singles:
+        if code in strongs:
+            glosses[code] = strongs[code]
+            continue
+        best = top(phrases.get(code) or {})
+        # "the" for the article and "and" for kai: a little word more frequent than any rendering.
+        small = top({w: n for w, n in singles[code].items() if w.lower() in GLOSS_SMALL})
+        if best is None or (small and small[1] > best[1]):
+            best = small or top(singles[code])
+        glosses[code] = best[0]
+    return glosses
+
+
+def top(counts):
+    """The most frequent entry, case folded, in its usual casing, with its count; None when empty."""
+    if not counts:
+        return None
+    lower = defaultdict(int)
+    for w, n in counts.items():
+        lower[w.lower()] += n
+    best = max(lower, key=lambda w: (lower[w], w))
+    return max((w for w in counts if w.lower() == best), key=lambda w: counts[w]), lower[best]
+
 
 def dump(path, obj):
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -152,24 +252,9 @@ def main():
     for name, content in buckets.items():
         dump(os.path.join(OUT, "word", name + ".json"), content)
 
-    # ---- glosses: the English word the KJV most often uses for each Hebrew/Greek word ----
-    counts = defaultdict(lambda: defaultdict(int))
-    tagged = os.path.join(ROOT, "public", "strongs", "kjv")
-    for bk in os.listdir(tagged):
-        for name in os.listdir(os.path.join(tagged, bk)):
-            ch = json.load(open(os.path.join(tagged, bk, name), encoding="utf-8"))
-            for toks in ch["v"].values():
-                for word, code in toks:
-                    if code[:1] in "GH" and code[1:].isdigit() and word.isalpha():
-                        counts[code][word] += 1
-    glosses = {}
-    for code, ws in counts.items():
-        lower = defaultdict(int)
-        for w, n in ws.items():
-            lower[w.lower()] += n
-        best = max(lower, key=lambda w: (lower[w], w))
-        glosses[code] = max((w for w in ws if w.lower() == best), key=lambda w: ws[w])  # its usual casing
-    dump(os.path.join(OUT, "glosses.json"), glosses)
+    # ---- glosses: how the KJV most often renders each Hebrew/Greek word ----
+    dump(os.path.join(OUT, "glosses.json"), kjv_glosses(os.path.join(ROOT, "public", "strongs", "kjv"),
+                                                          os.path.join(ROOT, "public", "strongs", "lex")))
 
     # ---- the types the Fathers draw, each with all its passages ----
     sources = json.load(open(os.path.join(DATA, "grammar", "sources.json"), encoding="utf-8"))

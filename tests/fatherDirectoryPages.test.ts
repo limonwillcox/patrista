@@ -77,8 +77,11 @@ describe("father directory copy", () => {
     expect(fatherProfilePath("augustine")).toBe("/fathers/augustine/");
     expect(FATHERS_INDEX_PATH).toBe("/fathers/");
     expect(lifeDatesFrom("354–430")).toEqual({ birthDate: "354", deathDate: "430" });
-    expect(lifeDatesFrom("c. 340–397")).toEqual({ birthDate: "340", deathDate: "397" });
-    expect(lifeDatesFrom("d. c. 110")).toEqual({ deathDate: "110" });
+    // Approximate years are never stated as exact ones.
+    expect(lifeDatesFrom("c. 340–397")).toEqual({ deathDate: "397" });
+    expect(lifeDatesFrom("c. 100–c. 165")).toEqual({});
+    expect(lifeDatesFrom("d. 258")).toEqual({ deathDate: "258" });
+    expect(lifeDatesFrom("d. c. 110")).toEqual({});
     expect(lifeDatesFrom("fl. c. 96")).toEqual({});
     expect(lifeDatesFrom("fl. 3rd–5th c.")).toEqual({});
   });
@@ -119,7 +122,8 @@ describe("father directory HTML", () => {
     expect(body).toContain("was bishop of Hippo");
     expect(body).toContain("<dt>Dates</dt><dd>354–430</dd>");
     expect(body).toContain("<dt>Role</dt><dd>Bishop of Hippo</dd>");
-    expect(body).toContain("<dt>See</dt><dd>North Africa</dd>");
+    expect(body).toContain("<dt>Region</dt><dd>North Africa</dd>");
+    expect(body).not.toContain("<dt>See</dt>");
     expect(body).toContain('href="/augustines-confessions"');
     expect(body).toContain('href="/read?work=city-of-god"');
     expect(body).not.toContain(".html\"");
@@ -191,5 +195,78 @@ describe("father portrait fallback", () => {
     expect(fatherImage("apostolic")?.alt).toBe("Christ Pantocrator");
     expect(fatherImage("no-such-father")?.alt).toBe("Christ Pantocrator");
     expect(fatherImage("augustine")?.alt).toContain("Augustine");
+  });
+});
+
+describe("profile prose", () => {
+  it("splits sentences without breaking after c., fl., d., St. or an initial", async () => {
+    const { sentences } = await import("../src/lib/fatherPaths");
+    expect(
+      sentences("Origen (c. 185–c. 254) taught in Alexandria. He learned Hebrew, collated the Hexapla, and preached.")
+    ).toEqual(["Origen (c. 185–c. 254) taught in Alexandria.", "He learned Hebrew, collated the Hexapla, and preached."]);
+    expect(sentences("Commodianus (fl. 3rd–5th c.) wrote verse. St. Basil read E. B. Pusey. Done.")).toEqual([
+      "Commodianus (fl. 3rd–5th c.) wrote verse.",
+      "St. Basil read E. B. Pusey.",
+      "Done."
+    ]);
+  });
+
+  it("loses no sentence of any profile between the lede and the rest", async () => {
+    const { FATHER_PROFILES } = await import("../src/lib/fatherProfiles");
+    const { answerFirstBio } = await import("../src/lib/fatherPageMeta");
+    const squash = (s: string) => s.replace(/\s+/g, "");
+    for (const [id, profile] of Object.entries(FATHER_PROFILES)) {
+      const bio = answerFirstBio(profile.paragraphs);
+      const shown = squash(bio.lede + bio.rest.join(""));
+      expect(shown, id).toBe(squash(profile.paragraphs.join("")));
+    }
+  });
+
+  it("never ends a description mid-sentence without an ellipsis, or on a dangling word", async () => {
+    const { FATHER_PROFILES } = await import("../src/lib/fatherProfiles");
+    const { answerFirstBio } = await import("../src/lib/fatherPageMeta");
+    for (const [id, profile] of Object.entries(FATHER_PROFILES)) {
+      const d = fatherProfileDescription(answerFirstBio(profile.paragraphs).lede);
+      expect(d.length, id).toBeLessThanOrEqual(155);
+      expect(d.length, id).toBeGreaterThanOrEqual(100);
+      expect(/[.!?”)]$|…$/.test(d), id + ": " + d).toBe(true);
+      expect(/\s(?:of|the|and|for|to|a|an)…$/.test(d), id + ": " + d).toBe(false);
+    }
+  });
+
+  it("types only people as Person, with no approximate dates", () => {
+    const base = { origin: "https://patrista.com", path: "/fathers/x/", description: "d", office: "o", region: "Syria" };
+    const graph = (ld: unknown) => (ld as { "@graph": Record<string, unknown>[] })["@graph"][0]!;
+    const didache = graph(fatherProfileJsonLd({ ...base, name: "Didache", dates: "fl. 1st–2nd c.", kind: "document" }));
+    expect(didache["@type"]).toBe("CreativeWork");
+    expect(didache.birthDate).toBeUndefined();
+    expect(didache.deathDate).toBeUndefined();
+    expect(didache.jobTitle).toBeUndefined();
+    const councils = graph(fatherProfileJsonLd({ ...base, name: "Ecumenical Councils", dates: "325–787", kind: "collection" }));
+    expect(councils["@type"]).toBe("Collection");
+    expect(councils.birthDate).toBeUndefined();
+    const justin = graph(fatherProfileJsonLd({ ...base, name: "Justin Martyr", dates: "c. 100–c. 165" }));
+    expect(justin["@type"]).toBe("Person");
+    expect(justin.birthDate).toBeUndefined();
+    expect(justin.deathDate).toBeUndefined();
+  });
+
+  it("marks attributed works in a Father's writings list", () => {
+    const novatian = author({ id: "novatian", name: "Novatian", deathYear: 258, dates: "fl. mid-3rd c.", region: "Rome" });
+    const body = renderFatherProfileBody(
+      novatian,
+      [
+        { id: "treatise-concerning-the-trinity", title: "A Treatise Concerning the Trinity" },
+        {
+          id: "treatise-against-the-heretic-novatian",
+          title: "Treatise Against the Heretic Novatian",
+          authorship: "anonymous",
+          attribution: "Anonymous bishop (3rd c.), written against Novatian"
+        }
+      ],
+      {}
+    );
+    expect(body).toContain("<strong>Anonymous</strong> · Anonymous bishop (3rd c.), written against Novatian");
+    expect(body).toMatch(/A Treatise Concerning the Trinity<\/a><\/li>/);
   });
 });

@@ -1,4 +1,4 @@
-# Piblia Works Audit: "Select Works" and "Letters" Split Analysis
+# Patrista Works Audit: "Select Works" and "Letters" Split Analysis
 
 **Date:** 2026-09-02
 **Purpose:** Identify instances where generic "Select works," "Letters," or combined files need to be split into separate, properly-titled works.

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { defaultBinWidthPx, spineBandPlace, type ShelfPeriodId, type SpineBin } from "../../../server/shelf";
 import type { Author, Work } from "../../../server/types";
 import { manuscriptForm } from "../../lib/manuscriptForm";
+import { hasAttribution, shortAuthor } from "../../../server/workMeta";
 
 /** Gold Chi-Rho from the Patrista logo (no red plate). Square box + PNG so it never squashes. */
 function SpineMark() {
@@ -39,6 +40,7 @@ export function BookSpine({
   author,
   bin,
   century,
+  centuryKnown = true,
   periodId,
   hue,
   selected,
@@ -52,6 +54,8 @@ export function BookSpine({
   author: Author;
   bin: SpineBin;
   century: number;
+  /** False when the work's own century is unknown (a later work under an early name): no numeral on the spine. */
+  centuryKnown?: boolean;
   periodId: ShelfPeriodId;
   hue: number;
   selected: boolean;
@@ -86,6 +90,8 @@ export function BookSpine({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
   const href = "/read?work=" + encodeURIComponent(work.id);
+  // A work the shelf Father did not (certainly) write names its real author, or none.
+  const byline = hasAttribution(work) ? shortAuthor(work, author) : author.name;
   // Before about 300 a codex had a soft leather cover wrapped round it, not stiff boards.
   const limp = manuscriptForm(work, author) === "papyrus-codex";
   const bandPlace = spineBandPlace(century);
@@ -127,7 +133,7 @@ export function BookSpine({
         // Each volume was bound on its own: the same leather, a shade lighter or darker.
         ["--tone" as string]: String(0.84 + hashOf(work.id + "~", 9) * 0.035)
       }}
-      aria-label={work.title + " — " + author.name}
+      aria-label={work.title + (byline ? " — " + byline : "")}
       onMouseEnter={() => boxRef.current && onSelect(boxRef.current)}
       onMouseLeave={onDeselect}
       onFocus={() => boxRef.current && onSelect(boxRef.current)}
@@ -140,14 +146,16 @@ export function BookSpine({
             <span className="lib-spine-band" aria-hidden="true" />
             <SpineMark />
             <span className="lib-spine-title">{work.title}</span>
-            <span className="lib-spine-century" title={ROMAN[century] + " century"} aria-hidden="true">
-              {ROMAN[century] || century}
-            </span>
+            {centuryKnown ? (
+              <span className="lib-spine-century" title={ROMAN[century] + " century"} aria-hidden="true">
+                {ROMAN[century] || century}
+              </span>
+            ) : null}
             <span className="lib-spine-band" aria-hidden="true" />
           </span>
           <span className="lib-face lib-face-front">
             <span className="lib-front-title">{work.title}</span>
-            <span className="lib-front-author">{author.name}</span>
+            {byline ? <span className="lib-front-author">{byline}</span> : null}
           </span>
           <span className="lib-face lib-face-pages" />
           <span className="lib-face lib-face-top" aria-hidden="true" />

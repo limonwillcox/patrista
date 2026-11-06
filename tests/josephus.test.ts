@@ -27,7 +27,10 @@ describe("Josephus Whiston corpus", () => {
     }
 
     const hades = works.find((w) => w.id === "discourse-to-the-greeks-concerning-hades");
+    // Authorship comes from server/workMeta.ts: Hades carries its attribution; Josephus's own four carry none.
     expect(hades?.authorshipDisputed).toBe(true);
-    expect(works.filter((w) => w.id !== hades!.id).every((w) => !w.authorshipDisputed)).toBe(true);
+    expect(hades?.authorship).toBe("disputed");
+    expect(hades?.attribution).toMatch(/Pseudo-Josephus/);
+    expect(works.filter((w) => w.id !== hades!.id).every((w) => !w.authorshipDisputed && !w.authorship && !w.attribution)).toBe(true);
   }, 180_000);
 });

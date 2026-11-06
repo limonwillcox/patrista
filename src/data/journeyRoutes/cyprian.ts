@@ -33,14 +33,13 @@ export const journey: Journey = {
       when: "250–251",
       text: "When the persecution of Decius breaks out and the crowd calls for him, he “withdrew for a while”. From a hiding place no one has found, he guides his church by letter, “although absent in body”.",
       wrote: [
-        { label: "To his clergy, Epistle V", href: ep(1) },
-        { label: "To the confessors, Epistle VI", href: ep(2) },
-        { label: "To the clergy at Rome, Epistle XIV", href: ep(3) },
-        { label: "To the people, Epistle XXXIX", href: ep(6) }
+        { label: "To his clergy, Epistle V (modern Ep. 14)", href: ep(1) },
+        { label: "To the confessors, Epistle VI (modern Ep. 13)", href: ep(2) },
+        { label: "To the clergy at Rome, Epistle XIV (modern Ep. 20)", href: ep(3) },
+        { label: "To the people, Epistle XXXIX (modern Ep. 43)", href: ep(7) }
       ],
       sources: [
-        { label: "Epistle XIV", href: ep(3) },
-        { label: "Epistle IX", href: ep(2) },
+        { label: "Epistle XIV (modern Ep. 20)", href: ep(3) },
         { label: "Pontius, Life 7", href: life }
       ]
     },
@@ -57,12 +56,12 @@ export const journey: Journey = {
         { label: "On the Lapsed", href: work("on-the-lapsed") },
         { label: "On the Unity of the Church", href: work("on-the-unity-of-the-church") },
         { label: "On the Mortality", href: work("on-the-mortality") },
-        { label: "To Cornelius, Epistle XL", href: ep(7) },
-        { label: "To Stephen, Epistle LXXI", href: ep(14) }
+        { label: "To Cornelius, Epistle XL (modern Ep. 44)", href: ep(7) },
+        { label: "To Stephen, Epistle LXXI (modern Ep. 72)", href: ep(14) }
       ],
       sources: [
         { label: "On the Lapsed 1", href: work("on-the-lapsed") },
-        { label: "Epistle XXXIX", href: ep(7) },
+        { label: "Epistle XXXIX (modern Ep. 43)", href: ep(7) },
         { label: "Pontius, Life 9–10", href: life }
       ]
     },
@@ -75,7 +74,7 @@ export const journey: Journey = {
       label: "right",
       when: "Exile, 257–258",
       text: "Banished by the proconsul, he is sent to Curubis, “a sunny and suitable spot”, with Pontius beside him. On the first day he sees in a vision a youth whose hand, “flattened like a blade”, foretells his death.",
-      wrote: [{ label: "To the martyrs in the mines, Epistle LXXVI", href: ep(16) }],
+      wrote: [{ label: "To the martyrs in the mines, Epistle LXXVI (modern Ep. 76)", href: ep(16) }],
       sources: [{ label: "Pontius, Life 11–13", href: life }]
     },
     {
@@ -87,9 +86,9 @@ export const journey: Journey = {
       label: "right",
       when: "14 September 258",
       text: "Back at his gardens near the city, he hides rather than be taken to Utica, asking to “confess among you, and there suffer”. Seized at last, he is tried at Carthage and beheaded, “having with his own hands bound his eyes”.",
-      wrote: [{ label: "His last letter, Epistle LXXXII", href: ep(17) }],
+      wrote: [{ label: "His last letter, Epistle LXXXII (modern Ep. 81)", href: ep(17) }],
       sources: [
-        { label: "Epistle LXXXII", href: ep(17) },
+        { label: "Epistle LXXXII (modern Ep. 81)", href: ep(17) },
         { label: "Pontius, Life 15–19", href: life }
       ]
     }

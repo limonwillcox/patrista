@@ -1,3 +1,6 @@
+import { hasAttribution, shortAuthor, type Authorship } from "../../server/workMeta";
+import { WORK_YEAR } from "./manuscriptForm";
+
 export type LibraryHoverReadout = {
   author: string;
   work: string;
@@ -21,13 +24,18 @@ export function formatCentury(n: number): string {
   return n + "th";
 }
 
+const EPISTLE =
+  /^(?:(?:The|An?)\s+)?(?:(?:First|Second|Third|Fourth|Canonical|Encyclical|Synodal|Festal|Personal|Selected|Spurious|Doubtful)\s+)?(?:Letters?|Epistles?)\b|\b(?:Synodal|Encyclical)\s+Letter\b|\(Letters?\s+[\dIVXLC]|\bEpistola\b|^Correspondence\b/i;
+
 const CATEGORY_RULES: { re: RegExp; label: string }[] = [
   { re: /\bhomil/i, label: "Homily" },
   { re: /\bsermon/i, label: "Sermon" },
   { re: /\bcreed/i, label: "Creed" },
   { re: /\bcouncil/i, label: "Council" },
   { re: /\bcanon/i, label: "Canon" },
-  { re: /\bepistle|\bletter/i, label: "Epistle" },
+  // A letter or a collection of letters; not a treatise that names letters ("On the Spirit and the
+  // Letter", "Against Two Letters of the Pelagians", "Answer to Letters of Petilian").
+  { re: EPISTLE, label: "Epistle" },
   { re: /\bapolog/i, label: "Apology" },
   { re: /\bcatech/i, label: "Catechesis" },
   { re: /\bcommentar|\bexpos/i, label: "Commentary" },
@@ -65,9 +73,11 @@ export function writingTopic(title: string): string {
   return "";
 }
 
+type HoverWork = { title: string; author: string; authorship?: Authorship; attribution?: string };
+
 export function libraryHoverReadout(
   workId: string | null | undefined,
-  works: { get: (id: string) => { title: string; author: string } | undefined },
+  works: { get: (id: string) => HoverWork | undefined },
   authorInfo: (authorId: string) => { name: string; century: number } | undefined
 ): LibraryHoverReadout | null {
   if (!workId) return null;
@@ -75,10 +85,15 @@ export function libraryHoverReadout(
   if (!work) return null;
   const who = authorInfo(work.author);
   if (!who) return null;
+  const credited = { ...work, id: workId };
+  const attributed = hasAttribution(credited);
+  // A work's own date where known; a work by another hand does not take its shelf Father's century.
+  const year = WORK_YEAR[workId];
+  const century = year ? Math.ceil(year / 100) : attributed ? null : who.century;
   return {
-    author: who.name,
+    author: attributed ? shortAuthor(credited, { id: work.author, name: who.name }) || who.name : who.name,
     work: work.title,
-    century: formatCentury(who.century),
+    century: century ? formatCentury(century) : "",
     category: writingCategory(work.title),
     topic: writingTopic(work.title)
   };

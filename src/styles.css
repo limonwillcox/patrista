@@ -5354,3 +5354,39 @@ html[data-theme="night"] .bookcase-shelf .lib-plank { background: linear-gradien
 .ms-stage--carried .ms-canvas { cursor: pointer; background: none; }
 /* The manuscript viewer has the stage to itself: the carried book waits, hidden, until it closes. */
 body:has(.mv) .shelf-3d { visibility: hidden; }
+
+/* Attribution lines: who really wrote a work shelved under a Father (server/workMeta.ts). */
+.fathers-attribution,
+.read-attribution {
+  color: var(--muted);
+  font-size: 0.92em;
+  font-style: italic;
+}
+.fathers-attribution strong { font-style: normal; font-weight: 600; }
+.static-attribution {
+  color: var(--muted);
+  font-size: 0.95em;
+  font-style: italic;
+  margin: 0.25em 0 1em;
+}
+
+/* Bible reader: translation credits and notes (src/pages/BiblePage.tsx, reader/KjvNote.tsx). */
+.bible-credit {
+  margin: 2em 0 0;
+  color: var(--muted);
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+.bible-translation-note {
+  margin: 0 0 1em;
+  padding: 0.6em 0.8em;
+  border-left: 3px solid var(--muted);
+  color: var(--muted);
+  font-size: 0.9em;
+}
+.verse-missing { color: var(--muted); cursor: help; }
+.esv-mark { color: var(--muted); font-size: 0.9em; }
+.kjv-note-part { display: block; }
+.kjv-note-part + .kjv-note-part { margin-top: 0.4em; }
+.kjv-note-part.is-american,
+.kjv-note-part.is-subscription { color: var(--muted); font-style: italic; }

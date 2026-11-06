@@ -16,6 +16,7 @@ import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from 
 import { chapterAtReadingLine } from "../lib/readDocks";
 import { OriginalParas, TranslationParas, type ParaMenuTarget } from "../components/reader/Paragraphs";
 import { citation, hashChapter, hashParagraph, paraAnchor, quoteWithCitation, translatorFor } from "../lib/readAnchors";
+import { attributionText, citationAuthor, hasAttribution } from "../../server/workMeta";
 
 const HL_COLORS = ["hl-yellow", "hl-green", "hl-blue", "hl-pink"] as const;
 
@@ -647,11 +648,12 @@ export function ReadPage() {
   function citeParts(chapter: number, n: number) {
     const meta = outline?.chapters.find((c) => c.chapter === chapter);
     return {
-      author: outline?.author.name || "",
+      // A work the shelf Father did not (certainly) write is cited under its real author, or none.
+      author: outline ? citationAuthor(outline.work, outline.author) : "",
       work: outline?.work.title || "",
       chapter: outline && outline.chapters.length > 1 ? meta?.heading || "" : "",
       n,
-      translator: outline ? translatorFor(outline.work.id, outline.work.series) : "",
+      translator: outline ? outline.work.translator || translatorFor(outline.work.id, outline.work.series) : "",
       url: paraUrl(chapter, n)
     };
   }
@@ -693,6 +695,7 @@ export function ReadPage() {
         ? "part"
         : "chapters";
   const editionNote = preferred ? versionLabel(preferred, versions) : "";
+  const attributed = hasAttribution(outline.work);
   const sampleOriginal = sample ? originalOf(sample) : null;
   const originalName = sampleOriginal?.id === "grk" ? "Greek" : "Latin";
 
@@ -717,8 +720,9 @@ export function ReadPage() {
         <div>
           <h1 className="read-title">{outline.work.title}</h1>
           <div className="version-name">
+            {attributed ? <span className="read-attribution">{attributionText(outline.work, outline.author)} · </span> : null}
             <Link className="read-author-link" to={"/fathers/" + encodeURIComponent(outline.author.id) + "/"}>
-              {outline.author.name}
+              {attributed ? "Shelved with " + outline.author.name : outline.author.name}
             </Link>{" "}
             · {outline.chapters.length} {unitLabel}
             {" · "}
@@ -770,15 +774,7 @@ export function ReadPage() {
       })}
       <p className="copyright">
         <strong>{editionNote}</strong>
-        {isConfessions ? (
-          <>
-            . English: E. B. Pusey (1838), Project Gutenberg eBook #3296.
-          </>
-        ) : (
-          <>
-            . Public-domain English from the Schaff ANF/NPNF editions. Series: {outline.work.series || "Schaff"}.
-          </>
-        )}{" "}
+        . {englishCredit(outline.work)}{" "}
         Highlighting is stored only in this browser.{" "}
         <Link className="read-full" to={readPath(outline.work.id)}>
           The whole work
@@ -861,4 +857,17 @@ function ParaMenu({
       ) : null}
     </div>
   );
+}
+
+/** Where the English comes from: the work's own translator and edition when the catalog has them. */
+function englishCredit(work: WorkOutline["work"]): string {
+  if (work.translator || work.edition) {
+    return "English: " + [work.translator ? "tr. " + work.translator : "", work.edition || ""].filter(Boolean).join(", ") + ".";
+  }
+  if (work.id === "confessions") return "English: E. B. Pusey (1838), Project Gutenberg eBook #3296.";
+  if (work.series === "Whiston") return "English: William Whiston (1737), public domain.";
+  if (/^(?:ANF|NPNF)/.test(work.series || "")) {
+    return "Public-domain English from the Schaff ANF/NPNF editions. Series: " + work.series + ".";
+  }
+  return "Public-domain English translation" + (work.series ? " (" + work.series + ")" : "") + ".";
 }

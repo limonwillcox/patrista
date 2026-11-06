@@ -140,7 +140,7 @@ export const journey: Journey = {
       lon: 7.75,
       label: "above",
       when: "391–430",
-      text: "Made presbyter in tears, given “the second place at the helm, when as yet I knew not how to handle an oar”, then bishop. As invaders overrun Africa he urges bishops “not to forsake the churches”. By tradition he dies here in 430, during the Vandal siege.",
+      text: "Made presbyter in tears, given “the second place at the helm, when as yet I knew not how to handle an oar”, then bishop. As invaders overrun Africa he urges bishops “not to forsake the churches”. He dies here in 430, during the Vandal siege; his friend Possidius, who was with him, records his death.",
       wrote: [
         { label: "The Confessions", href: conf(1) },
         { label: "On the Holy Trinity", href: aug("on-the-holy-trinity") },

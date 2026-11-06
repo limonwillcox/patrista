@@ -6,22 +6,22 @@
   "kind": "role",
   "def": "Jacob's beloved son, hated by his brothers, thrown into a pit and sold into Egypt, who rose from prison to rule over Egypt and fed the brothers who had sold him.",
   "texts": "Gen 37:12-36; Gen 41:37-57; Gen 45:1-15; Acts 7:9-14; Matt 26:14-16.",
-  "christ": "Christ, hated and sold by His own brethren, who after His sufferings is exalted and gives bread to the nations, forgiving those who betrayed Him. \"Christ appears to me in Joseph, who was persecuted and sold by his brethren, and after his troubles obtained honor in Egypt\" (Augustine, *Faust.* 12.28).",
+  "christ": "Christ, hated and sold by His own brethren, who after His sufferings is exalted and gives bread to the nations, forgiving those who betrayed Him. \"Christ appears to me in Joseph, who was persecuted and sold by his brethren, and after his troubles obtained honor in Egypt\" (Augustine, *C. Faust.* 12.28).",
   "where": [
     "Tertullian, *Adv. Jud.* 10 — “he suffered persecution at the hands of his brethren, and was sold into Egypt, on account of the favour of God; just as Christ was sold by Israel”",
     "Cyprian, *Pat.* 10 — “Joseph, sold by his brethren and sent away, not only with patience pardons them, but even bountifully and mercifully bestows gratuitous supplies of corn on them”",
     "Ambrose, *De Spir. S.* 3.17.124 — “For both in the patriarch Joseph was there a type of Christ, and Christ Himself came in the truth of His Body”",
     "Chrysostom, *Hom. Acts* 16 — “Though they had no fault to find with him, and though he came on purpose to bring them their food, they thus ill-treated him.”",
-    "Augustine, *Faust.* 12.28 — “Christ appears to me in Joseph, who was persecuted and sold by his brethren, and after his troubles obtained honor in Egypt.”",
-    "Augustine, *Enarr. Ps.* 81.8 — “There Joseph after tribulations was exalted, and here Christ, after the suffering of the Martyrs, was glorified.”"
+    "Augustine, *C. Faust.* 12.28 — “Christ appears to me in Joseph, who was persecuted and sold by his brethren, and after his troubles obtained honor in Egypt.”",
+    "Augustine, *En. Ps.* 81 (Lat. 80).8 — “There Joseph after tribulations was exalted, and here Christ, after the suffering of the Martyrs, was glorified.”"
   ],
   "links": [
-    { "label": "Tertullian, An Answer to the Jews 10", "href": "/fathers/tertullian/answer-to-the-jews/chapter-10/" },
-    { "label": "Cyprian, On the Advantage of Patience 10", "href": "/fathers/cyprian/on-the-advantage-of-patience/chapter-1/" },
-    { "label": "Ambrose, On the Holy Spirit 3.17.124", "href": "/fathers/ambrose/on-the-holy-spirit/chapter-3/" },
-    { "label": "Chrysostom, Homilies on Acts 16", "href": "/fathers/chrysostom/homilies-on-acts-and-romans/chapter-16/" },
-    { "label": "Augustine, Reply to Faustus 12.28", "href": "/fathers/augustine/reply-to-faustus-the-manichaean/chapter-12/" },
-    { "label": "Augustine, Expositions on the Psalms 81.8", "href": "/fathers/augustine/expositions-on-the-psalms/chapter-42/" }
+    { "label": "Tertullian, Adv. Jud. 10", "href": "/fathers/tertullian/answer-to-the-jews/chapter-10/" },
+    { "label": "Cyprian, Pat. 10", "href": "/fathers/cyprian/on-the-advantage-of-patience/chapter-1/" },
+    { "label": "Ambrose, De Spir. S. 3.17.124", "href": "/fathers/ambrose/on-the-holy-spirit/chapter-3/" },
+    { "label": "Chrysostom, Hom. Acts 16", "href": "/fathers/chrysostom/homilies-on-acts-and-romans/chapter-16/" },
+    { "label": "Augustine, C. Faust. 12.28", "href": "/fathers/augustine/reply-to-faustus-the-manichaean/chapter-12/" },
+    { "label": "Augustine, En. Ps. 81 (Lat. 80).8", "href": "/fathers/augustine/expositions-on-the-psalms/chapter-81/" }
   ],
   "confidence": ""
 }

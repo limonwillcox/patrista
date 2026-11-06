@@ -7,7 +7,9 @@
  *   npx tsx scripts/connections/link_type_quotes.ts
  *
  * A quotation is matched on its words (case and punctuation ignored), part by part where it is cut with "…".
- * When it is found in several places, the chapter by the Father it is credited to wins.
+ * When it is found in several places, the chapter the entry itself gives (fathers-types/*.json `links`) wins,
+ * then a chapter by the Father it is credited to. "Ps.-Methodius", "Irenaeus (attributed)" and "Ambrose (quoted
+ * in Cassian, …)" are credited to Methodius, Irenaeus and Ambrose; the given chapter settles the Cassian case.
  */
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -17,7 +19,7 @@ import { englishParagraphs } from "../../src/lib/fatherPaths";
 const ROOT = join(import.meta.dirname, "..", "..");
 const GRAMMAR = join(ROOT, "data", "connections", "grammar");
 
-type Entry = { src: string; where: string[] };
+type Entry = { src: string; where: string[]; links?: ({ href: string } | null)[] };
 type Para = { text: string; href: string; author: string; authorName: string };
 
 const words = (s: string) => s.toLowerCase().replace(/[‘’]/g, "'").replace(/[^a-z0-9']+/g, " ").trim();
@@ -63,19 +65,25 @@ function loadParagraphs(): Para[] {
   return out;
 }
 
-function findQuote(quote: string, credited: string, paras: Para[]): Para | null {
+function findQuote(quote: string, credited: string, paras: Para[], given?: string): Para | null {
   const all = quote.split(/…|\.\.\./).map(words).filter(Boolean);
   const long = all.filter((p) => p.split(" ").length >= 4);
   // A very short quotation ("Take another testimony.") is only trusted in the credited Father's own works.
   const short = !long.length;
   const parts = short ? all : long;
   if (!parts.length) return null;
-  const who = credited.toLowerCase();
+  const who = credited
+    .toLowerCase()
+    .replace(/^ps\.-/, "")
+    .replace(/\s*\(.*$/, "")
+    .trim();
   const byHim = (p: Para) => p.authorName.split(/[ ,]/)[0] === who.split(/[ ,]/)[0];
-  const hits = paras.filter((p) => (!short || byHim(p)) && parts.every((part) => p.text.includes(part)));
+  const inGiven = (p: Para) => !!given && p.href.startsWith(given);
+  const hits = paras.filter((p) => (!short || byHim(p) || inGiven(p)) && parts.every((part) => p.text.includes(part)));
   if (!hits.length) return null;
-  // "Cyril" matches "cyril of jerusalem"; "Clement" matches either Clement, so prefer an exact first word.
-  return hits.find(byHim) ?? hits.find((p) => p.authorName.includes(who)) ?? hits[0];
+  // "Cyril" matches "cyril of jerusalem"; "Clement" matches either Clement, so a full name ("Gregory of Nyssa",
+  // "Clement of Alexandria") is tried before the first word alone.
+  return hits.find(inGiven) ?? hits.find((p) => p.authorName.startsWith(who)) ?? hits.find(byHim) ?? hits[0];
 }
 
 const types = loadTypes();
@@ -84,14 +92,14 @@ const result: Record<string, ({ label: string; href: string } | null)[]> = {};
 let found = 0;
 let total = 0;
 for (const t of types) {
-  result[t.src] = t.where.map((w) => {
+  result[t.src] = t.where.map((w, i) => {
     total += 1;
     const at = w.indexOf(" — ");
     const ref = at < 0 ? "" : w.slice(0, at);
     const quotes = [...w.matchAll(/“([^”]+)”/g)].map((m) => m[1]);
     const credited = ref.split(",")[0].replace(/\*/g, "").trim();
     for (const q of quotes) {
-      const p = findQuote(q, credited, paras);
+      const p = findQuote(q, credited, paras, t.links?.[i]?.href.split("#")[0]);
       if (p) {
         found += 1;
         return { label: ref.replace(/\*/g, ""), href: p.href };

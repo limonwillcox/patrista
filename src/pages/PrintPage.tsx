@@ -4,6 +4,7 @@ import { fetchChapter, fetchWork } from "../api/client";
 import type { Footnote, Passage, WorkOutline } from "../../server/types";
 import { formatSelection, parseSelection, type PrintUnit } from "../lib/printRange";
 import { readPath, resolveWorkId } from "../lib/workSlugs";
+import { attributionText, citationAuthor, hasAttribution } from "../../server/workMeta";
 import "../styles/print.css";
 
 type Paper = "letter" | "a4";
@@ -14,7 +15,7 @@ const SERIES_NAMES: Record<string, string> = {
   NPNF1: "the Nicene and Post-Nicene Fathers, First Series",
   NPNF2: "the Nicene and Post-Nicene Fathers, Second Series"
 };
-/** Series named after their translator. */
+/** Series named after their translator: the fallback when the work carries no translator of its own. */
 const SERIES_TRANSLATORS: Record<string, string> = { Pusey: "E. B. Pusey", Whiston: "William Whiston" };
 
 /** Average words per chapter above which each chapter starts on a new page. */
@@ -117,8 +118,12 @@ export function PrintPage() {
   if (!outline) return <div className="pv-state">Loading…</div>;
 
   const work = outline.work;
-  const translator = findTranslator(texts.get(selected[0] ?? 1)) || SERIES_TRANSLATORS[work.series] || "";
-  const series = SERIES_NAMES[work.series] || "";
+  const translator = work.translator || findTranslator(texts.get(selected[0] ?? 1)) || SERIES_TRANSLATORS[work.series] || "";
+  const series = work.edition || SERIES_NAMES[work.series] || "";
+  // A work the shelf Father did not (certainly) write is printed under its real author, with the note.
+  const attributed = hasAttribution(work);
+  const byline = attributed ? citationAuthor(work, outline.author) : outline.author.name;
+  const attribution = attributed ? attributionText(work, outline.author) : "";
   const ready = selected.every((n) => texts.has(n));
   const noteCount = selected.reduce((sum, n) => sum + (texts.get(n)?.footnotes?.length ?? 0), 0);
   const pagePerChapter = units.some((u) => u.subs > 0) || work.wordCount / Math.max(1, work.chapters) >= LONG_CHAPTER_WORDS;
@@ -127,7 +132,7 @@ export function PrintPage() {
 
   return (
     <div className={"pv pv--" + paper}>
-      <style>{pageCss(paper, work.title, outline.author.name, numbers)}</style>
+      <style>{pageCss(paper, work.title, byline, numbers)}</style>
 
       <aside className="pv-panel" aria-label="PDF settings">
         <Link to={readPath(work.id)} className="pv-back">
@@ -135,7 +140,7 @@ export function PrintPage() {
         </Link>
         <p className="pv-kicker">Download PDF</p>
         <h1 className="pv-title">{work.title}</h1>
-        <p className="pv-author">{outline.author.name}</p>
+        <p className="pv-author">{attributed ? attribution : outline.author.name}</p>
 
         {outline.chapters.length > 1 ? (
           <section className="pv-group">
@@ -248,8 +253,12 @@ export function PrintPage() {
           <header className="pv-sheet pv-cover">
             <img className="pv-cover-logo" src="/assets/patrista-logo.jpg" alt="" width={44} height={44} />
             <div className="pv-cover-main">
-              <p className="pv-cover-author">{outline.author.name}</p>
-              {outline.author.dates ? <p className="pv-cover-dates">{outline.author.dates}</p> : null}
+              {byline ? <p className="pv-cover-author">{byline}</p> : null}
+              {attributed ? (
+                <p className="pv-cover-dates">{attribution}</p>
+              ) : outline.author.dates ? (
+                <p className="pv-cover-dates">{outline.author.dates}</p>
+              ) : null}
               <h1 className="pv-cover-title">{work.title}</h1>
               <Ornament />
               {translator ? <p className="pv-cover-tr">Translated by {translator}</p> : null}
@@ -294,7 +303,8 @@ export function PrintPage() {
               <footer className="pv-colophon">
                 <Ornament />
                 <p>
-                  {work.title} · {outline.author.name}
+                  {work.title}
+                  {byline ? " · " + byline : ""}
                 </p>
                 <p>Printed from Patrista, the library of the Church Fathers · patrista.com</p>
               </footer>

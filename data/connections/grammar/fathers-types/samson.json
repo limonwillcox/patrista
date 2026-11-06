@@ -5,23 +5,25 @@
   "label": "Samson the Nazirite",
   "kind": "role",
   "def": "The Nazirite judge whose birth an angel announces, who tears a lion and later finds honey in its carcass, and who dies pulling down the pillars of the Philistine temple, killing more enemies in his death than in his life.",
-  "texts": "Judg 13:2-24; Judg 14:5-18; Judg 16:23-30; Luke 1:26-35; John 16:33; Heb 11:32.",
-  "christ": "Samson tearing the lion foreshadows Christ destroying death, and the honey in the carcass is the sweetness of life drawn out of it: \"Samson the Nazarite shadowed forth a type of Thy working\" (Ephrem, *Nativity* 8). His leaning on the two pillars shows \"the mystery of Christ\" (Irenaeus, *Fragment* 27).",
+  "texts": "Judg 13:2-24; Judg 14:5-18; Judg 16:1-3; Judg 16:23-30; Luke 1:26-35; Heb 11:32.",
+  "christ": "Jerome calls Samson \"a type of the Saviour\": he took a bride from the Gentiles, as Christ took the Church, and \"slew more enemies in his death than he did in his life\" (Jerome, *Adv. Jov.* 1.23). The lion he tore is death, which Christ destroyed, and the honey in its carcass is life for the nations (Ephraim, *Hymns on the Nativity* 8; Ambrose, *De Spir. S.* 2 prol. 6). A fragment attributed to Irenaeus reads his leaning on the two pillars as the people coming to recognise \"the mystery of Christ\" (*Fragments* 27).",
   "where": [
-    "Ephrem, *Hymns on the Nativity* 8 — “Samson the Nazarite shadowed forth a type of Thy working. He tore the lion, the image of death, whom Thou didst destroy”",
-    "Ephrem, *Hymns for the Epiphany* 2.25 — “In the honey of Samson--the nations tasted bitterness therein that destroyed them:--they had life in the Cross that redeemed them”",
+    "Ephraim, *Hymns on the Nativity* 8 — “Samson the Nazarite shadowed forth a type of Thy working. He tore the lion, the image of death, whom Thou didst destroy”",
+    "Ephraim, *Hymns for the Epiphany* 2.25 — “In the honey of Samson--the nations tasted bitterness therein that destroyed them:--they had life in the Cross that redeemed them”",
+    "Jerome, *Adv. Jov.* 1.23 — “Samson continues to be a type of the Saviour because he loved a harlot from among the Gentiles, which harlot corresponds to the Church, and because he slew more enemies in his death than he did in his life”",
     "Augustine, *C. Faust.* 12.32 — “when he killed the lion that met him as he went to get a wife among strangers, but He who, when going to call His Church from among the Gentiles”",
     "Ambrose, *De Spir. S.* 2 prol. 6 — “The people of the Gentiles which believed had honey, the people which was before savage is now the people of Christ.”",
     "Ambrose, *De Spir. S.* 2 prol. 8 — “Grace came forth from the offence, power from weakness, and life from death.”",
-    "Irenaeus, *Fragment* 27 — “The fact, then, of Samson leaning himself upon the pillars, [indicates] this, that the people, when instructed, recognized the mystery of Christ.”"
+    "Irenaeus (attributed), *Fragments* 27 — “The fact, then, of Samson leaning himself upon the pillars, [indicates] this, that the people, when instructed, recognized the mystery of Christ.”"
   ],
   "links": [
-    { "label": "Ephrem, Hymns on the Nativity 8", "href": "/fathers/ephraim/hymns-on-the-nativity/chapter-5/" },
-    { "label": "Ephrem, Hymns for the Feast of the Epiphany 2.25", "href": "/fathers/ephraim/hymns-for-the-feast-of-the-epiphany/chapter-2/" },
-    { "label": "Augustine, Reply to Faustus 12.32", "href": "/fathers/augustine/reply-to-faustus-the-manichaean/chapter-12/" },
-    { "label": "Ambrose, On the Holy Spirit 2 prol. 6", "href": "/fathers/ambrose/on-the-holy-spirit/chapter-2/" },
-    { "label": "Ambrose, On the Holy Spirit 2 prol. 8", "href": "/fathers/ambrose/on-the-holy-spirit/chapter-2/" },
-    { "label": "Irenaeus, Fragments 27", "href": "/fathers/irenaeus/against-heresies/chapter-168/" }
+    { "label": "Ephraim, Hymns on the Nativity 8", "href": "/fathers/ephraim/hymns-on-the-nativity/chapter-5/" },
+    { "label": "Ephraim, Hymns for the Epiphany 2.25", "href": "/fathers/ephraim/hymns-for-the-feast-of-the-epiphany/chapter-2/" },
+    { "label": "Jerome, Adv. Jov. 1.23", "href": "/fathers/jerome/against-jovinianus/chapter-1/" },
+    { "label": "Augustine, C. Faust. 12.32", "href": "/fathers/augustine/reply-to-faustus-the-manichaean/chapter-12/" },
+    { "label": "Ambrose, De Spir. S. 2 prol. 6", "href": "/fathers/ambrose/on-the-holy-spirit/chapter-2/" },
+    { "label": "Ambrose, De Spir. S. 2 prol. 8", "href": "/fathers/ambrose/on-the-holy-spirit/chapter-2/" },
+    { "label": "Irenaeus (attributed), Fragments 27", "href": "/fathers/irenaeus/against-heresies/chapter-168/" }
   ],
   "confidence": ""
 }

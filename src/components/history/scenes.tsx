@@ -8,8 +8,9 @@ import type { CSSProperties, ReactNode } from "react";
  * and `--dur` on a 0s–1s timeline plus one of the shared keyframe classes in
  * styles.css, so a new shot needs artwork and timings only — no CSS.
  *
- * All of it is decoration. Each fact is stated in the timeline below, so the
- * theatre is aria-hidden and the crawler reads each fact exactly once.
+ * All of it is decoration. The facts it shows are stated in the timeline below, so the
+ * theatre is aria-hidden and the crawler reads each fact once. The `note` fields
+ * on figures are not rendered.
  */
 
 type Timing = { start?: string; dur?: string; stagger?: string; i?: number; len?: number };
@@ -76,7 +77,8 @@ const FLAME_INNER = "M0 -7 C-6 -15 -6 -28 0 -41 C6 -28 6 -15 0 -7 Z";
 /**
  * The order follows the text: a *sound* as of a rushing mighty wind (v.2) comes
  * first — there is no light in Acts 2 — then fire, and the fire is *cloven*,
- * resting upon each of them (v.3). Hence twelve separate tongues, not one.
+ * resting upon each of them (v.3). Hence separate tongues, not one; twelve are drawn
+ * for legibility, not as a count (Acts gives the company as about 120, 1:15).
  */
 function PentecostScene() {
   return (
@@ -121,7 +123,7 @@ function PentecostScene() {
             AD 33
           </p>
           <p className="ch-cap-count ch-anim ch-fade-up" style={t({ start: "0.24s", dur: "0.12s" })}>
-            <strong>3,000</strong>
+            <strong>c. 3,000</strong>
             <span>added that day</span>
           </p>
         </>
@@ -287,7 +289,7 @@ function NeroScene() {
             AD 64
           </p>
           <p className="ch-cap-count ch-anim ch-fade-up" style={t({ start: "0.24s", dur: "0.12s" })}>
-            <span>the church grows under persecution</span>
+            <span>the first known persecution by Rome</span>
           </p>
         </>
       }
@@ -310,8 +312,8 @@ const STARS: [number, number][] = [
 ];
 
 /**
- * Sun, moon and stars darken and fall — the language the prophets used for the
- * fall of a nation (Isaiah 13:10), which is how Matthew 24:29 reads it here.
+ * Sun, moon and stars darken and fall — the prophets' picture of a nation's fall
+ * (Isaiah 13:10). Decoration only: the timeline text makes no claim about Matthew 24:29.
  */
 function JerusalemScene() {
   return (
@@ -380,7 +382,7 @@ function JerusalemScene() {
 const FATHERS = [
   { x: 172, name: "Clement", note: "to Corinth, c. 96" },
   { x: 400, name: "Ignatius", note: "seven letters, c. 110" },
-  { x: 628, name: "Polycarp", note: "burned, c. 155" }
+  { x: 628, name: "Polycarp", note: "martyred, c. 156" }
 ];
 
 /** The generation that had known the apostles, writing to steady the churches. */
@@ -410,7 +412,7 @@ function ApostolicFathersScene() {
             The Apostolic Fathers
           </p>
           <p className="ch-cap-date ch-anim ch-fade-up" style={t({ start: "0.18s", dur: "0.11s" })}>
-            AD 96–155
+            c. AD 96–156
           </p>
         </>
       }
@@ -450,14 +452,14 @@ function PersecutionScene() {
       caption={
         <>
           <p className="ch-cap-ref ch-anim ch-fade-up" style={t({ start: "0.12s", dur: "0.12s" })}>
-            Sacrifice to idols, or die
+            Sacrifice to the gods
           </p>
           <p className="ch-cap-date ch-anim ch-fade-up" style={t({ start: "0.18s", dur: "0.11s" })}>
             AD 250
           </p>
           <p className="ch-cap-count ch-anim ch-fade-up" style={t({ start: "0.24s", dur: "0.12s" })}>
             <span>Under Decius</span>
-            <span>the first empire-wide persecution</span>
+            <span>the first empire-wide order to sacrifice</span>
           </p>
         </>
       }
@@ -522,7 +524,7 @@ function GreatPersecutionScene() {
 
 /* --------------------------------------------------- Edict of Milan, 313 */
 
-/** The same Caesar as Nero, halo instead of horns — legalization, not the battle. */
+/** The same Caesar as Nero, halo instead of horns — toleration at Milan, not the battle. */
 function MilanScene() {
   return (
     <Shot
@@ -531,7 +533,7 @@ function MilanScene() {
       caption={
         <>
           <p className="ch-cap-ref ch-anim ch-fade-up" style={t({ start: "0.12s", dur: "0.12s" })}>
-            Constantine legalizes Christianity
+            Freedom of worship for all
           </p>
           <p className="ch-cap-date ch-anim ch-fade-up" style={t({ start: "0.18s", dur: "0.11s" })}>
             AD 313
@@ -585,7 +587,7 @@ function NicaeaScene() {
             AD 325
           </p>
           <p className="ch-cap-count ch-anim ch-fade-up" style={t({ start: "0.24s", dur: "0.12s" })}>
-            <span>The Arian Heresy is struck down at the Council of Nicaea.</span>
+            <span>The Council of Nicaea rejects the teaching of Arius.</span>
           </p>
         </>
       }

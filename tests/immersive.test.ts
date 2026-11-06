@@ -16,9 +16,13 @@ function chapterText(href: string): string | null {
 }
 
 describe("manuscript form", () => {
-  it("shows letters as rolls and books as codices, papyrus before 300 and parchment after", () => {
-    expect(manuscriptForm({ title: "Epistles of Ignatius" }, { deathYear: 110 })).toBe("roll");
-    expect(manuscriptForm({ title: "Letters" }, { deathYear: 430 })).toBe("roll");
+  it("shows a single letter as a roll and books, letter collections among them, as codices: papyrus before 330, parchment after", () => {
+    expect(manuscriptForm({ title: "Epistle to the Romans" }, { deathYear: 110 })).toBe("roll");
+    expect(manuscriptForm({ title: "The First Epistle of Clement" }, { deathYear: 100 })).toBe("roll");
+    expect(manuscriptForm({ title: "Letter to the Emperor Jovian" }, { deathYear: 373 })).toBe("roll");
+    expect(manuscriptForm({ title: "Epistles of Ignatius" }, { deathYear: 110 })).toBe("papyrus-codex");
+    expect(manuscriptForm({ title: "Letters" }, { deathYear: 430 })).toBe("parchment-codex");
+    expect(manuscriptForm({ title: "Against Two Letters of the Pelagians" }, { deathYear: 430 })).toBe("parchment-codex");
     expect(manuscriptForm({ title: "Against Heresies" }, { deathYear: 202 })).toBe("papyrus-codex");
     expect(manuscriptForm({ title: "The Confessions" }, { deathYear: 430 })).toBe("parchment-codex");
     for (const note of Object.values(FORM_NOTES)) expect(note.note.length).toBeGreaterThan(40);

@@ -38,6 +38,14 @@ describe("headwordCandidates", () => {
     expect(headwordCandidates("charities")).toEqual(["charities", "charity"]);
     expect(headwordCandidates("walked")).toContain("walk");
   });
+
+  it("strips the King James -eth and -est endings, after trying the word itself", () => {
+    expect(headwordCandidates("loveth")).toContain("love");
+    expect(headwordCandidates("knowest")).toContain("know");
+    expect(headwordCandidates("crieth")).toContain("cry");
+    expect(headwordCandidates("begetteth")).toContain("beget");
+    expect(headwordCandidates("honest")[0]).toBe("honest");
+  });
 });
 
 describe("wordAtOffset", () => {

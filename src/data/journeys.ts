@@ -101,7 +101,8 @@ export const JOURNEYS: Record<string, Journey> = {
           { label: "To Polycarp", href: ign(85) }
         ],
         sources: [
-          { label: "Philadelphians 10–11", href: ign(70) },
+          { label: "Philadelphians 10", href: ign(70) },
+          { label: "Philadelphians 11", href: ign(71) },
           { label: "Smyrnaeans 12", href: ign(83) },
           { label: "To Polycarp 8", href: ign(92) }
         ]
@@ -127,7 +128,7 @@ export const JOURNEYS: Record<string, Journey> = {
         lat: 41.89,
         lon: 12.49,
         when: "About 110",
-        text: "He dies in the arena, as he had asked the Romans to let him: “I am the wheat of God, and let me be ground by the teeth of the wild beasts”. The date is traditional.",
+        text: "Tradition holds that he died in the arena, as he had asked the Romans to let him: “I am the wheat of God, and let me be ground by the teeth of the wild beasts”. The letters tell of the request, not the death; the date is traditional.",
         sources: [{ label: "Romans 4", href: ign(54) }]
       }
     ],

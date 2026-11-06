@@ -1360,7 +1360,7 @@
       "jo",
       "rm"
     ],
-    "source": "/Users/lemonwillcox/Projects/Git/piblia/data/links/cache/commentaries.sqlite"
+    "source": "data/links/cache/commentaries.sqlite"
   },
   "ecatena": {
     "ingested": 5947,
@@ -1371,7 +1371,7 @@
       "jo",
       "rm"
     ],
-    "htmlDir": "/Users/lemonwillcox/Projects/Git/piblia/data/links/cache/ecatena/html",
+    "htmlDir": "data/links/cache/ecatena/html",
     "note": "Access e-catena.mdb is a linked-table shell (no rows). Parsed the public HTML index instead."
   }
 }

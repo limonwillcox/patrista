@@ -33,7 +33,7 @@ Order is still: every Fathers text in Clavis, then the site reads from it, then 
 
 | Prompt | Who | When |
 | --- | --- | --- |
-| A. CI (`required-ready`, Node 22) | Codex | A worktree already exists: `cursor/ci-pr-checks-a93f` at `C:\Users\sictrai_user03\Downloads\patrista\.worktrees\ci-pr-checks`. Do not start a second CI branch. |
+| A. CI (`required-ready`, Node 22) | Codex | A worktree already exists: `cursor/ci-pr-checks-a93f` at `<local>/patrista\.worktrees\ci-pr-checks`. Do not start a second CI branch. |
 | B. Provenance | Grok | Done. On main. |
 | C. Import every `Fathers/` text into Clavis as `draft` / `needs-cleanup` | Codex | **Unblocked.** B has merged. See prompt C in `patrista-final-prompts.md`. |
 | D. Site reads from Clavis, flag default `fathers` | AGY | After C merges. Includes `docs/cloudflare-runbook.md`. Do not run wrangler. |

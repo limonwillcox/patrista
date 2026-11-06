@@ -6,20 +6,20 @@
   "kind": "object",
   "def": "The thorn bush on Horeb that Moses saw burning with fire and not burnt up, from which God called him by name and revealed Himself as the God of Abraham, Isaac and Jacob.",
   "texts": "Exod 3:1-15; Acts 7:30-35; Luke 20:37-38; Mark 12:26.",
-  "christ": "The one who spoke from the fire was the Word, the Son, before His incarnation; the bush that bore the fire without being consumed shows God coming into our flesh, and the Virgin who bore Him, without destroying it. In the bush the Lord showed \"that He would come to illuminate the thorns of our body\" (Ambrose, *De Spir. S.* 1.14.165).",
+  "christ": "The one who spoke from the fire was the Word, the Son, before His incarnation (Justin, *1 Apol.* 63; Irenaeus, *AH* 4.5.2). The bush that burned without being consumed shows God coming into our flesh without destroying it: in the bush the Lord showed \"that He would come to illuminate the thorns of our body\" (Ambrose, *De Spir. S.* 1.14.165). An oration once credited to Methodius applies the bush also to the Virgin who bore Him.",
   "where": [
     "Justin, *1 Apol.* 63 — “Jesus the Christ is the Son of God and His Apostle, being of old the Word, and appearing sometimes in the form of fire”",
     "Irenaeus, *AH* 4.5.2 — “He who spake to Moses out of the bush, and declared Himself to be the God of the fathers, He is the God of the living.”",
     "Clement of Alexandria, *Paed.* 2.8 — “the Word beheld at first in the bush, and afterwards taken up crowned by the thorn”",
     "Ambrose, *De Spir. S.* 1.14.165 — “the bush was burning but was not consumed, because in that mystery the Lord was showing that He would come to illuminate the thorns of our body”",
-    "Methodius, *Sim. et Ann.* 9 — “which beforehand shadowed forth thy figure endowed with divine majesty, bare God without being consumed”"
+    "Ps.-Methodius, *Sim. et Ann.* 9 — “which beforehand shadowed forth thy figure endowed with divine majesty, bare God without being consumed”"
   ],
   "links": [
-    { "label": "Justin, First Apology 63", "href": "/fathers/justin/first-apology/chapter-63/" },
-    { "label": "Irenaeus, Against Heresies 4.5.2", "href": "/fathers/irenaeus/against-heresies/chapter-96/" },
-    { "label": "Clement of Alexandria, The Instructor 2.8", "href": "/fathers/clement_alexandria/instructor/chapter-2/" },
-    { "label": "Ambrose, On the Holy Spirit 1.14.165", "href": "/fathers/ambrose/on-the-holy-spirit/chapter-1/" },
-    { "label": "Methodius, Oration concerning Simeon and Anna 9", "href": "/fathers/methodius/oration-concerning-simeon-and-anna/chapter-1/" }
+    { "label": "Justin, 1 Apol. 63", "href": "/fathers/justin/first-apology/chapter-63/" },
+    { "label": "Irenaeus, AH 4.5.2", "href": "/fathers/irenaeus/against-heresies/chapter-96/" },
+    { "label": "Clement of Alexandria, Paed. 2.8", "href": "/fathers/clement_alexandria/instructor/chapter-2/" },
+    { "label": "Ambrose, De Spir. S. 1.14.165", "href": "/fathers/ambrose/on-the-holy-spirit/chapter-1/" },
+    { "label": "Ps.-Methodius, Sim. et Ann. 9", "href": "/fathers/methodius/oration-concerning-simeon-and-anna/chapter-1/" }
   ],
   "confidence": ""
 }

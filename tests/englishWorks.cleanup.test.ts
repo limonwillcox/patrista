@@ -230,3 +230,85 @@ describe("discoverEnglishWorkSpecs cache", () => {
   }, 60_000);
 });
 
+
+describe("Nov 2026 library audit", () => {
+  const parse = (id: string) => {
+    const spec = discoverEnglishWorkSpecs(ROOT).find((s) => s.id === id);
+    expect(spec, id).toBeTruthy();
+    return parseEnglishWork(spec!, ROOT);
+  };
+  const text = (p: { versions: Record<string, string[]> }) => (Object.values(p.versions)[0] || []).join(" ");
+
+  it("parses NPNF's double numbering 'Chapter 1 [I.]--' and keeps the opening chapters", () => {
+    for (const id of ["on-grace-and-free-will", "on-rebuke-and-grace", "on-the-spirit-and-the-letter", "on-the-predestination-of-the-saints"]) {
+      expect(parse(id).passages[0]!.heading, id).toMatch(/^Chapter 1 — /);
+    }
+  }, 60_000);
+
+  it("shows each wrongly filled work's own text", () => {
+    expect(text(parse("instructions-of-commodianus").passages[0]!)).toMatch(/My preface sets forth the way/);
+    expect(parse("instructions-of-commodianus").passages.map(text).join(" ")).not.toMatch(/De Principiis|Origen/);
+    const fuga = parse("de-fuga-in-persecutione");
+    expect(fuga.work.title).toBe("On Flight in Persecution");
+    expect(fuga.passages).toHaveLength(14);
+    expect(text(fuga.passages[0]!)).toMatch(/^My brother Fabius/);
+    const martyrs = parse("ad-martyras").passages;
+    expect(martyrs).toHaveLength(6);
+    expect(martyrs.map(text).join(" ")).not.toMatch(/Perpetua/);
+    expect(parse("passion-of-the-holy-martyrs-perpetua-and-felicitas").passages.map(text).join(" ")).toMatch(/Vivia Perpetua/);
+    expect(parse("commentary-on-john").passages.map((p) => p.heading)).not.toContain("Book XII");
+    expect(parse("commentary-on-matthew").passages.map((p) => p.heading)).toContain("Book XII");
+    const peter = parse("gospel-of-peter").passages;
+    expect(peter).toHaveLength(14);
+    expect(peter.map(text).join(" ")).not.toMatch(/Then answered all the people/);
+    const inst = parse("divine-institutes").passages.map((p) => p.heading);
+    for (const b of ["I", "II", "III", "IV", "V", "VI", "VII"]) expect(inst.some((h) => h.startsWith("Book " + b + " · ")), b).toBe(true);
+    expect(parse("oration-of-eusebius").work.title).toBe("Oration in Praise of Constantine");
+    expect(parse("life-of-constantine").passages).toHaveLength(4);
+    expect(parse("extant-fragments-of-dionysius").passages.map(text).join(" ")).not.toMatch(/Manes|Manichæ/);
+  }, 120_000);
+
+  it("fixes units: Stromata I–VIII, Hilary's twelve books, the Great Catechism's forty chapters", () => {
+    expect(parse("stromata").passages.map((p) => p.heading)).toEqual(["I", "II", "III", "IV", "V", "VI", "VII", "VIII"].map((n) => "Book " + n));
+    expect(parse("on-the-trinity").passages).toHaveLength(12);
+    const cat = parse("great-catechism").passages;
+    expect(cat[0]!.heading).toBe("Prologue");
+    expect(cat).toHaveLength(41);
+  }, 60_000);
+
+  it("keeps only the shorter Ignatian recension, chapter numbers unchanged", () => {
+    const ign = parse("epistles-of-ignatius").passages;
+    expect(ign).toHaveLength(92);
+    expect(ign[0]!.heading).toBe("Ephesians · Chapter I — Praise of the Ephesians.");
+    expect(ign[0]!.versions.schaff).toHaveLength(1);
+    expect(text(ign[0]!)).toMatch(/your name, much-beloved in God/);
+    expect(text(ign[0]!)).not.toMatch(/greatly-desired name/);
+    expect(ign[20]!.heading).toMatch(/longer recension only/);
+  }, 60_000);
+
+  it("names the work in Chrysostom's multi-series volumes", () => {
+    const h = parse("homilies-on-acts-and-romans").passages.map((p) => p.heading);
+    expect(h[0]).toBe("Homilies on Acts · Homily I");
+    expect(h[55]).toBe("Homilies on Romans · Homily I");
+  }, 60_000);
+
+  it("drops CCEL navigation and volume indexes", () => {
+    for (const id of ["against-celsus", "homilies-on-matthew", "shows", "plea-for-the-christians"]) {
+      const body = parse(id).passages.map(text).join(" ");
+      expect(body, id).not.toMatch(/file:\/\/\/ccel|\/ccel\/schaff\//);
+    }
+  }, 60_000);
+
+  it("takes the translator and edition from the source", () => {
+    const w = parse("ad-martyras").work;
+    expect(w.translator).toBe("S. Thelwall");
+    expect(w.edition).toBe("Ante-Nicene Fathers, vol. III");
+    expect(parse("on-lying").work.translator).toBe("H. Browne");
+  }, 60_000);
+
+  it("labels NPNF's one-line abridgements", () => {
+    const basil = parse("basil-letters").passages;
+    expect(basil.find((p) => p.heading.startsWith("Letter CCXCVII"))!.heading).toMatch(/summary only in this edition/);
+    expect(basil[0]!.heading).toBe("Letter I");
+  }, 60_000);
+});

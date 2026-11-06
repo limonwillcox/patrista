@@ -2,6 +2,7 @@
  * The Scripture-aware search: find the verses behind a query, then the chapters of the Fathers that
  * cite them. Data from server/scriptureIndex.ts at /api/scripture/.
  */
+import { PACKED, fetchPacked } from "./packed";
 import { findScriptureRefs } from "../lib/scriptureRefs";
 
 /**
@@ -41,7 +42,10 @@ function getJson<T>(name: string): Promise<T | null> {
   return p as Promise<T | null>;
 }
 /** Every passage of the Fathers citing each verse of one Bible chapter. */
-export const fetchChapterCitations = (book: string, chapter: number) => getJson<ChapterCitations>(book + "/" + chapter);
+export const fetchChapterCitations = (book: string, chapter: number): Promise<ChapterCitations | null> =>
+  PACKED
+    ? fetchPacked<ChapterCitations>("/api/scripture", book, chapter).then((hit) => hit ?? getJson<ChapterCitations>(book + "/" + chapter))
+    : getJson<ChapterCitations>(book + "/" + chapter);
 
 /** Citations of the verse, plus a share of the chapter's focus on the passage around it. */
 export const citeRank = (c: VerseCite) => c[3] + Math.min(c[5] ?? 1, 12) / 2;

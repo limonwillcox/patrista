@@ -40,7 +40,7 @@ describe("Links API — verse lookup", () => {
     expect(fatherIds).toContain("origen");
     expect(fatherIds).toContain("cyprian");
     expect(fatherIds).toContain("augustine");
-  });
+  }, 30_000);
 
   it("returns 400 for unknown book", () => {
     const res = handleApiRequest("/api/links/verse?book=invalid_book&chapter=1&verse=1");

@@ -112,13 +112,9 @@ export function writeStaticLinksApi(dist: string, root = repoRoot()): string[] {
     );
   }
 
-  const excerptRoot = join(dist, "api", "links", "excerpt");
-  mkdirSync(excerptRoot, { recursive: true });
-  for (const link of all) {
-    const file = encodeURIComponent(link.id) + ".json";
-    writeFileSync(join(excerptRoot, file), JSON.stringify(link));
-    redirects.push(`/api/links/excerpt/${encodeURIComponent(link.id)}  /api/links/excerpt/${file}  200`);
-  }
+  // No per-link excerpt files: each chapter pack above already carries every link's full excerpt, and
+  // the site never fetches a link on its own. (One file per link was 22,000+ files, over the host's limit.)
+  // /api/links/excerpt/<id> is still answered by the dev API and the Worker.
 
   return redirects;
 }

@@ -23,6 +23,27 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Old /fathers/ URLs that moved: when this shell is served for a path that is not its own canonical
+      // page (the host's fallback), look the path up in /legacy-redirects/<author>.json and forward.
+      // Keys follow legacyRedirectKey() in src/lib/legacyRedirects.ts: no trailing slash, no ".html".
+      (function () {
+        var path = location.pathname;
+        if (path.indexOf("/fathers/") !== 0) return;
+        var key = function (p) { return p.replace(/\.html$/, "").replace(/\/+$/, ""); };
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical && key(new URL(canonical.href, location.href).pathname) === key(path)) return;
+        var author = path.split("/")[2];
+        if (!author) return;
+        fetch("/legacy-redirects/" + author + ".json")
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (map) {
+            var to = map && map[key(path)];
+            if (to) location.replace(to + location.search + location.hash);
+          })
+          .catch(function () {});
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -28,16 +28,19 @@ export function isFathersTabPath(pathname: string): boolean {
 
 /** One line under each century heading on /fathers/. Keyed by section id. */
 export const SECTION_NOTES: Record<string, string> = {
-  "century-1": "Letters and a church order from the generation that still remembered the Apostles.",
+  "century-1":
+    "Clement’s letter to Corinth and the Didache, from the generation after the Apostles. The Epistle of Barnabas, filed here, is usually dated c. 96–135, often c. 130.",
   "century-2": "Bishops write to their churches on the road to martyrdom, and the Apologists answer pagan Rome.",
-  "century-3": "Irenaeus, Tertullian and Origen: the first great theologians, writing through the persecutions.",
+  "century-3":
+    "Tertullian, Origen and Cyprian write through the persecutions. Irenaeus, whose Against Heresies dates from about 180, is filed here by the year of his death.",
   "century-4": "The century of Nicaea: Athanasius, the Cappadocians, the desert monks and the first church histories.",
-  "century-5": "Augustine, Chrysostom and Jerome, the councils of Ephesus and Chalcedon, and the fall of Rome in the West.",
-  "century-6": "The West after Rome: rules for monks, letters of popes, and the first chronicles of a new Europe.",
-  "century-7": "Gregory the Great guides the Church of Rome through plague, war and the Lombard invasions.",
-  "century-8": "John of Damascus gathers the Greek Fathers into one summary of the faith.",
-  "century-9": "After the Fathers: Cyril and Methodius carry the faith to the Slavs, and Rome and Constantinople begin to part.",
-  "century-11": "East and West divide in 1054, the end of the story this library tells.",
+  "century-5": "Augustine, Chrysostom and Jerome, the councils of Ephesus and Chalcedon, and the end of the western empire.",
+  "century-6": "The West after Rome: the Rule of Benedict, Justinian’s Hagia Sophia, and Gregory the Great’s election at Rome in 590.",
+  "century-7": "Gregory the Great dies in 604, and within a generation the Arab conquests take Jerusalem, Antioch and Alexandria.",
+  "century-8": "John of Damascus gathers the Greek Fathers into one summary of the faith, as the dispute over icons begins.",
+  "century-9": "After the Fathers: Cyril and Methodius carry the faith to the Slavs, and the Photian schism strains Rome and Constantinople.",
+  "century-11":
+    "The mutual excommunications of 1054, later taken as the symbol of the schism between East and West, close the story this library tells.",
   councils: "The creeds and canons of the ecumenical councils, from Nicaea in 325 onward."
 };
 
@@ -68,14 +71,9 @@ export function fatherEntry(author: Author, profile?: FatherProfile): FatherEntr
       paragraphs: known.paragraphs
     };
   }
-  const paragraphs = author.bio
-    ? [author.bio]
-    : [
-        author.name +
-          (author.dates ? " (" + author.dates + ")" : "") +
-          " is part of the Patrista library" +
-          (author.region ? ", associated with " + author.region + "." : ".")
-      ];
+  // No placeholder prose: a Father without a written profile shows only the catalog's own bio, if any.
+  // tests/fathersDirectory.test.ts fails when a Father with works has no profile.
+  const paragraphs = author.bio ? [author.bio] : [];
   return {
     id: author.id,
     name: author.name,

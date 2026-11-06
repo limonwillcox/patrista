@@ -11,7 +11,16 @@ import {
   slugifyHeading,
   workPublicPath
 } from "../src/lib/fatherPaths";
-import { chapterSeoDescription, chapterSeoTitle, pickOpening, unitNoun, workSeoDescription, workSeoTitle } from "../src/lib/seoMeta";
+import {
+  chapterSeoDescription,
+  chapterSeoTitle,
+  hasAuthorLine,
+  pickOpening,
+  unitNoun,
+  workSeoDescription,
+  workSeoTitle
+} from "../src/lib/seoMeta";
+import { attributionLabel, shortAuthor, workMeta } from "./workMeta";
 
 export const SITEMAP_URL_LIMIT = 50_000;
 
@@ -147,6 +156,23 @@ function proseOf(passage: Passage): string {
   return englishParagraphs(passage.versions).join(" ");
 }
 
+/**
+ * The schema.org author of a work, or null when none can honestly be named: anonymous and
+ * pseudonymous works, and works on a collection shelf (councils, the miscellaneous Apostolic writings).
+ * A work by another known writer names that writer; a disputed one keeps its traditional author.
+ */
+export function workAuthorJsonLd(author: { id: string; name: string }, workId?: string): Record<string, string> | null {
+  const meta = workId ? workMeta(workId) : {};
+  if (meta.authorship === "anonymous" || meta.authorship === "spurious") return null;
+  if (meta.by) return { "@type": meta.group ? "Organization" : "Person", name: meta.by };
+  if (meta.attribution && !meta.authorship) {
+    const name = meta.attribution.split(/[,;(]/)[0]!.trim();
+    return name.length <= 40 ? { "@type": "Person", name } : null;
+  }
+  if (!hasAuthorLine(author)) return null;
+  return { "@type": "Person", name: author.name };
+}
+
 export function breadcrumbJsonLd(opts: {
   origin: string;
   author: Author;
@@ -154,10 +180,12 @@ export function breadcrumbJsonLd(opts: {
   workPath: string;
   chapterLabel: string;
   chapterPath: string;
+  workId?: string;
 }): unknown {
   const chapterUrl = opts.origin + opts.chapterPath;
   const workUrl = opts.origin + opts.workPath;
-  const author = { "@type": "Person", name: opts.author.name };
+  const author = workAuthorJsonLd(opts.author, opts.workId);
+  const by = author ? { author } : {};
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -170,9 +198,9 @@ export function breadcrumbJsonLd(opts: {
           "@type": "Book",
           name: opts.workTitle,
           url: workUrl,
-          author
+          ...by
         },
-        author
+        ...by
       },
       {
         "@type": "BreadcrumbList",
@@ -196,9 +224,13 @@ export function breadcrumbJsonLd(opts: {
 export function bookJsonLd(opts: {
   origin: string;
   authorName: string;
+  /** Shelf author id; with `workId`, decides whether a real author can be named. */
+  authorId?: string;
+  workId?: string;
   workTitle: string;
   workPath: string;
   parts: { name: string; path: string }[];
+  translator?: string;
 }): unknown {
   const url = opts.origin + opts.workPath;
   const book: Record<string, unknown> = {
@@ -206,9 +238,14 @@ export function bookJsonLd(opts: {
     "@type": "Book",
     name: opts.workTitle,
     url,
-    inLanguage: "en",
-    author: { "@type": "Person", name: opts.authorName }
+    inLanguage: "en"
   };
+  const author = workAuthorJsonLd(
+    opts.authorId ? { id: opts.authorId, name: opts.authorName } : { id: "", name: opts.authorName },
+    opts.workId
+  );
+  if (author) book.author = author;
+  if (opts.translator) book.translator = { "@type": "Person", name: opts.translator };
   if (opts.parts.length) {
     book.hasPart = opts.parts.map((part) => ({
       "@type": "Chapter",
@@ -219,7 +256,44 @@ export function bookJsonLd(opts: {
   return book;
 }
 
+function sentence(s: string): string {
+  return /[.!?”"]$/.test(s) ? s : s + ".";
+}
+
+/**
+ * The author line under a work's title. A work the shelf Father wrote names him and his dates; an
+ * attributed work names its real or likely author with a plain label, and says whose shelf it sits on.
+ * Translator and edition follow when the catalog has them.
+ */
+export function workCreditHtml(author: Author, work: Pick<Work, "id" | "authorship" | "attribution" | "translator" | "edition">): string {
+  const lines: string[] = [];
+  const label = attributionLabel(work, author);
+  const meta = workMeta(work.id);
+  const attribution = work.attribution ?? meta.attribution;
+  if (attribution || work.authorship || meta.authorship) {
+    const shelf =
+      '<a href="/fathers/' + escapeHtml(encodeURIComponent(author.id)) + '/">' + escapeHtml(author.name) + "</a>";
+    lines.push(
+      '<p class="static-attribution">' +
+        (label ? "<strong>" + escapeHtml(label) + ".</strong> " : "") +
+        (attribution ? escapeHtml(sentence(attribution)) + " " : "") +
+        (hasAuthorLine(author) ? "Shelved with " + shelf + "." : "") +
+        "</p>"
+    );
+  } else {
+    lines.push(
+      "<p>" + escapeHtml(author.name) + (author.dates ? " (" + escapeHtml(author.dates) + ")" : "") + "</p>"
+    );
+  }
+  const credit = [work.translator ? "Translated by " + work.translator + "." : "", work.edition ? "From " + work.edition + "." : ""]
+    .filter(Boolean)
+    .join(" ");
+  if (credit) lines.push('<p class="static-credit">' + escapeHtml(credit) + "</p>");
+  return lines.join("\n");
+}
+
 export function renderChapterBody(opts: {
+  /** Author named in the kicker: the attributed author's short name for a work the shelf Father did not write. */
   authorName: string;
   workTitle: string;
   workPath: string;
@@ -292,9 +366,10 @@ export function renderWorkPage(opts: {
   const url = opts.origin + path;
   const refs = chapterRefs(opts.author.id, opts.work.id, opts.chapters);
   const split = opts.chapters.length > 1;
-  const title = workSeoTitle(opts.work.title, opts.author.name);
+  const title = workSeoTitle(opts.work.title, opts.author, opts.work.id);
   const description = workSeoDescription({
-    authorName: opts.author.name,
+    authorName: opts.author,
+    workId: opts.work.id,
     workTitle: opts.work.title,
     units: opts.chapters.length,
     noun: unitNoun(opts.chapters.map((c) => c.heading)),
@@ -304,9 +379,12 @@ export function renderWorkPage(opts: {
   const ld = bookJsonLd({
     origin: opts.origin,
     authorName: opts.author.name,
+    authorId: opts.author.id,
+    workId: opts.work.id,
     workTitle: opts.work.title,
     workPath: path,
-    parts: split ? refs.map((r) => ({ name: r.label, path: r.path })) : []
+    parts: split ? refs.map((r) => ({ name: r.label, path: r.path })) : [],
+    translator: opts.work.translator
   });
 
   const body: string[] = [];
@@ -318,12 +396,7 @@ export function renderWorkPage(opts: {
       "</a></p>"
   );
   body.push("<h1>" + escapeHtml(opts.work.title) + "</h1>");
-  body.push(
-    "<p>" +
-      escapeHtml(opts.author.name) +
-      (opts.author.dates ? " (" + escapeHtml(opts.author.dates) + ")" : "") +
-      "</p>"
-  );
+  body.push(workCreditHtml(opts.author, opts.work));
   if (split) {
     const first = refs[0]!;
     body.push('<details class="chapter-index">');
@@ -463,7 +536,7 @@ export function renderHomeStaticHtml(catalog: Catalog, limit = 8): string {
   return [
     '<div class="static-home">',
     "<h1>Patrista</h1>",
-    "<p>A searchable library of the public-domain Church Fathers. The full English text of every work is published here, one chapter to a page.</p>",
+    "<p>A searchable library of the public-domain Church Fathers. The English text of each work, from public-domain translations (most from the Schaff editions), one chapter to a page.</p>",
     '<p><a href="/fathers/">Church Fathers</a></p>',
     "<ul>",
     items,
@@ -573,7 +646,18 @@ export function writeFatherPages(
     writeFileSync(workFile, page.html);
     urls.push(origin + page.path);
 
-    if (payload.chapters.length < 2) continue;
+    if (payload.chapters.length < 2) {
+      // A one-unit work has no chapter pages. Chapter URLs it had before a parser fix (when it was
+      // wrongly split in two) still resolve: each becomes a stub pointing at the work page.
+      const prefix = chapterPublicPath(payload.author.id, payload.work.id, "x").slice(0, -"x/".length);
+      for (const oldPath of legacyChapterUrls(prefix)) {
+        const file = join(dist, oldPath.replace(/^\//, ""), "index.html");
+        mkdirSync(dirname(file), { recursive: true });
+        writeFileSync(file, renderStubPage(origin + page.path, page.path));
+        stubs.push(oldPath);
+      }
+      continue;
+    }
     const refs = chapterRefs(payload.author.id, payload.work.id, payload.chapters);
     payload.chapters.forEach((chapter, index) => {
       const ref = refs[index];
@@ -582,19 +666,20 @@ export function writeFatherPages(
       const label = ref.label;
       const description = chapterSeoDescription(
         ref.n,
-        payload.author.name,
+        payload.author,
         payload.work.title,
-        pickOpening(englishParagraphs(chapter.versions), [payload.work.title, chapter.heading])
+        pickOpening(englishParagraphs(chapter.versions), [payload.work.title, chapter.heading]),
+        payload.work.id
       );
       const extra: string[] = [];
       if (prev) extra.push('    <link rel="prev" href="' + escapeHtml(origin + prev.path) + '" />');
       if (next) extra.push('    <link rel="next" href="' + escapeHtml(origin + next.path) + '" />');
       const html = prerenderShell(indexHtml, origin, {
         canonicalPath: ref.path,
-        title: chapterSeoTitle(ref.n, payload.work.title, payload.author.name),
+        title: chapterSeoTitle(ref.n, payload.work.title, payload.author, payload.work.id),
         description,
         bodyHtml: renderChapterBody({
-          authorName: payload.author.name,
+          authorName: shortAuthor(payload.work, payload.author) || payload.author.name,
           workTitle: payload.work.title,
           workPath: page.path,
           chapter,
@@ -607,7 +692,8 @@ export function writeFatherPages(
           workTitle: payload.work.title,
           workPath: page.path,
           chapterLabel: label,
-          chapterPath: ref.path
+          chapterPath: ref.path,
+          workId: payload.work.id
         }),
         extraHead: extra.join("\n")
       });

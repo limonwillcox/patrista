@@ -14,7 +14,8 @@ import { writingCategory } from "../../lib/libraryHover";
 import { shelfGroups } from "../../lib/shelfGroups";
 import { BookSpine, HUE_LEATHER, authorHue } from "./BookSpine";
 import { loadBookText } from "../../lib/bookText";
-import { manuscriptForm } from "../../lib/manuscriptForm";
+import { manuscriptForm, workCentury } from "../../lib/manuscriptForm";
+import { attributionLabel, hasAttribution, shortAuthor } from "../../../server/workMeta";
 import { webglAvailable } from "../../three/support";
 import type { BookSpec, ShelfFlight } from "../../three/shelfFlight";
 import { BookViewer } from "./BookViewer";
@@ -146,7 +147,7 @@ export function Bookcase({ catalog, author }: { catalog: Catalog; author: Author
   const spec = (w: Work): BookSpec => ({
     key: w.id,
     title: w.title,
-    author: author.name,
+    author: hasAttribution(w) ? shortAuthor(w, author) : author.name,
     cover: HUE_LEATHER[hue],
     surface: manuscriptForm(w, author) === "papyrus-codex" ? "papyrus" : "parchment",
     form: manuscriptForm(w, author) === "roll" ? "roll" : "codex",
@@ -205,6 +206,7 @@ export function Bookcase({ catalog, author }: { catalog: Catalog; author: Author
               <>
                 <strong>{hovered.title}</strong>
                 <span>
+                  {attributionLabel(hovered, author) ? attributionLabel(hovered, author) + " · " : ""}
                   {writingCategory(hovered.title)} · {formatWords(hovered.wordCount)} · {readingTime(hovered.wordCount)}
                 </span>
               </>
@@ -227,7 +229,8 @@ export function Bookcase({ catalog, author }: { catalog: Catalog; author: Author
                         work={w}
                         author={author}
                         bin={bins.get(w.id) ?? 5}
-                        century={century}
+                        century={workCentury(w, author) ?? century}
+                        centuryKnown={workCentury(w, author) !== null}
                         periodId={periodId}
                         hue={hue}
                         keyWork={group.id === "start-here"}
@@ -262,6 +265,7 @@ export function Bookcase({ catalog, author }: { catalog: Catalog; author: Author
                     <button type="button" onClick={() => open(w.id)}>
                       <span className="bookcase-list-title">{w.title}</span>
                       <span className="bookcase-list-meta">
+                        {attributionLabel(w, author) ? attributionLabel(w, author) + " · " : ""}
                         {w.chapters > 1 ? w.chapters + " parts · " : ""}
                         {formatWords(w.wordCount)} · {readingTime(w.wordCount)}
                       </span>

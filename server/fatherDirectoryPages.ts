@@ -2,6 +2,7 @@ import { mkdirSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import type { Catalog } from "./types";
 import { fatherEntry, fatherSections } from "../src/lib/fathersDirectory";
+import { FATHER_PROFILES } from "../src/lib/fatherProfiles";
 import type { FatherImageMap } from "../src/lib/fatherImages";
 import { renderFatherProfileBody, renderFathersIndexBody } from "../src/lib/fatherPageHtml";
 import {
@@ -64,7 +65,7 @@ export function writeFatherDirectoryPages(
     const path = fatherProfilePath(author.id);
     const works = catalog.works
       .filter((work) => work.author === author.id)
-      .map((work) => ({ id: work.id, title: work.title }));
+      .map((work) => ({ id: work.id, title: work.title, authorship: work.authorship, attribution: work.attribution }));
     const description = fatherProfileDescription(bio.lede || entry.name);
     const html = prerenderShell(indexHtml, origin, {
       canonicalPath: path,
@@ -82,7 +83,8 @@ export function writeFatherDirectoryPages(
             dates: entry.dates,
             office: entry.office,
             region: entry.region,
-            sameAs: fatherSameAs(author.id)
+            sameAs: fatherSameAs(author.id),
+            kind: FATHER_PROFILES[author.id]?.kind
           })
         )
     });

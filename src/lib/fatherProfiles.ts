@@ -4,70 +4,78 @@ export type FatherProfile = {
   paragraphs: string[];
   /** Named section instead of a death-century. */
   section?: string;
+  /**
+   * What the shelf is, for structured data: a person (the default), a single anonymous document
+   * (the Didache), or a collection of works by many hands (the councils).
+   */
+  kind?: "person" | "document" | "collection";
 };
 
 export const FATHER_PROFILES: Record<string, FatherProfile> = {
   clement_rome: {
-    office: "Bishop of Rome",
+    office: "Bishop of Rome (by tradition)",
     paragraphs: [
-      "Clement of Rome (fl. c. 96) was bishop of Rome at the end of the first century. The church remembered him among the first successors of Peter.",
-      "His Letter to the Corinthians urges a divided church back to order, repentance, and the resurrection. It is the earliest Christian writing outside the New Testament that we can place in a known church."
+      "Clement of Rome (fl. c. 96) is named in the early lists as the third bishop of Rome after the apostles. Whether Rome had a single presiding bishop this early is disputed, and the letter that bears his name speaks for the church at Rome as a whole.",
+      "That letter, known as 1 Clement, urges the divided church at Corinth back to order, repentance, and hope in the resurrection. It is traditionally dated c. 96 and is among the earliest Christian writings outside the New Testament. Later works also circulated under his name, among them the Pseudo-Clementine Recognitions and Homilies."
     ]
   },
   ignatius: {
     office: "Bishop of Antioch",
     paragraphs: [
-      "Ignatius of Antioch (d. c. 110) was bishop of Antioch in Syria. Arrested as a Christian, he was taken to Rome to die.",
-      "On the road he wrote seven letters: to churches in Asia and to Polycarp. They are the early church’s plainest witness to the bishop, the eucharist, and a martyr’s hope."
+      "Ignatius (d. c. 110) was bishop of Antioch in Syria. Arrested as a Christian, he was taken under guard to Rome to die.",
+      "On the road he wrote seven letters: to five churches in Asia Minor (Ephesus, Magnesia, Tralles, Philadelphia, and Smyrna), to the church at Rome, and to Polycarp of Smyrna. They are the early church’s plainest witness to the bishop, the eucharist, and a martyr’s hope. Later writers expanded these letters and added others in his name."
     ]
   },
   polycarp: {
     office: "Bishop of Smyrna",
     paragraphs: [
-      "Polycarp of Smyrna (c. 69–155) was bishop of Smyrna and a hearer of the apostle John. Irenaeus remembered him as a link to the apostles.",
-      "His letter to the Philippians is pastoral and scriptural. The Martyrdom of Polycarp, written by his church, is the earliest account of a Christian martyrdom outside the New Testament."
+      "Polycarp (c. 69–c. 155) led the church at Smyrna as its bishop. Irenaeus, who heard him preach as a boy, says that Polycarp had known the apostle John and others who had seen the Lord.",
+      "His letter to the Philippians is pastoral and full of Scripture. The Martyrdom of Polycarp, a letter from the church of Smyrna written soon after his death, is the earliest account of a Christian martyrdom outside the New Testament."
     ]
   },
   papias: {
     office: "Bishop of Hierapolis",
     paragraphs: [
-      "Papias of Hierapolis (fl. early 2nd c.) was bishop of Hierapolis in Asia. He collected what the elders said about the Lord’s words and the Gospels.",
+      "Papias (fl. early 2nd c.) was bishop of Hierapolis in Phrygia. He collected what the elders said about the Lord’s words and the Gospels.",
       "His Expositions survive only in fragments, quoted by Irenaeus and Eusebius. Those fragments are a main early witness to how the church received Mark and Matthew."
     ]
   },
   hermas: {
     office: "Author of the Shepherd",
     paragraphs: [
-      "Hermas (fl. 2nd c.) is the name given to the author of the Shepherd, a Roman apocalypse widely read in the early church.",
-      "The book is a series of visions, mandates, and parables about repentance after baptism. It shows what a second-century Roman congregation was taught about sin, the church, and the Son of God."
+      "Hermas (fl. 2nd c.) is the name the author of the Shepherd gives himself. The book is a Roman apocalypse, widely read in the early church.",
+      "It is a series of visions, mandates, and parables about repentance after baptism. It shows what a second-century Roman congregation was taught about sin, the church, and the Son of God."
     ]
   },
   barnabas: {
-    office: "Early Christian letter",
+    office: "Anonymous early letter",
+    kind: "document",
     paragraphs: [
-      "The Epistle of Barnabas (fl. 1st–2nd c.) is an early Christian letter, not a work of the apostle Barnabas. Its author is unknown.",
-      "It reads Israel’s Scripture as speaking of Christ, and it closes with a teaching on the two ways. The early church copied it beside the Apostolic Fathers."
+      "The Epistle of Barnabas (c. 96–135, often dated c. 130) is an anonymous early Christian letter. Tradition linked it with the apostle Barnabas, but it is not his work.",
+      "It reads Israel’s Scripture as speaking of Christ, and it closes with a teaching on the two ways. Some early churches read it with the Scriptures: Codex Sinaiticus copies it with the New Testament, after Revelation."
     ]
   },
   didache: {
     office: "Church order",
+    kind: "document",
     paragraphs: [
-      "The Didache (fl. 1st–2nd c.), or Teaching of the Twelve Apostles, is a short church manual, likely from Syria. No author’s name is attached to it.",
-      "It gives the two ways, instructions for baptism, fasting, the eucharist, and traveling apostles, and a closing word on the end. It is the earliest church order we have."
+      "The Didache, or Teaching of the Twelve Apostles, is a short anonymous church manual, probably from Syria. It is usually dated to the late first or early second century.",
+      "It gives the two ways, instructions for baptism, fasting, the eucharist, and traveling apostles and prophets, and a closing word on the end. It is the earliest church order that survives."
     ]
   },
   mathetes: {
-    office: "Author to Diognetus",
+    office: "Unknown author",
+    kind: "document",
     paragraphs: [
-      "Mathetes (fl. 2nd c.) is the unnamed disciple who wrote the Epistle to Diognetus. The name means “a disciple.”",
-      "The letter tells a pagan inquirer how Christians live in the world without belonging to it, and why the Son was sent. It is one of the most finished pieces of early Christian prose."
+      "The Epistle to Diognetus is an anonymous Christian apology of uncertain date, often placed in the late second century. “Mathetes,” the name under which it is sometimes filed, is not a name: it comes from the writer’s description of himself as a disciple (Greek mathētēs) in chapter 11.",
+      "The letter tells a pagan inquirer how Christians live in the world without belonging to it, and why the Son was sent. Chapters 11 and 12 differ in style and are likely a separate piece joined to it. It is one of the most finished pieces of early Christian prose."
     ]
   },
   justin: {
     office: "Christian apologist",
     paragraphs: [
-      "Justin Martyr (c. 100–165) taught in Rome after a search through the philosophical schools. He was beheaded under the prefect Rusticus.",
-      "His First Apology addresses the emperor in defense of Christians, and it describes their baptism and Sunday worship. The Dialogue with Trypho argues from Scripture that Jesus is the Christ."
+      "Justin Martyr (c. 100–c. 165) taught in Rome after a search through the philosophical schools. He was beheaded under the prefect Rusticus.",
+      "His First Apology addresses the emperor in defense of Christians, and it describes their baptism and Sunday worship. The Dialogue with Trypho argues from Scripture that Jesus is the Christ. Several other works on his shelf were later ascribed to him and are marked as such."
     ]
   },
   tatian: {
@@ -80,43 +88,44 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
   athenagoras: {
     office: "Christian apologist",
     paragraphs: [
-      "Athenagoras (fl. late 2nd c.) was a Christian philosopher in Athens. He wrote to the emperors Marcus Aurelius and Commodus.",
-      "A Plea for the Christians answers the charges of atheism, cannibalism, and incest. On the Resurrection argues that God can raise the body he made."
+      "Athenagoras (fl. late 2nd c.) was a Christian philosopher of Athens. His Plea for the Christians is addressed to the emperors Marcus Aurelius and Commodus.",
+      "The Plea answers the charges of atheism, cannibalism, and incest. A treatise On the Resurrection, which argues that God can raise the body he made, is ascribed to him in the manuscripts, though some scholars date it later."
     ]
   },
   theophilus: {
     office: "Bishop of Antioch",
     paragraphs: [
-      "Theophilus of Antioch (fl. late 2nd c.) was bishop of Antioch. He wrote three books to Autolycus, a pagan friend.",
-      "The books defend the Christian God, tell the history of the world from Scripture, and answer Greek myth. Theophilus is an early writer to use the word “Trinity” of God."
+      "Theophilus (fl. late 2nd c.) was bishop of Antioch in Syria. He wrote three books to Autolycus, a pagan friend.",
+      "The books defend the Christian God, tell the history of the world from Scripture, and answer Greek myth. Theophilus is the first known writer to use the Greek word trias (“triad”) of God."
     ]
   },
   irenaeus: {
     office: "Bishop of Lyons",
     paragraphs: [
-      "Irenaeus of Lyons (c. 130–c. 202) was bishop of Lyons in Gaul. He had known Polycarp in Asia, and he wrote against teachers who split the God of Jesus from the Creator.",
-      "Against Heresies sets out what the apostles preached and what the churches hold in common. His shorter Demonstration of the Apostolic Preaching walks the same faith from Scripture."
+      "Irenaeus (c. 130–c. 202) came from Asia Minor, where as a young man he heard Polycarp, and became bishop of Lyons in Gaul. He wrote against teachers who split the God of Jesus from the Creator.",
+      "Against Heresies sets out what the apostles preached and what the churches hold in common. His shorter Demonstration of the Apostolic Preaching, which survives in Armenian, presents the same faith briefly as a reading of Scripture."
     ]
   },
   clement_alexandria: {
     office: "Teacher at Alexandria",
     paragraphs: [
-      "Clement of Alexandria (c. 150–c. 215) taught in the catechetical school of Alexandria. He read Greek philosophy as a preparation for the Gospel.",
-      "The Exhortation, the Instructor, and the Miscellanies lead a reader from conversion to a disciplined Christian life. He is the teacher who stands just before Origen."
+      "Clement of Alexandria (c. 150–c. 215) taught in Alexandria and read Greek philosophy as a preparation for the Gospel. Eusebius places him at the head of the city’s catechetical school, though how formal that school was is debated.",
+      "The Exhortation, the Instructor, and the Miscellanies lead a reader from conversion to a disciplined Christian life. He left Alexandria during the persecution of about 202 and died elsewhere."
     ]
   },
   hippolytus: {
     office: "Roman presbyter",
     paragraphs: [
-      "Hippolytus (c. 170–c. 235) was a learned presbyter in Rome, later remembered as a martyr. A statue and a set of Greek writings preserve his name.",
-      "The Refutation of All Heresies traces Christian errors to pagan philosophy. His commentaries and church order show how Scripture and liturgy were taught in the Roman church."
+      "Hippolytus (c. 170–c. 235) was a learned presbyter in Rome who opposed Bishop Callistus. He was exiled to Sardinia with Bishop Pontian in 235 and was later honored as a martyr.",
+      "Which writings are his is debated, and some scholars divide the Greek works under his name between two or more authors. The Refutation of All Heresies traces Christian errors to Greek philosophy, and the Commentary on Daniel is the oldest surviving Christian commentary on a book of Scripture.",
+      "The church order once called his Apostolic Tradition is now widely held not to be his. A statue found in Rome in 1551, restored as a seated bishop and long taken as his portrait, carries a list of writings on its chair, but the figure was originally a woman’s."
     ]
   },
   tertullian: {
     office: "Christian apologist",
     paragraphs: [
-      "Tertullian (c. 155–c. 240) of Carthage was the first major Christian author to write in Latin. Trained as an advocate, he wrote with a lawyer’s edge.",
-      "His Apology answers Roman charges against the church. Later works on baptism, repentance, the resurrection, and the Trinity shaped Latin theology, even where the church did not follow his rigorism."
+      "Tertullian (c. 155–c. 240) of Carthage was the first major Christian author to write in Latin. He wrote with a lawyer’s edge; whether he was the jurist Tertullian cited in Roman law is disputed.",
+      "His Apology answers Roman charges against the church. Later works on baptism, repentance, the resurrection, and the Trinity shaped Latin theology, even where the church did not follow his rigorism or his sympathy with the New Prophecy (Montanism)."
     ]
   },
   minucius_felix: {
@@ -129,7 +138,7 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
   origen: {
     office: "Teacher at Alexandria",
     paragraphs: [
-      "Origen (c. 185–c. 254) succeeded Clement as the great teacher of Alexandria, and later taught in Caesarea. He learned Hebrew, collated the Hexapla, and preached through much of Scripture.",
+      "Origen (c. 185–c. 254) taught in Alexandria and later in Caesarea. Eusebius (Church History 6.6) makes him Clement’s pupil and successor as the city’s Christian teacher, an account historians treat with some caution. He learned Hebrew, collated the Hexapla, and preached through much of Scripture.",
       "On First Principles is the first large Christian theology. Against Celsus answers a philosopher’s attack. His homilies and commentaries taught the church to read Scripture on more than one level."
     ]
   },
@@ -143,7 +152,7 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
   cyprian: {
     office: "Bishop of Carthage",
     paragraphs: [
-      "Cyprian of Carthage (d. 258) was bishop of Carthage within a few years of his baptism. He led the North African church through plague and the Decian persecution, and he was beheaded in 258.",
+      "Cyprian (d. 258) became bishop of Carthage within a few years of his baptism. He led the North African church through the Decian persecution and a plague, and he was beheaded in 258 under Valerian.",
       "His letters and treatises deal with the lapsed, baptism, and the unity of the church. On the Unity of the Church is his argument that the bishop and the one church belong together."
     ]
   },
@@ -151,55 +160,55 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
     office: "Christian poet",
     paragraphs: [
       "Commodianus (fl. 3rd–5th c.) wrote Latin Christian verse of an uncertain date. The poems instruct pagans and believers in a rough, urgent style.",
-      "The Instructions and the Carmen apologeticum warn of judgment and call readers to leave the gods. They show popular Christian teaching in the western churches."
+      "The Instructions warn of judgment and call readers to leave the gods. They show popular Christian teaching in the western churches."
     ]
   },
   dionysius: {
-    office: "Third-century bishops",
+    office: "Bishop of Alexandria",
     paragraphs: [
-      "The Dionysius collection gathers letters and fragments from third-century bishops, above all Dionysius of Alexandria, a student of Origen. Related pieces from Rome and elsewhere sit with them.",
-      "The letters treat persecution, the lapsed, the date of Easter, and how to speak of the Son. They are a bishop’s correspondence from the decades before Nicaea."
+      "Dionysius of Alexandria (d. c. 264) was a pupil of Origen and became bishop of Alexandria in 247 or 248. He survived the Decian and Valerian persecutions by flight and exile.",
+      "His letters survive mostly in fragments, many of them quoted by Eusebius. They treat persecution, the lapsed, rebaptism, the date of Easter, and how to speak of the Son; one argues from style that Revelation was not written by the author of the Gospel of John. This shelf also holds the Fragments of Caius, a Roman presbyter of the early third century."
     ]
   },
   gregory_thaumaturgus: {
     office: "Bishop of Neocaesarea",
     paragraphs: [
-      "Gregory Thaumaturgus (c. 213–c. 270) was bishop of Neocaesarea in Pontus. He had studied with Origen in Caesarea.",
-      "His Declaration of Faith is a short rule of belief. The Panegyric to Origen thanks his teacher. Later churches remembered Gregory as the apostle of Pontus."
+      "Gregory Thaumaturgus (c. 213–c. 270) studied with Origen in Caesarea and became bishop of Neocaesarea in Pontus.",
+      "His Declaration of Faith is a short rule of belief, and the Panegyric to Origen thanks his teacher. Later churches remembered him as the apostle of Pontus, and several later works circulated under his name."
     ]
   },
   methodius: {
-    office: "Bishop of Olympus",
+    office: "Bishop in Lycia",
     paragraphs: [
-      "Methodius of Olympus (d. c. 311) was a bishop in Lycia, remembered as a martyr in the last persecution. He wrote in Greek against Origen on some points, and with him on others.",
-      "The Symposium pictures virginity as a feast of ten virgins. On the Resurrection and On Free Will defend the body and human choice."
+      "Methodius (d. c. 311), traditionally bishop of Olympus in Lycia, is remembered as a martyr of the last persecution. Little about his life is certain.",
+      "He wrote in Greek, against Origen on some points and with him on others. The Symposium pictures virginity as a feast of ten virgins. On the Resurrection and On Free Will defend the body and human choice."
     ]
   },
   arnobius: {
     office: "Christian apologist",
     paragraphs: [
-      "Arnobius of Sicca (fl. c. 300) taught rhetoric in North Africa and wrote Against the Nations after his conversion. His student Lactantius became the more lasting Latin apologist.",
+      "Arnobius of Sicca (fl. c. 300) taught rhetoric in North Africa and wrote Against the Heathen after his conversion. Jerome names Lactantius as his pupil.",
       "The seven books attack the pagan gods and answer the claim that Christian neglect of the old cults had brought disaster on the empire."
     ]
   },
   lactantius: {
     office: "Christian rhetor",
     paragraphs: [
-      "Lactantius (c. 250–325) taught rhetoric under Diocletian and later served Constantine. Jerome called him the Christian Cicero.",
+      "Lactantius (c. 250–c. 325) taught Latin rhetoric at Nicomedia under Diocletian and later tutored Constantine’s son Crispus. Jerome called him “a river of Ciceronian eloquence” (Letter 58.10); Renaissance humanists named him the Christian Cicero.",
       "The Divine Institutes is a full defense of Christian worship and justice. On the Deaths of the Persecutors tells how the emperors who attacked the church came to their ends."
     ]
   },
   eusebius: {
     office: "Bishop of Caesarea",
     paragraphs: [
-      "Eusebius of Caesarea (c. 260–c. 339) was bishop of Caesarea and keeper of its library. He lived through the Great Persecution and the reign of Constantine.",
+      "Eusebius (c. 260–c. 339) became bishop of Caesarea in Palestine and kept its library. He lived through the Great Persecution and the reign of Constantine.",
       "His Church History is the first large narrative of the Christian movement, built from documents he quotes. The Life of Constantine and the Preparation for the Gospel stand beside it."
     ]
   },
   aphrahat: {
-    office: "Persian sage",
+    office: "Syriac writer",
     paragraphs: [
-      "Aphrahat (fl. 4th c.) was a Persian Christian sage who wrote in Syriac under the Persian kings. He is called the Persian Sage.",
+      "Aphrahat (fl. 4th c.), known as the Persian Sage, wrote in Syriac within the Persian empire.",
       "The Demonstrations are twenty-three discourses on faith, love, fasting, war, and the resurrection. They are the earliest extended Christian theology in Syriac."
     ]
   },
@@ -213,49 +222,49 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
   hilary: {
     office: "Bishop of Poitiers",
     paragraphs: [
-      "Hilary of Poitiers (c. 310–c. 367) was bishop of Poitiers. Exiled to the East for defending the Nicene faith, he learned the Greek controversy at first hand.",
-      "On the Trinity is the major Latin account of the Nicene faith in his generation. His commentaries on the Psalms and on Matthew brought eastern exegesis west."
+      "Hilary (c. 310–c. 367) became bishop of Poitiers in Gaul. Exiled to Asia Minor in 356 for defending the Nicene faith, he learned the Greek controversy at first hand.",
+      "On the Trinity is the major Latin account of the Nicene faith in his generation. His commentary on Matthew was written before the exile; his later Tractates on the Psalms draw heavily on Origen."
     ]
   },
   athanasius: {
     office: "Bishop of Alexandria",
     paragraphs: [
-      "Athanasius of Alexandria (c. 296–373) was bishop of Alexandria for forty-five years, many of them spent in exile. He defended the creed of Nicaea against the claim that the Son was a creature.",
-      "On the Incarnation, written early, explains why the Word became man. The Life of Antony carried monasticism to the Latin world. His letters mark the twenty-seven books of the New Testament."
+      "Athanasius (c. 296–373) was bishop of Alexandria from 328 until his death, and was sent into exile five times. He defended the creed of Nicaea against the claim that the Son was a creature.",
+      "On the Incarnation, written early, explains why the Word became man. The Life of Antony was widely read, in Greek and in Latin translation, as a portrait of the desert monk. His Festal Letter 39 (367) is the earliest surviving list of exactly the twenty-seven books of the New Testament."
     ]
   },
   basil: {
     office: "Bishop of Caesarea",
     paragraphs: [
-      "Basil the Great (c. 330–379) was bishop of Caesarea in Cappadocia. He organized monastic communities, cared for the poor, and argued for the divinity of the Holy Spirit.",
-      "On the Holy Spirit and the treatise against Eunomius defend Nicene worship. His Longer and Shorter Rules, and his letters, shaped eastern monastic life."
+      "Basil the Great (c. 330–379) became bishop of Caesarea in Cappadocia in 370. He organized monastic communities, cared for the poor, and argued for the divinity of the Holy Spirit.",
+      "On the Holy Spirit and the treatise against Eunomius defend Nicene worship. His Longer and Shorter Rules, and his letters, shaped eastern monastic life. He died in 379 by the traditional date; some scholars argue for 377 or 378."
     ]
   },
   cyril_jerusalem: {
     office: "Bishop of Jerusalem",
     paragraphs: [
-      "Cyril of Jerusalem (c. 313–386) was bishop of Jerusalem. He catechized those preparing for baptism in the Church of the Holy Sepulchre.",
-      "The Catechetical Lectures walk through the creed before baptism. The Mystagogical Lectures, after baptism, explain the rites the newly baptized had just received."
+      "Cyril (c. 313–386) was bishop of Jerusalem from about 350. He catechized those preparing for baptism in the Church of the Holy Sepulchre.",
+      "The Catechetical Lectures walk through the creed before baptism. The Mystagogical Lectures, given after baptism, explain the rites the newly baptized had just received; some scholars assign them to his successor John."
     ]
   },
   gregory_nazianzen: {
     office: "Bishop of Constantinople",
     paragraphs: [
-      "Gregory Nazianzen (c. 329–390) was a Cappadocian bishop who briefly presided at Constantinople during the council of 381. He called himself a man made for contemplation more than for courts.",
-      "The Theological Orations are the classic Greek account of the Trinity. His poems and funeral orations, including the one for Basil, are among the finest Greek of the fourth century."
+      "Gregory Nazianzen (c. 329–c. 390) was a Cappadocian theologian and, briefly, bishop of Constantinople. He presided for a time at the council of 381 before resigning. He accepted church office reluctantly and preferred a life of study and retreat.",
+      "The Theological Orations are the classic Greek account of the Trinity. His poems and funeral orations, including the one for Basil, are major works of fourth-century Greek literature."
     ]
   },
   gregory_nyssa: {
     office: "Bishop of Nyssa",
     paragraphs: [
-      "Gregory of Nyssa (c. 335–c. 395) was bishop of Nyssa and the brother of Basil. He wrote the most speculative theology of the Cappadocians.",
+      "Gregory of Nyssa (c. 335–c. 395), the younger brother of Basil, became bishop of Nyssa in Cappadocia. He wrote the most speculative theology of the Cappadocians.",
       "Against Eunomius, the Great Catechism, and the Life of Moses set out how a finite mind speaks of the infinite God. His homilies on the Song of Songs read Scripture as the soul’s ascent."
     ]
   },
   ambrose: {
     office: "Bishop of Milan",
     paragraphs: [
-      "Ambrose of Milan (c. 340–397) was governor of Liguria when the people of Milan demanded him as bishop. He baptized Augustine and stood up to emperors over the church’s independence.",
+      "Ambrose of Milan (c. 340–397) was governor of Aemilia-Liguria when the people of Milan demanded him as bishop. He baptized Augustine and stood up to emperors over the church’s independence.",
       "He preached, wrote hymns, and treated ethics, virginity, and the duties of clergy. On the Mysteries and the sacramental catecheses show how Milan baptized and celebrated the eucharist."
     ]
   },
@@ -297,8 +306,8 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
   cassian: {
     office: "Monk of Marseille",
     paragraphs: [
-      "John Cassian (c. 360–c. 435) trained among the monks of Egypt and settled at Marseille. He founded the abbey of Saint Victor.",
-      "The Institutes and the Conferences brought Egyptian monastic practice to Gaul: the eight thoughts, prayer, and the sayings of the desert fathers. The western rule of life learned its shape partly from him."
+      "John Cassian (c. 360–c. 435) trained among the monks of Egypt and settled at Marseille. Gennadius says he founded two monasteries there, one for men and one for women; the link with the abbey of Saint Victor is later tradition.",
+      "The Institutes and the Conferences brought Egyptian monastic practice to Gaul: the eight thoughts, prayer, and the sayings of the desert fathers. The Rule of Benedict tells its monks to read them."
     ]
   },
   socrates: {
@@ -319,42 +328,50 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
     office: "Church historian",
     paragraphs: [
       "Sozomen (c. 400–c. 450) was a lawyer in Constantinople who wrote a church history dedicated to Theodosius II. He used Socrates and added material of his own.",
-      "The history covers Constantine to about 425, with a particular interest in monks and in the churches of the East. It is a companion volume to Socrates and Theodoret."
+      "The history covers Constantine to about 425, with a particular interest in monks and in the churches of the East. With Socrates and Theodoret, he is one of the three Greek historians who continued Eusebius."
     ]
   },
   theodoret: {
     office: "Bishop of Cyrrhus",
     paragraphs: [
-      "Theodoret of Cyrrhus (c. 393–c. 458) was bishop of Cyrrhus in Syria. He was a theologian of the Antiochene school and a correspondent in the debates that led to Chalcedon.",
+      "Theodoret of Cyrrhus (c. 393–c. 458) became bishop of the small Syrian city of Cyrrhus in 423. A theologian of the Antiochene school, he opposed Cyril of Alexandria in the debates that led to Chalcedon.",
       "His Church History, the Religious History of Syrian monks, and commentaries on Paul and the prophets are major Greek sources. Eranistes is his dialogue on the person of Christ."
     ]
   },
   leo: {
     office: "Bishop of Rome",
     paragraphs: [
-      "Leo the Great (c. 400–461) was bishop of Rome from 440. He met Attila, dealt with the collapse of imperial order in the West, and taught a clear doctrine of Christ.",
-      "The Tome to Flavian, read at Chalcedon, states that Christ is one person in two natures. His sermons for the liturgical year are the finest Latin preaching of the fifth century."
+      "Leo the Great (c. 400–461) was bishop of Rome from 440. He met Attila in 452 and dealt with the collapse of imperial order in the West.",
+      "The Tome to Flavian, read at Chalcedon, states that Christ is one person in two natures. Nearly a hundred of his sermons for the church year survive, with many of his letters."
+    ]
+  },
+  gennadius: {
+    office: "Presbyter of Marseille",
+    paragraphs: [
+      "Gennadius (d. c. 496) was a presbyter of Marseille in southern Gaul.",
+      "He continued Jerome’s Lives of Illustrious Men with notices of about a hundred Christian writers of the later fourth and fifth centuries. For many of them his notice is the main record of their life and works. He wrote as a Gallic churchman of his day, sometimes reserved about Augustine’s teaching on grace."
     ]
   },
   councils: {
     office: "The great councils",
     section: "Councils",
+    kind: "collection",
     paragraphs: [
-      "The ecumenical councils (325–787) were gatherings of bishops that the wider church received as decisive. Nicaea, Constantinople, Ephesus, Chalcedon, and the later councils in Constantinople and Nicaea settled how the church speaks of the Trinity and of Christ.",
-      "Patrista files their creeds, canons, and related acts together. They are not the work of one father. They are the church’s common decisions, and the fathers on this page wrote, argued, and preached around them."
+      "The seven councils counted as ecumenical by the Orthodox and Catholic churches met between 325 and 787. Nicaea (325) and Constantinople (381) set out the faith in the Trinity; Ephesus (431), Chalcedon (451), and the councils of Constantinople in 553 and 680–681 treated the person of Christ; the second council of Nicaea (787) defended the veneration of icons.",
+      "Not every church received them all: the Church of the East did not accept Ephesus, and the Oriental Orthodox churches did not accept Chalcedon or the councils after it. Patrista files their creeds, canons, and related acts together. They are not the work of one father; the fathers on this page wrote, argued, and preached around them."
     ]
   },
   gregory: {
     office: "Bishop of Rome",
     paragraphs: [
-      "Gregory the Great (c. 540–604) was bishop of Rome from 590. He had been prefect of the city and a monk, and he governed a church in a Italy broken by war and plague.",
+      "Gregory the Great (c. 540–604) was bishop of Rome from 590. He had been prefect of the city and then a monk, and he governed a church in an Italy broken by war and plague.",
       "The Pastoral Rule became the western handbook for bishops. The homilies on the Gospels and on Ezekiel, the Dialogues, and the letters show a pastor who also sent a mission to the English."
     ]
   },
   john_damascus: {
     office: "Monk of Mar Saba",
     paragraphs: [
-      "John of Damascus (c. 675–749) was a monk at Mar Saba near Jerusalem. He had served in the fiscal administration of the caliph before he left for the monastery.",
+      "John of Damascus (c. 675–c. 749) was a monk at Mar Saba near Jerusalem. By tradition he served, as his father had, in the caliph’s financial administration before he left for the monastery.",
       "The Fount of Knowledge sums up Greek theology for a new age, and its third part, On the Orthodox Faith, became a standard handbook. Three treatises defend the holy images against the imperial ban."
     ]
   },
@@ -366,17 +383,18 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
     ]
   },
   apostolic: {
-    office: "Early Christian writings",
+    office: "Miscellaneous writings",
+    kind: "collection",
     paragraphs: [
-      "Apostolic Fathers (misc.) gathers early Christian pieces that sit with the Apostolic Fathers but are not filed under one named author.",
-      "They are short, early, and close to the New Testament in time. Open a title to read the English text with the rest of the library."
+      "This shelf holds a mixed collection of anonymous and pseudonymous writings, from the first century to the ninth, printed with the Ante-Nicene Fathers. They are not by one author, and each work’s page gives its own date and what is known of its origin.",
+      "Some are early, such as the homily known as Second Clement and the Apology of Aristides. Others are much later: the Apostolic Constitutions (c. 380), Greek apocalypses of the Byzantine period, the Pseudo-Isidorian Decretals (9th century), and Jewish writings such as the Testament of Abraham that Christians preserved."
     ]
   },
   unknown: {
     office: "Collected writings",
+    kind: "collection",
     paragraphs: [
-      "Unknown / Collected holds works in the library that cannot be assigned to one father with confidence.",
-      "The English text is still readable here. Where a traditional name is disputed, the work’s own page says so."
+      "This shelf holds works that cannot be assigned to one father with confidence. Each work’s page gives what is known of its date and author."
     ]
   }
 };

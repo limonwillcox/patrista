@@ -1,5 +1,7 @@
 /** Static-page <title> and meta description rules (SEO desk spec, Oct 2026). */
 
+import { COLLECTION_SHELVES, workMeta, type WorkMeta } from "../../server/workMeta";
+
 export const TITLE_TARGET = 60;
 export const TITLE_MAX = 60;
 export const DESCRIPTION_MIN = 100;
@@ -14,40 +16,93 @@ const AUTHOR_SHORT: Record<string, string> = {
   "Ambrose of Milan": "Ambrose",
   "Arnobius of Sicca": "Arnobius",
   "Athanasius of Alexandria": "Athanasius",
-  "Barnabas (Epistle)": "Barnabas",
   "Basil the Great": "Basil",
   "John Cassian": "Cassian",
   "John Chrysostom": "Chrysostom",
   "Cyprian of Carthage": "Cyprian",
-  Didache: "the Apostles",
+  "Dionysius of Alexandria": "Dionysius",
   "Ephraim the Syrian": "Ephraim",
   "Eusebius of Caesarea": "Eusebius",
   "Hilary of Poitiers": "Hilary",
   "Ignatius of Antioch": "Ignatius",
   "Irenaeus of Lyons": "Irenaeus",
   "Flavius Josephus": "Josephus",
-  "Mathetes (to Diognetus)": "Mathetes",
   "Methodius of Olympus": "Methodius",
   "Papias of Hierapolis": "Papias",
   "Polycarp of Smyrna": "Polycarp",
   "Rufinus of Aquileia": "Rufinus",
   "Socrates Scholasticus": "Socrates",
+  "Theodoret of Cyrrhus": "Theodoret",
   "Theodoret of Cyrus": "Theodoret",
   "Theophilus of Antioch": "Theophilus"
 };
 
 /**
- * Catalog "authors" that are really collections (anonymous or miscellaneous works, council acts).
- * Their works get the plain title with no "by" clause, in titles and descriptions.
+ * Catalog "authors" that are really collections (anonymous or miscellaneous works, council acts) or
+ * anonymous documents shelved under their own title. Their works get the plain title with no "by"
+ * clause, in titles and descriptions. Matched by author id where the caller passes one, else by name.
  */
-const NO_AUTHOR = new Set(["Apostolic Fathers (misc.)", "Ecumenical Councils"]);
+const NO_AUTHOR_IDS = new Set([...COLLECTION_SHELVES, "didache", "barnabas", "mathetes"]);
+const NO_AUTHOR_NAMES = new Set([
+  "Apostolic Fathers (misc.)",
+  "Ecumenical Councils",
+  "Didache",
+  "Barnabas (Epistle)",
+  "Mathetes (to Diognetus)"
+]);
 
-export function hasAuthorLine(name: string): boolean {
-  return !NO_AUTHOR.has(name);
+/** The shelf a work sits on: its catalog author, by name or as { id, name }. */
+export type AuthorRef = string | { id: string; name: string };
+
+function nameOf(author: AuthorRef): string {
+  return typeof author === "string" ? author : author.name;
 }
 
-export function authorShortName(name: string): string {
+export function hasAuthorLine(author: AuthorRef): boolean {
+  if (typeof author !== "string" && NO_AUTHOR_IDS.has(author.id)) return false;
+  return !NO_AUTHOR_NAMES.has(nameOf(author));
+}
+
+export function authorShortName(author: AuthorRef): string {
+  const name = nameOf(author);
   return AUTHOR_SHORT[name] ?? name;
+}
+
+/** The work's attribution entry, when the shelf Father did not (certainly) write it. */
+function metaFor(workId: string | undefined): WorkMeta | null {
+  if (!workId) return null;
+  const m = workMeta(workId);
+  return m.authorship || m.attribution ? m : null;
+}
+
+/** True when the title already names `who` ("Fragments of Caius", "Letter of Eusebius …"). */
+function titleNames(workTitle: string, who: string): boolean {
+  const key = who.replace(/^Pseudo-/, "").replace(/^the\s+/i, "").toLowerCase();
+  return workTitle.toLowerCase().includes(key);
+}
+
+/** "Epistles of Cyprian", "Life of Flavius Josephus": the title already says whose it is. */
+function titleOwns(workTitle: string, author: AuthorRef): boolean {
+  const short = authorShortName(author);
+  const first = short.split(" ")[0]!;
+  const names = (first.length > 3 && first !== short ? [short, first] : [short]).map((n) =>
+    n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+  );
+  return new RegExp("\\bof\\s+(?:\\w+\\s+)?(?:" + names.join("|") + ")\\b", "i").test(workTitle);
+}
+
+/**
+ * Author clauses for a title, best first; the last is the fallback when the title runs long.
+ * An attributed work never gets "by <Father>": it names its real author, says "attributed to", or names no one.
+ */
+function byClauses(workTitle: string, author: AuthorRef, workId?: string): string[] {
+  const meta = metaFor(workId);
+  if (!meta) return [hasAuthorLine(author) && !titleOwns(workTitle, author) ? " by " + authorShortName(author) : ""];
+  if (meta.by && !titleNames(workTitle, meta.by)) return [" by " + meta.by, ""];
+  if (meta.authorship === "disputed" && !meta.by && hasAuthorLine(author)) {
+    return [", attributed to " + authorShortName(author), ""];
+  }
+  return [""];
 }
 
 /**
@@ -55,7 +110,11 @@ export function authorShortName(name: string): string {
  * One short form per work, used on its work page and every chapter title.
  * `chapter` is only set where the desk gave a separate, shorter chapter-title form.
  */
-const WORK_SHORT: Record<string, { short: string; chapter?: string }> = {
+/**
+ * `prose` is the form used inside a description sentence ("Read the … free online"): true for the
+ * short form, or its own words where the short form reads badly in a sentence.
+ */
+const WORK_SHORT: Record<string, { short: string; chapter?: string; prose?: boolean | string }> = {
   "Encyclical Letter to Bishops Throughout the World": { short: "Encyclical Letter to the Bishops" },
   "On Luke X. 22 (In Illud: Omnia Mihi Tradita Sunt)": { short: "On Luke 10:22" },
   "Tome or Synodal Letter to the People of Antioch": { short: "Tome to the People of Antioch" },
@@ -68,7 +127,8 @@ const WORK_SHORT: Record<string, { short: string; chapter?: string }> = {
   "Letter to His Brother Peter on the Difference Between Ousia and Hypostasis (Letter 38)": {
     short: "Letter to Peter on Ousia and Hypostasis"
   },
-  "Letters Between Emperor Julian and Basil (Letter 360)": { short: "Letters with Emperor Julian" },
+  // The file holds only Letter 360 (on the Trinity and images), not the Julian correspondence.
+  "Letters Between Emperor Julian and Basil (Letter 360)": { short: "Letter 360 on the Trinity and Images", prose: true },
   "Homily Against Publishing the Errors of the Brethren": { short: "Against Publishing the Errors of the Brethren" },
   "Homily on the Paralytic Let Down Through the Roof": { short: "On the Paralytic Let Down Through the Roof" },
   "Homily on the Passage 'Father if it be possible'": { short: "On 'Father, If It Be Possible'" },
@@ -87,7 +147,8 @@ const WORK_SHORT: Record<string, { short: string; chapter?: string }> = {
   "On the Catechising of the Uninstructed": { short: "Catechising the Uninstructed" },
   "On the Grace of Christ and Original Sin": { short: "Grace of Christ and Original Sin" },
   "On the Merits and Forgiveness of Sins": { short: "Merits and Forgiveness of Sins" },
-  "On the Perfection of Mans Righteousness": { short: "Perfection of Man's Righteousness" },
+  "On the Perfection of Man's Righteousness": { short: "Perfection of Man's Righteousness" },
+  "Oration of Constantine to the Assembly of the Saints": { short: "Constantine's Oration to the Saints" },
   "On the Predestination of the Saints": { short: "Predestination of the Saints" },
   "Address to Young Men on Reading Greek Literature (De legendis gentilium libris)": { short: "Address to Young Men" },
   "On the Incarnation of the Lord, Against Nestorius": { short: "Against Nestorius" },
@@ -96,11 +157,11 @@ const WORK_SHORT: Record<string, { short: string; chapter?: string }> = {
   "Homilies on Galatians to Philemon": { short: "Homilies on Galatians–Philemon" },
   "Three Homilies Concerning the Power of Demons": { short: "On the Power of Demons" },
   "Exhortation to the Heathen": { short: "Protrepticus" },
-  "Fifth Ecumenical Council - Constantinople II (553)": { short: "Constantinople II (553)" },
-  "First Ecumenical Council - Nicea I (325)": { short: "First Council of Nicaea" },
+  "Fifth Ecumenical Council - Constantinople II (553)": { short: "Constantinople II (553)", prose: "Second Council of Constantinople (553)" },
+  "First Ecumenical Council - Nicaea I (325)": { short: "First Council of Nicaea" },
   "Fourth Ecumenical Council - Chalcedon (451)": { short: "Council of Chalcedon" },
-  "Second Ecumenical Council - Constantinople I (381)": { short: "Constantinople I (381)" },
-  "Seventh Ecumenical Council - Nicea II (787)": { short: "Second Council of Nicaea" },
+  "Second Ecumenical Council - Constantinople I (381)": { short: "Constantinople I (381)", prose: "First Council of Constantinople (381)" },
+  "Seventh Ecumenical Council - Nicaea II (787)": { short: "Second Council of Nicaea" },
   "Third Ecumenical Council - Ephesus (431)": { short: "Council of Ephesus" },
   "Three Books of Testimonies Against the Jews": { short: "Testimonies Against the Jews" },
   "Funeral Oration on the Great St. Basil (Oration XLIII)": { short: "Funeral Oration on Basil" },
@@ -117,7 +178,7 @@ const WORK_SHORT: Record<string, { short: string; chapter?: string }> = {
   "Against Eunomius (Books I-XII)": { short: "Against Eunomius" },
   "Discourse to the Greeks Concerning Hades": { short: "Discourse on Hades" },
   // 2 Clement; the bare catalog title "The Homily" read as just "Homily".
-  "The Homily": { short: "Second Clement (An Ancient Homily)" }
+  "The Homily": { short: "Second Clement (An Ancient Homily)", chapter: "Second Clement", prose: "homily known as Second Clement" }
 };
 
 /** Catalog titles that have a hand-written short form (for audits and tests). */
@@ -204,25 +265,47 @@ function chapterShortTitle(workTitle: string): string {
   return hand?.chapter ?? workShortTitle(workTitle);
 }
 
-function byClause(authorName: string): string {
-  return hasAuthorLine(authorName) ? " by " + authorShortName(authorName) : "";
+function withBy(head: string, workTitle: string, author: AuthorRef, workId?: string): string {
+  const clauses = byClauses(workTitle, author, workId);
+  return head + (clauses.find((c) => head.length + c.length <= TITLE_MAX) ?? clauses[clauses.length - 1]!);
 }
 
-export function workSeoTitle(workTitle: string, authorName: string): string {
-  return workShortTitle(workTitle) + byClause(authorName);
+export function workSeoTitle(workTitle: string, author: AuthorRef, workId?: string): string {
+  return withBy(workShortTitle(workTitle), workTitle, author, workId);
 }
 
-export function chapterSeoTitle(n: number, workTitle: string, authorName: string): string {
-  return "Chapter " + n + " - " + chapterShortTitle(workTitle) + byClause(authorName);
+export function chapterSeoTitle(n: number, workTitle: string, author: AuthorRef, workId?: string): string {
+  return withBy("Chapter " + n + " - " + chapterShortTitle(workTitle), workTitle, author, workId);
 }
 
-/** "Augustine's Confessions" or, for anonymous works, "the Gospel of Peter". */
-function workInProse(workTitle: string, authorName: string, short = false): string {
-  // Council titles ("First Ecumenical Council - Nicea I (325)") read badly in a sentence: use the short form.
-  const t = short || / - /.test(workTitle) ? workShortTitle(workTitle) : clean(workTitle);
-  const bare = t.replace(/^The\s+/, "");
-  if (!hasAuthorLine(authorName)) return "the " + bare;
-  return possessive(authorShortName(authorName)) + " " + bare;
+/**
+ * "Augustine's Confessions"; for anonymous works and collections "the Gospel of Peter"; for attributed
+ * works "the Life and Passion of Cyprian by Pontius the Deacon" or "the Mystagogical Lectures attributed to …".
+ */
+function workInProse(workTitle: string, author: AuthorRef, short = false, workId?: string): string {
+  // Council titles ("First Ecumenical Council - Nicaea I (325)") read badly in a sentence: use the short form.
+  const hand = WORK_SHORT[shortTitleKey(workTitle)];
+  const t =
+    typeof hand?.prose === "string"
+      ? hand.prose
+      : short || hand?.prose || / - /.test(workTitle)
+        ? workShortTitle(workTitle)
+        : clean(workTitle);
+  // "Tertullian's Treatise on the Soul", not "Tertullian's A Treatise on the Soul".
+  const bare = t.replace(/^(?:The|An?)\s+/, "");
+  // "Read Against All Heresies", not "Read the Against All Heresies".
+  const the = /^(?:On|Of|Against|To|Concerning|Ad|De|In|Letters? \d+)\b/.test(bare) ? "" : "the ";
+  const meta = metaFor(workId);
+  if (meta) {
+    if (meta.by && !titleNames(workTitle, meta.by)) return the + bare + " by " + meta.by;
+    if (meta.authorship === "disputed" && !meta.by && hasAuthorLine(author)) {
+      return the + bare + " attributed to " + authorShortName(author);
+    }
+    return the + bare;
+  }
+  // Council acts are not a Father's own work: "the Seventh Council of Carthage", not "Cyprian's …".
+  if (!hasAuthorLine(author) || titleOwns(workTitle, author) || /\bCouncil\b/.test(bare)) return the + bare;
+  return possessive(authorShortName(author)) + " " + bare;
 }
 
 const JUNK_START =
@@ -356,9 +439,15 @@ const CHAPTER_TAILS = [
   " Free, full text."
 ];
 
-export function chapterSeoDescription(n: number, authorName: string, workTitle: string, opening: string): string {
-  let head = "Read Chapter " + n + " of " + workInProse(workTitle, authorName) + ": ";
-  if (DESCRIPTION_MAX - head.length - 18 < 70) head = "Read Chapter " + n + " of " + workInProse(workTitle, authorName, true) + ": ";
+export function chapterSeoDescription(
+  n: number,
+  author: AuthorRef,
+  workTitle: string,
+  opening: string,
+  workId?: string
+): string {
+  let head = "Read Chapter " + n + " of " + workInProse(workTitle, author, false, workId) + ": ";
+  if (DESCRIPTION_MAX - head.length - 18 < 70) head = "Read Chapter " + n + " of " + workInProse(workTitle, author, true, workId) + ": ";
   const shortTail = CHAPTER_TAILS[CHAPTER_TAILS.length - 1]!;
   const room = DESCRIPTION_MAX - head.length - shortTail.length - 1;
   const min = DESCRIPTION_TARGET - head.length - shortTail.length - 1;
@@ -386,8 +475,10 @@ export function unitNoun(headings: string[]): UnitNoun {
 }
 
 export function workSeoDescription(opts: {
-  authorName: string;
+  authorName: AuthorRef;
   workTitle: string;
+  /** Catalog work id: an attributed work names its real author, not the shelf Father. */
+  workId?: string;
   units: number;
   noun: UnitNoun;
   series?: string;
@@ -397,9 +488,9 @@ export function workSeoDescription(opts: {
     opts.units > 1
       ? "Read " + who + " free online. Full text, all " + opts.units + " " + opts.noun + (nav ? ", with chapter-by-chapter navigation." : ".")
       : "Read " + who + " free online, the full text on one page.";
-  let s = build(workInProse(opts.workTitle, opts.authorName), true);
-  if (s.length > DESCRIPTION_MAX) s = build(workInProse(opts.workTitle, opts.authorName, true), true);
-  if (s.length > DESCRIPTION_MAX) s = build(workInProse(opts.workTitle, opts.authorName, true), false);
+  let s = build(workInProse(opts.workTitle, opts.authorName, false, opts.workId), true);
+  if (s.length > DESCRIPTION_MAX) s = build(workInProse(opts.workTitle, opts.authorName, true, opts.workId), true);
+  if (s.length > DESCRIPTION_MAX) s = build(workInProse(opts.workTitle, opts.authorName, true, opts.workId), false);
   const fixed: string[] = [];
   if (opts.series) fixed.push("Public-domain " + opts.series + " translation.");
   fixed.push("English translation, public domain.", "Public-domain translation.", "Public domain.", "Clean, searchable reading layout.", "Clean reading layout.", "Searchable text.");

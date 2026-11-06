@@ -8,6 +8,7 @@ import {
   handShortTitle,
   shortTitleKey,
   TITLE_MAX,
+  authorShortName,
   chapterSeoDescription,
   chapterSeoTitle,
   pickOpening,
@@ -45,9 +46,10 @@ describe("SEO titles and descriptions across the catalog", () => {
       const prose = (i: number) => pickOpening(englishParagraphs(p.chapters[i]!.versions), [p.work.title, p.chapters[i]!.heading]);
       add(
         w.id,
-        workSeoTitle(p.work.title, p.author.name),
+        workSeoTitle(p.work.title, p.author, w.id),
         workSeoDescription({
-          authorName: p.author.name,
+          authorName: p.author,
+          workId: w.id,
           workTitle: p.work.title,
           units: p.chapters.length,
           noun: unitNoun(p.chapters.map((c) => c.heading)),
@@ -64,8 +66,8 @@ describe("SEO titles and descriptions across the catalog", () => {
         if (slug.length > 20) problems.push("slug>20 " + w.id + " " + slug);
         add(
           w.id + "/" + slug,
-          chapterSeoTitle(i + 1, p.work.title, p.author.name),
-          chapterSeoDescription(i + 1, p.author.name, p.work.title, prose(i))
+          chapterSeoTitle(i + 1, p.work.title, p.author, w.id),
+          chapterSeoDescription(i + 1, p.author, p.work.title, prose(i), w.id)
         );
         pages++;
       });
@@ -77,8 +79,16 @@ describe("SEO titles and descriptions across the catalog", () => {
       const p = getWork(w.id);
       if (!p) continue;
       const hand = handShortTitle(p.work.title);
-      if (hand && !workSeoTitle(p.work.title, p.author.name).startsWith(hand)) problems.push("short title not used: " + w.id);
-      if (/Ecumenical Council -/.test(workSeoTitle(p.work.title, p.author.name))) problems.push("long council title: " + w.id);
+      const title = workSeoTitle(p.work.title, p.author, w.id);
+      if (hand && !title.startsWith(hand)) problems.push("short title not used: " + w.id);
+      if (/Ecumenical Council -/.test(title)) problems.push("long council title: " + w.id);
+      // An attributed work never carries "by <shelf Father>".
+      if (p.work.authorship || p.work.attribution) {
+        const by = " by " + authorShortName(p.author);
+        if (title.endsWith(by)) problems.push("attributed work titled by its shelf Father: " + w.id + ": " + title);
+      }
+      // Anonymous documents and collections are never "by" themselves.
+      if (/ by (?:the Apostles|Barnabas|Mathetes|Didache|Apostolic|Ecumenical)/.test(title)) problems.push("bad author line: " + w.id + ": " + title);
     }
     for (const [desc, page] of descs) {
       const t = cat.works.find((w) => w.id === page)?.title;

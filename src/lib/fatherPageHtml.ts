@@ -1,6 +1,7 @@
 /** Crawlable Fathers index and profile markup. The React page mirrors this. */
 
 import type { Author, Catalog } from "../../server/types";
+import { attributionLabel, authorLine, type Authorship } from "../../server/workMeta";
 import { readLinks, type HistoryEra } from "../../server/churchHistory";
 import { centuryBlocks } from "./centuries";
 import { escapeHtml } from "./fatherPaths";
@@ -64,7 +65,7 @@ function factsHtml(dates: string, office: string, region: string): string {
   const rows: [string, string][] = [];
   if (dates) rows.push(["Dates", dates]);
   if (office) rows.push(["Role", office]);
-  if (region) rows.push(["See", region]);
+  if (region) rows.push(["Region", region]);
   if (!rows.length) return "";
   return (
     '<dl class="fathers-facts">' +
@@ -163,7 +164,7 @@ export function renderFathersIndexBody(authors: Author[], images: FatherImageMap
 
 export function renderFatherProfileBody(
   author: Author,
-  works: { id: string; title: string }[],
+  works: { id: string; title: string; authorship?: Authorship; attribution?: string }[],
   images: FatherImageMap
 ): string {
   const entry = fatherEntry(author);
@@ -179,7 +180,21 @@ export function renderFatherProfileBody(
         escapeHtml(group.label) +
         '</h3><ul class="fathers-writings">' +
         group.works
-          .map((work) => '<li><a href="' + escapeHtml(readPath(work.id)) + '">' + escapeHtml(work.title) + "</a></li>")
+          .map((work) => {
+            // A work the Father did not (certainly) write says so beside its title.
+            const label = attributionLabel(work, author);
+            const line = authorLine(work, author);
+            const note = label
+              ? ' <span class="fathers-attribution"><strong>' +
+                escapeHtml(label) +
+                "</strong>" +
+                (line !== author.name ? " · " + escapeHtml(line) : "") +
+                "</span>"
+              : line !== author.name
+                ? ' <span class="fathers-attribution">' + escapeHtml(line) + "</span>"
+                : "";
+            return '<li><a href="' + escapeHtml(readPath(work.id)) + '">' + escapeHtml(work.title) + "</a>" + note + "</li>";
+          })
           .join("\n") +
         "</ul>"
     )

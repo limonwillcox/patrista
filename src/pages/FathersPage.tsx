@@ -87,7 +87,7 @@ function Facts({ dates, office, region }: { dates: string; office: string; regio
   const rows: [string, string][] = [];
   if (dates) rows.push(["Dates", dates]);
   if (office) rows.push(["Role", office]);
-  if (region) rows.push(["See", region]);
+  if (region) rows.push(["Region", region]);
   if (!rows.length) return null;
   return (
     <dl className="fathers-facts">
@@ -162,7 +162,8 @@ export function FathersPage() {
           dates: entry.dates,
           office: entry.office,
           region: entry.region,
-          sameAs: SAME_AS[author.id] || []
+          sameAs: SAME_AS[author.id] || [],
+          kind: FATHER_PROFILES[author.id]?.kind
         });
       }
     }

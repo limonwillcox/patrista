@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { previewCatalog, type CatalogPreviewGroup } from "../lib/catalogPreview";
 import { useApp } from "../context/AppContext";
 import { bibleHref } from "../lib/lastRead";
+import { attributionLabel } from "../../server/workMeta";
 
 type BooklistProps = {
   query: string;
@@ -134,7 +135,8 @@ const WorksColumn = memo(function WorksColumn({
               <Link className="work-link" to={"/read?work=" + w.id} onClick={onOpenWork}>
                 <strong>{w.title}</strong>{" "}
                 <span className="meta">
-                  ({w.short} · {w.series})
+                  ({w.short} · {w.series}
+                  {attributionLabel(w, g.author) ? " · " + attributionLabel(w, g.author) : ""})
                 </span>
               </Link>
               <div className="chapters">

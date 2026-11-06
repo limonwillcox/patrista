@@ -101,3 +101,28 @@ describe("library hover bar metrics", () => {
     expect(workBarFontPx("The Homily", m)).toBe(short);
   });
 });
+
+describe("letters and attributed works", () => {
+  it("files letters as epistles but not treatises that name letters", () => {
+    expect(writingCategory("Letters")).toBe("Epistle");
+    expect(writingCategory("Letter to Amun")).toBe("Epistle");
+    expect(writingCategory("Tome or Synodal Letter to the People of Antioch")).toBe("Epistle");
+    expect(writingCategory("On the Spirit and the Letter")).toBe("Treatise");
+    expect(writingCategory("Against Two Letters of the Pelagians")).toBe("Treatise");
+    expect(writingCategory("Answer to Letters of Petilian")).toBe("Treatise");
+    expect(writingCategory("Against the Epistle of Manichaeus Called Fundamental")).toBe("Treatise");
+  });
+
+  it("names the real author and the work's own century", () => {
+    const shelf = new Map([
+      ["fragments-of-caius", { title: "Fragments of Caius", author: "dionysius" }],
+      ["decretals", { title: "The Decretals", author: "apostolic" }],
+      ["canons-of-hippolytus", { title: "Canons of Hippolytus", author: "hippolytus" }]
+    ]);
+    const info = (id: string) =>
+      ({ dionysius: { name: "Dionysius", century: 3 }, apostolic: { name: "Apostolic Fathers (misc.)", century: 2 }, hippolytus: { name: "Hippolytus", century: 3 } })[id];
+    expect(libraryHoverReadout("fragments-of-caius", shelf, info)).toMatchObject({ author: "Caius", century: "3rd" });
+    expect(libraryHoverReadout("decretals", shelf, info)).toMatchObject({ author: "Pseudo-Isidore", century: "9th" });
+    expect(libraryHoverReadout("canons-of-hippolytus", shelf, info)).toMatchObject({ author: "Not by Hippolytus", century: "4th" });
+  });
+});

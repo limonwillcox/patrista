@@ -1,5 +1,6 @@
 import { useRef, type MouseEvent } from "react";
 import type { Author, Work } from "../../../server/types";
+import { hasAttribution, shortAuthor } from "../../../server/workMeta";
 
 function hashOf(id: string, mod: number): number {
   let n = 0;
@@ -8,7 +9,7 @@ function hashOf(id: string, mod: number): number {
 }
 
 /**
- * A letter roll standing on the shelf, as rolls stood in their round cases: rolled papyrus tied with a
+ * A roll standing on the shelf, as rolls stood in their round cases: rolled papyrus tied with a
  * cord, the turned knobs of its rod at head and foot, a title tag (a sillybos) hanging from the head.
  */
 export function RollSlot({
@@ -29,6 +30,7 @@ export function RollSlot({
   onOpen: (from: DOMRect | null, el: HTMLElement | null, quick: boolean) => void;
 }) {
   const bodyRef = useRef<HTMLSpanElement>(null);
+  const byline = hasAttribution(work) ? shortAuthor(work, author) : author.name;
   function onClick(e: MouseEvent<HTMLAnchorElement>) {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
     e.preventDefault();
@@ -39,7 +41,7 @@ export function RollSlot({
     <a
       className={"lib-roll" + (selected ? " is-selected" : "")}
       href={"/read?work=" + encodeURIComponent(work.id)}
-      aria-label={work.title + " — " + author.name}
+      aria-label={work.title + (byline ? " — " + byline : "")}
       style={{
         // Rolls differ a little in height and girth, as real ones do.
         ["--rh" as string]: String(0.58 + hashOf(work.id, 6) * 0.02),

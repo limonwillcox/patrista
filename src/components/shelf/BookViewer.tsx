@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { deathCentury, inspectTimelineEra, type ShelfPeriodId } from "../../../server/shelf";
+import { inspectTimelineEra, type ShelfPeriodId } from "../../../server/shelf";
+import { attributionLabel, authorLine, hasAttribution, shortAuthor } from "../../../server/workMeta";
 import type { Author, Work, WorkOutline } from "../../../server/types";
 import { fetchChapter, fetchWork } from "../../api/client";
 import { chapterPublicPath, englishParagraphs } from "../../lib/fatherPaths";
@@ -8,7 +9,7 @@ import { KEY_WORKS, formatWords, readingTime } from "../../lib/keyWorks";
 import { loadLastRead } from "../../lib/lastRead";
 import { formatCentury, writingCategory } from "../../lib/libraryHover";
 import { readPath } from "../../lib/workSlugs";
-import { FORM_NOTES, manuscriptForm } from "../../lib/manuscriptForm";
+import { FORM_NOTES, manuscriptForm, workCentury } from "../../lib/manuscriptForm";
 import { ManuscriptButton } from "../manuscript/ManuscriptButton";
 import { loadBookText } from "../../lib/bookText";
 import { PRINT_EDITIONS } from "../../lib/printEditions";
@@ -174,7 +175,11 @@ export function BookViewer({
 
   const startHref = readPath(work.id);
   const resumeMeta = resume && outline ? outline.chapters.find((c) => c.chapter === resume) : undefined;
-  const century = deathCentury(author.deathYear);
+  // The work's own century where it differs from its shelf Father's; none when it is not known.
+  const century = workCentury(work, author);
+  const attributed = hasAttribution(work);
+  const label = attributionLabel(work, author);
+  const coverAuthor = attributed ? shortAuthor(work, author) : author.name;
 
   return (
     <div
@@ -229,7 +234,7 @@ export function BookViewer({
             <Suspense fallback={<p className="bv-count">Opening…</p>}>
               <ManuscriptStage
                 title={work.title}
-                author={author.name}
+                author={coverAuthor}
                 paras={paras}
                 form={form}
                 cover={HUE_LEATHER[authorHue(author.id)]}
@@ -263,7 +268,7 @@ export function BookViewer({
                   <img className="bv-cover-mark" src="/assets/chi-rho-gold.png" alt="" width={28} height={28} />
                   <span className="bv-cover-title">{work.title}</span>
                   <span className="bv-cover-rule" aria-hidden="true" />
-                  <span className="bv-cover-author">{author.name}</span>
+                  {coverAuthor ? <span className="bv-cover-author">{coverAuthor}</span> : null}
                 </span>
                 <span className="bv-cover-inside" aria-hidden="true">
                   <span>Ex libris</span>
@@ -283,14 +288,21 @@ export function BookViewer({
         <div className="bv-info">
           <p className="bv-kicker">
             {KEY_WORKS.has(work.id) ? <span className="bv-badge">Start here</span> : null}
-            {writingCategory(work.title)} · {formatCentury(century)} century
+            {writingCategory(work.title)}
+            {century ? " · " + formatCentury(century) + " century" : ""}
           </p>
           <h2 id="bv-title">{work.title}</h2>
-          <p className="bv-author">
-            {author.name}
-            {author.dates ? " · " + author.dates : ""}
-          </p>
-          {work.authorshipDisputed ? <p className="bv-disputed">Authorship disputed</p> : null}
+          {attributed ? (
+            <>
+              {label ? <p className="bv-disputed">{label}</p> : null}
+              <p className="bv-author">{authorLine(work, author)}</p>
+            </>
+          ) : (
+            <p className="bv-author">
+              {author.name}
+              {author.dates ? " · " + author.dates : ""}
+            </p>
+          )}
           <dl className="bv-stats">
             <div>
               <dt>Length</dt>
@@ -306,8 +318,14 @@ export function BookViewer({
             </div>
             <div>
               <dt>Edition</dt>
-              <dd>{work.series || "Schaff"}</dd>
+              <dd>{work.edition || work.series || "Schaff"}</dd>
             </div>
+            {work.translator ? (
+              <div>
+                <dt>Translator</dt>
+                <dd>{work.translator}</dd>
+              </div>
+            ) : null}
           </dl>
           {work.blurb ? <p className="bv-blurb">{work.blurb}</p> : null}
           <div className="bv-actions">

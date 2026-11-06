@@ -63,3 +63,27 @@ describe("father sections", () => {
     });
   });
 });
+
+describe("father profiles", () => {
+  it("has a written profile for every Father with works, so no placeholder bio ships", async () => {
+    const { getCatalog } = await import("../server/api");
+    const { FATHER_PROFILES } = await import("../src/lib/fatherProfiles");
+    const cat = getCatalog();
+    const withWorks = new Set(cat.works.map((w) => w.author));
+    const missing = cat.authors.filter((a) => withWorks.has(a.id) && !FATHER_PROFILES[a.id]).map((a) => a.id);
+    expect(missing).toEqual([]);
+  }, 120_000);
+
+  it("never writes placeholder prose for a Father without a profile", () => {
+    const sections = fatherSections([author({ id: "no_profile", name: "No Profile", deathYear: 300 })]);
+    expect(sections[0].fathers[0].paragraphs).toEqual([]);
+    expect(JSON.stringify(sections)).not.toContain("is part of the Patrista library");
+  });
+
+  it("keeps the section notes' dates straight", async () => {
+    const { SECTION_NOTES } = await import("../src/lib/fathersDirectory");
+    expect(SECTION_NOTES["century-7"]).not.toMatch(/plague|Lombard/);
+    expect(SECTION_NOTES["century-11"]).toMatch(/mutual excommunications of 1054/);
+    expect(SECTION_NOTES["century-1"]).toMatch(/Barnabas.*c\. 96–135/);
+  });
+});

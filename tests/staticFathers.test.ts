@@ -15,6 +15,7 @@ import {
   robotsTxt,
   SITEMAP_URL_LIMIT
 } from "../server/staticFathers";
+import { bookJsonLd, workCreditHtml } from "../server/staticFathers";
 import {
   assignChapterSlugs,
   chapterNumberForSlug,
@@ -25,7 +26,7 @@ import {
   slugifyHeading,
   workPublicPath
 } from "../src/lib/fatherPaths";
-import { chapterSeoTitle } from "../src/lib/seoMeta";
+import { chapterSeoTitle, workSeoTitle } from "../src/lib/seoMeta";
 
 const author: Author = {
   id: "chrysostom",
@@ -300,5 +301,50 @@ describe("home, read shell, and sitemap", () => {
     expect(split[1].body.match(/<loc>/g)).toHaveLength(SITEMAP_URL_LIMIT);
     expect(split[2].body.match(/<loc>/g)).toHaveLength(1);
     expect(robotsTxt("https://patrista.com")).toContain("Sitemap: https://patrista.com/sitemap.xml");
+  });
+});
+
+describe("attributed works on static pages", () => {
+  const origin = "https://patrista.com";
+  const novatian: Author = { ...author, id: "novatian", name: "Novatian", dates: "fl. mid-3rd c.", deathYear: 258 };
+  const against = {
+    id: "treatise-against-the-heretic-novatian",
+    author: "novatian",
+    title: "Treatise Against the Heretic Novatian",
+    short: "Against Novatian",
+    chapters: 1,
+    series: "ANF",
+    wordCount: 4000,
+    authorship: "anonymous" as const,
+    attribution: "Anonymous bishop (3rd c.), written against Novatian"
+  };
+
+  it("names the real author, never “by <Father>”, in the title, description, and page", () => {
+    expect(workSeoTitle(against.title, novatian, against.id)).toBe("Treatise Against the Heretic Novatian");
+    expect(workSeoTitle("Fragments of Caius", { id: "dionysius", name: "Dionysius" }, "fragments-of-caius")).toBe("Fragments of Caius");
+    expect(workSeoTitle("Didache", { id: "didache", name: "Didache" }, "didache")).toBe("Didache");
+    expect(workSeoTitle("The Epistle of Barnabas", { id: "barnabas", name: "Barnabas (Epistle)" }, "epistle-of-barnabas")).toBe("Epistle of Barnabas");
+    expect(workSeoTitle("Recognitions of Clement", { id: "clement_rome", name: "Clement of Rome" }, "recognitions-of-clement")).not.toMatch(/by Clement/);
+    expect(workSeoTitle("Discourse to the Greeks Concerning Hades", { id: "josephus", name: "Flavius Josephus" }, "discourse-to-the-greeks-concerning-hades")).toBe(
+      "Discourse on Hades by Pseudo-Josephus"
+    );
+    const html = workCreditHtml(novatian, against);
+    expect(html).toContain("<strong>Anonymous.</strong> Anonymous bishop (3rd c.), written against Novatian.");
+    expect(html).toContain('Shelved with <a href="/fathers/novatian/">Novatian</a>');
+  });
+
+  it("gives no schema.org author for an anonymous work, and the real one for a known writer", () => {
+    const ld = bookJsonLd({ origin, authorName: "Novatian", authorId: "novatian", workId: against.id, workTitle: against.title, workPath: "/x.html", parts: [] }) as Record<string, unknown>;
+    expect(ld.author).toBeUndefined();
+    const life = bookJsonLd({ origin, authorName: "Cyprian of Carthage", authorId: "cyprian", workId: "life-and-passion-of-cyprian", workTitle: "Life and Passion of Cyprian", workPath: "/y.html", parts: [] }) as Record<string, unknown>;
+    expect(life.author).toEqual({ "@type": "Person", name: "Pontius the Deacon" });
+    const councils = bookJsonLd({ origin, authorName: "Ecumenical Councils", authorId: "councils", workTitle: "Council of Chalcedon", workPath: "/z.html", parts: [] }) as Record<string, unknown>;
+    expect(councils.author).toBeUndefined();
+  });
+
+  it("does not claim more than the home page delivers", () => {
+    const html = renderHomeStaticHtml({ works: [], authors: [] } as unknown as Catalog);
+    expect(html).not.toContain("The full English text of every work");
+    expect(html).toContain("public-domain translations");
   });
 });

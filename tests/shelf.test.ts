@@ -269,3 +269,35 @@ describe("catalog shelf fields", () => {
   }, 120_000);
 });
 
+
+describe("manuscript form by work", () => {
+  it("shows single letters as rolls and letter collections and treatises about letters as books", async () => {
+    const { manuscriptForm } = await import("../src/lib/manuscriptForm");
+    const augustine = { deathYear: 430 };
+    expect(manuscriptForm({ title: "Letter to Amun" }, { deathYear: 373 })).toBe("roll");
+    expect(manuscriptForm({ title: "The First Epistle of Clement" }, { deathYear: 99 })).toBe("roll");
+    for (const title of [
+      "Letters",
+      "Epistles of Ignatius",
+      "On the Spirit and the Letter",
+      "Against Two Letters of the Pelagians",
+      "Answer to Letters of Petilian",
+      "Against the Epistle of Manichaeus Called Fundamental"
+    ]) {
+      expect(manuscriptForm({ title }, augustine), title).not.toBe("roll");
+    }
+  });
+
+  it("dates a work by its own time, not its shelf Father's death", async () => {
+    const { FORM_NOTES, manuscriptForm, workCentury } = await import("../src/lib/manuscriptForm");
+    expect(manuscriptForm({ id: "antiquities-of-the-jews", title: "Antiquities of the Jews" }, { deathYear: 100 })).toBe("roll");
+    expect(manuscriptForm({ id: "decretals", title: "The Decretals" }, { deathYear: 120 })).toBe("parchment-codex");
+    expect(manuscriptForm({ id: "apocalypse-of-the-virgin", title: "The Apocalypse of the Virgin" }, { deathYear: 120 })).toBe("parchment-codex");
+    expect(manuscriptForm({ id: "banquet-of-the-ten-virgins", title: "Banquet of the Ten Virgins" }, { deathYear: 311 })).toBe("papyrus-codex");
+    expect(manuscriptForm({ id: "divine-institutes", title: "The Divine Institutes" }, { deathYear: 325 })).toBe("papyrus-codex");
+    expect(workCentury({ id: "decretals", title: "The Decretals" }, { deathYear: 120 })).toBe(9);
+    // A later work under an early name, with no date of its own, claims no century.
+    expect(workCentury({ id: "oration-on-the-palms", title: "Oration on the Palms" }, { deathYear: 311 })).toBeNull();
+    expect(FORM_NOTES.roll.note).toMatch(/^A single letter was written on a papyrus sheet, rolled or folded, and carried by hand\./);
+  });
+});

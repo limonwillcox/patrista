@@ -19,8 +19,13 @@ export type StrongsEntry = {
   deriv: string;
   /** Strong's list of the King James renderings. */
   kjv: string;
-  /** Hebrew only: Greek words the Septuagint uses for it. */
+  /**
+   * Hebrew only: Greek words the Open Scriptures file links to it. Unranked and mixed (it lists Μεσσίας for
+   * mashiach, never χριστός), so not shown as "the Septuagint's rendering"; the connections build uses it.
+   */
   lxx?: string[];
+  /** Hebrew only: New Testament Greek words whose Strong's derivation names this word ("of Hebrew origin (4899)"). */
+  greek?: string[];
   /** How often the KJV renders it each way, counted from the tagged text. */
   uses?: [string, number][];
   count?: number;
@@ -57,7 +62,11 @@ export function fetchStrongs(code: string): Promise<StrongsEntry | null> {
   return p.then((all) => all[code] ?? null);
 }
 
-const fold = (w: string) => w.toLowerCase().replace(/['’]/g, "");
+/** A word as the tagged text and our verse text can both spell it: "Cæsar's" / "Caesar’s" -> "caesars". */
+const fold = (w: string) => w.toLowerCase().replace(/['’]/g, "").replace(/æ/g, "ae");
+
+/** A word of the verse text, æ included ("Cæsar", "Judæa"), so it is not cut in two at the æ. */
+export const WORD_RE = /[A-Za-zÆæ][A-Za-zÆæ'’]*/g;
 
 /**
  * The code behind the `occurrence`-th appearance (0-based) of `word` in a verse. Undefined when the
@@ -70,7 +79,7 @@ export function codeFor(tokens: Tagged[], word: string, occurrence: number): str
 
 /** How many times `word` appears in `text` before character `offset`: which occurrence was clicked. */
 export function occurrenceAt(text: string, word: string, offset: number): number {
-  const re = /[A-Za-z][A-Za-z'’]*/g;
+  const re = new RegExp(WORD_RE.source, "g");
   let n = 0;
   for (let m = re.exec(text); m; m = re.exec(text)) {
     if (m.index + m[0].length > offset) break;

@@ -98,10 +98,10 @@ function useVerseText(meta: Meta | null, vid: number): string | null {
  * found as the text's nth copy of it, the way the reader finds a double-clicked word.
  */
 function markSpans(text: string, tokens: Tagged[], codes: Set<string>): [number, number][] {
-  const fold = (w: string) => w.toLowerCase().replace(/[’']/g, "");
-  // Every word of the text, by its folded spelling.
+  const fold = (w: string) => w.toLowerCase().replace(/[’']/g, "").replace(/æ/g, "ae");
+  // Every word of the text, by its folded spelling ("Cæsar" whole, not "C" and "sar").
   const where = new Map<string, [number, number][]>();
-  for (const m of text.matchAll(/[A-Za-z’']+/g)) {
+  for (const m of text.matchAll(/[A-Za-zÆæ’']+/g)) {
     const k = fold(m[0]);
     where.set(k, [...(where.get(k) ?? []), [m.index!, m.index! + m[0].length]]);
   }
@@ -1190,9 +1190,10 @@ export function ConnectionsPanel({
           <li>
             <b>Patterns</b> come from shared Hebrew and Greek words (including the Greek the Septuagint uses for a Hebrew
             word) and from the Fathers citing two passages in one paragraph. <b>Strong</b>: a type the Fathers name,
-            several Fathers citing both, or a Father and shared words together. <b>Moderate</b>: one Father cites
-            both, or they share rare words. <b>Weak</b>: a few common words. Shared words alone never count as
-            strong, since many are chance. Several verses linking together raise a pattern a step.
+            two or more Fathers citing both, or a Father and shared words together. <b>Moderate</b>: one Father
+            cites both, or they share rare words. <b>Weak</b>: a few common words. Shared words alone never count
+            as strong, since many are chance, not even when several verses share them. Several verses linking
+            together raise a pattern a step.
           </li>
           <li>
             <b>The Fathers' own words</b> on a verse are in the Commentary tab. Here they count as evidence: a Father

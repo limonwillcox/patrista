@@ -2,13 +2,57 @@ import { bookIdToUsfm, esvQuery, parseEsvPassage } from "./bibleTranslations";
 
 const BIBLE_API_URL = "https://api.scripture.api.bible/v1";
 // v2: verses saved by v1 lost the space between poetry lines, and ESV verses after an omitted one were misnumbered.
-const CACHE_PREFIX = "piblia_bible_cache_v2_";
+// v3: API.Bible chapters keep the copyright line and the FUMS token that came with them.
+const CACHE_PREFIX = "piblia_bible_cache_v3_";
+/** API.Bible's usage reporting (FUMS v3), a condition of its licence for Scripture shown on the web. */
+const FUMS_SCRIPT = "https://pkg.api.bible/fumsV3.min.js";
 // 14 days in milliseconds: 14 * 24 * 60 * 60 * 1000 = 1,209,600,000 ms
 const CACHE_TTL_MS = 14 * 24 * 60 * 60 * 1000;
 
 interface CachedChapter {
   timestamp: number;
   verses: string[];
+  /** API.Bible only: the copyright line the publisher requires beside the text (data.copyright). */
+  copyright?: string;
+  /** API.Bible only: the token to report each view of this text with (meta.fumsToken). */
+  fumsToken?: string;
+}
+
+/** What came with each remote chapter besides its verses, by cache key. */
+const extras = new Map<string, { copyright?: string; fumsToken?: string }>();
+
+/** The copyright line and FUMS token of a remote chapter fetched (or read from the cache) in this session. */
+export function remoteChapterExtras(
+  bibleId: string,
+  bookId: string,
+  chapter: number
+): { copyright?: string; fumsToken?: string } | undefined {
+  return extras.get(`${CACHE_PREFIX}${bibleId}_${bookIdToUsfm(bookId)}_${chapter}`);
+}
+
+type FumsWindow = Window & { fumsData?: unknown[]; fums?: (...args: unknown[]) => void };
+
+/**
+ * Report one view of an API.Bible text to its Fair Use Management System, as API.Bible's licence requires
+ * for Scripture shown on a website (https://docs.api.bible, "Fair Use"). The tracker records an anonymous
+ * view event for the publisher; calls made before the script loads wait in window.fumsData.
+ */
+export function reportFumsView(fumsToken: string | undefined): void {
+  if (!fumsToken || typeof window === "undefined" || typeof document === "undefined") return;
+  const w = window as FumsWindow;
+  w.fumsData = w.fumsData || [];
+  w.fums =
+    w.fums ||
+    function (...args: unknown[]) {
+      w.fumsData!.push(args);
+    };
+  if (!document.querySelector(`script[src="${FUMS_SCRIPT}"]`)) {
+    const script = document.createElement("script");
+    script.src = FUMS_SCRIPT;
+    script.async = true;
+    document.head.appendChild(script);
+  }
+  w.fums("trackView", fumsToken);
 }
 
 export function getBibleApiKey(): string {
@@ -184,6 +228,7 @@ export async function fetchRemoteBibleVerses(
         const cached: CachedChapter = JSON.parse(cachedStr);
         const age = Date.now() - cached.timestamp;
         if (age < CACHE_TTL_MS && Array.isArray(cached.verses) && cached.verses.length > 0) {
+          extras.set(cacheKey, { copyright: cached.copyright, fumsToken: cached.fumsToken });
           return cached.verses;
         }
       } catch {
@@ -248,12 +293,12 @@ export async function fetchRemoteBibleVerses(
   // 3. Fetch API.Bible
   const chapterId = `${usfm}.${chapter}`;
   const apiKey = getBibleApiKey();
-  let json: { data?: { content?: unknown } };
+  let json: { data?: { content?: unknown; copyright?: unknown }; meta?: { fumsToken?: unknown } };
 
   if (apiKey) {
     const url = `${BIBLE_API_URL}/bibles/${encodeURIComponent(bibleId)}/chapters/${encodeURIComponent(
       chapterId
-    )}?content-type=json&include-verse-numbers=true`;
+    )}?content-type=json&include-verse-numbers=true&fums-version=3`;
     const res = await fetch(url, { headers: { "api-key": apiKey } });
     if (!res.ok) {
       const errText = await res.text().catch(() => "");
@@ -297,11 +342,17 @@ export async function fetchRemoteBibleVerses(
     throw new Error(`Could not parse verses from API.Bible response for ${chapterId}`);
   }
 
+  const copyright = typeof json?.data?.copyright === "string" ? json.data.copyright.replace(/\s+/g, " ").trim() : undefined;
+  const fumsToken = typeof json?.meta?.fumsToken === "string" ? json.meta.fumsToken : undefined;
+  extras.set(cacheKey, { copyright, fumsToken });
+
   // 3. Store in 14-day cache
   if (typeof localStorage !== "undefined") {
     const cachePayload: CachedChapter = {
       timestamp: Date.now(),
-      verses
+      verses,
+      copyright,
+      fumsToken
     };
     try {
       localStorage.setItem(cacheKey, JSON.stringify(cachePayload));

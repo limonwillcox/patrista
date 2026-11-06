@@ -97,8 +97,9 @@ function Scripts({ code, entry }: { code: string; entry: StrongsEntry }) {
         </p>
       </div>
       <figcaption>
-        The vowel points were added by scribes about a thousand years after Moses. First the word was written in consonants
-        only (left), and before the exile in the older Paleo-Hebrew letters (right).
+        The vowel points were added by the Masoretes in roughly the 7th–10th centuries AD, some two thousand years after
+        Moses. Before them the word was written in consonants only (left), and before the exile in the older Paleo-Hebrew
+        letters (right).
       </figcaption>
     </figure>
   );
@@ -125,7 +126,8 @@ export function WordPanel({
   /** The word being studied: starts at the clicked word's code, and follows links to roots. */
   const [trail, setTrail] = useState<string[]>([]);
   const [entry, setEntry] = useState<StrongsEntry | null>(null);
-  const [lxx, setLxx] = useState<{ code: string; entry: StrongsEntry }[]>([]);
+  /** Hebrew only: the New Testament Greek words Strong's derives from it ("Μεσσίας ... of Hebrew origin (4899)"). */
+  const [greek, setGreek] = useState<{ code: string; entry: StrongsEntry }[]>([]);
   const current = trail[trail.length - 1];
   const roots = useRoots(entry);
 
@@ -134,14 +136,16 @@ export function WordPanel({
   useEffect(() => {
     let live = true;
     setEntry(null);
-    setLxx([]);
+    setGreek([]);
     if (!current) return;
     fetchStrongs(current).then(async (e) => {
       if (!live) return;
       setEntry(e);
-      if (e?.lxx?.length) {
-        const found = await Promise.all(e.lxx.slice(0, 6).map(async (c) => ({ code: c, entry: await fetchStrongs(c) })));
-        if (live) setLxx(found.filter((f): f is { code: string; entry: StrongsEntry } => !!f.entry));
+      // Not the "lxx" list of the Open Scriptures file: it is unranked and mixed (Μεσσίας, never χριστός, for
+      // mashiach; Bethesda for chesed), so it cannot say how the Septuagint renders a word.
+      if (e?.greek?.length) {
+        const found = await Promise.all(e.greek.map(async (c) => ({ code: c, entry: await fetchStrongs(c) })));
+        if (live) setGreek(found.filter((f): f is { code: string; entry: StrongsEntry } => !!f.entry));
       }
     });
     return () => {
@@ -251,12 +255,12 @@ export function WordPanel({
             </>
           ) : null}
 
-          {lxx.length ? (
+          {greek.length ? (
             <>
-              <h3 className="cm-century-title">In the Greek Old Testament</h3>
-              <p className="wd-count">The Septuagint, the Bible of the Apostles, renders it as:</p>
+              <h3 className="cm-century-title">In the New Testament</h3>
+              <p className="wd-count">Greek words that Strong's traces back to it:</p>
               <ul className="wd-chips">
-                {lxx.map((x) => (
+                {greek.map((x) => (
                   <li key={x.code}>
                     <button type="button" onClick={() => open(x.code)}>
                       <span lang="grc">{x.entry.lemma}</span> {short(x.entry.def)}
@@ -313,6 +317,14 @@ export function WordPanel({
         <p className="wd-credit">
           Hebrew and Greek: KJV with Strong's numbers (public domain, CrossWire Bible Society and eBible.org); Strong's
           Hebrew and Greek Dictionaries (public domain), digital edition by Open Scriptures.
+          {current.startsWith("H") && entry?.senses?.length ? (
+            <>
+              {" "}
+              The numbered senses are not Strong's: they come with the Open Scriptures Hebrew file (edited by David Troidl
+              from David Instone-Brewer's text) and give the outline of the Brown–Driver–Briggs Hebrew lexicon (1906), abridged; a sense marked “TWOT” follows
+              the Theological Wordbook of the Old Testament (Harris, Archer and Waltke, Moody, 1980).
+            </>
+          ) : null}
         </p>
       ) : null}
     </section>

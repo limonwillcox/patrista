@@ -21,9 +21,10 @@ sort by how many signs agree, and each is marked:
 - **moderate**: one Father citing both, or shared words that weigh 9 or more (rare words count for more);
 - **weak**: a few common words.
 
-Shared words alone stop at moderate. Sampled by hand, about a third of the high-scoring word-only links
-were chance (two genealogies sharing "concubine, begat"). Several verses linking to several verses raise
-a pattern a step. The rule is `findPatterns` in `src/components/ConnectionsPanel.tsx`.
+Shared words alone stop at moderate, however many verses share them. Sampled by hand, about a third of the
+high-scoring word-only links were chance (two genealogies sharing "concubine, begat"; Psalm 23 and Matthew
+23:24 sharing "guides, cup"). Several verses linking to several verses raise a pattern a step, but never
+lift a word-only pattern to strong. The rule is `findPatterns` in `src/lib/connectionPatterns.ts`.
 
 The chart above shows the links as arcs from Genesis to Revelation; drag to move, zoom with the buttons,
 a double-click, a pinch or Ctrl + scroll. Following a pattern opens it in the tab without moving the

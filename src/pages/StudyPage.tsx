@@ -30,7 +30,7 @@ export function StudyPage() {
       <div className="stat-row">
         <Stat n={authorCount != null ? String(authorCount) : "…"} label="Fathers" />
         <Stat n={workCount != null ? String(workCount) : "…"} label="Works" />
-        <Stat n="2" label="Languages" />
+        <Stat n="3" label="Languages" />
         <Stat n="PD" label="License" />
       </div>
 
@@ -46,7 +46,7 @@ export function StudyPage() {
         verse on the <Link to="/bible">Bible</Link> page, where the Fathers&apos; commentary sits beside the text.
       </p>
       <p>
-        <Link to="/types">Types of Christ</Link> gathers every figure the Fathers saw in the Old Testament, from the
+        <Link to="/types">Types of Christ</Link> gathers figures the Fathers saw in the Old Testament, from the
         paschal lamb to the bronze serpent, each with its passages from Genesis to Revelation and the Fathers&apos; own words.
       </p>
       <p>
@@ -58,7 +58,7 @@ export function StudyPage() {
       <h2>First paths</h2>
       <ul>
         <li>
-          <Link to="/read?work=confessions&chapter=8">Confessions VIII</Link> — the garden, conversion, and Monica&apos;s tears.
+          <Link to="/read?work=confessions&chapter=8">Confessions VIII</Link> — the garden in Milan, “take up and read,” and Monica&apos;s joy at her son&apos;s conversion.
         </li>
         <li>
           <Link to="/read?work=against-heresies">Irenaeus, Against Heresies</Link> — the rule of faith against the gnostic schools.
@@ -71,7 +71,7 @@ export function StudyPage() {
           generation was still in living memory.
         </li>
         <li>
-          <Link to="/church-history/">History</Link> for the cinematic;{" "}
+          <Link to="/church-history/">Church history</Link> tells the early Church&apos;s story scene by scene;{" "}
           <Link to="/fathers/#nativity">The Fathers page</Link> shows each century's events, from the Birth of Christ to 1054, beside its Fathers.
         </li>
       </ul>

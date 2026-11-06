@@ -1,7 +1,14 @@
-export const WEBSTER_SOURCE = "Webster's Revised Unabridged Dictionary (1913)";
+export const WEBSTER_SOURCE =
+  "Webster's Revised Unabridged Dictionary (1913, public domain), from the text files of Paritosh Kumar Tripathi's " +
+  "Free-Dictionary-API (github.com/ParitoshKumarTripathi/Free-Dictionary-API).";
 
+/**
+ * One text file per headword, read from that repository at a fixed commit, so a later change there cannot
+ * change (or break) what the site shows. The repository states no licence of its own; the text is Webster 1913.
+ */
+export const WEBSTER_COMMIT = "d14220699298d9e4b2a069c47a857f9a7afd5caf";
 export const WEBSTER_WORD_URL =
-  "https://raw.githubusercontent.com/ParitoshKumarTripathi/Free-Dictionary-API/main/dictionary/";
+  "https://raw.githubusercontent.com/ParitoshKumarTripathi/Free-Dictionary-API/" + WEBSTER_COMMIT + "/dictionary/";
 
 export type WebsterEntry = {
   headword: string;
@@ -61,6 +68,16 @@ export function headwordCandidates(raw: string): string[] {
     add(n.slice(0, -1));
   }
   if (n.endsWith("ing") && n.length > 5) add(n.slice(0, -3));
+  // The King James endings: "loveth", "knowest", "crieth", "begetteth" -> "love", "know", "cry", "beget".
+  // Tried after the word itself, so "honest" or "forest" is found as it stands.
+  for (const end of ["eth", "est"]) {
+    if (!n.endsWith(end) || n.length < end.length + 3) continue;
+    const stem = n.slice(0, -end.length);
+    if (stem.endsWith("i")) add(stem.slice(0, -1) + "y");
+    add(stem + "e");
+    add(stem);
+    if (/([b-df-hj-np-tv-z])\1$/.test(stem)) add(stem.slice(0, -1));
+  }
   return out;
 }
 

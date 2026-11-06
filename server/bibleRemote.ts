@@ -106,7 +106,8 @@ export async function handleBibleRemoteChapter(
 
   const url =
     `${BIBLE_API_URL}/bibles/${encodeURIComponent(parsed.bibleId)}/chapters/` +
-    `${encodeURIComponent(parsed.chapterId)}?content-type=json&include-verse-numbers=true`;
+    // fums-version=3: the response's meta carries the fumsToken the reader reports each view with (API.Bible FUMS).
+    `${encodeURIComponent(parsed.chapterId)}?content-type=json&include-verse-numbers=true&fums-version=3`;
 
   try {
     const res = await fetch(url, {

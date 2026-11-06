@@ -6,20 +6,20 @@
   "kind": "object",
   "def": "The ladder Jacob saw in a dream at Bethel, set on the earth and reaching to heaven with angels going up and down on it, and the stone under his head which he then set up and anointed with oil.",
   "texts": "Gen 28:10-22; John 1:51; Ps 118:22; 1 Pet 2:4-6.",
-  "christ": "Christ is the ladder joining earth to heaven and the gate by which heaven is entered, on whom the angels ascend and descend as He said to Nathanael; the stone Jacob anointed is Christ, the Anointed One. \"Christ is the ladder reaching from earth to heaven\" (Augustine, *Faust.* 12.26).",
+  "christ": "Christ is the ladder joining earth to heaven and the gate by which heaven is entered, on whom the angels ascend and descend as He said to Nathanael; the stone Jacob anointed is Christ, the Anointed One. \"Christ is the ladder reaching from earth to heaven\" (Augustine, *C. Faust.* 12.26).",
   "where": [
     "Justin, *Dial.* 86 — “that the stone symbolically proclaimed Christ, we have also proved by many Scriptures”",
     "Tertullian, *Adv. Marc.* 3.24 — “For he had seen Christ the Lord, the temple of God, and also the gate by whom heaven is entered.”",
     "Cyprian, *Test.* 2.16 — “This is the stone in Genesis, which Jacob places at his head, because the head of the man is Christ”",
-    "Augustine, *Faust.* 12.26 — “Christ is the ladder reaching from earth to heaven, or from the carnal to the spiritual”",
-    "Augustine, *En. Ps.* 45.18 — “In that \"stone\" he understood Christ; for that reason he anointed it.”"
+    "Augustine, *C. Faust.* 12.26 — “Christ is the ladder reaching from earth to heaven, or from the carnal to the spiritual”",
+    "Augustine, *En. Ps.* 45 (Lat. 44).18 — “In that \"stone\" he understood Christ; for that reason he anointed it.”"
   ],
   "links": [
-    { "label": "Justin, Dialogue with Trypho 86", "href": "/fathers/justin/dialogue-with-trypho/chapter-86/" },
-    { "label": "Tertullian, Against Marcion 3.24", "href": "/fathers/tertullian/five-books-against-marcion/chapter-3/" },
-    { "label": "Cyprian, Testimonies 2.16", "href": "/fathers/cyprian/three-books-of-testimonies-against-the-jews/chapter-4/" },
-    { "label": "Augustine, Reply to Faustus 12.26", "href": "/fathers/augustine/reply-to-faustus-the-manichaean/chapter-12/" },
-    { "label": "Augustine, Expositions on the Psalms 45.18", "href": "/fathers/augustine/expositions-on-the-psalms/chapter-23/" }
+    { "label": "Justin, Dial. 86", "href": "/fathers/justin/dialogue-with-trypho/chapter-86/" },
+    { "label": "Tertullian, Adv. Marc. 3.24", "href": "/fathers/tertullian/five-books-against-marcion/chapter-3/" },
+    { "label": "Cyprian, Test. 2.16", "href": "/fathers/cyprian/three-books-of-testimonies-against-the-jews/chapter-4/" },
+    { "label": "Augustine, C. Faust. 12.26", "href": "/fathers/augustine/reply-to-faustus-the-manichaean/chapter-12/" },
+    { "label": "Augustine, En. Ps. 45 (Lat. 44).18", "href": "/fathers/augustine/expositions-on-the-psalms/chapter-45/" }
   ],
   "confidence": ""
 }

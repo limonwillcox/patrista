@@ -1,9 +1,10 @@
 import type { Journey } from "../journeys";
 
-// The library's Conferences are split into three long reader chapters, not one per Conference:
-// chapter 1 runs from Conference I.15 to VIII.17, chapter 2 from VIII.18 to XI.2, chapter 3 from XI.3 to XXIV.
+// The library's Conferences have one reader chapter per Conference, with the three prefaces as chapters of their
+// own: chapter 1 is the Preface to I–X, 2–11 are Conferences I–X, 12 the Preface to XI–XVII, 13–19 Conferences
+// XI–XVII, 20 the Preface to XVIII–XXIV, and 21–27 Conferences XVIII–XXIV.
 const conf = (n: number) => "/fathers/cassian/conferences/chapter-" + n + "/";
-// Institutes reader chapters: 1–3 are Books I–III, 5 is Book IV, 6 is Book V, 8–12 are Books VII–XI, 14 is Book XII.
+// Institutes reader chapters: 1 is the Preface, 2–13 are Books I–XII.
 const inst = (n: number) => "/fathers/cassian/institutes-of-the-coenobia/chapter-" + n + "/";
 const incarnation = (n: number) => "/fathers/cassian/on-the-incarnation-of-the-lord-against-nestorius/chapter-" + n + "/";
 const gennadius = "/fathers/gennadius/lives-of-illustrious-men/chapter-62/";

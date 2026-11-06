@@ -64,7 +64,7 @@ export const journey: Journey = {
       lat: 41.89,
       lon: 12.49,
       when: "About 150–165",
-      text: "He teaches “above one Martinus, at the Timiotinian Bath” and addresses his Apologies to Antoninus Pius and the Senate. He expects to be plotted against “perhaps by Crescens” the Cynic; about 165 the prefect Rusticus has him and his companions scourged and beheaded.",
+      text: "He lives “above one Martinus, at the Timiotinian Bath”, and teaches whoever comes to him there. He addresses his Apologies to Antoninus Pius and the Senate. He expects to be plotted against “perhaps by Crescens” the Cynic; about 165 the prefect Rusticus has him and his companions scourged and beheaded.",
       wrote: [
         { label: "The First Apology", href: fa(1) },
         { label: "The Second Apology", href: sa(1) }

@@ -25,7 +25,7 @@ export const journey: Journey = {
       lon: 36.16,
       label: "below",
       when: "386–397",
-      text: "Born here, he becomes the city's great preacher. When riot breaks the emperor's statues in 387 he begins, “What shall I say, or what shall I speak of?” In 398 he is hurried off by chariot before the people can stop it.",
+      text: "Born here, he becomes the city's great preacher. When riot breaks the emperor's statues in 387 he begins, “What shall I say, or what shall I speak of?” Late in 397 he is hurried off by chariot before the people can stop it.",
       wrote: [
         { label: "On the Priesthood", href: priesthood },
         { label: "Homilies on the Statues", href: statues(1) }
@@ -43,8 +43,8 @@ export const journey: Journey = {
       lat: 41.01,
       lon: 28.98,
       label: "above",
-      when: "398–404",
-      text: "Bishop from February 398, he angers the court with his preaching. Deposed in 403, he is recalled within days as “the whole population lighted up waxen torches and came forth to meet him”. Deposed again, he slips away in June 404 as the great church burns.",
+      when: "397–404",
+      text: "Brought there late in 397 and consecrated on 26 February 398, he angers the court with his preaching. Deposed in 403, he is recalled within days as “the whole population lighted up waxen torches and came forth to meet him”. Deposed again, he slips away in June 404 as the great church burns.",
       wrote: [
         { label: "Homilies on Eutropius", href: eutropius },
         { label: "First letter to Innocent of Rome", href: innocent }
@@ -104,7 +104,7 @@ export const journey: Journey = {
       lon: 36.92,
       label: "right",
       when: "Probably 405–406",
-      text: "He writes of his “removal from Cucusus” and his “sojourn in Arabissus”, probably for safety from the Isaurian raiders. The Armenian winter nearly kills him: “day and dawn and noon were all one night to me”.",
+      text: "He writes of his “removal from Cucusus” and his “sojourn in Arabissus”, probably for safety from the Isaurian raiders. A winter in these hills, at Cucusus or Arabissus (the letter does not say which), nearly kills him: “day and dawn and noon were all one night to me”.",
       sources: [
         { label: "To Olympias, on the winter", href: olympias },
         { label: "To Innocent: “Isaurian swords”", href: innocent }

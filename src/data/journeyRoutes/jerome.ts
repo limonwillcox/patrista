@@ -2,7 +2,7 @@ import type { Journey } from "../journeys";
 
 const letter = (n: number) => "/fathers/jerome/jerome-letters/chapter-" + n + "/";
 const apology = (book: number) => "/fathers/jerome/apology-against-rufinus/chapter-" + book + "/";
-/** Lives of Illustrious Men: the reader's chapter numbers run two behind the book's (ch. 135 is chapter-133). */
+/** Lives of Illustrious Men: one reader chapter per chapter of the book (ch. 135 is chapter-135). */
 const lives = (n: number) => "/fathers/jerome/jerome-lives-of-illustrious-men/chapter-" + n + "/";
 
 export const journey: Journey = {
@@ -15,13 +15,13 @@ export const journey: Journey = {
     {
       id: "stridon",
       name: "Stridon",
-      today: "Site lost; probably western Slovenia",
+      today: "Site lost; perhaps in today's Slovenia or Croatia",
       lat: 45.8,
       lon: 14.3,
       label: "right",
       when: "About 347",
       text: "Jerome is born at Stridon, a town “on the border of Dalmatia and Pannonia” that the Goths later destroyed. No one now knows exactly where it stood.",
-      sources: [{ label: "Lives of Illustrious Men 135", href: lives(133) }]
+      sources: [{ label: "Lives of Illustrious Men 135", href: lives(135) }]
     },
     {
       id: "rome",
@@ -110,7 +110,7 @@ export const journey: Journey = {
       text: "Ordained priest by Paulinus of Antioch, he studies Scripture under Gregory of Nazianzus, “my instructor in the Scriptures”.",
       wrote: [{ label: "Letter 18, on Isaiah's vision", href: letter(18) }],
       sources: [
-        { label: "Lives of Illustrious Men 117", href: lives(115) },
+        { label: "Lives of Illustrious Men 117", href: lives(117) },
         { label: "Letter 52", href: letter(52) },
         { label: "Against John of Jerusalem", href: "/fathers/jerome/to-pammachius-against-john-of-jerusalem/chapter-1/" }
       ]
@@ -133,7 +133,7 @@ export const journey: Journey = {
         { label: "Letter 127", href: letter(127) },
         { label: "Letter 123", href: letter(123) },
         { label: "Letter 45", href: letter(45) },
-        { label: "Lives of Illustrious Men 135", href: lives(133) }
+        { label: "Lives of Illustrious Men 135", href: lives(135) }
       ]
     },
     {
@@ -168,7 +168,7 @@ export const journey: Journey = {
       sources: [
         { label: "Apology Against Rufinus III", href: apology(3) },
         { label: "Letter 108", href: letter(108) },
-        { label: "Lives of Illustrious Men 135", href: lives(133) }
+        { label: "Lives of Illustrious Men 135", href: lives(135) }
       ]
     }
   ],

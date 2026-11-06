@@ -6,22 +6,22 @@
   "kind": "role",
   "def": "Adam's younger son, a keeper of sheep whose offering God accepted, killed in the field by his envious elder brother Cain; his blood cried out to God from the ground.",
   "texts": "Gen 4:1-16; Heb 11:4; Heb 12:24; Matt 23:35.",
-  "christ": "Christ the Good Shepherd, the righteous one slain by His own brethren, whose blood speaks to God more clearly than Abel's because it cleanses and saves. Cain is \"a figure of the Jews who slew Christ the Shepherd of the flock of men, prefigured by Abel the shepherd of sheep\" (Augustine, *City of God* 15.7).",
+  "christ": "Christ is the righteous shepherd slain by His own brethren, and His blood \"speaketh better things than that of Abel\" (Heb 12:24): it \"has cleansed all men, and sends forth a voice more clear and more distinct\" (Chrysostom, *Hom. Heb.* 32). What was \"acted beforehand in Abel\" was \"accomplished in the Lord's person\" (Irenaeus, *AH* 4.34.4).",
   "where": [
     "Irenaeus, *AH* 4.34.4 — “These things were acted beforehand in Abel, were also previously declared by the prophets, but were accomplished in the Lord's person”",
-    "Clement, *Paed.* 1.6 — “for the righteous man of old is the type of the new righteous one; and the blood of old that interceded, intercedes in the place of the new blood.”",
+    "Clement of Alexandria, *Paed.* 1.6 — “for the righteous man of old is the type of the new righteous one; and the blood of old that interceded, intercedes in the place of the new blood.”",
     "Cyprian, *Pat.* 10 — “Thus Abel, who first initiated and consecrated the origin of martyrdom, and the passion of the righteous man”",
-    "Augustine, *Faust.* 12.9 — “Abel, the younger brother, is killed by the elder brother; Christ, the head of the younger people, is killed by the elder people of the Jews.”",
+    "Augustine, *C. Faust.* 12.9 — “Abel, the younger brother, is killed by the elder brother; Christ, the head of the younger people, is killed by the elder people of the Jews.”",
     "Augustine, *City of God* 15.7 — “He was also a figure of the Jews who slew Christ the Shepherd of the flock of men, prefigured by Abel the shepherd of sheep”",
     "Chrysostom, *Hom. Heb.* 32 — “For this has cleansed all men, and sends forth a voice more clear and more distinct, in proportion as it has greater testimony, namely that by facts.”"
   ],
   "links": [
-    { "label": "Irenaeus, Against Heresies 4.34.4", "href": "/fathers/irenaeus/against-heresies/chapter-125/" },
-    { "label": "Clement of Alexandria, The Instructor 1.6", "href": "/fathers/clement_alexandria/instructor/chapter-1/" },
-    { "label": "Cyprian, On the Advantage of Patience 10", "href": "/fathers/cyprian/on-the-advantage-of-patience/chapter-1/" },
-    { "label": "Augustine, Reply to Faustus 12.9", "href": "/fathers/augustine/reply-to-faustus-the-manichaean/chapter-12/" },
+    { "label": "Irenaeus, AH 4.34.4", "href": "/fathers/irenaeus/against-heresies/chapter-125/" },
+    { "label": "Clement of Alexandria, Paed. 1.6", "href": "/fathers/clement_alexandria/instructor/chapter-1/" },
+    { "label": "Cyprian, Pat. 10", "href": "/fathers/cyprian/on-the-advantage-of-patience/chapter-1/" },
+    { "label": "Augustine, C. Faust. 12.9", "href": "/fathers/augustine/reply-to-faustus-the-manichaean/chapter-12/" },
     { "label": "Augustine, City of God 15.7", "href": "/fathers/augustine/city-of-god/chapter-15/" },
-    { "label": "Chrysostom, Homilies on Hebrews 32", "href": "/fathers/chrysostom/homilies-on-john-and-hebrews/chapter-120/" }
+    { "label": "Chrysostom, Hom. Heb. 32", "href": "/fathers/chrysostom/homilies-on-john-and-hebrews/chapter-120/" }
   ],
   "confidence": ""
 }

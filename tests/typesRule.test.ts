@@ -12,7 +12,9 @@ import { englishParagraphs } from "../src/lib/fatherPaths";
  *    cuts marked "…" and small differences of wording (a paraphrase without quotation marks needs only its link);
  *  - say what it points to in Christ in a line that names a Father it cites.
  * The older types (sources.json, from the study notes) were checked once against the whole library:
- * all 312 of their quotations are there (Nov 2026).
+ * all 312 of their quotations are there (Nov 2026). Their links come from scripts/connections/link_type_quotes.ts.
+ * Every type on the site (public/connections/types.json) must also cite in one form a reader can follow: a
+ * paragraph anchor on every link, no line numbers, each Gregory named, one abbreviation per work.
  */
 
 const DIR = join(__dirname, "..", "data", "connections", "grammar", "fathers-types");
@@ -81,4 +83,28 @@ describe("types come from the Fathers", () => {
     });
     expect([...fathers].some((f) => e.christ.includes(f)), "the In Christ line names a quoted Father").toBe(true);
   }, 120_000);
+});
+
+describe("types cite in one form", () => {
+  type Packed = { id: string; where: string[]; links?: ({ href: string } | null)[] };
+  const packed = JSON.parse(readFileSync(join(__dirname, "..", "public", "connections", "types.json"), "utf8")) as Packed[];
+  const refs = packed.flatMap((t) => t.where.map((w) => [t.id, w.split(" — ")[0]] as const));
+
+  it("links every quotation to its paragraph in the reader", () => {
+    for (const t of packed)
+      t.where.forEach((_, i) => expect(t.links?.[i]?.href ?? "", t.id + " " + i).toMatch(/^\/fathers\/[^/]+\/[^/]+\/chapter-\d+\/#ch-\d+-p\d+$/));
+  });
+
+  it.each([
+    [/, l\.\d+/, "a line number the reader cannot find (cite the paragraph, ¶N)"],
+    [/^Gregory,/, "a bare Gregory (Nyssa, Nazianzen, Thaumaturgus or the Great?)"],
+    [/(?<!C\. )\*Faust\.\*/, "Faust. for C. Faust."],
+    [/Enarr\. Ps\./, "Enarr. Ps. for En. Ps."],
+    [/\*En\. Ps\.\* \d+\.\d/, "an En. Ps. citation without its Latin (Vulgate) psalm number"],
+    [/Against Marcion|Answer to the Jews|De Fide\* \d+\.\d+$|Ephrem/, "a work or Father named two ways"],
+    [/^Clement,/, "a bare Clement (of Rome or of Alexandria?)"]
+  ] as const)("no citation has %s", (bad, why) => {
+    const hits = refs.filter(([, r]) => bad.test(r) && !(String(bad).includes("De Fide") && r.startsWith("Ambrose")));
+    expect(hits, why).toEqual([]);
+  });
 });

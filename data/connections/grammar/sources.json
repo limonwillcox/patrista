@@ -4206,7 +4206,7 @@
   "label": "Waters of the beginning",
   "kind": "zone",
   "def": "The first waters of creation: unformed, life-bearing, and the \"seat\" of the Spirit, from which heaven and earth were drawn.",
-  "texts": "Gen 1:1-2, 6-10, 20; Ps 33:6; 2 Pet 3:5.",
+  "texts": "Gen 1:1-10; Gen 1:20; Ps 33:6; 2 Pet 3:5.",
   "christ": "The Fathers do not make the waters Christ. They are the Spirit's first seat, and every later water (Jordan, font) shares their \"pristine privilege\" once it is invoked over.",
   "where": [
    "Tertullian, *Bapt.* 3 — “water is one of those things which, before all the furnishing of the world, were quiescent with God in a yet unshapen state.”",
@@ -4317,8 +4317,8 @@
   "label": "Dragon / whale in the waters",
   "kind": "role",
   "def": "The beast in the waters (the dragon of Job, Jonah's whale) that swallows; read as the devil or death.",
-  "texts": "Job 40:23 (LXX); Ps 74:13-14; Jonah 1:17; Matt 12:40; Luke 10:19.",
-  "christ": "Christ goes down into the Jordan to \"break the heads of the dragon\", and into death so that death \"might cast up those whom he had devoured\" (Cyril, *Cat.* 14.17).",
+  "texts": "Job 40:23; Ps 74:13-14; Jonah 1:17; Matt 12:40; Luke 10:19.",
+  "christ": "Christ goes down into the Jordan to \"break the heads of the dragon\" (Cyril, *Cat.* 3.11), and into death so that death \"might cast up those whom he had devoured\" (Cyril, *Cat.* 14.17).",
   "where": [
    "Cyril, *Cat.* 3.11 — “According to Job, there was in the waters the dragon that draweth up Jordan into his mouth.”",
    "Cyril, *Cat.* 3.11 — “The Life encountered him, that the mouth of Death might henceforth be stopped”",
@@ -4335,15 +4335,15 @@
   "label": "Pharaoh / the pursuing tyrant",
   "kind": "role",
   "def": "An oppressor who pursues God's freed people to the water and is drowned there; read as the devil.",
-  "texts": "Exod 1; 14:23-28; 15:4; Gen 31.",
+  "texts": "Exod 1; Exod 14:23-28; Exod 15:4; Gen 31.",
   "christ": "Christ defeats the tyrant; the renunciation of Satan is said facing west (Cyril, *Myst.* 1.4).",
   "where": [
    "Tertullian, *Bapt.* 9 — “the devil, their old tyrant, they leave quite behind, overwhelmed in the water.”",
    "Cyril, *Myst.* 1.3 — “the tyrant was pursuing that ancient people even to the sea; and here the daring and shameless spirit, the author of evil”",
    "Cyril, *Myst.* 1.3 — “The tyrant of old was drowned in the sea; and this present one disappears in the water of salvation.”",
    "Ambrose, *De Myst.* 3.12 — “wherein the Egyptian perished, the Hebrew escaped.”",
-   "Gregory, *Bapt. Chr.*, l.316 — “is choked with grief, and perishes, deeming the salvation of men to be his own misfortune.”",
-   "Gregory, *Bapt. Chr.*, l.298 — “Now let Laban be interpreted of the devil, and Jacob of Christ.”"
+   "Gregory of Nyssa, *Bapt. Chr.* ¶8 — “is choked with grief, and perishes, deeming the salvation of men to be his own misfortune.”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶8 — “Now let Laban be interpreted of the devil, and Jacob of Christ.”"
   ],
   "confidence": ""
  },
@@ -4354,7 +4354,7 @@
   "label": "Moses as the one sent",
   "kind": "role",
   "def": "A leader sent by God into the land of bondage to bring an oppressed people out through water.",
-  "texts": "Exod 3; 14; Heb 3:1-6.",
+  "texts": "Exod 3; Exod 14; Heb 3:1-6.",
   "christ": "Moses figures Christ, who is sent from the Father into the world (Cyril, *Myst.* 1.3).",
   "where": [
    "Cyril, *Myst.* 1.3 — “There we have Moses sent from God to Egypt; here, Christ, sent forth from His Father into the world”",
@@ -4373,7 +4373,7 @@
   "texts": "Exod 1–14; Hos 11:1; Rev 11:8.",
   "christ": "Christ is sent \"into the world\" as Moses was sent to Egypt (Cyril, *Myst.* 1.3).",
   "where": [
-   "Gregory, *Bapt. Chr.*, l.314 — “fleeing from Egypt, from the burden of sin, it is set free and saved”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶8 — “fleeing from Egypt, from the burden of sin, it is set free and saved”",
    "Cyril, *Myst.* 1.2 — “God sent Moses to bring them out of the evil bondage of the Egyptians.”",
    "Origen, *DP* 4.1.22 (Gk.) — “For if there be \"spiritual\" Israelites, it follows that there are also \"spiritual\" Egyptians and Babylonians.”",
    "Tertullian, *Bapt.* 9 — “The nations are set free from the world by means of water”"
@@ -4412,7 +4412,7 @@
    "Ambrose, *De Myst.* 3.12 — “holy baptism was prefigured in that passage of the Hebrews, wherein the Egyptian perished, the Hebrew escaped.”",
    "Ambrose, *De Sacr.* 1.4.12 — “he who passes through this font, dies not, but rises again.”",
    "Ambrose, *De Sacr.* 1.6.20 — “to them in a figure, but to us in reality.”",
-   "Gregory, *Bapt. Chr.*, l.311 — “The people passed over, and the Egyptian king with his host was engulfed, and by these actions this Sacrament was foretold.”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶8 — “The people passed over, and the Egyptian king with his host was engulfed, and by these actions this Sacrament was foretold.”",
    "Cyril, *Cat.* 3.5 — “for Israel deliverance from Pharaoh was through the sea, and for the world deliverance from sins by the washing of water with the word”"
   ],
   "confidence": ""
@@ -4424,12 +4424,15 @@
   "label": "The lamb and its blood",
   "kind": "role",
   "def": "The lamb whose blood marks the doors so that the destroyer passes over.",
-  "texts": "Exod 12; Jer 11:19; Isa 53:7; John 1:29; 1 Cor 5:7.",
-  "christ": "Christ is \"the Lamb without blemish\" (Cyril, *Myst.* 1.3).",
+  "texts": "Exod 12; Isa 53:7; John 1:29; 1 Cor 5:7.",
+  "christ": "Christ is \"the Lamb without blemish\" (Cyril, *Myst.* 1.3): \"the passover was Christ, who was afterwards sacrificed\", and His blood delivers from death as the lamb's blood saved Israel in Egypt (Justin, *Dial.* 111).",
   "where": [
    "Cyril, *Myst.* 1.3 — “there, the blood of a lamb was the spell against the destroyer; here, the blood of the Lamb without blemish Jesus Christ”",
-   "Cyril, *Cat.* 13.19 — “I was like a harmless lamb led to be slaughtered”",
-   "Tertullian, *Bapt.* 19 — “The Passover affords a more than usually solemn day for baptism”"
+   "Justin, *Dial.* 40 — “The mystery, then, of the lamb which God enjoined to be sacrificed as the passover, was a type of Christ”",
+   "Justin, *Dial.* 40 — “that lamb which was commanded to be wholly roasted was a symbol of the suffering of the cross which Christ would undergo”",
+   "Justin, *Dial.* 111 — “For the passover was Christ, who was afterwards sacrificed”",
+   "Justin, *Dial.* 111 — “as the blood of the passover saved those who were in Egypt, so also the blood of Christ will deliver from death those who have believed”",
+   "Athanasius, *Festal Letter* 10 — “This is He Who in old time was sacrificed as a lamb, He being signified in the lamb”"
   ],
   "confidence": ""
  },
@@ -4440,7 +4443,7 @@
   "label": "Pillar of fire and cloud",
   "kind": "object",
   "def": "The guiding pillar of light and the overshadowing cloud over the people in the sea.",
-  "texts": "Exod 13:21-22; 14:19-20; 1 Cor 10:1-2; Luke 1:35.",
+  "texts": "Exod 13:21-22; Exod 14:19-24; 1 Cor 10:1-2; Luke 1:35.",
   "christ": "The pillar of light is Christ (Ambrose, *De Sacr.* 1.6.22). The cloud overshadows Mary at the Incarnation (Ambrose, *De Myst.* 3.13).",
   "where": [
    "Ambrose, *De Sacr.* 1.6.22 — “What is the pillar of light but Christ the Lord”",
@@ -4456,7 +4459,7 @@
   "label": "Crossing the water, then testing in the wilderness",
   "kind": "sequence",
   "def": "After passing through water comes a period of testing in the desert, numbered forty.",
-  "texts": "Exod 15:22–Num 14; Deut 8:2-3; Matt 4:1-11.",
+  "texts": "Exod 15:22-17:16; Num 14; Deut 8:2-3; Matt 4:1-11.",
   "christ": "Christ repeats Israel's forty years as forty days and wins where Israel failed. Tertullian: \"the Lord figuratively retorted upon Israel the reproach\".",
   "where": [
    "Tertullian, *Bapt.* 20 — “the people, after crossing the sea, and being carried about in the desert during forty years”",
@@ -4494,16 +4497,14 @@
   "kind": "object",
   "def": "A rock struck in the desert that pours out water for a thirsty people.",
   "texts": "Exod 17:1-7; Num 20:1-13; Ps 78:15-16; 1 Cor 10:4; John 7:37-39.",
-  "christ": "The Rock is Christ. The water from it is baptism (Tertullian), the cup (Ambrose, *De Sacr.* 5.1.3) and His blood (Ambrose, *De Myst.* 8.49a).",
+  "christ": "The Rock is Christ, \"cloven by a stroke of the spear in His passion\" (Cyprian, *Ep.* 63.8 (ANF 62)). The water from it is baptism (Tertullian, *Bapt.* 9; Cyprian), the cup (Ambrose, *De Sacr.* 5.1.3) and His blood (Ambrose, *De Myst.* 8.49a).",
   "where": [
    "Tertullian, *Bapt.* 9 — “if Christ is \"the Rock,\" without doubt we see baptism blest by the water in Christ.”",
-   "Cyril, *Cat.* 10.7 — “For they all drank of a spiritual rock that followed them; and the rock was Christ”",
+   "Cyprian, *Ep.* 63.8 (ANF 62) — “which is fulfilled in the Gospel, when Christ, who is the Rock, is cloven by a stroke of the spear in His passion”",
    "Ambrose, *De Myst.* 8.49a — “For them water flowed from the rock, for you Blood flowed from Christ”",
    "Ambrose, *De Myst.* 8.49b — “See now what happened in the case of the fathers was shadow”",
    "Ambrose, *De Sacr.* 5.1.3 — “It was not an immovable Rock which followed the people. Drink thou also, that Christ may follow thee.”",
-   "Ambrose, *De Myst.* 9.51 — “Moses touched the rock, and water flowed out of the rock.”",
-   "Irenaeus, *AH* 4.14.3 — “\"For they drank of the rock which followed them: and the rock was Christ.\"”",
-   "Origen, *DP* 4.1.13 (Gk.) — “\"For they drank of the spiritual Rock that followed them, and that Rock was Christ.\"”"
+   "Ambrose, *De Myst.* 9.51 — “Moses touched the rock, and water flowed out of the rock.”"
   ],
   "confidence": ""
  },
@@ -4535,7 +4536,7 @@
   "label": "Wood that saves",
   "kind": "object",
   "def": "Any wood God uses to save (ark, rod, Marah wood, serpent-pole, Elisha's stick); all point to the cross.",
-  "texts": "Gen 6:14; Exod 14:16; 15:25; Num 21:8-9; 2 Kgs 6:1-7; Deut 21:23; Gal 3:13.",
+  "texts": "Gen 6:14; Exod 14:16; Exod 15:23-25; Num 21:8-9; 2 Kgs 6:1-7; Deut 21:23; Gal 3:13.",
   "christ": "All of these woods point to the cross. Tertullian also makes the wood Christ Himself.",
   "where": [
    "Cyril, *Cat.* 13.20 — “On each occasion life comes by means of wood. For in the time of Noe the preservation of life was by an ark of wood.”",
@@ -4544,7 +4545,7 @@
    "Ambrose, *De Sacr.* 2.4.11 — “Dost thou see, therefore, how the weakness of all men is raised on the cross of Christ?”",
    "Irenaeus, *AH* 5.17.4 — “which we had negligently lost by means of a tree ... we should receive anew by the dispensation of a tree”",
    "Tertullian, *Bapt.* 9 — “That tree was Christ”",
-   "Gregory, *Bapt. Chr.*, l.150 — “the wood of the Cross is of saving efficacy for all men”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶5 — “the wood of the Cross is of saving efficacy for all men”",
    "Cyril, *Cat.* 17.10 — “He who by the wood of the Cross saves them who believe”"
   ],
   "confidence": ""
@@ -4556,7 +4557,7 @@
   "label": "The tree of the fall",
   "kind": "object",
   "def": "The tree in Paradise through which man disobeyed, lost the word of God and became a debtor.",
-  "texts": "Gen 2:9, 17; 3:1-7.",
+  "texts": "Gen 2:9; Gen 2:17; Gen 3:1-7.",
   "christ": "Christ undoes the tree of disobedience by His obedience on the tree of the cross (Irenaeus, *AH* 5.16.3; 5.19.1).",
   "where": [
    "Irenaeus, *AH* 5.16.3 — “that disobedience of man which had taken place at the beginning by the occasion of a tree”",
@@ -4638,7 +4639,7 @@
    "Cyril, *Cat.* 13.20 — “in the time of Noe the preservation of life was by an ark of wood.”",
    "Ambrose, *De Myst.* 3.10 — “You see the water, you see the wood [of the ark], you see the dove”",
    "Cyril, *Cat.* 17.10 — “of whom the various dispositions of the animals in the ark were a figure”",
-   "Gregory, *Bapt. Chr.*, l.304 — “laid in an ark, for it was fitting that the Law should typically be enclosed in a coffer”"
+   "Gregory of Nyssa, *Bapt. Chr.* ¶8 — “laid in an ark, for it was fitting that the Law should typically be enclosed in a coffer”"
   ],
   "confidence": ""
  },
@@ -4649,7 +4650,7 @@
   "label": "The righteous one saved through the water",
   "kind": "role",
   "def": "The one righteous man (with his household) kept alive through judgment to be the seed of a new world.",
-  "texts": "Gen 6:9; 7:1; Ezek 14:14; 2 Pet 2:5.",
+  "texts": "Gen 6-9; Ezek 14:14; 2 Pet 2:5.",
   "christ": "Christ is \"the true Noe\" (Cyril, *Cat.* 17.10).",
   "where": [
    "Ambrose, *De Sacr.* 2.1.1 — “What is the flood, but that in which the righteous is saved to be a seed-plot of righteousness, while sin dies?”",
@@ -4691,7 +4692,7 @@
   "where": [
    "Cyril, *Cat.* 17.10 — “the beginning of a new generation”",
    "Cyril, *Cat.* 17.10 — “the true Noe, the Author of the second birth”",
-   "Gregory, *Bapt. Chr.*, l.83 — “Baptism, then, is a purification from sins, a remission of trespasses, a cause of renovation and regeneration.”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶5 — “Baptism, then, is a purification from sins, a remission of trespasses, a cause of renovation and regeneration.”",
    "Irenaeus, *AH* 5.23.2 — “thus granting him a second creation by means of His passion, which is that [creation] out of death.”",
    "Tertullian, *Bapt.* 5 — “Thus man will be restored for God to His \"likeness,\" who in days bygone had been conformed to \"the image\" of God”"
   ],
@@ -4711,8 +4712,7 @@
    "Cyril, *Myst.* 2.4 — “ye were led to the holy pool of Divine Baptism, as Christ was carried from the Cross to the Sepulchre”",
    "Ambrose, *De Sacr.* 2.6.19 — “the font is, as it were, a burial”",
    "Ambrose, *De Myst.* 4.23 — “that pool was as a type, that you might believe that the power of God descends upon this font.”",
-   "Tertullian, *Bapt.* 1 — “we, little fishes, after the example of our IChThUS Jesus Christ, are born in water”",
-   "Tertullian, *Bapt.* 20 — “spread your hands for the first time in the house of your mother”"
+   "Tertullian, *Bapt.* 1 — “we, little fishes, after the example of our IChThUS Jesus Christ, are born in water”"
   ],
   "confidence": ""
  },
@@ -4724,7 +4724,7 @@
   "kind": "sequence",
   "def": "Go down into water as into a grave (three times), come up as from the tomb, newborn.",
   "texts": "Rom 6:3-11; Col 2:12; Matt 12:40; Gen 3:19.",
-  "christ": "This is the participation in Christ's death, burial and resurrection, \"in a likeness\" (Cyril, *Myst.* 2.5–2.7).",
+  "christ": "This is the participation in Christ's death, burial and resurrection: in His case \"there was death in reality\", but in ours \"only a likeness of death and sufferings, whereas of salvation there was not a likeness but a reality\" (Cyril, *Myst.* 2.7).",
   "where": [
    "Cyril, *Myst.* 2.4 — “descended three times into the water, and ascended again; here also hinting by a symbol at the three days burial of Christ.”",
    "Cyril, *Myst.* 2.4 — “in the descent, as in the night, ye saw nothing, but in ascending again ye were as in the day.”",
@@ -4733,8 +4733,8 @@
    "Ambrose, *De Myst.* 4.21 — “you died to the world, and rose again to God.”",
    "Ambrose, *De Sacr.* 2.6.19 — “a means was found that man might die while living, and while living rise again.”",
    "Ambrose, *De Sacr.* 2.7.20 — “for he who is buried with Christ, rises again with Christ.”",
-   "Gregory, *Bapt. Chr.*, l.192 — “went beneath the fourth of these, the earth, that He might raise up life from thence.”",
-   "Gregory, *Bapt. Chr.*, l.197 — “coming to the element akin to earth, to water, we conceal ourselves in that as the Saviour did in the earth”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶5 — “went beneath the fourth of these, the earth, that He might raise up life from thence.”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶5 — “coming to the element akin to earth, to water, we conceal ourselves in that as the Saviour did in the earth”",
    "Tertullian, *Bapt.* 2 — “a man is dipped in water, and amid the utterance of some few words, is sprinkled, and then rises again”"
   ],
   "confidence": ""
@@ -4751,12 +4751,12 @@
   "where": [
    "Cyril, *Cat.* 3.5 — “The water was the beginning of the world, and Jordan the beginning of the Gospel tidings”",
    "Cyril, *Cat.* 3.5 — “Elias is taken up, but not apart from water: for first he crosses the Jordan, then in a chariot mounts the heaven.”",
-   "Gregory, *Bapt. Chr.*, l.322 — “did not enter the land of promise until it had first been brought ... to the passage of the Jordan.”",
-   "Gregory, *Bapt. Chr.*, l.357 — “Jordan alone of rivers, receiving in itself the first-fruits of sanctification and benediction, conveyed in its channel to the whole world”",
-   "Gregory, *Bapt. Chr.*, l.400 — “the Jordan glorified by regenerating men and planting them in the Paradise of God”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶9 — “did not enter the land of promise until it had first been brought ... to the passage of the Jordan.”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶9 — “Jordan alone of rivers, receiving in itself the first-fruits of sanctification and benediction, conveyed in its channel to the whole world”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶9 — “the Jordan glorified by regenerating men and planting them in the Paradise of God”",
    "Cyril, *Myst.* 3.1 — “He washed in the river Jordan, and having imparted of the fragrance of His Godhead to the waters, He came up from them”",
    "Ambrose, *De Sacr.* 1.5.14 — “Then he went to Jordan, dipped, and arose whole.”",
-   "Cyril, *Cat.* 12.15 — “the sea saw Him and fled, and Jordan was turned back”"
+   "Cyril, *Cat.* 12.15 — “Christ came that He might be baptized, and might sanctify Baptism” … “the Lord took to Himself His body, that the sea might endure the sight, and Jordan receive Him without fear”"
   ],
   "confidence": ""
  },
@@ -4767,7 +4767,7 @@
   "label": "The troubled pool (Bethesda)",
   "kind": "zone",
   "def": "A pool where an angel from above stirs the water and the first to go down is healed.",
-  "texts": "John 5:1-9; Isa 9:6 (LXX).",
+  "texts": "John 5:1-9; Isa 9:6.",
   "christ": "In *De Sacr.* the angel is Christ, \"the Angel of Great Counsel\". In *De Myst.* the paralytic waits for \"the Lord Jesus, born of the Virgin\" (4.24).",
   "where": [
    "Tertullian, *Bapt.* 5 — “An angel, by his intervention, was wont to stir the pool at Bethsaida.”",
@@ -4786,7 +4786,7 @@
   "label": "One who comes down on the waters from above",
   "kind": "role",
   "def": "A heavenly agent (Spirit, dove, angel, voice, fire) who comes down onto water or a sacrifice and makes it effective.",
-  "texts": "Gen 1:2; 8:8-12; John 5:4; Matt 3:16-17; 1 Kgs 18:38.",
+  "texts": "Gen 1:2; Gen 8:8-12; John 5:4; Matt 3:16-17; 1 Kgs 18:38.",
   "christ": "Christ goes down into the water first and the Spirit follows, \"that he might sanctify, and the Spirit also sanctify\" (Ambrose, *De Sacr.* 1.5.18).",
   "where": [
    "Tertullian, *Bapt.* 4 — “an underlying material substance should catch the quality of that which overhangs it”",
@@ -4794,7 +4794,7 @@
    "Ambrose, *De Myst.* 5.26 — “When the Holy Spirit also speaks, Who came down in the likeness of a dove?”",
    "Ambrose, *De Sacr.* 2.5.14 (on the dove) — “That unbelievers might be called to belief.”",
    "Cyril, *Cat.* 3.14 — “the Holy Ghost cometh down on thee also, and a Father's voice sounds over thee from on high”",
-   "Gregory, *Bapt. Chr.*, l.69 — “that He might bring the Spirit from above, and exalt man to heaven”"
+   "Gregory of Nyssa, *Bapt. Chr.* ¶5 — “that He might bring the Spirit from above, and exalt man to heaven”"
   ],
   "confidence": ""
  },
@@ -4811,7 +4811,7 @@
    "Cyril, *Cat.* 3.14 — “a Father's voice sounds over thee from on high--not, \"This is My Son,\" but, \"This has now been made My son;\"”",
    "Ambrose, *De Myst.* 5.26 — “the Father clearly calls from heaven in the Gospel narrative”",
    "Ambrose, *De Sacr.* 1.5.19 — “Also God the Father spake from heaven. Thou hast the presence of the Trinity.”",
-   "Gregory, *Bapt. Chr.*, l.409 — “\"The voice of the Lord is upon the waters, the voice of the Lord in majesty.\"”"
+   "Gregory of Nyssa, *Bapt. Chr.* ¶9 — “the inspired David, foretelling also the voice which the Father uttered from heaven upon the Son at His Baptism”"
   ],
   "confidence": ""
  },
@@ -4822,11 +4822,11 @@
   "label": "Fire kindled on drenched wood",
   "kind": "sequence",
   "def": "Water is poured three times on the sacrifice and fire falls from heaven and kindles it.",
-  "texts": "1 Kgs 18:30-39; Judg 6:21; Matt 3:11; Acts 2:3.",
-  "christ": "Gregory reads it as faith in the Trinity and as the Spirit given in baptism. Cyril calls Christ the one “that baptizeth with the Holy Ghost and with fire” (*Cat.* 3.9).",
+  "texts": "1 Kgs 18:30-39; Matt 3:11; Acts 2:3.",
+  "christ": "Gregory of Nyssa reads it as faith in the Trinity and as the Spirit given in baptism. Cyril calls Christ the one “that baptizeth with the Holy Ghost and with fire” (*Cat.* 3.9).",
   "where": [
-   "Gregory, *Bapt. Chr.*, l.350 — “the fire was kindled by water thrice poured upon it”",
-   "Gregory, *Bapt. Chr.*, l.351 — “where the mystic water is, there is the kindling, warm, and fiery Spirit, that burns up the ungodly, and illuminates the faithful.”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶9 — “the fire was kindled by water thrice poured upon it”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶9 — “where the mystic water is, there is the kindling, warm, and fiery Spirit, that burns up the ungodly, and illuminates the faithful.”",
    "Ambrose, *De Myst.* 5.26 — “when Elijah prayed, fire was sent forth and consecrated the sacrifice.”",
    "Ambrose, *De Myst.* 5.27 — “To those [of old] a visible fire was sent that they might believe; for us who believe, the Lord works invisibly”",
    "Tertullian, *Bapt.* 10 — “true and stable faith is baptized with water, unto salvation; pretended and weak faith is baptized with fire, unto judgment.”"
@@ -4858,7 +4858,7 @@
   "label": "The washed-then-anointed priest and king",
   "kind": "role",
   "def": "One washed in water and then anointed with oil to be priest or king; the name \"Christ\" comes from this.",
-  "texts": "Exod 29:4-7; Lev 8:6-12; 1 Kgs 1:38-39; Ps 133:2; Ps 45:7; Isa 61:1; Acts 10:38; 1 John 2:20.",
+  "texts": "Exod 29:4-7; Lev 8:6-12; 1 Kgs 1:38-39; Ps 45:7; Isa 61:1; Acts 10:38; 1 John 2:20.",
   "christ": "Christ is anointed with the Spirit, not with material oil (Cyril, *Myst.* 3.2). The baptized become \"christs\" by sharing in His anointing.",
   "where": [
    "Tertullian, *Bapt.* 7 — “Whence Aaron is called \"Christ,\" from the \"chrism,\" which is \"the unction;\"”",
@@ -4867,7 +4867,6 @@
    "Cyril, *Myst.* 3.6 — “in advancing Solomon to the kingdom, anointed him after he had bathed in Gihon”",
    "Cyril, *Myst.* 3.1 — “Now ye have been made Christs, by receiving the antitype of the Holy Ghost”",
    "Cyril, *Cat.* 3.5 — “for Aaron first washed, then was made high-priest”",
-   "Ambrose, *De Myst.* 6.29 — “\"Like the ointment upon the head, which went down to the beard, even Aaron's beard\"”",
    "Ambrose, *De Myst.* 6.30 — “we are all anointed with spiritual grace for a share in the kingdom of God and in the priesthood.”"
   ],
   "confidence": ""
@@ -4880,8 +4879,10 @@
   "kind": "role",
   "def": "A priest-king with no recorded beginning or end who brings out bread and wine to the victor.",
   "texts": "Gen 14:18-20; Ps 110:4; Heb 7.",
-  "christ": "Melchizedek is Christ Himself: \"Do you recognize Who that is?\" (Ambrose, *De Myst.* 8.46).",
+  "christ": "Melchizedek's bread and wine prefigure the sacrifice of Christ, the priest for ever after his order, who \"offered that very same thing which Melchizedek had offered, that is, bread and wine, to wit, His body and blood\" (Cyprian, *Ep.* 63.4 (ANF 62); so Augustine, *City of God* 16.22). Ambrose goes further and reads him as Christ Himself: \"Do you recognize Who that is?\" (*De Myst.* 8.46).",
   "where": [
+   "Cyprian, *Ep.* 63.4 (ANF 62) — “For who is more a priest of the most high God than our Lord Jesus Christ, who offered a sacrifice to God the Father, and offered that very same thing which Melchizedek had offered, that is, bread and wine, to wit, His body and blood?”",
+   "Augustine, *City of God* 16.22 — “For then first appeared the sacrifice which is now offered to God by Christians in the whole wide world”",
    "Ambrose, *De Myst.* 8.45 — “Melchisedech, who is introduced without father, without mother, having neither beginning of days, nor ending, but like the Son of God”",
    "Ambrose, *De Myst.* 8.46 — “Can a man be king of righteousness, when himself he can hardly be righteous?”",
    "Ambrose, *De Sacr.* 4.3.10 — “Melchizedek. He, then, is the author of the sacraments.”"
@@ -4933,14 +4934,14 @@
   "kind": "number",
   "def": "Three days (and three nights), three immersions, three pourings: the number of burial and resurrection.",
   "texts": "Jonah 1:17; Matt 12:40; Hos 6:2; 1 Kgs 18:34; Matt 28:19; John 21:15-17.",
-  "christ": "These are Christ's three days in the earth. The three immersions are also tied to the three Names (Gregory; Ambrose, *De Sacr.* 2.7.20–22).",
+  "christ": "These are Christ's three days in the earth. The three immersions are also tied to the three Names (Gregory of Nyssa; Ambrose, *De Sacr.* 2.7.20–22).",
   "where": [
    "Cyril, *Myst.* 2.4 — “descended three times into the water, and ascended again; here also hinting by a symbol at the three days burial of Christ.”",
-   "Gregory, *Bapt. Chr.*, l.199 — “by doing this thrice we represent for ourselves that grace of the Resurrection which was wrought in three days”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶5 — “by doing this thrice we represent for ourselves that grace of the Resurrection which was wrought in three days”",
    "Ambrose, *De Sacr.* 2.7.20 — “that the triple confession might absolve the manifold fall of thy former life.”",
    "Cyril, *Cat.* 4.12 — “Did Jonah come forth from the whale on the third day”",
    "Augustine, *DDC* 3.35.50 — “we cannot make out the three days and three nights during which He foretold that He would be in the heart of the earth”",
-   "Gregory, *Bapt. Chr.*, l.350 — “the fire was kindled by water thrice poured upon it”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶9 — “the fire was kindled by water thrice poured upon it”",
    "Tertullian, *Bapt.* 6 — “wherever there are three, (that is, the Father, the Son, and the Holy Spirit, ) there is the Church”"
   ],
   "confidence": ""
@@ -4973,9 +4974,9 @@
   "kind": "number",
   "def": "A \"legitimate\" number standing for a whole; the twelve stones of the Jordan and the twelve apostles.",
   "texts": "Josh 4:1-9; Matt 10:1-4; Rev 21:12-14.",
-  "christ": "The twelve are Christ's apostles, \"the ministers of Baptism\" (Gregory).",
+  "christ": "The twelve are Christ's apostles, \"the ministers of Baptism\" (Gregory of Nyssa).",
   "where": [
-   "Gregory, *Bapt. Chr.*, l.325 — “Joshua also, who set up the twelve stones in the stream, was anticipating the coming of the twelve disciples, the ministers of Baptism.”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶9 — “Joshua also, who set up the twelve stones in the stream, was anticipating the coming of the twelve disciples, the ministers of Baptism.”",
    "Augustine, *DDC* 3.35.51 — “our author calls those numbers legitimate which Holy Scripture more highly favors such as seven, or ten, or twelve”"
   ],
   "confidence": ""
@@ -5003,7 +5004,7 @@
   "label": "The sixth day (day of making and of dying)",
   "kind": "number",
   "def": "The sixth day of creation, on which man was made and (Irenaeus argues) Adam died and Christ suffered.",
-  "texts": "Gen 1:26-31; 2:17; John 19:14, 31.",
+  "texts": "Gen 1:26-31; Gen 2:17; John 19:14; John 19:31.",
   "christ": "Christ \"recapitulating in Himself this day\" suffers on it, granting \"a second creation\" (Irenaeus, *AH* 5.23.2).",
   "where": [
    "Irenaeus, *AH* 5.23.2 — “upon the day preceding the Sabbath, that is, the sixth day of the creation, on which day man was created”",
@@ -5018,7 +5019,7 @@
   "label": "Adam and the second Adam",
   "kind": "role",
   "def": "The first man, whose disobedience brought death, and Christ, the second, who replays and reverses his story.",
-  "texts": "Gen 2:7; 3; Rom 5:12-21; 1 Cor 15:22, 45-49; Luke 3:38.",
+  "texts": "Gen 2:7; Gen 3; Rom 5:12-21; 1 Cor 15:22; 1 Cor 15:45-49; Luke 3:38.",
   "christ": "Christ is the second Adam, made from virgin \"earth\" (Mary) to keep the analogy (Irenaeus, *AH* 3.21.10).",
   "where": [
    "Irenaeus, *AH* 3.18.7 — “as by the disobedience of the one man who was originally moulded from virgin soil, the many were made sinners”",
@@ -5029,7 +5030,7 @@
    "Cyril, *Cat.* 13.31 — “Very speedily I passed sentence upon Adam, very speedily I pardon thee.”",
    "Cyril, *Myst.* 2.2 — “ye bore the likeness of the first-formed Adam, who was naked in the garden, and was not ashamed.”",
    "Ambrose, *De Sacr.* 5.3.14 — “Thou becamest a dry tree in Adam; but now through the grace of Christ thou hast budded into a fruitful tree.”",
-   "Gregory, *Bapt. Chr.*, l.504 — “No longer shall Adam be confounded when called by Thee, nor hide himself”"
+   "Gregory of Nyssa, *Bapt. Chr.* ¶12 — “No longer shall Adam be confounded when called by Thee, nor hide himself”"
   ],
   "confidence": ""
  },
@@ -5040,7 +5041,7 @@
   "label": "The virgin who disobeyed and the virgin who obeyed",
   "kind": "role",
   "def": "Two betrothed virgins who each receive an angel's word: Eve disobeys and brings death; Mary obeys and brings life.",
-  "texts": "Gen 3:1-6, 15, 20; Luke 1:26-38.",
+  "texts": "Gen 3:1-6; Gen 3:15; Gen 3:20; Luke 1:26-38.",
   "christ": "Mary's obedience opens the way for the birth of the second Adam. The woman's seed watches for the serpent's head (Irenaeus, *AH* 5.21.1).",
   "where": [
    "Irenaeus, *AH* 3.22.4 — “Mary the Virgin is found obedient” ... “But Eve was disobedient; for she did not obey when as yet she was a virgin.”",
@@ -5069,7 +5070,7 @@
    "Cyril, *Cat.* 3.7 — “For every serpent creeps into a hole and casts its old slough, and having rubbed off the old skin, grows young again in body.”",
    "Augustine, *DDC* 2.16.24 — “the serpent gets rid of its old skin by squeezing itself through a narrow hole, and thus acquires new strength”",
    "Augustine, *DDC* 3.25.36 — “the serpent is used in a good sense, \"Be wise as serpents;\" and again, in a bad sense”",
-   "Gregory, *Bapt. Chr.*, l.76 — “drew along his serpent train, a disguise worthy of his own intent”"
+   "Gregory of Nyssa, *Bapt. Chr.* ¶5 — “drew along his serpent train, a disguise worthy of his own intent”"
   ],
   "confidence": ""
  },
@@ -5102,14 +5103,14 @@
   "label": "Paradise / garden",
   "kind": "zone",
   "def": "The garden toward the east where man fell, which is reopened through the cross and baptism; read as the Church.",
-  "texts": "Gen 2:8-17; 3:23-24; Luke 23:43; John 19:41; Song 4:12–5:1.",
+  "texts": "Gen 2:8-3:24; Luke 23:43; John 19:41; Song 4:12-5:1.",
   "christ": "Christ is buried in a garden and opens Paradise to the robber (Cyril, *Cat.* 13.19, 13.31).",
   "where": [
    "Cyril, *Cat.* 13.19 — “In Paradise was the Fall, and in a Garden was our Salvation.”",
    "Cyril, *Cat.* 13.31 — “thou by the Tree art brought into Paradise.”",
    "Cyril, *Myst.* 1.9 — “there is opened to thee the paradise of God, which He planted towards the East, whence for his transgression our first father was banished”",
-   "Gregory, *Bapt. Chr.*, l.499 — “Thou didst banish us from Paradise, and didst recall us”",
-   "Gregory, *Bapt. Chr.*, l.505 — “Nor shall the flaming sword encircle Paradise around”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶12 — “Thou didst banish us from Paradise, and didst recall us”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶12 — “Nor shall the flaming sword encircle Paradise around”",
    "Irenaeus, *AH* 5.20.2 — “the Church has been planted as a garden (paradisus) in this world”",
    "Irenaeus, *AH* 5.20.2 — “Eat ye from every Scripture of the Lord”"
   ],
@@ -5127,7 +5128,7 @@
   "where": [
    "Cyril, *Cat.* 13.18 — “At the time of the sin, they clothed themselves with fig-leaves; for this cause Jesus also made the fig-tree the last of His signs.”",
    "Cyril, *Cat.* 13.18 — “He curses the fig-tree, not every fig-tree, but that one alone, for the sake of the figure”",
-   "Gregory, *Bapt. Chr.*, l.500 — “Thou didst strip off the fig-tree leaves, an unseemly covering, and put upon us a costly garment”"
+   "Gregory of Nyssa, *Bapt. Chr.* ¶12 — “Thou didst strip off the fig-tree leaves, an unseemly covering, and put upon us a costly garment”"
   ],
   "confidence": ""
  },
@@ -5153,7 +5154,7 @@
   "label": "Stripping off and putting on",
   "kind": "object",
   "def": "The old garment (old man, fig leaves, filthy rags) taken off at baptism; a white or costly garment put on.",
-  "texts": "Gen 2:25; 3:7, 21; Zech 3:3-5; Isa 61:10; Gal 3:27; Col 3:9-10; Song 5:3.",
+  "texts": "Gen 2:25; Gen 3:7; Gen 3:21; Zech 3:3-5; Isa 61:10; Gal 3:27; Col 3:9-10; Song 5:3.",
   "christ": "Christ is the garment put on (Cyril, *Myst.* 1.10; Gal 3:27). His nakedness on the cross strips the powers (Cyril, *Myst.* 2.2).",
   "where": [
    "Cyril, *Myst.* 2.2 — “this was an image of putting off the old man with his deeds”",
@@ -5161,8 +5162,8 @@
    "Cyril, *Myst.* 2.2 — “ye bore the likeness of the first-formed Adam, who was naked in the garden, and was not ashamed.”",
    "Cyril, *Myst.* 4.8 — “having put off thy old garments, and put on those which are spiritually white”",
    "Cyril, *Myst.* 1.10 — “clothed in the garment of salvation, even Jesus Christ.”",
-   "Gregory, *Bapt. Chr.*, l.376 — “putting off our sins like some poor and patched garment, are clothed in the holy and most fair garment of regeneration.”",
-   "Gregory, *Bapt. Chr.*, l.500 — “Thou didst strip off the fig-tree leaves, an unseemly covering, and put upon us a costly garment”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶9 — “putting off our sins like some poor and patched garment, are clothed in the holy and most fair garment of regeneration.”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶12 — “Thou didst strip off the fig-tree leaves, an unseemly covering, and put upon us a costly garment”",
    "Tertullian, *Bapt.* 13 — “the clothing, in some sense, of the faith which before was bare”",
    "Cyril, *Cat.* 3.7 — “Put off the old man with his doings”"
   ],
@@ -5175,7 +5176,7 @@
   "label": "Turning from west to east",
   "kind": "axis",
   "def": "West is the region of darkness and the devil; east is the region of light and Paradise; conversion is a turn from one to the other.",
-  "texts": "Gen 2:8; 3:24; Ezek 43:2; Mal 4:2; Matt 24:27.",
+  "texts": "Gen 2:8; Gen 3:24; Ezek 43:2; Mal 4:2; Matt 24:27.",
   "christ": "To turn east is to turn to Christ (Ambrose).",
   "where": [
    "Cyril, *Myst.* 1.4 — “Since the West is the region of sensible darkness, and he being darkness has his dominion also in darkness”",
@@ -5191,12 +5192,12 @@
   "label": "Night to day",
   "kind": "axis",
   "def": "Movement from darkness or night to light or day, enacted in the descent and ascent of baptism.",
-  "texts": "Gen 1:2-5; Isa 9:2; John 1:5; Eph 5:8, 14.",
+  "texts": "Gen 1:2-5; Isa 9:2; John 1:5; Eph 5:8; Eph 5:14.",
   "christ": "Christ is the pillar of light (Ambrose, *De Sacr.* 1.6.22).",
   "where": [
    "Cyril, *Myst.* 2.4 — “in the descent, as in the night, ye saw nothing, but in ascending again ye were as in the day.”",
    "Cyril, *Myst.* 1.4 — “the West is the region of sensible darkness”",
-   "Gregory, *Bapt. Chr.*, l.436 — “For as darkness is dispelled by light, and black disappears as whiteness is spread over it, so the old man also disappears”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶10 — “For as darkness is dispelled by light, and black disappears as whiteness is spread over it, so the old man also disappears”",
    "Ambrose, *De Sacr.* 1.6.22 — “who scattered the shadows of unbelief, and poured the light of truth and spiritual grace on human hearts”"
   ],
   "confidence": ""
@@ -5216,7 +5217,7 @@
    "Cyril, *Myst.* 2.4 — “descended three times into the water, and ascended again”",
    "Irenaeus, *AH* 5.21.1 — “as our species went down to death through a vanquished man, so we may ascend to life again through a victorious one”",
    "Cyril, *Cat.* 3.5 — “for first he crosses the Jordan, then in a chariot mounts the heaven.”",
-   "Gregory, *Bapt. Chr.*, l.69 — “that He might bring the Spirit from above, and exalt man to heaven”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶5 — “that He might bring the Spirit from above, and exalt man to heaven”",
    "Ambrose, *De Sacr.* 1.5.18 — “But Christ descended first, the Spirit followed.”"
   ],
   "confidence": ""
@@ -5228,12 +5229,12 @@
   "label": "Above and below",
   "kind": "axis",
   "def": "What is above gives its quality to what is below; earthly signs come first and carry heavenly effects.",
-  "texts": "John 3:31; Heb 8:5; 9:23-24; Col 3:1-2.",
-  "christ": "Christ is \"He who comes from the realms above\" (Tertullian, *Bapt.* 10).",
+  "texts": "John 3:31; Heb 8:5; Heb 9:23-24; Col 3:1-2.",
+  "christ": "The heavenly things belong to Christ, not to John, who only prepares for them: John \"professes that the celestial things are not his, but Christ's\" (Tertullian, *Bapt.* 10).",
   "where": [
    "Tertullian, *Bapt.* 4 — “an underlying material substance should catch the quality of that which overhangs it”",
    "Tertullian, *Bapt.* 3 — “the material substance which governs terrestrial life acts as agent likewise in the celestial.”",
-   "Tertullian, *Bapt.* 10 — “\"He who is from the earth speaketh concerning the earth; He who comes from the realms above is above all;\"”",
+   "Tertullian, *Bapt.* 10 — “John himself professes that the celestial things are not his, but Christ's”",
    "Ambrose, *De Sacr.* 1.4.12 — “he who passes through this font, that is from earthly to heavenly things”",
    "Origen, *DP* 4.1.13 (Gk.) — “of what heavenly things the Jews \"according to the flesh\" served as an example and a shadow”"
   ],
@@ -5246,7 +5247,7 @@
   "label": "Type to antitype (shadow to body)",
   "kind": "axis",
   "def": "The time-axis from the earlier, bodily figure to the later, spiritual reality it foreshadows; the later is greater.",
-  "texts": "Col 2:17; Heb 8:5; 10:1; 1 Cor 10:6, 11; Rom 5:14; 1 Pet 3:21.",
+  "texts": "Col 2:17; Heb 8:5; Heb 10:1; 1 Cor 10:6; 1 Cor 10:11; Rom 5:14; 1 Pet 3:21.",
   "christ": "The reality the figures point to is Christ and His sacraments (Irenaeus, *AH* 4.26.1).",
   "where": [
    "Tertullian, *Bapt.* 5 — “according to the rule by which things carnal are always antecedent as figurative of things spiritual.”",
@@ -5258,7 +5259,7 @@
    "Ambrose, *De Sacr.* 1.6.20 — “to them in a figure, but to us in reality.”",
    "Origen, *DP* 4.1.11 (Lat.) — “the spiritual law itself (which has a shadow of good things to come)”",
    "Irenaeus, *AH* 4.26.1 — “a treasure, hid indeed in a field, but brought to light by the cross of Christ”",
-   "Gregory, *Bapt. Chr.*, l.282 — “The thing is, I think, a dark saying, a shadow of what should come.”"
+   "Gregory of Nyssa, *Bapt. Chr.* ¶8 — “The thing is, I think, a dark saying, a shadow of what should come.”"
   ],
   "confidence": ""
  },
@@ -5269,13 +5270,13 @@
   "label": "The well (meeting place of bride and water)",
   "kind": "zone",
   "def": "A well in the wilderness where life-saving water is given and where brides are found.",
-  "texts": "Gen 21:19; 24:11-27; 26:15-22; 29:1-12; Exod 2:15-21; John 4.",
-  "christ": "Christ is the stone on the well and Jacob, who opens it to the Church's flock (Gregory).",
+  "texts": "Gen 21:19; Gen 24:11-20; Gen 26:15-22; Gen 29:2-10; John 4.",
+  "christ": "Christ is the stone that lay on the well, \"the spiritual stone, Christ, concealing in the deep and in mystery the laver of regeneration\"; the one who rolls it away is Jacob, \"Israel, who is mind seeing God\", who gives living water to the flock of the Church (Gregory of Nyssa, *Bapt. Chr.* ¶8).",
   "where": [
-   "Gregory, *Bapt. Chr.*, l.261 — “an angel unexpectedly appears, and shows her a well of living water, and drawing thence, she saves Ishmael.”",
-   "Gregory, *Bapt. Chr.*, l.269 — “a marriage that was to produce the race of Christ had its beginning and its first covenant in water”",
-   "Gregory, *Bapt. Chr.*, l.272 — “for a type of all those impious men of later days who hindered the grace of Baptism”",
-   "Gregory, *Bapt. Chr.*, l.280 — “But Jacob alone rolls away the stone, and waters the flocks of his spouse.”"
+   "Gregory of Nyssa, *Bapt. Chr.* ¶8 — “an angel unexpectedly appears, and shows her a well of living water, and drawing thence, she saves Ishmael.”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶8 — “a marriage that was to produce the race of Christ had its beginning and its first covenant in water”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶8 — “for a type of all those impious men of later days who hindered the grace of Baptism”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶8 — “But Jacob alone rolls away the stone, and waters the flocks of his spouse.”"
   ],
   "confidence": ""
  },
@@ -5286,11 +5287,11 @@
   "label": "The stone (on the well; from the mountain)",
   "kind": "object",
   "def": "A stone cut without hands, read as Christ born of a virgin; also the mountain refuge.",
-  "texts": "Dan 2:34-35, 45; Isa 28:16; Gen 29:2-10; Gen 28:18.",
-  "christ": "It is Christ, born of a virgin without a human father (Gregory).",
+  "texts": "Dan 2:34-35; Dan 2:44-45; Isa 28:16; Gen 29:2-10.",
+  "christ": "It is Christ, born of a virgin without a human father (Gregory of Nyssa).",
   "where": [
-   "Gregory, *Bapt. Chr.*, l.282 — “For what is the stone that is laid but Christ Himself?”",
-   "Gregory, *Bapt. Chr.*, l.285 — “\"A stone was cut out without hands,\" that is, Christ was born without a man.”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶8 — “For what is the stone that is laid but Christ Himself?”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶8 — “\"A stone was cut out without hands,\" that is, Christ was born without a man.”",
    "Cyril, *Myst.* 1.8 — “escape to the mountain, to Jesus Christ, that stone hewn without hands, which has filled the world.”"
   ],
   "confidence": ""
@@ -5302,13 +5303,12 @@
   "label": "Mountain of refuge (Christ; the Church)",
   "kind": "zone",
   "def": "The mountain to flee to from judgment (Lot), read as Christ; elsewhere the Church.",
-  "texts": "Gen 19:17-30; Isa 2:2; 25:6; Dan 2:35.",
+  "texts": "Gen 19:17-30; Isa 2:2; Isa 25:6; Dan 2:35.",
   "christ": "The mountain is Christ (Cyril, *Myst.* 1.8).",
   "where": [
    "Cyril, *Myst.* 1.8 — “Was not he himself saved with his daughters, when he had gained the mountain”",
    "Cyril, *Myst.* 1.8 — “escape to the mountain, to Jesus Christ, that stone hewn without hands, which has filled the world.”",
-   "Cyril, *Myst.* 3.7 — “now he calls the Church a mountain elsewhere also”",
-   "Ambrose, *De Sacr.* 2.1.1 — “he bade the water rise even above the mountains.”"
+   "Cyril, *Myst.* 3.7 — “now he calls the Church a mountain elsewhere also”"
   ],
   "confidence": ""
  },
@@ -5319,15 +5319,15 @@
   "label": "The bride (Church / soul)",
   "kind": "role",
   "def": "The Church, or the baptized soul, prepared, washed and adorned for Christ the Bridegroom.",
-  "texts": "Isa 61:10; Song 1:5; 4:2; 6:6; Eph 5:25-27; Rev 19:7-8; 21:2.",
-  "christ": "The bride is Christ's body, and one speaker can be both (Tyconius Rule 1).",
+  "texts": "Isa 61:10; Song 1:5; Song 4:2; Song 6:6; Eph 5:25-27; Rev 19:7-8; Rev 21:2.",
+  "christ": "The bride is Christ's body, the Church, and one speaker can be both, for \"the head and the body--that is, Christ and His Church--are sometimes indicated to us under one person\" (Augustine, *DDC* 3.31.44, on the first rule of Tyconius).",
   "where": [
    "Cyril, *Cat.* 3.1 — “let the souls that are to be united to the spiritual Bridegroom make themselves ready.”",
    "Cyril, *Cat.* 3.2 — “Begin at once to wash your robes in repentance, that when called to the bride-chamber ye may be found clean.”",
-   "Gregory, *Bapt. Chr.* (closing) — “the Adorner of the bride is Christ”",
-   "Augustine, *DDC* 3.31.44 — “\"He hath decked me as a bridegroom with ornaments, and adorned me as a bride with jewels\"”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶12 — “the Adorner of the bride is Christ”",
+   "Augustine, *DDC* 3.31.44 — “the head and the body--that is, Christ and His Church--are sometimes indicated to us under one person”",
    "Augustine, *DDC* 2.6.7 — “the Church, when it is being praised under the figure of a beautiful woman”",
-   "Augustine, *DDC* 3.32.45 — “\"I am black, but comely, as the tents of Kedar, as the curtains of Solomon.\"”"
+   "Augustine, *DDC* 3.32.45 — “The Church declares itself to be at present both; and this because the good fish and the bad are for the time mixed up in the one net.”"
   ],
   "confidence": ""
  },
@@ -5338,12 +5338,12 @@
   "label": "The Bridegroom",
   "kind": "role",
   "def": "Christ as the one who invites, washes and adorns the bride, and who also separates the unworthy guests.",
-  "texts": "Matt 22:1-14; 25:1-13; John 3:29; Eph 5:25-32.",
+  "texts": "Matt 22:1-14; Matt 25:1-13; John 3:29; Eph 5:25-32.",
   "christ": "It is Christ.",
   "where": [
    "Cyril, *Cat.* 3.2 — “For the Bridegroom invites all without distinction, because His grace is bounteous”",
    "Cyril, *Cat.* 3.2 — “but the same Bridegroom afterwards separates those who have come in to the figurative marriage.”",
-   "Gregory, *Bapt. Chr.* (closing) — “the Adorner of the bride is Christ”",
+   "Gregory of Nyssa, *Bapt. Chr.* ¶12 — “the Adorner of the bride is Christ”",
    "Ambrose, *De Myst.* 7.37 — “But Christ, beholding His Church, for whom He Himself, as you find”"
   ],
   "confidence": ""
@@ -5371,7 +5371,7 @@
   "label": "Little fishes born in water",
   "kind": "role",
   "def": "Believers as fish, born in water after the pattern of Christ the ICHTHUS, who live only by staying in the water.",
-  "texts": "Matt 4:19; 13:47-50; John 21:11.",
+  "texts": "Matt 4:19; Matt 13:47-50; John 21:11.",
   "christ": "Christ is the ICHTHUS (Tertullian).",
   "where": [
    "Tertullian, *Bapt.* 1 — “we, little fishes, after the example of our IChThUS Jesus Christ, are born in water”",
@@ -5384,7 +5384,7 @@
   "src": "04:water-chain",
   "tradition": "fathers",
   "work": "Church Fathers in the Patrista corpus (ANF/NPNF translations)",
-  "label": "The water series as one shape",
+  "label": "The waters that prefigure baptism",
   "kind": "sequence",
   "def": "The Fathers' master series of waters: creation → flood → Red Sea → Marah/rock → Jordan → Christ's baptism → font. Each one is a figure of baptism.",
   "texts": "Gen 1:2; Gen 7–8; Exod 14–17; Josh 3–4; 2 Kgs 5; Matt 3; John 3:5; 1 Cor 10:1-4; 1 Pet 3:20-21.",
@@ -5394,8 +5394,8 @@
    "Tertullian, *Bapt.* 9 — “Never is Christ without water”",
    "Cyril, *Cat.* 3.5 — “The water was the beginning of the world, and Jordan the beginning of the Gospel tidings”",
    "Ambrose, *De Sacr.* 2.3.9 — “thou hast a third kind when the fathers were baptized in the Red Sea; thou hast a fourth kind in the pool”",
-   "Gregory, *Bapt. Chr.*, l.243 — “the ancient Scripture everywhere prefigured the likeness of our regeneration”",
-   "Ambrose, *De Myst.* 3.10 — “Take another testimony.”"
+   "Gregory of Nyssa, *Bapt. Chr.* ¶7 — “the ancient Scripture everywhere prefigured the likeness of our regeneration”",
+   "Ambrose, *De Myst.* 3.9 — “Consider, however, how ancient is the mystery prefigured even in the origin of the world itself.”"
   ],
   "confidence": ""
  },

@@ -1,10 +1,19 @@
 /**
- * Real manuscripts of works in the library, shown from the holding library's IIIF image server.
- * Only pages whose licence allows any use, including commercial, are listed (one exception, chosen on purpose:
- * the British Library's Codex Sinaiticus, "public domain in most countries other than the UK"), and only from servers
- * that send CORS headers (so WebGL may draw the image). Each entry was checked in October 2026:
- * the catalogue or manifest names the work, the page was looked at, and the info.json and a JPEG
- * both answered with Access-Control-Allow-Origin.
+ * Real manuscripts of works in the library, shown from the holding library's IIIF image server, and only from servers
+ * that send CORS headers (so WebGL may draw the image). Every page shown is a public-domain work; what each `rights`
+ * field records is the holding library's own statement, which is not always a licence:
+ *  - most pages carry the Public Domain Mark 1.0 (Munich, Bamberg, Basel, Leiden, Berlin, Heidelberg, Mainz, Karlsruhe,
+ *    LMU Munich, the Library Company of Philadelphia, and the OPenn images from Bryn Mawr and the Free Library of
+ *    Philadelphia) or CC0 1.0 (Schaffhausen, via e-codices), which allow any use, including commercial;
+ *  - Princeton gives rightsstatements.org "No Known Copyright" (NKC) and Penn "No Copyright – United States" (NoC-US):
+ *    statements of copyright status, not licences, and NoC-US speaks for the United States only;
+ *  - Yale, Harvard and the Newberry rely on their open-access policies for images of public-domain works (Yale's IIIF
+ *    manifests carry only a general copyright caution);
+ *  - the British Library's Codex Sinaiticus is "public domain in most countries other than the UK", an exception
+ *    chosen on purpose, and Codex Alexandrinus is shown from the British Museum's photographic facsimile of 1909.
+ * Each entry was checked in October 2026 (the catalogue or manifest names the work, the page was looked at, and the
+ * info.json and a JPEG both answered with Access-Control-Allow-Origin). In November 2026 the rights, and the dates and
+ * places where a manifest or catalogue records them, were checked again against the holding libraries' own records.
  */
 
 export type ManuscriptPage = {
@@ -40,7 +49,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://collections.library.yale.edu/iiif/2/11068104",
     "viewer": "https://collections.library.yale.edu/catalog/11007504",
     "rights": {
-      "label": "Public domain, Yale open access",
+      "label": "Public-domain work; Yale's open-access policy allows any use of its images of such works (the IIIF manifest itself carries only a general copyright caution)",
       "href": "https://guides.library.yale.edu/openaccess"
     }
   },
@@ -894,7 +903,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "library": "Stadtbibliothek Schaffhausen, Ministerialbibliothek (via e-codices)",
     "shelfmark": "Min. 29",
     "date": "1080-1096",
-    "place": "",
+    "place": "Schaffhausen, Allerheiligen",
     "language": "Latin",
     "shows": "Folio 29r: a page of On the Gift of Perseverance, copied here as the second book after On the Predestination of the Saints; the opening of this work is lost in this manuscript (two bifolia are missing).",
     "imageService": "https://media.e-codices.ch/iip/sbs/sbs-min0029/sbs-min0029_029r.jp2",
@@ -945,7 +954,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://collections.library.yale.edu/iiif/2/1015991",
     "viewer": "https://collections.library.yale.edu/catalog/2003601",
     "rights": {
-      "label": "Public domain, Yale open access",
+      "label": "Public-domain work; Yale's open-access policy allows any use of its images of such works (the IIIF manifest itself carries only a general copyright caution)",
       "href": "https://guides.library.yale.edu/openaccess"
     }
   },
@@ -986,7 +995,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "library": "Stadtbibliothek Schaffhausen, Ministerialbibliothek (via e-codices)",
     "shelfmark": "Min. 29",
     "date": "1080-1096",
-    "place": "",
+    "place": "Schaffhausen, Allerheiligen",
     "language": "Latin",
     "shows": "Folio 3v: the opening of the text under a large red pen-drawn scroll initial D, \"Dixisse quidem apostolum...\"; the facing page 3r carries the display title \"Incipit liber I Aurelii Augustini de predestinatione sanctorum\".",
     "imageService": "https://media.e-codices.ch/iip/sbs/sbs-min0029/sbs-min0029_003v.jp2",
@@ -1079,14 +1088,14 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "workId": "correction-of-the-donatists",
     "library": "Kislak Center for Special Collections, University of Pennsylvania Libraries",
     "shelfmark": "Oversize Ms. Codex 708",
-    "date": "12th century",
-    "place": "",
+    "date": "mid-12th century",
+    "place": "Pontigny, France",
     "language": "Latin",
     "shows": "Folio 43r: Augustine's retractation note in red, then the opening of the book under a red initial: \"Laudo et gratulor et ammiror, fili dilectissime Bonifaci\" (I praise and congratulate and admire you, my dearest son Boniface).",
     "imageService": "https://iiif-images.library.upenn.edu/iiif/2/747095f4-e491-4ee3-86df-18764757a13a",
-    "viewer": "https://colenda.library.upenn.edu/catalog/81431-p3m32nb54",
+    "viewer": "https://digitalcollections.library.upenn.edu/items/d4880cc7-401e-468b-9e32-6372c4bd3129",
     "rights": {
-      "label": "No Copyright - United States (NoC-US)",
+      "label": "No Copyright – United States (rightsstatements.org NoC-US)",
       "href": "http://rightsstatements.org/vocab/NoC-US/1.0/"
     }
   },
@@ -1151,21 +1160,6 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
       "href": "https://creativecommons.org/publicdomain/mark/1.0/"
     }
   },
-  "canonical-letters-to-amphilochius-letters-188-199-217": {
-    "workId": "canonical-letters-to-amphilochius-letters-188-199-217",
-    "library": "Bayerische Staatsbibliothek, Munich",
-    "shelfmark": "Cod.graec. 45",
-    "date": "about 1550",
-    "place": "",
-    "language": "Greek",
-    "shows": "Folio 296v, where Basil's first canonical letter to Amphilochius (Letter 188) begins under its title, in a canon-law collection with Balsamon's commentary (black-and-white microfilm scan).",
-    "imageService": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00130810_00592",
-    "viewer": "https://www.digitale-sammlungen.de/en/view/bsb00130810?page=592",
-    "rights": {
-      "label": "Public Domain Mark 1.0",
-      "href": "https://creativecommons.org/publicdomain/mark/1.0/"
-    }
-  },
   "homilies-on-the-hexaemeron": {
     "workId": "homilies-on-the-hexaemeron",
     "library": "Bayerische Staatsbibliothek, Munich",
@@ -1176,21 +1170,6 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "shows": "Folio 1r: under a red and black headpiece, the red title of the first homily, on 'In the beginning God created the heaven and the earth', and its opening line.",
     "imageService": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00069340_00005",
     "viewer": "https://www.digitale-sammlungen.de/en/view/bsb00069340?page=5",
-    "rights": {
-      "label": "Public Domain Mark 1.0",
-      "href": "https://creativecommons.org/publicdomain/mark/1.0/"
-    }
-  },
-  "letter-to-bishop-optimus-letter-260": {
-    "workId": "letter-to-bishop-optimus-letter-260",
-    "library": "Bayerische Staatsbibliothek, Munich",
-    "shelfmark": "Cod.graec. 52",
-    "date": "about 1550",
-    "place": "",
-    "language": "Greek",
-    "shows": "Folio 222v: at the top, the heading 'To Optimus, bishop' and the opening 'Kai allōs hēdeōs horōn tous agathous paidas...' (black-and-white microfilm scan).",
-    "imageService": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00130815_00452",
-    "viewer": "https://www.digitale-sammlungen.de/en/view/bsb00130815?page=452",
     "rights": {
       "label": "Public Domain Mark 1.0",
       "href": "https://creativecommons.org/publicdomain/mark/1.0/"
@@ -1380,7 +1359,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "workId": "homily-against-publishing-the-errors-of-the-brethren",
     "library": "Bayerische Staatsbibliothek, Munich",
     "shelfmark": "BSB Cod.graec. 352",
-    "date": "11th century",
+    "date": "1001",
     "place": "",
     "language": "Greek",
     "shows": "Folio 44v: in the right column, the title “homily on not publishing the sins of the brethren, nor cursing one's enemies” and the opening of the homily under a large initial M.",
@@ -1440,7 +1419,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "workId": "letter-to-a-young-widow",
     "library": "Bayerische Staatsbibliothek, Munich",
     "shelfmark": "BSB Cod.graec. 352",
-    "date": "11th century",
+    "date": "1001",
     "place": "",
     "language": "Greek",
     "shows": "Folio 71r: under a band headpiece, the title “Of the same, discourse to a young widow” and the opening of the letter.",
@@ -1455,7 +1434,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "workId": "letters-to-olympias",
     "library": "Bayerische Staatsbibliothek, Munich",
     "shelfmark": "BSB Cod.graec. 416",
-    "date": "end of the 12th century",
+    "date": "13th/14th century",
     "place": "",
     "language": "Greek",
     "shows": "Folio 1r: under a pen headpiece, the first letter, addressed “to my lady the most reverend and God-loving deaconess Olympias, John greets you in the Lord”, beginning “Φέρε δή…” (“Come now…”).",
@@ -1470,7 +1449,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "workId": "on-the-priesthood",
     "library": "Bayerische Staatsbibliothek, Munich",
     "shelfmark": "BSB Cod.graec. 354",
-    "date": "11th century",
+    "date": "10th/11th century",
     "place": "",
     "language": "Greek",
     "shows": "Folio 140r: the start of On the Priesthood, marked in the top margin “beginning of the discourses on the priesthood, discourse one”, with the title in the left column after the end of the previous text.",
@@ -1507,7 +1486,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://iiif-images.library.upenn.edu/iiif/2/00efc4d3-9fbd-4905-b523-b07f85dc09cb",
     "viewer": "https://digitalcollections.library.upenn.edu/items/15fbf5c3-7d23-49af-86d4-1035a0c90f50",
     "rights": {
-      "label": "No Copyright - United States",
+      "label": "No Copyright – United States (rightsstatements.org NoC-US)",
       "href": "http://rightsstatements.org/vocab/NoC-US/1.0/"
     }
   },
@@ -1567,7 +1546,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://iiif-cloud.princeton.edu/iiif/2/25%2Ff1%2Fab%2F25f1abc4291a4f2aa9c34127005598df%2Fintermediate_file",
     "viewer": "https://catalog.princeton.edu/catalog/9935119813506421",
     "rights": {
-      "label": "No known copyright",
+      "label": "No Known Copyright (rightsstatements.org NKC)",
       "href": "http://rightsstatements.org/vocab/NKC/1.0/"
     }
   },
@@ -1582,7 +1561,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://iiif-cloud.princeton.edu/iiif/2/95%2Fc3%2F1e%2F95c31e8763d041b9b28986abac6517f1%2Fintermediate_file",
     "viewer": "https://catalog.princeton.edu/catalog/9935119813506421",
     "rights": {
-      "label": "No known copyright",
+      "label": "No Known Copyright (rightsstatements.org NKC)",
       "href": "http://rightsstatements.org/vocab/NKC/1.0/"
     }
   },
@@ -1597,7 +1576,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://iiif-cloud.princeton.edu/iiif/2/c4%2F0b%2Fea%2Fc40bea4d5710460db904f855ff57f066%2Fintermediate_file",
     "viewer": "https://catalog.princeton.edu/catalog/9935119813506421",
     "rights": {
-      "label": "No known copyright",
+      "label": "No Known Copyright (rightsstatements.org NKC)",
       "href": "http://rightsstatements.org/vocab/NKC/1.0/"
     }
   },
@@ -1612,7 +1591,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://iiif-cloud.princeton.edu/iiif/2/b6%2F22%2F99%2Fb62299be9552485fb48eec10fb8926db%2Fintermediate_file",
     "viewer": "https://catalog.princeton.edu/catalog/9935119813506421",
     "rights": {
-      "label": "No known copyright",
+      "label": "No Known Copyright (rightsstatements.org NKC)",
       "href": "http://rightsstatements.org/vocab/NKC/1.0/"
     }
   },
@@ -1657,7 +1636,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://iiif-cloud.princeton.edu/iiif/2/c6%2Fd4%2F6d%2Fc6d46d9d4dac4f789cdc115be6814287%2Fintermediate_file",
     "viewer": "https://catalog.princeton.edu/catalog/9935119813506421",
     "rights": {
-      "label": "No known copyright",
+      "label": "No Known Copyright (rightsstatements.org NKC)",
       "href": "http://rightsstatements.org/vocab/NKC/1.0/"
     }
   },
@@ -1927,7 +1906,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://collections.library.yale.edu/iiif/2/11395478",
     "viewer": "https://collections.library.yale.edu/catalog/10269809",
     "rights": {
-      "label": "Public domain, Yale open access (manifest rights field reads: 'The use of this image may be subject to the copyright law of the United States ... The person using the image is liable for any infringement.')",
+      "label": "Public-domain work; Yale's open-access policy allows any use of its images of such works (the IIIF manifest itself carries only a general copyright caution)",
       "href": "https://guides.library.yale.edu/openaccess"
     }
   },
@@ -1957,7 +1936,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://collections.newberry.org/IIIF3/Image/2KXJ8Z8P4FNID",
     "viewer": "https://collections.newberry.org/asset-management/2KXJ8Z8JMOPTS",
     "rights": {
-      "label": "No Copyright - United States; Newberry open access (any lawful purpose, commercial or non-commercial)",
+      "label": "No Copyright – United States; Newberry open access (any lawful purpose, commercial or non-commercial)",
       "href": "https://collections.newberry.org/asset-management/2KXJ8Z8JMOPTS"
     }
   },
@@ -1972,7 +1951,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://collections.newberry.org/IIIF3/Image/2KXJ8Z8P4FM25",
     "viewer": "https://collections.newberry.org/asset-management/2KXJ8Z8JM6JHG",
     "rights": {
-      "label": "Free for any lawful use (Newberry open access)",
+      "label": "No Copyright – United States; Newberry open access (any lawful purpose, commercial or non-commercial)",
       "href": "https://collections.newberry.org/asset-management/2KXJ8Z8JM6JHG"
     }
   },
@@ -2062,7 +2041,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://iiif-cloud.princeton.edu/iiif/2/4a%2Fa7%2F1b%2F4aa71b3879fc48b88e3259ed99e8f33f%2Fintermediate_file",
     "viewer": "https://catalog.princeton.edu/catalog/99108928183506421",
     "rights": {
-      "label": "No known copyright",
+      "label": "No Known Copyright (rightsstatements.org NKC)",
       "href": "http://rightsstatements.org/vocab/NKC/1.0/"
     }
   },
@@ -2368,21 +2347,6 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://iiif.archive.org/image/iiif/3/codexalexandrinu01unse%2Fcodexalexandrinu01unse_jp2.zip%2Fcodexalexandrinu01unse_jp2%2Fcodexalexandrinu01unse_0281.jp2",
     "viewer": "https://archive.org/details/codexalexandrinu01unse/page/n280/mode/1up"
   },
-  "homily": {
-    "workId": "homily",
-    "library": "British Library, London (photograph from the British Museum's facsimile, 1909)",
-    "date": "5th century",
-    "place": "Eastern Mediterranean",
-    "language": "Greek",
-    "rights": {
-      "label": "Public domain (photographic facsimile published by the British Museum in 1909)",
-      "href": "https://archive.org/details/codexalexandrinu01unse"
-    },
-    "shelfmark": "Royal MS 1 D VIII (Codex Alexandrinus), f. 143r",
-    "shows": "Folio 143r of Codex Alexandrinus, the only early copy of this sermon: the first column ends First Clement under a decorated colophon, and the second column begins the Homily, “Brethren, it is fitting that you should think of Jesus Christ as of God”. The British Library has not yet put this book back online, so this is the 1909 photographic facsimile.",
-    "imageService": "https://iiif.archive.org/image/iiif/3/codexalexandrinu01unse%2Fcodexalexandrinu01unse_jp2.zip%2Fcodexalexandrinu01unse_jp2%2Fcodexalexandrinu01unse_0299.jp2",
-    "viewer": "https://archive.org/details/codexalexandrinu01unse/page/n298/mode/1up"
-  },
   "clement-rome-the-homily": {
     "workId": "clement-rome-the-homily",
     "library": "British Library, London (photograph from the British Museum's facsimile, 1909)",
@@ -2560,7 +2524,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "viewer": "https://digital.blb-karlsruhe.de/blbhs/content/titleinfo/20806",
     "rights": {
       "label": "Public Domain Mark 1.0",
-      "href": "https://digital.blb-karlsruhe.de/blbhs/content/titleinfo/20806"
+      "href": "https://creativecommons.org/publicdomain/mark/1.0/"
     },
     "region": "pct:0,0,100,94.4"
   },
@@ -2665,7 +2629,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://iiif-cloud.princeton.edu/iiif/2/34%2F33%2F59%2F3433597230154901a5e7c9d7e9ce88f7%2Fintermediate_file",
     "viewer": "https://catalog.princeton.edu/catalog/99108946763506421",
     "rights": {
-      "label": "No known copyright",
+      "label": "No Known Copyright (rightsstatements.org NKC)",
       "href": "http://rightsstatements.org/vocab/NKC/1.0/"
     }
   },
@@ -2832,7 +2796,7 @@ export const MANUSCRIPTS: Record<string, ManuscriptPage> = {
     "imageService": "https://collections.library.yale.edu/iiif/2/1015957",
     "viewer": "https://collections.library.yale.edu/catalog/2003585",
     "rights": {
-      "label": "Public domain, Yale open access (manifest rights field reads: 'The use of this image may be subject to the copyright law of the United States ... The person using the image is liable for any infringement.')",
+      "label": "Public-domain work; Yale's open-access policy allows any use of its images of such works (the IIIF manifest itself carries only a general copyright caution)",
       "href": "https://guides.library.yale.edu/openaccess"
     }
   },

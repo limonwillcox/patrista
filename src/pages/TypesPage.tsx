@@ -290,6 +290,10 @@ function TypeDetail({ t, meta, onClose }: { t: TypeEntry; meta: Meta; onClose: (
       {t.where.length ? (
         <>
           <h3>In the Fathers&apos; words</h3>
+          <p className="ty-quote-ref">
+            &ldquo;Ps.-&rdquo; marks a work once credited to that Father but not now held to be his; &ldquo;attributed&rdquo; marks
+            a fragment whose author is uncertain. &para; is the paragraph in the reader.
+          </p>
           <ul className="ty-quotes">
             {t.where.map((w, i) => {
               const { ref, quote } = splitWhere(w);

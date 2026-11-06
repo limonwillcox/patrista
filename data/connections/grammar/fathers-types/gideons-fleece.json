@@ -6,33 +6,33 @@
   "kind": "object",
   "def": "A woollen fleece that Gideon laid on the threshing-floor: first the dew fell on the fleece alone while the ground stayed dry, then on the ground alone while the fleece stayed dry.",
   "texts": "Judg 6:36-40; Ps 72:6; Isa 5:6; Matt 15:24; Rom 15:8-12.",
-  "christ": "The dew is Christ and the grace of His Spirit, given first to Israel alone and then poured over all the nations while Israel is left dry; Cyril reads the rain falling silently into the fleece as the Word coming down into flesh: \"rain, because of His heavenly nature, and into a fleece, because of His humanity\" (Cyril, *Cat.* 12.9).",
+  "christ": "Irenaeus, Ambrose and Augustine read the dew as Christ and the grace of His Spirit, given first to Israel alone and then poured over all the nations while Israel is left dry; Cyril reads the rain falling silently into the fleece as the Word coming down into flesh: \"rain, because of His heavenly nature, and into a fleece, because of His humanity\" (Cyril, *Cat.* 12.9).",
   "where": [
     "Irenaeus, *AH* 3.17.3 — “prophesied that there would be dryness upon the fleece of wool (a type of the people), on which alone at first there had been dew”",
     "Ambrose, *De Spir. S.* 1 prol. 7 — “the dew of moistening faith dried up in the breasts of the Jews, and that divine Fountain turned away its course to the hearts of the Gentiles.”",
     "Cyril, *Cat.* 12.9 — “rain, because of His heavenly nature, and into a fleece, because of His humanity.”",
-    "Augustine, *En. Ps.* 72.9 — “The same Christ therefore Himself came down like rain upon a fleece, when yet the floor was dry”",
+    "Augustine, *En. Ps.* 72 (Lat. 71).9 — “The same Christ therefore Himself came down like rain upon a fleece, when yet the floor was dry”",
     "Augustine, *C. Faust.* 12.32 — “the Hebrew nation at first possessing alone in its typical institution Christ the mystery of God, while the whole world was in ignorance?”"
   ],
   "links": [
     {
-      "label": "Irenaeus, Against Heresies 3.17.3",
+      "label": "Irenaeus, AH 3.17.3",
       "href": "/fathers/irenaeus/against-heresies/chapter-83/"
     },
     {
-      "label": "Ambrose, On the Holy Spirit 1 prol. 7",
+      "label": "Ambrose, De Spir. S. 1 prol. 7",
       "href": "/fathers/ambrose/on-the-holy-spirit/chapter-1/"
     },
     {
-      "label": "Cyril of Jerusalem, Catechetical Lectures 12.9",
+      "label": "Cyril, Cat. 12.9",
       "href": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-9/"
     },
     {
-      "label": "Augustine, Expositions on the Psalms 72.9",
-      "href": "/fathers/augustine/expositions-on-the-psalms/chapter-37/"
+      "label": "Augustine, En. Ps. 72 (Lat. 71).9",
+      "href": "/fathers/augustine/expositions-on-the-psalms/chapter-72/"
     },
     {
-      "label": "Augustine, Reply to Faustus 12.32",
+      "label": "Augustine, C. Faust. 12.32",
       "href": "/fathers/augustine/reply-to-faustus-the-manichaean/chapter-12/"
     }
   ],

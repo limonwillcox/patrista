@@ -17,8 +17,8 @@ export const journey: Journey = {
       lat: 47.23,
       lon: 16.62,
       label: "below",
-      when: "About 316",
-      text: "Martin is born at Sabaria in Pannonia, traditionally in about 316. His parents are heathens; his father is a soldier who rises to be a military tribune.",
+      when: "316 or 336",
+      text: "Martin is born at Sabaria in Pannonia, in 316 or in 336: the year is disputed, as Sulpicius's own figures do not agree. His parents are heathens; his father is a soldier who rises to be a military tribune.",
       sources: [{ label: "Life 2", href: life(2) }]
     },
     {
@@ -138,7 +138,7 @@ export const journey: Journey = {
       label: "left",
       when: "397",
       text: "Old and knowing his end is near, he goes to make peace among the quarrelling clergy of Candes, and dies there. Sulpicius tells this in a letter to Bassula, not in the Life; the date is traditional.",
-      // Letter 3 (to Bassula) is in the same source file but is not yet split out in the reader.
+      // Letter 3 (to Bassula) is its own reader chapter, the third of the Letters.
       sources: [{ label: "Sulpicius, Letter 3 to Bassula", href: "/fathers/sulpicius_severus/letters-of-sulpicius-severus/chapter-3/" }]
     }
   ],

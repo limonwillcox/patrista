@@ -1,16 +1,14 @@
 # Patrista
 
-A searchable public-domain Church Fathers library, laid out like [Bible Gateway](https://www.biblegateway.com/): search bar, writings list, a reading column, and page options.
+A searchable library of the public-domain Church Fathers at **https://patrista.com**: the Fathers by century, their works one chapter to a page, full-text search, the Bible with the Fathers' citations, a church history timeline, and the Types atlas.
 
-The live work is Augustine’s *Confessions*: E. B. Pusey’s English (Project Gutenberg eBook #3296) and the Latin *Confessiones*, both read from files under `Fathers/`. This is not affiliated with Bible Gateway or HarperCollins Christian Publishing.
+English texts come from the Schaff editions (Ante-Nicene Fathers; Nicene and Post-Nicene Fathers, Series I and II) held under `Fathers/English/`. Augustine's *Confessions* also has E. B. Pusey's English and the Latin *Confessiones*.
 
 ## Live site
 
-Public repo: [limonwillcox/piblia](https://github.com/limonwillcox/piblia) (repo name unchanged; product domain is **patrista.com**). GitHub Pages deploys from `main` via `pnpm build` → `dist/`.
+Public repo: [limonwillcox/patrista](https://github.com/limonwillcox/patrista). GitHub Pages deploys from `main` via `pnpm build` → `dist/`.
 
-Until DNS is pointed, the site is at **https://limonwillcox.github.io/piblia/**.
-
-Phone visitors are sent to **`get-app.html`** (App Store mock-up). The old web phone shell is archived in **`archive/ios-web/`**. Native SwiftUI app: **`PibliaIOS/`** — plan and goals in `PibliaIOS/docs/PLAN.md`. Feature parking lot: **`docs/FEATURES.md`**.
+`get-app.html` now only redirects to `/`. The old web phone shell is archived in **`archive/ios-web/`**. Native SwiftUI app: **`PibliaIOS/`** — plan and goals in `PibliaIOS/docs/PLAN.md`. Feature parking lot: **`docs/FEATURES.md`**.
 
 Custom domain **patrista.com** is set in `CNAME`. At your registrar, use:
 

@@ -9,7 +9,7 @@ Replace the Passage of the Day home with a landing page that orients readers tow
 
 ## Layout
 
-- `/` is a full-bleed hero using `Council of Nicea.jpg` (slight zoom), dark overlay, 2 Peter 1:20–21 quote, and two CTAs.
+- `/` is a full-bleed hero using `assets/council-of-nicea.jpg` (slight zoom), dark overlay, 2 Peter 1:20–21 quote, and two CTAs.
 - **Church History** → `/church-history/`
 - **Church Writings** → `/church-fathers`
 - Below the fold: **Great places to start** with eras 33–150, 150–313, 313–500, 500–modern day and the listed works.

@@ -4,7 +4,7 @@ Prompt B is done and on `main`. Stop here for today. Next session starts at prom
 
 ## Where main is
 
-- Repo: `limonwillcox/patrista`. Local checkout: `C:\Users\sictrai_user03\Downloads\patrista`.
+- Repo: `limonwillcox/patrista`. Local checkout: `<local>/patrista`.
 - `origin/main` is `99b9d17` — `Merge PR #228: Add provenance fields and block ready texts that lack a source`.
 - That merge contains `9e4c4a3`, `b6e5232`, and `e3bd61b`.
 - PR: https://github.com/limonwillcox/patrista/pull/228 (merged).
@@ -56,7 +56,7 @@ The planned script is `scripts/clavis/import-fathers.mjs`. Read `data/clavis/sch
 - Do not commit these local files: `docs/pibliaios-audit.md`, `patrista-final-prompts.md`, `patrista-phone-team.md`, `patrista-web-team.md`, `HANDOFF.md`, `HANDOFF-2026-09-29.md`, or `patrista-phone-handoff.md`. This pickup note is the one that belongs on `main`.
 - Do not commit `.pnpm-store/` or a truncated `Fathers/` directory left behind by an old colon path.
 - Leave draft PR #227 (`cursor/pibliaios-audit-7f2a`, `051341d`) as it is.
-- `C:\Users\sictrai_user03\Downloads\patrista-cleanup-audit` is `cursor/cleanup-audit-c8d2` and its upstream is `origin/main`. It is behind `main`. Do not push it. A bare `git push` there would target `main`.
+- `<local>/patrista-cleanup-audit` is `cursor/cleanup-audit-c8d2` and its upstream is `origin/main`. It is behind `main`. Do not push it. A bare `git push` there would target `main`.
 - `.worktrees/monorepo-core` and `.worktrees/clavis-client` are also still at `e98706f`.
 
 ## How to test on this machine

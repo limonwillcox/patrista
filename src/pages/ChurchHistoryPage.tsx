@@ -129,7 +129,7 @@ export function ChurchHistoryPage() {
         <SceneDefs />
         <Theatre shots={ACT_ONE} />
       </div>
-      {/* Room past the Act so the stage can leave the viewport; intersecting this hands off to Timeline. */}
+      {/* Room past the Act so the stage can leave the viewport; intersecting this hands off to the Fathers page. */}
       <div className="ch-cinematic-exit" data-ch-exit aria-hidden="true" />
     </div>
   );

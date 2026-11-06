@@ -132,9 +132,9 @@ export function FixesPage() {
             .
           </p>
         ) : done.local ? (
-          <p>Saved locally for development (no GitHub token on this machine).</p>
+          <p>Saved. Thank you for the report.</p>
         ) : done.stored ? (
-          <p>Saved to the Fixes inbox. We will open a GitHub issue when the bot token is connected.</p>
+          <p>Saved. Thank you for the report.</p>
         ) : null}
         <p>
           <button

@@ -31,6 +31,8 @@ export type CodexHandle = {
   setLit: (t: number) => void;
   /** Compile every shader the book will use before it moves, so opening and landing never wait on one. */
   prewarm: () => Promise<void>;
+  /** True while the cover is opening or a leaf is turning. */
+  busy: () => boolean;
 };
 
 const PW = 1.0; // page width (scene units)
@@ -758,6 +760,40 @@ export async function buildCodex(
   setPage(pastedown, -1);
   coverPivot.rotation.z = coverAngle;
 
+  /**
+   * Painting a page and sending it to the GPU takes a long frame on a phone. Done when a turn starts, it
+   * made each turn stutter. So while the book lies still, paint the pages the next turn either way will
+   * show, one page per idle moment.
+   */
+  // flip: the back of a turning leaf, which shows its page mirrored.
+  let ahead: { i: number; flip: boolean }[] = [];
+  let aheadTimer: number | null = null;
+  const hasIdle = typeof window.requestIdleCallback === "function";
+  const idle = (fn: () => void) => (hasIdle ? window.requestIdleCallback(fn, { timeout: 600 }) : window.setTimeout(fn, 120));
+  function paintAhead() {
+    aheadTimer = null;
+    if (turning || coverHeld || coverAngle < Math.PI) return; // the next settle starts this again
+    const job = ahead.shift();
+    if (!job) return;
+    stage.renderer.initTexture(job.flip ? flippedTexture(job.i) : pageTexture(job.i));
+    if (ahead.length) aheadTimer = idle(paintAhead);
+  }
+  /** The pages startTurn() will set for a turn forward or back from spread s. */
+  function prepareAround(s: number) {
+    ahead = [];
+    const next = s + 1;
+    const prev = s - 1;
+    if (next < spreads) ahead.push({ i: 2 * next, flip: false }, { i: 2 * next - 1, flip: true });
+    if (prev >= 0)
+      ahead.push(
+        { i: 2 * prev, flip: false },
+        { i: prev === 0 ? -1 : 2 * prev - 1, flip: false },
+        { i: prev === 0 ? -1 : 2 * s - 1, flip: true }
+      );
+    if (aheadTimer === null && ahead.length) aheadTimer = idle(paintAhead);
+  }
+  let settled = false;
+
   const stopFrame = stage.onFrame((dt) => {
     let moving = false;
     let m: boolean;
@@ -791,8 +827,13 @@ export async function buildCodex(
         leafFront.visible = leafBack.visible = false;
         placeStacks(spread);
         showSpread(spread);
+        prepareAround(spread);
       }
       moving = true;
+    }
+    if (!settled && coverAngle >= Math.PI && !turning) {
+      settled = true;
+      prepareAround(spread);
     }
     [tiltX, m] = approach(tiltX, aimX, 4, dt);
     moving ||= m;
@@ -866,7 +907,13 @@ export async function buildCodex(
         key.castShadow = casting;
       }
     },
+    busy: () => (!coverHeld && (flapOpen < 1 || coverAngle < Math.PI)) || turning !== null,
     dispose() {
+      if (aheadTimer !== null) {
+        if (hasIdle) window.cancelIdleCallback(aheadTimer);
+        else window.clearTimeout(aheadTimer);
+      }
+      ahead = [];
       stopFrame();
       stopFit();
       stopBase();

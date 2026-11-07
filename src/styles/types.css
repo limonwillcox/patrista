@@ -57,30 +57,38 @@ html[data-theme="night"] .ty-kinds button[aria-pressed="true"] span { color: #55
 .ty-book:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
 .ty-search:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
 
-/* Cards and the chosen type */
-.ty-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-items: start; }
-.ty-body.has-chosen { grid-template-columns: minmax(0, 1fr) minmax(0, 420px); }
-.ty-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+/* Cards and the chosen type. The chosen type opens in the list across its full width. "dense" lets the
+   cards after it fill the rest of its row, so the opened type sits just below the row it was picked in. */
+.ty-list {
+  list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-auto-flow: row dense; gap: 10px;
+}
+.ty-open { grid-column: 1 / -1; scroll-margin-top: calc(var(--header, 70px) + 12px); }
 .ty-card {
   display: flex; flex-direction: column; gap: 5px; width: 100%; height: 100%; text-align: left; cursor: pointer;
   padding: 14px 15px 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); color: var(--text);
   font: inherit; transition: border-color 0.15s, box-shadow 0.15s;
 }
 .ty-card:hover, .ty-card.is-hot { border-color: var(--accent); }
-.ty-card.is-on { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent), var(--ring); }
 .ty-card:focus-visible { outline: none; box-shadow: var(--ring); }
 .ty-card-kind { font: 700 10px var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
 .ty-card-label { font: 600 17px/1.25 var(--serif); }
 .ty-card-def { font: 14px/1.45 var(--sans); color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .ty-card-span { margin-top: auto; padding-top: 4px; font: 600 12px var(--sans); color: var(--muted); }
 
+/* Two columns on a wide screen: what the type is and its passages, then the Fathers' words. */
 .ty-detail {
-  position: sticky; top: calc(var(--header, 70px) + 14px); max-height: calc(100vh - var(--header, 70px) - 28px); overflow: auto;
-  padding: 20px 22px 22px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--bg);
-  box-shadow: 0 10px 30px rgba(40, 30, 20, 0.08);
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 36px; align-items: start;
+  padding: 22px 26px 24px; border: 1px solid var(--accent); border-radius: var(--radius-lg); background: var(--bg);
+  box-shadow: inset 3px 0 0 var(--accent), 0 10px 30px rgba(40, 30, 20, 0.08);
 }
+.ty-detail-main, .ty-detail-words { min-width: 0; }
+.ty-detail-words { padding-right: 30px; }
+/* No quotations: one column, kept to a readable width. */
+.ty-detail-main:last-child { grid-column: 1 / -1; max-width: 680px; }
+.ty-detail-words > h3:first-child { margin-top: 4px; }
 .ty-close {
-  position: sticky; top: 0; float: right; width: 30px; height: 30px; margin: -6px -8px 0 8px; border-radius: 999px;
+  position: absolute; top: 12px; right: 12px; z-index: 1; width: 32px; height: 32px; border-radius: 999px;
   border: 1px solid var(--border); background: var(--bg); color: var(--muted); font-size: 18px; line-height: 1; cursor: pointer;
 }
 .ty-close:hover { color: var(--accent); border-color: var(--accent); }
@@ -114,9 +122,10 @@ html[data-theme="night"] .ty-kinds button[aria-pressed="true"] span { color: #55
 .ty-father:hover { color: var(--accent); text-decoration-color: currentColor; }
 
 @media (max-width: 900px) {
-  .ty-body.has-chosen { grid-template-columns: minmax(0, 1fr); }
-  /* On a phone the chosen type opens above the list, where the reader is looking. */
-  .ty-detail { position: static; max-height: none; order: -1; }
+  .ty-detail { grid-template-columns: minmax(0, 1fr); padding: 18px 16px 20px; }
+  .ty-detail-main { padding-right: 36px; }
+  .ty-detail-words { padding-right: 0; margin-top: 8px; }
+  .ty-detail-words > h3:first-child { margin-top: 20px; }
   .ty-find { flex-basis: 100%; }
   .ty-book { max-width: 46%; }
   .ty-strip { padding: 6px 4px 0; }

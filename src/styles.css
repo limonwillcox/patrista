@@ -4853,6 +4853,8 @@ html[data-theme="night"] .fx-century-mark { color: #e07a55; }
   .fathers-neighbours { grid-template-columns: 1fr; }
   .fathers-neighbour--later { text-align: left; }
   .bv { padding: 0; }
+  /* The card fills the screen here, so the blur behind it is never seen; it only costs frames. */
+  .bv-backdrop { backdrop-filter: none; }
   .bv-card { max-height: 100dvh; height: 100dvh; border-radius: 0; padding: 56px 16px 24px; gap: 20px; }
   .bv-book { --w: 150px; --h: 222px; }
   .bv-page { padding: 16px 12px 10px; }
@@ -5345,6 +5347,8 @@ html[data-theme="night"] .bookcase-shelf .lib-plank { background: linear-gradien
 /* The 3D layer that carries a book off the shelf into the viewer: above the viewer, below the
    manuscript viewer, never in the way of the pointer. */
 .shelf-3d { position: fixed; inset: 0; z-index: 85; pointer-events: none; }
+/* Landed: the layer sits inside the viewer's stage box and scrolls with the card (shelfFlight.ts). */
+.shelf-3d.is-docked { position: absolute; z-index: auto; }
 /* While the 3D model stands in its place, the flat spine is see-through but still under the pointer. */
 /* The 3D layer marks the box itself (shelfFlight.ts), so the box's own class is what hides it. */
 .lib-book.is-carried .lib-book-box, .lib-book-box.is-carried { opacity: 0; transition: none; }

@@ -16,6 +16,8 @@ export type Stage = {
   invalidate: () => void;
   onFrame: (fn: FrameFn) => () => void;
   onResize: (fn: (w: number, h: number) => void) => () => void;
+  /** Measure the host now, not at the next ResizeObserver callback (after moving it, before drawing). */
+  measure: () => void;
   dispose: () => void;
 };
 
@@ -47,13 +49,16 @@ export function createStage(
   let last = 0;
   let w = 1;
   let h = 1;
+  let sized = false;
   let disposed = false;
 
   function tick(now: number) {
     raf = 0;
     if (disposed) return;
-    // Slow devices draw few frames; let each frame cover real time so animations do not crawl.
-    const dt = last ? Math.min(0.2, (now - last) / 1000) : 0;
+    // Slow devices draw few frames; let each frame cover real time so animations do not crawl. One long
+    // frame (the page doing other work) counts as at most 1/20 s, so a stall pauses the motion for a
+    // moment instead of making it jump ahead.
+    const dt = last ? Math.min(0.05, (now - last) / 1000) : 0;
     last = now;
     let more = false;
     frames.forEach((fn) => {
@@ -73,8 +78,13 @@ export function createStage(
 
   function resize() {
     const r = host.getBoundingClientRect();
-    w = Math.max(1, Math.round(r.width));
-    h = Math.max(1, Math.round(r.height));
+    const nw = Math.max(1, Math.round(r.width));
+    const nh = Math.max(1, Math.round(r.height));
+    // Setting a canvas's size clears it, even to the same size: skip it when nothing changed.
+    if (sized && nw === w && nh === h) return;
+    sized = true;
+    w = nw;
+    h = nh;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
@@ -102,6 +112,7 @@ export function createStage(
       fn(w, h);
       return () => resizers.delete(fn);
     },
+    measure: resize,
     dispose() {
       disposed = true;
       cancelAnimationFrame(raf);

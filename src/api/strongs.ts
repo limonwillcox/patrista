@@ -3,6 +3,7 @@
  * Each English word of a verse carries the Strong's number of the Hebrew or Greek word behind it.
  */
 
+import { PACKED, fetchPacked } from "./packed";
 /** [English word, code]: "G4073" / "H6697", "+" for a word the translators added, "" for none. */
 export type Tagged = [string, string];
 
@@ -39,8 +40,10 @@ export function fetchTaggedChapter(book: string, chapter: number): Promise<Recor
   const key = book + "/" + chapter;
   let p = chapters.get(key);
   if (!p) {
-    p = fetch("/strongs/kjv/" + encodeURIComponent(book) + "/" + chapter + ".json")
-      .then((r) => (r.ok ? r.json() : null))
+    const file = () =>
+      fetch("/strongs/kjv/" + encodeURIComponent(book) + "/" + chapter + ".json").then((r) => (r.ok ? r.json() : null));
+    // The static build packs chapters into groups (server/packChapters.ts).
+    p = (PACKED ? fetchPacked<{ v: Record<string, Tagged[]> }>("/strongs/kjv", book, chapter).then((hit) => hit ?? file()) : file())
       .then((j) => (j ? (j.v as Record<string, Tagged[]>) : null))
       .catch(() => null);
     chapters.set(key, p);

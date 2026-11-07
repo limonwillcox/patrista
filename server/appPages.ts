@@ -62,6 +62,15 @@ export const APP_PAGES: AppPage[] = [
     bodyHtml: '<div class="prose"><h1>Types of Christ in Scripture</h1></div>'
   },
   {
+    path: "/tabernacle",
+    title: "The tabernacle of Exodus, to scale — Patrista",
+    description:
+      "The tabernacle of Exodus 25–40 built to the measures the text gives, in cubits, with the priest's way in from the gate to the ark.",
+    bodyHtml: '<div class="prose"><h1>The tabernacle</h1></div>',
+    // Not in the sitemap until the site links to it.
+    noindex: true
+  },
+  {
     path: "/print",
     title: "Print or save as PDF — Patrista",
     description: "Print a work of the Church Fathers, or save it as a PDF.",

@@ -1,6 +1,6 @@
 # Patrista feature list
 
-Logged ideas. Not scheduled. Not built. Pick one later.
+Logged ideas. Not scheduled. Not built. Pick one later. Check each idea against the north star in `docs/VISION.md` first.
 
 Native app lives in `PibliaIOS/`. Numbered shipping goals stay in `PibliaIOS/docs/PLAN.md`. This file is the parking lot.
 

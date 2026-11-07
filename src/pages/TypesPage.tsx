@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { fetchBibleChapter } from "../api/client";
 import {
@@ -19,7 +19,8 @@ import "../styles/types.css";
 /*
  * The atlas of types: every type the Fathers draw from Scripture on one page. A strip runs from Genesis to
  * Revelation; each type is a chain of arcs joining its passages, first to last. Pick one to read what it is,
- * what it points to in Christ, every passage, and the Fathers' own words. Data: public/connections/types.json.
+ * what it points to in Christ, every passage, and the Fathers' own words. The chosen type opens in the list
+ * itself, across its full width, where it was picked. Data: public/connections/types.json.
  */
 
 const KINDS: { id: string; label: string }[] = [
@@ -85,8 +86,25 @@ export function TypesPage() {
     );
   }, [types, kind, query, book]);
   const chosen = types?.find((t) => slug(t.id) === chosenId) ?? null;
+  // A type opened from the URL or the strip may be one the filters hide: it still shows, first.
+  const listed = chosen && !shown.includes(chosen) ? [chosen, ...shown] : shown;
+
+  // Bring the opened type into view, and on closing put focus back on its card.
+  const openRef = useRef<HTMLLIElement>(null);
+  const closedRef = useRef<string | null>(null);
+  const loaded = Boolean(types);
+  useEffect(() => {
+    if (chosen && openRef.current) {
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      openRef.current.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+    } else if (!chosen && closedRef.current) {
+      document.querySelector<HTMLElement>(`[data-type="${CSS.escape(closedRef.current)}"]`)?.focus({ preventScroll: true });
+      closedRef.current = null;
+    }
+  }, [chosen?.id, loaded]);
 
   function choose(t: TypeEntry | null) {
+    if (!t && chosen) closedRef.current = chosen.id;
     const p = new URLSearchParams(params);
     if (t) p.set("type", slug(t.id));
     else p.delete("type");
@@ -148,17 +166,22 @@ export function TypesPage() {
         </div>
       </div>
 
-      <div className={"ty-body" + (chosen ? " has-chosen" : "")}>
-        <ul className="ty-list">
-          {shown.map((t) => (
+      <ul className="ty-list">
+        {listed.map((t) =>
+          chosen?.id === t.id ? (
+            <li key={t.id} className="ty-open" ref={openRef}>
+              <TypeDetail t={t} meta={meta} onClose={() => choose(null)} />
+            </li>
+          ) : (
             <li key={t.id}>
               <button
                 type="button"
-                className={"ty-card" + (chosen?.id === t.id ? " is-on" : "") + (hot === t.id ? " is-hot" : "")}
-                onClick={() => choose(chosen?.id === t.id ? null : t)}
+                data-type={t.id}
+                className={"ty-card" + (hot === t.id ? " is-hot" : "")}
+                onClick={() => choose(t)}
                 onMouseEnter={() => setHot(t.id)}
                 onMouseLeave={() => setHot(null)}
-                aria-expanded={chosen?.id === t.id}
+                aria-expanded={false}
               >
                 <span className="ty-card-kind">{kindLabel(t.kind)}</span>
                 <span className="ty-card-label">{t.label}</span>
@@ -166,11 +189,10 @@ export function TypesPage() {
                 <span className="ty-card-span">{spanLabel(meta, t)}</span>
               </button>
             </li>
-          ))}
-          {!shown.length ? <li className="ty-state">No type matches.</li> : null}
-        </ul>
-        {chosen ? <TypeDetail key={chosen.id} t={chosen} meta={meta} onClose={() => choose(null)} /> : null}
-      </div>
+          )
+        )}
+        {!listed.length ? <li className="ty-state">No type matches.</li> : null}
+      </ul>
     </div>
   );
 }
@@ -267,28 +289,30 @@ function Strip({
 function TypeDetail({ t, meta, onClose }: { t: TypeEntry; meta: Meta; onClose: () => void }) {
   const stops = [...t.ranges].sort((a, b) => a[0] - b[0]);
   return (
-    <aside className="ty-detail" aria-label={t.label}>
-      <button type="button" className="ty-close" onClick={onClose} aria-label="Close">
+    <article className="ty-detail" aria-label={t.label}>
+      <button type="button" className="ty-close" onClick={onClose} aria-label={"Close " + t.label} aria-expanded={true}>
         ×
       </button>
-      <p className="ty-detail-kind">{kindLabel(t.kind)}</p>
-      <h2>{t.label}</h2>
-      <p className="ty-detail-def">{t.def}</p>
-      {t.christ ? (
-        <p className="ty-detail-christ">
-          <b>In Christ.</b> {italics(t.christ)}
-        </p>
-      ) : null}
+      <div className="ty-detail-main">
+        <p className="ty-detail-kind">{kindLabel(t.kind)}</p>
+        <h2>{t.label}</h2>
+        <p className="ty-detail-def">{t.def}</p>
+        {t.christ ? (
+          <p className="ty-detail-christ">
+            <b>In Christ.</b> {italics(t.christ)}
+          </p>
+        ) : null}
 
-      <h3>Where it appears, first to last</h3>
-      <ol className="ty-passages">
-        {stops.map((r) => (
-          <Passage key={r[0] + "-" + r[1]} meta={meta} r={r} />
-        ))}
-      </ol>
+        <h3>Where it appears, first to last</h3>
+        <ol className="ty-passages">
+          {stops.map((r) => (
+            <Passage key={r[0] + "-" + r[1]} meta={meta} r={r} />
+          ))}
+        </ol>
+      </div>
 
       {t.where.length ? (
-        <>
+        <div className="ty-detail-words">
           <h3>In the Fathers&apos; words</h3>
           <p className="ty-quote-ref">
             &ldquo;Ps.-&rdquo; marks a work once credited to that Father but not now held to be his; &ldquo;attributed&rdquo; marks
@@ -323,9 +347,9 @@ function TypeDetail({ t, meta, onClose }: { t: TypeEntry; meta: Meta; onClose: (
               );
             })}
           </ul>
-        </>
+        </div>
       ) : null}
-    </aside>
+    </article>
   );
 }
 

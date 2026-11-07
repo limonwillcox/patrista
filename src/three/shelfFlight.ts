@@ -14,6 +14,10 @@ import { createStage, type Stage } from "./stage";
  * One continuous motion, `lift` from 0 to 1, runs while the reader keeps pointing: the top tips toward
  * them, the book slides out and turns to show its cover. Letting go runs it backwards into the shelf.
  * At 1 it leaves the shelf, flies into the viewer, lies down and opens.
+ *
+ * Once it lies open and still, the layer moves into the viewer's stage box ("docks"). On a phone the
+ * viewer card scrolls, not the window; docked, the book scrolls with the card as part of the page,
+ * instead of staying fixed over the words or trailing the scroll by a frame.
  */
 
 export type BookSpec = {
@@ -54,6 +58,8 @@ type Carry = {
   dispose: () => void;
   /** Compile its shaders before it first moves (see CodexHandle.prewarm). */
   prewarm: () => Promise<void>;
+  /** Still moving on its own (a cover opening): not yet ready to dock. */
+  busy: () => boolean;
 };
 
 type Phase = "loading" | "shelf" | "flying" | "open";
@@ -330,19 +336,65 @@ export function createShelfFlight(): ShelfFlight {
   // Colours exactly as on the page (no film curve), and fewer pixels: this layer covers the window.
   stage.renderer.toneMapping = THREE.NoToneMapping;
 
-  // Put the camera where the plane z = 0 is exactly the window, one unit to a CSS pixel.
-  const stopResize = stage.onResize((_w, h) => {
+  /**
+   * The window the camera frames, in CSS pixels. Undocked, the layer is that window. Docked, the layer
+   * is one box of the window as it was when the book landed (`dock`, its top-left corner then), and the
+   * camera draws only that part of the same view. So the picture does not change at the moment of
+   * docking, and after it the scene's coordinates stay fixed while the box scrolls with the page.
+   */
+  let full = { w: 1, h: 1 };
+  let dock: { x: number; y: number; el: HTMLElement } | null = null;
+  let docking = false;
+
+  function aim() {
     const cam = stage.camera;
-    cam.position.set(0, 0, h / 2 / Math.tan(THREE.MathUtils.degToRad(cam.fov / 2)));
+    const { w, h } = stage.size();
+    // The plane z = 0 is exactly the framed window, one unit to a CSS pixel.
+    cam.aspect = full.w / full.h;
+    cam.position.set(0, 0, full.h / 2 / Math.tan(THREE.MathUtils.degToRad(cam.fov / 2)));
     cam.lookAt(0, 0, 0);
     // The book never comes nearer than about two thirds of the way to the camera. A near plane at a
     // quarter of the distance, not 1 px, keeps the depth buffer fine enough for surfaces a fraction of a
     // pixel apart (the pastedown on its board), which otherwise flicker through each other.
     cam.near = cam.position.z * 0.25;
     cam.far = cam.position.z * 6;
+    if (dock) cam.setViewOffset(full.w, full.h, dock.x, dock.y, w, h);
+    else cam.clearViewOffset();
     cam.updateProjectionMatrix();
+  }
+
+  const stopResize = stage.onResize((w, h) => {
+    if (!dock) full = { w, h };
+    else if (!docking) {
+      // The viewer changed size while docked (a phone turned): frame the window and the box afresh.
+      const r = host.getBoundingClientRect();
+      full = { w: document.documentElement.clientWidth, h: document.documentElement.clientHeight };
+      dock = { ...dock, x: r.left, y: r.top };
+    }
+    aim();
   });
-  const toWorld = (x: number, y: number) => new THREE.Vector3(x - window.innerWidth / 2, window.innerHeight / 2 - y, 0);
+  const toWorld = (x: number, y: number) => new THREE.Vector3(x - full.w / 2, full.h / 2 - y, 0);
+
+  /** Move the layer into the viewer's stage box. Called inside a frame, so this frame draws it there. */
+  function dockInto(el: HTMLElement) {
+    const r = el.getBoundingClientRect();
+    dock = { x: r.left, y: r.top, el };
+    host.classList.add("is-docked");
+    el.appendChild(host);
+    docking = true;
+    stage.measure();
+    docking = false;
+    aim(); // measure() skips the resize step when the size happens to be unchanged
+  }
+
+  function undock() {
+    if (!dock) return;
+    dock = null;
+    host.classList.remove("is-docked");
+    document.body.appendChild(host);
+    stage.measure();
+    aim();
+  }
 
   let cur: Book | null = null;
 
@@ -376,7 +428,9 @@ export function createShelfFlight(): ShelfFlight {
   /** Lying open in the viewer's stage, seen from above at the viewer's angle. */
   function openPose(c: Book, el: HTMLElement): Pose {
     const h = c.handle!;
-    const r = el.getBoundingClientRect();
+    // Docked, the stage box is where it was at docking, in the framed window, however far it has scrolled.
+    const b = el.getBoundingClientRect();
+    const r = dock ? { left: dock.x, top: dock.y, width: b.width, height: b.height } : b;
     const s = Math.min((r.width * 0.9) / h.fitW, (r.height * 0.84) / h.fitH);
     const p = toWorld(r.left + r.width / 2, r.top + r.height / 2).sub(
       h.centre.clone().applyQuaternion(h.lie).multiplyScalar(s)
@@ -444,17 +498,24 @@ export function createShelfFlight(): ShelfFlight {
     }
     if (c.phase === "open") {
       const el = c.dest?.();
-      if (el) apply(c, openPose(c, el));
+      if (!el) return false;
+      // Dock once the book lies still: a cover still standing up could reach past the box's top edge.
+      if (!dock && !c.handle.busy()) dockInto(el);
+      apply(c, openPose(c, el));
+      return !dock; // keep checking each frame until it docks
     }
     return false;
   });
 
-  const redraw = () => cur && stage.invalidate();
-  window.addEventListener("scroll", redraw, { passive: true });
+  // Until it docks, the book follows its place on the page wherever it scrolls: the window, or the
+  // viewer card (a scroll inside an element reaches window only in the capture phase).
+  const redraw = () => cur && !dock && stage.invalidate();
+  window.addEventListener("scroll", redraw, { passive: true, capture: true });
   window.addEventListener("resize", redraw);
 
   function drop() {
     if (!cur) return;
+    undock();
     cur.dead = true;
     cur.spine.classList.remove("is-carried");
     if (cur.handle) {
@@ -499,7 +560,9 @@ export function createShelfFlight(): ShelfFlight {
         open: r.openRoll,
         turn: (dir) => r.move(dir * 0.12),
         dispose: r.dispose,
-        prewarm: () => stage.renderer.compileAsync(stage.scene, stage.camera).then(() => {})
+        prewarm: () => stage.renderer.compileAsync(stage.scene, stage.camera).then(() => {}),
+        // The open roll fits its box (fitW counts it fully unrolled), so it can dock at once.
+        busy: () => false
       };
     }
     const b = await buildCodex(stage, {
@@ -536,7 +599,8 @@ export function createShelfFlight(): ShelfFlight {
       open: b.openCover,
       turn: b.turn,
       dispose: b.dispose,
-      prewarm: b.prewarm
+      prewarm: b.prewarm,
+      busy: b.busy
     };
   }
 
@@ -645,7 +709,7 @@ export function createShelfFlight(): ShelfFlight {
     dispose() {
       drop();
       stopResize();
-      window.removeEventListener("scroll", redraw);
+      window.removeEventListener("scroll", redraw, { capture: true });
       window.removeEventListener("resize", redraw);
       stage.dispose();
       host.remove();

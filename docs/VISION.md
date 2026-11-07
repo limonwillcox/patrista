@@ -34,7 +34,6 @@ Fathers give the content. Patrista never names a type itself (see `data/connecti
 | Bible with Connections | A passage, the Fathers who cite it, its patterns | Built |
 | Types atlas | Types the Fathers drew, with how many Fathers drew each | Built; count building |
 | Trails | One type followed through Scripture, one stop at a time | Building (Nov 2026) |
-| Reading plan | The Bible in a year, each day with one or two Fathers | Building (Nov 2026) |
 | Tabernacle | The tabernacle at true size, and its echoes of creation | Building (Nov 2026) |
 | Church history | The Fathers in their centuries | Built |
 
@@ -42,5 +41,7 @@ Fathers give the content. Patrista never names a type itself (see `data/connecti
 
 - **Votes on connections.** A vote measures what is popular. Patrista's standard is "a Father drew this,"
   which can be checked. Votes would also need accounts and moderation. (Nov 2026)
+- **A Bible-in-a-year reading plan.** Many sites already have one, so it would not be a door that only
+  Patrista has. Patrista should build what no other site has: trails, types, the tabernacle. (Nov 2026)
 - **Suggested types from readers.** Not now. If the site needs it later: a form where the reader gives the
   Father's quotation and chapter, the types test checks the quotation, and the editor approves. (Nov 2026)

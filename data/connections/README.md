@@ -17,8 +17,10 @@ A pattern is a passage elsewhere that this one links to, by shared Hebrew and Gr
 citing both in one paragraph. Links landing within a few verses of each other form one pattern. Patterns
 sort by how many signs agree, and each is marked:
 
-- **strong**: a type the Fathers name, two or more Fathers citing both, or a Father and shared words together;
-- **moderate**: one Father citing both, or shared words that weigh 9 or more (rare words count for more);
+- **strong**: a type two or more Fathers draw, two or more Fathers citing both, or a Father and shared words
+  together;
+- **moderate**: a type one Father draws, one Father citing both, or shared words that weigh 9 or more (rare
+  words count for more);
 - **weak**: a few common words.
 
 Shared words alone stop at moderate, however many verses share them. Sampled by hand, about a third of the
@@ -34,6 +36,12 @@ passage and word has a note (the same notes as the Journal, `src/lib/readerNotes
 Clicking a type the Fathers draw opens it in the tab: its meaning, how it points to Christ, the Fathers' own
 words, and every passage in it, joined on the chart from first to last (`public/connections/types.json`).
 
+On the Types page (`/types`) each type says how many Fathers drew it: the different Fathers among its
+citations (`fatherNames` in `src/lib/connectionPatterns.ts`). "Follow" walks a type as a trail
+(`/types?type=<slug>&stop=<n>`): its passages from Genesis to Revelation, one at a time, each with the KJV
+text and a Father's line when the quoted paragraph cites that passage, ending at what it points to in
+Christ (`src/lib/typeTrail.ts`).
+
 The site search is Scripture-aware too (`server/scriptureIndex.ts`, `src/api/scripture.ts`): a query finds
 the KJV verses behind it, then the chapters of the Fathers that cite those verses, ranked by citations and
 by how closely the chapter works through that passage.
@@ -43,8 +51,10 @@ by how closely the chapter works through that passage.
 A type is on the site only because the Fathers drew it. We never name one ourselves, and nothing is added
 because it seems plausible. A type needs:
 
-- **At least two Fathers**, each cited from a passage in this library that draws the figure (not just
-  mentions the Old Testament story), with a link to the reader chapter.
+- **At least one Father**, cited from a passage in this library that draws the figure (not just mentions
+  the Old Testament story), with a link to the reader chapter. The site shows how many Fathers drew each
+  type, and a type one Father draws weighs less in Connections than one drawn by two or more (see
+  "What the reader sees").
 - **Faithful quotations.** A quotation must be found in the chapter it links to. Case, punctuation, cuts
   marked "…" and small differences of wording are allowed; a paraphrase without quotation marks needs
   only its link.

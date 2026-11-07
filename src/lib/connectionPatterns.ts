@@ -24,6 +24,14 @@ export type Pattern = {
 };
 export type TypeLink = { entry: string; label: string; fathers: string[]; cites: string[]; others: [number, number][] };
 
+/**
+ * The different Fathers among names taken from a type's citations ("Cyril, *Cat.* 13.20" gives "Cyril").
+ * A note after the name ("Irenaeus (attributed)", "Ambrose (quoted in Cassian") is the same Father.
+ */
+export function fatherNames(names: string[]): string[] {
+  return [...new Set(names.map((n) => n.split(",")[0].replace(/\s*\(.*$/, "").replace(/\*/g, "").trim()).filter(Boolean))];
+}
+
 /** Links that land within this many verses of each other, in one chapter, form one pattern. */
 const GAP = 4;
 
@@ -32,16 +40,17 @@ const GAP = 4;
  * or the Fathers citing both) is collected; links landing close together are grouped into one passage.
  *
  * Strength, in points:
- *   a type            5 when the Fathers name a type joining them: strong on its own
+ *   a type            when the Fathers name a type joining them: 5 when two or more Fathers draw it (strong
+ *                     on its own), 3 when one Father does (like one Father citing both)
  *   the Fathers       3 when one Father cites both passages together, 5 for two or more: strong on its own
  *   shared words      by their weight, which counts rare words for more: under 6 is 1, under 9 is 2,
  *                     under 12 is 3, 12 and over is 4 (a few rare words, or a quotation)
  *   several verses    +1 when two verses here link to two verses there, +2 for three or more
- * Strong is 5 or more, moderate 3-4, weak 1-2. So a Father citing both is at least moderate, two Fathers
- * citing both are strong, and one Father plus shared words of weight 6 or more is strong. Shared words
- * alone never pass moderate, however many verses they join: sampled by hand, about a third of the
- * high-scoring word-only links were chance (two genealogies sharing "concubine, begat"; Psalm 23 and
- * Matthew 23:24 sharing "guides, cup"). Patterns sort by points; the word weight breaks ties.
+ * Strong is 5 or more, moderate 3-4, weak 1-2. So a Father citing both, or a type one Father draws, is at
+ * least moderate; two Fathers citing both, or a type two Fathers draw, is strong; and one Father plus shared
+ * words of weight 6 or more is strong. Shared words alone never pass moderate, however many verses they
+ * join: sampled by hand, about a third of the high-scoring word-only links were chance (two genealogies
+ * sharing "concubine, begat"; Psalm 23 and Matthew 23:24 sharing "guides, cup"). Patterns sort by points; the word weight breaks ties.
  */
 export function findPatterns(data: ChapterConnections, here: [number, number], types: TypeLink[]): Pattern[] {
   type Hit = { src: number; o: number; score: number; codes: string[]; fathers: string[]; works: string[]; sample?: string };
@@ -73,12 +82,17 @@ export function findPatterns(data: ChapterConnections, here: [number, number], t
     cur.sample ??= h.sample;
   }
   for (const p of out) {
-    for (const t of types) if (t.others.some((r) => overlaps(r, [p.from, p.to]))) p.types.push({ entry: t.entry, label: t.label });
+    let typePoints = 0;
+    for (const t of types)
+      if (t.others.some((r) => overlaps(r, [p.from, p.to]))) {
+        p.types.push({ entry: t.entry, label: t.label });
+        typePoints = Math.max(typePoints, fatherNames(t.fathers).length >= 2 ? 5 : 3);
+      }
     const spread = Math.min(p.sources.size, p.targets.size);
     const w = p.wordScore;
     const words = w <= 0 ? 0 : w < 6 ? 1 : w < 9 ? 2 : w < 12 ? 3 : 4;
     const fathers = p.fathers.size === 0 ? 0 : p.fathers.size === 1 ? 3 : 5;
-    p.points = words + fathers + (p.types.length ? 5 : 0) + (spread >= 3 ? 2 : spread === 2 ? 1 : 0);
+    p.points = words + fathers + typePoints + (spread >= 3 ? 2 : spread === 2 ? 1 : 0);
     // Words alone: at most moderate, so they still sort by their points but are never called strong.
     if (!fathers && !p.types.length) p.points = Math.min(p.points, 4);
     p.strength = p.points >= 5 ? "strong" : p.points >= 3 ? "moderate" : "weak";
@@ -87,8 +101,8 @@ export function findPatterns(data: ChapterConnections, here: [number, number], t
 }
 
 export const STRENGTH_TEXT: Record<Strength, string> = {
-  strong: "A type the Fathers name, two or more Fathers citing both, or a Father and shared words together",
-  moderate: "A Father cites both, or they share rare words",
+  strong: "A type two or more Fathers draw, two or more Fathers citing both, or a Father and shared words together",
+  moderate: "A type one Father draws, a Father cites both, or they share rare words",
   weak: "A few common words in common"
 };
 

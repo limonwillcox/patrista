@@ -7,7 +7,8 @@ import { englishParagraphs } from "../src/lib/fatherPaths";
 /*
  * The rule for types: a type is on the site only because the Fathers drew it. No type is named by us.
  * Every type added from the library (data/connections/grammar/fathers-types/) must:
- *  - cite at least two passages of the Fathers, from at least two Fathers, each linked to its reader chapter;
+ *  - cite at least one passage of a Father, each passage linked to its reader chapter (the site shows how many
+ *    Fathers drew a type, and Connections weighs a type one Father draws less than one two Fathers draw);
  *  - quote faithfully: a quotation must be found in the chapter it links to, allowing for case, punctuation,
  *    cuts marked "…" and small differences of wording (a paraphrase without quotation marks needs only its link);
  *  - say what it points to in Christ in a line that names a Father it cites.
@@ -67,12 +68,13 @@ describe("types come from the Fathers", () => {
     expect(entries.length).toBeGreaterThan(0);
   });
 
-  it.each(entries)("%s cites at least two Fathers, each faithful to the chapter it links", (file, e) => {
+  it.each(entries)("%s cites at least one Father, faithful to the chapter it links", (file, e) => {
     expect(e.src, file).toBe("04:" + file.replace(/\.json$/, ""));
-    expect(e.where.length, "quotations").toBeGreaterThanOrEqual(2);
+    expect(e.where.length, "quotations").toBeGreaterThanOrEqual(1);
     expect(e.links?.length, "one link per quotation").toBe(e.where.length);
     const fathers = new Set(e.where.map((w) => w.split(",")[0].trim()));
-    expect(fathers.size, "different Fathers").toBeGreaterThanOrEqual(2);
+    // Each citation opens with its Father ("Cyril, *Cat.* 13.20 — …"), so the site can count them.
+    for (const w of e.where) expect(w.split(" — ")[0], "a citation naming its Father").toMatch(/^[A-Z][^,]*, \S/);
     expect(new Set(e.links!.map((l) => l.href + l.label)).size, "different passages").toBe(e.where.length);
     e.where.forEach((w, i) => {
       const text = chapterText(e.links![i].href);

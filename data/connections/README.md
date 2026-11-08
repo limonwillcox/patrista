@@ -62,18 +62,16 @@ A type is on the site only because the Fathers saw it. We never name one ourselv
 4. **Clean and approve.** The 219 types two or more Fathers saw were cleaned by hand (duplicates merged;
    general statements such as "the sacrifices of the Law", fulfilments and parables dropped), filed in six
    groups, and approved: 160 types.
+5. **English, linked.** A claim found only in Latin or Greek was matched to the same passage in the library's
+   English translation where there is one (31 were); the rest are left out, so every quotation on the site
+   is English and opens its paragraph in the reader.
+6. **Two ends from the Fathers.** Each type's other passage (`ends` in `approved.json`) was chosen in review
+   from the verses its own Fathers cite in the paragraphs where they draw it (John 3:14 for the bronze
+   serpent, Matthew 12:40 for Jonah). A type with no such verse is not on the site yet: 97 types are.
 
 `scripts/connections/build_fathers_types.ts` turns the list into the site's entries
-(`typology/types.json`), and `pack_public.py` publishes them. Each entry carries:
-
-- **The Fathers' words**, at most two per Father, each linked to its paragraph in the reader. A Latin or
-  Greek quotation has no English paragraph: it is shown in a machine translation, marked as one, with the
-  original.
-- **Its passages**: the ones its claims name, and up to three verses of the other Testament that one of
-  its own quoted paragraphs cites and that two or more Fathers cite together with the type's passage
-  (`witness` in `connections.sqlite`). 89 types have both ends and are drawn as arcs; 71 have their own
-  passage only and are found by name.
-- **Our words** only in the short label ("The bronze serpent → the crucifixion") and the group.
+(`typology/types.json`), and `pack_public.py` publishes them: the label and group (our only words), the
+Fathers' quotations (at most two per Father, each linked to its paragraph) and the type's passages.
 
 `tests/typesRule.test.ts` checks every quotation's link and form. The list is not complete: a Father who
 draws a type without a figure word ("as Isaac carried the wood, so Christ…") is not found yet, and types

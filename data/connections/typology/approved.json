@@ -1060,6 +1060,13 @@
     "version": "schaff",
     "candidate": "select-orations/15/schaff/25"
    }
+  ],
+  "passages": [
+   "Exodus 12:1-28"
+  ],
+  "ends": [
+   "1 Corinthians 5:7",
+   "John 1:29"
   ]
  },
  {
@@ -1462,8 +1469,26 @@
     "para": 68,
     "version": "schaff",
     "candidate": "instructor/1/schaff/68"
+   },
+   {
+    "father": "rufinus",
+    "lang": "en",
+    "work": "commentary-on-the-apostles-creed",
+    "quote": "and the other, who conducted the people, who had been brought forth from the darkness of ignorance, and recalled from the errors of the world, into the kingdom of heaven",
+    "passage": "Numbers 13:16",
+    "page": "/fathers/rufinus/commentary-on-the-apostles-creed/chapter-2/",
+    "chapter": 2,
+    "para": 6,
+    "candidate": "commentary-on-the-apostles-creed/2/eng/6",
+    "from": "Fathers/Latin/Rufinus_Latin/Commentary on the Apostles' Creed.txt#7"
    }
-  ]
+  ],
+  "passages": [
+   "Numbers 13:16",
+   "Exodus 23:20-21",
+   "Joshua 1:1-9"
+  ],
+  "ends": []
  },
  {
   "group": "Events",
@@ -1940,7 +1965,25 @@
     "para": 4,
     "version": "schaff",
     "candidate": "mystagogical-lectures/1/schaff/4"
+   },
+   {
+    "father": "cyprian",
+    "lang": "en",
+    "work": "epistles-of-cyprian",
+    "quote": "And that that sea was a sacrament of baptism, the blessed Apostle Paul declares",
+    "passage": "Exodus 14; 1 Corinthians 10:1-2",
+    "page": "/fathers/cyprian/epistles-of-cyprian/chapter-16/",
+    "chapter": 16,
+    "para": 20,
+    "candidate": "epistles-of-cyprian/16/eng/20",
+    "from": "Fathers/Latin/Cyprian_Latin/The Epistles of Cyprian.txt#318"
    }
+  ],
+  "passages": [
+   "Exodus 14:15-31"
+  ],
+  "ends": [
+   "1 Corinthians 10:1-2"
   ]
  },
  {
@@ -2308,6 +2351,13 @@
     "version": "schaff",
     "candidate": "banquet-of-the-ten-virgins/20/schaff/1"
    }
+  ],
+  "passages": [
+   "Genesis 2:7"
+  ],
+  "ends": [
+   "Romans 5:14",
+   "1 Corinthians 15:45"
   ]
  },
  {
@@ -2625,7 +2675,27 @@
     "para": 11,
     "version": "schaff",
     "candidate": "dialogues-eranistes/16/schaff/11"
+   },
+   {
+    "father": "augustine",
+    "lang": "en",
+    "work": "on-christian-doctrine",
+    "quote": "Now, that Melchizedek was a type of Christ, the Holy Spirit declares in the Psalms, where the Father addressing the Son says",
+    "passage": "Genesis 14:18; Psalm 109:4 (Vulgate)",
+    "page": "/fathers/augustine/on-christian-doctrine/chapter-8/",
+    "chapter": 8,
+    "para": 68,
+    "candidate": "on-christian-doctrine/8/eng/68",
+    "from": "Fathers/Latin/Augustine_Latin/On Christian Doctrine.txt#235"
    }
+  ],
+  "passages": [
+   "Genesis 14:18-20",
+   "Psalm 110:4"
+  ],
+  "ends": [
+   "Hebrews 7:1-3",
+   "Hebrews 5:6"
   ]
  },
  {
@@ -3076,6 +3146,12 @@
     "version": "schaff",
     "candidate": "reply-to-faustus-the-manichaean/5/schaff/4"
    }
+  ],
+  "passages": [
+   "Numbers 21:6-9"
+  ],
+  "ends": [
+   "John 3:14-15"
   ]
  },
  {
@@ -3226,6 +3302,13 @@
     "version": "schaff",
     "candidate": "homilies-on-john-and-hebrews/115/schaff/2"
    }
+  ],
+  "passages": [
+   "Exodus 12:7",
+   "Exodus 12:13"
+  ],
+  "ends": [
+   "Hebrews 11:28"
   ]
  },
  {
@@ -3345,7 +3428,12 @@
     "version": "schaff",
     "candidate": "divine-institutes/99/schaff/5"
    }
-  ]
+  ],
+  "passages": [
+   "Exodus 12:7",
+   "Exodus 12:22-23"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -3814,6 +3902,13 @@
     "version": "schaff",
     "candidate": "reply-to-faustus-the-manichaean/16/schaff/17"
    }
+  ],
+  "passages": [
+   "Exodus 17:1-7",
+   "Numbers 20:7-11"
+  ],
+  "ends": [
+   "1 Corinthians 10:4"
   ]
  },
  {
@@ -4130,6 +4225,12 @@
     "version": "schaff",
     "candidate": "homilies-on-john-and-hebrews/14/schaff/16"
    }
+  ],
+  "passages": [
+   "Exodus 17:8-13"
+  ],
+  "ends": [
+   "John 3:14"
   ]
  },
  {
@@ -4290,7 +4391,37 @@
     "para": 7,
     "version": "schaff",
     "candidate": "homilies-on-john-and-hebrews/105/schaff/7"
+   },
+   {
+    "father": "eusebius",
+    "lang": "en",
+    "work": "church-history",
+    "quote": "When he delivered types and symbols of heavenly things, and mysterious images",
+    "passage": "Exodus 25:40",
+    "page": "/fathers/eusebius/church-history/chapter-1/",
+    "chapter": 1,
+    "para": 40,
+    "candidate": "church-history/1/eng/40",
+    "from": "Fathers/Greek/Eusebius_Greek/Church History.txt#5.w1"
+   },
+   {
+    "father": "eusebius",
+    "lang": "en",
+    "work": "church-history",
+    "quote": "and called to be the maker of the temple constructed after heavenly types given in symbols",
+    "passage": "Exodus 31:2-5",
+    "page": "/fathers/eusebius/church-history/chapter-10/",
+    "chapter": 10,
+    "para": 43,
+    "candidate": "church-history/10/eng/43",
+    "from": "Fathers/Greek/Eusebius_Greek/Church History.txt#261.w2"
    }
+  ],
+  "passages": [
+   "Exodus 25:40"
+  ],
+  "ends": [
+   "Hebrews 9:24"
   ]
  },
  {
@@ -4499,6 +4630,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Tractates on the Gospel of John.txt#450"
    }
+  ],
+  "passages": [
+   "Exodus 16:13-35"
+  ],
+  "ends": [
+   "John 6:31-35"
   ]
  },
  {
@@ -4682,7 +4819,26 @@
     "para": 13,
     "version": "schaff",
     "candidate": "homily-on-the-passage-father-if-it-be-possible/1/schaff/13"
+   },
+   {
+    "father": "augustine",
+    "lang": "en",
+    "work": "city-of-god",
+    "quote": "therefore he has added, \"from whence also he received him in a similitude.\" In whose similitude but His of whom the apostle says, \"He that spared not His own Son",
+    "passage": "Genesis 22:2",
+    "page": "/fathers/augustine/city-of-god/chapter-16/",
+    "chapter": 16,
+    "para": 80,
+    "candidate": "city-of-god/16/eng/80",
+    "from": "Fathers/Latin/Augustine_Latin/De civitate Dei.txt#762"
    }
+  ],
+  "passages": [
+   "Genesis 22:1-14"
+  ],
+  "ends": [
+   "Hebrews 11:17-19",
+   "Romans 8:32"
   ]
  },
  {
@@ -5032,7 +5188,26 @@
     "file": "Fathers/Latin/Augustine_Latin/On Lying.txt",
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/On Lying.txt#32"
+   },
+   {
+    "father": "tertullian",
+    "lang": "en",
+    "work": "five-books-against-marcion",
+    "quote": "For (it is written) that Abraham had two sons, the one by a bond maid, the other by a free woman; but he who was of the bond maid was born after the flesh, but he of the free woman was by promise",
+    "passage": "Galatians 4:22-31",
+    "page": "/fathers/tertullian/five-books-against-marcion/chapter-5/",
+    "chapter": 5,
+    "para": 10,
+    "candidate": "five-books-against-marcion/5/eng/10",
+    "from": "Fathers/Latin/Tertullian_Latin/Adversus Marcionem.txt#62"
    }
+  ],
+  "passages": [
+   "Genesis 16:1-16",
+   "Genesis 21:1-21"
+  ],
+  "ends": [
+   "Galatians 4:22-31"
   ]
  },
  {
@@ -5265,6 +5440,13 @@
     "version": "schaff",
     "candidate": "expositions-on-the-psalms/75/schaff/10"
    }
+  ],
+  "passages": [
+   "Genesis 17:9-14"
+  ],
+  "ends": [
+   "Colossians 2:11",
+   "Romans 2:28-29"
   ]
  },
  {
@@ -5436,7 +5618,11 @@
     "version": "schaff",
     "candidate": "homilies-on-the-gospel-of-john/9/schaff/12"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 22:6"
+  ],
+  "ends": []
  },
  {
   "group": "Events",
@@ -5595,7 +5781,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/De civitate Dei.txt#748"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 14:18"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -5747,6 +5937,12 @@
     "version": "schaff",
     "candidate": "recognitions-of-clement/5/schaff/19"
    }
+  ],
+  "passages": [
+   "Deuteronomy 18:15"
+  ],
+  "ends": [
+   "1 Timothy 2:5"
   ]
  },
  {
@@ -5882,6 +6078,13 @@
     "version": "schaff",
     "candidate": "jerome-letters/109/schaff/3"
    }
+  ],
+  "passages": [
+   "Genesis 37:1-36",
+   "Genesis 41:37-45"
+  ],
+  "ends": [
+   "Acts 7:9-14"
   ]
  },
  {
@@ -6255,7 +6458,12 @@
     "version": "schaff",
     "candidate": "reply-to-faustus-the-manichaean/20/schaff/18"
    }
-  ]
+  ],
+  "passages": [
+   "Exodus 29:7",
+   "1 Samuel 16:13"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -6617,6 +6825,12 @@
     "version": "schaff",
     "candidate": "reply-to-faustus-the-manichaean/32/schaff/13"
    }
+  ],
+  "passages": [
+   "Genesis 6:13-22"
+  ],
+  "ends": [
+   "1 Peter 3:20-21"
   ]
  },
  {
@@ -6870,7 +7084,25 @@
     "para": 65,
     "version": "schaff",
     "candidate": "city-of-god/22/schaff/65"
+   },
+   {
+    "father": "rufinus",
+    "lang": "en",
+    "work": "commentary-on-the-apostles-creed",
+    "quote": "Since the fountain of sin and death proceeded from the first woman, who was the rib of the first Adam, the fountain of redemption and life is drawn from the rib of the second Adam.",
+    "passage": "Genesis 2:21-22",
+    "page": "/fathers/rufinus/commentary-on-the-apostles-creed/chapter-2/",
+    "chapter": 2,
+    "para": 28,
+    "candidate": "commentary-on-the-apostles-creed/2/eng/28",
+    "from": "Fathers/Latin/Rufinus_Latin/Commentary on the Apostles' Creed.txt#22"
    }
+  ],
+  "passages": [
+   "Genesis 2:21-23"
+  ],
+  "ends": [
+   "Ephesians 5:31-32"
   ]
  },
  {
@@ -7064,6 +7296,13 @@
     "version": "schaff",
     "candidate": "stromata/1/schaff/54"
    }
+  ],
+  "passages": [
+   "Genesis 21:1-7"
+  ],
+  "ends": [
+   "Romans 9:7-8",
+   "Hebrews 11:17-19"
   ]
  },
  {
@@ -7218,7 +7457,27 @@
     "para": 24,
     "version": "schaff",
     "candidate": "city-of-god/17/schaff/24"
+   },
+   {
+    "father": "ambrose",
+    "lang": "en",
+    "work": "exposition-of-the-christian-faith",
+    "quote": "woven into the robe of holy Aaron, even of him who bears the likeness of Christ, that is, of the true Priest",
+    "passage": "Exodus 28",
+    "page": "/fathers/ambrose/exposition-of-the-christian-faith/chapter-2/",
+    "chapter": 2,
+    "para": 5,
+    "candidate": "exposition-of-the-christian-faith/2/eng/5",
+    "from": "Fathers/Latin/Ambrose_Latin/Exposition of the Christian Faith.txt#140"
    }
+  ],
+  "passages": [
+   "Exodus 28:1-4",
+   "Leviticus 8:1-13"
+  ],
+  "ends": [
+   "Hebrews 5:4-6",
+   "Hebrews 7:26"
   ]
  },
  {
@@ -7340,7 +7599,13 @@
     "section": "",
     "candidate": "Fathers/Latin/Hilary_Latin/Homilies on the Psalms.txt#1015"
    }
-  ]
+  ],
+  "passages": [
+   "Matthew 26:6-13",
+   "Luke 7:36-50",
+   "John 12:1-8"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -7461,7 +7726,26 @@
     "para": 4,
     "version": "schaff",
     "candidate": "treatise-against-the-heretic-novatian/1/schaff/4"
+   },
+   {
+    "father": "jerome",
+    "lang": "en",
+    "work": "dialogue-against-the-luciferians",
+    "quote": "So also in the Church's baptism, that most unclean bird the devil is expelled, and the dove of the Holy Spirit announces peace to our earth.",
+    "passage": "Genesis 8:8-12",
+    "page": "/fathers/jerome/dialogue-against-the-luciferians/chapter-3/",
+    "chapter": 3,
+    "para": 1,
+    "candidate": "dialogue-against-the-luciferians/3/eng/1",
+    "from": "Fathers/Latin/Jerome_Latin/The Dialogue Against the Luciferians.txt#23"
    }
+  ],
+  "passages": [
+   "Genesis 8:8-12"
+  ],
+  "ends": [
+   "Matthew 3:16",
+   "John 1:32"
   ]
  },
  {
@@ -7618,6 +7902,12 @@
     "version": "schaff",
     "candidate": "augustine-letters/55/schaff/18"
    }
+  ],
+  "passages": [
+   "Genesis 49:8-12"
+  ],
+  "ends": [
+   "Revelation 5:5"
   ]
  },
  {
@@ -7703,7 +7993,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Reply to Faustus the Manichaean.txt#44"
    }
-  ]
+  ],
+  "passages": [
+   "Exodus 25:1-9",
+   "Exodus 26:1-37"
+  ],
+  "ends": []
  },
  {
   "group": "Events",
@@ -7789,7 +8084,11 @@
     "version": "schaff",
     "candidate": "catechetical-lectures/10/schaff/24"
    }
-  ]
+  ],
+  "passages": [
+   "Exodus 15:23-25"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -7860,7 +8159,25 @@
     "para": 18,
     "version": "schaff",
     "candidate": "four-homilies/1/schaff/18"
+   },
+   {
+    "father": "augustine",
+    "lang": "en",
+    "work": "city-of-god",
+    "quote": "Truly he took the beginning of His reigning from the river where John baptized; for, when pointed out by him, He began to be acknowledged by the disciples",
+    "passage": "Psalm 72:8",
+    "page": "/fathers/augustine/city-of-god/chapter-17/",
+    "chapter": 17,
+    "para": 33,
+    "candidate": "city-of-god/17/eng/33",
+    "from": "Fathers/Latin/Augustine_Latin/De civitate Dei.txt#806"
    }
+  ],
+  "passages": [
+   "Joshua 3:14-17"
+  ],
+  "ends": [
+   "Matthew 3:13-16"
   ]
  },
  {
@@ -8090,6 +8407,12 @@
     "version": "schaff",
     "candidate": "homilies-on-galatians-to-philemon/51/schaff/22"
    }
+  ],
+  "passages": [
+   "Genesis 2:24"
+  ],
+  "ends": [
+   "Ephesians 5:31-32"
   ]
  },
  {
@@ -8379,7 +8702,11 @@
     "section": "23",
     "candidate": "Fathers/Greek/Hippolytus_Greek/Commentary on Daniel.txt#127"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 2:2-3"
+  ],
+  "ends": []
  },
  {
   "group": "Events",
@@ -8584,6 +8911,12 @@
     "version": "schaff",
     "candidate": "de-principiis/13/schaff/2"
    }
+  ],
+  "passages": [
+   "Genesis 7:1-8:19"
+  ],
+  "ends": [
+   "1 Peter 3:20-21"
   ]
  },
  {
@@ -8714,6 +9047,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/On the Grace of Christ and Original Sin.txt#97"
    }
+  ],
+  "passages": [
+   "Genesis 17:9-14"
+  ],
+  "ends": [
+   "Colossians 2:11-12"
   ]
  },
  {
@@ -8847,6 +9186,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Reply to Faustus the Manichaean.txt#93"
    }
+  ],
+  "passages": [
+   "Exodus 12:46"
+  ],
+  "ends": [
+   "John 19:33-36"
   ]
  },
  {
@@ -9091,6 +9436,12 @@
     "version": "schaff",
     "candidate": "on-modesty/10/schaff/2"
    }
+  ],
+  "passages": [
+   "Jonah 1:17-2:10"
+  ],
+  "ends": [
+   "Matthew 12:39-40"
   ]
  },
  {
@@ -9183,7 +9534,11 @@
     "version": "schaff",
     "candidate": "homilies-on-john-and-hebrews/36/schaff/6"
    }
-  ]
+  ],
+  "passages": [
+   "Leviticus 15:1-33"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -9280,7 +9635,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/SERMONES.txt#3.w1"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 24:1-67"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -9474,6 +9833,12 @@
     "section": "Chapter 134",
     "candidate": "Fathers/Greek/Justin_Greek/Dialogue with Trypho.txt#793"
    }
+  ],
+  "passages": [
+   "Genesis 29:16-30"
+  ],
+  "ends": [
+   "Galatians 4:22-26"
   ]
  },
  {
@@ -9583,6 +9948,13 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/De civitate Dei.txt#660"
    }
+  ],
+  "passages": [
+   "Genesis 16:1-16",
+   "Genesis 21:9-21"
+  ],
+  "ends": [
+   "Galatians 4:24-25"
   ]
  },
  {
@@ -9656,6 +10028,12 @@
     "version": "schaff",
     "candidate": "select-demonstrations/8/schaff/8"
    }
+  ],
+  "passages": [
+   "Genesis 37:18-28"
+  ],
+  "ends": [
+   "Matthew 21:38"
   ]
  },
  {
@@ -9729,7 +10107,11 @@
     "version": "schaff",
     "candidate": "hymns-on-the-nativity/7/schaff/30"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 22:13"
+  ],
+  "ends": []
  },
  {
   "group": "Figures in the prophets and psalms",
@@ -9802,6 +10184,12 @@
     "version": "schaff",
     "candidate": "on-the-resurrection-of-the-flesh/30/schaff/1"
    }
+  ],
+  "passages": [
+   "Ezekiel 37:1-14"
+  ],
+  "ends": [
+   "1 Corinthians 15:52"
   ]
  },
  {
@@ -9862,8 +10250,24 @@
     "para": 23,
     "version": "schaff",
     "candidate": "catechetical-lectures/10/schaff/23"
+   },
+   {
+    "father": "tertullian",
+    "lang": "en",
+    "work": "five-books-against-marcion",
+    "quote": "But was it not because He had to be \"led like a lamb to the slaughter; and because, as a sheep before her shearers is dumb, so was He not to open His mouth,\" that He so profoundly wished to accomplish the symbol of His own redeeming blood?",
+    "passage": "Isaiah 53:7",
+    "page": "/fathers/tertullian/five-books-against-marcion/chapter-4/",
+    "chapter": 4,
+    "para": 86,
+    "candidate": "five-books-against-marcion/4/eng/86",
+    "from": "Fathers/Latin/Tertullian_Latin/Adversus Marcionem.txt#124"
    }
-  ]
+  ],
+  "passages": [
+   "Isaiah 53:7"
+  ],
+  "ends": []
  },
  {
   "group": "Events",
@@ -9960,7 +10364,25 @@
     "file": "Fathers/Latin/Tertullian_Latin/Adversus Marcionem.txt",
     "section": "",
     "candidate": "Fathers/Latin/Tertullian_Latin/Adversus Marcionem.txt#137.w1"
+   },
+   {
+    "father": "jerome",
+    "lang": "en",
+    "work": "against-jovinianus",
+    "quote": "Whilst thou coveredst thy countenance like Moses and the veil of the law remained, I neither saw thy face, nor did I condescend to hear thy voice.",
+    "passage": "2 Corinthians 3",
+    "page": "/fathers/jerome/against-jovinianus/chapter-1/",
+    "chapter": 1,
+    "para": 41,
+    "candidate": "against-jovinianus/1/eng/41",
+    "from": "Fathers/Latin/Jerome_Latin/Against Jovinianus.txt#40.w1"
    }
+  ],
+  "passages": [
+   "Exodus 34:29-35"
+  ],
+  "ends": [
+   "2 Corinthians 3:13-16"
   ]
  },
  {
@@ -10363,6 +10785,14 @@
     "version": "schaff",
     "candidate": "commentary-on-galatians/4/schaff/49"
    }
+  ],
+  "passages": [
+   "2 Samuel 5:6-9",
+   "Psalm 87:1-3"
+  ],
+  "ends": [
+   "Galatians 4:26",
+   "Hebrews 12:22"
   ]
  },
  {
@@ -10679,7 +11109,26 @@
     "file": "Fathers/Latin/Augustine_Latin/de Catechizandis Rudibus.txt",
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/de Catechizandis Rudibus.txt#38"
+   },
+   {
+    "father": "hilary",
+    "lang": "en",
+    "work": "homilies-on-the-psalms",
+    "quote": "but after the pattern of the Lord, Whose name and Whose meekness alike he foreshadowed",
+    "page": "/fathers/hilary/homilies-on-the-psalms/chapter-1/",
+    "chapter": 1,
+    "para": 43,
+    "candidate": "homilies-on-the-psalms/1/eng/43",
+    "from": "Fathers/Latin/Hilary_Latin/Homilies on the Psalms.txt#183"
    }
+  ],
+  "passages": [
+   "1 Samuel 16:1-13",
+   "2 Samuel 7:12-16"
+  ],
+  "ends": [
+   "Romans 1:3",
+   "Acts 13:22-23"
   ]
  },
  {
@@ -10872,6 +11321,12 @@
     "version": "schaff",
     "candidate": "augustine-letters/55/schaff/37"
    }
+  ],
+  "passages": [
+   "Genesis 17:12"
+  ],
+  "ends": [
+   "Romans 4:25"
   ]
  },
  {
@@ -11062,6 +11517,14 @@
     "version": "schaff",
     "candidate": "expositions-on-the-psalms/127/schaff/0"
    }
+  ],
+  "passages": [
+   "2 Samuel 7:12-14",
+   "1 Kings 6:1-14",
+   "Psalm 72:1-20"
+  ],
+  "ends": [
+   "Ephesians 2:14"
   ]
  },
  {
@@ -11206,7 +11669,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Novatian_Latin/De Trinitate.txt#10"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 32:24-30"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -11326,6 +11793,13 @@
     "section": "",
     "candidate": "Fathers/Latin/Jerome_Latin/Against Jovinianus.txt#33"
    }
+  ],
+  "passages": [
+   "Joshua 2:1-21",
+   "Joshua 6:22-25"
+  ],
+  "ends": [
+   "Matthew 21:31"
   ]
  },
  {
@@ -11482,7 +11956,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Tertullian_Latin/Adversus Marcionem.txt#82.w1"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 25:21-34",
+   "Genesis 27:1-40"
+  ],
+  "ends": []
  },
  {
   "group": "Figures in the prophets and psalms",
@@ -11612,6 +12091,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Reply to Faustus the Manichaean.txt#85"
    }
+  ],
+  "passages": [
+   "Psalm 118:22"
+  ],
+  "ends": [
+   "Matthew 21:42"
   ]
  },
  {
@@ -11696,7 +12181,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Reply to Faustus the Manichaean.txt#72"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 4:8-10"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -11779,7 +12268,11 @@
     "version": "schaff",
     "candidate": "commentary-on-daniel/1/schaff/19"
    }
-  ]
+  ],
+  "passages": [
+   "Zechariah 3:1-9"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -11859,6 +12352,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Ambrose_Latin/Epistulae Variae.txt#171"
    }
+  ],
+  "passages": [
+   "Genesis 1:16"
+  ],
+  "ends": [
+   "Psalm 89:37"
   ]
  },
  {
@@ -11943,7 +12442,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Tertullian_Latin/On Baptism.txt#2.w2"
    }
-  ]
+  ],
+  "passages": [
+   "John 5:2-9"
+  ],
+  "ends": []
  },
  {
   "group": "Events",
@@ -12015,6 +12518,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Ambrose_Latin/On the Holy Spirit.txt#8"
    }
+  ],
+  "passages": [
+   "Judges 6:36-40"
+  ],
+  "ends": [
+   "Matthew 15:24"
   ]
  },
  {
@@ -12087,6 +12596,13 @@
     "version": "schaff",
     "candidate": "homilies-on-matthew/82/schaff/5"
    }
+  ],
+  "passages": [
+   "Exodus 12:8-11"
+  ],
+  "ends": [
+   "Matthew 26:26-28",
+   "1 Corinthians 5:8"
   ]
  },
  {
@@ -12243,6 +12759,13 @@
     "version": "schaff",
     "candidate": "correction-of-the-donatists/2/schaff/5"
    }
+  ],
+  "passages": [
+   "Genesis 17:15-19",
+   "Genesis 21:1-7"
+  ],
+  "ends": [
+   "Galatians 4:26-27"
   ]
  },
  {
@@ -12303,6 +12826,12 @@
     "version": "schaff",
     "candidate": "five-books-against-marcion/4/schaff/21"
    }
+  ],
+  "passages": [
+   "2 Kings 5:10-14"
+  ],
+  "ends": [
+   "Luke 4:27"
   ]
  },
  {
@@ -12388,6 +12917,12 @@
     "version": "schaff",
     "candidate": "jerome-letters/22/schaff/21"
    }
+  ],
+  "passages": [
+   "Isaiah 11:1-2"
+  ],
+  "ends": [
+   "Luke 1:42"
   ]
  },
  {
@@ -12448,7 +12983,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Jerome_Latin/Against Jovinianus.txt#33"
    }
-  ]
+  ],
+  "passages": [
+   "Judges 13:5",
+   "Judges 16:23-31"
+  ],
+  "ends": []
  },
  {
   "group": "The Law: rites, feasts, sacrifices",
@@ -12593,7 +13133,11 @@
     "version": "schaff",
     "candidate": "five-books-against-marcion/3/schaff/14"
    }
-  ]
+  ],
+  "passages": [
+   "Leviticus 16:5-22"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -12653,6 +13197,13 @@
     "version": "schaff",
     "candidate": "expositions-on-the-psalms/78/schaff/1"
    }
+  ],
+  "passages": [
+   "Exodus 16:14-15",
+   "Exodus 17:6"
+  ],
+  "ends": [
+   "1 Corinthians 10:3-4"
   ]
  },
  {
@@ -12775,6 +13326,12 @@
     "version": "schaff",
     "candidate": "homilies-on-the-gospel-of-john/30/schaff/5"
    }
+  ],
+  "passages": [
+   "Joshua 5:2-9"
+  ],
+  "ends": [
+   "1 Corinthians 10:4"
   ]
  },
  {
@@ -12832,7 +13389,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/On the Good of Marriage.txt#29"
    }
-  ]
+  ],
+  "passages": [
+   "Numbers 19:11-22"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -12880,6 +13441,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Expositions on the Psalms.txt#1493"
    }
+  ],
+  "passages": [
+   "Genesis 49:27"
+  ],
+  "ends": [
+   "Acts 9:3-6"
   ]
  },
  {
@@ -12928,6 +13495,12 @@
     "version": "schaff",
     "candidate": "commentary-on-john/6/schaff/36"
    }
+  ],
+  "passages": [
+   "Matthew 21:1-7"
+  ],
+  "ends": [
+   "Zechariah 9:9"
   ]
  },
  {
@@ -12975,7 +13548,49 @@
     "file": "Fathers/Latin/Augustine_Latin/On Baptism Against the Donatists.txt",
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/On Baptism Against the Donatists.txt#140"
+   },
+   {
+    "father": "augustine",
+    "lang": "en",
+    "work": "on-baptism-against-the-donatists",
+    "quote": "if the term \"water\" were never used figuratively and in the allegorical language of prophecy except to signify baptism, we should have trouble in discovering what these words of Jeremiah meant",
+    "passage": "Jeremiah 15:18",
+    "page": "/fathers/augustine/on-baptism-against-the-donatists/chapter-3/",
+    "chapter": 3,
+    "para": 20,
+    "candidate": "on-baptism-against-the-donatists/3/eng/20",
+    "from": "Fathers/Latin/Augustine_Latin/On Baptism Against the Donatists.txt#140"
+   },
+   {
+    "father": "ambrose",
+    "lang": "en",
+    "work": "on-the-mysteries",
+    "quote": "the Christian people alone, for in some even the water is deceitful.",
+    "passage": "Jeremiah 15:18",
+    "page": "/fathers/ambrose/on-the-mysteries/chapter-4/",
+    "chapter": 4,
+    "para": 5,
+    "candidate": "on-the-mysteries/4/eng/5",
+    "from": "Fathers/Latin/Ambrose_Latin/de Mysteriis.txt#28"
+   },
+   {
+    "father": "cyprian",
+    "lang": "en",
+    "work": "epistles-of-cyprian",
+    "quote": "What is this deceitful and faithless water? Certainly that which falsely assumes the resemblance of baptism, and frustrates the grace of faith by a shadowy pretence.",
+    "passage": "Jeremiah 15:18",
+    "page": "/fathers/cyprian/epistles-of-cyprian/chapter-14/",
+    "chapter": 14,
+    "para": 18,
+    "candidate": "epistles-of-cyprian/14/eng/18",
+    "from": "Fathers/Latin/Cyprian_Latin/The Epistles of Cyprian.txt#336"
    }
+  ],
+  "passages": [
+   "Jeremiah 15:18"
+  ],
+  "ends": [
+   "Matthew 28:19"
   ]
  },
  {
@@ -13059,6 +13674,12 @@
     "version": "schaff",
     "candidate": "exhortation-to-martyrdom/1/schaff/34"
    }
+  ],
+  "passages": [
+   "Exodus 12:31-42"
+  ],
+  "ends": [
+   "1 Corinthians 10:11"
   ]
  },
  {
@@ -13106,7 +13727,25 @@
     "file": "Fathers/Latin/Jerome_Latin/Apology Against Rufinus.txt",
     "section": "",
     "candidate": "Fathers/Latin/Jerome_Latin/Apology Against Rufinus.txt#26.w1"
+   },
+   {
+    "father": "jerome",
+    "lang": "en",
+    "work": "apology-against-rufinus",
+    "quote": "Jeremiah before his birth is sanctified, chosen, confirmed, and, as a type of Christ, sent as a prophet to the Gentiles.",
+    "passage": "Jeremiah 1:5",
+    "page": "/fathers/jerome/apology-against-rufinus/chapter-1/",
+    "chapter": 1,
+    "para": 72,
+    "candidate": "apology-against-rufinus/1/eng/72",
+    "from": "Fathers/Latin/Jerome_Latin/Apology Against Rufinus.txt#26.w1"
    }
+  ],
+  "passages": [
+   "Jeremiah 1:5"
+  ],
+  "ends": [
+   "Matthew 16:14"
   ]
  },
  {
@@ -13155,6 +13794,12 @@
     "version": "schaff",
     "candidate": "against-heresies/168/schaff/80"
    }
+  ],
+  "passages": [
+   "Malachi 1:11"
+  ],
+  "ends": [
+   "Hebrews 13:15"
   ]
  },
  {
@@ -13203,6 +13848,12 @@
     "version": "schaff",
     "candidate": "five-books-against-marcion/4/schaff/29"
    }
+  ],
+  "passages": [
+   "Joshua 4:1-9"
+  ],
+  "ends": [
+   "Luke 6:13"
   ]
  },
  {
@@ -13346,6 +13997,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/De civitate Dei.txt#715"
    }
+  ],
+  "passages": [
+   "Genesis 9:20-27"
+  ],
+  "ends": [
+   "Matthew 26:39"
   ]
  },
  {
@@ -13544,6 +14201,12 @@
     "version": "schaff",
     "candidate": "expositions-on-the-psalms/68/schaff/19"
    }
+  ],
+  "passages": [
+   "1 Kings 6:1-38"
+  ],
+  "ends": [
+   "John 2:19-21"
   ]
  },
  {
@@ -13675,6 +14338,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Reply to Faustus the Manichaean.txt#89"
    }
+  ],
+  "passages": [
+   "Genesis 28:16-22"
+  ],
+  "ends": [
+   "Matthew 21:42-44"
   ]
  },
  {
@@ -13794,6 +14463,13 @@
     "version": "schaff",
     "candidate": "dialogue-with-trypho/105/schaff/0"
    }
+  ],
+  "passages": [
+   "Deuteronomy 33:17",
+   "Psalm 22:21"
+  ],
+  "ends": [
+   "Galatians 3:13"
   ]
  },
  {
@@ -13885,6 +14561,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Expositions on the Psalms.txt#2482"
    }
+  ],
+  "passages": [
+   "Exodus 1:8-14"
+  ],
+  "ends": [
+   "Psalm 114:1"
   ]
  },
  {
@@ -13980,6 +14662,12 @@
     "version": "schaff",
     "candidate": "expositions-on-the-psalms/107/schaff/2"
    }
+  ],
+  "passages": [
+   "Exodus 14:26-28"
+  ],
+  "ends": [
+   "1 Corinthians 10:1-2"
   ]
  },
  {
@@ -14063,7 +14751,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Tractates on the Gospel of John.txt#175"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 6:14-16"
+  ],
+  "ends": []
  },
  {
   "group": "Events",
@@ -14184,6 +14876,12 @@
     "version": "schaff",
     "candidate": "treatise-concerning-the-trinity/19/schaff/0"
    }
+  ],
+  "passages": [
+   "Genesis 48:13-20"
+  ],
+  "ends": [
+   "Hebrews 11:21"
   ]
  },
  {
@@ -14267,7 +14965,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Tertullian_Latin/On Baptism.txt#2.w1"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 1:2"
+  ],
+  "ends": []
  },
  {
   "group": "Events",
@@ -14350,6 +15052,12 @@
     "version": "schaff",
     "candidate": "letter-to-gregory/1/schaff/2"
    }
+  ],
+  "passages": [
+   "Exodus 12:35-36"
+  ],
+  "ends": [
+   "Acts 7:22"
   ]
  },
  {
@@ -14432,6 +15140,13 @@
     "version": "schaff",
     "candidate": "expositions-on-the-psalms/131/schaff/0"
    }
+  ],
+  "passages": [
+   "1 Kings 5:3-5",
+   "1 Kings 6:1-14"
+  ],
+  "ends": [
+   "1 Peter 2:5"
   ]
  },
  {
@@ -14503,7 +15218,11 @@
     "version": "schaff",
     "candidate": "festal-letters-and-index/6/schaff/6"
    }
-  ]
+  ],
+  "passages": [
+   "Matthew 21:18-19"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -14574,7 +15293,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Tractates on the Gospel of John.txt#1189"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 6:16"
+  ],
+  "ends": []
  },
  {
   "group": "The Law: rites, feasts, sacrifices",
@@ -14645,6 +15368,13 @@
     "version": "schaff",
     "candidate": "homilies-on-john-and-hebrews/103/schaff/11"
    }
+  ],
+  "passages": [
+   "Leviticus 16:1-34"
+  ],
+  "ends": [
+   "Hebrews 9:7",
+   "Hebrews 9:24"
   ]
  },
  {
@@ -14716,6 +15446,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/De civitate Dei.txt#772"
    }
+  ],
+  "passages": [
+   "Genesis 28:12"
+  ],
+  "ends": [
+   "John 1:51"
   ]
  },
  {
@@ -14786,6 +15522,12 @@
     "version": "schaff",
     "candidate": "city-of-god/20/schaff/63"
    }
+  ],
+  "passages": [
+   "Leviticus 11:1-47"
+  ],
+  "ends": [
+   "2 Peter 2:22"
   ]
  },
  {
@@ -14857,6 +15599,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Reply to Faustus the Manichaean.txt#210"
    }
+  ],
+  "passages": [
+   "Exodus 12:15-20"
+  ],
+  "ends": [
+   "1 Corinthians 5:7-8"
   ]
  },
  {
@@ -14927,8 +15675,24 @@
     "file": "Fathers/Latin/Augustine_Latin/De civitate Dei.txt",
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/De civitate Dei.txt#821.w1"
+   },
+   {
+    "father": "augustine",
+    "lang": "en",
+    "work": "city-of-god",
+    "quote": "hath furnished a table with wine and bread, where appears also the priesthood after the order of Melchizedek",
+    "passage": "Proverbs 9:2-5",
+    "page": "/fathers/augustine/city-of-god/chapter-17/",
+    "chapter": 17,
+    "para": 61,
+    "candidate": "city-of-god/17/eng/61",
+    "from": "Fathers/Latin/Augustine_Latin/De civitate Dei.txt#821.w1"
    }
-  ]
+  ],
+  "passages": [
+   "Proverbs 9:1-5"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -14985,7 +15749,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Expositions on the Psalms.txt#2836"
    }
-  ]
+  ],
+  "passages": [
+   "Psalm 87:4",
+   "Psalm 137:1"
+  ],
+  "ends": []
  },
  {
   "group": "The Law: rites, feasts, sacrifices",
@@ -15041,6 +15810,12 @@
     "version": "schaff",
     "candidate": "augustine-letters/55/schaff/27"
    }
+  ],
+  "passages": [
+   "Psalm 6:1"
+  ],
+  "ends": [
+   "John 20:1"
   ]
  },
  {
@@ -15100,6 +15875,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Cyprian_Latin/The Epistles of Cyprian.txt#254"
    }
+  ],
+  "passages": [
+   "Genesis 49:11"
+  ],
+  "ends": [
+   "Luke 22:20"
   ]
  },
  {
@@ -15159,7 +15940,11 @@
     "version": "schaff",
     "candidate": "homilies-on-matthew/90/schaff/365"
    }
-  ]
+  ],
+  "passages": [
+   "Matthew 2:1-12"
+  ],
+  "ends": []
  },
  {
   "group": "Figures in the prophets and psalms",
@@ -15218,7 +16003,11 @@
     "section": "12",
     "candidate": "Fathers/Greek/Hippolytus_Greek/Commentary on Daniel.txt#47"
    }
-  ]
+  ],
+  "passages": [
+   "Daniel 2:31-45"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -15277,6 +16066,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Ambrose_Latin/de Mysteriis.txt#17"
    }
+  ],
+  "passages": [
+   "Exodus 13:21-22"
+  ],
+  "ends": [
+   "1 Corinthians 10:1-2"
   ]
  },
  {
@@ -15336,7 +16131,12 @@
     "section": "20",
     "candidate": "Fathers/Latin/Cyprian_Latin/Three Books of Testimonies Against the Jews.txt#94"
    }
-  ]
+  ],
+  "passages": [
+   "1 Samuel 1:1-28",
+   "1 Samuel 2:26"
+  ],
+  "ends": []
  },
  {
   "group": "Figures in the prophets and psalms",
@@ -15395,6 +16195,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Sulpicius_Severus_Latin/Chronica.txt#60"
    }
+  ],
+  "passages": [
+   "Daniel 2:34-35"
+  ],
+  "ends": [
+   "Luke 20:18"
   ]
  },
  {
@@ -15454,6 +16260,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Tertullian_Latin/Adversus Marcionem.txt#97"
    }
+  ],
+  "passages": [
+   "Exodus 15:27"
+  ],
+  "ends": [
+   "Luke 6:13"
   ]
  },
  {
@@ -15513,7 +16325,11 @@
     "version": "schaff",
     "candidate": "jerome-letters/108/schaff/22"
    }
-  ]
+  ],
+  "passages": [
+   "Matthew 20:29-34"
+  ],
+  "ends": []
  },
  {
   "group": "Figures in the prophets and psalms",
@@ -15609,6 +16425,12 @@
     "version": "schaff",
     "candidate": "five-books-against-marcion/3/schaff/39"
    }
+  ],
+  "passages": [
+   "Jeremiah 11:19"
+  ],
+  "ends": [
+   "Luke 22:19"
   ]
  },
  {
@@ -15667,7 +16489,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Tractates on the Gospel of John.txt#175"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 6:14"
+  ],
+  "ends": []
  },
  {
   "group": "Events",
@@ -15714,7 +16540,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Reply to Faustus the Manichaean.txt#288"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 4:4"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -15761,6 +16591,13 @@
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Homilies on the Gospel of John.txt#178"
    }
+  ],
+  "passages": [
+   "Genesis 15:6",
+   "Genesis 22:18"
+  ],
+  "ends": [
+   "Romans 4:3"
   ]
  },
  {
@@ -15831,7 +16668,25 @@
     "para": 102,
     "version": "schaff",
     "candidate": "against-heresies/168/schaff/102"
+   },
+   {
+    "father": "hippolytus",
+    "lang": "en",
+    "work": "commentary-on-daniel",
+    "quote": "the Saviour appeared and showed His own body to the world, (born) of the Virgin, who was the \"ark overlaid with pure gold,\" with the Word within and the Holy Spirit without",
+    "passage": "Exodus 25:10-11",
+    "page": "/fathers/hippolytus/commentary-on-daniel/chapter-1/",
+    "chapter": 1,
+    "para": 11,
+    "candidate": "commentary-on-daniel/1/eng/11",
+    "from": "Fathers/Greek/Hippolytus_Greek/Commentary on Daniel.txt#128"
    }
+  ],
+  "passages": [
+   "Exodus 25:10-22"
+  ],
+  "ends": [
+   "Hebrews 9:4"
   ]
  },
  {
@@ -15879,7 +16734,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Rufinus_Latin/Commentary on the Apostles' Creed.txt#22"
    }
-  ]
+  ],
+  "passages": [
+   "John 19:34"
+  ],
+  "ends": []
  },
  {
   "group": "Gospel scenes read as figures",
@@ -15926,7 +16785,11 @@
     "version": "schaff",
     "candidate": "sermons-on-selected-lessons-of-the-new-testament/13/schaff/2"
    }
-  ]
+  ],
+  "passages": [
+   "Matthew 8:23-27"
+  ],
+  "ends": []
  },
  {
   "group": "Gospel scenes read as figures",
@@ -15997,7 +16860,11 @@
     "version": "schaff",
     "candidate": "on-the-flesh-of-christ/7/schaff/1"
    }
-  ]
+  ],
+  "passages": [
+   "Matthew 12:46-50"
+  ],
+  "ends": []
  },
  {
   "group": "Events",
@@ -16044,7 +16911,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Jerome_Latin/Against Jovinianus.txt#98"
    }
-  ]
+  ],
+  "passages": [
+   "Joshua 13:1-33"
+  ],
+  "ends": []
  },
  {
   "group": "The Law: rites, feasts, sacrifices",
@@ -16091,7 +16962,11 @@
     "version": "schaff",
     "candidate": "homilies-on-acts-and-romans/4/schaff/2"
    }
-  ]
+  ],
+  "passages": [
+   "Leviticus 23:15-21"
+  ],
+  "ends": []
  },
  {
   "group": "The Law: rites, feasts, sacrifices",
@@ -16138,6 +17013,12 @@
     "version": "schaff",
     "candidate": "on-the-soul-and-the-resurrection/4/schaff/11"
    }
+  ],
+  "passages": [
+   "Leviticus 23:33-43"
+  ],
+  "ends": [
+   "1 Corinthians 15:52"
   ]
  },
  {
@@ -16185,7 +17066,11 @@
     "section": "18",
     "candidate": "Fathers/Greek/Hippolytus_Greek/Commentary on Daniel.txt#19"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 2:10-14"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -16231,7 +17116,12 @@
     "section": "",
     "candidate": "Fathers/Latin/Ambrose_Latin/On the Decease of His Brother Satyrus.txt#181"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 25:24-34",
+   "Genesis 28:10-22"
+  ],
+  "ends": []
  },
  {
   "group": "Gospel scenes read as figures",
@@ -16276,6 +17166,12 @@
     "version": "schaff",
     "candidate": "stromata/5/schaff/164"
    }
+  ],
+  "passages": [
+   "Malachi 3:1"
+  ],
+  "ends": [
+   "Mark 1:2-3"
   ]
  },
  {
@@ -16322,7 +17218,26 @@
     "file": "Fathers/Latin/Jerome_Latin/Against Jovinianus.txt",
     "section": "",
     "candidate": "Fathers/Latin/Jerome_Latin/Against Jovinianus.txt#79.w1"
+   },
+   {
+    "father": "augustine",
+    "lang": "en",
+    "work": "on-christian-doctrine",
+    "quote": "Of this we are admonished by the law personified in Moses, by prophecy personified in Elijah, and by our Lord Himself",
+    "passage": "Exodus 24:18; 1 Kings 19:8",
+    "page": "/fathers/augustine/on-christian-doctrine/chapter-6/",
+    "chapter": 6,
+    "para": 41,
+    "candidate": "on-christian-doctrine/6/eng/41",
+    "from": "Fathers/Latin/Augustine_Latin/On Christian Doctrine.txt#85"
    }
+  ],
+  "passages": [
+   "Matthew 17:1-8"
+  ],
+  "ends": [
+   "Exodus 24:18",
+   "1 Kings 19:8"
   ]
  },
  {
@@ -16370,7 +17285,11 @@
     "section": "18",
     "candidate": "Fathers/Greek/Hippolytus_Greek/Commentary on Daniel.txt#19"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 2:8-15"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -16417,7 +17336,11 @@
     "version": "schaff",
     "candidate": "concerning-the-sacraments/2/schaff/28"
    }
-  ]
+  ],
+  "passages": [
+   "Exodus 13:21"
+  ],
+  "ends": []
  },
  {
   "group": "Figures in the prophets and psalms",
@@ -16464,7 +17387,11 @@
     "version": "schaff",
     "candidate": "two-homilies-on-eutropius/2/schaff/18"
    }
-  ]
+  ],
+  "passages": [
+   "Psalm 45:9-14"
+  ],
+  "ends": []
  },
  {
   "group": "Events",
@@ -16510,7 +17437,25 @@
     "file": "Fathers/Latin/Augustine_Latin/On Christian Doctrine.txt",
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/On Christian Doctrine.txt#236"
+   },
+   {
+    "father": "augustine",
+    "lang": "en",
+    "work": "on-christian-doctrine",
+    "quote": "Now this sign seems to indicate that the rock was a type of the body of Christ",
+    "passage": "Judges 6:21; 1 Corinthians 10:4",
+    "page": "/fathers/augustine/on-christian-doctrine/chapter-8/",
+    "chapter": 8,
+    "para": 69,
+    "candidate": "on-christian-doctrine/8/eng/69",
+    "from": "Fathers/Latin/Augustine_Latin/On Christian Doctrine.txt#236"
    }
+  ],
+  "passages": [
+   "Judges 6:19-21"
+  ],
+  "ends": [
+   "1 Corinthians 10:4"
   ]
  },
  {
@@ -16555,6 +17500,12 @@
     "version": "schaff",
     "candidate": "on-the-holy-trinity/15/schaff/172"
    }
+  ],
+  "passages": [
+   "Leviticus 4:1-35"
+  ],
+  "ends": [
+   "2 Corinthians 5:21"
   ]
  },
  {
@@ -16602,6 +17553,12 @@
     "version": "schaff",
     "candidate": "expositions-on-the-psalms/93/schaff/0"
    }
+  ],
+  "passages": [
+   "Genesis 1:1-31"
+  ],
+  "ends": [
+   "2 Peter 3:8"
   ]
  },
  {
@@ -16649,6 +17606,12 @@
     "version": "schaff",
     "candidate": "five-theological-orations-orations-xxvii-xxxi/2/schaff/12"
    }
+  ],
+  "passages": [
+   "Exodus 25:1-40"
+  ],
+  "ends": [
+   "Hebrews 8:5"
   ]
  },
  {
@@ -16696,6 +17659,12 @@
     "version": "schaff",
     "candidate": "constitutions-of-the-holy-apostles/7/schaff/2"
    }
+  ],
+  "passages": [
+   "Deuteronomy 25:4"
+  ],
+  "ends": [
+   "1 Corinthians 9:9-10"
   ]
  },
  {
@@ -16743,7 +17712,11 @@
     "version": "schaff",
     "candidate": "expositions-on-the-psalms/96/schaff/1"
    }
-  ]
+  ],
+  "passages": [
+   "Psalm 96:10"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -16778,6 +17751,12 @@
     "version": "schaff",
     "candidate": "hymns-on-the-nativity/1/schaff/3"
    }
+  ],
+  "passages": [
+   "Numbers 17:8"
+  ],
+  "ends": [
+   "Hebrews 9:4"
   ]
  },
  {
@@ -16813,7 +17792,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Ambrose_Latin/Exposition of the Christian Faith.txt#207"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 18:1-15"
+  ],
+  "ends": []
  },
  {
   "group": "Figures in the prophets and psalms",
@@ -16848,6 +17831,12 @@
     "version": "schaff",
     "candidate": "catechetical-lectures/10/schaff/11"
    }
+  ],
+  "passages": [
+   "Lamentations 4:20"
+  ],
+  "ends": [
+   "Luke 1:35"
   ]
  },
  {
@@ -16882,8 +17871,25 @@
     "para": 363,
     "version": "schaff",
     "candidate": "stromata/7/schaff/363"
+   },
+   {
+    "father": "augustine",
+    "lang": "en",
+    "work": "reply-to-faustus-the-manichaean",
+    "quote": "your disagreement with the Catholic faith shows that you do not ruminate on the word of wisdom, and that you do not divide the hoof, in the sense of making a correct distinction between the Old Testament and the New.",
+    "passage": "Leviticus 11",
+    "page": "/fathers/augustine/reply-to-faustus-the-manichaean/chapter-16/",
+    "chapter": 16,
+    "para": 30,
+    "candidate": "reply-to-faustus-the-manichaean/16/eng/30",
+    "from": "Fathers/Latin/Augustine_Latin/Reply to Faustus the Manichaean.txt#184"
    }
-  ]
+  ],
+  "passages": [
+   "Leviticus 11:3",
+   "Deuteronomy 14:6"
+  ],
+  "ends": []
  },
  {
   "group": "Figures in the prophets and psalms",
@@ -16917,8 +17923,24 @@
     "para": 5,
     "version": "schaff",
     "candidate": "against-the-pelagians/2/schaff/5"
+   },
+   {
+    "father": "rufinus",
+    "lang": "en",
+    "work": "commentary-on-the-apostles-creed",
+    "quote": "calling Mary figuratively \"the Gate of the Lord,\" the gate, namely, through which the Lord entered the world.",
+    "passage": "Ezekiel 44:2",
+    "page": "/fathers/rufinus/commentary-on-the-apostles-creed/chapter-2/",
+    "chapter": 2,
+    "para": 13,
+    "candidate": "commentary-on-the-apostles-creed/2/eng/13",
+    "from": "Fathers/Latin/Rufinus_Latin/Commentary on the Apostles' Creed.txt#9"
    }
-  ]
+  ],
+  "passages": [
+   "Ezekiel 44:1-3"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -16953,7 +17975,11 @@
     "version": "schaff",
     "candidate": "jerome-letters/108/schaff/20"
    }
-  ]
+  ],
+  "passages": [
+   "Numbers 13:23"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -16988,7 +18014,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Isidore_Latin/Etymologiae.txt#573.w1"
    }
-  ]
+  ],
+  "passages": [
+   "Esther 1:1-10:3"
+  ],
+  "ends": []
  },
  {
   "group": "Figures in the prophets and psalms",
@@ -17023,7 +18053,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Tertullian_Latin/Adversus Marcionem.txt#97"
    }
-  ]
+  ],
+  "passages": [
+   "Psalm 68:31"
+  ],
+  "ends": []
  },
  {
   "group": "Figures in the prophets and psalms",
@@ -17058,7 +18092,11 @@
     "version": "schaff",
     "candidate": "dialogue-with-trypho/91/schaff/0"
    }
-  ]
+  ],
+  "passages": [
+   "Isaiah 27:1"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -17093,6 +18131,12 @@
     "version": "schaff",
     "candidate": "jerome-letters/123/schaff/18"
    }
+  ],
+  "passages": [
+   "Hosea 1:2"
+  ],
+  "ends": [
+   "Romans 9:25-26"
   ]
  },
  {
@@ -17128,6 +18172,12 @@
     "version": "schaff",
     "candidate": "commentary-on-galatians/4/schaff/54"
    }
+  ],
+  "passages": [
+   "Genesis 21:9"
+  ],
+  "ends": [
+   "Galatians 4:29"
   ]
  },
  {
@@ -17162,8 +18212,24 @@
     "para": 2,
     "version": "schaff",
     "candidate": "against-heresies/112/schaff/2"
+   },
+   {
+    "father": "origen",
+    "lang": "en",
+    "work": "against-celsus",
+    "quote": "For those who become converts to Christ from among the heathen, are indicated by the history of Laban and Jacob.",
+    "passage": "Genesis 30:32-43",
+    "page": "/fathers/origen/against-celsus/chapter-5/",
+    "chapter": 5,
+    "para": 104,
+    "candidate": "against-celsus/5/eng/104",
+    "from": "Fathers/Greek/Origen_Greek/Against Celsus.txt#359"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 30:32-43"
+  ],
+  "ends": []
  },
  {
   "group": "Gospel scenes read as figures",
@@ -17196,6 +18262,12 @@
     "version": "schaff",
     "candidate": "homilies-on-john-and-hebrews/16/schaff/18"
    }
+  ],
+  "passages": [
+   "Matthew 3:1-12"
+  ],
+  "ends": [
+   "Malachi 3:1"
   ]
  },
  {
@@ -17231,6 +18303,12 @@
     "version": "schaff",
     "candidate": "against-jovinianus/2/schaff/8"
    }
+  ],
+  "passages": [
+   "Job 41:1"
+  ],
+  "ends": [
+   "Luke 10:18"
   ]
  },
  {
@@ -17266,6 +18344,12 @@
     "version": "schaff",
     "candidate": "catechetical-lectures/10/schaff/23"
    }
+  ],
+  "passages": [
+   "Deuteronomy 28:66"
+  ],
+  "ends": [
+   "Matthew 26:2"
   ]
  },
  {
@@ -17300,7 +18384,25 @@
     "file": "Fathers/Latin/Ambrose_Latin/Exposition of the Christian Faith.txt",
     "section": "",
     "candidate": "Fathers/Latin/Ambrose_Latin/Exposition of the Christian Faith.txt#132"
+   },
+   {
+    "father": "ambrose",
+    "lang": "en",
+    "work": "exposition-of-the-christian-faith",
+    "quote": "But forasmuch as then the Seraph came down in a vision to the Prophet, whilst Thou, O Lord, in revelation of the mystery hast come to us in the flesh",
+    "passage": "Isaiah 6:6",
+    "page": "/fathers/ambrose/exposition-of-the-christian-faith/chapter-1/",
+    "chapter": 1,
+    "para": 174,
+    "candidate": "exposition-of-the-christian-faith/1/eng/174",
+    "from": "Fathers/Latin/Ambrose_Latin/Exposition of the Christian Faith.txt#132"
    }
+  ],
+  "passages": [
+   "Isaiah 6:6-7"
+  ],
+  "ends": [
+   "1 Timothy 3:16"
   ]
  },
  {
@@ -17336,6 +18438,12 @@
     "version": "schaff",
     "candidate": "on-the-incarnation-of-the-lord-against-nestorius/7/schaff/68"
    }
+  ],
+  "passages": [
+   "Psalm 24:7-10"
+  ],
+  "ends": [
+   "Matthew 25:31"
   ]
  },
  {
@@ -17371,6 +18479,12 @@
     "version": "schaff",
     "candidate": "against-heresies/111/schaff/12"
    }
+  ],
+  "passages": [
+   "Numbers 12:1"
+  ],
+  "ends": [
+   "Acts 15:14"
   ]
  },
  {
@@ -17406,7 +18520,11 @@
     "version": "schaff",
     "candidate": "exposition-of-the-orthodox-faith/4/schaff/42"
    }
-  ]
+  ],
+  "passages": [
+   "Exodus 14:16"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -17440,8 +18558,25 @@
     "file": "Fathers/Latin/Augustine_Latin/Homilies on the Gospel of John.txt",
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Homilies on the Gospel of John.txt#175"
+   },
+   {
+    "father": "augustine",
+    "lang": "en",
+    "work": "homilies-on-the-gospel-of-john",
+    "quote": "Christ was represented also in Noah and in that ark of the whole world.",
+    "passage": "Genesis 6-9",
+    "page": "/fathers/augustine/homilies-on-the-gospel-of-john/chapter-9/",
+    "chapter": 9,
+    "para": 11,
+    "candidate": "homilies-on-the-gospel-of-john/9/eng/11",
+    "from": "Fathers/Latin/Augustine_Latin/Homilies on the Gospel of John.txt#175"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 5:29",
+   "Genesis 6:8-9"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -17502,6 +18637,12 @@
     "version": "schaff",
     "candidate": "banquet-of-the-ten-virgins/28/schaff/0"
    }
+  ],
+  "passages": [
+   "Exodus 14:23-28"
+  ],
+  "ends": [
+   "1 Corinthians 10:1-2"
   ]
  },
  {
@@ -17536,8 +18677,36 @@
     "file": "Fathers/Latin/Augustine_Latin/Expositions on the Psalms.txt",
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Expositions on the Psalms.txt#967"
+   },
+   {
+    "father": "tertullian",
+    "lang": "en",
+    "work": "five-books-against-marcion",
+    "quote": "\"They pierced,\" says He, \"my hands and my feet,\" which is the special cruelty of the cross.",
+    "passage": "Psalm 21:17 (Vulgate)",
+    "page": "/fathers/tertullian/five-books-against-marcion/chapter-3/",
+    "chapter": 3,
+    "para": 39,
+    "candidate": "five-books-against-marcion/3/eng/39",
+    "from": "Fathers/Latin/Tertullian_Latin/Adversus Marcionem.txt#77"
+   },
+   {
+    "father": "augustine",
+    "lang": "en",
+    "work": "expositions-on-the-psalms",
+    "quote": "For the future Passion of our Lord Himself was foretold: and yet it says",
+    "passage": "Psalm 22:16; Psalm 22:18",
+    "page": "/fathers/augustine/expositions-on-the-psalms/chapter-44/",
+    "chapter": 44,
+    "para": 8,
+    "candidate": "expositions-on-the-psalms/44/eng/8",
+    "from": "Fathers/Latin/Augustine_Latin/Expositions on the Psalms.txt#967"
    }
-  ]
+  ],
+  "passages": [
+   "Psalm 22:16-18"
+  ],
+  "ends": []
  },
  {
   "group": "Figures in the prophets and psalms",
@@ -17572,7 +18741,11 @@
     "section": "",
     "candidate": "Fathers/Latin/Hilary_Latin/Homilies on the Psalms.txt#425"
    }
-  ]
+  ],
+  "passages": [
+   "Psalm 68:27"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -17606,7 +18779,25 @@
     "file": "Fathers/Latin/Augustine_Latin/Expositions on the Psalms.txt",
     "section": "",
     "candidate": "Fathers/Latin/Augustine_Latin/Expositions on the Psalms.txt#1720.w1"
+   },
+   {
+    "father": "origen",
+    "lang": "en",
+    "work": "against-celsus",
+    "quote": "although we may say of it, that both Judea and Jerusalem were the shadow and figure of that pure land, goodly and large, in the pure region of heaven, in which is the heavenly Jerusalem.",
+    "passage": "Exodus 3:8",
+    "page": "/fathers/origen/against-celsus/chapter-8/",
+    "chapter": 8,
+    "para": 60,
+    "candidate": "against-celsus/8/eng/60",
+    "from": "Fathers/Greek/Origen_Greek/Against Celsus.txt#752"
    }
+  ],
+  "passages": [
+   "Exodus 3:8"
+  ],
+  "ends": [
+   "Hebrews 12:22"
   ]
  },
  {
@@ -17642,6 +18833,13 @@
     "version": "schaff",
     "candidate": "epistle-of-barnabas/8/schaff/0"
    }
+  ],
+  "passages": [
+   "Numbers 19:1-10"
+  ],
+  "ends": [
+   "Hebrews 13:11-12",
+   "Hebrews 9:13"
   ]
  },
  {
@@ -17677,7 +18875,11 @@
     "version": "schaff",
     "candidate": "against-the-heresy-of-one-noetus/1/schaff/15"
    }
-  ]
+  ],
+  "passages": [
+   "Revelation 19:13"
+  ],
+  "ends": []
  },
  {
   "group": "The Law: rites, feasts, sacrifices",
@@ -17712,7 +18914,11 @@
     "version": "schaff",
     "candidate": "on-the-spirit-and-the-letter/27/schaff/0"
    }
-  ]
+  ],
+  "passages": [
+   "Exodus 20:8-11"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -17747,7 +18953,11 @@
     "version": "schaff",
     "candidate": "dialogue-with-trypho/111/schaff/0"
    }
-  ]
+  ],
+  "passages": [
+   "Joshua 2:18-21"
+  ],
+  "ends": []
  },
  {
   "group": "People",
@@ -17782,6 +18992,12 @@
     "version": "schaff",
     "candidate": "against-celsus/7/schaff/95"
    }
+  ],
+  "passages": [
+   "Genesis 3:1-15"
+  ],
+  "ends": [
+   "John 8:44"
   ]
  },
  {
@@ -17817,7 +19033,11 @@
     "version": "schaff",
     "candidate": "jerome-letters/125/schaff/3"
    }
-  ]
+  ],
+  "passages": [
+   "Acts 10:9-16"
+  ],
+  "ends": []
  },
  {
   "group": "Things and places",
@@ -17852,6 +19072,13 @@
     "version": "schaff",
     "candidate": "dialogues-eranistes/4/schaff/22"
    }
+  ],
+  "passages": [
+   "Exodus 26:31-33"
+  ],
+  "ends": [
+   "Hebrews 10:20",
+   "Matthew 27:51"
   ]
  },
  {
@@ -17887,7 +19114,11 @@
     "version": "schaff",
     "candidate": "exposition-of-the-orthodox-faith/4/schaff/42"
    }
-  ]
+  ],
+  "passages": [
+   "Genesis 2:9"
+  ],
+  "ends": []
  },
  {
   "group": "The Law: rites, feasts, sacrifices",
@@ -17922,7 +19153,11 @@
     "version": "schaff",
     "candidate": "festal-letters-and-index/1/schaff/3"
    }
-  ]
+  ],
+  "passages": [
+   "Numbers 10:1-10"
+  ],
+  "ends": []
  },
  {
   "group": "Figures in the prophets and psalms",
@@ -17956,7 +19191,23 @@
     "para": 40,
     "version": "schaff",
     "candidate": "augustine-letters/100/schaff/40"
+   },
+   {
+    "father": "tertullian",
+    "lang": "en",
+    "work": "five-books-against-marcion",
+    "quote": "made by Him a little lower than the angels;\" declaring Himself to be \"a worm and not a man, a reproach of men, and despised of the people.",
+    "passage": "Psalm 22:6; Psalm 8:6",
+    "page": "/fathers/tertullian/five-books-against-marcion/chapter-3/",
+    "chapter": 3,
+    "para": 14,
+    "candidate": "five-books-against-marcion/3/eng/14",
+    "from": "Fathers/Latin/Tertullian_Latin/Adversus Marcionem.txt#105.w1"
    }
-  ]
+  ],
+  "passages": [
+   "Psalm 22:6"
+  ],
+  "ends": []
  }
 ]

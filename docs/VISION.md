@@ -49,6 +49,6 @@ Fathers give the content. Patrista never names a type itself (see `data/connecti
   map replaced the grid, the kind chips and the book menu. It is flat, not 3D: the whole-Bible 3D map was
   retired earlier to keep the site simple. (Nov 2026)
 - **Types and themes we named ourselves.** The first map had 78 types gathered from study notes and grouped
-  into seven themes chosen by hand (and by AI). Neither could be checked. The types are now the 160 that two
-  or more Fathers saw, found by reading every paragraph of the library that uses a word for a figure, and the
-  colours are the Fathers' own gatherings (`data/connections/README.md`, "The rule for types"). (Nov 2026)
+  into seven themes chosen by hand (and by AI). Neither could be checked. The types are now the 97 that two
+  or more Fathers saw and whose passages they join themselves, found by reading every paragraph of the library
+  that uses a word for a figure, and the colours are the Fathers' own gatherings (`data/connections/README.md`, "The rule for types"). (Nov 2026)

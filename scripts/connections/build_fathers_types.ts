@@ -9,21 +9,20 @@
  * like "type", "figure" or "shadow" (find_type_candidates.ts) was read for the types its Father names; each
  * claim's quotation was checked against the paragraph; the claims were grouped into types; the types seen by
  * two or more Fathers were cleaned (duplicates merged, general statements dropped), grouped and approved.
+ * A claim found only in Latin or Greek was matched to the same passage in the library's English translation
+ * where there is one, and added as English. Each type's other end (`ends`) was chosen in review from the
+ * verses its Fathers cite in their own quoted paragraphs, and approved. A type with no such verse, or no
+ * English quotation, is not on the site yet.
  *
  * Each entry here:
  *   label     the approved wording, "X → Y"
- *   def       its group and the Fathers who saw it; nothing is written about a type beyond what they say
- *   where     the Fathers' quotations, "Name, *Work* 12.3 — “…”", at most two per Father, English first. A
- *             Latin or Greek quotation is given in a machine translation, marked as one, with the original.
- *   links     the reader paragraph of each English quotation
- *   ranges    the type's passages: the ones its claims name, then up to three verses of the other Testament
- *             that the Fathers cite together with them (connections.sqlite `witness`: two Fathers citing
- *             both in one paragraph, or one Father and a paragraph quoted here), so the map has two ends
- *             to join. A type with no such verse has its own passage only.
+ *   def       its group and the Fathers quoted for it; nothing is written about a type beyond what they say
+ *   where     the Fathers' quotations in English, "Name, *Work* 12.3 — “…”", at most two per Father
+ *   links     the reader paragraph of each quotation
+ *   ranges    the type's passages: the ones its claims name, then its approved other end(s)
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { DatabaseSync } from "node:sqlite";
 import { getCatalog, getWork } from "../../server/api";
 import { kjvText } from "../../server/scriptureIndex";
 import { englishParagraphs } from "../../src/lib/fatherPaths";
@@ -32,7 +31,6 @@ import { findScriptureRefs } from "../../src/lib/scriptureRefs";
 const ROOT = join(import.meta.dirname, "..", "..");
 const DIR = join(ROOT, "data", "connections", "typology");
 const PER_FATHER = 2;
-const CITED_ENDS = 3;
 const NAMED_ENDS = 5;
 
 type Evidence = {
@@ -47,19 +45,13 @@ type Evidence = {
   para?: number;
   candidate: string;
 };
-type Approved = { group: string; label: string; passage: string; fathers: string[]; evidence: Evidence[] };
+type Approved = { group: string; label: string; passage: string; fathers: string[]; evidence: Evidence[]; passages?: string[]; ends?: string[] };
 
 const approved = JSON.parse(readFileSync(join(DIR, "approved.json"), "utf8")) as Approved[];
 const meta = JSON.parse(readFileSync(join(ROOT, "public", "connections", "meta.json"), "utf8")) as {
   books: { id: string; name: string; n: number; chapters: number }[];
 };
 const kjv = kjvText(ROOT);
-// Pairs of verses the Fathers cite in one paragraph (build_witness.py), with how many Fathers do.
-const db = new DatabaseSync(join(ROOT, "data", "connections", "connections.sqlite"), { readOnly: true });
-const together = db.prepare(
-  "select b as v, fathers from witness where a between ? and ? " +
-    "union all select a as v, fathers from witness where b between ? and ?"
-);
 const catalog = getCatalog();
 const authorName = new Map(catalog.authors.map((a) => [a.id, a.name.replace(/\s*\(.*\)$/, "")]));
 // Fathers whose Latin the library holds but who have no page in the reader yet.
@@ -165,7 +157,6 @@ const slug = (s: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 const ids = new Set<string>();
-const LANG = { lat: "Latin", grk: "Greek" } as const;
 const out = [];
 let oneEnd = 0;
 for (const t of approved) {
@@ -174,62 +165,44 @@ for (const t of approved) {
   if (ids.has(id)) id += "-" + slug(y.replace(/^the /i, ""));
   ids.add(id);
 
-  const placed = t.evidence.map((e) => ({ e, at: place(e) }));
-  // At most PER_FATHER quotations per Father: English with a reader link first, then the shortest.
+  // Only English quotations, each linked to its paragraph in the reader. A Latin or Greek claim counts only
+  // when the same passage was found in the library's English translation (approved.json carries it as English).
+  const placed = t.evidence.map((e) => ({ e, at: place(e) })).filter((p) => p.at) as { e: Evidence; at: Place }[];
+  // At most PER_FATHER quotations per Father, the shortest first.
   const byFather = new Map<string, typeof placed>();
   for (const p of placed) byFather.set(p.e.father, [...(byFather.get(p.e.father) ?? []), p]);
-  const chosen = [...byFather.values()].flatMap((ps) =>
-    [...ps].sort((a, b) => Number(!a.at) - Number(!b.at) || a.e.quote.length - b.e.quote.length).slice(0, PER_FATHER)
-  );
+  const chosen = [...byFather.values()].flatMap((ps) => [...ps].sort((a, b) => a.e.quote.length - b.e.quote.length).slice(0, PER_FATHER));
   const where: string[] = [];
-  const links: ({ label: string; href: string } | null)[] = [];
+  const links: { label: string; href: string }[] = [];
   for (const { e, at } of chosen) {
     const who = authorName.get(e.father) ?? e.father;
-    const title = (e.lang === "en" ? workTitle.get(e.candidate.split("/")[0]) : null) ?? e.work;
-    if (at) {
-      where.push(`${who}, *${title}* ${at.label} — “${e.quote}”`);
-      links.push({ label: `${who}, ${title} ${at.label}`, href: at.href });
-    } else {
-      const lang = LANG[e.lang as "lat" | "grk"] ?? "original";
-      where.push(`${who}, *${title}* (${lang}) — “${e.en ?? e.quote}” (machine translation from the ${lang}: “${e.quote}”)`);
-      links.push(null);
-    }
+    const title = workTitle.get(e.candidate.split("/")[0]) ?? e.work;
+    where.push(`${who}, *${title}* ${at.label} — “${e.quote}”`);
+    links.push({ label: `${who}, ${title} ${at.label}`, href: at.href });
   }
 
-  // The passages its claims name, most named first.
+  // A type none of whose Fathers is in the English library, or with no other passage its Fathers cite, is
+  // left out for now: the site shows only what the Fathers' own words and citations support.
+  if (!where.length || !t.ends?.length) continue;
+
+  // The passages its claims name, most named first, then its approved other end(s) (the review in approved.json).
   const named = new Map<string, { r: [number, number]; n: number }>();
   for (const r of [...passages(t.passage), ...t.evidence.flatMap((e) => passages(e.passage))]) {
     const k = r.join("-");
     named.set(k, { r, n: (named.get(k)?.n ?? 0) + 1 });
   }
   const namedRanges = widest([...named.values()].sort((a, b) => b.n - a.n).map((x) => x.r)).slice(0, NAMED_ENDS);
-  const home = namedRanges.length ? testament(namedRanges[0][0]) : "ot";
-  // The other end: a verse of the other Testament that one of this type's own quoted paragraphs cites, and
-  // that the Fathers cite together with the type's passage (in that paragraph or elsewhere). Failing that, a
-  // verse three or more Fathers cite together with the passage. Most Fathers first.
-  const own = new Map<number, number>();
-  for (const { at } of placed) for (const v of new Set(at?.cites ?? [])) own.set(v, (own.get(v) ?? 0) + 1);
-  const withPassage = new Map<number, Set<string>>();
-  for (const [a, b] of namedRanges)
-    for (const { v, fathers } of together.all(a, b, a, b) as { v: number; fathers: string }[]) {
-      if (testament(v) === home || namedRanges.some(([x, y]) => v >= x && v <= y)) continue;
-      const s = withPassage.get(v) ?? new Set<string>();
-      for (const f of JSON.parse(fathers) as string[]) s.add(f);
-      withPassage.set(v, s);
-    }
-  const rank = (vs: number[]) =>
-    vs.sort((a, b) => withPassage.get(b)!.size - withPassage.get(a)!.size || (own.get(b) ?? 0) - (own.get(a) ?? 0) || a - b);
-  let ends = rank([...withPassage.keys()].filter((v) => own.has(v) && withPassage.get(v)!.size >= 2));
-  if (!ends.length) ends = rank([...withPassage.keys()].filter((v) => withPassage.get(v)!.size >= 3));
-  const cited = ends.slice(0, CITED_ENDS).map((v) => [v, v] as [number, number]);
-  const ranges = widest([...namedRanges, ...cited]);
+  // Reviewed passages win over the ones the claims name.
+  const own = t.passages?.length ? widest(t.passages.flatMap((p) => passages(p))) : namedRanges;
+  const ranges = widest([...own, ...(t.ends ?? []).flatMap((p) => passages(p))]);
+  for (const p of [...(t.passages ?? []), ...(t.ends ?? [])]) if (!passages(p).length) console.log("unreadable passage:", t.label, "|", p);
   if (ranges.length < 2) oneEnd += 1;
 
-  const fathers = t.fathers.map((f) => authorName.get(f) ?? f);
+  const fathers = [...byFather.keys()].sort().map((f) => authorName.get(f) ?? f);
   out.push({
     id,
     label: t.label,
-    def: `${t.group}. Seen by ${fathers.length} Fathers: ${fathers.join(", ")}.`,
+    def: `${t.group}. Seen by ${fathers.length} ${fathers.length === 1 ? "Father" : "Fathers"}: ${fathers.join(", ")}.`,
     kind: slug(t.group),
     christ: "",
     where,

@@ -13,6 +13,7 @@ import { PrintPage } from "./pages/PrintPage";
 import { ReadPage } from "./pages/ReadPage";
 import { SearchPage } from "./pages/SearchPage";
 import { StudyPage } from "./pages/StudyPage";
+import { TabernaclePage } from "./pages/TabernaclePage";
 import { TypesPage } from "./pages/TypesPage";
 
 export function App() {
@@ -36,6 +37,7 @@ export function App() {
           <Route path="/church-history/timeline" element={<TimelineRedirect />} />
           <Route path="/study" element={<StudyPage />} />
           <Route path="/types" element={<TypesPage />} />
+          <Route path="/tabernacle" element={<TabernaclePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/give" element={<GivePage />} />
           <Route path="/fixes" element={<FixesPage />} />

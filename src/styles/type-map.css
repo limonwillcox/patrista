@@ -1,0 +1,270 @@
+/* /types: the types map (src/components/typeMap/TypeMap.tsx) and the controls around it. */
+
+:root {
+  --th-waters: #2f78bd;
+  --th-wood: #93602f;
+  --th-blood: #c0392f;
+  --th-table: #c68a1c;
+  --th-places: #3a8f5e;
+  --th-people: #7d55b8;
+  --th-patterns: #6a7683;
+}
+html[data-theme="night"] {
+  --th-waters: #6aa8e8;
+  --th-wood: #c9965f;
+  --th-blood: #ec6f62;
+  --th-table: #e3b04f;
+  --th-places: #6cc28f;
+  --th-people: #ab8be0;
+  --th-patterns: #a3afbb;
+}
+.th-waters { --th: var(--th-waters); }
+.th-wood { --th: var(--th-wood); }
+.th-blood { --th: var(--th-blood); }
+.th-table { --th: var(--th-table); }
+.th-places { --th: var(--th-places); }
+.th-people { --th: var(--th-people); }
+.th-patterns { --th: var(--th-patterns); }
+
+/* The page fits the screen like an atlas: the app is held to the screen's height and cannot scroll, and the
+   types page takes exactly the space under the header, however tall the header is. */
+html.types-atlas, html.types-atlas body, html.types-atlas #root { height: 100dvh; min-height: 0; overflow: hidden; }
+html.types-atlas .page { flex: 1 1 auto; min-height: 0; padding: 12px 16px; }
+.page > .ty-page.tm-page { max-width: none; }
+.ty-page.tm-page { flex: 1 1 auto; min-height: 0; height: auto; display: flex; flex-direction: column; padding-bottom: 0; }
+.tm-stage { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.tm-map { position: relative; min-height: 0; height: 100%; }
+/* The panel is as tall as the map, and scrolls on its own only if what is open is longer than that. */
+.tm-panel { min-height: 0; overflow-y: auto; overscroll-behavior: contain; border-radius: var(--radius-lg); }
+.tm-panel .ty-detail { padding: 20px 22px 4px; }
+/* The open card runs the full height of the map beside it, with Previous / Next at its foot. */
+.tm-panel > .ty-detail.tt-detail, .tm-panel > .tm-card { box-sizing: border-box; min-height: 100%; }
+.tm-panel > .ty-detail.tt-detail { display: flex; flex-direction: column; }
+.tm-panel .tt { flex: 1; display: flex; flex-direction: column; width: 100%; }
+.tm-panel .tt-stop { flex: 1; }
+.tm-panel .tt { max-width: none; }
+/* The trail's Previous / Next stay in reach at the foot of the panel. */
+.tm-panel .tt-nav { position: sticky; bottom: 0; margin-top: 14px; padding: 12px 0 16px; background: var(--bg); }
+@media (min-width: 1100px) {
+  .tm-stage.has-panel { grid-template-columns: minmax(0, 1fr) clamp(380px, 32vw, 480px); }
+}
+/* Narrower: the map above, what is open below it, each in its share of the screen. */
+@media (max-width: 1099px) {
+  .tm-stage { display: flex; flex-direction: column; gap: 10px; }
+  .tm-map { flex: 1 1 auto; height: auto; }
+  .tm-stage.has-panel .tm-map { flex: 0 0 52%; }
+  .tm-stage.has-panel .tm-panel { flex: 1 1 0; }
+}
+
+/* The map */
+.tm {
+  container-type: inline-size; position: relative; height: 100%; border: 1px solid var(--border); border-radius: var(--radius-lg);
+  background: var(--panel); overflow: hidden; outline: none; touch-action: pan-y; user-select: none; -webkit-user-select: none;
+}
+.tm:focus-visible { box-shadow: var(--ring); }
+.tm-canvas { position: absolute; left: 0; top: 0; z-index: 1; pointer-events: none; transition: opacity 0.45s ease; }
+.tm.is-resting .tm-canvas { opacity: 0; }
+.tm-svg { position: relative; z-index: 2; display: block; width: 100%; height: 100%; overflow: hidden; }
+/* The resting picture: its own layer, blurred once by the compositor, never repainted while the map moves. */
+.tm-rest { position: absolute; inset: 0; z-index: 0; filter: blur(2.4px); pointer-events: none; will-change: opacity; transition: opacity 0.45s ease; }
+
+.tm-base { stroke: var(--text); stroke-width: 1; opacity: 0.35; }
+.tm-divide { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 4; opacity: 0.55; }
+.tm-testaments text { font: 700 9px var(--sans); letter-spacing: 0.14em; text-transform: uppercase; fill: var(--muted); }
+
+/* At rest the arcs are soft bands; exploring, they sharpen into single arcs (on the canvas). */
+.tm-testaments { transition: opacity 0.45s ease; }
+.tm-rest-arc { fill: none; stroke: var(--th); stroke-width: 4.5; opacity: 0.2; }
+.tm.is-exploring .tm-rest { opacity: 0; }
+
+.tm-featured-arc {
+  fill: none; stroke: var(--th); stroke-width: 2.6; stroke-dasharray: 1; stroke-dashoffset: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tm-featured-arc { animation: tm-draw 2.4s ease-out both; }
+  .tm-featured-arc:nth-child(2) { animation-delay: 0.5s; }
+  .tm-featured-arc:nth-child(3) { animation-delay: 1s; }
+  .tm-featured-arc:nth-child(4) { animation-delay: 1.5s; }
+  .tm-featured-arc:nth-child(n + 5) { animation-delay: 2s; }
+  @keyframes tm-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+}
+.tm.is-exploring .tm-featured { display: none; }
+
+.tm-name { font: 600 11px var(--sans); fill: var(--th); paint-order: stroke; stroke: var(--panel); stroke-width: 3px; pointer-events: none; }
+
+/* Beneath the line */
+.tm-group rect { fill: var(--muted); opacity: 0.32; }
+.tm-group rect.is-odd { opacity: 0.18; }
+.tm-group text, .tm-books text { font: 600 10.5px var(--sans); fill: var(--muted); }
+.tm-books line { stroke: var(--muted); stroke-width: 1; opacity: 0.5; }
+.tm-chapters text { font: 9.5px var(--sans); fill: var(--muted); opacity: 0.85; font-variant-numeric: tabular-nums; }
+.tm-place { fill: var(--accent); opacity: 0.85; }
+
+.tm-placelink { cursor: pointer; }
+.tm-placelink path { fill: none; stroke: var(--accent); stroke-width: 1.4; }
+.tm-placelink text { font: 600 11px var(--sans); fill: var(--accent); }
+.tm-placelink:hover text { text-decoration: underline; }
+
+/* The open trail's stops */
+.tm-stop { cursor: pointer; }
+.tm-stop circle { fill: var(--bg); stroke: var(--accent); stroke-width: 1.5; }
+.tm-stop text { font: 700 10px var(--sans); fill: var(--accent); pointer-events: none; }
+.tm-stop.is-here circle { fill: var(--accent); }
+.tm-stop.is-here text { fill: var(--bg); }
+.tm-stop:hover circle { stroke-width: 2.5; }
+.tm-traveller { pointer-events: none; }
+.tm-traveller circle { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
+.tm-traveller .tm-traveller-halo { opacity: 0.18; stroke: none; }
+
+/* The page's introduction, on the resting map, and the invitation */
+.tm-caption {
+  position: absolute; z-index: 3; left: 28px; top: 24px; max-width: min(470px, 78%); pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.tm-kicker { margin: 0; font: 700 11.5px var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+.tm-title { margin: 6px 0 10px; font: 600 clamp(24px, 2.6vw, 34px)/1.15 var(--serif); color: var(--text); text-wrap: balance; }
+.tm-caption-main { margin: 0; font: 16.5px/1.5 var(--serif); color: var(--text); text-wrap: pretty; }
+.tm-caption-sub { margin: 8px 0 0; font: 13px var(--sans); color: var(--muted); }
+.tm-help {
+  position: absolute; z-index: 3; left: 18px; top: 18px; max-width: calc(100% - 600px); margin: 0; pointer-events: none;
+  font: 12.5px var(--sans); color: var(--muted); opacity: 0; transition: opacity 0.3s ease;
+}
+.tm-help.is-on { opacity: 1; transition-delay: 0.3s; }
+/* Exploring, the caption's words fade; its button stays, so it can still be reached across the map. */
+.tm-caption > * { transition: opacity 0.4s ease; }
+.tm.is-exploring .tm-caption { pointer-events: none; }
+.tm.is-exploring .tm-caption > :not(.tm-invite) { opacity: 0; }
+/* At rest the caption is solid: pointing at it, or at its button, does not wake the map. */
+.tm.is-resting .tm-caption { pointer-events: auto; }
+.tm-invite { pointer-events: auto; }
+/* At rest the caption speaks; the Testament labels wait for exploring. */
+.tm.is-resting .tm-testaments text { opacity: 0; }
+
+.tm-invite {
+  margin-top: 8px; pointer-events: auto; padding: 5px 12px; border-radius: var(--radius-pill);
+  border: 1px solid var(--th); background: var(--bg); color: var(--th); font: 600 12.5px var(--sans); cursor: pointer;
+  white-space: nowrap; box-shadow: 0 4px 14px rgba(40, 30, 20, 0.1);
+}
+.tm-invite:hover { background: var(--th); color: #fff; }
+.tm-invite:focus-visible { outline: none; box-shadow: var(--ring); }
+
+.tm-empty {
+  position: absolute; z-index: 3; left: 50%; top: 42%; transform: translate(-50%, -50%); margin: 0; padding: 8px 14px;
+  border-radius: var(--radius-pill); background: var(--bg); border: 1px solid var(--border); pointer-events: none;
+  font: 13px var(--sans); color: var(--muted); white-space: nowrap;
+}
+
+/* The label under the pointer */
+.tm-hover {
+  position: absolute; z-index: 4; transform: translate(-50%, calc(-100% - 14px)); pointer-events: none;
+  display: flex; flex-direction: column; gap: 2px; max-width: 260px; padding: 8px 11px; border-radius: var(--radius);
+  background: var(--bg); border: 1px solid var(--border); box-shadow: 0 6px 20px rgba(40, 30, 20, 0.14);
+}
+.tm-hover strong { font: 600 14px/1.3 var(--serif); color: var(--text); }
+.tm-hover-theme { font: 700 9.5px var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--th); }
+.tm-hover-meta { font: 12px var(--sans); color: var(--muted); }
+.tm-hover-go { font: 600 11.5px var(--sans); color: var(--accent); }
+
+/* Zoom */
+.tm-controls { position: absolute; z-index: 3; right: 12px; top: 12px; display: flex; align-items: center; gap: 4px; }
+@container (max-width: 980px) { .tm-help { display: none; } }
+
+/* Finding a type and choosing a Father, in the map's top corner. */
+.tm-controls .tm-find { display: flex; gap: 6px; margin-right: 8px; }
+.tm-controls .tm-finder { flex: none; width: 230px; }
+.tm-controls .tm-finder input, .tm-controls .tm-father { height: 32px; box-shadow: 0 2px 8px rgba(40, 30, 20, 0.06); }
+.tm-controls .tm-father { max-width: 180px; }
+
+/* The key, along the foot of the map: the themes, each its colour. */
+.tm-legend { position: absolute; z-index: 3; left: 0; right: 0; bottom: 10px; padding: 0 12px; }
+.tm-legend .tm-themes { flex-wrap: nowrap; justify-content: center; overflow-x: auto; scrollbar-width: none; }
+.tm-legend .tm-themes::-webkit-scrollbar { display: none; }
+.tm-legend .tm-theme { flex: none; }
+@container (max-width: 1080px) { .tm-legend .tm-themes { justify-content: flex-start; } }
+.tm-controls button {
+  min-width: 30px; height: 30px; padding: 0 9px; border-radius: var(--radius-pill); border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); font: 600 14px var(--sans); cursor: pointer;
+}
+.tm-controls .tm-whole { font-size: 12px; }
+.tm-controls button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.tm-controls button:disabled { opacity: 0.35; cursor: default; }
+.tm-controls button:focus-visible { outline: none; box-shadow: var(--ring); }
+/* At rest only the zoom buttons wait; finding a type and the Father stay in reach. */
+.tm.is-resting .tm-controls > button { opacity: 0; pointer-events: none; }
+.tm-controls > button { transition: opacity 0.3s; }
+
+/* Above the map: the themes (which are also the map's key), a Father, and finding a type by name. */
+.tm-themes { display: flex; flex-wrap: wrap; gap: 6px; }
+.tm-theme {
+  display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: var(--radius-pill); cursor: pointer;
+  border: 1px solid var(--border); background: var(--bg); color: var(--text); font: 600 12px var(--sans);
+}
+.tm-theme::before { content: ""; width: 9px; height: 9px; border-radius: 99px; background: var(--th); }
+.tm-theme span { color: var(--muted); font-weight: 400; }
+.tm-theme:hover { border-color: var(--th); }
+.tm-theme[aria-pressed="true"] { background: var(--th); border-color: var(--th); color: #fff; }
+.tm-theme[aria-pressed="true"]::before { background: #fff; }
+.tm-theme[aria-pressed="true"] span { color: rgba(255, 255, 255, 0.8); }
+html[data-theme="night"] .tm-theme[aria-pressed="true"] { color: #1b1b1b; }
+html[data-theme="night"] .tm-theme[aria-pressed="true"]::before { background: #1b1b1b; }
+html[data-theme="night"] .tm-theme[aria-pressed="true"] span { color: rgba(0, 0, 0, 0.6); }
+.tm-theme:focus-visible { outline: none; box-shadow: var(--ring); }
+
+.tm-father {
+  height: 34px; padding: 0 10px; border-radius: var(--radius-pill); border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); font: 600 12.5px var(--sans); cursor: pointer;
+}
+.tm-father:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
+.tm-finder { position: relative; flex: 1 1 200px; min-width: 0; }
+.tm-finder input {
+  width: 100%; height: 34px; padding: 0 14px; border-radius: var(--radius-pill); border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); font: 14px var(--sans);
+}
+.tm-finder input:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
+.tm-finder-list {
+  position: absolute; z-index: 5; top: calc(100% + 4px); left: 0; right: 0; margin: 0; padding: 4px; list-style: none;
+  border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); box-shadow: 0 10px 28px rgba(40, 30, 20, 0.14);
+}
+.tm-finder-list button {
+  display: flex; align-items: center; gap: 8px; width: 100%; padding: 7px 9px; border: 0; border-radius: 6px;
+  background: none; color: var(--text); font: 14px var(--sans); text-align: left; cursor: pointer;
+}
+.tm-finder-list button::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 99px; background: var(--th); }
+.tm-finder-list button:hover, .tm-finder-list button.is-first { background: var(--panel); }
+.tm-finder-none { padding: 8px 10px; font: 13px var(--sans); color: var(--muted); }
+
+/* A chapter or a theme, in the panel. */
+.tm-card {
+  position: relative; padding: 20px 24px 22px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--bg);
+}
+.tm-card.th-waters, .tm-card.th-wood, .tm-card.th-blood, .tm-card.th-table, .tm-card.th-places, .tm-card.th-people, .tm-card.th-patterns {
+  border-color: var(--th); box-shadow: inset 3px 0 0 var(--th);
+}
+.tm-card-kicker { margin: 0; font: 700 11px var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--th, var(--accent)); }
+.tm-card h2 { margin: 4px 0 6px; font: 600 24px/1.2 var(--serif); }
+.tm-card-lede { margin: 0 0 14px; font: 16px/1.55 var(--serif); color: var(--muted); max-width: 640px; }
+.tm-picks { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.tm-pick {
+  display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: var(--radius-pill); cursor: pointer;
+  border: 1px solid var(--border); background: var(--bg); color: var(--text); font: 14px var(--serif);
+}
+.tm-pick::before { content: ""; width: 8px; height: 8px; border-radius: 99px; background: var(--th); }
+.tm-pick:hover { border-color: var(--th); }
+.tm-pick:focus-visible { outline: none; box-shadow: var(--ring); }
+.tm-card-read { display: inline-block; margin-top: 14px; font: 600 13.5px var(--sans); color: var(--accent); text-decoration: none; }
+.tm-card-read:hover { text-decoration: underline; }
+
+@media (max-width: 700px) {
+  /* On a phone the finder and the Father take the top of the map, the zoom buttons below them. */
+  .tm-controls { left: 10px; right: 10px; top: 10px; flex-wrap: wrap; justify-content: flex-end; gap: 6px 4px; }
+  .tm-controls .tm-find { flex: 1 1 100%; margin-right: 0; }
+  .tm-controls .tm-finder { flex: 1 1 auto; width: auto; min-width: 0; }
+  .tm-controls .tm-father { max-width: 42%; }
+  .tm-caption { top: 92px; }
+  .tm-testaments text { display: none; }
+  .tm-empty { white-space: normal; width: 80%; text-align: center; border-radius: var(--radius); }
+  .tm-caption { left: 18px; max-width: calc(100% - 36px); }
+  .tm-caption-main { font-size: 15px; }
+  .tm-help { display: none; }
+  .tm-card { padding: 16px 16px 18px; }
+}

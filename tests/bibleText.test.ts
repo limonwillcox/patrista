@@ -81,6 +81,15 @@ describe("connection strength", () => {
     const [p] = findPatterns(data, [19001001, 19001001], []);
     expect(p.strength).toBe("strong");
   });
+
+  it("weighs a type one Father draws like one Father citing both, and two Fathers' type as strong", () => {
+    // A few common words (1 point) to a passage a type joins.
+    const data = { v: { "1": { l: [[40001001, 2, "c", ["G1"]]] } }, c: [] } as unknown as ChapterConnections;
+    const type = (fathers: string[]) => [{ entry: "04:x", label: "x", fathers, cites: [], others: [[40001001, 40001001]] as [number, number][] }];
+    expect(findPatterns(data, [19001001, 19001001], type(["Cyril"]))[0].strength).toBe("moderate");
+    expect(findPatterns(data, [19001001, 19001001], type(["Cyril", "Cyril"]))[0].strength).toBe("moderate");
+    expect(findPatterns(data, [19001001, 19001001], type(["Cyril", "Ambrose (quoted in Cassian"]))[0].strength).toBe("strong");
+  });
 });
 
 describe("word study on names with æ", () => {

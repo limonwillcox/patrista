@@ -11,12 +11,21 @@ import { formatCentury, writingCategory } from "../../lib/libraryHover";
 import { readPath } from "../../lib/workSlugs";
 import { FORM_NOTES, manuscriptForm, workCentury } from "../../lib/manuscriptForm";
 import { ManuscriptButton } from "../manuscript/ManuscriptButton";
+import { ManuscriptFigure } from "../manuscript/ManuscriptFigure";
+import type { LeafState } from "../manuscript/ManuscriptLeaf";
+import { MANUSCRIPTS } from "../../data/manuscripts";
+import { setStoredBookStage, storedBookStage, type BookStage } from "../../lib/prefs";
 import { loadBookText } from "../../lib/bookText";
 import { PRINT_EDITIONS } from "../../lib/printEditions";
 import { webglAvailable } from "../../three/support";
 import { HUE_LEATHER, authorHue } from "./BookSpine";
 
 const ManuscriptStage = lazy(() => import("../manuscript/ManuscriptStage"));
+
+/** A book carried from the shelf has landed and mostly opened its cover this long after the viewer opens. */
+const LANDED_MS = 2000;
+/** The cross-fade from the generated book to the manuscript page (manuscript-stage.css). */
+const HANDOVER_MS = 520;
 
 /** The paragraphs from the first real one onward: drops a repeated title or heading at the top. */
 export function bodyParagraphs(paras: string[], skip: string[]): string[] {
@@ -59,7 +68,8 @@ export function BookViewer({
   origin,
   carried = false,
   onStageEl,
-  onTurn
+  onTurn,
+  onHandOver
 }: {
   work: Work;
   author: Author;
@@ -74,6 +84,8 @@ export function BookViewer({
   carried?: boolean;
   onStageEl?: (el: HTMLElement | null) => void;
   onTurn?: (dir: 1 | -1) => void;
+  /** The manuscript page has taken the stage: the carried book can go. */
+  onHandOver?: () => void;
 }) {
   const navigate = useNavigate();
   const [outline, setOutline] = useState<WorkOutline | null>(null);
@@ -94,6 +106,58 @@ export function BookViewer({
   const [flying, setFlying] = useState(() => Boolean(origin) && !reduced);
   const flightRef = useRef<Animation | null>(null);
   useEffect(() => () => flightRef.current?.cancel(), []);
+
+  /*
+   * Works with a real manuscript page show that page on the stage; the generated book is the fallback
+   * and the reader's other choice. The book stays on the stage while the page downloads (library
+   * servers often take seconds), then the page fades in over it. A page that fails never shows.
+   */
+  const msPage = has3d ? MANUSCRIPTS[work.id] : undefined;
+  const [stagePref, setStagePref] = useState<BookStage>(storedBookStage);
+  const [leaf, setLeaf] = useState<{ id: string; state: LeafState }>({ id: "", state: "loading" });
+  const leafState: LeafState = leaf.id === work.id ? leaf.state : "loading";
+  const leafWanted = Boolean(msPage) && stagePref === "manuscript" && leafState !== "error";
+  // A carried book lands and opens before it hands over, so the flight is never cut short.
+  const [landed, setLanded] = useState(!carried);
+  useEffect(() => {
+    if (!carried) return;
+    const t = window.setTimeout(() => setLanded(true), reduced ? 0 : LANDED_MS);
+    return () => window.clearTimeout(t);
+  }, [carried, reduced]);
+  // The work whose book has left the stage for its manuscript page.
+  const [bookGone, setBookGone] = useState<string | null>(null);
+  const phase: "book" | "waiting" | "handing" | "leaf" = !leafWanted
+    ? "book"
+    : leafState !== "ready" || (carried && !landed)
+      ? "waiting"
+      : bookGone === work.id
+        ? "leaf"
+        : "handing";
+  const handOverRef = useRef(onHandOver);
+  handOverRef.current = onHandOver;
+  const carriedRef = useRef(carried);
+  carriedRef.current = carried;
+  useEffect(() => {
+    if (phase !== "handing") return;
+    const id = work.id;
+    const t = window.setTimeout(
+      () => {
+        setBookGone(id);
+        setFlying(false);
+        if (carriedRef.current) handOverRef.current?.();
+      },
+      reduced ? 0 : HANDOVER_MS
+    );
+    return () => window.clearTimeout(t);
+  }, [phase, work.id, reduced]);
+
+  function chooseStage(next: BookStage) {
+    setStagePref(next);
+    setStoredBookStage(next);
+    // Coming back to the manuscript loads the page afresh and fades it in over the book again.
+    setLeaf({ id: "", state: "loading" });
+    setBookGone(null);
+  }
 
   /**
    * The book taken off the shelf flies here as itself: the 3D object starts small where the spine
@@ -204,80 +268,102 @@ export function BookViewer({
           </button>
         ) : null}
 
-        <div className={"bv-stage" + (has3d && paras.length ? " bv-stage--3d" : "")}>
-          {carried ? (
-            <figure className="ms-stage ms-stage--carried is-ready">
-              <div
-                className="ms-canvas"
-                ref={onStageEl}
-                tabIndex={0}
-                role="img"
-                aria-label={FORM_NOTES[form].label + " of " + work.title + ". Tap a page to turn it; arrow keys work too."}
-                onClick={(e) => {
-                  const r = e.currentTarget.getBoundingClientRect();
-                  onTurn?.(e.clientX - r.left > r.width / 2 ? 1 : -1);
-                }}
-                onKeyDownCapture={(e) => {
-                  if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-                  e.stopPropagation();
-                  e.preventDefault();
-                  onTurn?.(e.key === "ArrowRight" ? 1 : -1);
-                }}
-              />
-              <figcaption className="ms-caption">
-                <strong>{FORM_NOTES[form].label}</strong>
-                <span className="ms-hint">{FORM_NOTES[form].hint}</span>
-                <span className="ms-note">{FORM_NOTES[form].note} The words are the English translation you read here.</span>
-              </figcaption>
-            </figure>
-          ) : has3d && paras.length ? (
-            <Suspense fallback={<p className="bv-count">Opening…</p>}>
-              <ManuscriptStage
-                title={work.title}
-                author={coverAuthor}
-                paras={paras}
-                form={form}
-                cover={HUE_LEATHER[authorHue(author.id)]}
-                holdCover={flying}
-                onReady={fly}
-              />
-            </Suspense>
-          ) : (
-          <button
-            type="button"
-            className={"bv-book" + (coverOpen ? " is-open" : "")}
-            data-hue={authorHue(author.id)}
-            aria-label={"Start reading " + work.title}
-            onMouseEnter={() => setCoverOpen(true)}
-            onFocus={() => setCoverOpen(true)}
-            onClick={() => read(startHref)}
-          >
-            <span className="bv-3d">
-              <span className="bv-edge" aria-hidden="true" />
-              <span className="bv-page">
-                {opening?.heading ? <span className="bv-page-head">{opening.heading}</span> : null}
-                {opening?.text ? (
-                  <span className="bv-page-text">{opening.text}</span>
-                ) : (
-                  <span className="bv-page-text bv-page-text--wait">{work.title}</span>
-                )}
-                <span className="bv-page-cta">Read on →</span>
-              </span>
-              <span className="bv-cover">
-                <span className="bv-cover-front">
-                  <img className="bv-cover-mark" src="/assets/chi-rho-gold.png" alt="" width={28} height={28} />
-                  <span className="bv-cover-title">{work.title}</span>
-                  <span className="bv-cover-rule" aria-hidden="true" />
-                  {coverAuthor ? <span className="bv-cover-author">{coverAuthor}</span> : null}
+        <div className={"bv-stage" + (has3d && (paras.length || leafWanted) ? " bv-stage--3d" : "")}>
+          <div className={"bv-swap is-" + phase}>
+            {phase === "leaf" ? null : carried ? (
+              <figure className="ms-stage ms-stage--carried is-ready">
+                <div
+                  className="ms-canvas"
+                  ref={onStageEl}
+                  tabIndex={0}
+                  role="img"
+                  aria-label={FORM_NOTES[form].label + " of " + work.title + ". Tap a page to turn it; arrow keys work too."}
+                  onClick={(e) => {
+                    const r = e.currentTarget.getBoundingClientRect();
+                    onTurn?.(e.clientX - r.left > r.width / 2 ? 1 : -1);
+                  }}
+                  onKeyDownCapture={(e) => {
+                    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    onTurn?.(e.key === "ArrowRight" ? 1 : -1);
+                  }}
+                />
+                <figcaption className="ms-caption">
+                  <strong>{FORM_NOTES[form].label}</strong>
+                  <span className="ms-hint">{FORM_NOTES[form].hint}</span>
+                  <span className="ms-note">{FORM_NOTES[form].note} The words are the English translation you read here.</span>
+                </figcaption>
+              </figure>
+            ) : has3d && paras.length ? (
+              <Suspense fallback={<p className="bv-count">Opening…</p>}>
+                <ManuscriptStage
+                  title={work.title}
+                  author={coverAuthor}
+                  paras={paras}
+                  form={form}
+                  cover={HUE_LEATHER[authorHue(author.id)]}
+                  holdCover={flying}
+                  onReady={fly}
+                />
+              </Suspense>
+            ) : (
+              <button
+                type="button"
+                className={"bv-book" + (coverOpen ? " is-open" : "")}
+                data-hue={authorHue(author.id)}
+                aria-label={"Start reading " + work.title}
+                onMouseEnter={() => setCoverOpen(true)}
+                onFocus={() => setCoverOpen(true)}
+                onClick={() => read(startHref)}
+              >
+                <span className="bv-3d">
+                  <span className="bv-edge" aria-hidden="true" />
+                  <span className="bv-page">
+                    {opening?.heading ? <span className="bv-page-head">{opening.heading}</span> : null}
+                    {opening?.text ? (
+                      <span className="bv-page-text">{opening.text}</span>
+                    ) : (
+                      <span className="bv-page-text bv-page-text--wait">{work.title}</span>
+                    )}
+                    <span className="bv-page-cta">Read on →</span>
+                  </span>
+                  <span className="bv-cover">
+                    <span className="bv-cover-front">
+                      <img className="bv-cover-mark" src="/assets/chi-rho-gold.png" alt="" width={28} height={28} />
+                      <span className="bv-cover-title">{work.title}</span>
+                      <span className="bv-cover-rule" aria-hidden="true" />
+                      {coverAuthor ? <span className="bv-cover-author">{coverAuthor}</span> : null}
+                    </span>
+                    <span className="bv-cover-inside" aria-hidden="true">
+                      <span>Ex libris</span>
+                      <strong>Patrista</strong>
+                    </span>
+                  </span>
                 </span>
-                <span className="bv-cover-inside" aria-hidden="true">
-                  <span>Ex libris</span>
-                  <strong>Patrista</strong>
-                </span>
-              </span>
-            </span>
-          </button>
-          )}
+              </button>
+            )}
+            {leafWanted && msPage ? (
+              <ManuscriptFigure key={work.id} page={msPage} onState={(state) => setLeaf({ id: work.id, state })} />
+            ) : null}
+          </div>
+          {msPage && leafState !== "error" ? (
+            phase === "book" ? (
+              <button type="button" className="bv-swap-control" onClick={() => chooseStage("manuscript")}>
+                See the manuscript
+              </button>
+            ) : phase === "waiting" ? (
+              // Quiet, and hidden until a carried book has landed: the flight is the thing to watch until then.
+              // It keeps its room meanwhile, so nothing below moves when it shows.
+              <p className={"bv-swap-control bv-swap-status" + (landed ? "" : " is-hidden")} role="status">
+                Fetching the manuscript page…
+              </p>
+            ) : (
+              <button type="button" className="bv-swap-control" onClick={() => chooseStage("book")}>
+                Open as a book
+              </button>
+            )
+          ) : null}
           {works.length > 1 ? (
             <p className="bv-count">
               {index + 1} of {works.length}
@@ -350,7 +436,10 @@ export function BookViewer({
             <Link className="bv-link" to={"/print?work=" + encodeURIComponent(work.id)}>
               PDF
             </Link>
-            <ManuscriptButton className="bv-link" workId={work.id} title={work.title} prefetchOn="mount" />
+            {/* The stage offers the manuscript itself. The link stays without WebGL (it goes to the library) and after a failed page. */}
+            {msPage && leafState !== "error" ? null : (
+              <ManuscriptButton className="bv-link" workId={work.id} title={work.title} prefetchOn={msPage ? "hover" : "mount"} />
+            )}
             {PRINT_EDITIONS[work.id] ? (
               <a className="bv-link" href={PRINT_EDITIONS[work.id].url} target="_blank" rel="sponsored nofollow noopener">
                 Get the hardcover ↗

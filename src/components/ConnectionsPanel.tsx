@@ -1189,10 +1189,10 @@ export function ConnectionsPanel({
           </li>
           <li>
             <b>Patterns</b> come from shared Hebrew and Greek words (including the Greek the Septuagint uses for a Hebrew
-            word) and from the Fathers citing two passages in one paragraph. <b>Strong</b>: a type the Fathers name,
-            two or more Fathers citing both, or a Father and shared words together. <b>Moderate</b>: one Father
-            cites both, or they share rare words. <b>Weak</b>: a few common words. Shared words alone never count
-            as strong, since many are chance, not even when several verses share them. Several verses linking
+            word) and from the Fathers citing two passages in one paragraph. <b>Strong</b>: a type two or more
+            Fathers draw, two or more Fathers citing both, or a Father and shared words together. <b>Moderate</b>:
+            a type one Father draws, one Father citing both, or rare words in common. <b>Weak</b>: a few common
+            words. Shared words alone never count as strong, since many are chance, not even when several verses share them. Several verses linking
             together raise a pattern a step.
           </li>
           <li>

@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { MANUSCRIPTS, MANUSCRIPT_VIEW_WIDTH, manuscriptImage, type ManuscriptPage } from "../../data/manuscripts";
 import { webglAvailable } from "../../three/support";
+import "../../styles/manuscript-stage.css";
 
 const loadView = () => import("./ManuscriptView");
 const ManuscriptView = lazy(loadView);

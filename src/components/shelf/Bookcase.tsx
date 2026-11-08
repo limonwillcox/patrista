@@ -288,6 +288,11 @@ export function Bookcase({ catalog, author }: { catalog: Catalog; author: Author
           carried={carriedId === openWork.id}
           onStageEl={(el) => (stageElRef.current = el)}
           onTurn={(dir) => void flightRef.current?.then((f) => f.turn(dir))}
+          onHandOver={() => {
+            // The book landed and the manuscript page has faded in over it: the carried book goes.
+            void flightRef.current?.then((f) => f.close());
+            setCarriedId(null);
+          }}
           onClose={() => {
             void flightRef.current?.then((f) => f.close());
             setCarriedId(null);

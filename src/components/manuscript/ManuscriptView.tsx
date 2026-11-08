@@ -1,31 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { MANUSCRIPT_VIEW_WIDTH, manuscriptImage, type ManuscriptPage } from "../../data/manuscripts";
-import { buildLeaf, type LeafHandle } from "../../three/leaf";
-import { createStage } from "../../three/stage";
+import type { ManuscriptPage } from "../../data/manuscripts";
+import ManuscriptLeaf, { type LeafState } from "./ManuscriptLeaf";
 
 /** A real manuscript page, as a leaf you can tilt, zoom and light. Lazy-loaded with three.js. */
 export default function ManuscriptView({ page, title, onClose }: { page: ManuscriptPage; title: string; onClose: () => void }) {
-  const hostRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
-  const [state, setState] = useState<"loading" | "ready" | "error">("loading");
-
-  useEffect(() => {
-    const host = hostRef.current;
-    if (!host) return;
-    let live = true;
-    let handle: LeafHandle | null = null;
-    const stage = createStage(host, { fov: 30, near: 0.05 });
-    buildLeaf(stage, { url: manuscriptImage(page, MANUSCRIPT_VIEW_WIDTH), onError: () => live && setState("error") }).then((h) => {
-      handle = h;
-      if (!live) h.dispose();
-      else setState((s) => (s === "error" ? s : "ready"));
-    });
-    return () => {
-      live = false;
-      handle?.dispose();
-      stage.dispose();
-    };
-  }, [page]);
+  const [state, setState] = useState<LeafState>("loading");
 
   useEffect(() => {
     closeRef.current?.focus({ preventScroll: true });
@@ -52,7 +32,7 @@ export default function ManuscriptView({ page, title, onClose }: { page: Manuscr
           ×
         </button>
         <div className={"mv-stage is-" + state}>
-          <div className="mv-canvas" ref={hostRef} role="img" aria-label={"Manuscript page: " + page.shows} />
+          <ManuscriptLeaf className="mv-canvas" page={page} onState={setState} />
           {state === "loading" ? <p className="mv-status">Fetching the page from {page.library}…</p> : null}
           {state === "error" ? (
             <p className="mv-status">

@@ -42,9 +42,9 @@ jobs:
         run: pnpm build
         env:
           VITE_DONATE_API_BASE: ${{ vars.VITE_DONATE_API_BASE }}
+      # Wrangler runs through npx, outside the project packages: pnpm blocks Wrangler's install script.
       - if: env.HAS_CF_TOKEN == 'true'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=patrista --branch=main --commit-dirty=true
+        run: npx --yes wrangler@4.158.0 pages deploy dist --project-name=patrista --branch=main --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

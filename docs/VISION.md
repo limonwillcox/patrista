@@ -32,7 +32,7 @@ Fathers give the content. Patrista never names a type itself (see `data/connecti
 | Fathers shelf and reader | A Father's works, chapter by chapter | Built |
 | Real manuscripts | The work as a scribe wrote it, before the generated book | Built (Nov 2026) |
 | Bible with Connections | A passage, the Fathers who cite it, its patterns | Built |
-| Types map | Every type as arcs over the line of the Bible: calm at rest, explored by pointing, zooming and dragging; seven themes as its colours; a chapter or one Father as other ways in | Built (Nov 2026) |
+| Types map | Every type as arcs over the line of the Bible: calm at rest, explored by pointing, zooming and dragging; the Fathers' own gatherings (a passage where one Father names five or more types) as its colours; a chapter or one Father as other ways in | Built (Nov 2026) |
 | Trails | One type followed through Scripture, one stop at a time; the map flies to each stop | Built (Nov 2026) |
 | Tabernacle | The tabernacle at true size, and its echoes of creation; reached from Exodus 25–40 on the types map | Built (Nov 2026) |
 | Church history | The Fathers in their centuries | Built |
@@ -48,3 +48,7 @@ Fathers give the content. Patrista never names a type itself (see `data/connecti
 - **A grid of type cards.** Seventy-eight cards of equal weight gave the reader no place to start. The types
   map replaced the grid, the kind chips and the book menu. It is flat, not 3D: the whole-Bible 3D map was
   retired earlier to keep the site simple. (Nov 2026)
+- **Types and themes we named ourselves.** The first map had 78 types gathered from study notes and grouped
+  into seven themes chosen by hand (and by AI). Neither could be checked. The types are now the 97 that two
+  or more Fathers saw and whose passages they join themselves, found by reading every paragraph of the library
+  that uses a word for a figure, and the colours are the Fathers' own gatherings (`data/connections/README.md`, "The rule for types"). (Nov 2026)

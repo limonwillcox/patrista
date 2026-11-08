@@ -2,7 +2,6 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { chapterOffsets, type Meta, type TypeEntry } from "../src/api/connections";
-import { THEMES, THEME_OF } from "../src/data/typeThemes";
 import {
   FULL,
   arcHeight,
@@ -33,18 +32,6 @@ const types = read<TypeEntry[]>("types.json");
 const meta = read<Meta>("meta.json");
 const offsets = chapterOffsets(meta);
 const total = offsets[offsets.length - 1];
-
-describe("themes", () => {
-  it("give every type on the site exactly one known theme", () => {
-    const known = new Set(THEMES.map((t) => t.id));
-    for (const t of types) expect(known.has(THEME_OF[t.id]), t.id).toBe(true);
-  });
-
-  it("name no type that is not on the site", () => {
-    const ids = new Set(types.map((t) => t.id));
-    for (const id of Object.keys(THEME_OF)) expect(ids.has(id), id).toBe(true);
-  });
-});
 
 describe("the view", () => {
   it("stays on the line and no narrower than a few chapters", () => {
@@ -140,7 +127,7 @@ describe("the line", () => {
 
   it("finds the types through a chapter", () => {
     const through = typesThrough(types, 2, 14).map((t) => t.id);
-    expect(through).toContain("04:exodus-through-water");
+    expect(through).toContain("04:red-sea-crossing");
   });
 
   it("skips a label that would overlap the one before", () => {

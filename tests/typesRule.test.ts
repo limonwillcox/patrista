@@ -15,7 +15,7 @@ import { englishParagraphs } from "../src/lib/fatherPaths";
  * The older types (sources.json, from the study notes) were checked once against the whole library:
  * all 312 of their quotations are there (Nov 2026). Their links come from scripts/connections/link_type_quotes.ts.
  * Every type on the site (public/connections/types.json) must also cite in one form a reader can follow: a
- * paragraph anchor on every link, no line numbers, each Gregory named, one abbreviation per work.
+ * paragraph anchor on every link, no line numbers, each Gregory named, each work named one way.
  */
 
 const DIR = join(__dirname, "..", "data", "connections", "grammar", "fathers-types");
@@ -97,16 +97,26 @@ describe("types cite in one form", () => {
       t.where.forEach((_, i) => expect(t.links?.[i]?.href ?? "", t.id + " " + i).toMatch(/^\/fathers\/[^/]+\/[^/]+\/chapter-\d+\/#ch-\d+-p\d+$/));
   });
 
+  it("names each work one way", () => {
+    const names = new Map<string, Set<string>>();
+    for (const t of packed)
+      t.where.forEach((w, i) => {
+        const work = t.links?.[i]?.href.match(/^\/fathers\/[^/]+\/([^/]+)\//)?.[1];
+        const title = w.split(" — ")[0].match(/\*([^*]+)\*/)?.[1];
+        if (work && title) names.set(work, (names.get(work) ?? new Set()).add(title));
+      });
+    expect([...names].filter(([, s]) => s.size > 1)).toEqual([]);
+  });
+
   it.each([
     [/, l\.\d+/, "a line number the reader cannot find (cite the paragraph, ¶N)"],
     [/^Gregory,/, "a bare Gregory (Nyssa, Nazianzen, Thaumaturgus or the Great?)"],
     [/(?<!C\. )\*Faust\.\*/, "Faust. for C. Faust."],
     [/Enarr\. Ps\./, "Enarr. Ps. for En. Ps."],
     [/\*En\. Ps\.\* \d+\.\d/, "an En. Ps. citation without its Latin (Vulgate) psalm number"],
-    [/Against Marcion|Answer to the Jews|De Fide\* \d+\.\d+$|Ephrem/, "a work or Father named two ways"],
     [/^Clement,/, "a bare Clement (of Rome or of Alexandria?)"]
   ] as const)("no citation has %s", (bad, why) => {
-    const hits = refs.filter(([, r]) => bad.test(r) && !(String(bad).includes("De Fide") && r.startsWith("Ambrose")));
+    const hits = refs.filter(([, r]) => bad.test(r));
     expect(hits, why).toEqual([]);
   });
 });

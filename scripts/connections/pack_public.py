@@ -5,10 +5,11 @@ reader can click. Vite serves public/ as-is in dev and copies it into dist/ on b
 
   meta.json                       books and book groups
   verse/<book>/<chapter>.json     per verse: word links, passages the Fathers cite with it, the Fathers who
-                                  cite it; per chapter: the types the Fathers draw that touch it
+                                  cite it; per chapter: the types the Fathers saw that touch it
   word/<H|G><bucket>.json         per Hebrew/Greek word: verses, related words
   cited.json                      per verse: how many times the Fathers cite it
-  types.json                      every type the Fathers draw: meaning, their words, and all its passages
+  types.json                      every type the Fathers saw (data/connections/typology/types.json, from
+                                  build_fathers_types.ts): their words and all its passages
   glosses.json                    per Hebrew/Greek word: the KJV's most frequent rendering of it ("mercy seat")
 
 Run after build_word_layer.py and build_witness.py.
@@ -46,16 +47,27 @@ KIND_CODE = {"cross": "c", "same": "s"}
 
 
 
-def fathers_types(grammar_dir):
-    """Types added from the Fathers in the library, one JSON file each (grammar/fathers-types/). They sit
-    beside sources.json, which extract_sources.py rewrites from the private notes, so they survive that."""
-    folder = os.path.join(grammar_dir, "fathers-types")
-    out = {}
-    for name in sorted(os.listdir(folder)) if os.path.isdir(folder) else []:
-        if name.endswith(".json"):
-            e = json.load(open(os.path.join(folder, name), encoding="utf-8"))
-            out[e["src"]] = e
-    return out
+def site_types():
+    """The types on the site: the approved list of types the Fathers saw, as build_fathers_types.ts writes it."""
+    return json.load(open(os.path.join(DATA, "typology", "types.json"), encoding="utf-8"))
+
+
+def type_pairs(types):
+    """Each type's passages, two by two, as the chapter files list them: (entry, label, Fathers, citations,
+    a0, a1, b0, b1). Passages in the same story (a few chapters apart in one book) are not paired."""
+    rows = []
+    for t in types:
+        fathers = json.dumps(sorted({w.split(",")[0].strip("* ") for w in t["where"] if "," in w}))
+        cites = json.dumps(sorted({w.split(" — ")[0] for w in t["where"]})[:12])
+        rs = t["ranges"]
+        for i in range(len(rs)):
+            for j in range(i + 1, len(rs)):
+                (a0, a1), (b0, b1) = sorted((rs[i], rs[j]))
+                if a0 // 1_000_000 == b0 // 1_000_000 and abs(a0 // 1000 % 1000 - b0 // 1000 % 1000) <= NEAR_CHAPTERS:
+                    continue
+                rows.append((t["id"], t["label"], fathers, cites, a0, a1, b0, b1))
+    return rows
+
 
 # Words that ride along in a rendering ("the lilies", "shall arise", "to judge"): left off its ends.
 GLOSS_SMALL = set((
@@ -198,7 +210,7 @@ def main():
         row = (n, json.loads(fathers), json.loads(works), sample)
         wit[a].append((b,) + row)
         wit[b].append((a,) + row)
-    curated = db.execute("select entry, label, fathers, cite, a0, a1, b0, b1 from witness_curated").fetchall()
+    curated = type_pairs(site_types())
 
     chapters = defaultdict(dict)
     for (v,) in db.execute("select vid from verses").fetchall():
@@ -256,35 +268,8 @@ def main():
     dump(os.path.join(OUT, "glosses.json"), kjv_glosses(os.path.join(ROOT, "public", "strongs", "kjv"),
                                                           os.path.join(ROOT, "public", "strongs", "lex")))
 
-    # ---- the types the Fathers draw, each with all its passages ----
-    sources = json.load(open(os.path.join(DATA, "grammar", "sources.json"), encoding="utf-8"))
-    sources.update(fathers_types(os.path.join(DATA, "grammar")))
-    links_file = os.path.join(DATA, "grammar", "type-links.json")
-    type_links = json.load(open(links_file, encoding="utf-8")) if os.path.exists(links_file) else {}
-    ranges = defaultdict(set)
-    for entry, a0, a1, b0, b1 in db.execute("select entry, a0, a1, b0, b1 from witness_curated"):
-        ranges[entry].update({(a0, a1), (b0, b1)})
-    types = []
-    for entry, rs in ranges.items():
-        src = sources.get(entry, {})
-        # Keep the widest of overlapping ranges, so "Genesis 6-9" and "Genesis 8:6-12" do not both show.
-        kept = []
-        for r in sorted(rs, key=lambda r: (r[0], -(r[1] - r[0]))):
-            if kept and r[0] >= kept[-1][0] and r[1] <= kept[-1][1]:
-                continue
-            kept.append(list(r))
-        t = {"id": entry, "label": src.get("label", entry), "def": src.get("def", ""), "kind": src.get("kind", ""),
-             "christ": src.get("christ", ""), "where": src.get("where", []), "ranges": kept}
-        # The reader paragraph of each quotation (link_type_quotes.ts), else the chapter the entry gives.
-        found = type_links.get(entry) or []
-        given = src.get("links") or []
-        links = [found[i] if i < len(found) and found[i] else (given[i] if i < len(given) else None)
-                 for i in range(len(t["where"]))]
-        if any(links):
-            t["links"] = links
-        types.append(t)
-    types.sort(key=lambda t: t["label"])
-    dump(os.path.join(OUT, "types.json"), types)
+    # ---- the types the Fathers saw (build_fathers_types.ts), each with all its passages ----
+    dump(os.path.join(OUT, "types.json"), site_types())
 
     # ---- how often the Fathers cite each verse ----
     dump(os.path.join(OUT, "cited.json"),

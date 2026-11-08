@@ -51,7 +51,7 @@ export type TypeEntry = {
   christ: string;
   where: string[];
   ranges: [number, number][];
-  /** role, object, sequence, zone, number or axis. */
+  /** The group it is filed under: people, events, things-and-places, the-law-rites-feasts-sacrifices, figures-in-the-prophets-and-psalms or gospel-scenes-read-as-figures. */
   kind?: string;
   /** The reader paragraph of each quotation in `where`, in the same order (null where none was found). */
   links?: ({ label: string; href: string } | null)[];

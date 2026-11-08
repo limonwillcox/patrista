@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { chapterOffsets, type Meta, type TypeEntry } from "../../api/connections";
-import { THEMES, themeLabel, themeOf, type ThemeId } from "../../data/typeThemes";
+import { firstThemeOf, themeColor, themesOf, themeTitle, useNight, type Theme } from "../../lib/themeColors";
 import {
   FULL,
   PLACES,
@@ -45,12 +45,14 @@ import "../../styles/type-map.css";
  */
 
 type Place = { book: number; chapter: number };
-type BaseArc = Arc & { x0: number; x1: number; h: number; theme: ThemeId; d: string };
+/** `theme` is the index of the first theme the type is in, or -1. */
+type BaseArc = Arc & { x0: number; x1: number; h: number; theme: number; d: string };
 type ScreenArc = BaseArc;
 
 export function TypeMap({
   meta,
   types,
+  themes,
   chosen,
   stop,
   theme,
@@ -64,10 +66,12 @@ export function TypeMap({
 }: {
   meta: Meta;
   types: TypeEntry[];
+  /** The themes: the Fathers' gatherings (src/lib/typeGatherings.ts), in order through history. */
+  themes: Theme[];
   chosen: TypeEntry | null;
   stop: number;
-  /** A theme to bring forward; the others fade. */
-  theme: ThemeId | null;
+  /** A theme to bring forward (its id); the types not in it fade. */
+  theme: string | null;
   /** Only the types this Father drew stay bright. */
   father: string | null;
   place: Place | null;
@@ -85,6 +89,13 @@ export function TypeMap({
   const pos = useMemo(() => positioner(meta, offsets), [meta, offsets]);
   const arcs = useMemo(() => typeArcs(types, pos), [types, pos]);
   const fathersOf = useMemo(() => new Map(types.map((t) => [t.id, new Set(typeFathers(t))])), [types]);
+  const firstTheme = useMemo(() => firstThemeOf(themes), [themes]);
+  const inTheme = useMemo(() => {
+    const th = theme ? themes.find((x) => x.id === theme) : null;
+    return th ? new Set(th.members.map((m) => m.type)) : null;
+  }, [themes, theme]);
+  const night = useNight();
+  const colorOf = (i: number) => themeColor(i, themes.length, night);
   // The type drawn clearly on the resting map, as a first thing to follow: a different one each visit.
   const [featuredType] = useState(() => pickFeatured(types));
 
@@ -258,12 +269,15 @@ export function TypeMap({
         const x0 = PAD + a.p0 * inner;
         const x1 = PAD + a.p1 * inner;
         const h = arcHeight(x1 - x0, MAXH, inner);
-        return { ...a, x0, x1, h, theme: themeOf(a.t.id), d: arcPath(x0, x1, BASE, h) };
+        return { ...a, x0, x1, h, theme: firstTheme.get(a.t.id) ?? -1, d: arcPath(x0, x1, BASE, h) };
       }),
-    [arcs, PAD, inner, MAXH, BASE]
+    [arcs, PAD, inner, MAXH, BASE, firstTheme]
   );
-  const inFilter = (t: TypeEntry) => (!theme || themeOf(t.id) === theme) && (!father || Boolean(fathersOf.get(t.id)?.has(father)));
-  const restEls = useMemo(() => base.map((a, i) => <path key={i} d={a.d} className={"tm-rest-arc th-" + a.theme} />), [base]);
+  const inFilter = (t: TypeEntry) => (!inTheme || inTheme.has(t.id)) && (!father || Boolean(fathersOf.get(t.id)?.has(father)));
+  const restEls = useMemo(
+    () => base.map((a, i) => <path key={i} d={a.d} className="tm-rest-arc" style={{ stroke: themeColor(a.theme, themes.length, night) }} />),
+    [base, themes.length, night]
+  );
 
   // From the drawing to the screen.
   const T = viewTransform(view, width, PAD, BASE);
@@ -435,19 +449,7 @@ export function TypeMap({
   const lit = (id: string) => (hoverId ? id === hoverId : chosen ? id === chosen.id : through ? through.has(id) : false);
   const anyLit = Boolean(hoverId || chosen || (through && through.size));
 
-  // The theme colours, read from the page's CSS so night mode is followed.
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [colors, setColors] = useState<Record<string, string>>({});
-  useEffect(() => {
-    const read = () => {
-      const cs = getComputedStyle(wrapRef.current ?? document.documentElement);
-      setColors(Object.fromEntries(THEMES.map((th) => [th.id, cs.getPropertyValue("--th-" + th.id).trim() || "#888"])));
-    };
-    read();
-    const mo = new MutationObserver(read);
-    mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme", "class"] });
-    return () => mo.disconnect();
-  }, []);
 
   // What of each arc shows in this view; if nothing does, the map says so rather than sit blank.
   const drawn = base.map((b) => {
@@ -475,7 +477,9 @@ export function TypeMap({
     const stroke = ({ b, pieces }: (typeof drawn)[number], alpha: number, lineWidth: number) => {
       if (!pieces.length) return;
       ctx.globalAlpha = alpha;
-      ctx.strokeStyle = colors[b.theme] ?? "#888";
+      // While a theme is brought forward, its types take its colour.
+      const i = inTheme && theme && inTheme.has(b.t.id) ? themes.findIndex((x) => x.id === theme) : b.theme;
+      ctx.strokeStyle = colorOf(i);
       ctx.lineWidth = lineWidth;
       ctx.beginPath();
       for (const c of pieces) {
@@ -624,13 +628,13 @@ export function TypeMap({
         {featured.length ? (
           <g className="tm-featured">
             {featured.map((a) => (
-              <path key={a.i} d={a.d} className={"tm-featured-arc th-" + a.theme} pathLength={1} />
+              <path key={a.i} d={a.d} className="tm-featured-arc" style={{ stroke: colorOf(a.theme) }} pathLength={1} />
             ))}
           </g>
         ) : null}
 
         {names.map((n) => (
-          <text key={n.id} x={n.x} y={n.y} textAnchor="middle" className={"tm-name th-" + themeOf(n.id)}>
+          <text key={n.id} x={n.x} y={n.y} textAnchor="middle" className="tm-name" style={{ fill: colorOf(themes.findIndex((x) => x.id === theme)) }}>
             {shortLabel(n.t.label)}
           </text>
         ))}
@@ -764,7 +768,8 @@ export function TypeMap({
         {featuredType && !chosen && !place && !theme ? (
           <button
             type="button"
-            className={"tm-invite th-" + themeOf(featuredType.id)}
+            className="tm-invite"
+            style={{ ["--th" as string]: colorOf(firstTheme.get(featuredType.id) ?? -1) }}
             onClick={() => {
               setInviteOn(false);
               onPick(featuredType);
@@ -788,7 +793,9 @@ export function TypeMap({
 
       {exploring && empty ? <p className="tm-empty">No type passes through this stretch. Drag along the Bible, or zoom out.</p> : null}
 
-      {hover && !drag.current?.moved ? <HoverCard hover={hover} meta={meta} width={width} chosen={chosen} /> : null}
+      {hover && !drag.current?.moved ? (
+        <HoverCard hover={hover} meta={meta} width={width} chosen={chosen} themes={themes} colorOf={colorOf} />
+      ) : null}
 
       <div className="tm-controls">
         {tools}
@@ -813,12 +820,16 @@ function HoverCard({
   hover,
   meta,
   width,
-  chosen
+  chosen,
+  themes,
+  colorOf
 }: {
   hover: { x: number; y: number; arc: ScreenArc | null; chapter: Place | null; n: number };
   meta: Meta;
   width: number;
   chosen: TypeEntry | null;
+  themes: Theme[];
+  colorOf: (i: number) => string;
 }) {
   const left = Math.min(width - 130, Math.max(130, hover.x));
   const style = { left, top: hover.y };
@@ -826,7 +837,19 @@ function HoverCard({
     const t = hover.arc.t;
     return (
       <div className="tm-hover" style={style} role="tooltip">
-        <span className={"tm-hover-theme th-" + hover.arc.theme}>{themeLabel(hover.arc.theme)}</span>
+        {themesOf(themes, t.id).length ? (
+          <span className="tm-hover-theme">
+            {themesOf(themes, t.id)
+              .slice(0, 2)
+              .map((th, i) => (
+                <span key={th.id} style={{ color: colorOf(themes.indexOf(th)) }}>
+                  {i ? " · " : ""}
+                  {themeTitle(th)}
+                </span>
+              ))}
+            {themesOf(themes, t.id).length > 2 ? " · +" + (themesOf(themes, t.id).length - 2) : ""}
+          </span>
+        ) : null}
         <strong>{t.label}</strong>
         <span className="tm-hover-meta">
           {t.ranges.length} passages · {drawnBy(t)}

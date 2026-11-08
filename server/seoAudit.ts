@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "fs";
 import { join, relative, sep } from "path";
 import { chapterPublicPath, legacyChapterSlugs } from "../src/lib/fatherPaths";
+import { LEGACY_REDIRECTS_DIR, legacyRedirectKey } from "../src/lib/legacyRedirects";
 import { DESCRIPTION_HARD_MAX, DESCRIPTION_MIN, TITLE_MAX } from "../src/lib/seoMeta";
 
 export type SeoAuditResult = { checked: number; stubs: number; errors: string[] };
@@ -112,6 +113,18 @@ export function auditSeo(dist: string, origin: string, oldUrls: string[] = []): 
     }
   }
 
+  // Moved URLs forwarded through the lookup files (src/lib/legacyRedirects.ts) count as stubs.
+  const legacyDir = join(dist, LEGACY_REDIRECTS_DIR);
+  for (const name of existsSync(legacyDir) ? readdirSync(legacyDir) : []) {
+    if (!name.endsWith(".json")) continue;
+    const shard = JSON.parse(readFileSync(join(legacyDir, name), "utf8")) as Record<string, string>;
+    for (const [from, to] of Object.entries(shard)) {
+      stubPaths.add(from);
+      stubTargets.set(from, to);
+    }
+  }
+  const isStub = (path: string) => stubPaths.has(path) || stubPaths.has(legacyRedirectKey(path));
+
   for (const [work, nums] of chapterNums) {
     const sorted = [...nums].sort((a, b) => a - b);
     if (sorted.some((v, i) => v !== i + 1)) errors.push("chapter numbers do not run 1..N without gaps or duplicates: " + work);
@@ -122,7 +135,7 @@ export function auditSeo(dist: string, origin: string, oldUrls: string[] = []): 
       let href = decode(m[1]!);
       if (href.startsWith(origin)) href = href.slice(origin.length);
       href = href.split("#")[0]!.split("?")[0]!;
-      if (stubPaths.has(href)) errors.push("internal link to a moved chapter: " + page.path + " -> " + href);
+      if (isStub(href) && !indexable.has(href)) errors.push("internal link to a moved chapter: " + page.path + " -> " + href);
     }
   }
 
@@ -131,14 +144,14 @@ export function auditSeo(dist: string, origin: string, oldUrls: string[] = []): 
   }
 
   for (const old of oldUrls) {
-    if (!stubPaths.has(old) && !indexable.has(old)) errors.push("old chapter URL no longer resolves (no stub, no page): " + old);
+    if (!isStub(old) && !indexable.has(old)) errors.push("old chapter URL no longer resolves (no stub, no page): " + old);
   }
 
   for (const name of existsSync(dist) ? readdirSync(dist) : []) {
     if (!/^sitemap.*\.xml$/.test(name)) continue;
     for (const m of readFileSync(join(dist, name), "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)) {
       const p = decode(m[1]!).replace(origin, "");
-      if (stubPaths.has(p)) errors.push("sitemap lists a moved-chapter stub: " + p);
+      if (isStub(p) && !indexable.has(p)) errors.push("sitemap lists a moved-chapter stub: " + p);
     }
   }
 

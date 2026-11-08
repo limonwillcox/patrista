@@ -1,3 +1,4 @@
+import { PACKED, fetchPacked } from "./packed";
 import type { Catalog, Passage, WorkOutline } from "../../server/types";
 import { fetchRemoteBibleVerses } from "./bibleApi";
 import { bibleTextPath, isLocalTextTranslation } from "./bibleTranslations";
@@ -55,7 +56,14 @@ export function chapterFetchPath(workId: string, chapter: number, dev = import.m
 }
 
 export function fetchChapter(workId: string, chapter: number): Promise<Passage> {
-  return once("c:" + workId + ":" + chapter, () => getJson<Passage>(chapterFetchPath(workId, chapter)));
+  return once("c:" + workId + ":" + chapter, async () => {
+    // The static build packs chapters into groups (server/packChapters.ts).
+    if (PACKED) {
+      const hit = await fetchPacked<Passage>("/api/works", workId + "/chapters", chapter);
+      if (hit) return hit;
+    }
+    return getJson<Passage>(chapterFetchPath(workId, chapter));
+  });
 }
 
 export type BibleManifestBook = { id: string; name: string; chapters: number };
@@ -100,15 +108,22 @@ export async function fetchBibleChapter(
   const translation = opts?.translation || "kjv";
   // A translation kept in the repo: its chapter file, fetched beside the KJV chapter (no API key, no bibleApi).
   const localText = isLocalTextTranslation(translation)
-    ? once("bt:" + translation + ":" + book + ":" + chapter, () =>
-        getJson<{ verses: string[] }>(staticApiPath(bibleTextPath(translation, book, chapter)))
-      )
+    ? once("bt:" + translation + ":" + book + ":" + chapter, async () => {
+        if (PACKED) {
+          const hit = await fetchPacked<{ verses: string[] }>("/api/bible/text/" + translation, book, chapter);
+          if (hit) return hit;
+        }
+        return getJson<{ verses: string[] }>(staticApiPath(bibleTextPath(translation, book, chapter)));
+      })
     : null;
 
   // On the static site the chapter file ignores the query either way; ask for it directly.
-  const basePayload = await getJson<BibleChapterPayload>(
-    staticApiPath("/api/bible/" + encodeURIComponent(book) + "/" + chapter + (qs ? "?" + qs : ""))
-  );
+  const packedPayload = PACKED ? await fetchPacked<BibleChapterPayload>("/api/bible", book, chapter) : null;
+  const basePayload =
+    packedPayload ??
+    (await getJson<BibleChapterPayload>(
+      staticApiPath("/api/bible/" + encodeURIComponent(book) + "/" + chapter + (qs ? "?" + qs : ""))
+    ));
 
   if (translation === "kjv") {
     return basePayload;

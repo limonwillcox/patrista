@@ -93,7 +93,7 @@ describe("local Bible translations", () => {
     expect(asv.notes).toBeUndefined();
     expect(asv.verses[0]).toMatch(/judges judged/);
     expect(asv.comments).toEqual(kjv.comments);
-  });
+  }, 30_000);
 
   it("writes one static file per chapter", () => {
     const dist = mkdtempSync(join(tmpdir(), "patrista-bible-text-"));

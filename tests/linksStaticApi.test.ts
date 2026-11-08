@@ -7,7 +7,7 @@ import { writeStaticLinksApi } from "../server/staticLinks";
 import { verseResponseFromPack, type ChapterLinksPack } from "../src/links/pack";
 
 describe("writeStaticLinksApi", () => {
-  it("writes John 1 chapter pack, Mt 16 section, and a known excerpt", () => {
+  it("writes John 1 chapter pack, Mt 16 section, and excerpts inside the chapter packs", () => {
     const dist = mkdtempSync(join(tmpdir(), "piblia-links-"));
     const redirects = writeStaticLinksApi(dist, repoRoot());
 
@@ -33,14 +33,10 @@ describe("writeStaticLinksApi", () => {
     );
     expect(existsSync(sectionPath)).toBe(true);
 
-    const excerptPath = join(
-      dist,
-      "api",
-      "links",
-      "excerpt",
-      encodeURIComponent("origen-comm-matt-12-10") + ".json"
-    );
-    expect(existsSync(excerptPath)).toBe(true);
+    // Excerpts ride inside the chapter packs; no file per link (host file limits).
+    expect(existsSync(join(dist, "api", "links", "excerpt"))).toBe(false);
+    const mt16 = JSON.parse(readFileSync(join(dist, "api", "links", "chapter", "mt", "16.json"), "utf8")) as ChapterLinksPack;
+    expect(mt16.links["origen-comm-matt-12-10"]?.excerpt).toMatch(/Peter/i);
 
     expect(redirects.some((l) => l.includes("/api/links/chapter/jo/1"))).toBe(true);
   }, 120_000);

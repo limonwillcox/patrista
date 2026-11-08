@@ -6,6 +6,7 @@
  * order of Bibles/KJV/manifest.json (Genesis 1 … Revelation 66).
  */
 
+import { PACKED, fetchPacked } from "./packed";
 /** c = the other Testament, s = the same Testament (outside the verse's own story). */
 export type LinkKind = "c" | "s";
 /** [other verse, score, kind, the shared Hebrew/Greek words that carry the link] */
@@ -58,8 +59,12 @@ export type TypeEntry = {
 export const fetchTypes = () => getJson<TypeEntry[]>("types.json");
 /** Per verse id: how many times the Fathers in the library cite it. */
 export const fetchCited = () => getJson<Record<string, number>>("cited.json");
-export const fetchChapterConnections = (book: string, chapter: number) =>
-  getJson<ChapterConnections>("verse/" + encodeURIComponent(book) + "/" + chapter + ".json");
+export const fetchChapterConnections = (book: string, chapter: number): Promise<ChapterConnections | null> =>
+  PACKED
+    ? fetchPacked<ChapterConnections>("/connections/verse", book, chapter).then(
+        (hit) => hit ?? getJson<ChapterConnections>("verse/" + encodeURIComponent(book) + "/" + chapter + ".json")
+      )
+    : getJson<ChapterConnections>("verse/" + encodeURIComponent(book) + "/" + chapter + ".json");
 
 const WORD_BUCKET = 250;
 export async function fetchWordInfo(code: string): Promise<WordInfo | null> {

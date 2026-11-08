@@ -33,8 +33,8 @@ a double-click, a pinch or Ctrl + scroll. Following a pattern opens it in the ta
 reader; back and forward walk the trail. A star saves a connection (browser storage), and each verse,
 passage and word has a note (the same notes as the Journal, `src/lib/readerNotes.ts`).
 
-Clicking a type the Fathers draw opens it in the tab: its meaning, how it points to Christ, the Fathers' own
-words, and every passage in it, joined on the chart from first to last (`public/connections/types.json`).
+Clicking a type the Fathers saw opens it in the tab: its group, the Fathers who saw it, their own words, and
+every passage in it, joined on the chart from first to last (`public/connections/types.json`).
 
 On the Types page (`/types`) each type says how many Fathers drew it: the different Fathers among its
 citations (`fatherNames` in `src/lib/connectionPatterns.ts`). "Follow" walks a type as a trail
@@ -48,28 +48,43 @@ by how closely the chapter works through that passage.
 
 ## The rule for types
 
-A type is on the site only because the Fathers drew it. We never name one ourselves, and nothing is added
-because it seems plausible. A type needs:
+A type is on the site only because the Fathers saw it. We never name one ourselves. The list
+(`typology/approved.json`) was found by reading the library, not chosen:
 
-- **At least one Father**, cited from a passage in this library that draws the figure (not just mentions
-  the Old Testament story), with a link to the reader chapter. The site shows how many Fathers drew each
-  type, and a type one Father draws weighs less in Connections than one drawn by two or more (see
-  "What the reader sees").
-- **Faithful quotations.** A quotation must be found in the chapter it links to. Case, punctuation, cuts
-  marked "…" and small differences of wording are allowed; a paraphrase without quotation marks needs
-  only its link.
-- **"In Christ" in the Fathers' terms:** the line saying what the type points to names a Father it cites.
+1. **Find.** Every paragraph, in English, Latin and Greek, that uses a word for a figure ("type", "figure",
+   "shadow", *typus*, *figura*, *umbra*, τύπος, σκιά…) is a candidate (`scripts/connections/find_type_candidates.ts`,
+   4,739 paragraphs).
+2. **Read.** Each candidate was read for the types its Father names as his own (not one he reports or
+   rejects): the thing in Scripture, what it foreshadows, and his words. Every quotation was checked against
+   its paragraph by script; a claim whose words are not there was dropped (4,034 claims kept).
+3. **Group.** The claims were grouped into types (one thing foreshadowing one thing) and each type counted
+   by the different Fathers who saw it: 1,578 types.
+4. **Clean and approve.** The 219 types two or more Fathers saw were cleaned by hand (duplicates merged;
+   general statements such as "the sacrifices of the Law", fulfilments and parables dropped), filed in six
+   groups, and approved: 160 types.
 
-Our own words appear only in the short label and the one-line description of the Old Testament thing.
-`tests/typesRule.test.ts` checks every added type against this rule. The older entries in `sources.json`
-(from the study notes) were checked once against the whole library: all 312 of their quotations are in it
+`scripts/connections/build_fathers_types.ts` turns the list into the site's entries
+(`typology/types.json`), and `pack_public.py` publishes them. Each entry carries:
 
+- **The Fathers' words**, at most two per Father, each linked to its paragraph in the reader. A Latin or
+  Greek quotation has no English paragraph: it is shown in a machine translation, marked as one, with the
+  original.
+- **Its passages**: the ones its claims name, and up to three verses of the other Testament that one of
+  its own quoted paragraphs cites and that two or more Fathers cite together with the type's passage
+  (`witness` in `connections.sqlite`). 89 types have both ends and are drawn as arcs; 71 have their own
+  passage only and are found by name.
+- **Our words** only in the short label ("The bronze serpent → the crucifixion") and the group.
 
-New types go in `grammar/fathers-types/<slug>.json`, one file each, not in `sources.json` (which
-`extract_sources.py` rewrites from the private notes). Both build steps read the folder.
+`tests/typesRule.test.ts` checks every quotation's link and form. The list is not complete: a Father who
+draws a type without a figure word ("as Isaac carried the wood, so Christ…") is not found yet, and types
+one Father saw are not on the site.
 
-The list is not complete. It holds the types found in the Fathers so far; more are added as they are
-found and checked.
+## The Fathers' gatherings: the colours of the types map
+
+A colour on the map is a Father's own gathering: one passage of his (a chapter in the reader) where he names
+five or more of the types together, as Justin does in *Dialogue* 111 or Basil in *On the Holy Spirit* 14.
+They are computed from the types' quotations (`src/lib/typeGatherings.ts`), listed in the Father's own
+order, and run through history by his death.
 
 ## Pipeline
 

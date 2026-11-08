@@ -243,7 +243,12 @@ function ChristStop({ t }: { t: TypeEntry }) {
   return (
     <>
       <h3 className="tt-ref">In Christ</h3>
-      {t.christ ? <p className="tt-christ">{linkCitations(t)}</p> : null}
+      {t.christ ? (
+        <p className="tt-christ">{linkCitations(t)}</p>
+      ) : t.label.includes(" → ") ? (
+        // A type from the Fathers' list says what it points to in its label ("The bronze serpent → the crucifixion").
+        <p className="tt-christ">{t.label.split(" → ")[0]} points to {t.label.split(" → ").slice(1).join(" → ")}.</p>
+      ) : null}
       <p className="tt-fathers">
         {drawnBy(t)}:{" "}
         {fathers.map((f, i) => (

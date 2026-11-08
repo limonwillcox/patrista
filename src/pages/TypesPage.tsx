@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { fetchCatalog } from "../api/client";
 import { bibleHrefFor, bookOf, fetchMeta, fetchTypes, vidOf, type Meta, type TypeEntry } from "../api/connections";
 import { FatherRef, italics, splitWhere } from "../components/typeParts";
 import { TypeTrail } from "../components/TypeTrail";
 import { TypeMap, shortLabel } from "../components/typeMap/TypeMap";
-import { THEMES, THEME_OF, themeLabel, themeOf, type ThemeId } from "../data/typeThemes";
+import { firstThemeOf, themeColor, themesOf, themeTitle, useNight } from "../lib/themeColors";
+import { computeGatherings, nameGatherings, type NamedGathering } from "../lib/typeGatherings";
 import { fathersOnMap, placeFromParam, placeParam, typesThrough } from "../lib/typeMap";
 import { drawnBy, stopFromParam, trailLength } from "../lib/typeTrail";
 import "../styles/types.css";
@@ -15,23 +17,27 @@ import "../styles/type-trail.css";
  * joining its passages (src/components/typeMap/TypeMap.tsx). At rest the map is a calm picture; point at it
  * and it opens for exploring. Under it is one thing at a time: the open type as a trail (?type=<slug>&stop=<n>,
  * src/lib/typeTrail.ts; the Fathers' words at &view=fathers), or a chapter picked on the line (&at=ex.14), or
- * a theme (&theme=waters), or a line on how to use the map. A Father (&father=Irenaeus) keeps only his types
- * bright. Data: public/connections/types.json; themes: src/data/typeThemes.ts.
+ * a theme (&theme=tertullian-bapt-9), or a line on how to use the map. A Father (&father=Irenaeus) keeps only
+ * his types bright. Data: public/connections/types.json. The themes are the Fathers' own gatherings, passages
+ * that name several types together, computed from the types' quotations (src/lib/typeGatherings.ts).
  */
 
 export function TypesPage() {
   const [meta, setMeta] = useState<Meta | null>(null);
   const [types, setTypes] = useState<TypeEntry[] | null>(null);
+  const [themes, setThemes] = useState<NamedGathering[]>([]);
   const [failed, setFailed] = useState(false);
   const [params, setParams] = useSearchParams();
-  const [preview, setPreview] = useState<ThemeId | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
+  const night = useNight();
 
   useEffect(() => {
-    Promise.all([fetchMeta(), fetchTypes()]).then(
-      ([m, t]) => {
+    Promise.all([fetchMeta(), fetchTypes(), fetchCatalog().catch(() => null)]).then(
+      ([m, t, catalog]) => {
         if (!m || !t) return setFailed(true);
         setMeta(m);
         setTypes(t);
+        setThemes(nameGatherings(computeGatherings(t), catalog));
       },
       () => setFailed(true)
     );
@@ -49,7 +55,10 @@ export function TypesPage() {
   const stop = chosen ? stopFromParam(params.get("stop"), trailLength(chosen)) : 0;
   const fathersView = params.get("view") === "fathers";
   const rawTheme = params.get("theme");
-  const theme = rawTheme && THEMES.some((t) => t.id === rawTheme) ? (rawTheme as ThemeId) : null;
+  const theme = rawTheme && themes.some((t) => t.id === rawTheme) ? rawTheme : null;
+  const firstTheme = useMemo(() => firstThemeOf(themes), [themes]);
+  /** A type's colour: that of the first theme it is in. */
+  const colorOf = (typeId: string) => themeColor(firstTheme.get(typeId) ?? -1, themes.length, night);
   const fathers = useMemo(() => (types ? fathersOnMap(types) : []), [types]);
   const rawFather = params.get("father");
   const father = rawFather && fathers.some((f) => f.name === rawFather) ? rawFather : null;
@@ -85,7 +94,6 @@ export function TypesPage() {
   if (!meta || !types) return <div className="ty-page"><p className="ty-state">Loading the types…</p></div>;
 
   const open = Boolean(chosen || place || theme);
-  const count = (id: ThemeId) => types.filter((t) => THEME_OF[t.id] === id).length;
 
   return (
     <div className="ty-page tm-page">
@@ -95,6 +103,7 @@ export function TypesPage() {
           <TypeMap
             meta={meta}
             types={types}
+            themes={themes}
             chosen={chosen}
             stop={fathersView ? 0 : stop}
             theme={preview ?? theme}
@@ -105,7 +114,7 @@ export function TypesPage() {
             onPlace={(p) => set({ at: p ? placeParam(meta, p.book, p.chapter) : null, theme: null })}
             tools={
               <div className="tm-find">
-                <TypeFinder types={types} onPick={(t) => choose(t)} />
+                <TypeFinder types={types} colorOf={colorOf} onPick={(t) => choose(t)} />
                 <select
                   className="tm-father"
                   value={father ?? ""}
@@ -123,11 +132,12 @@ export function TypesPage() {
             }
             legend={
               <div className="tm-themes" role="group" aria-label="Themes: the colours of the map">
-                {THEMES.map((th) => (
+                {themes.map((th, i) => (
                   <button
                     type="button"
                     key={th.id}
-                    className={"tm-theme th-" + th.id}
+                    className="tm-theme"
+                    style={{ ["--th" as string]: themeColor(i, themes.length, night) }}
                     aria-pressed={theme === th.id}
                     onClick={() => set({ theme: theme === th.id ? null : th.id, at: null })}
                     onMouseEnter={() => setPreview(th.id)}
@@ -135,7 +145,7 @@ export function TypesPage() {
                     onFocus={() => setPreview(th.id)}
                     onBlur={() => setPreview(null)}
                   >
-                    {th.label} <span>{count(th.id)}</span>
+                    {themeTitle(th)} <span>{th.members.length}</span>
                   </button>
                 ))}
               </div>
@@ -156,7 +166,7 @@ export function TypesPage() {
                 t={chosen}
                 meta={meta}
                 stop={stop}
-                kind={themeLabel(themeOf(chosen.id))}
+                kind="Type"
                 span={spanLabel(meta, chosen)}
                 onStop={follow}
                 onFathers={() => showFathers(true)}
@@ -165,9 +175,15 @@ export function TypesPage() {
             )}
           </article>
         ) : place ? (
-          <PlaceCard meta={meta} types={types} place={place} onPick={choose} onClose={() => set({ at: null })} />
+          <PlaceCard meta={meta} types={types} place={place} colorOf={colorOf} onPick={choose} onClose={() => set({ at: null })} />
         ) : theme ? (
-          <ThemeCard types={types} theme={theme} onPick={choose} onClose={() => set({ theme: null })} />
+          <GatheringCard
+            types={types}
+            theme={themes.find((x) => x.id === theme)!}
+            color={themeColor(themes.findIndex((x) => x.id === theme), themes.length, night)}
+            onPick={choose}
+            onClose={() => set({ theme: null })}
+          />
         ) : null}
           </aside>
         ) : null}
@@ -191,7 +207,7 @@ function spanLabel(meta: Meta, t: TypeEntry): string {
 }
 
 /** Find a type by name: a few matches under the box; Enter opens the first. */
-function TypeFinder({ types, onPick }: { types: TypeEntry[]; onPick: (t: TypeEntry) => void }) {
+function TypeFinder({ types, colorOf, onPick }: { types: TypeEntry[]; colorOf: (id: string) => string; onPick: (t: TypeEntry) => void }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const needle = q.trim().toLowerCase();
@@ -234,7 +250,8 @@ function TypeFinder({ types, onPick }: { types: TypeEntry[]; onPick: (t: TypeEnt
               <li key={t.id}>
                 <button
                   type="button"
-                  className={"th-" + themeOf(t.id) + (i === 0 ? " is-first" : "")}
+                  className={i === 0 ? "is-first" : undefined}
+                  style={{ ["--th" as string]: colorOf(t.id) }}
                   onMouseDown={(e) => e.preventDefault()}
                   onClick={() => pick(t)}
                 >
@@ -256,12 +273,14 @@ function PlaceCard({
   meta,
   types,
   place,
+  colorOf,
   onPick,
   onClose
 }: {
   meta: Meta;
   types: TypeEntry[];
   place: { book: number; chapter: number };
+  colorOf: (id: string) => string;
   onPick: (t: TypeEntry) => void;
   onClose: () => void;
 }) {
@@ -285,7 +304,7 @@ function PlaceCard({
         <ul className="tm-picks">
           {here.map((t) => (
             <li key={t.id}>
-              <button type="button" className={"tm-pick th-" + themeOf(t.id)} onClick={() => onPick(t)}>
+              <button type="button" className="tm-pick" style={{ ["--th" as string]: colorOf(t.id) }} onClick={() => onPick(t)}>
                 {shortLabel(t.label)}
               </button>
             </li>
@@ -299,37 +318,55 @@ function PlaceCard({
   );
 }
 
-/** A theme brought forward: what it holds, and its types to open. */
-function ThemeCard({
+/**
+ * A theme brought forward: a Father's gathering. The types the passage names, in the order he names them, each
+ * with its quotation from the passage, and a way into the passage in the reader.
+ */
+function GatheringCard({
   types,
   theme,
+  color,
   onPick,
   onClose
 }: {
   types: TypeEntry[];
-  theme: ThemeId;
+  theme: NamedGathering;
+  color: string;
   onPick: (t: TypeEntry) => void;
   onClose: () => void;
 }) {
-  const th = THEMES.find((x) => x.id === theme)!;
-  const mine = types.filter((t) => THEME_OF[t.id] === theme);
+  const byId = new Map(types.map((t) => [t.id, t]));
+  const title = themeTitle(theme);
   return (
-    <section className={"tm-card th-" + theme} aria-label={th.label}>
-      <button type="button" className="ty-close" onClick={onClose} aria-label={"Close " + th.label}>
+    <section className="tm-card tm-theme-card" style={{ ["--th" as string]: color }} aria-label={title}>
+      <button type="button" className="ty-close" onClick={onClose} aria-label={"Close " + title}>
         ×
       </button>
-      <p className="tm-card-kicker">A theme · {mine.length} types</p>
-      <h2>{th.label}</h2>
-      <p className="tm-card-lede">{th.blurb} Point at an arc on the map, or open one here.</p>
-      <ul className="tm-picks">
-        {mine.map((t) => (
-          <li key={t.id}>
-            <button type="button" className={"tm-pick th-" + theme} onClick={() => onPick(t)}>
-              {shortLabel(t.label)}
-            </button>
-          </li>
-        ))}
-      </ul>
+      <p className="tm-card-kicker">A Father&apos;s gathering · {theme.members.length} types</p>
+      <h2>{title}</h2>
+      <p className="tm-card-lede">
+        In this passage {theme.father} names these types together. Here they are in the order he names them.
+      </p>
+      <Link className="tm-card-read" to={theme.members[0].href}>
+        Read the passage →
+      </Link>
+      <ol className="tm-evidence">
+        {theme.members.map((m) => {
+          const t = byId.get(m.type);
+          if (!t) return null;
+          const { quote } = splitWhere(t.where[m.quote]);
+          return (
+            <li key={m.type}>
+              <button type="button" className="tm-evidence-type" onClick={() => onPick(t)}>
+                {shortLabel(t.label)}
+              </button>
+              <p className="tm-evidence-why">
+                <Link to={m.href}>{italics(m.ref)}</Link>: <span className="tm-evidence-quote">{quote}</span>
+              </p>
+            </li>
+          );
+        })}
+      </ol>
     </section>
   );
 }

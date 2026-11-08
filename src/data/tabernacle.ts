@@ -429,7 +429,7 @@ export const PIECES: Piece[] = [
     name: "The high priest",
     about: "Aaron, brought to the door of the tent, washed with water, clothed in the holy garments and anointed.",
     refs: [ex(28, 1, 4), ex(29, 4, 9), ex(40, 12, 15)],
-    typeId: "04:anointed-one"
+    typeId: "04:aaron-and-the-high-priests"
   }
 ];
 

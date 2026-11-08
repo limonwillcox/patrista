@@ -1,0 +1,82 @@
+/* /types: how many Fathers drew a type, and a type followed as a trail (src/components/TypeTrail.tsx). */
+
+.tt-card-drawn { font: 12px var(--sans); color: var(--muted); }
+.tt-drawn { font: 400 12px var(--sans); letter-spacing: 0; text-transform: none; color: var(--muted); }
+
+.tt-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.tt-follow {
+  font: 600 13px var(--sans); padding: 4px 12px; border-radius: var(--radius-pill); cursor: pointer;
+  border: 1px solid var(--accent); background: var(--bg); color: var(--accent);
+}
+.tt-follow:hover { background: var(--accent-soft); }
+.tt-follow:focus-visible { outline: none; box-shadow: var(--ring); }
+
+/* The strip marks the stop a trail stands on. */
+.tt-strip-mark { fill: var(--accent); stroke: var(--bg); stroke-width: 2; pointer-events: none; }
+
+/* The trail: one column, one stop at a time. */
+.ty-detail.tt-detail { display: block; }
+.tt { max-width: 640px; margin: 0 auto; scroll-margin-top: calc(var(--header, 70px) + 12px); }
+.tt-top { padding-right: 40px; }
+.tt-back {
+  max-width: 100%; padding: 0; border: 0; background: none; cursor: pointer; text-align: left;
+  font: 700 11px/1.4 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+}
+.tt-back:hover { text-decoration: underline; }
+.tt-back:focus-visible { outline: none; box-shadow: var(--ring); border-radius: 4px; }
+
+.tt-progress { display: flex; align-items: center; gap: 10px; margin: 12px 0 4px; }
+.tt-count { flex: none; font: 600 12px var(--sans); color: var(--muted); font-variant-numeric: tabular-nums; }
+.tt-dots { display: flex; flex-wrap: wrap; gap: 2px; margin: 0; padding: 0; list-style: none; min-width: 0; }
+.tt-dot {
+  display: block; width: 22px; height: 22px; padding: 0; border: 0; background: none; cursor: pointer; position: relative;
+}
+.tt-dot::after {
+  content: ""; position: absolute; inset: 7px; border-radius: 999px; border: 1.5px solid var(--border); background: var(--bg);
+}
+.tt-dot.is-past::after { background: var(--accent-soft); border-color: var(--accent); }
+.tt-dot.is-end::after { border-radius: 2px; transform: rotate(45deg); }
+.tt-dot[aria-current="step"]::after { inset: 5px; background: var(--accent); border-color: var(--accent); }
+.tt-dot:focus-visible { outline: none; box-shadow: var(--ring); border-radius: 999px; }
+
+.tt-stop { padding: 6px 0 4px; min-height: 180px; }
+.ty-detail .tt-ref { margin: 4px 0 8px; font: 600 22px/1.25 var(--serif); letter-spacing: 0; text-transform: none; color: var(--text); }
+.tt-ref a { color: var(--accent); text-decoration: none; }
+.tt-ref a:hover { text-decoration: underline; }
+.tt-text { margin: 0; font: 17px/1.65 var(--serif); overflow-wrap: break-word; }
+.tt-text sup { margin-right: 2px; font: 600 10px var(--sans); color: var(--muted); }
+.tt-more { font: 600 13px var(--sans); color: var(--accent); text-decoration: none; white-space: nowrap; }
+.tt-more:hover { text-decoration: underline; }
+.tt-note { margin: 0; font: 14px var(--sans); color: var(--muted); }
+
+.tt-father { margin: 18px 0 0; }
+.tt-father blockquote { margin: 0; padding-left: 12px; border-left: 2px solid var(--accent); font: 16px/1.55 "Junicode", var(--serif); }
+.tt-father figcaption { margin: 4px 0 0 14px; font: 13px var(--sans); color: var(--muted); }
+
+.tt-christ { margin: 0; padding: 12px 14px; border-radius: var(--radius); background: var(--accent-soft); font: 17px/1.6 var(--serif); }
+.tt-fathers { margin: 12px 0 0; font: 13px/1.6 var(--sans); color: var(--muted); }
+
+.tt-nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
+.tt-nav button {
+  min-height: 40px; padding: 0 16px; border-radius: var(--radius-pill); cursor: pointer;
+  font: 600 14px var(--sans); border: 1px solid var(--border); background: var(--bg); color: var(--text);
+}
+.tt-nav button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.tt-nav button:disabled { opacity: 0.4; cursor: default; }
+.tt-nav button:focus-visible { outline: none; box-shadow: var(--ring); }
+.tt-nav .tt-next { background: var(--accent); border-color: var(--accent); color: #fff; }
+.tt-nav .tt-next:hover:not(:disabled) { color: #fff; filter: brightness(1.08); }
+/* The night accent is light: dark text on it reads better. */
+html[data-theme="night"] .tt-nav .tt-next,
+html[data-theme="night"] .tt-nav .tt-next:hover:not(:disabled) { color: #1b1b1b; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .tt-stop { animation: tt-in 0.18s ease-out; }
+  @keyframes tt-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+}
+
+@media (max-width: 480px) {
+  .ty-detail .tt-ref { font-size: 20px; }
+  .tt-text { font-size: 16px; }
+  .tt-nav button { flex: 1 1 0; padding: 0 10px; }
+}

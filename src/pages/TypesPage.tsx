@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { fetchBibleChapter } from "../api/client";
 import {
@@ -14,13 +14,18 @@ import {
   type Meta,
   type TypeEntry
 } from "../api/connections";
+import { FatherRef, italics, splitWhere } from "../components/typeParts";
+import { TypeTrail } from "../components/TypeTrail";
+import { drawnBy, stopFromParam, trailLength, trailPassages } from "../lib/typeTrail";
 import "../styles/types.css";
+import "../styles/type-trail.css";
 
 /*
  * The atlas of types: every type the Fathers draw from Scripture on one page. A strip runs from Genesis to
  * Revelation; each type is a chain of arcs joining its passages, first to last. Pick one to read what it is,
  * what it points to in Christ, every passage, and the Fathers' own words. The chosen type opens in the list
- * itself, across its full width, where it was picked. Data: public/connections/types.json.
+ * itself, across its full width, where it was picked. "Follow" walks it as a trail, one passage at a time
+ * (?type=<slug>&stop=<n>, see src/lib/typeTrail.ts). Data: public/connections/types.json.
  */
 
 const KINDS: { id: string; label: string }[] = [
@@ -38,16 +43,6 @@ const W = 1000;
 const PAD = 12;
 const BASE = 168;
 const H = 214;
-
-function italics(text: string): ReactNode {
-  return text.split(/\*([^*]+)\*/).map((part, i) => (i % 2 ? <i key={i}>{part}</i> : part));
-}
-
-/** "Cyril, *Cat.* 13.20 — “…”" → the reference and the quotation. */
-function splitWhere(w: string): { ref: string; quote: string } {
-  const at = w.indexOf(" — ");
-  return at < 0 ? { ref: "", quote: w } : { ref: w.slice(0, at), quote: w.slice(at + 3) };
-}
 
 export function TypesPage() {
   const [meta, setMeta] = useState<Meta | null>(null);
@@ -86,6 +81,7 @@ export function TypesPage() {
     );
   }, [types, kind, query, book]);
   const chosen = types?.find((t) => slug(t.id) === chosenId) ?? null;
+  const stop = chosen ? stopFromParam(params.get("stop"), trailLength(chosen)) : null;
   // A type opened from the URL or the strip may be one the filters hide: it still shows, first.
   const listed = chosen && !shown.includes(chosen) ? [chosen, ...shown] : shown;
 
@@ -108,6 +104,15 @@ export function TypesPage() {
     const p = new URLSearchParams(params);
     if (t) p.set("type", slug(t.id));
     else p.delete("type");
+    p.delete("stop");
+    setParams(p, { replace: true });
+  }
+
+  /** Open the chosen type's trail at a stop (from 1), or close the trail (null). */
+  function follow(n: number | null) {
+    const p = new URLSearchParams(params);
+    if (n == null) p.delete("stop");
+    else p.set("stop", String(n));
     setParams(p, { replace: true });
   }
 
@@ -131,7 +136,14 @@ export function TypesPage() {
         <h1>What the Fathers saw in the Old Testament</h1>
       </header>
 
-      <Strip meta={meta} types={shown} hot={hot ?? (chosen ? chosen.id : null)} onHot={setHot} onPick={choose} />
+      <Strip
+        meta={meta}
+        types={shown}
+        hot={hot ?? (chosen ? chosen.id : null)}
+        mark={chosen && stop ? trailPassages(chosen)[stop - 1]?.[0] ?? null : null}
+        onHot={setHot}
+        onPick={choose}
+      />
 
       <div className="ty-tools">
         <div className="ty-kinds" role="group" aria-label="Kind of type">
@@ -170,7 +182,16 @@ export function TypesPage() {
         {listed.map((t) =>
           chosen?.id === t.id ? (
             <li key={t.id} className="ty-open" ref={openRef}>
-              <TypeDetail t={t} meta={meta} onClose={() => choose(null)} />
+              {stop ? (
+                <article className="ty-detail tt-detail" aria-label={t.label}>
+                  <button type="button" className="ty-close" onClick={() => choose(null)} aria-label={"Close " + t.label} aria-expanded={true}>
+                    ×
+                  </button>
+                  <TypeTrail t={t} meta={meta} stop={stop} onStop={follow} />
+                </article>
+              ) : (
+                <TypeDetail t={t} meta={meta} onClose={() => choose(null)} onFollow={() => follow(1)} />
+              )}
             </li>
           ) : (
             <li key={t.id}>
@@ -187,6 +208,7 @@ export function TypesPage() {
                 <span className="ty-card-label">{t.label}</span>
                 <span className="ty-card-def">{t.def}</span>
                 <span className="ty-card-span">{spanLabel(meta, t)}</span>
+                <span className="tt-card-drawn">{drawnBy(t)}</span>
               </button>
             </li>
           )
@@ -216,12 +238,15 @@ function Strip({
   meta,
   types,
   hot,
+  mark,
   onHot,
   onPick
 }: {
   meta: Meta;
   types: TypeEntry[];
   hot: string | null;
+  /** The passage a trail stands on: marked on the line. */
+  mark?: number | null;
   onHot: (id: string | null) => void;
   onPick: (t: TypeEntry) => void;
 }) {
@@ -271,6 +296,7 @@ function Strip({
           );
         })}
         <line x1={PAD} x2={W - PAD} y1={BASE} y2={BASE} className="ty-strip-base" />
+        {mark ? <circle cx={X(mark)} cy={BASE} r={6} className="tt-strip-mark" /> : null}
         {bands.map((b) => (
           <g key={b.group + b.x0}>
             <rect x={b.x0} y={BASE + 4} width={Math.max(1, b.x1 - b.x0 - 1.5)} height={7} rx={2} fill={GROUP_COLOR[b.group] ?? "#999"} />
@@ -286,15 +312,17 @@ function Strip({
   );
 }
 
-function TypeDetail({ t, meta, onClose }: { t: TypeEntry; meta: Meta; onClose: () => void }) {
-  const stops = [...t.ranges].sort((a, b) => a[0] - b[0]);
+function TypeDetail({ t, meta, onClose, onFollow }: { t: TypeEntry; meta: Meta; onClose: () => void; onFollow: () => void }) {
+  const stops = trailPassages(t);
   return (
     <article className="ty-detail" aria-label={t.label}>
       <button type="button" className="ty-close" onClick={onClose} aria-label={"Close " + t.label} aria-expanded={true}>
         ×
       </button>
       <div className="ty-detail-main">
-        <p className="ty-detail-kind">{kindLabel(t.kind)}</p>
+        <p className="ty-detail-kind">
+          {kindLabel(t.kind)} <span className="tt-drawn">· {drawnBy(t)}</span>
+        </p>
         <h2>{t.label}</h2>
         <p className="ty-detail-def">{t.def}</p>
         {t.christ ? (
@@ -303,7 +331,12 @@ function TypeDetail({ t, meta, onClose }: { t: TypeEntry; meta: Meta; onClose: (
           </p>
         ) : null}
 
-        <h3>Where it appears, first to last</h3>
+        <div className="tt-head">
+          <h3>Where it appears, first to last</h3>
+          <button type="button" className="tt-follow" onClick={onFollow}>
+            Follow it →
+          </button>
+        </div>
         <ol className="ty-passages">
           {stops.map((r) => (
             <Passage key={r[0] + "-" + r[1]} meta={meta} r={r} />
@@ -350,21 +383,6 @@ function TypeDetail({ t, meta, onClose }: { t: TypeEntry; meta: Meta; onClose: (
         </div>
       ) : null}
     </article>
-  );
-}
-
-/** "Cyril, *Cat.* 13.20" with "Cyril" linked to his page (the author is read from the passage's link). */
-function FatherRef({ refText, href }: { refText: string; href: string }) {
-  const author = href.match(/^\/fathers\/([^/]+)\//)?.[1];
-  const at = refText.indexOf(",");
-  if (!author || at < 0) return <>{italics(refText)}</>;
-  return (
-    <>
-      <Link to={"/fathers/" + author + "/"} className="ty-father">
-        {refText.slice(0, at)}
-      </Link>
-      {italics(refText.slice(at))}
-    </>
   );
 }
 

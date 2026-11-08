@@ -59,22 +59,30 @@ export default function ManuscriptStage({
             holdCover: holdRef.current,
             onSpread: (n, total) => live && setPage({ n, total })
           });
-    build.then(async (h) => {
-      // The codex compiles its shaders first, so the cover opening never waits on one (CodexHandle.prewarm).
-      if ("prewarm" in h) await h.prewarm().catch(() => {});
-      if (!live) {
-        h.dispose();
-        return;
-      }
-      handle.current = h;
-      setReady(true);
-      if (hostRef.current) onReadyRef.current?.(hostRef.current);
-    });
+    // three.js's compileAsync keeps polling the materials it compiles and throws if they are disposed
+    // meanwhile, so a stage closed mid-build is disposed only once the build has finished.
+    let built = false;
+    build
+      .then(async (h) => {
+        // The codex compiles its shaders first, so the cover opening never waits on one (CodexHandle.prewarm).
+        if ("prewarm" in h) await h.prewarm().catch(() => {});
+        if (!live) {
+          h.dispose();
+          return;
+        }
+        handle.current = h;
+        setReady(true);
+        if (hostRef.current) onReadyRef.current?.(hostRef.current);
+      })
+      .finally(() => {
+        built = true;
+        if (!live) stage.dispose();
+      });
     return () => {
       live = false;
       handle.current?.dispose();
       handle.current = null;
-      stage.dispose();
+      if (built) stage.dispose();
     };
   }, [title, author, paras, form, cover]);
 

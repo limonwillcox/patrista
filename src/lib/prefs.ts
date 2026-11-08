@@ -139,3 +139,22 @@ export function setStoredScrollDark(on: boolean): void {
   localStorage.setItem("fg-scroll-dark", on ? "on" : "off");
 }
 
+
+export type BookStage = "manuscript" | "book";
+
+/** What the book viewer's stage shows for a work with a real manuscript page. The manuscript unless the reader chose the book. */
+export function storedBookStage(): BookStage {
+  try {
+    return localStorage.getItem("fg-book-stage") === "book" ? "book" : "manuscript";
+  } catch {
+    return "manuscript";
+  }
+}
+
+export function setStoredBookStage(stage: BookStage): void {
+  try {
+    localStorage.setItem("fg-book-stage", stage);
+  } catch {
+    /* storage blocked: the choice lasts until the page is closed */
+  }
+}

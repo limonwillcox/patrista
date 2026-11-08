@@ -1,0 +1,48 @@
+/* ===== The real manuscript on the book viewer's stage (BookViewer.tsx, ManuscriptFigure.tsx) =====
+   The generated book and the manuscript page share one grid cell, so the page can load and fade in
+   over the book without the stage changing size. Phases: is-book, is-waiting (the page is loading,
+   hidden), is-handing (the page fades in, the book fades out), is-leaf (the book is gone). */
+.bv-swap { position: relative; width: 100%; display: grid; justify-items: center; align-items: start; }
+.bv-swap > * { grid-area: 1 / 1; }
+.bv-swap > .ms-stage--leaf { transition: opacity 0.5s ease; }
+.bv-swap.is-waiting > .ms-stage--leaf { opacity: 0; visibility: hidden; pointer-events: none; }
+.bv-swap.is-handing > :not(.ms-stage--leaf) { opacity: 0; transition: opacity 0.5s ease; pointer-events: none; }
+/* The carried book is drawn on the shelf's 3D layer, which may sit outside the stage: fade it there too. */
+body:has(.bv-swap.is-handing) .shelf-3d { opacity: 0; transition: opacity 0.5s ease; }
+
+/* The swap between the manuscript and the book: a small pill under the caption, off the page itself. */
+.bv-swap-control {
+  margin: -6px 0 0; padding: 6px 14px;
+  border: 1px solid rgba(240, 215, 140, 0.45); border-radius: 999px; background: transparent;
+  color: #f3e2a8; font: inherit; font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em; line-height: 1.3; cursor: pointer;
+}
+button.bv-swap-control:hover { background: rgba(240, 215, 140, 0.14); }
+button.bv-swap-control:focus-visible { outline: 2px solid rgba(240, 215, 140, 0.7); outline-offset: 2px; }
+.bv-swap-status { border-color: transparent; font-weight: 400; cursor: default; animation: bv-swap-wait 1.8s ease-in-out infinite; }
+.bv-swap-status.is-hidden { visibility: hidden; }
+@keyframes bv-swap-wait { 50% { opacity: 0.55; } }
+
+/* The page's caption: where the book is kept, what the page shows, the library's rights statement. */
+.msl-where { font-family: var(--serif); font-size: 14px; }
+.msl-shows { max-width: 34em; font-size: 12.5px; line-height: 1.45; opacity: 0.82; }
+.msl-credit { max-width: 40em; margin-top: 2px; font-size: 11.5px; line-height: 1.4; opacity: 0.62; }
+.msl-credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.msl-hint { margin-top: 2px; }
+@media (hover: none) {
+  .msl-hint { display: none; }
+}
+@media (max-width: 760px) {
+  .msl-shows { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bv-swap > .ms-stage--leaf, .bv-swap.is-handing > * { transition: none; }
+  .bv-swap-status { animation: none; }
+}
+
+html:not([data-theme="night"]) .bv-swap-control { color: var(--linen-text); }
+html:not([data-theme="night"]) button.bv-swap-control { border-color: rgba(90, 58, 34, 0.38); }
+html:not([data-theme="night"]) button.bv-swap-control:hover { background: var(--linen-hover); }
+html:not([data-theme="night"]) button.bv-swap-control:focus-visible { outline-color: var(--burgundy); }
+
+/* The reader's toolbar link: the accent colour, so it reads as something to open. */
+.version-name button.read-ms-link { color: var(--accent); font-weight: 600; }

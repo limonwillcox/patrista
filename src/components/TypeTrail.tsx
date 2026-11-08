@@ -4,6 +4,7 @@ import { fetchBibleChapter } from "../api/client";
 import { bibleHrefFor, bookOf, rangeLabel, splitVid, type Meta, type TypeEntry } from "../api/connections";
 import { fetchChapterCitations, type ChapterCitations } from "../api/scripture";
 import { fatherNames } from "../lib/connectionPatterns";
+import { Commentary } from "./Commentary";
 import { drawnBy, passageChapters, quoteForPassage, trailPassages, verseWindow } from "../lib/typeTrail";
 import { FatherRef, italics, splitWhere } from "./typeParts";
 import "../styles/type-trail.css";
@@ -11,7 +12,8 @@ import "../styles/type-trail.css";
 /*
  * A type is shown as a trail: first an overview, then one passage at a time, Genesis to Revelation, then
  * what it points to in Christ. Previous / Next, the arrow keys, or a dot for each stop move along it; the
- * page keeps the stop in the URL. "The Fathers' words" is one tap away from every stop.
+ * page keeps the stop in the URL. "The Fathers' words" is one tap away from every stop. Under each passage is
+ * what the Fathers wrote on the verses shown, the same thread as the Bible's commentary panel.
  */
 
 export function TypeTrail({
@@ -149,7 +151,8 @@ type Loaded = { verses: string[]; window: ReturnType<typeof verseWindow>; quote:
 function PassageStop({ t, meta, r }: { t: TypeEntry; meta: Meta; r: [number, number] }) {
   const [got, setGot] = useState<Loaded | null>(null);
   const [failed, setFailed] = useState(false);
-  const book = bookOf(meta, r[0])?.id;
+  const bookMeta = bookOf(meta, r[0]);
+  const book = bookMeta?.id;
 
   useEffect(() => {
     if (!book) return;
@@ -215,6 +218,18 @@ function PassageStop({ t, meta, r }: { t: TypeEntry; meta: Meta; r: [number, num
                 </Link>
               </figcaption>
             </figure>
+          ) : null}
+          {book && w ? (
+            <Commentary
+              className="tt-cm"
+              book={book}
+              bookName={bookMeta!.name}
+              chapter={w.chapter}
+              verse={w.from}
+              toVerse={Math.min(w.to, got.verses.length)}
+              counts={null}
+              onPickVerse={() => {}}
+            />
           ) : null}
         </>
       )}

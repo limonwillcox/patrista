@@ -14,68 +14,6 @@
 .ty-rule b { color: var(--text); }
 .ty-lede { margin: 0; font-family: var(--serif); font-size: 17px; line-height: 1.6; color: var(--muted); text-wrap: pretty; }
 
-/* The strip */
-.ty-strip {
-  margin: 24px 0 8px; padding: 10px 12px 4px; border: 1px solid var(--border); border-radius: var(--radius-lg);
-  background: var(--panel);
-}
-.ty-strip svg { display: block; width: 100%; height: auto; overflow: visible; }
-.ty-strip-base { stroke: var(--text); stroke-width: 1; opacity: 0.35; }
-.ty-strip-divide { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 4; opacity: 0.6; }
-.ty-strip-testament { font: 700 9px var(--sans); letter-spacing: 0.14em; text-transform: uppercase; fill: var(--muted); }
-.ty-strip-group { font: 600 10px var(--sans); fill: var(--muted); }
-.ty-arc {
-  fill: none; stroke: var(--accent); stroke-width: 1.3; opacity: 0.32; cursor: pointer;
-  transition: opacity 0.15s, stroke-width 0.15s;
-}
-.ty-arc:hover, .ty-arc.is-on { opacity: 1; stroke-width: 2.6; }
-.ty-arc.is-dim { opacity: 0.1; }
-
-/* Filters */
-.ty-tools { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; margin: 18px 0 14px; }
-.ty-kinds { display: flex; flex-wrap: wrap; gap: 6px; }
-.ty-kinds button {
-  font: 600 13px var(--sans); padding: 5px 12px; border-radius: var(--radius-pill); cursor: pointer;
-  border: 1px solid var(--border); background: var(--bg); color: var(--text);
-}
-.ty-kinds button span { color: var(--muted); font-weight: 400; margin-left: 2px; }
-.ty-kinds button:hover { border-color: var(--accent); }
-.ty-kinds button[aria-pressed="true"] { background: var(--nav); border-color: var(--nav); color: #fff; }
-.ty-kinds button[aria-pressed="true"] span { color: rgba(255, 255, 255, 0.7); }
-html[data-theme="night"] .ty-kinds button[aria-pressed="true"] { background: #e8e4dc; border-color: #e8e4dc; color: #1b1b1b; }
-html[data-theme="night"] .ty-kinds button[aria-pressed="true"] span { color: #555; }
-.ty-search {
-  flex: 0 1 240px; min-width: 0; height: 36px; padding: 0 14px; border-radius: var(--radius-pill);
-  border: 1px solid var(--border); background: var(--bg); color: var(--text); font: 14px var(--sans);
-}
-.ty-find { display: flex; gap: 8px; flex: 0 1 460px; min-width: 0; }
-.ty-find .ty-search { flex: 1 1 200px; }
-.ty-book {
-  height: 36px; padding: 0 12px; border-radius: var(--radius-pill); border: 1px solid var(--border);
-  background: var(--bg); color: var(--text); font: 600 13px var(--sans); cursor: pointer;
-}
-.ty-book:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
-.ty-search:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
-
-/* Cards and the chosen type. The chosen type opens in the list across its full width. "dense" lets the
-   cards after it fill the rest of its row, so the opened type sits just below the row it was picked in. */
-.ty-list {
-  list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  grid-auto-flow: row dense; gap: 10px;
-}
-.ty-open { grid-column: 1 / -1; scroll-margin-top: calc(var(--header, 70px) + 12px); }
-.ty-card {
-  display: flex; flex-direction: column; gap: 5px; width: 100%; height: 100%; text-align: left; cursor: pointer;
-  padding: 14px 15px 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); color: var(--text);
-  font: inherit; transition: border-color 0.15s, box-shadow 0.15s;
-}
-.ty-card:hover, .ty-card.is-hot { border-color: var(--accent); }
-.ty-card:focus-visible { outline: none; box-shadow: var(--ring); }
-.ty-card-kind { font: 700 10px var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
-.ty-card-label { font: 600 17px/1.25 var(--serif); }
-.ty-card-def { font: 14px/1.45 var(--sans); color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.ty-card-span { margin-top: auto; padding-top: 4px; font: 600 12px var(--sans); color: var(--muted); }
-
 /* Two columns on a wide screen: what the type is and its passages, then the Fathers' words. */
 .ty-detail {
   position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 36px; align-items: start;
@@ -126,7 +64,4 @@ html[data-theme="night"] .ty-kinds button[aria-pressed="true"] span { color: #55
   .ty-detail-main { padding-right: 36px; }
   .ty-detail-words { padding-right: 0; margin-top: 8px; }
   .ty-detail-words > h3:first-child { margin-top: 20px; }
-  .ty-find { flex-basis: 100%; }
-  .ty-book { max-width: 46%; }
-  .ty-strip { padding: 6px 4px 0; }
 }

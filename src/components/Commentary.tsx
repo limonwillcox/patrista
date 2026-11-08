@@ -9,76 +9,90 @@ function titleCase(id: string): string {
 }
 
 /**
- * What the Fathers wrote on one verse, as one thread from two sources: the commentary collections (the
- * Gospels so far) and every work in the library that cites the verse (the whole Bible). Shown beside the
- * Bible text, open from the start.
+ * What the Fathers wrote on one verse, or a few verses of one chapter, as one thread from two sources: the
+ * commentary collections (the Gospels so far) and every work in the library that cites the verse (the whole
+ * Bible). Shown beside the Bible text, open from the start, and under each passage of a type's trail.
  */
 export function Commentary({
   book,
   bookName,
   chapter,
   verse,
+  toVerse,
   counts,
   onPickVerse,
-  onClose
+  onClose,
+  className
 }: {
   book: string;
   bookName: string;
   chapter: number;
   verse: number;
+  /** The last verse, for a few verses of the chapter (a trail's passage); the thread then marks each verse. */
+  toVerse?: number;
+  /** Extra classes, for a place other than the Bible's side panel. */
+  className?: string;
   counts: Record<number, number> | null;
   onPickVerse: (n: number) => void;
   /** Phones: close the sheet. */
   onClose?: () => void;
 }) {
   const { catalog } = useApp();
-  /** Undefined while loading. */
-  const [links, setLinks] = useState<CommentaryLink[] | undefined>(undefined);
+  const last = toVerse && toVerse > verse ? toVerse : verse;
+  const verses = useMemo(() => Array.from({ length: last - verse + 1 }, (_, i) => verse + i), [verse, last]);
+  /** Per verse, the commentary links on it. Undefined while loading. */
+  const [links, setLinks] = useState<[number, CommentaryLink[]][] | undefined>(undefined);
   const [cites, setCites] = useState<CitingPassage[] | undefined>(undefined);
 
   useEffect(() => {
     let live = true;
     setLinks(undefined);
     setCites(undefined);
-    fetchVerseLinks(book, chapter, verse)
-      .then((d) => d.tree.flatMap((c) => c.fathers.flatMap((f) => f.works.flatMap((w) => w.links))))
-      .catch(() => [] as CommentaryLink[])
-      .then((l) => live && setLinks(l.filter((x) => x.status !== "rejected")));
-    fetchChapterCitations(book, chapter).then((c) => live && setCites(mergeCites([[verse, c?.[chapter + ":" + verse] ?? []]])));
+    // The links come a chapter at a time and are cached, so several verses of a chapter cost one load.
+    Promise.all(
+      verses.map((v) =>
+        fetchVerseLinks(book, chapter, v)
+          .then((d) => d.tree.flatMap((c) => c.fathers.flatMap((f) => f.works.flatMap((w) => w.links))))
+          .catch(() => [] as CommentaryLink[])
+          .then((l): [number, CommentaryLink[]] => [v, l.filter((x) => x.status !== "rejected")])
+      )
+    ).then((all) => live && setLinks(all));
+    fetchChapterCitations(book, chapter).then((c) => live && setCites(mergeCites(verses.map((v) => [v, c?.[chapter + ":" + v] ?? []]))));
     return () => {
       live = false;
     };
-  }, [book, chapter, verse]);
+  }, [book, chapter, verses]);
 
   const names = useMemo(() => new Map((catalog?.authors ?? []).map((a) => [a.id, a.name])), [catalog]);
   const byWork = useMemo(() => new Map((catalog?.works ?? []).map((w) => [w.id, w.author])), [catalog]);
   const loading = links === undefined || cites === undefined;
   const passages = useMemo(() => {
     if (!links || !cites) return [];
-    const comments = commentaryPassages(links, verse, (id) => names.get(id) ?? titleCase(id), (w) => byWork.has(w));
+    const comments = links.flatMap(([v, l]) => commentaryPassages(l, v, (id) => names.get(id) ?? titleCase(id), (w) => byWork.has(w)));
     const authorOf = (p: CitingPassage) => p.author || (p.work && byWork.get(p.work)) || p.url.match(/^\/fathers\/([^/]+)\//)?.[1] || "";
     return mergeSources(cites, comments, authorOf);
-  }, [links, cites, verse, names, byWork]);
+  }, [links, cites, names, byWork]);
   const fathers = new Set(passages.map((p) => p.father)).size;
 
   // The nearest verses that do have commentary, for an empty verse.
   const nearby = useMemo(() => {
-    if (!counts) return [];
+    if (!counts || verses.length > 1) return [];
     return Object.keys(counts)
       .map(Number)
       .filter((n) => n !== verse && counts[n] > 0)
       .sort((a, b) => Math.abs(a - verse) - Math.abs(b - verse))
       .slice(0, 3)
       .sort((a, b) => a - b);
-  }, [counts, verse]);
+  }, [counts, verse, verses.length]);
 
   return (
-    <section className="cm" aria-labelledby="cm-title">
+    <section className={"cm" + (className ? " " + className : "")} aria-labelledby="cm-title">
       <header className="cm-head">
         <div>
           <p className="cm-kicker">The Fathers on</p>
           <h2 id="cm-title" className="cm-title">
             {bookName} {chapter}:{verse}
+            {last > verse ? "–" + last : ""}
           </h2>
           {!loading && passages.length ? (
             <p className="cm-sum">
@@ -101,7 +115,7 @@ export function Commentary({
         </div>
       ) : !passages.length ? (
         <div className="cm-empty">
-          <p>No Father in the library cites this verse.</p>
+          <p>{verses.length > 1 ? "No Father in the library cites these verses." : "No Father in the library cites this verse."}</p>
           {nearby.length ? (
             <p className="cm-goto">
               Try{" "}
@@ -115,7 +129,7 @@ export function Commentary({
         </div>
       ) : (
         <div className="cm-list cm-thread">
-          <Thread passages={passages} showVerses={false} />
+          <Thread passages={passages} showVerses={verses.length > 1} />
         </div>
       )}
     </section>

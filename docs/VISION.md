@@ -30,11 +30,11 @@ Fathers give the content. Patrista never names a type itself (see `data/connecti
 | Door | What it shows | State |
 |---|---|---|
 | Fathers shelf and reader | A Father's works, chapter by chapter | Built |
-| Real manuscripts | The work as a scribe wrote it, before the generated book | Building (Nov 2026) |
+| Real manuscripts | The work as a scribe wrote it, before the generated book | Built (Nov 2026) |
 | Bible with Connections | A passage, the Fathers who cite it, its patterns | Built |
-| Types atlas | Types the Fathers drew, with how many Fathers drew each | Built; count building |
-| Trails | One type followed through Scripture, one stop at a time | Building (Nov 2026) |
-| Tabernacle | The tabernacle at true size, and its echoes of creation | Building (Nov 2026) |
+| Types map | Every type as arcs over the line of the Bible: calm at rest, explored by pointing, zooming and dragging; seven themes as its colours; a chapter or one Father as other ways in | Built (Nov 2026) |
+| Trails | One type followed through Scripture, one stop at a time; the map flies to each stop | Built (Nov 2026) |
+| Tabernacle | The tabernacle at true size, and its echoes of creation; reached from Exodus 25–40 on the types map | Built (Nov 2026) |
 | Church history | The Fathers in their centuries | Built |
 
 ## Decided against
@@ -45,3 +45,6 @@ Fathers give the content. Patrista never names a type itself (see `data/connecti
   Patrista has. Patrista should build what no other site has: trails, types, the tabernacle. (Nov 2026)
 - **Suggested types from readers.** Not now. If the site needs it later: a form where the reader gives the
   Father's quotation and chapter, the types test checks the quotation, and the editor approves. (Nov 2026)
+- **A grid of type cards.** Seventy-eight cards of equal weight gave the reader no place to start. The types
+  map replaced the grid, the kind chips and the book menu. It is flat, not 3D: the whole-Bible 3D map was
+  retired earlier to keep the site simple. (Nov 2026)

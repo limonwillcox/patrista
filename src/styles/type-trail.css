@@ -1,10 +1,6 @@
 /* /types: how many Fathers drew a type, and a type followed as a trail (src/components/TypeTrail.tsx). */
 
-.tt-card-drawn { font: 12px var(--sans); color: var(--muted); }
 .tt-drawn { font: 400 12px var(--sans); letter-spacing: 0; text-transform: none; color: var(--muted); }
-
-/* The strip marks the stop a trail stands on. */
-.tt-strip-mark { fill: var(--accent); stroke: var(--bg); stroke-width: 2; pointer-events: none; }
 
 /* The trail: one column, one stop at a time. */
 .ty-detail.tt-detail { display: block; }
@@ -88,3 +84,9 @@ html[data-theme="night"] .tt-nav .tt-next:hover:not(:disabled) { color: #1b1b1b;
   .tt-text { font-size: 16px; }
   .tt-nav button { flex: 1 1 0; padding: 0 10px; }
 }
+
+/* Under a passage: what the Fathers wrote on the verses shown, as in the Bible's commentary panel. */
+.cm.tt-cm { --cm-bg: var(--bg); max-width: none; margin: 22px 0 0; padding: 0; border-top: 1px solid var(--border); }
+.tt-cm .cm-head { margin: 0; padding: 14px 0 8px; }
+.tt-cm .cm-title { font-size: 21px; }
+.tt-cm .cm-text { font-size: 16px; }

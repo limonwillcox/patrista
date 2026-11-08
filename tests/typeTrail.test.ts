@@ -32,11 +32,12 @@ describe("a trail", () => {
   it("runs Genesis to Revelation and keeps its stop in range", () => {
     const t = type({ ranges: [[58011004, 58011004], [1004001, 1004016], [40023035, 40023035]] });
     expect(trailPassages(t).map((r) => r[0])).toEqual([1004001, 40023035, 58011004]);
-    expect(stopFromParam(null, 4)).toBeNull();
+    expect(stopFromParam(null, 4)).toBe(0);
     expect(stopFromParam("3", 4)).toBe(3);
     expect(stopFromParam("9", 4)).toBe(4);
-    expect(stopFromParam("0", 4)).toBe(1);
-    expect(stopFromParam("x", 4)).toBe(1);
+    expect(stopFromParam("0", 4)).toBe(0);
+    expect(stopFromParam("-2", 4)).toBe(0);
+    expect(stopFromParam("x", 4)).toBe(0);
   });
 
   it("reads a quotation's paragraph from its reader link", () => {

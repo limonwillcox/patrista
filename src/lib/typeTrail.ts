@@ -4,7 +4,8 @@ import { fatherNames } from "./connectionPatterns";
 
 /*
  * A trail: one type walked passage by passage, Genesis to Revelation, ending at what it points to in Christ.
- * Stops are numbered from 1 in the URL (/types?type=<slug>&stop=<n>); the last stop is the "in Christ" line.
+ * A type always opens as its trail. Stop 0 is the overview (no `stop` in the URL); the passages are stops
+ * 1 to n (/types?type=<slug>&stop=<n>); the last stop is the "in Christ" line.
  * A stop shows a Father's line only when the paragraph his quotation comes from cites a verse of that
  * passage (by the same Scripture index the search uses), so no line is joined to a passage by guesswork.
  */
@@ -14,15 +15,15 @@ export function trailPassages(t: TypeEntry): [number, number][] {
   return [...t.ranges].sort((a, b) => a[0] - b[0] || a[1] - b[1]);
 }
 
-/** Passages plus the closing "in Christ" stop. */
+/** Passages plus the closing "in Christ" stop (the overview, stop 0, is not counted). */
 export const trailLength = (t: TypeEntry) => t.ranges.length + 1;
 
-/** The stop asked for in the URL, kept within the trail; null when no trail is open. */
-export function stopFromParam(raw: string | null, length: number): number | null {
-  if (raw == null) return null;
+/** The stop asked for in the URL, kept within the trail: none, or anything unreadable, is the overview (0). */
+export function stopFromParam(raw: string | null, length: number): number {
+  if (raw == null) return 0;
   const n = Math.floor(Number(raw));
-  if (!Number.isFinite(n)) return 1;
-  return Math.min(Math.max(n, 1), length);
+  if (!Number.isFinite(n)) return 0;
+  return Math.min(Math.max(n, 0), length);
 }
 
 /** The different Fathers who drew a type, from its citations ("Cyril, *Cat.* 13.20 — …"). */

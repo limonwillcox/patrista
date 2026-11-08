@@ -9,14 +9,35 @@ import { FatherRef, italics, splitWhere } from "./typeParts";
 import "../styles/type-trail.css";
 
 /*
- * A type walked as a trail: one passage at a time, Genesis to Revelation, then what it points to in Christ.
- * Previous / Next, the arrow keys, or a dot for each stop move along it; the page keeps the stop in the URL.
+ * A type is shown as a trail: first an overview, then one passage at a time, Genesis to Revelation, then
+ * what it points to in Christ. Previous / Next, the arrow keys, or a dot for each stop move along it; the
+ * page keeps the stop in the URL. "The Fathers' words" is one tap away from every stop.
  */
 
-export function TypeTrail({ t, meta, stop, onStop }: { t: TypeEntry; meta: Meta; stop: number; onStop: (n: number | null) => void }) {
+export function TypeTrail({
+  t,
+  meta,
+  stop,
+  kind,
+  span,
+  onStop,
+  onFathers,
+  onClose
+}: {
+  t: TypeEntry;
+  meta: Meta;
+  /** 0 is the overview; 1 to n the passages; n + 1 "in Christ". */
+  stop: number;
+  /** "Figures", "Things", …, and "Genesis → John · 6 passages", worked out by the page. */
+  kind: string;
+  span: string;
+  onStop: (n: number) => void;
+  onFathers: () => void;
+  onClose: () => void;
+}) {
   const passages = useMemo(() => trailPassages(t), [t]);
   const length = passages.length + 1;
-  const r = passages[stop - 1];
+  const r = stop >= 1 ? passages[stop - 1] : undefined;
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -24,14 +45,14 @@ export function TypeTrail({ t, meta, stop, onStop }: { t: TypeEntry; meta: Meta;
       if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
       if ((e.target as HTMLElement | null)?.closest?.("input, textarea, select, [contenteditable='true']")) return;
       if (e.key === "ArrowRight" && stop < length) onStop(stop + 1);
-      else if (e.key === "ArrowLeft" && stop > 1) onStop(stop - 1);
-      else if (e.key === "Escape") onStop(null);
+      else if (e.key === "ArrowLeft" && stop > 0) onStop(stop - 1);
+      else if (e.key === "Escape") onClose();
       else return;
       e.preventDefault();
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [stop, length, onStop]);
+  }, [stop, length, onStop, onClose]);
 
   // A long stop may leave the next one's top off screen: bring it back.
   useEffect(() => {
@@ -42,28 +63,39 @@ export function TypeTrail({ t, meta, stop, onStop }: { t: TypeEntry; meta: Meta;
     }
   }, [stop]);
 
-  const stopName = (n: number) => (n <= passages.length ? rangeLabel(meta, passages[n - 1][0], passages[n - 1][1]) : "In Christ");
+  const stopName = (n: number) =>
+    n === 0 ? "Overview" : n <= passages.length ? rangeLabel(meta, passages[n - 1][0], passages[n - 1][1]) : "In Christ";
+  const quotes = t.where.length;
 
   return (
     <div className="tt" ref={rootRef}>
       <div className="tt-top">
-        <button type="button" className="tt-back" onClick={() => onStop(null)}>
-          ← {t.label}
-        </button>
+        {stop === 0 ? (
+          <span className="tt-kind">{kind}</span>
+        ) : (
+          <button type="button" className="tt-back" onClick={() => onStop(0)} title="Back to the overview">
+            {t.label}
+          </button>
+        )}
+        {quotes ? (
+          <button type="button" className="tt-fathers-open" onClick={onFathers}>
+            The Fathers&apos; words ({quotes})
+          </button>
+        ) : null}
       </div>
 
       <div className="tt-progress">
         <span className="tt-count" aria-live="polite">
-          {stop} of {length}
+          {stop === 0 ? "Overview" : stop + " of " + length}
         </span>
         <ol className="tt-dots" aria-label="Stops on the trail">
-          {Array.from({ length }, (_, i) => i + 1).map((n) => (
+          {Array.from({ length: length + 1 }, (_, n) => n).map((n) => (
             <li key={n}>
               <button
                 type="button"
-                className={"tt-dot" + (n === length ? " is-end" : "") + (n < stop ? " is-past" : "")}
+                className={"tt-dot" + (n === 0 ? " is-start" : "") + (n === length ? " is-end" : "") + (n < stop ? " is-past" : "")}
                 aria-current={n === stop ? "step" : undefined}
-                aria-label={n + ". " + stopName(n)}
+                aria-label={(n ? n + ". " : "") + stopName(n)}
                 title={stopName(n)}
                 onClick={() => onStop(n)}
               />
@@ -73,24 +105,41 @@ export function TypeTrail({ t, meta, stop, onStop }: { t: TypeEntry; meta: Meta;
       </div>
 
       <section className="tt-stop" key={stop}>
-        {r ? <PassageStop t={t} meta={meta} r={r} /> : <ChristStop t={t} />}
+        {stop === 0 ? <OverviewStop t={t} span={span} /> : r ? <PassageStop t={t} meta={meta} r={r} /> : <ChristStop t={t} />}
       </section>
 
       <nav className="tt-nav" aria-label="Trail">
-        <button type="button" className="tt-prev" onClick={() => onStop(stop - 1)} disabled={stop <= 1}>
-          ← Previous
-        </button>
+        {stop === 0 ? (
+          <span />
+        ) : (
+          <button type="button" className="tt-prev" onClick={() => onStop(stop - 1)}>
+            ← {stop === 1 ? "Overview" : "Previous"}
+          </button>
+        )}
         {stop < length ? (
           <button type="button" className="tt-next" onClick={() => onStop(stop + 1)}>
-            {stop + 1 === length ? "In Christ →" : "Next →"}
+            {stop === 0 ? "Begin →" : stop + 1 === length ? "In Christ →" : "Next →"}
           </button>
         ) : (
-          <button type="button" className="tt-next" onClick={() => onStop(null)}>
-            Back to the type
+          <button type="button" className="tt-next" onClick={onClose}>
+            Done
           </button>
         )}
       </nav>
     </div>
+  );
+}
+
+/** The first slide: what the type is, how many Fathers drew it, and how far it runs. */
+function OverviewStop({ t, span }: { t: TypeEntry; span: string }) {
+  return (
+    <>
+      <h2 className="tt-title">{t.label}</h2>
+      <p className="tt-def">{t.def}</p>
+      <p className="tt-span">
+        {span} · {drawnBy(t)}
+      </p>
+    </>
   );
 }
 

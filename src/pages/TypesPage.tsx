@@ -1,19 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { fetchBibleChapter } from "../api/client";
-import {
-  bibleHrefFor,
-  bookOf,
-  canonPosition,
-  chapterOffsets,
-  fetchMeta,
-  fetchTypes,
-  GROUP_COLOR,
-  rangeLabel,
-  splitVid,
-  type Meta,
-  type TypeEntry
-} from "../api/connections";
+import { bookOf, canonPosition, chapterOffsets, fetchMeta, fetchTypes, GROUP_COLOR, type Meta, type TypeEntry } from "../api/connections";
 import { FatherRef, italics, splitWhere } from "../components/typeParts";
 import { TypeTrail } from "../components/TypeTrail";
 import { drawnBy, stopFromParam, trailLength, trailPassages } from "../lib/typeTrail";
@@ -22,10 +9,10 @@ import "../styles/type-trail.css";
 
 /*
  * The atlas of types: every type the Fathers draw from Scripture on one page. A strip runs from Genesis to
- * Revelation; each type is a chain of arcs joining its passages, first to last. Pick one to read what it is,
- * what it points to in Christ, every passage, and the Fathers' own words. The chosen type opens in the list
- * itself, across its full width, where it was picked. "Follow" walks it as a trail, one passage at a time
- * (?type=<slug>&stop=<n>, see src/lib/typeTrail.ts). Data: public/connections/types.json.
+ * Revelation; each type is a chain of arcs joining its passages, first to last. The chosen type opens in the
+ * list itself, across its full width, where it was picked, as a trail: an overview, then one passage at a
+ * time, then what it points to in Christ (?type=<slug>&stop=<n>, see src/lib/typeTrail.ts). The Fathers'
+ * own words are one tap away from any stop (&view=fathers). Data: public/connections/types.json.
  */
 
 const KINDS: { id: string; label: string }[] = [
@@ -81,7 +68,8 @@ export function TypesPage() {
     );
   }, [types, kind, query, book]);
   const chosen = types?.find((t) => slug(t.id) === chosenId) ?? null;
-  const stop = chosen ? stopFromParam(params.get("stop"), trailLength(chosen)) : null;
+  const stop = chosen ? stopFromParam(params.get("stop"), trailLength(chosen)) : 0;
+  const fathersView = params.get("view") === "fathers";
   // A type opened from the URL or the strip may be one the filters hide: it still shows, first.
   const listed = chosen && !shown.includes(chosen) ? [chosen, ...shown] : shown;
 
@@ -105,14 +93,24 @@ export function TypesPage() {
     if (t) p.set("type", slug(t.id));
     else p.delete("type");
     p.delete("stop");
+    p.delete("view");
     setParams(p, { replace: true });
   }
 
-  /** Open the chosen type's trail at a stop (from 1), or close the trail (null). */
-  function follow(n: number | null) {
+  /** Move the chosen type's trail to a stop; 0, the overview, leaves `stop` out of the URL. */
+  function follow(n: number) {
     const p = new URLSearchParams(params);
-    if (n == null) p.delete("stop");
+    if (n === 0) p.delete("stop");
     else p.set("stop", String(n));
+    p.delete("view");
+    setParams(p, { replace: true });
+  }
+
+  /** Show or hide the Fathers' words. The trail keeps its stop, so "back" returns to where the reader was. */
+  function showFathers(on: boolean) {
+    const p = new URLSearchParams(params);
+    if (on) p.set("view", "fathers");
+    else p.delete("view");
     setParams(p, { replace: true });
   }
 
@@ -140,7 +138,7 @@ export function TypesPage() {
         meta={meta}
         types={shown}
         hot={hot ?? (chosen ? chosen.id : null)}
-        mark={chosen && stop ? trailPassages(chosen)[stop - 1]?.[0] ?? null : null}
+        mark={chosen && stop && !fathersView ? trailPassages(chosen)[stop - 1]?.[0] ?? null : null}
         onHot={setHot}
         onPick={choose}
       />
@@ -182,16 +180,25 @@ export function TypesPage() {
         {listed.map((t) =>
           chosen?.id === t.id ? (
             <li key={t.id} className="ty-open" ref={openRef}>
-              {stop ? (
-                <article className="ty-detail tt-detail" aria-label={t.label}>
-                  <button type="button" className="ty-close" onClick={() => choose(null)} aria-label={"Close " + t.label} aria-expanded={true}>
-                    ×
-                  </button>
-                  <TypeTrail t={t} meta={meta} stop={stop} onStop={follow} />
-                </article>
-              ) : (
-                <TypeDetail t={t} meta={meta} onClose={() => choose(null)} onFollow={() => follow(1)} />
-              )}
+              <article className="ty-detail tt-detail" aria-label={t.label}>
+                <button type="button" className="ty-close" onClick={() => choose(null)} aria-label={"Close " + t.label} aria-expanded={true}>
+                  ×
+                </button>
+                {fathersView && t.where.length ? (
+                  <FathersWords t={t} onBack={() => showFathers(false)} />
+                ) : (
+                  <TypeTrail
+                    t={t}
+                    meta={meta}
+                    stop={stop}
+                    kind={kindLabel(t.kind)}
+                    span={spanLabel(meta, t)}
+                    onStop={follow}
+                    onFathers={() => showFathers(true)}
+                    onClose={() => choose(null)}
+                  />
+                )}
+              </article>
             </li>
           ) : (
             <li key={t.id}>
@@ -312,102 +319,53 @@ function Strip({
   );
 }
 
-function TypeDetail({ t, meta, onClose, onFollow }: { t: TypeEntry; meta: Meta; onClose: () => void; onFollow: () => void }) {
-  const stops = trailPassages(t);
+/** Every quotation the type rests on, with a way back to the trail at the stop the reader left. */
+function FathersWords({ t, onBack }: { t: TypeEntry; onBack: () => void }) {
   return (
-    <article className="ty-detail" aria-label={t.label}>
-      <button type="button" className="ty-close" onClick={onClose} aria-label={"Close " + t.label} aria-expanded={true}>
-        ×
-      </button>
-      <div className="ty-detail-main">
-        <p className="ty-detail-kind">
-          {kindLabel(t.kind)} <span className="tt-drawn">· {drawnBy(t)}</span>
-        </p>
-        <h2>{t.label}</h2>
-        <p className="ty-detail-def">{t.def}</p>
-        {t.christ ? (
-          <p className="ty-detail-christ">
-            <b>In Christ.</b> {italics(t.christ)}
-          </p>
-        ) : null}
-
-        <div className="tt-head">
-          <h3>Where it appears, first to last</h3>
-          <button type="button" className="tt-follow" onClick={onFollow}>
-            Follow it →
-          </button>
-        </div>
-        <ol className="ty-passages">
-          {stops.map((r) => (
-            <Passage key={r[0] + "-" + r[1]} meta={meta} r={r} />
-          ))}
-        </ol>
+    <div className="tt">
+      <div className="tt-top">
+        <button type="button" className="tt-back" onClick={onBack}>
+          ← {t.label}
+        </button>
       </div>
-
-      {t.where.length ? (
-        <div className="ty-detail-words">
-          <h3>In the Fathers&apos; words</h3>
-          <p className="ty-quote-ref">
-            &ldquo;Ps.-&rdquo; marks a work once credited to that Father but not now held to be his; &ldquo;attributed&rdquo; marks
-            a fragment whose author is uncertain. &para; is the paragraph in the reader.
-          </p>
-          <ul className="ty-quotes">
-            {t.where.map((w, i) => {
-              const { ref, quote } = splitWhere(w);
-              const link = t.links?.[i];
-              return (
-                <li key={i}>
-                  {link ? (
-                    <>
-                      {/* The quotation opens the reader at its paragraph; the Father's name opens his page. */}
-                      <Link to={link.href} className="ty-quote-link">
-                        <blockquote>{quote}</blockquote>
-                      </Link>
-                      <p className="ty-quote-ref">
-                        <FatherRef refText={ref} href={link.href} />{" "}
-                        <Link to={link.href} className="ty-quote-go">
-                          Read in context →
-                        </Link>
-                      </p>
-                    </>
-                  ) : (
-                    <>
+      <div className="ty-detail-words tt-words">
+        <h3>
+          In the Fathers&apos; words <span className="tt-drawn">· {drawnBy(t)}</span>
+        </h3>
+        <p className="ty-quote-ref">
+          &ldquo;Ps.-&rdquo; marks a work once credited to that Father but not now held to be his; &ldquo;attributed&rdquo; marks
+          a fragment whose author is uncertain. &para; is the paragraph in the reader.
+        </p>
+        <ul className="ty-quotes">
+          {t.where.map((w, i) => {
+            const { ref, quote } = splitWhere(w);
+            const link = t.links?.[i];
+            return (
+              <li key={i}>
+                {link ? (
+                  <>
+                    {/* The quotation opens the reader at its paragraph; the Father's name opens his page. */}
+                    <Link to={link.href} className="ty-quote-link">
                       <blockquote>{quote}</blockquote>
-                      <p className="ty-quote-ref">{italics(ref)}</p>
-                    </>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      ) : null}
-    </article>
-  );
-}
-
-/** One passage: its reference (into the Bible reader) and the opening of its first verse. */
-function Passage({ meta, r }: { meta: Meta; r: [number, number] }) {
-  const [text, setText] = useState<string | null>(null);
-  useEffect(() => {
-    const { chapter, verse } = splitVid(r[0]);
-    const book = bookOf(meta, r[0])?.id;
-    if (!book) return;
-    let live = true;
-    fetchBibleChapter(book, chapter).then(
-      (p) => live && setText(p.verses[Math.max(0, Math.min(verse, p.verses.length) - 1)] ?? null),
-      () => {}
-    );
-    return () => {
-      live = false;
-    };
-  }, [meta, r]);
-  return (
-    <li>
-      <Link to={bibleHrefFor(meta, r[0])} className="ty-passage-ref">
-        {rangeLabel(meta, r[0], r[1])}
-      </Link>
-      {text ? <p className="ty-passage-text">{text.length > 160 ? text.slice(0, 158) + "…" : text}</p> : null}
-    </li>
+                    </Link>
+                    <p className="ty-quote-ref">
+                      <FatherRef refText={ref} href={link.href} />{" "}
+                      <Link to={link.href} className="ty-quote-go">
+                        Read in context →
+                      </Link>
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <blockquote>{quote}</blockquote>
+                    <p className="ty-quote-ref">{italics(ref)}</p>
+                  </>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
   );
 }

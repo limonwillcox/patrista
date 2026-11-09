@@ -344,8 +344,6 @@ function FathersIndex({ catalog }: { catalog: LoadedCatalog }) {
       .map((f) => f.id)
   );
 
-  const startId = sections[0] ? "sec-" + sections[0].id : "";
-
   return (
     <div className="fathers-page fathers-index">
       <header className="fx-hero">
@@ -357,14 +355,6 @@ function FathersIndex({ catalog }: { catalog: LoadedCatalog }) {
           </p>
           <cite>2 Peter 1:20–21</cite>
         </blockquote>
-        {startId ? (
-          <a className="fx-start" href={"#" + startId}>
-            Start Here
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-        ) : null}
         <h1 className="sr-only">The Church Fathers</h1>
       </header>
 

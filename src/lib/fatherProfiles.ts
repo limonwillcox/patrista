@@ -80,6 +80,7 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
   },
   tatian: {
     office: "Christian apologist",
+    section: "Authors",
     paragraphs: [
       "Tatian (fl. mid-2nd c.) was a Syrian student of Justin in Rome. He later returned east and was remembered as a rigorist.",
       "His Address to the Greeks defends the barbarian wisdom of Christianity against Greek contempt. He also composed the Diatessaron, a single narrative woven from the four Gospels."
@@ -123,6 +124,7 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
   },
   tertullian: {
     office: "Christian apologist",
+    section: "Authors",
     paragraphs: [
       "Tertullian (c. 155–c. 240) of Carthage was the first major Christian author to write in Latin. He wrote with a lawyer’s edge; whether he was the jurist Tertullian cited in Roman law is disputed.",
       "His Apology answers Roman charges against the church. Later works on baptism, repentance, the resurrection, and the Trinity shaped Latin theology, even where the church did not follow his rigorism or his sympathy with the New Prophecy (Montanism)."
@@ -144,6 +146,7 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
   },
   novatian: {
     office: "Roman presbyter",
+    section: "Disputed historical figures",
     paragraphs: [
       "Novatian (fl. mid-3rd c.) was a Roman presbyter and a strict opponent of restoring Christians who had lapsed in persecution. A minority in Rome chose him as a rival bishop.",
       "His book On the Trinity is a clear Latin account of the Father, the Son, and the Holy Spirit, written before the controversies of the fourth century."

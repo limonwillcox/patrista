@@ -90,7 +90,10 @@ function byDeathThenName(a: FatherEntry, b: FatherEntry): number {
   return a.name.localeCompare(b.name);
 }
 
-/** Century sections in order, then any named sections (Councils) at the end. */
+/** Named shelves after the centuries. Authors holds writers the ancient church called heretics. */
+const NAMED_SECTION_ORDER = ["Councils", "Authors", "Disputed historical figures"];
+
+/** Century sections in order, then Councils, Authors, and Disputed historical figures. */
 export function fatherSections(authors: Author[]): FatherSection[] {
   const centuries = new Map<number, FatherEntry[]>();
   const named = new Map<string, FatherEntry[]>();
@@ -115,7 +118,12 @@ export function fatherSections(authors: Author[]): FatherSection[] {
       title: centuryHeading(n),
       fathers: fathers.sort(byDeathThenName)
     }));
-  for (const [title, fathers] of named) {
+  const namedSections = [...named.entries()].sort((a, b) => {
+    const ra = NAMED_SECTION_ORDER.indexOf(a[0]);
+    const rb = NAMED_SECTION_ORDER.indexOf(b[0]);
+    return (ra === -1 ? NAMED_SECTION_ORDER.length : ra) - (rb === -1 ? NAMED_SECTION_ORDER.length : rb);
+  });
+  for (const [title, fathers] of namedSections) {
     sections.push({
       id: title.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
       title,

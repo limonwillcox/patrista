@@ -22,6 +22,7 @@ import {
   workSeoTitle
 } from "../src/lib/seoMeta";
 import { attributionLabel, shortAuthor, workMeta } from "./workMeta";
+import { adDates } from "../src/lib/adDates";
 
 export const SITEMAP_URL_LIMIT = 50_000;
 
@@ -283,7 +284,7 @@ export function workCreditHtml(author: Author, work: Pick<Work, "id" | "authorsh
     );
   } else {
     lines.push(
-      "<p>" + escapeHtml(author.name) + (author.dates ? " (" + escapeHtml(author.dates) + ")" : "") + "</p>"
+      "<p>" + escapeHtml(author.name) + (author.dates ? " (" + escapeHtml(adDates(author.dates)) + ")" : "") + "</p>"
     );
   }
   const credit = [work.translator ? "Translated by " + work.translator + "." : "", work.edition ? "From " + work.edition + "." : ""]

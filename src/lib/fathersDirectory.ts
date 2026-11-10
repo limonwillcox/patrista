@@ -90,10 +90,10 @@ function byDeathThenName(a: FatherEntry, b: FatherEntry): number {
   return a.name.localeCompare(b.name);
 }
 
-/** Named shelves after the centuries. Authors holds writers the ancient church called heretics. */
-const NAMED_SECTION_ORDER = ["Councils", "Authors", "Disputed historical figures"];
+/** Named shelves after the centuries. Other Authors holds heretics, outsiders, and heavily disputed writers. */
+const NAMED_SECTION_ORDER = ["Councils", "Other Authors"];
 
-/** Century sections in order, then Councils, Authors, and Disputed historical figures. */
+/** Century sections in order, then Councils, then Other Authors. */
 export function fatherSections(authors: Author[]): FatherSection[] {
   const centuries = new Map<number, FatherEntry[]>();
   const named = new Map<string, FatherEntry[]>();

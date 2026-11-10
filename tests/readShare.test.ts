@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { citation, quoteWithCitation, shareText } from "../src/lib/readAnchors";
+import { bibliography, shareText } from "../src/lib/readAnchors";
 import { saintName } from "../src/lib/saintName";
 
 const augustine = {
@@ -20,19 +20,19 @@ describe("study selection share and citation", () => {
     expect(saintName("augustine", "Pseudo-Augustine", "Augustine of Hippo")).toBe("Pseudo-Augustine");
   });
 
-  it("builds a pasteable note with the translator and the paragraph link", () => {
-    expect(citation(augustine)).toBe(
-      "Saint Augustine of Hippo, The Confessions, Book VIII, ¶12, trans. E. B. Pusey. https://patrista.com/fathers/augustine/confessions/book-8/#ch-8-p12"
+  it("copies a bibliography entry and not the quotation", () => {
+    expect(bibliography(augustine)).toBe(
+      "Saint Augustine of Hippo. The Confessions. Book VIII, ¶12. Translated by E. B. Pusey. https://patrista.com/fathers/augustine/confessions/book-8/#ch-8-p12"
     );
-    expect(citation({ ...augustine, n: null, edition: "Nicene and Post-Nicene Fathers, vol. I" })).toBe(
-      "Saint Augustine of Hippo, The Confessions, Book VIII, trans. E. B. Pusey, Nicene and Post-Nicene Fathers, vol. I. https://patrista.com/fathers/augustine/confessions/book-8/#ch-8-p12"
+    expect(bibliography(augustine)).not.toContain("“");
+    expect(bibliography({ ...augustine, n: null, edition: "Nicene and Post-Nicene Fathers, vol. I" })).toBe(
+      "Saint Augustine of Hippo. The Confessions. Book VIII. Translated by E. B. Pusey. Nicene and Post-Nicene Fathers, vol. I. https://patrista.com/fathers/augustine/confessions/book-8/#ch-8-p12"
     );
   });
 
-  it("puts the quote, a blank line, the name, and the link label in the share text", () => {
-    expect(shareText("You have made us for yourself.", "Saint Augustine of Hippo")).toBe(
-      "“You have made us for yourself.”\n\n— Saint Augustine of Hippo\nRead the full work here"
+  it("shares the quote, the name, and the book, and stops there", () => {
+    expect(shareText("You have made us for yourself.", "Saint Augustine of Hippo", "The Confessions")).toBe(
+      "“You have made us for yourself.”\n\nSaint Augustine of Hippo, The Confessions"
     );
-    expect(quoteWithCitation("You have made us for yourself.", augustine)).toContain("trans. E. B. Pusey");
   });
 });

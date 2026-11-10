@@ -33,24 +33,35 @@ export type CitationParts = {
 };
 
 /**
- * A note a paper can paste. Author, work, place, translator, edition, and the
- * paragraph link. No invented page number: the paragraph is the locator.
+ * A bibliography entry for the work, with the place that was selected.
+ * No quotation. No invented page number: the paragraph is the locator.
  */
+export function bibliography(p: CitationParts): string {
+  const place = [p.chapter, p.n ? "¶" + p.n : ""].filter(Boolean).join(", ");
+  const head = [p.author, p.work, place].filter(Boolean).join(". ") + ".";
+  const credit = [
+    p.translator ? "Translated by " + p.translator + "." : "",
+    p.edition ? p.edition.replace(/\.$/, "") + "." : "",
+    p.url
+  ].filter(Boolean);
+  return [head, ...credit].join(" ");
+}
+
+/** @deprecated The paragraph menu's short line. Papers use bibliography(). */
 export function citation(p: CitationParts): string {
-  const where = [p.author, p.work, p.chapter, p.n ? "¶" + p.n : ""].filter(Boolean).join(", ");
-  const credit = [p.translator ? "trans. " + p.translator : "", p.edition || ""].filter(Boolean).join(", ");
-  return where + (credit ? ", " + credit : "") + ". " + p.url;
+  return bibliography(p);
 }
 
 export function quoteWithCitation(text: string, p: CitationParts): string {
   const clean = text.replace(/\s+/g, " ").trim();
-  return "“" + clean + "”\n\n" + citation(p);
+  return "“" + clean + "”\n\n" + bibliography(p);
 }
 
-/** The Mac share sheet: the quote, a blank line, the saint's name, then the link label. */
-export function shareText(quote: string, author: string): string {
+/** Share sheet: the quote, a blank line, the name and the book. The link is sent separately. */
+export function shareText(quote: string, author: string, work: string): string {
   const clean = quote.replace(/\s+/g, " ").trim();
-  return "“" + clean + "”\n\n— " + author + "\nRead the full work here";
+  const who = [author, work].filter(Boolean).join(", ");
+  return "“" + clean + "”\n\n" + who;
 }
 
 /** Translator credit for a work's English, from its series. */

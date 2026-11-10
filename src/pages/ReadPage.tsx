@@ -15,7 +15,7 @@ import { useApp } from "../context/AppContext";
 import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from "../lib/fatherPaths";
 import { chapterAtReadingLine } from "../lib/readDocks";
 import { OriginalParas, TranslationParas, type ParaMenuTarget } from "../components/reader/Paragraphs";
-import { citation, hashChapter, hashParagraph, paraAnchor, quoteWithCitation, shareText, translatorFor } from "../lib/readAnchors";
+import { bibliography, hashChapter, hashParagraph, paraAnchor, quoteWithCitation, shareText, translatorFor } from "../lib/readAnchors";
 import { saintName } from "../lib/saintName";
 import { attributionText, citationAuthor, hasAttribution } from "../../server/workMeta";
 
@@ -671,7 +671,7 @@ export function ReadPage() {
   }
 
   async function shareQuote(quote: string, parts: ReturnType<typeof citeParts>) {
-    const text = shareText(quote, parts.author);
+    const text = shareText(quote, parts.author, parts.work);
     if (navigator.share) {
       try {
         await navigator.share({ title: parts.work, text, url: parts.url });
@@ -693,7 +693,7 @@ export function ReadPage() {
       await shareQuote(quote, parts);
       return;
     }
-    const text = kind === "link" ? parts.url : kind === "cite" ? citation(parts) : quoteWithCitation(quote, parts);
+    const text = kind === "link" ? parts.url : kind === "cite" ? bibliography(parts) : quoteWithCitation(quote, parts);
     const ok = await copyText(text);
     showToast(ok ? (kind === "link" ? "Link copied" : kind === "cite" ? "Citation copied" : "Quote copied") : "Could not copy");
   }
@@ -710,7 +710,7 @@ export function ReadPage() {
       await shareQuote(quote, parts);
       return;
     }
-    const ok = await copyText(quoteWithCitation(quote, parts));
+    const ok = await copyText(bibliography(parts));
     showToast(ok ? "Citation copied" : "Could not copy");
   }
 

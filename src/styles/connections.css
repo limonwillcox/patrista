@@ -107,7 +107,7 @@ html[data-theme="night"] { --cx-type: #e2b85a; }
 .cx-comment-src { min-width: 0; font-size: 0.76rem; color: var(--muted); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .cx-comment-src:hover { color: var(--link); text-decoration: underline; }
 .cx-comment-v { font-size: 0.76rem; color: var(--muted); }
-.cx-comment-text { margin: 3px 0 0; font-family: var(--serif); font-size: 0.95rem; line-height: 1.55; color: var(--text); }
+.cx-comment-text { margin: 3px 0 0; font-family: var(--serif); font-size: var(--read-size); line-height: 1.75; color: var(--text); }
 .cx-comment-text.is-full p { margin: 0 0 8px; }
 .cx-comment-text mark { background: var(--hl-gold); color: inherit; border-radius: 2px; padding: 0 1px; }
 .cx-comment-more { margin-top: 2px; border: 0; background: none; padding: 0; font: 600 0.78rem var(--sans); color: var(--muted); cursor: pointer; }
@@ -117,7 +117,7 @@ html[data-theme="night"] { --cx-type: #e2b85a; }
 .cx-comment.is-reply { grid-template-columns: 28px minmax(0, 1fr); gap: 8px; padding: 8px 0 0; border-top: 0; }
 .cx-comment.is-reply .cx-avatar { width: 28px; height: 28px; }
 .cx-comment.is-reply .cx-comment-head b, .cx-comment.is-reply .cx-comment-father { font-size: 0.92rem; }
-.cx-comment.is-reply .cx-comment-text { font-size: 0.92rem; }
+.cx-comment.is-reply .cx-comment-text { font-size: var(--read-size); }
 .cx-reply-to { font-size: 0.78rem; font-weight: 600; color: var(--accent); cursor: help; }
 .cx-replies-more { margin: 6px 0 0 36px; }
 /* "Cited together by…": the same thread, set in under the pattern. */

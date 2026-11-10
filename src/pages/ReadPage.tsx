@@ -9,7 +9,7 @@ import { DictionaryDock } from "../components/DictionaryDock";
 import { HardcoverDock } from "../components/HardcoverDock";
 import { ManuscriptButton } from "../components/manuscript/ManuscriptButton";
 import { MANUSCRIPTS } from "../data/manuscripts";
-import { BookIcon, DockNotch } from "../components/DockNotch";
+import { DockNotch } from "../components/DockNotch";
 import { readPath, resolveWorkId, staticWorkId, workIdForReadPath } from "../lib/workSlugs";
 import { useApp } from "../context/AppContext";
 import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from "../lib/fatherPaths";
@@ -698,7 +698,7 @@ export function ReadPage() {
     showToast(ok ? (kind === "link" ? "Link copied" : kind === "cite" ? "Citation copied" : "Quote copied") : "Could not copy");
   }
 
-  async function selectionAction(kind: "share" | "cite") {
+  async function selectionAction() {
     if (!hl || !outline) return;
     const place = placeOf(hl.para);
     const quote = hl.range.toString();
@@ -706,11 +706,12 @@ export function ReadPage() {
     const parts = citeParts(place.chapter, place.n);
     window.getSelection()?.removeAllRanges();
     setHl(null);
-    if (kind === "share") {
-      await shareQuote(quote, parts);
-      return;
-    }
-    const ok = await copyText(bibliography(parts));
+    await shareQuote(quote, parts);
+  }
+
+  async function copyViewCitation() {
+    if (!outline) return;
+    const ok = await copyText(bibliography(citeParts(currentChapter, null)));
     showToast(ok ? "Citation copied" : "Could not copy");
   }
 
@@ -742,7 +743,7 @@ export function ReadPage() {
     <div ref={pageRef} className={"read-page" + (hasOriginal && langView === "parallel" ? " is-parallel" : "")} onMouseUp={onMouseUp}>
       <div className="read-docks">
         {outline.chapters.length > 1 ? (
-          <DockNotch id="chapters" name="chapters" icon={BookIcon}>
+          <DockNotch id="chapters" name="chapters">
             <ChapterDock
               chapters={outline.chapters}
               currentChapter={currentChapter}
@@ -751,8 +752,13 @@ export function ReadPage() {
             />
           </DockNotch>
         ) : null}
-        <DockNotch id="dictionary" name="dictionary" icon="α">
-          <DictionaryDock workId={workId} />
+        <DockNotch id="dictionary" name="dictionary">
+          <div className="read-dict-stack">
+            <DictionaryDock workId={workId} />
+            <button type="button" className="read-dict-bar" onClick={() => void copyViewCitation()}>
+              Citation options
+            </button>
+          </div>
         </DockNotch>
       </div>
       <div className="read-toolbar">
@@ -839,11 +845,8 @@ export function ReadPage() {
         <button data-hl="" style={{ background: "#fff", color: "#000" }} title="Clear" onClick={() => applyHighlight("")}>
           ×
         </button>
-        <button type="button" className="hl-action" onClick={() => void selectionAction("share")}>
+        <button type="button" className="hl-action" onClick={() => void selectionAction()}>
           Share
-        </button>
-        <button type="button" className="hl-action" onClick={() => void selectionAction("cite")}>
-          Cite
         </button>
       </div>
     </div>

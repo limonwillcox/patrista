@@ -89,4 +89,4 @@ html[data-theme="night"] .tt-nav .tt-next:hover:not(:disabled) { color: #1b1b1b;
 .cm.tt-cm { --cm-bg: var(--bg); max-width: none; margin: 22px 0 0; padding: 0; border-top: 1px solid var(--border); }
 .tt-cm .cm-head { margin: 0; padding: 14px 0 8px; }
 .tt-cm .cm-title { font-size: 21px; }
-.tt-cm .cm-text { font-size: 16px; }
+.tt-cm .cm-text { font-size: var(--read-size); line-height: 1.75; }

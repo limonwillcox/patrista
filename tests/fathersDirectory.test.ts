@@ -52,6 +52,21 @@ describe("father sections", () => {
     expect(sections.at(-1)?.id).toBe("councils");
   });
 
+  it("puts heretics, Tertullian, Novatian, and Josephus under Other Authors, and leaves Origen in his century", () => {
+    const sections = fatherSections([
+      author({ id: "origen", name: "Origen", deathYear: 254 }),
+      author({ id: "tatian", name: "Tatian", deathYear: 170 }),
+      author({ id: "tertullian", name: "Tertullian", deathYear: 240 }),
+      author({ id: "novatian", name: "Novatian", deathYear: 250 }),
+      author({ id: "josephus", name: "Flavius Josephus", deathYear: 100 }),
+      author({ id: "councils", name: "Ecumenical Councils", deathYear: 451 }),
+      author({ id: "cyprian", name: "Cyprian of Carthage", deathYear: 258 })
+    ]);
+    expect(sections.map((s) => s.title)).toEqual(["Third Century", "Councils", "Other Authors"]);
+    expect(sections[0].fathers.map((f) => f.id)).toEqual(["origen", "cyprian"]);
+    expect(sections.at(-1)?.fathers.map((f) => f.id)).toEqual(["josephus", "tatian", "tertullian", "novatian"]);
+  });
+
   it("still lists a father who has no profile copy", () => {
     const sections = fatherSections([
       author({ id: "new_father", name: "New Father", deathYear: 250, region: "Egypt", bio: "A short life." })

@@ -7,6 +7,7 @@ import { siteTab, type SiteTab } from "../lib/homeNav";
 import { useReadTabHref } from "../lib/useReadTabHref";
 import { bibleHref } from "../lib/lastRead";
 import { useApp } from "../context/AppContext";
+import { useScholarsUi } from "../lib/scholarsUi";
 import { Booklist } from "./Booklist";
 
 function Brand() {
@@ -50,6 +51,7 @@ const SearchIcon = (
 /** The ⋯ menu: the pages and settings that do not need a tab of their own. */
 function SiteMenu() {
   const { theme, setTheme, font, setFont } = useApp();
+  const [scholars, setScholars] = useScholarsUi();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const location = useLocation();
@@ -118,6 +120,16 @@ function SiteMenu() {
             <span>Night mode</span>
             <span className={"site-switch" + (night ? " is-on" : "")} aria-hidden="true" />
           </button>
+          <button
+            type="button"
+            className="site-menu-row site-menu-toggle"
+            role="switch"
+            aria-checked={scholars}
+            onClick={() => setScholars(!scholars)}
+          >
+            <span>Scholars</span>
+            <span className={"site-switch" + (scholars ? " is-on" : "")} aria-hidden="true" />
+          </button>
         </div>
       ) : null}
     </div>
@@ -130,6 +142,7 @@ function SiteMenu() {
  */
 function HeaderTools() {
   const { theme, setTheme, font, setFont } = useApp();
+  const [scholars, setScholars] = useScholarsUi();
   const night = theme === "night";
   return (
     <div className="header-tools">
@@ -148,6 +161,14 @@ function HeaderTools() {
           A
         </button>
       </div>
+      <button
+        type="button"
+        className={"header-link header-scholars" + (scholars ? " is-on" : "")}
+        aria-pressed={scholars}
+        onClick={() => setScholars(!scholars)}
+      >
+        Scholars
+      </button>
       <button
         type="button"
         className="icon-btn header-theme"

@@ -201,6 +201,8 @@ img { max-width: 100%; display: block; }
 .header-tools { display: flex; align-items: center; gap: 4px; }
 .header-link { padding: 8px 10px; border-radius: var(--radius-sm); color: var(--muted); font-size: 14px; font-weight: 700; text-decoration: none; }
 .header-link:hover { color: var(--text); background: var(--panel); text-decoration: none; }
+.header-link.header-scholars.is-on { color: var(--burgundy); }
+html[data-theme="night"] .header-link.header-scholars.is-on { color: var(--link); }
 .header-sep { width: 1px; height: 22px; margin: 0 6px; background: var(--border); }
 .header-size { display: inline-flex; align-items: baseline; }
 .header-size button {

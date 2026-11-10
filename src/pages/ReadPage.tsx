@@ -15,7 +15,8 @@ import { useApp } from "../context/AppContext";
 import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from "../lib/fatherPaths";
 import { chapterAtReadingLine } from "../lib/readDocks";
 import { OriginalParas, TranslationParas, type ParaMenuTarget } from "../components/reader/Paragraphs";
-import { citation, hashChapter, hashParagraph, paraAnchor, quoteWithCitation, translatorFor } from "../lib/readAnchors";
+import { citation, hashChapter, hashParagraph, paraAnchor, quoteWithCitation, shareText, translatorFor } from "../lib/readAnchors";
+import { saintName } from "../lib/saintName";
 import { attributionText, citationAuthor, hasAttribution } from "../../server/workMeta";
 
 const HL_COLORS = ["hl-yellow", "hl-green", "hl-blue", "hl-pink"] as const;
@@ -605,8 +606,8 @@ export function ReadPage() {
     setHl({
       para,
       range: range.cloneRange(),
-      x: Math.min(e.clientX, window.innerWidth - 170),
-      y: Math.max(8, e.clientY - 44)
+      x: Math.min(Math.max(8, e.clientX), window.innerWidth - 320),
+      y: Math.max(78, e.clientY - 44)
     });
   }
 
@@ -635,44 +636,82 @@ export function ReadPage() {
     setHl(null);
   }
 
-  function paraUrl(chapter: number, n: number): string {
+  function paraUrl(chapter: number, n: number | null): string {
     if (!outline) return window.location.href;
     const meta = outline.chapters.find((c) => c.chapter === chapter);
     const base =
       outline.chapters.length > 1 && meta?.slug
         ? chapterPublicPath(outline.author.id, outline.work.id, meta.slug)
         : readPath(outline.work.id);
-    return window.location.origin + base + "#" + paraAnchor(chapter, n);
+    const url = window.location.origin + base;
+    return n ? url + "#" + paraAnchor(chapter, n) : url;
   }
 
-  function citeParts(chapter: number, n: number) {
+  function citeParts(chapter: number, n: number | null) {
     const meta = outline?.chapters.find((c) => c.chapter === chapter);
+    const cited = outline ? citationAuthor(outline.work, outline.author) : "";
     return {
       // A work the shelf Father did not (certainly) write is cited under its real author, or none.
-      author: outline ? citationAuthor(outline.work, outline.author) : "",
+      author: outline ? saintName(outline.author.id, cited, outline.author.name) : "",
       work: outline?.work.title || "",
       chapter: outline && outline.chapters.length > 1 ? meta?.heading || "" : "",
       n,
       translator: outline ? outline.work.translator || translatorFor(outline.work.id, outline.work.series) : "",
+      edition: outline?.work.edition || "",
       url: paraUrl(chapter, n)
     };
+  }
+
+  function placeOf(para: HTMLElement): { chapter: number; n: number | null } | null {
+    const parsed = hashParagraph("#" + (para.querySelector("a.pnum")?.id || ""));
+    if (parsed) return parsed;
+    const ch = para.closest("[data-ch]")?.getAttribute("data-ch");
+    const chapter = Number(ch);
+    return Number.isFinite(chapter) && chapter > 0 ? { chapter, n: null } : null;
+  }
+
+  async function shareQuote(quote: string, parts: ReturnType<typeof citeParts>) {
+    const text = shareText(quote, parts.author);
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: parts.work, text, url: parts.url });
+        return;
+      } catch (err) {
+        if (err instanceof DOMException && err.name === "AbortError") return;
+      }
+    }
+    const ok = await copyText(text + "\n" + parts.url);
+    showToast(ok ? "Share text copied" : "Could not copy");
   }
 
   async function paraAction(kind: "link" | "cite" | "quote" | "share") {
     if (!paraMenu) return;
     const parts = citeParts(paraMenu.chapter, paraMenu.n);
+    const quote = paraMenu.text;
     setParaMenu(null);
-    if (kind === "share" && navigator.share) {
-      try {
-        await navigator.share({ title: parts.work, text: citation(parts), url: parts.url });
-      } catch {
-        /* share sheet closed */
-      }
+    if (kind === "share") {
+      await shareQuote(quote, parts);
       return;
     }
-    const text = kind === "link" ? parts.url : kind === "cite" ? citation(parts) : quoteWithCitation(paraMenu.text, parts);
+    const text = kind === "link" ? parts.url : kind === "cite" ? citation(parts) : quoteWithCitation(quote, parts);
     const ok = await copyText(text);
     showToast(ok ? (kind === "link" ? "Link copied" : kind === "cite" ? "Citation copied" : "Quote copied") : "Could not copy");
+  }
+
+  async function selectionAction(kind: "share" | "cite") {
+    if (!hl || !outline) return;
+    const place = placeOf(hl.para);
+    const quote = hl.range.toString();
+    if (!place || !quote.trim()) return;
+    const parts = citeParts(place.chapter, place.n);
+    window.getSelection()?.removeAllRanges();
+    setHl(null);
+    if (kind === "share") {
+      await shareQuote(quote, parts);
+      return;
+    }
+    const ok = await copyText(quoteWithCitation(quote, parts));
+    showToast(ok ? "Citation copied" : "Could not copy");
   }
 
   function chooseLang(next: LangView) {
@@ -799,6 +838,12 @@ export function ReadPage() {
         <button data-hl="hl-pink" style={{ background: "#ff8fb8" }} title="Pink" onClick={() => applyHighlight("hl-pink")} />
         <button data-hl="" style={{ background: "#fff", color: "#000" }} title="Clear" onClick={() => applyHighlight("")}>
           ×
+        </button>
+        <button type="button" className="hl-action" onClick={() => void selectionAction("share")}>
+          Share
+        </button>
+        <button type="button" className="hl-action" onClick={() => void selectionAction("cite")}>
+          Cite
         </button>
       </div>
     </div>

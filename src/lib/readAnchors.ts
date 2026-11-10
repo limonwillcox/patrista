@@ -24,20 +24,33 @@ export type CitationParts = {
   work: string;
   /** Chapter heading, e.g. "Book I" or "Chapter 3". Empty for one-part works. */
   chapter: string;
-  n: number;
+  /** Paragraph number within the chapter. Omitted when the selection has none. */
+  n: number | null;
   translator: string;
+  /** Printed series or edition, when the catalog names one. */
+  edition?: string;
   url: string;
 };
 
-/** "Augustine of Hippo, The Confessions, Book I, ¶3 (tr. E. B. Pusey). https://…" */
+/**
+ * A note a paper can paste. Author, work, place, translator, edition, and the
+ * paragraph link. No invented page number: the paragraph is the locator.
+ */
 export function citation(p: CitationParts): string {
-  const where = [p.author, p.work, p.chapter, "¶" + p.n].filter(Boolean).join(", ");
-  return where + (p.translator ? " (tr. " + p.translator + ")" : "") + ". " + p.url;
+  const where = [p.author, p.work, p.chapter, p.n ? "¶" + p.n : ""].filter(Boolean).join(", ");
+  const credit = [p.translator ? "trans. " + p.translator : "", p.edition || ""].filter(Boolean).join(", ");
+  return where + (credit ? ", " + credit : "") + ". " + p.url;
 }
 
 export function quoteWithCitation(text: string, p: CitationParts): string {
   const clean = text.replace(/\s+/g, " ").trim();
-  return "“" + clean + "” — " + citation(p);
+  return "“" + clean + "”\n\n" + citation(p);
+}
+
+/** The Mac share sheet: the quote, a blank line, the saint's name, then the link label. */
+export function shareText(quote: string, author: string): string {
+  const clean = quote.replace(/\s+/g, " ").trim();
+  return "“" + clean + "”\n\n— " + author + "\nRead the full work here";
 }
 
 /** Translator credit for a work's English, from its series. */

@@ -40,3 +40,13 @@ export function fatherImageFrom(images: Record<string, FatherImage>, id: string)
 
 export const TILE_SIZES = "120px";
 export const HERO_SIZES = "(max-width: 735px) 92vw, (max-width: 1100px) 360px, 489px";
+
+/** The Father's own portrait for a link preview. No portrait means no image, not the Pantocrator. */
+export function authorShareImage(
+  origin: string,
+  authorId: string
+): { url: string; width: number; height: number } | null {
+  const hero = FATHER_IMAGES[authorId]?.hero;
+  if (!hero?.src) return null;
+  return { url: origin.replace(/\/$/, "") + hero.src, width: hero.width, height: hero.height };
+}

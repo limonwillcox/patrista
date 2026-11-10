@@ -1565,6 +1565,11 @@ html[data-theme="night"] .w.hl-pink { background: #f09ab8; color: #2a0a14; }
 .hl-bar button {
   width: 22px; height: 22px; border: 0; border-radius: 50%; cursor: pointer;
 }
+.hl-bar .hl-action {
+  width: auto; margin-left: 2px; padding: 0 8px; border-radius: 4px;
+  background: transparent; color: #fff; font: 600 12px/22px var(--sans);
+}
+.hl-bar .hl-action:hover, .hl-bar .hl-action:focus-visible { background: rgba(255, 255, 255, 0.14); outline: none; }
 
 /* Search results */
 .result { padding: 16px 0; border-bottom: 1px solid var(--border); }

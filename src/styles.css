@@ -205,9 +205,9 @@ button.header-link.header-scholars {
   border: 0;
   background: transparent;
   cursor: pointer;
-  font: inherit;
   appearance: none;
 }
+button.header-link.header-scholars:hover { background: var(--panel); }
 .header-link.header-scholars.is-on { color: var(--burgundy); }
 html[data-theme="night"] .header-link.header-scholars.is-on { color: var(--link); }
 .header-sep { width: 1px; height: 22px; margin: 0 6px; background: var(--border); }

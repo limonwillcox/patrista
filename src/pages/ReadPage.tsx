@@ -756,7 +756,7 @@ export function ReadPage() {
           <div className="read-dict-stack">
             <DictionaryDock workId={workId} />
             <button type="button" className="read-dict-bar" onClick={() => void copyViewCitation()}>
-              Citation options
+              Copy citation
             </button>
           </div>
         </DockNotch>

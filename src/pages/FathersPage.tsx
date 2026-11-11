@@ -3,7 +3,6 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { useApp } from "../context/AppContext";
 import { HERO_SIZES, TILE_SIZES, fatherImage, type FatherImage, type FatherImageCredit } from "../lib/fatherImages";
 import { Bookcase } from "../components/shelf/Bookcase";
-import { ScholarsDirectory } from "../components/fathers/ScholarsDirectory";
 import { JOURNEYS, type Journey } from "../data/journeys";
 import { webglAvailable } from "../three/support";
 import { adDates } from "../lib/adDates";
@@ -23,7 +22,6 @@ import {
   fatherProfileTitle,
   fathersIndexJsonLd
 } from "../lib/fatherPageMeta";
-import { useScholarsUi } from "../lib/scholarsUi";
 import sameAsData from "../data/fatherSameAs.json";
 
 const SAME_AS = sameAsData as Record<string, string[]>;
@@ -120,8 +118,6 @@ function setHead(title: string, description: string, canonicalHref: string) {
 export function FathersPage() {
   const { authorId } = useParams();
   const { catalog, catalogError, setActivePassage } = useApp();
-  const [scholarsOn] = useScholarsUi();
-  const { hash } = useLocation();
 
   useEffect(() => {
     setActivePassage(null);
@@ -194,7 +190,6 @@ export function FathersPage() {
   if (catalogError) return <p className="empty">{catalogError}</p>;
   if (!catalog) return <p className="empty">Loading library…</p>;
   if (authorId) return <FatherProfile catalog={catalog} authorId={authorId} />;
-  if (scholarsOn && !hash) return <ScholarsDirectory catalog={catalog} />;
   return <FathersIndex catalog={catalog} />;
 }
 

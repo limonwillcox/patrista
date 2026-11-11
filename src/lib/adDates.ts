@@ -1,7 +1,7 @@
 /**
  * Catalog dates on the Fathers pages, written as Anno Domini.
- * "c. 185" and "354" become "AD 185" and "AD 354". "3rd c." becomes "3rd century AD".
- * "d. 258" is read out as "died AD 258", so it does not sit on the card as "d. AD 258".
+ * "354" becomes "AD 354". "c. 185" becomes "c. AD 185": an approximate date stays approximate.
+ * "3rd c." becomes "3rd century AD". "d. 258" is read out as "died AD 258".
  * A BC date is left as written.
  */
 export function adDates(dates: string): string {
@@ -13,8 +13,7 @@ export function adDates(dates: string): string {
     const plural = /\d(?:st|nd|rd|th)\s*[–-]\s*/i.test(span);
     return span + (plural ? " centuries AD" : " century AD");
   });
-  next = next.replace(/\bc\.(?=\s*\d)/gi, "AD");
-  next = next.replace(/\bAD\s+(\d+)\s*([–-])\s*AD\s+/g, "AD $1$2");
-  if (!/\bAD\b/.test(next) && /\d{2,4}/.test(next)) next = next.replace(/(\d{2,4})/, "AD $1");
-  return next.replace(/\bd\.\s+AD\b/g, "died AD");
+  // AD goes before the first year only: "c. 213–c. 270" reads "c. AD 213–c. 270".
+  if (!/\bAD\b/.test(next)) next = next.replace(/\b\d{1,4}\b/, "AD $&");
+  return next.replace(/\bd\.\s+(?=c\.|AD\b)/g, "died ");
 }

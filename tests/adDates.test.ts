@@ -2,17 +2,17 @@ import { describe, expect, it } from "vitest";
 import { adDates } from "../src/lib/adDates";
 
 describe("adDates", () => {
-  it("turns a circa year into AD", () => {
-    expect(adDates("c. 340–397")).toBe("AD 340–397");
-    expect(adDates("c. 213–c. 270")).toBe("AD 213–270");
-    expect(adDates("d. c. 311")).toBe("died AD 311");
-    expect(adDates("fl. c. 96")).toBe("fl. AD 96");
+  it("keeps circa on an approximate year", () => {
+    expect(adDates("c. 340–397")).toBe("c. AD 340–397");
+    expect(adDates("c. 213–c. 270")).toBe("c. AD 213–c. 270");
+    expect(adDates("d. c. 311")).toBe("died c. AD 311");
+    expect(adDates("fl. c. 96")).toBe("fl. c. AD 96");
   });
 
   it("marks a bare year as AD, spells a century, and leaves BC alone", () => {
     expect(adDates("354–430")).toBe("AD 354–430");
     expect(adDates("d. 258")).toBe("died AD 258");
-    expect(adDates("d. c. 110")).toBe("died AD 110");
+    expect(adDates("d. c. 110")).toBe("died c. AD 110");
     expect(adDates("325–787")).toBe("AD 325–787");
     expect(adDates("fl. mid-3rd c.")).toBe("fl. mid-3rd century AD");
     expect(adDates("fl. 3rd–5th c.")).toBe("fl. 3rd–5th centuries AD");

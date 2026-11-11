@@ -120,7 +120,7 @@ describe("father directory HTML", () => {
     expect(body.match(/<h1[\s>]/g)).toHaveLength(1);
     expect(body).toContain("<h1>Augustine of Hippo</h1>");
     expect(body).toContain("was bishop of Hippo");
-    expect(body).toContain("<dt>Dates</dt><dd>354–430</dd>");
+    expect(body).toContain("<dt>Dates</dt><dd>AD 354–430</dd>");
     expect(body).toContain("<dt>Role</dt><dd>Bishop of Hippo</dd>");
     expect(body).toContain("<dt>Region</dt><dd>North Africa</dd>");
     expect(body).not.toContain("<dt>See</dt>");

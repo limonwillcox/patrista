@@ -1,9 +1,10 @@
 import { mkdirSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import type { Catalog } from "./types";
+import { adDates } from "../src/lib/adDates";
 import { fatherEntry, fatherSections } from "../src/lib/fathersDirectory";
 import { FATHER_PROFILES } from "../src/lib/fatherProfiles";
-import type { FatherImageMap } from "../src/lib/fatherImages";
+import { authorShareImage, type FatherImageMap } from "../src/lib/fatherImages";
 import { renderFatherProfileBody, renderFathersIndexBody } from "../src/lib/fatherPageHtml";
 import {
   FATHERS_INDEX_DESCRIPTION,
@@ -69,9 +70,10 @@ export function writeFatherDirectoryPages(
     const description = fatherProfileDescription(bio.lede || entry.name);
     const html = prerenderShell(indexHtml, origin, {
       canonicalPath: path,
-      title: fatherProfileTitle(entry.name, entry.dates),
+      title: fatherProfileTitle(entry.name, adDates(entry.dates)),
       description,
       bodyHtml: renderFatherProfileBody(author, works, images),
+      ogImage: authorShareImage(origin, author.id),
       extraHead:
         "    " +
         jsonLdTag(

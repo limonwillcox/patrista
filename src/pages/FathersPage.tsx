@@ -5,7 +5,8 @@ import { HERO_SIZES, TILE_SIZES, fatherImage, type FatherImage, type FatherImage
 import { Bookcase } from "../components/shelf/Bookcase";
 import { JOURNEYS, type Journey } from "../data/journeys";
 import { webglAvailable } from "../three/support";
-import { SECTION_NOTES, fatherEntry, fatherSections, sectionMark, type FatherEntry } from "../lib/fathersDirectory";
+import { adDates } from "../lib/adDates";
+import { fatherEntry, fatherSections, sectionMark, type FatherEntry } from "../lib/fathersDirectory";
 import { centuryBlocks } from "../lib/centuries";
 import { readLinks, type HistoryEra } from "../../server/churchHistory";
 import { formatWords } from "../lib/keyWorks";
@@ -150,7 +151,7 @@ export function FathersPage() {
       if (author) {
         const entry = fatherEntry(author, FATHER_PROFILES[author.id]);
         const bio = answerFirstBio(entry.paragraphs);
-        title = fatherProfileTitle(entry.name, entry.dates);
+        title = fatherProfileTitle(entry.name, adDates(entry.dates));
         description = fatherProfileDescription(bio.lede || entry.name);
         const path = fatherProfilePath(author.id);
         canonicalHref = origin + path;
@@ -229,7 +230,7 @@ function FatherProfile({ catalog, authorId }: { catalog: LoadedCatalog; authorId
             <h1>{entry.name}</h1>
             <p className="fathers-hero-office">{entry.office}</p>
             {bio.lede ? <p className="fathers-lede">{bio.lede}</p> : null}
-            <Facts dates={entry.dates} office={entry.office} region={entry.region} />
+            <Facts dates={adDates(entry.dates)} office={entry.office} region={entry.region} />
           </div>
         </div>
       </header>
@@ -265,7 +266,7 @@ function NeighbourLink({ father, label }: { father: FatherEntry; label: string }
     <Link className={"fathers-neighbour fathers-neighbour--" + label.toLowerCase()} to={fatherProfilePath(father.id)}>
       <span className="fathers-neighbour-label">{label}</span>
       <span className="fathers-neighbour-name">{father.name}</span>
-      <span className="fathers-neighbour-dates">{father.dates}</span>
+      <span className="fathers-neighbour-dates">{adDates(father.dates)}</span>
     </Link>
   );
 }
@@ -346,7 +347,6 @@ function FathersIndex({ catalog }: { catalog: LoadedCatalog }) {
   return (
     <div className="fathers-page fathers-index">
       <header className="fx-hero">
-        <p className="fx-kicker">Patrista</p>
         <blockquote className="fx-verse">
           <p>Knowing this first, that no prophecy of the scripture is of any private interpretation.</p>
           <p>
@@ -359,33 +359,16 @@ function FathersIndex({ catalog }: { catalog: LoadedCatalog }) {
       </header>
 
       {sections.map((section) => {
-        const workCount = section.fathers.reduce((n, f) => n + (stats.works.get(f.id) || 0), 0);
         return (
           <section key={section.id} id={"sec-" + section.id} className="fathers-section" aria-labelledby={section.id}>
             <div className="fathers-section-inner">
               <header className="fx-century-head">
-                <span className="fx-century-mark" aria-hidden="true">
-                  {sectionMark(section.id)}
-                </span>
-                <div>
-                  <h2 id={section.id} className="fathers-century">
-                    {section.title}
-                  </h2>
-                  <p className="fx-century-meta">
-                    {[
-                      section.fathers.length
-                        ? section.fathers.length + (section.fathers.length === 1 ? " Father" : " Fathers")
-                        : "",
-                      workCount ? workCount + (workCount === 1 ? " work" : " works") : "",
-                      section.events.length
-                        ? section.events.length + (section.events.length === 1 ? " event" : " events")
-                        : ""
-                    ]
-                      .filter(Boolean)
-                      .join(" · ")}
-                  </p>
-                  {SECTION_NOTES[section.id] ? <p className="fx-century-note">{SECTION_NOTES[section.id]}</p> : null}
-                </div>
+                <h2 id={section.id} className="fathers-century">
+                  <span className="fx-century-mark" aria-hidden="true">
+                    {sectionMark(section.id)}
+                  </span>
+                  {section.title}
+                </h2>
               </header>
               {section.fathers.length ? (
                 <ul className="fathers-grid">
@@ -401,7 +384,7 @@ function FathersIndex({ catalog }: { catalog: LoadedCatalog }) {
                           <h3 className="fathers-name">{father.name}</h3>
                           <p className="fathers-office">{father.office}</p>
                           <p className="fathers-card-meta">
-                            {father.dates ? <span>{father.dates}</span> : null}
+                            {father.dates ? <span>{adDates(father.dates)}</span> : null}
                             {n ? (
                               <span>
                                 {n} {n === 1 ? "work" : "works"} · {formatWords(stats.words.get(father.id) || 0)}

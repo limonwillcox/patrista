@@ -16,6 +16,7 @@ import {
   SITEMAP_URL_LIMIT
 } from "../server/staticFathers";
 import { bookJsonLd, workCreditHtml } from "../server/staticFathers";
+import { authorShareImage } from "../src/lib/fatherImages";
 import {
   assignChapterSlugs,
   chapterNumberForSlug,
@@ -263,10 +264,26 @@ describe("home, read shell, and sitemap", () => {
         "Look up a father, a work, or a keyword. Public-domain translations of the Church Fathers in a clean reading layout.",
       bodyHtml: renderHomeStaticHtml(catalog)
     });
+    expect(html).toContain('property="og:image" content="https://patrista.com/og-image.png"');
     expect(html).toContain('rel="canonical" href="https://patrista.com/"');
     expect(html.match(/<h1[\s>]/g)).toHaveLength(1);
     expect(html).toContain("<h1>Patrista</h1>");
     expect(html).toContain('href="/fathers/"');
+  });
+
+  it("uses a Father's portrait as the link preview when one is passed", () => {
+    const portrait = authorShareImage("https://patrista.com", "augustine");
+    expect(portrait?.url).toContain("/assets/father-img/augustine-");
+    const shell = `<!DOCTYPE html><html><head><title>x</title><meta name="description" content="y" /></head><body><div id="root"></div></body></html>`;
+    const html = prerenderShell(shell, "https://patrista.com", {
+      canonicalPath: "/fathers/augustine/confessions/",
+      title: "The Confessions",
+      description: "Augustine.",
+      bodyHtml: "<p>A work.</p>",
+      ogImage: portrait
+    });
+    expect(html).toContain('property="og:image" content="' + portrait!.url + '"');
+    expect(html).not.toContain("/og-image.png");
   });
 
   it("gives the home page one h1 and links to the fathers index", () => {

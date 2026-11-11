@@ -8,6 +8,7 @@ import { escapeHtml } from "./fatherPaths";
 import { readPath } from "./workSlugs";
 import { fatherEntry, fatherSections, type FatherSection } from "./fathersDirectory";
 import { HERO_SIZES, TILE_SIZES, fatherImageFrom, type FatherImage, type FatherImageCredit, type FatherImageMap } from "./fatherImages";
+import { adDates } from "./adDates";
 import { answerFirstBio, fatherProfilePath } from "./fatherPageMeta";
 import { shelfGroups } from "./shelfGroups";
 
@@ -209,7 +210,7 @@ export function renderFatherProfileBody(
     "<h1>" + escapeHtml(entry.name) + "</h1>",
     '<p class="fathers-hero-office">' + escapeHtml(entry.office) + "</p>",
     bio.lede ? '<p class="fathers-lede">' + escapeHtml(bio.lede) + "</p>" : "",
-    factsHtml(entry.dates, entry.office, entry.region),
+    factsHtml(adDates(entry.dates), entry.office, entry.region),
     "</div></div></header>",
     '<article class="fathers-bio"><div class="fathers-bio-col">',
     rest,

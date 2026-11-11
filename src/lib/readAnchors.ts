@@ -24,20 +24,44 @@ export type CitationParts = {
   work: string;
   /** Chapter heading, e.g. "Book I" or "Chapter 3". Empty for one-part works. */
   chapter: string;
-  n: number;
+  /** Paragraph number within the chapter. Omitted when the selection has none. */
+  n: number | null;
   translator: string;
+  /** Printed series or edition, when the catalog names one. */
+  edition?: string;
   url: string;
 };
 
-/** "Augustine of Hippo, The Confessions, Book I, ¶3 (tr. E. B. Pusey). https://…" */
+/**
+ * A bibliography entry for the work, with the place that was selected.
+ * No quotation. No invented page number: the paragraph is the locator.
+ */
+export function bibliography(p: CitationParts): string {
+  const place = [p.chapter, p.n ? "¶" + p.n : ""].filter(Boolean).join(", ");
+  const head = [p.author, p.work, place].filter(Boolean).join(". ") + ".";
+  const credit = [
+    p.translator ? "Translated by " + p.translator + "." : "",
+    p.edition ? p.edition.replace(/\.$/, "") + "." : "",
+    p.url
+  ].filter(Boolean);
+  return [head, ...credit].join(" ");
+}
+
+/** @deprecated The paragraph menu's short line. Papers use bibliography(). */
 export function citation(p: CitationParts): string {
-  const where = [p.author, p.work, p.chapter, "¶" + p.n].filter(Boolean).join(", ");
-  return where + (p.translator ? " (tr. " + p.translator + ")" : "") + ". " + p.url;
+  return bibliography(p);
 }
 
 export function quoteWithCitation(text: string, p: CitationParts): string {
   const clean = text.replace(/\s+/g, " ").trim();
-  return "“" + clean + "” — " + citation(p);
+  return "“" + clean + "”\n\n" + bibliography(p);
+}
+
+/** Share sheet: the quote, a blank line, the name and the book. The link is sent separately. */
+export function shareText(quote: string, author: string, work: string): string {
+  const clean = quote.replace(/\s+/g, " ").trim();
+  const who = [author, work].filter(Boolean).join(", ");
+  return "“" + clean + "”\n\n" + who;
 }
 
 /** Translator credit for a work's English, from its series. */

@@ -38,7 +38,7 @@ export const SECTION_NOTES: Record<string, string> = {
   "century-6": "The West after Rome: the Rule of Benedict, Justinian’s Hagia Sophia, and Gregory the Great’s election at Rome in 590.",
   "century-7": "Gregory the Great dies in 604, and within a generation the Arab conquests take Jerusalem, Antioch and Alexandria.",
   "century-8": "John of Damascus gathers the Greek Fathers into one summary of the faith, as the dispute over icons begins.",
-  "century-9": "After the Fathers: Cyril and Methodius carry the faith to the Slavs, and the Photian schism strains Rome and Constantinople.",
+  "century-9": "Photius, the Carolingian writers, and the mission to the Slavs. The Photian schism strains Rome and Constantinople.",
   "century-11":
     "The mutual excommunications of 1054, later taken as the symbol of the schism between East and West, close the story this library tells.",
   councils: "The creeds and canons of the ecumenical councils, from Nicaea in 325 onward."

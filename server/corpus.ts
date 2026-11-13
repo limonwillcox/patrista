@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync } from "fs";
 import { dirname, join, relative } from "path";
 import { fileURLToPath } from "url";
 import { authorMeta, loadEnglishAppWorks, wordCountFromPassages } from "./englishWorks";
+import { migneAuthors } from "./migneFathers";
 import type { Catalog, Footnote, Passage } from "./types";
 import { clavisForPath } from "./workClavis";
 
@@ -278,6 +279,9 @@ export function loadLibrary(root = repoRoot()): Library {
 
   const authors = [...catalog.authors];
   for (const a of english.authors) {
+    if (!authors.some((x) => x.id === a.id)) authors.push(a);
+  }
+  for (const a of migneAuthors()) {
     if (!authors.some((x) => x.id === a.id)) authors.push(a);
   }
 

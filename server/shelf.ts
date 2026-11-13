@@ -194,10 +194,10 @@ export function packCatalog(catalog: Catalog, shelfWidthPx: number): PackedShelf
 /** Target books per author-mode shelf: enough to read, few enough to stay a centered line. */
 export const AUTHOR_SHELF_MAX = 8;
 
-/** AD century from death year, rounded up. 430 → 5; 101 → 2. Clamped 1–8 for band styles. */
+/** AD century from death year, rounded up. 430 → 5; 101 → 2; 893 → 9. */
 export function deathCentury(deathYear: number): number {
   if (deathYear <= 0) return 1;
-  return Math.max(1, Math.min(8, Math.ceil(deathYear / 100)));
+  return Math.max(1, Math.ceil(deathYear / 100));
 }
 
 /** Where century band pairs sit relative to the spine title. */

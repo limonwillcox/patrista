@@ -1,3 +1,5 @@
+import { MIGNE_FATHER_PROFILES } from "../../server/migneFathers";
+
 /** Office line and profile copy for the Fathers tab. Keyed by catalog author id. */
 export type FatherProfile = {
   office: string;
@@ -396,5 +398,6 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
     paragraphs: [
       "This shelf holds works that cannot be assigned to one father with confidence. Each work’s page gives what is known of its date and author."
     ]
-  }
+  },
+  ...MIGNE_FATHER_PROFILES
 };

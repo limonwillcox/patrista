@@ -24,10 +24,21 @@ const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replac
 /** "Lactantius, *The Divine Institutes* 91.12 — “…”" without the emphasis marks. */
 const plain = (s: string) => s.replace(/\*/g, "");
 
+/** The page title, inside the 60 characters a search result shows. */
+export function typeTitle(t: TypeEntry): string {
+  for (const tail of [" · Types of Christ · Patrista", " · Patrista", ""]) {
+    if (t.label.length + tail.length <= 60) return t.label + tail;
+  }
+  return t.label.slice(0, 59).replace(/\s+\S*$/, "") + "…";
+}
+
+/** The description, kept between the 100 and 160 characters a search result shows. */
 export function typeDescription(meta: Meta, t: TypeEntry): string {
   const share = describeShare(meta, { type: t, drawn: [t] });
-  const text = [t.def, share.subtitle + "."].filter(Boolean).join(" ");
-  return text.length > 300 ? text.slice(0, 297).replace(/\s+\S*$/, "") + "…" : text;
+  let text = [t.def, share.subtitle + "."].filter(Boolean).join(" ");
+  if (text.length < 100) text = "A type of Christ the Church Fathers saw in Scripture: " + t.label + ". " + text;
+  if (text.length < 100) text += " Read it with the Fathers' own words on Patrista.";
+  return text.length > 160 ? text.slice(0, 157).replace(/\s+\S*$/, "") + "…" : text;
 }
 
 export function typeBodyHtml(t: TypeEntry): string {
@@ -72,7 +83,7 @@ export async function writeTypeSharePages(
       page,
       prerenderShell(shell, origin, {
         canonicalPath: path,
-        title: t.label + " · Types of Christ · Patrista",
+        title: typeTitle(t),
         description: typeDescription(meta, t),
         bodyHtml: typeBodyHtml(t),
         imagePath: typeCardPath(t)

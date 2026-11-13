@@ -13,7 +13,7 @@ import { AccountLink, SignInDialog, SignInNudge } from "./SignIn";
 function Brand() {
   return (
     <Link className="brand" to="/" aria-label="Patrista">
-      <img className="logo" src="/assets/patrista-logo.jpg" alt="" width={34} height={34} />
+      <img className="logo" src="/assets/patrista-logo-102.webp" alt="" width={34} height={34} />
       <span className="brand-name">Patrista</span>
     </Link>
   );

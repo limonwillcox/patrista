@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
-import { MANUSCRIPTS, MANUSCRIPT_VIEW_WIDTH, manuscriptImage, type ManuscriptPage } from "../../data/manuscripts";
+import type { ManuscriptPage } from "../../data/manuscripts";
+import { useManuscripts } from "../../lib/useManuscripts";
 import { webglAvailable } from "../../three/support";
 import "../../styles/manuscript-stage.css";
 
@@ -11,13 +12,13 @@ const ManuscriptView = lazy(loadView);
  * download before the click, with the same URL and CORS mode as the viewer's texture loader, so
  * the browser hands the viewer the finished image. Returns a function that cancels the download.
  */
-function prefetch(page: ManuscriptPage): () => void {
+function prefetch(src: string): () => void {
   const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
   if (conn?.saveData) return () => {};
   void loadView();
   const img = new Image();
   img.crossOrigin = "anonymous";
-  img.src = manuscriptImage(page, MANUSCRIPT_VIEW_WIDTH);
+  img.src = src;
   return () => {
     // An image that has not finished yet stops downloading when its source is cleared.
     if (!img.complete) img.src = "";
@@ -41,15 +42,16 @@ export function ManuscriptButton({
   prefetchOn?: "mount" | "hover";
 }) {
   const [open, setOpen] = useState(false);
-  const page = MANUSCRIPTS[workId];
+  const manuscripts = useManuscripts();
+  const page: ManuscriptPage | undefined = manuscripts?.MANUSCRIPTS[workId];
   const has3d = webglAvailable();
   const started = useRef<string | null>(null);
   const cancel = useRef<() => void>(() => {});
 
   function warm() {
-    if (!page || !has3d || started.current === workId) return;
+    if (!page || !manuscripts || !has3d || started.current === workId) return;
     started.current = workId;
-    cancel.current = prefetch(page);
+    cancel.current = prefetch(manuscripts.manuscriptImage(page, manuscripts.MANUSCRIPT_VIEW_WIDTH));
   }
 
   useEffect(() => {
@@ -64,7 +66,7 @@ export function ManuscriptButton({
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [workId, prefetchOn]);
+  }, [workId, prefetchOn, page]);
 
   if (!page) return null;
   if (!has3d) {

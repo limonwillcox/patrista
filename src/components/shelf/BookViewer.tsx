@@ -14,7 +14,7 @@ import { FORM_NOTES, manuscriptForm, workCentury } from "../../lib/manuscriptFor
 import { ManuscriptButton } from "../manuscript/ManuscriptButton";
 import { ManuscriptFigure } from "../manuscript/ManuscriptFigure";
 import type { LeafState } from "../manuscript/ManuscriptLeaf";
-import { MANUSCRIPTS } from "../../data/manuscripts";
+import { useManuscripts } from "../../lib/useManuscripts";
 import { setStoredBookStage, storedBookStage, type BookStage } from "../../lib/prefs";
 import { loadBookText } from "../../lib/bookText";
 import { PRINT_EDITIONS } from "../../lib/printEditions";
@@ -113,7 +113,8 @@ export function BookViewer({
    * and the reader's other choice. The book stays on the stage while the page downloads (library
    * servers often take seconds), then the page fades in over it. A page that fails never shows.
    */
-  const msPage = has3d ? MANUSCRIPTS[work.id] : undefined;
+  const manuscripts = useManuscripts();
+  const msPage = has3d ? manuscripts?.MANUSCRIPTS[work.id] : undefined;
   const [stagePref, setStagePref] = useState<BookStage>(storedBookStage);
   const [leaf, setLeaf] = useState<{ id: string; state: LeafState }>({ id: "", state: "loading" });
   const leafState: LeafState = leaf.id === work.id ? leaf.state : "loading";

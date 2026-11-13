@@ -471,22 +471,25 @@ export type PrerenderOpts = {
   description: string;
   jsonLd?: unknown;
   extraHead?: string;
+  /** The picture shown when the page's link is pasted somewhere, from the site root. Default: the site's own. */
+  imagePath?: string;
 };
 
 /** Fill the Vite shell (dist/index.html) with crawlable body copy. */
 export function prerenderShell(indexHtml: string, origin: string, opts: PrerenderOpts): string {
   const canonical = origin + opts.canonicalPath;
+  const image = origin + (opts.imagePath || "/og-image.png");
   const headParts = [
     '    <link rel="canonical" href="' + escapeHtml(canonical) + '" />',
     '    <meta property="og:type" content="article" />',
     '    <meta property="og:url" content="' + escapeHtml(canonical) + '" />',
     '    <meta property="og:title" content="' + escapeHtml(opts.title) + '" />',
     '    <meta property="og:description" content="' + escapeHtml(opts.description) + '" />',
-    '    <meta property="og:image" content="' + escapeHtml(origin + "/og-image.png") + '" />',
+    '    <meta property="og:image" content="' + escapeHtml(image) + '" />',
     '    <meta property="og:image:width" content="1200" />',
     '    <meta property="og:image:height" content="630" />',
     '    <meta name="twitter:card" content="summary_large_image" />',
-    '    <meta name="twitter:image" content="' + escapeHtml(origin + "/og-image.png") + '" />'
+    '    <meta name="twitter:image" content="' + escapeHtml(image) + '" />'
   ];
   if (opts.extraHead) headParts.push(opts.extraHead);
   if (opts.jsonLd) headParts.push("    " + jsonScript(opts.jsonLd));

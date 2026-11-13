@@ -42,6 +42,20 @@ describe("findScriptureRefs", () => {
   it("does not mistake Philemon for Philippians", () => {
     expect(findScriptureRefs("Philem. 1:10")[0]).toMatchObject({ book: "phm" });
   });
+
+  it("reads a lone number after a one-chapter book as a verse", () => {
+    expect(findScriptureRefs("Jude 8")[0]).toMatchObject({ book: "jd", chapter: 1, verse: 8 });
+    expect(findScriptureRefs("See 2 John 10.")[0]).toMatchObject({ book: "2jo", chapter: 1, verse: 10 });
+    expect(findScriptureRefs("Obad. 4")[0]).toMatchObject({ book: "ob", chapter: 1, verse: 4 });
+    expect(findScriptureRefs("Jude 14-15")[0]).toMatchObject({ book: "jd", chapter: 1, verse: 14, endVerse: 15 });
+    expect(findScriptureRefs("Philem. 9, 10")[0]).toMatchObject({ book: "phm", chapter: 1, verse: 9 });
+    expect(findScriptureRefs("Jude 1:3")[0]).toMatchObject({ book: "jd", chapter: 1, verse: 3 });
+  });
+
+  it("still needs a verse for books with more than one chapter", () => {
+    expect(findScriptureRefs("Matt. 5")).toEqual([]);
+    expect(findScriptureRefs("Gen. 1 and Ex. 2:3").map((r) => r.book)).toEqual(["ex"]);
+  });
 });
 
 describe("scripture links", () => {

@@ -5,6 +5,7 @@ import { attributionLabel, authorLine, hasAttribution, shortAuthor } from "../..
 import type { Author, Work, WorkOutline } from "../../../server/types";
 import { fetchChapter, fetchWork } from "../../api/client";
 import { chapterPublicPath, englishParagraphs } from "../../lib/fatherPaths";
+import { clavisUrl, formatClavisNumber } from "../../lib/clavis";
 import { KEY_WORKS, formatWords, readingTime } from "../../lib/keyWorks";
 import { loadLastRead } from "../../lib/lastRead";
 import { formatCentury, writingCategory } from "../../lib/libraryHover";
@@ -410,6 +411,16 @@ export function BookViewer({
               <div>
                 <dt>Translator</dt>
                 <dd>{work.translator}</dd>
+              </div>
+            ) : null}
+            {work.clavis ? (
+              <div>
+                <dt>Clavis</dt>
+                <dd>
+                  <a href={clavisUrl(work.clavis.id)} target="_blank" rel="noopener noreferrer" title="This work's entry in Clavis Clavium">
+                    {work.clavis.numbers.map(formatClavisNumber).join(", ")}
+                  </a>
+                </dd>
               </div>
             ) : null}
           </dl>

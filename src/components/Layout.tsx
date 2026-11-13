@@ -8,6 +8,7 @@ import { useReadTabHref } from "../lib/useReadTabHref";
 import { bibleHref } from "../lib/lastRead";
 import { useApp } from "../context/AppContext";
 import { Booklist } from "./Booklist";
+import { AccountLink, SignInDialog, SignInNudge } from "./SignIn";
 
 function Brand() {
   return (
@@ -96,6 +97,7 @@ function SiteMenu() {
           <Link className="site-menu-item" to="/fixes">
             Feedback
           </Link>
+          <AccountLink kind="menu" />
           <div className="site-menu-sep" role="separator" />
           <div className="site-menu-row">
             <span>Text size</span>
@@ -139,6 +141,7 @@ function HeaderTools() {
       <Link className="header-link" to="/fixes">
         Feedback
       </Link>
+      <AccountLink kind="header" />
       <span className="header-sep" aria-hidden="true" />
       <div className="header-size" role="group" aria-label="Text size">
         <button type="button" id="fontDown" aria-label="Decrease text size" onClick={() => setFont(Math.max(14, font - 2))}>
@@ -338,6 +341,8 @@ export function Layout({ children }: { children: ReactNode }) {
       >
         {children}
       </main>
+      <SignInNudge />
+      <SignInDialog />
       <div className={"toast" + (toast ? " open" : "")} id="toast">
         {toast}
       </div>

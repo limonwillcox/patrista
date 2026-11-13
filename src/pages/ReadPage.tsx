@@ -17,6 +17,7 @@ import { chapterAtReadingLine } from "../lib/readDocks";
 import { OriginalParas, TranslationParas, type ParaMenuTarget } from "../components/reader/Paragraphs";
 import { citation, hashChapter, hashParagraph, paraAnchor, quoteWithCitation, translatorFor } from "../lib/readAnchors";
 import { attributionText, citationAuthor, hasAttribution } from "../../server/workMeta";
+import { noteChange } from "../lib/accountSync";
 
 const HL_COLORS = ["hl-yellow", "hl-green", "hl-blue", "hl-pink"] as const;
 
@@ -198,6 +199,7 @@ function saveHighlights(work: string, root: HTMLElement) {
     if (off && para.dataset.key) list.push({ key: para.dataset.key, start: off.start, end: off.end, color });
   });
   localStorage.setItem("fg-hl-" + work, JSON.stringify({ v: 2, list }));
+  noteChange("fg-hl-" + work);
 }
 
 function aroundChapter(chapters: WorkChapterMeta[], n: number): number[] {

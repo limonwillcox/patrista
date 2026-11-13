@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync } from "fs";
 import { join } from "path";
 import type { Author, Footnote, Passage, SubChapter, Work } from "./types";
 import { workMeta } from "./workMeta";
+import { clavisForPath } from "./workClavis";
 
 export type ChunkMode = "book" | "chapter" | "sermon" | "letter" | "homily";
 
@@ -1394,6 +1395,7 @@ export function wordCountFromPassages(passages: Passage[]): number {
 
 function workFromSpec(spec: EnglishWorkSpec, passages: Passage[]): Work {
   const meta = workMeta(spec.id);
+  const clavis = clavisForPath(spec.path);
   const disputed = spec.authorshipDisputed || Boolean(meta.authorship);
   return {
     id: spec.id,
@@ -1407,7 +1409,8 @@ function workFromSpec(spec: EnglishWorkSpec, passages: Passage[]): Work {
     ...(meta.authorship ? { authorship: meta.authorship } : {}),
     ...(meta.attribution ? { attribution: meta.attribution } : {}),
     ...(spec.translator ? { translator: spec.translator } : {}),
-    ...(spec.edition ? { edition: spec.edition } : {})
+    ...(spec.edition ? { edition: spec.edition } : {}),
+    ...(clavis ? { clavis } : {})
   };
 }
 

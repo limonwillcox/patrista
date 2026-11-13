@@ -1659,6 +1659,43 @@ html[data-theme="night"] mark { background: #e8cc4a; color: #1a1408; }
   color: var(--text); font-weight: 600; cursor: pointer; border-radius: 3px;
 }
 .btn-oauth:hover { background: var(--panel); }
+/* Optional sign-in: the box, the header link, and the bar shown after a first highlight. */
+.signin { position: relative; border-radius: var(--radius-sm); }
+.signin h2 { padding-right: 28px; font-size: 20px; }
+.signin-copy { margin: 0 0 18px; color: var(--muted); font-size: 15px; line-height: 1.5; }
+.signin-google { display: flex; justify-content: center; min-height: 44px; }
+.signin-google[aria-busy="true"] { opacity: 0.5; pointer-events: none; }
+.signin-status, .signin-error, .signin-fine { margin: 12px 0 0; font-size: 13px; text-align: center; }
+.signin-status, .signin-fine { color: var(--muted); }
+.signin-error { color: var(--accent); }
+.signin-close {
+  position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; border: 0; border-radius: 6px;
+  background: none; color: var(--muted); font-size: 22px; line-height: 1; cursor: pointer;
+}
+.signin-close:hover { background: var(--panel); color: var(--text); }
+button.header-account { border: 0; background: none; font-family: inherit; cursor: pointer; }
+.site-menu-note { max-width: 150px; overflow: hidden; color: var(--muted); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.signin-nudge {
+  position: fixed; left: 50%; bottom: 16px; z-index: 70; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px; width: min(640px, calc(100vw - 24px));
+  padding: 10px 10px 10px 16px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--text); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  font-family: var(--sans); font-size: 14px; line-height: 1.4;
+  animation: signin-nudge-in 0.25s ease both;
+}
+.signin-nudge p { flex: 1; margin: 0; }
+.signin-nudge-go {
+  flex: none; height: 34px; padding: 0 14px; border: 0; border-radius: 6px;
+  background: var(--accent); color: var(--accent-ink); font: inherit; font-weight: 700; cursor: pointer;
+}
+.signin-nudge-go:hover { filter: brightness(1.08); }
+.signin-nudge-close {
+  flex: none; width: 34px; height: 34px; border: 0; border-radius: 6px; background: none;
+  color: var(--muted); font-size: 20px; line-height: 1; cursor: pointer;
+}
+.signin-nudge-close:hover { background: var(--panel); color: var(--text); }
+@keyframes signin-nudge-in { from { opacity: 0; transform: translate(-50%, 8px); } }
+@media (prefers-reduced-motion: reduce) { .signin-nudge { animation: none; } }
 .archived {
   border: 1px dashed var(--border); padding: 16px; background: var(--panel); max-width: 640px;
 }
@@ -2094,6 +2131,21 @@ body.give-chrome-dim .promo-bar {
   opacity: 0;
   animation: aboutLetterIn 1.05s ease-out 0.95s forwards;
 }
+/* Privacy: the same page, read from the left. */
+.privacy-page { align-items: flex-start; padding-top: 28px; }
+.privacy-page .about-letter { text-align: left; }
+.privacy-page .about-block p, .privacy-page .about-block li { font-family: var(--serif); font-size: 1.05rem; line-height: 1.65; }
+.privacy-page .about-block p + p, .privacy-page .about-block ul + p { margin-top: 0.9em; }
+.privacy-page .about-block ul { margin: 0.6em 0 0; padding-left: 1.3em; }
+.privacy-page h2.about-q { font-size: 1.3rem; }
+.privacy-page .about-block + .about-block { margin-top: 2rem; }
+.privacy-delete button {
+  height: 34px; padding: 0 14px; border: 1px solid var(--border); border-radius: var(--radius-pill);
+  background: var(--bg); color: var(--text); font: 600 13.5px var(--sans); cursor: pointer;
+}
+.privacy-delete .privacy-delete-go { border-color: var(--accent); color: var(--accent); }
+.privacy-delete button:disabled { opacity: 0.6; cursor: default; }
+.signin-fine a { color: inherit; text-decoration: underline; }
 .about-page a:link,
 .about-page a:visited {
   color: inherit;

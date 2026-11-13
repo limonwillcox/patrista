@@ -251,7 +251,7 @@ export function PrintPage() {
       <div className="pv-preview" aria-label="Preview">
         <article className="pv-doc" lang="en">
           <header className="pv-sheet pv-cover">
-            <img className="pv-cover-logo" src="/assets/patrista-logo.jpg" alt="" width={44} height={44} />
+            <img className="pv-cover-logo" src="/assets/patrista-logo-102.webp" alt="" width={44} height={44} />
             <div className="pv-cover-main">
               {byline ? <p className="pv-cover-author">{byline}</p> : null}
               {attributed ? (

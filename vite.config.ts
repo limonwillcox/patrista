@@ -34,7 +34,7 @@ import { assignChapterSlugs, chapterPublicPath, legacyChapterSlugs, workPublicPa
 import { FATHER_IMAGES } from "./src/lib/fatherImages";
 import { dirname, extname, join, resolve } from "path";
 import { fileURLToPath } from "url";
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import { fathersApiPlugin } from "./server/plugin";
 import { writeStaticBibleApi } from "./server/staticBible";
@@ -410,7 +410,14 @@ function extrasPlugin() {
       }
       writeFileSync(
         join(dist, "_headers"),
-        ["/assets/father-img/*", "  Cache-Control: public, max-age=31536000, immutable", ""].join("\n")
+        [
+          "/assets/father-img/*",
+          "  Cache-Control: public, max-age=31536000, immutable",
+          // Font files carry their version in their name.
+          "/fonts/*",
+          "  Cache-Control: public, max-age=31536000, immutable",
+          ""
+        ].join("\n")
       );
       const cited = writeScriptureIndex(dist, catalog, root);
       console.log("[scripture] " + cited + " verses cited by the Fathers");
@@ -450,8 +457,26 @@ function stripCliShebang() {
   };
 }
 
+/**
+ * Every page needs the catalogue before it can draw. Asking for it from the page's head starts the
+ * download beside the script, not after the script has run. Build only: in dev the address differs.
+ */
+function preloadCatalog(): Plugin {
+  return {
+    name: "preload-catalog",
+    apply: "build",
+    transformIndexHtml(html) {
+      return html.replace("</head>", '  <link rel="preload" href="/api/catalog.json" as="fetch" crossorigin />\n  </head>');
+    }
+  };
+}
+
 export default defineConfig({
-  plugins: [stripCliShebang(), react(), fathersApiPlugin(), extrasPlugin()],
+  plugins: [stripCliShebang(), react(), fathersApiPlugin(), extrasPlugin(), preloadCatalog()],
+  build: {
+    // Maps are fetched only when someone opens the browser's developer tools.
+    sourcemap: true
+  },
   resolve: {
     alias: {
       "@": resolve(root, "src")

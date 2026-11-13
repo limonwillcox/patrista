@@ -24,7 +24,7 @@ export const APP_PAGES: AppPage[] = [
       "What Patrista keeps about you: nothing unless you sign in, and then only your email address, your highlights and your notes. No ads, no tracking, nothing sold.",
     bodyHtml:
       '<div class="prose"><h1>Privacy</h1>' +
-      "<p>Patrista is free to read without an account. We do not run ads, we do not use tracking or analytics scripts, and we do not sell or share anything about you.</p>" +
+      "<p>Patrista is free to read without an account. We do not run ads, we do not use cookies to follow you, and we do not sell or share anything about you. Cloudflare, the company that hosts the site, counts page visits for us without cookies and without identifying anyone.</p>" +
       "<h2>If you do not sign in</h2><p>Your highlights, notes and settings are saved in your own browser, on your own device. They are never sent to us.</p>" +
       "<h2>If you sign in with Google</h2><p>Signing in is optional. We keep your email address, the account number Google gives us for you, your highlights, your notes and the connections you saved, and a record that you are signed in. We do not receive your Google password and we do not read anything else in your Google account. We do not send you email. This is stored with Cloudflare, the company that hosts the site.</p>" +
       "<h2>Deleting your account</h2><p>You can delete your account at any time from this page while signed in. That removes your email address and every highlight and note we hold for you.</p>" +

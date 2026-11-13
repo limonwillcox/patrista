@@ -8,7 +8,7 @@ import { ChapterDock } from "../components/ChapterDock";
 import { DictionaryDock } from "../components/DictionaryDock";
 import { HardcoverDock } from "../components/HardcoverDock";
 import { ManuscriptButton } from "../components/manuscript/ManuscriptButton";
-import { MANUSCRIPTS } from "../data/manuscripts";
+import { useManuscripts } from "../lib/useManuscripts";
 import { BookIcon, DockNotch } from "../components/DockNotch";
 import { readPath, resolveWorkId, staticWorkId, workIdForReadPath } from "../lib/workSlugs";
 import { useApp } from "../context/AppContext";
@@ -226,6 +226,7 @@ function restoreHighlights(work: string, root: HTMLElement) {
 }
 
 export function ReadPage() {
+  const manuscripts = useManuscripts();
   const { catalog, version, setVersion, setActivePassage, mode, setMode, parallel, setParallel, showToast } = useApp();
   const location = useLocation();
   const chapterRoute = parseFatherChapterPath(location.pathname);
@@ -731,7 +732,7 @@ export function ReadPage() {
             <Link className="read-print-link" to={"/print?work=" + encodeURIComponent(outline.work.id)}>
               Download PDF
             </Link>
-            {MANUSCRIPTS[outline.work.id] ? (
+            {manuscripts?.MANUSCRIPTS[outline.work.id] ? (
               <>
                 {" · "}
                 <ManuscriptButton className="read-print-link read-ms-link" workId={outline.work.id} title={outline.work.title} />

@@ -42,6 +42,7 @@ import { writeStaticLinksApi } from "./server/staticLinks";
 import { writeSearchIndex } from "./server/searchIndex";
 import { writeScriptureIndex } from "./server/scriptureIndex";
 import { APP_PAGES } from "./server/appPages";
+import { writeTypeSharePages } from "./server/typeSharePages";
 
 const root = dirname(fileURLToPath(import.meta.url));
 
@@ -310,6 +311,11 @@ function extrasPlugin() {
       writeChurchHistoryPage(dist, shell);
       writeLibraryRedirect(dist);
       writeAppPages(dist, shell);
+
+      // A page and a picture per type, so a shared type shows its diagram where the link is pasted.
+      const typeShares = await writeTypeSharePages(dist, shell, SITE_ORIGIN, join(root, "public", "connections"), catalog);
+      sitemapUrls.push(...typeShares.urls);
+      console.log("[types] " + typeShares.urls.length + " share pages");
 
       for (const w of catalog.works) {
         const payload = getWork(w.id);

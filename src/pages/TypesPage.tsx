@@ -3,12 +3,14 @@ import { Link, useSearchParams } from "react-router-dom";
 import { fetchCatalog } from "../api/client";
 import { bibleHrefFor, bookOf, fetchMeta, fetchTypes, vidOf, type Meta, type TypeEntry } from "../api/connections";
 import { FatherRef, italics, splitWhere } from "../components/typeParts";
+import { ShareButton } from "../components/ShareButton";
 import { TypeTrail } from "../components/TypeTrail";
 import { TypeMap, shortLabel } from "../components/typeMap/TypeMap";
 import { firstThemeOf, themeColor, themesOf, themeTitle, useNight } from "../lib/themeColors";
 import { computeGatherings, nameGatherings, type NamedGathering } from "../lib/typeGatherings";
 import { fathersOnMap, placeFromParam, placeParam, typesThrough } from "../lib/typeMap";
-import { drawnBy, stopFromParam, trailLength } from "../lib/typeTrail";
+import { describeShare, shareCardSvg } from "../lib/typeShare";
+import { drawnBy, stopFromParam, trailLength, typeFathers } from "../lib/typeTrail";
 import "../styles/types.css";
 import "../styles/type-trail.css";
 
@@ -95,6 +97,24 @@ export function TypesPage() {
 
   const open = Boolean(chosen || place || theme);
 
+  // What Share sends: the open type, else the chapter, the theme or the Father the map is showing, else the whole map.
+  const openTheme = theme ? themes.find((x) => x.id === theme) ?? null : null;
+  const share = describeShare(meta, {
+    type: chosen,
+    place,
+    theme: openTheme,
+    father,
+    drawn: chosen
+      ? [chosen]
+      : place
+        ? typesThrough(types, place.book, place.chapter)
+        : openTheme
+          ? types.filter((t) => openTheme.members.some((m) => m.type === t.id))
+          : father
+            ? types.filter((t) => typeFathers(t).includes(father))
+            : types
+  });
+
   return (
     <div className="ty-page tm-page">
       {/* The map and, beside it on a wide screen (under it on a narrow one), whatever is open: both stay in view. */}
@@ -128,6 +148,7 @@ export function TypesPage() {
                     </option>
                   ))}
                 </select>
+                <ShareButton share={{ ...share, svg: () => shareCardSvg(meta, share, colorOf) }} />
               </div>
             }
             legend={

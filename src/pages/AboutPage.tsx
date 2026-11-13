@@ -31,7 +31,9 @@ export function AboutPage() {
             everyone.
           </p>
         </section>
-        <p className="fineprint">{AMAZON_DISCLOSURE}</p>
+        <p className="fineprint">
+          {AMAZON_DISCLOSURE} <Link to="/privacy">Privacy</Link>
+        </p>
       </article>
     </div>
   );

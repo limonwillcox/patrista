@@ -10,11 +10,24 @@ workers_dev = true
 
 [vars]
 DONATE_PUBLIC_ORIGIN = "https://patrista.com"
+GOOGLE_CLIENT_ID = "503931769117-sv387uh4rtuplj84vufhgvjr4sc65d6e.apps.googleusercontent.com"
 
 [[kv_namespaces]]
 binding = "FIXES_KV"
 id = "49d0718051434b8791afc06d9aa96ef1"
 preview_id = "8c8de87185c443fb8f44eff727765922"
+
+# Reader accounts: optional Google sign-in that keeps highlights and notes (server/account.ts).
+# 1. npx wrangler d1 create patrista-accounts        (paste the database_id below, uncomment)
+# 2. npx wrangler d1 execute patrista-accounts --remote --file=data/account/schema.sql
+# 3. Google Cloud Console > Credentials > OAuth client ID (Web application), with
+#    https://patrista.com and https://www.patrista.com as authorised JavaScript origins.
+#    Put the client ID in GOOGLE_CLIENT_ID under [vars] above, and in the GitHub repository
+#    variable VITE_GOOGLE_CLIENT_ID so the site shows "Sign in". It is not a secret.
+[[d1_databases]]
+binding = "ACCOUNT_DB"
+database_name = "patrista-accounts"
+database_id = "e0eacc88-a6a5-4eba-93ec-0f509f6eb014"
 
 # Clavis catalogue (D1). Uncomment after: npx wrangler d1 create patrista-clavis
 # Bodies do not go in this database. Apply data/clavis/schema.sql with wrangler d1 execute.

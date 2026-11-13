@@ -1,0 +1,10 @@
+{
+  "_about": "Corrections to the path matches in works.jsonl. Value: a Clavis work id; {id, numbers} when Clavis files the work inside a larger entry; null to remove a wrong label. Read by scripts/clavis/build_site_labels.py.",
+  "Fathers/English/Athanasius_English/Statement of Faith.txt": "57EC4F8CA0DD4A8581B9DDDAB1617625",
+  "Fathers/English/Gregory_Thaumaturgus_English/Declaration of Faith.txt": {
+    "id": "CCB90483EE7044AAA01EFE6A4252DEEF",
+    "numbers": ["CPG-1764"]
+  },
+  "Fathers/English/Gregory_Thaumaturgus_English/Sectional Confession of Faith.txt": null,
+  "Fathers/English/Rufinus_English/Commentary on the Apostles' Creed.txt": "E476D611CB214B24B6221A37B1C60DE2"
+}

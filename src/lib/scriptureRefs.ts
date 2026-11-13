@@ -113,7 +113,7 @@ const NAME_ALT = BOOKS.flatMap((b) => b.names)
 const REF_RE = new RegExp(
   "(?<![A-Za-z0-9])(" +
     NAME_ALT +
-    ")\\.?\\s+([ivxlcIVXLC]+|\\d{1,3})(?:\\.|:|,)\\s?(\\d{1,3})(?:\\s?[-–]\\s?(\\d{1,3}))?",
+    ")\\.?\\s+([ivxlcIVXLC]+|\\d{1,3})(?:(?:\\.|:|,)\\s?(\\d{1,3}))?(?:\\s?[-–]\\s?(\\d{1,3}))?",
   "g"
 );
 
@@ -133,8 +133,13 @@ export function findScriptureRefs(text: string): ScriptureRef[] {
     const key = m[1].toLowerCase().replace(/\s+/g, " ").replace(/^([123])(?=[a-z])/, "$1 ");
     const book = BY_NAME.get(key);
     if (!book) continue;
-    const chapter = /^\d+$/.test(m[2]) ? Number(m[2]) : romanToInt(m[2]);
-    const verse = Number(m[3]);
+    let chapter = /^\d+$/.test(m[2]) ? Number(m[2]) : romanToInt(m[2]);
+    let verse = Number(m[3]);
+    // A one-chapter book is cited by verse alone: "Jude 8", "2 John 10", "Philem. 9, 10".
+    if (book.chapters === 1 && /^\d+$/.test(m[2]) && (!m[3] || chapter !== 1)) {
+      verse = Number(m[2]);
+      chapter = 1;
+    }
     if (!chapter || chapter > book.chapters || !verse || verse > 176) continue;
     const endVerse = m[4] ? Number(m[4]) : undefined;
     out.push({

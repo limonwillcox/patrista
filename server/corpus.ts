@@ -3,6 +3,7 @@ import { dirname, join, relative } from "path";
 import { fileURLToPath } from "url";
 import { authorMeta, loadEnglishAppWorks, wordCountFromPassages } from "./englishWorks";
 import type { Catalog, Footnote, Passage } from "./types";
+import { clavisForPath } from "./workClavis";
 
 const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII"];
 const ROMAN_SET = ROMAN.join("|");
@@ -268,7 +269,11 @@ export function loadLibrary(root = repoRoot()): Library {
   const confessionsPassages = passagesFromParsed(parsed);
   const catalog = catalogFromParsed(parsed);
   const confessionsWork = catalog.works.find((w) => w.id === "confessions");
-  if (confessionsWork) confessionsWork.wordCount = Math.max(1, wordCountFromPassages(confessionsPassages));
+  if (confessionsWork) {
+    confessionsWork.wordCount = Math.max(1, wordCountFromPassages(confessionsPassages));
+    const clavis = clavisForPath(relative(root, sources.english));
+    if (clavis) confessionsWork.clavis = clavis;
+  }
   const english = loadEnglishAppWorks(root);
 
   const authors = [...catalog.authors];

@@ -42,6 +42,7 @@ jobs:
         run: pnpm build
         env:
           VITE_DONATE_API_BASE: ${{ vars.VITE_DONATE_API_BASE }}
+          VITE_GOOGLE_CLIENT_ID: ${{ vars.VITE_GOOGLE_CLIENT_ID }}
       # Wrangler runs through npx, outside the project packages: pnpm blocks Wrangler's install script.
       - if: env.HAS_CF_TOKEN == 'true'
         run: npx --yes wrangler@4.158.0 pages deploy dist --project-name=patrista --branch=main --commit-dirty=true

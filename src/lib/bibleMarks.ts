@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
+import { BIBLE_HIGHLIGHTS_KEY } from "../../server/syncKeys";
+import { noteChange, onRemoteChange } from "./accountSync";
 
 /**
  * A reader's own marks in the Bible: highlighted verses (like a pen) and a note per verse. Kept in this
- * browser's storage. Verses are keyed "book.chapter.verse" (KJV numbering, the only text we have).
+ * browser's storage, and copied to the reader's account if they have signed in. Verses are keyed "book.chapter.verse" (KJV numbering, the only text we have).
  */
 
 export const HIGHLIGHT_COLORS = ["gold", "green", "blue", "rose"] as const;
 export type HighlightColor = (typeof HIGHLIGHT_COLORS)[number];
 
-const KEY = "patrista-bible-highlights-v1";
+const KEY = BIBLE_HIGHLIGHTS_KEY;
 let cache: Record<string, HighlightColor> | null = null;
 const listeners = new Set<() => void>();
 
@@ -43,7 +45,15 @@ export function setHighlight(book: string, chapter: number, from: number, to: nu
     /* private window: kept for this visit only */
   }
   listeners.forEach((f) => f());
+  noteChange(KEY);
 }
+
+// Highlights arrived from the account: drop the copy in memory and redraw.
+onRemoteChange((key) => {
+  if (key !== KEY) return;
+  cache = null;
+  listeners.forEach((f) => f());
+});
 
 /** All highlights, updating when any change. */
 export function useHighlights(): Record<string, HighlightColor> {

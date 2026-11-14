@@ -155,6 +155,32 @@ export function findScriptureRefs(text: string): ScriptureRef[] {
   return out;
 }
 
+// A chapter cited as a whole, the way the editors' footnotes write it: "Gen. xxxvii.", "Num. 16". The
+// chapter is a lowercase roman numeral or a number, and no verse follows. Capital numerals are left out:
+// "Luke I" is more often the start of a sentence than a chapter.
+const CHAPTER_RE = new RegExp("(?<![A-Za-z0-9])(" + NAME_ALT + ")\\.?\\s+([ivxlc]+|\\d{1,3})(?![A-Za-z0-9])(?!\\s?[.:,]\\s?\\d)(?!\\s?[-–]\\s?\\d)", "g");
+
+export type ChapterRef = { book: string; bookName: string; chapter: number; start: number; end: number };
+
+/**
+ * References to a whole chapter, with no verse. A book of one chapter has none: "Jude 8" is a verse.
+ * Meant for footnotes, where a book's name followed by a numeral is a reference; in running prose it
+ * can be chance ("Numbers 12 of them").
+ */
+export function findChapterRefs(text: string): ChapterRef[] {
+  const out: ChapterRef[] = [];
+  const src = normaliseNumberedPrefix(text);
+  for (const m of src.matchAll(CHAPTER_RE)) {
+    const key = m[1].toLowerCase().replace(/\s+/g, " ").replace(/^([123])(?=[a-z])/, "$1 ");
+    const book = BY_NAME.get(key);
+    if (!book || book.chapters === 1) continue;
+    const chapter = /^\d+$/.test(m[2]) ? Number(m[2]) : romanToInt(m[2]);
+    if (!chapter || chapter > book.chapters) continue;
+    out.push({ book: book.id, bookName: book.name, chapter, start: m.index ?? 0, end: (m.index ?? 0) + m[0].length });
+  }
+  return out;
+}
+
 export function scriptureLabel(ref: Pick<ScriptureRef, "bookName" | "chapter" | "verse" | "endVerse">): string {
   return ref.bookName + " " + ref.chapter + ":" + ref.verse + (ref.endVerse ? "–" + ref.endVerse : "");
 }

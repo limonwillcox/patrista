@@ -6,8 +6,8 @@ disable-model-invocation: true
 
 # Ship to patrista.com
 
-A merge to `main` is a production deploy: the "Deploy Cloudflare Pages" workflow builds the site and
-uploads it. No CI checks a pull request first, so every check below runs here, before the merge.
+Deploys are manual: a merge to `main` does not deploy. The "Deploy Cloudflare Pages" workflow builds
+`main` and uploads it only when it is started by hand (step 3). Run every check below here, before the merge.
 Stop and report at the first failure. Do not merge something that failed a check.
 
 Arguments, if given, are the commit message or a note on what to ship: `$ARGUMENTS`
@@ -42,7 +42,8 @@ If the change can be seen in a browser and has not been looked at yet, open the 
 3. `gh pr create --base main` with a short body: what changes for a reader, how it was checked,
    what was not checked.
 4. `gh pr merge <number> --merge`.
-5. Find the run with `gh run list --workflow cloudflare-pages.yml --limit 1` and wait for it with
+5. Start the deploy: `gh workflow run cloudflare-pages.yml --ref main`. Find the run with
+   `gh run list --workflow cloudflare-pages.yml --limit 1` and wait for it with
    `gh run watch <id> --exit-status` in the background. Do not poll.
 
 ## 4. The API worker (only if it changed)

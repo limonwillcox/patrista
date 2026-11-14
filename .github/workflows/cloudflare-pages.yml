@@ -3,10 +3,12 @@ name: Deploy Cloudflare Pages
 # The site is built here and uploaded to the Cloudflare Pages project "patrista" with Wrangler.
 # Wrangler uploads only files that changed, so a deploy does not copy the whole site each time.
 # Secrets: CLOUDFLARE_API_TOKEN (Account > Cloudflare Pages > Edit), CLOUDFLARE_ACCOUNT_ID.
+#
+# Deploys are manual: a push to main does not deploy. Run this workflow from the Actions tab, or with
+#   gh workflow run "Deploy Cloudflare Pages"
+# It always builds and deploys main.
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:

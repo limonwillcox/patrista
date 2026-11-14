@@ -112,6 +112,23 @@ it keeps the Fathers' quotations, which are public domain.
    - *Cited together*: two passages cited in one paragraph of at most 8 references, not in the same story.
    - *Types*: the typological links recorded from the Fathers by hand (`sources.json`, entries `04:*`).
 
+## Stories
+
+A Father who speaks of a whole story is tied by his editor's footnote to one verse of it: Clement's
+"Envy brought down Dathan and Abiram alive to Hades" sits on Numbers 16:33 alone. The Commentary tab
+therefore shows, under a verse's own passages, what the Fathers wrote on the rest of its story
+(`src/components/Commentary.tsx`, `storyPassages` in `src/components/FathersThread.tsx`).
+
+The story list (`public/stories/<book>.json`) is the Berean Standard Bible's section headings (public
+domain), with the long stories joined by hand in `data/stories/merges.json`. Rebuild it with
+`python -I scripts/stories/build_stories.py`.
+
+A footnote that names a chapter and no verse ("Gen. xxxvii.") is kept under verse 0 of that chapter in
+`/api/scripture/` and shown with the stories of that chapter, marked "ch. 37". These are looser than
+verse references: the editor may be pointing at the chapter for another reason.
+
+Not done yet: a Father who names a story with no reference at all.
+
 ## Retired
 
 The story-shape matcher, the whole-Bible 3D map and the symbol entries were taken out of the site

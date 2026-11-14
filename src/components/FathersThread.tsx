@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { fetchChapter } from "../api/client";
-import { citeRank, type VerseCite } from "../api/scripture";
+import { citeRank, type ChapterCitations, type VerseCite } from "../api/scripture";
 import type { Link as CommentaryLink } from "../api/links";
 import { useApp } from "../context/AppContext";
 import { fatherImage } from "../lib/fatherImages";
 import { englishParagraphs } from "../lib/fatherPaths";
 import { paraAnchor } from "../lib/readAnchors";
+import { inStory, storyWhere, verseRuns, type Story } from "../lib/stories";
 import { readPath } from "../lib/workSlugs";
 
 /*
@@ -46,6 +47,8 @@ export type CitingPassage = {
   source?: string;
   /** True when it comes from a commentary collection: a passage written on this verse. */
   commentary?: boolean;
+  /** Where in a story it lands ("vv. 31–33", "7:11, 8:2", "ch. 37"), shown in place of the verses. */
+  where?: string;
 };
 
 export const CITE_PAGE = 6;
@@ -88,6 +91,25 @@ export function mergeCites(lists: [number, VerseCite[]][]): CitingPassage[] {
       by.set(c[0], p);
     }
   return [...by.values()].sort((a, b) => b.rank - a.rank || a.title.localeCompare(b.title));
+}
+
+/**
+ * Every passage of the Fathers on any verse of a story, one entry per chapter of theirs, the passage that
+ * works through most of the story first. `chapters` holds the citations of each Bible chapter the story
+ * touches. A chapter cited as a whole (key "<chapter>:0") counts for the story too. `skip` leaves out
+ * passages already shown, by key.
+ */
+export function storyPassages(chapters: [number, ChapterCitations | null][], story: Story, skip: Set<string> = new Set()): CitingPassage[] {
+  // mergeCites keys verses by one number: chapter * 1000 + verse.
+  const lists: [number, VerseCite[]][] = [];
+  for (const [chapter, cites] of chapters)
+    for (const [key, list] of Object.entries(cites ?? {})) {
+      const [c, v] = key.split(":").map(Number);
+      if (c === chapter && (v === 0 || inStory(story, c, v))) lists.push([c * 1000 + v, list]);
+    }
+  return mergeCites(lists)
+    .filter((p) => !skip.has(p.key))
+    .map((p) => ({ ...p, where: storyWhere(p.verses.map((n): [number, number] => [Math.floor(n / 1000), n % 1000]), story) }));
 }
 
 /** Footnote markers ("[12]") left in the text by the editions. */
@@ -224,7 +246,7 @@ function buildThread(passages: CitingPassage[], authorOf: (p: CitingPassage) => 
  * A list of the Fathers' words, like the comments under a post. A dropdown hears one Father; another puts
  * the most to the point first, or the earliest first.
  */
-export function Thread({ passages, showVerses }: { passages: CitingPassage[]; showVerses: boolean }) {
+export function Thread({ passages, showVerses, of = "verse" }: { passages: CitingPassage[]; showVerses: boolean; of?: "verse" | "story" }) {
   const [who, setWho] = useState("");
   const [oldest, setOldest] = useState(false);
   const [shown, setShown] = useState(CITE_PAGE);
@@ -273,7 +295,7 @@ export function Thread({ passages, showVerses }: { passages: CitingPassage[]; sh
             </select>
           ) : null}
           <select className="cx-who-select" aria-label="Order" value={oldest ? "old" : "best"} onChange={(e) => setOldest(e.target.value === "old")}>
-            <option value="best">Most on this verse first</option>
+            <option value="best">Most on this {of} first</option>
             <option value="old">Earliest first</option>
           </select>
         </div>
@@ -412,10 +434,7 @@ function FatherComment({ p, authorId, showVerses, replyTo, children }: { p: Citi
           ) : null}
           {title}
           {showVerses ? (
-            <span className="cx-comment-v">
-              {p.verses.length > 1 ? "vv. " : "v. "}
-              {p.verses.join(", ")}
-            </span>
+            <span className="cx-comment-v">{p.where ?? (p.verses.length > 1 ? "vv. " : "v. ") + verseRuns(p.verses)}</span>
           ) : null}
         </div>
         {text}

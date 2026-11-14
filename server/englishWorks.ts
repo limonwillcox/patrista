@@ -832,6 +832,8 @@ const AUTHOR_META: Record<string, AuthorMeta> = {
 
 const BOOK_NUM = "([IVXLCDM]+|\\d+|First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth)";
 const BOOK_RE = new RegExp("^\\s*Book\\s+" + BOOK_NUM + "\\s*[\\.\\—\\-.]", "im");
+/** A paragraph that is a book heading and nothing else: "Book II.", "BOOK IV". */
+const BARE_BOOK_RE = new RegExp("^Book\\s+" + BOOK_NUM + "\\.?$", "i");
 /**
  * "Chapter IV.--Title", "Chapter 4. Title", and NPNF's double numbering "Chapter 1 [I.]--Introductory."
  * (the bracket gives the older Benedictine numeral; without it the opening chapters of many
@@ -1847,6 +1849,8 @@ function parseEnglishWorkFlat(spec: EnglishWorkSpec, root: string): { work: Work
     // A unit that another work already holds whole (see dropUnitLabels) is left out; its text goes with it.
     if (spec.dropUnitLabels?.includes(cleanUnitLabel(marks[i].label))) continue;
     const { paras, footnotes } = parasAndNotesFromBlock(block);
+    // The next book's bare heading ("Book II.") sits after a book's last chapter: it is no part of that chapter.
+    if (mode === "chapter") while (paras.length > 1 && BARE_BOOK_RE.test(paras[paras.length - 1].trim())) paras.pop();
     let heading = spec.unitTitles?.[i] ?? (spec.keepUnitLabel ? cleanUnitLabel(marks[i].label) : unitLabel(mode, marks[i].label));
     // Collections of several works (Chrysostom's volumes): numbering restarts at I for each work.
     let groupLabel = "";

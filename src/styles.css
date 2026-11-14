@@ -3749,6 +3749,11 @@ a.cm-father-name:hover { color: var(--accent); text-decoration: none; }
 .cm-source { display: inline-block; margin-top: 6px; font-size: 12px; color: var(--muted); }
 .cm-source:hover { color: var(--accent); }
 .cm-empty p { margin: 14px 0 0; font-size: 15px; line-height: 1.55; }
+/* The Fathers on the story the verse belongs to, under the verse's own passages. */
+.cm-story { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--border); }
+html:not([data-theme="night"]) .cm-story { border-top-color: var(--linen-border); }
+.cm-story-title { margin: 2px 0 8px; font-family: var(--serif); font-size: 21px; font-weight: 500; line-height: 1.2; }
+.cm-story-title span { margin-left: 6px; font-family: var(--sans, inherit); font-size: 13px; color: var(--muted); white-space: nowrap; }
 .cm-goto { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .cm-goto a, .cm-goto button {
   display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border: 1px solid var(--border);

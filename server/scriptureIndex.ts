@@ -4,7 +4,7 @@ import { getWork } from "./api";
 import { repoRoot } from "./corpus";
 import type { Catalog } from "./types";
 import { assignChapterSlugs, chapterPublicPath, englishParagraphs } from "../src/lib/fatherPaths";
-import { findScriptureRefs } from "../src/lib/scriptureRefs";
+import { findChapterRefs, findScriptureRefs } from "../src/lib/scriptureRefs";
 import { readPath } from "../src/lib/workSlugs";
 
 /**
@@ -15,6 +15,9 @@ import { readPath } from "../src/lib/workSlugs";
  * (made on request by the dev server, written as files by the static build), with the KJV text at
  * /api/scripture/kjv.json so the browser can find the verse behind a phrase. The search and the
  * Connections tab both read them; every citing chapter is kept, none cut.
+ *
+ * A footnote that names a chapter and no verse ("Gen. xxxvii.") is kept under verse 0 of that chapter
+ * ("37:0"). No verse shows it; the Commentary tab shows it with the stories of that chapter.
  */
 
 /**
@@ -112,6 +115,38 @@ function bestSentence(para: string, words: Set<string>): string | null {
   return t.length > EXCERPT ? t.slice(0, EXCERPT).replace(/\s\S*$/, "") + "…" : t;
 }
 
+/**
+ * The names in a Bible chapter and how often each comes: its capitalised words, leaving out the first word
+ * of each verse and sentence.
+ */
+function chapterNames(kjv: KjvText, book: string, chapter: number): Map<string, number> {
+  const out = new Map<string, number>();
+  for (const verse of kjv.books.find((b) => b.id === book)?.c[chapter - 1] ?? [])
+    for (const m of verse.replace(/\s\S+\.\.\.:.*$/, "").matchAll(/(?<=[a-z,;] )[A-Z][a-z]{2,}/g))
+      if (!/^(God|Lord|Thou|Thy|Thee|Thine|Mine|Behold|The|And)$/.test(m[0])) out.set(m[0].toLowerCase(), (out.get(m[0].toLowerCase()) ?? 0) + 1);
+  return out;
+}
+
+/**
+ * The sentence of a paragraph that names the people and places of a chapter: where it speaks of it. A name
+ * weighs as often as the chapter uses it, so "Joseph" in Genesis 37 outweighs "Egypt" and "Pharaoh".
+ */
+function sentenceNaming(para: string, names: Map<string, number>): string | null {
+  let best = "";
+  let score = 0;
+  for (const sent of para.match(/[^.!?]+[.!?]+["”’)]*|[^.!?]+$/g) ?? []) {
+    let hit = 0;
+    for (const w of new Set(sent.toLowerCase().match(/[a-z]{3,}/g) ?? [])) hit += names.get(w) ?? 0;
+    if (hit > score) {
+      score = hit;
+      best = sent;
+    }
+  }
+  if (!best) return null;
+  const t = best.replace(/\s+/g, " ").trim();
+  return t.length > EXCERPT ? t.slice(0, EXCERPT).replace(/\s\S*$/, "") + "…" : t;
+}
+
 let cached: Map<string, BookCitations> | null = null;
 /** Per Bible book, per verse: every chapter of the Fathers citing it, best first. */
 let cachedCounts: Record<string, number> = {};
@@ -126,6 +161,12 @@ export function scriptureCitations(catalog: Catalog): Map<string, BookCitations>
     return wordsOf.get(k)!;
   };
   // book -> "c:v" -> url -> cite
+  const namesOf = new Map<string, Map<string, number>>();
+  const names = (book: string, chapter: number) => {
+    const k = book + chapter;
+    if (!namesOf.has(k)) namesOf.set(k, chapterNames(kjv, book, chapter));
+    return namesOf.get(k)!;
+  };
   const index = new Map<string, Map<string, Map<string, VerseCite>>>();
   for (const w of catalog.works) {
     const payload = getWork(w.id);
@@ -170,6 +211,8 @@ export function scriptureCitations(catalog: Catalog): Map<string, BookCitations>
             touched.push(cite);
             touchedChapter.set(cite, book + " " + chapter);
           }
+          // Verse 0 is the chapter cited as a whole: it adds nothing to the focus on its verses.
+          if (!v) continue;
           const bc = book + " " + chapter;
           if (!versesIn.has(bc)) versesIn.set(bc, new Set());
           versesIn.get(bc)!.add(v);
@@ -183,6 +226,7 @@ export function scriptureCitations(catalog: Catalog): Map<string, BookCitations>
         const p = paras[f.para] ?? "";
         for (const r of findScriptureRefs(f.text))
           add(r.book, r.chapter, r.verse, r.endVerse, f.para, bestSentence(p, words(r.book, r.chapter, r.verse)) ?? excerpt(p));
+        for (const r of findChapterRefs(f.text)) add(r.book, r.chapter, 0, undefined, f.para, sentenceNaming(p, names(r.book, r.chapter)) ?? excerpt(p));
       }
       for (const cite of touched) cite[5] = versesIn.get(touchedChapter.get(cite)!)?.size ?? 1;
     }
@@ -191,7 +235,7 @@ export function scriptureCitations(catalog: Catalog): Map<string, BookCitations>
   cachedCounts = {};
   for (const [book, verses] of index) {
     const b: BookCitations = {};
-    for (const [key, chapters] of verses) cachedCounts[book + " " + key] = chapters.size;
+    for (const [key, chapters] of verses) if (!key.endsWith(":0")) cachedCounts[book + " " + key] = chapters.size;
     for (const [key, chapters] of verses)
       b[key] = [...chapters.values()].sort((x, y) => rank(y) - rank(x) || x[1].localeCompare(y[1]));
     out.set(book, b);
@@ -234,7 +278,7 @@ export function writeScriptureIndex(dist: string, catalog: Catalog, root: string
     mkdirSync(join(dir, book), { recursive: true });
     const chapters = new Set(Object.keys(cites).map((k) => Number(k.split(":")[0])));
     for (const ch of chapters) writeFileSync(join(dir, book, ch + ".json"), JSON.stringify(chapterCitations(cites, ch)));
-    verses += Object.keys(cites).length;
+    verses += Object.keys(cites).filter((k) => !k.endsWith(":0")).length;
   }
   writeFileSync(join(dir, "kjv.json"), JSON.stringify(kjvText(root)));
   writeFileSync(join(dir, "counts.json"), JSON.stringify(citationCounts(catalog)));

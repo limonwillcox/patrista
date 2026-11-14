@@ -171,7 +171,8 @@ export function BiblePage() {
         const c: Record<number, number> = { ...curated };
         for (const [k, list] of Object.entries(cites ?? {})) {
           const [ch, v] = k.split(":").map(Number);
-          if (ch === chapter) c[v] = Math.max(c[v] ?? 0, list.length);
+          // Verse 0 is the chapter cited as a whole: it counts for the story, not for a verse.
+          if (ch === chapter && v > 0) c[v] = Math.max(c[v] ?? 0, list.length);
         }
         return curated || cites ? c : null;
       })
@@ -454,6 +455,7 @@ export function BiblePage() {
         bookName={bookName}
         chapter={chapter}
         verse={verse}
+        withStory
         counts={counts ?? null}
         onClose={isSheet ? () => setSheetOpen(false) : undefined}
         onPickVerse={(n) => {

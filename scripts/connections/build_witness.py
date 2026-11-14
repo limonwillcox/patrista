@@ -66,7 +66,7 @@ def make_parser(books):
         for n in b["names"]:
             by_name[n.lower()] = b
     alt = "|".join(n.replace(" ", r"\s?") for n in sorted((n for b in books for n in b["names"]), key=len, reverse=True))
-    ref_re = re.compile(r"(?<![A-Za-z0-9])(" + alt + r")\.?\s+([ivxlcIVXLC]+|\d{1,3})(?:\.|:|,)\s?(\d{1,3})(?:\s?[-–]\s?(\d{1,3}))?")
+    ref_re = re.compile(r"(?<![A-Za-z0-9])(" + alt + r")\.?\s+([ivxlcIVXLC]+|\d{1,3})(?:(?:\.|:|,)\s?(\d{1,3}))?(?:\s?[-–]\s?(\d{1,3}))?")
     prefix = re.compile(r"\b(III|II|I) (?=[A-Z][a-z])")
 
     def parse(text):
@@ -79,7 +79,10 @@ def make_parser(books):
             if not b:
                 continue
             ch = int(m[2]) if m[2].isdigit() else roman(m[2])
-            vs = int(m[3])
+            vs = int(m[3]) if m[3] else 0
+            # A one-chapter book is cited by verse alone: "Jude 8", "2 John 10", "Philem. 9, 10".
+            if b["chapters"] == 1 and m[2].isdigit() and (not m[3] or ch != 1):
+                ch, vs = 1, int(m[2])
             if not ch or ch > b["chapters"] or not vs or vs > 176:
                 continue
             out.append((b["id"], ch, vs))

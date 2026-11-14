@@ -26,7 +26,10 @@
     "clavis:import":"node scripts/clavis/import-works.mjs",
     "clavis:pack": "node scripts/clavis/pack-sqlite.mjs",
     "clavis:attach-english": "node scripts/clavis/attach-english.mjs",
-    "clavis:backfill-provenance": "node scripts/clavis/backfill-provenance.mjs"
+    "clavis:backfill-provenance": "node scripts/clavis/backfill-provenance.mjs",
+    "clavis:browse": "python -I scripts/clavis/browse_works.py data/clavis/full/browse",
+    "clavis:checklist": "python -I scripts/clavis/normalize_full.py",
+    "clavis:labels": "python -I scripts/clavis/build_site_labels.py"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

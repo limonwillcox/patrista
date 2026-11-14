@@ -113,7 +113,7 @@ const NAME_ALT = BOOKS.flatMap((b) => b.names)
 const REF_RE = new RegExp(
   "(?<![A-Za-z0-9])(" +
     NAME_ALT +
-    ")\\.?\\s+([ivxlcIVXLC]+|\\d{1,3})(?:\\.|:|,)\\s?(\\d{1,3})(?:\\s?[-–]\\s?(\\d{1,3}))?",
+    ")\\.?\\s+([ivxlcIVXLC]+|\\d{1,3})(?:(?:\\.|:|,)\\s?(\\d{1,3}))?(?:\\s?[-–]\\s?(\\d{1,3}))?",
   "g"
 );
 
@@ -133,8 +133,13 @@ export function findScriptureRefs(text: string): ScriptureRef[] {
     const key = m[1].toLowerCase().replace(/\s+/g, " ").replace(/^([123])(?=[a-z])/, "$1 ");
     const book = BY_NAME.get(key);
     if (!book) continue;
-    const chapter = /^\d+$/.test(m[2]) ? Number(m[2]) : romanToInt(m[2]);
-    const verse = Number(m[3]);
+    let chapter = /^\d+$/.test(m[2]) ? Number(m[2]) : romanToInt(m[2]);
+    let verse = Number(m[3]);
+    // A one-chapter book is cited by verse alone: "Jude 8", "2 John 10", "Philem. 9, 10".
+    if (book.chapters === 1 && /^\d+$/.test(m[2]) && (!m[3] || chapter !== 1)) {
+      verse = Number(m[2]);
+      chapter = 1;
+    }
     if (!chapter || chapter > book.chapters || !verse || verse > 176) continue;
     const endVerse = m[4] ? Number(m[4]) : undefined;
     out.push({
@@ -146,6 +151,32 @@ export function findScriptureRefs(text: string): ScriptureRef[] {
       start: m.index ?? 0,
       end: (m.index ?? 0) + m[0].length
     });
+  }
+  return out;
+}
+
+// A chapter cited as a whole, the way the editors' footnotes write it: "Gen. xxxvii.", "Num. 16". The
+// chapter is a lowercase roman numeral or a number, and no verse follows. Capital numerals are left out:
+// "Luke I" is more often the start of a sentence than a chapter.
+const CHAPTER_RE = new RegExp("(?<![A-Za-z0-9])(" + NAME_ALT + ")\\.?\\s+([ivxlc]+|\\d{1,3})(?![A-Za-z0-9])(?!\\s?[.:,]\\s?\\d)(?!\\s?[-–]\\s?\\d)", "g");
+
+export type ChapterRef = { book: string; bookName: string; chapter: number; start: number; end: number };
+
+/**
+ * References to a whole chapter, with no verse. A book of one chapter has none: "Jude 8" is a verse.
+ * Meant for footnotes, where a book's name followed by a numeral is a reference; in running prose it
+ * can be chance ("Numbers 12 of them").
+ */
+export function findChapterRefs(text: string): ChapterRef[] {
+  const out: ChapterRef[] = [];
+  const src = normaliseNumberedPrefix(text);
+  for (const m of src.matchAll(CHAPTER_RE)) {
+    const key = m[1].toLowerCase().replace(/\s+/g, " ").replace(/^([123])(?=[a-z])/, "$1 ");
+    const book = BY_NAME.get(key);
+    if (!book || book.chapters === 1) continue;
+    const chapter = /^\d+$/.test(m[2]) ? Number(m[2]) : romanToInt(m[2]);
+    if (!chapter || chapter > book.chapters) continue;
+    out.push({ book: book.id, bookName: book.name, chapter, start: m.index ?? 0, end: (m.index ?? 0) + m[0].length });
   }
   return out;
 }

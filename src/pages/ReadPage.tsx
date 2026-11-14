@@ -8,7 +8,7 @@ import { ChapterDock } from "../components/ChapterDock";
 import { DictionaryDock } from "../components/DictionaryDock";
 import { HardcoverDock } from "../components/HardcoverDock";
 import { ManuscriptButton } from "../components/manuscript/ManuscriptButton";
-import { MANUSCRIPTS } from "../data/manuscripts";
+import { useManuscripts } from "../lib/useManuscripts";
 import { DockNotch } from "../components/DockNotch";
 import { readPath, resolveWorkId, staticWorkId, workIdForReadPath } from "../lib/workSlugs";
 import { useApp } from "../context/AppContext";
@@ -19,6 +19,7 @@ import { copyText } from "../lib/clipboard";
 import { bibliography, bibliographyHtml, editionFor, hashChapter, hashParagraph, paraAnchor, quoteWithCitation, quoteWithCitationHtml, shareText, translatorFor } from "../lib/readAnchors";
 import { saintName } from "../lib/saintName";
 import { attributionText, citationAuthor, hasAttribution } from "../../server/workMeta";
+import { noteChange } from "../lib/accountSync";
 
 const HL_COLORS = ["hl-yellow", "hl-green", "hl-blue", "hl-pink"] as const;
 
@@ -183,6 +184,7 @@ function saveHighlights(work: string, root: HTMLElement) {
     if (off && para.dataset.key) list.push({ key: para.dataset.key, start: off.start, end: off.end, color });
   });
   localStorage.setItem("fg-hl-" + work, JSON.stringify({ v: 2, list }));
+  noteChange("fg-hl-" + work);
 }
 
 function aroundChapter(chapters: WorkChapterMeta[], n: number): number[] {
@@ -209,6 +211,7 @@ function restoreHighlights(work: string, root: HTMLElement) {
 }
 
 export function ReadPage() {
+  const manuscripts = useManuscripts();
   const { catalog, version, setVersion, setActivePassage, mode, setMode, parallel, setParallel, showToast } = useApp();
   const location = useLocation();
   const chapterRoute = parseFatherChapterPath(location.pathname);
@@ -760,7 +763,7 @@ export function ReadPage() {
             <Link className="read-print-link" to={"/print?work=" + encodeURIComponent(outline.work.id)}>
               Download PDF
             </Link>
-            {MANUSCRIPTS[outline.work.id] ? (
+            {manuscripts?.MANUSCRIPTS[outline.work.id] ? (
               <>
                 {" · "}
                 <ManuscriptButton className="read-print-link read-ms-link" workId={outline.work.id} title={outline.work.title} />

@@ -476,12 +476,14 @@ export type PrerenderOpts = {
   extraHead?: string;
   /** Father's portrait for the link card. Absent, the site image is used. */
   ogImage?: { url: string; width: number; height: number } | null;
+  /** The picture shown when the page's link is pasted somewhere, from the site root. Default: the site's own. */
+  imagePath?: string;
 };
 
 /** Fill the Vite shell (dist/index.html) with crawlable body copy. */
 export function prerenderShell(indexHtml: string, origin: string, opts: PrerenderOpts): string {
   const canonical = origin + opts.canonicalPath;
-  const image = opts.ogImage?.url || origin + "/og-image.png";
+  const image = opts.ogImage?.url || origin + (opts.imagePath || "/og-image.png");
   const imageWidth = opts.ogImage?.width || 1200;
   const imageHeight = opts.ogImage?.height || 630;
   const headParts = [

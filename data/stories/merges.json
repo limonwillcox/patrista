@@ -1,0 +1,56 @@
+{
+  "about": "Stories that run over several section headings of the Berean Standard Bible, joined by hand (2026-11-14). Each must start where a section starts and end where one ends: scripts/stories/build_stories.py stops if one does not. Titles are ours. Run: python -I scripts/stories/build_stories.py",
+  "stories": {
+    "gn": [
+      { "from": "1:1", "to": "2:3", "title": "The Creation" },
+      { "from": "3:1", "to": "3:24", "title": "The Fall" },
+      { "from": "6:1", "to": "9:17", "title": "The Flood" },
+      { "from": "9:18", "to": "9:29", "title": "Noah’s Drunkenness and the Curse of Canaan" },
+      { "from": "18:1", "to": "18:15", "title": "The Three Visitors at Mamre" },
+      { "from": "18:16", "to": "19:29", "title": "Sodom and Gomorrah" },
+      { "from": "22:1", "to": "22:19", "title": "The Offering of Isaac" },
+      { "from": "24:1", "to": "24:67", "title": "Rebekah, a Wife for Isaac" },
+      { "from": "27:1", "to": "27:46", "title": "Jacob Takes Esau’s Blessing" },
+      { "from": "28:10", "to": "28:22", "title": "Jacob’s Ladder" },
+      { "from": "37:1", "to": "37:36", "title": "Joseph Sold by His Brothers" },
+      { "from": "39:1", "to": "39:23", "title": "Joseph and Potiphar’s Wife" }
+    ],
+    "ex": [
+      { "from": "3:1", "to": "4:17", "title": "Moses at the Burning Bush" },
+      { "from": "7:14", "to": "11:10", "title": "The Plagues of Egypt" },
+      { "from": "12:1", "to": "12:51", "title": "The Passover and the Exodus" },
+      { "from": "14:1", "to": "15:21", "title": "The Crossing of the Red Sea" },
+      { "from": "16:1", "to": "16:36", "title": "Manna in the Wilderness" }
+    ],
+    "nm": [
+      { "from": "13:1", "to": "14:45", "title": "The Spies and Israel’s Rebellion" },
+      { "from": "16:1", "to": "16:50", "title": "The Rebellion of Korah, Dathan and Abiram" },
+      { "from": "22:1", "to": "24:25", "title": "Balaam" }
+    ],
+    "js": [
+      { "from": "2:1", "to": "2:24", "title": "Rahab and the Spies" },
+      { "from": "3:1", "to": "4:24", "title": "Crossing the Jordan" },
+      { "from": "7:1", "to": "7:26", "title": "The Sin of Achan" }
+    ],
+    "jud": [
+      { "from": "6:1", "to": "8:35", "title": "Gideon" },
+      { "from": "13:1", "to": "16:31", "title": "Samson" }
+    ],
+    "1sm": [
+      { "from": "1:1", "to": "2:11", "title": "Hannah and the Birth of Samuel" },
+      { "from": "17:1", "to": "17:58", "title": "David and Goliath" }
+    ],
+    "2sm": [{ "from": "11:1", "to": "12:25", "title": "David, Bathsheba and Nathan" }],
+    "1kgs": [
+      { "from": "17:8", "to": "17:24", "title": "Elijah and the Widow of Zarephath" },
+      { "from": "18:16", "to": "18:46", "title": "Elijah on Mount Carmel" }
+    ],
+    "2kgs": [{ "from": "5:1", "to": "5:27", "title": "Naaman" }],
+    "dn": [
+      { "from": "3:1", "to": "3:30", "title": "The Fiery Furnace" },
+      { "from": "5:1", "to": "5:31", "title": "Belshazzar’s Feast" },
+      { "from": "6:1", "to": "6:28", "title": "Daniel in the Lions’ Den" }
+    ],
+    "jn": [{ "from": "1:1", "to": "2:10", "title": "Jonah and the Great Fish" }]
+  }
+}

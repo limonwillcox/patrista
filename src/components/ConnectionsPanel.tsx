@@ -27,6 +27,10 @@ import {
 import { fetchChapterCitations, type ChapterCitations, type VerseCite } from "../api/scripture";
 import { mergeCites, Thread, type CitingPassage } from "./FathersThread";
 import { NotesBar } from "./NotesBar";
+import { ShareButton, type Shareable } from "./ShareButton";
+import { cardSvg, describeShare, shareCardSvg } from "../lib/typeShare";
+import { SAVED_CONNECTIONS_KEY } from "../../server/syncKeys";
+import { noteChange, onRemoteChange } from "../lib/accountSync";
 import { findPatterns, groupCurated, overlaps, STRENGTH_TEXT, type Pattern, type Strength, type TypeLink } from "../lib/connectionPatterns";
 
 /*
@@ -230,7 +234,7 @@ function WordChip({ code, lex, onWord }: { code: string; lex: Record<string, Str
 /* ---------- saved connections ---------- */
 
 type Saved = { a: [number, number]; b: [number, number]; why: string; at: number };
-const SAVED_KEY = "patrista-cx-saved-v1";
+const SAVED_KEY = SAVED_CONNECTIONS_KEY;
 let savedCache: Saved[] | null = null;
 const savedListeners = new Set<() => void>();
 function loadSaved(): Saved[] {
@@ -250,7 +254,14 @@ function writeSaved(list: Saved[]) {
     /* private window: saved for this visit only */
   }
   savedListeners.forEach((f) => f());
+  noteChange(SAVED_KEY);
 }
+// Saved connections arrived from the account: drop the copy in memory and redraw.
+onRemoteChange((key) => {
+  if (key !== SAVED_KEY) return;
+  savedCache = null;
+  savedListeners.forEach((f) => f());
+});
 function useSaved(): Saved[] {
   const [, rerender] = useState(0);
   useEffect(() => {
@@ -1066,6 +1077,36 @@ export function ConnectionsPanel({
         Connections <span>{rangeLabel(meta, here[0], here[1])}</span>
       </>
     );
+  // What Share sends. A type is shared as its page on the types map (with the live diagram to embed);
+  // a verse, a passage or a word as this place in the Bible reader, with the chart above as its picture.
+  const TYPE_COLOR = "#b98317";
+  let shareable: Shareable | null = null;
+  if (mode === "type") {
+    if (typeEntry) {
+      const share = describeShare(meta, { type: typeEntry, drawn: [typeEntry] });
+      shareable = { ...share, svg: () => shareCardSvg(meta, share, () => TYPE_COLOR) };
+    }
+  } else if (data !== undefined) {
+    const wordText = word ? place.text || gloss(word, we, glosses) || word : "";
+    const shareTitle = word ? "“" + wordText + "” in " + refLabel(meta, place.from) : rangeLabel(meta, here[0], here[1]);
+    const shareSub = word ? plural(dots.length, "other verse") + " with this word" : plural(arcs.length, "connection") + " across Scripture";
+    const drawing = {
+      kicker: "Connections across Scripture",
+      arcs: arcs.map((a) => ({
+        from: a.s ? a.s[0] : here[0],
+        to: a.a,
+        color: a.cls.includes("is-type") ? TYPE_COLOR : a.cls.includes("is-fathers") ? "#952004" : "#6b645a"
+      })),
+      dots: [...dots.map((d) => ({ vid: d.vid, color: d.cls.includes("is-cited") ? "#952004" : "#a39d93" })), { vid: here[0], color: "#1f1f1f" }],
+      bold: !word && arcs.length <= 3
+    };
+    shareable = {
+      title: shareTitle,
+      path: bibleHrefFor(meta, place.from) + "&panel=connections",
+      svg: () => cardSvg(meta, shareTitle, shareSub, drawing)
+    };
+  }
+
   // Notes on a word or a type live here; a verse's note is written in the reader's margin.
   const noteKey = place.type ? "bible-cx-t-" + place.type : word ? "bible-cx-w-" + word : null;
   const shown = patterns.slice(0, more ? 30 : PATTERNS_SHOWN);
@@ -1083,6 +1124,7 @@ export function ConnectionsPanel({
           </button>
         </div>
         <h2>{title}</h2>
+        {shareable ? <ShareButton small share={shareable} /> : null}
         {onClose ? (
           <button type="button" className="cx-close" aria-label="Close" onClick={onClose}>
             ×

@@ -1,3 +1,5 @@
+import { noteChange } from "./accountSync";
+
 const ALLOWED_TAGS = new Set(["b", "strong", "u", "ul", "ol", "li", "br", "p", "div", "em", "i"]);
 
 export function notesStorageKey(workId: string): string {
@@ -70,9 +72,11 @@ export function saveNoteHtml(workId: string, html: string): void {
   const clean = sanitizeNoteHtml(html);
   if (noteIsEmpty(clean)) {
     localStorage.removeItem(notesStorageKey(workId));
+    noteChange(notesStorageKey(workId));
     return;
   }
   localStorage.setItem(notesStorageKey(workId), JSON.stringify({ v: 1, html: clean }));
+  noteChange(notesStorageKey(workId));
 }
 
 export function insertNoteNewline(): void {

@@ -44,6 +44,14 @@ export type Work = {
   translator?: string;
   /** Source edition, e.g. "Ante-Nicene Fathers, vol. III". */
   edition?: string;
+  /** The work's entry in Clavis Clavium, with its CPG / CPL numbers ("CPL-251"). */
+  clavis?: WorkClavis;
+};
+
+export type WorkClavis = {
+  /** Clavis Clavium node id (32 hex characters). */
+  id: string;
+  numbers: string[];
 };
 
 export type Footnote = {

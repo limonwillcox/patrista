@@ -5,6 +5,7 @@ import { attributionLabel, authorLine, hasAttribution, shortAuthor } from "../..
 import type { Author, Work, WorkOutline } from "../../../server/types";
 import { fetchChapter, fetchWork } from "../../api/client";
 import { chapterPublicPath, englishParagraphs } from "../../lib/fatherPaths";
+import { clavisUrl, formatClavisNumber } from "../../lib/clavis";
 import { KEY_WORKS, formatWords, readingTime } from "../../lib/keyWorks";
 import { loadLastRead } from "../../lib/lastRead";
 import { formatCentury, writingCategory } from "../../lib/libraryHover";
@@ -13,7 +14,7 @@ import { FORM_NOTES, manuscriptForm, workCentury } from "../../lib/manuscriptFor
 import { ManuscriptButton } from "../manuscript/ManuscriptButton";
 import { ManuscriptFigure } from "../manuscript/ManuscriptFigure";
 import type { LeafState } from "../manuscript/ManuscriptLeaf";
-import { MANUSCRIPTS } from "../../data/manuscripts";
+import { useManuscripts } from "../../lib/useManuscripts";
 import { setStoredBookStage, storedBookStage, type BookStage } from "../../lib/prefs";
 import { loadBookText } from "../../lib/bookText";
 import { PRINT_EDITIONS } from "../../lib/printEditions";
@@ -112,7 +113,8 @@ export function BookViewer({
    * and the reader's other choice. The book stays on the stage while the page downloads (library
    * servers often take seconds), then the page fades in over it. A page that fails never shows.
    */
-  const msPage = has3d ? MANUSCRIPTS[work.id] : undefined;
+  const manuscripts = useManuscripts();
+  const msPage = has3d ? manuscripts?.MANUSCRIPTS[work.id] : undefined;
   const [stagePref, setStagePref] = useState<BookStage>(storedBookStage);
   const [leaf, setLeaf] = useState<{ id: string; state: LeafState }>({ id: "", state: "loading" });
   const leafState: LeafState = leaf.id === work.id ? leaf.state : "loading";
@@ -410,6 +412,16 @@ export function BookViewer({
               <div>
                 <dt>Translator</dt>
                 <dd>{work.translator}</dd>
+              </div>
+            ) : null}
+            {work.clavis ? (
+              <div>
+                <dt>Clavis</dt>
+                <dd>
+                  <a href={clavisUrl(work.clavis.id)} target="_blank" rel="noopener noreferrer" title="This work's entry in Clavis Clavium">
+                    {work.clavis.numbers.map(formatClavisNumber).join(", ")}
+                  </a>
+                </dd>
               </div>
             ) : null}
           </dl>

@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchVerseLinks, type Link as CommentaryLink } from "../api/links";
-import { fetchChapterCitations } from "../api/scripture";
+import { fetchChapterCitations, type ChapterCitations } from "../api/scripture";
+import { fetchStories } from "../api/stories";
 import { useApp } from "../context/AppContext";
-import { commentaryPassages, mergeCites, mergeSources, Thread, type CitingPassage } from "./FathersThread";
+import { storyAt, storyChapters, storyRange, type Story } from "../lib/stories";
+import { commentaryPassages, mergeCites, mergeSources, storyPassages, Thread, type CitingPassage } from "./FathersThread";
 
 function titleCase(id: string): string {
   return id.replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
@@ -12,6 +14,10 @@ function titleCase(id: string): string {
  * What the Fathers wrote on one verse, or a few verses of one chapter, as one thread from two sources: the
  * commentary collections (the Gospels so far) and every work in the library that cites the verse (the whole
  * Bible). Shown beside the Bible text, open from the start, and under each passage of a type's trail.
+ *
+ * Beside the Bible text, a verse inside a story (the flood, Korah's rebellion) also shows what the Fathers
+ * wrote on the rest of the story, under the verse's own passages: a Father who speaks of the whole story is
+ * tied by his editor's footnote to one verse of it, and would be missed on every other.
  */
 export function Commentary({
   book,
@@ -19,6 +25,7 @@ export function Commentary({
   chapter,
   verse,
   toVerse,
+  withStory,
   counts,
   onPickVerse,
   onClose,
@@ -30,6 +37,8 @@ export function Commentary({
   verse: number;
   /** The last verse, for a few verses of the chapter (a trail's passage); the thread then marks each verse. */
   toVerse?: number;
+  /** Also show the Fathers on the story the verse belongs to. */
+  withStory?: boolean;
   /** Extra classes, for a place other than the Bible's side panel. */
   className?: string;
   counts: Record<number, number> | null;
@@ -43,6 +52,8 @@ export function Commentary({
   /** Per verse, the commentary links on it. Undefined while loading. */
   const [links, setLinks] = useState<[number, CommentaryLink[]][] | undefined>(undefined);
   const [cites, setCites] = useState<CitingPassage[] | undefined>(undefined);
+  /** The story the verse belongs to, with the citations of each chapter it touches. */
+  const [story, setStory] = useState<{ story: Story; chapters: [number, ChapterCitations | null][] } | null>(null);
 
   useEffect(() => {
     let live = true;
@@ -73,6 +84,28 @@ export function Commentary({
     return mergeSources(cites, comments, authorOf);
   }, [links, cites, names, byWork]);
   const fathers = new Set(passages.map((p) => p.father)).size;
+
+  useEffect(() => {
+    setStory(null);
+    if (!withStory || verses.length > 1) return;
+    let live = true;
+    fetchStories(book).then((rows) => {
+      const s = storyAt(rows, chapter, verse);
+      // A story of one verse has nothing to add to the verse.
+      if (!live || !s || (s.fromChapter === s.toChapter && s.fromVerse === s.toVerse)) return;
+      Promise.all(storyChapters(s).map((c) => fetchChapterCitations(book, c).then((x): [number, ChapterCitations | null] => [c, x]))).then(
+        (chapters) => live && setStory({ story: s, chapters })
+      );
+    });
+    return () => {
+      live = false;
+    };
+  }, [withStory, book, chapter, verse, verses.length]);
+  // The rest of the story: what is already on the verse is left out.
+  const onStory = useMemo(
+    () => (story && !loading ? storyPassages(story.chapters, story.story, new Set(passages.map((p) => p.key))) : []),
+    [story, loading, passages]
+  );
 
   // The nearest verses that do have commentary, for an empty verse.
   const nearby = useMemo(() => {
@@ -122,7 +155,7 @@ export function Commentary({
       ) : !passages.length ? (
         <div className="cm-empty">
           <p>{verses.length > 1 ? "No Father in the library cites these verses." : "No Father in the library cites this verse."}</p>
-          {nearby.length ? (
+          {nearby.length && !onStory.length ? (
             <p className="cm-goto">
               Try{" "}
               {nearby.map((n) => (
@@ -138,6 +171,18 @@ export function Commentary({
           <Thread passages={passages} showVerses={verses.length > 1} />
         </div>
       )}
+
+      {story && onStory.length ? (
+        <section className="cm-story" aria-labelledby="cm-story-title">
+          <p className="cm-kicker">The Fathers on the story</p>
+          <h3 id="cm-story-title" className="cm-story-title">
+            {story.story.title} <span>{storyRange(bookName, story.story)}</span>
+          </h3>
+          <div className="cm-thread">
+            <Thread passages={onStory} showVerses of="story" />
+          </div>
+        </section>
+      ) : null}
     </section>
   );
 }

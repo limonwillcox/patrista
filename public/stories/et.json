@@ -1,0 +1,22 @@
+[
+[1, 1, 1, 8, "Xerxes’ Royal Feast"],
+[1, 9, 1, 12, "Queen Vashti’s Refusal"],
+[1, 13, 1, 22, "Queen Vashti Deposed"],
+[2, 1, 2, 4, "Seeking Vashti’s Successor"],
+[2, 5, 2, 16, "Esther Finds Favor"],
+[2, 17, 2, 20, "Esther Becomes Queen"],
+[2, 21, 2, 23, "Mordecai Uncovers a Conspiracy"],
+[3, 1, 3, 15, "Haman’s Plot against the Jews"],
+[4, 1, 4, 17, "Mordecai Appeals to Esther"],
+[5, 1, 5, 8, "Esther Approaches the King"],
+[5, 9, 5, 14, "Haman’s Plot against Mordecai"],
+[6, 1, 6, 14, "Mordecai Is Honored"],
+[7, 1, 7, 6, "Esther Pleads for Her People"],
+[7, 7, 7, 10, "The Hanging of Haman"],
+[8, 1, 8, 6, "Esther Appeals for the Jews"],
+[8, 7, 8, 17, "The Decree of Xerxes"],
+[9, 1, 9, 10, "The Jews Destroy Their Enemies"],
+[9, 11, 9, 17, "Haman’s Sons Hanged"],
+[9, 18, 9, 32, "The Feast of Purim Instituted"],
+[10, 1, 10, 3, "Tribute to Xerxes and Mordecai"]
+]

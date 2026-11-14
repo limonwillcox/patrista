@@ -1,0 +1,24 @@
+{
+  "about": "The words of Scripture that are themes on the types map, chosen by the editor (2026-11-08). Each is one or more Hebrew words by Strong's number. Which types belong to each theme is computed, never chosen: see src/lib/typeThemes.ts. Run: npx tsx scripts/connections/build_themes.ts",
+  "themes": [
+    { "id": "water", "hebrew": ["H4325"] },
+    { "id": "tree", "hebrew": ["H6086"] },
+    { "id": "heaven", "hebrew": ["H8064"] },
+    { "id": "day", "hebrew": ["H3117", "H3119"] },
+    { "id": "sea", "hebrew": ["H3220"] },
+    { "id": "blood", "hebrew": ["H1818"] },
+    { "id": "dove", "hebrew": ["H3123"] },
+    { "id": "ark", "hebrew": ["H8392"] },
+    { "id": "egypt", "hebrew": ["H4714"] },
+    { "id": "spirit", "hebrew": ["H7307"] },
+    { "id": "stone", "hebrew": ["H68"] },
+    { "id": "jordan", "hebrew": ["H3383"] },
+    { "id": "serpent", "hebrew": ["H5175"] },
+    { "id": "sheep", "hebrew": ["H6629", "H7716"] },
+    { "id": "bread", "hebrew": ["H3899"] },
+    { "id": "garden", "hebrew": ["H1588"] },
+    { "id": "wilderness", "hebrew": ["H4057"] },
+    { "id": "voice", "hebrew": ["H6963"] },
+    { "id": "night", "hebrew": ["H3915"] }
+  ]
+}

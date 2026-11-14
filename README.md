@@ -6,7 +6,7 @@ English texts come from the Schaff editions (Ante-Nicene Fathers; Nicene and Pos
 
 ## Live site
 
-Public repo: [limonwillcox/patrista](https://github.com/limonwillcox/patrista). GitHub Pages deploys from `main` via `pnpm build` → `dist/`.
+Public repo: [limonwillcox/patrista](https://github.com/limonwillcox/patrista). The site is on Cloudflare Pages (patrista.com). Deploys are manual: run the "Deploy Cloudflare Pages" workflow (`gh workflow run "Deploy Cloudflare Pages"`), which builds `main` with `pnpm build` and uploads `dist/`. A push to `main` does not deploy.
 
 `get-app.html` now only redirects to `/`. The old web phone shell is archived in **`archive/ios-web/`**. Native SwiftUI app: **`PibliaIOS/`** — plan and goals in `PibliaIOS/docs/PLAN.md`. Feature parking lot: **`docs/FEATURES.md`**.
 

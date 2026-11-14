@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync } from "fs";
 import { join } from "path";
 import type { Author, Footnote, Passage, SubChapter, Work } from "./types";
 import { workMeta } from "./workMeta";
+import { clavisForPath } from "./workClavis";
 
 export type ChunkMode = "book" | "chapter" | "sermon" | "letter" | "homily";
 
@@ -831,6 +832,8 @@ const AUTHOR_META: Record<string, AuthorMeta> = {
 
 const BOOK_NUM = "([IVXLCDM]+|\\d+|First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth)";
 const BOOK_RE = new RegExp("^\\s*Book\\s+" + BOOK_NUM + "\\s*[\\.\\—\\-.]", "im");
+/** A paragraph that is a book heading and nothing else: "Book II.", "BOOK IV". */
+const BARE_BOOK_RE = new RegExp("^Book\\s+" + BOOK_NUM + "\\.?$", "i");
 /**
  * "Chapter IV.--Title", "Chapter 4. Title", and NPNF's double numbering "Chapter 1 [I.]--Introductory."
  * (the bracket gives the older Benedictine numeral; without it the opening chapters of many
@@ -1394,6 +1397,7 @@ export function wordCountFromPassages(passages: Passage[]): number {
 
 function workFromSpec(spec: EnglishWorkSpec, passages: Passage[]): Work {
   const meta = workMeta(spec.id);
+  const clavis = clavisForPath(spec.path);
   const disputed = spec.authorshipDisputed || Boolean(meta.authorship);
   return {
     id: spec.id,
@@ -1407,7 +1411,8 @@ function workFromSpec(spec: EnglishWorkSpec, passages: Passage[]): Work {
     ...(meta.authorship ? { authorship: meta.authorship } : {}),
     ...(meta.attribution ? { attribution: meta.attribution } : {}),
     ...(spec.translator ? { translator: spec.translator } : {}),
-    ...(spec.edition ? { edition: spec.edition } : {})
+    ...(spec.edition ? { edition: spec.edition } : {}),
+    ...(clavis ? { clavis } : {})
   };
 }
 
@@ -1844,6 +1849,8 @@ function parseEnglishWorkFlat(spec: EnglishWorkSpec, root: string): { work: Work
     // A unit that another work already holds whole (see dropUnitLabels) is left out; its text goes with it.
     if (spec.dropUnitLabels?.includes(cleanUnitLabel(marks[i].label))) continue;
     const { paras, footnotes } = parasAndNotesFromBlock(block);
+    // The next book's bare heading ("Book II.") sits after a book's last chapter: it is no part of that chapter.
+    if (mode === "chapter") while (paras.length > 1 && BARE_BOOK_RE.test(paras[paras.length - 1].trim())) paras.pop();
     let heading = spec.unitTitles?.[i] ?? (spec.keepUnitLabel ? cleanUnitLabel(marks[i].label) : unitLabel(mode, marks[i].label));
     // Collections of several works (Chrysostom's volumes): numbering restarts at I for each work.
     let groupLabel = "";

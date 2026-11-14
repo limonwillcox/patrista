@@ -22,4 +22,22 @@ describe("adDates", () => {
     expect(adDates("c. 4 BC")).toBe("c. 4 BC");
     expect(adDates("")).toBe("");
   });
+
+  it("keeps circa on every catalog date that had one", async () => {
+    const { getCatalog } = await import("../server/api");
+    const lost: string[] = [];
+    const unmarked: string[] = [];
+    for (const author of getCatalog().authors) {
+      if (!author.dates.trim()) continue;
+      const next = adDates(author.dates);
+      if (/\bc\.\s*\d/.test(author.dates) && !/\bc\.\s*(?:AD\s*)?\d/.test(next)) {
+        lost.push(author.id + ": " + author.dates + " → " + next);
+      }
+      if (!/\bBC\b/.test(author.dates) && /\d/.test(author.dates) && !/\bAD\b/.test(next)) {
+        unmarked.push(author.id + ": " + author.dates + " → " + next);
+      }
+    }
+    expect(lost).toEqual([]);
+    expect(unmarked).toEqual([]);
+  }, 120_000);
 });

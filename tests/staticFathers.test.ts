@@ -274,6 +274,9 @@ describe("home, read shell, and sitemap", () => {
   it("uses a Father's portrait as the link preview when one is passed", () => {
     const portrait = authorShareImage("https://patrista.com", "augustine");
     expect(portrait?.url).toContain("/assets/father-img/augustine-");
+    expect(portrait?.width).toBeGreaterThanOrEqual(240);
+    expect(authorShareImage("https://patrista.com", "mathetes")).toBeNull();
+    expect(authorShareImage("https://patrista.com", "no-such-father")).toBeNull();
     const shell = `<!DOCTYPE html><html><head><title>x</title><meta name="description" content="y" /></head><body><div id="root"></div></body></html>`;
     const html = prerenderShell(shell, "https://patrista.com", {
       canonicalPath: "/fathers/augustine/confessions/",

@@ -91,8 +91,14 @@ export function Commentary({
         <div>
           <p className="cm-kicker">The Fathers on</p>
           <h2 id="cm-title" className="cm-title">
-            {bookName} {chapter}:{verse}
-            {last > verse ? "–" + last : ""}
+            {bookName ? (
+              <>
+                {bookName} {chapter}:{verse}
+                {last > verse ? "–" + last : ""}
+              </>
+            ) : (
+              "\u00a0"
+            )}
           </h2>
           {!loading && passages.length ? (
             <p className="cm-sum">

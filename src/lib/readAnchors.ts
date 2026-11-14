@@ -1,3 +1,5 @@
+import { escapeHtml } from "./fatherPaths";
+
 /**
  * Reader URLs inside a work. A chapter is "#ch-3"; a paragraph is "#ch-3-p12" (paragraphs count from 1
  * within the chapter). A book-chapter heading in a two-level work stays "#ch-3-2".
@@ -32,12 +34,16 @@ export type CitationParts = {
   url: string;
 };
 
+function citationPlace(p: CitationParts): string {
+  return [p.chapter, p.n ? "¶" + p.n : ""].filter(Boolean).join(", ");
+}
+
 /**
  * A bibliography entry for the work, with the place that was selected.
  * No quotation. No invented page number: the paragraph is the locator.
  */
 export function bibliography(p: CitationParts): string {
-  const place = [p.chapter, p.n ? "¶" + p.n : ""].filter(Boolean).join(", ");
+  const place = citationPlace(p);
   const head = [p.author, p.work, place].filter(Boolean).join(". ") + ".";
   const credit = [
     p.translator ? "Translated by " + p.translator + "." : "",
@@ -47,14 +53,30 @@ export function bibliography(p: CitationParts): string {
   return [head, ...credit].join(" ");
 }
 
-/** @deprecated The paragraph menu's short line. Papers use bibliography(). */
-export function citation(p: CitationParts): string {
-  return bibliography(p);
+/**
+ * The same entry as HTML, so paste into Word or Docs keeps the work title in italics
+ * and the link as a link. Inline styles survive apps that drop bare `<i>` / `<a>`.
+ */
+export function bibliographyHtml(p: CitationParts): string {
+  const place = citationPlace(p);
+  const work = p.work ? '<i style="font-style: italic;">' + escapeHtml(p.work) + "</i>" : "";
+  const head = [escapeHtml(p.author), work, escapeHtml(place)].filter(Boolean).join(". ") + ".";
+  const credit = [
+    p.translator ? "Translated by " + escapeHtml(p.translator) + "." : "",
+    p.edition ? escapeHtml(p.edition.replace(/\.$/, "")) + "." : "",
+    p.url ? '<a href="' + escapeHtml(p.url) + '">' + escapeHtml(p.url) + "</a>" : ""
+  ].filter(Boolean);
+  return [head, ...credit].join(" ");
 }
 
 export function quoteWithCitation(text: string, p: CitationParts): string {
   const clean = text.replace(/\s+/g, " ").trim();
   return "“" + clean + "”\n\n" + bibliography(p);
+}
+
+export function quoteWithCitationHtml(text: string, p: CitationParts): string {
+  const clean = escapeHtml(text.replace(/\s+/g, " ").trim());
+  return "<p>“" + clean + "”</p><p>" + bibliographyHtml(p) + "</p>";
 }
 
 /** Share sheet: the quote, a blank line, the name and the book. The link is sent separately. */
@@ -64,9 +86,14 @@ export function shareText(quote: string, author: string, work: string): string {
   return "“" + clean + "”\n\n" + who;
 }
 
-/** Translator credit for a work's English, from its series. */
-export function translatorFor(workId: string, series: string): string {
+/** Named translator when the work itself does not carry one. Series names are editions, not translators. */
+export function translatorFor(workId: string): string {
   if (workId === "confessions") return "E. B. Pusey";
+  return "";
+}
+
+/** Printed series, when the work has no edition of its own. */
+export function editionFor(series: string): string {
   if (/^ANF/i.test(series)) return "Ante-Nicene Fathers, ed. Roberts & Donaldson";
   if (/^NPNF/i.test(series)) return "Nicene and Post-Nicene Fathers, ed. Schaff";
   return "";

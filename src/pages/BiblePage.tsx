@@ -96,6 +96,7 @@ export function BiblePage() {
 
   const [manifest, setManifest] = useState<BibleManifestBook[] | null>(null);
   const [payload, setPayload] = useState<BibleChapterPayload | null>(null);
+  const [hadChapter, setHadChapter] = useState(false);
   const [error, setError] = useState<string | null>(null);
   /** Passages per verse; undefined while loading, null when the book has no commentary yet. */
   const [counts, setCounts] = useState<Record<number, number> | null | undefined>(undefined);
@@ -153,7 +154,11 @@ export function BiblePage() {
     setError(null);
     setPicker(false);
     fetchBibleChapter(book, chapter, { section: section || undefined, translation })
-      .then((p) => !cancelled && setPayload(p))
+      .then((p) => {
+        if (cancelled) return;
+        setPayload(p);
+        setHadChapter(true);
+      })
       .catch((e) => !cancelled && setError(String(e)));
     return () => {
       cancelled = true;
@@ -296,7 +301,9 @@ export function BiblePage() {
 
   const bookIndex = manifest ? manifest.findIndex((b) => b.id === book) : -1;
   const bookMeta = useMemo(() => manifest?.find((b) => b.id === book) || payload?.book, [manifest, book, payload]);
-  const bookName = bookMeta?.name || book;
+  /** Real name only. The book id ("jo") must not paint as the heading while the chapter is still loading. */
+  const bookName = bookMeta?.name ?? "";
+  const headingReady = Boolean(bookName) && (Boolean(payload) || hadChapter);
   const chapterCount = bookMeta?.chapters || 1;
   const activeTranslation = BIBLE_TRANSLATIONS.find((t) => t.id === translation);
   /** An API.Bible text: the publisher's own copyright line, and the token its licence asks us to report views with. */
@@ -432,7 +439,7 @@ export function BiblePage() {
     );
   }
 
-  const where = word?.where ?? bookName + " " + chapter + ":" + (word?.verse ?? verse);
+  const where = word?.where ?? (bookName ? bookName + " " + chapter + ":" + (word?.verse ?? verse) : "");
   const study =
     panel === "word" ? (
       <WordPanel word={word?.text ?? null} code={word?.code} where={where} onClose={isSheet ? () => setSheetOpen(false) : undefined} />
@@ -504,10 +511,20 @@ export function BiblePage() {
                   className="bible-title-btn"
                   aria-expanded={picker}
                   aria-haspopup="dialog"
-                  onClick={() => setPicker(!picker)}
+                  aria-busy={!headingReady}
+                  aria-label={headingReady ? bookName + " " + chapter : "Loading chapter"}
+                  onClick={() => headingReady && setPicker(!picker)}
                 >
-                  {bookName} {chapter}
-                  <span className="bible-title-chev" aria-hidden="true" />
+                  {headingReady ? (
+                    <>
+                      {bookName} {chapter}
+                      <span className="bible-title-chev" aria-hidden="true" />
+                    </>
+                  ) : (
+                    <span className="bible-title-slot" aria-hidden="true">
+                      {"\u00a0"}
+                    </span>
+                  )}
                 </button>
               </h1>
               {picker && manifest ? (

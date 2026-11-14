@@ -15,7 +15,8 @@ import { useApp } from "../context/AppContext";
 import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from "../lib/fatherPaths";
 import { chapterAtReadingLine } from "../lib/readDocks";
 import { OriginalParas, TranslationParas, type ParaMenuTarget } from "../components/reader/Paragraphs";
-import { bibliography, hashChapter, hashParagraph, paraAnchor, quoteWithCitation, shareText, translatorFor } from "../lib/readAnchors";
+import { copyText } from "../lib/clipboard";
+import { bibliography, bibliographyHtml, editionFor, hashChapter, hashParagraph, paraAnchor, quoteWithCitation, quoteWithCitationHtml, shareText, translatorFor } from "../lib/readAnchors";
 import { saintName } from "../lib/saintName";
 import { attributionText, citationAuthor, hasAttribution } from "../../server/workMeta";
 
@@ -76,23 +77,6 @@ function ChapterBody({
     );
   }
   return <div className="passage">{english}</div>;
-}
-
-async function copyText(text: string): Promise<boolean> {
-  try {
-    await navigator.clipboard.writeText(text);
-    return true;
-  } catch {
-    const area = document.createElement("textarea");
-    area.value = text;
-    area.style.position = "fixed";
-    area.style.opacity = "0";
-    document.body.appendChild(area);
-    area.select();
-    const ok = document.execCommand("copy");
-    area.remove();
-    return ok;
-  }
 }
 
 const FIND_STOP = new Set(["the", "and", "of", "to", "in", "a", "is", "that", "for", "his", "her", "with", "not", "but", "was", "are"]);
@@ -656,8 +640,8 @@ export function ReadPage() {
       work: outline?.work.title || "",
       chapter: outline && outline.chapters.length > 1 ? meta?.heading || "" : "",
       n,
-      translator: outline ? outline.work.translator || translatorFor(outline.work.id, outline.work.series) : "",
-      edition: outline?.work.edition || "",
+      translator: outline ? outline.work.translator || translatorFor(outline.work.id) : "",
+      edition: outline ? outline.work.edition || editionFor(outline.work.series) : "",
       url: paraUrl(chapter, n)
     };
   }
@@ -694,7 +678,8 @@ export function ReadPage() {
       return;
     }
     const text = kind === "link" ? parts.url : kind === "cite" ? bibliography(parts) : quoteWithCitation(quote, parts);
-    const ok = await copyText(text);
+    const html = kind === "cite" ? bibliographyHtml(parts) : kind === "quote" ? quoteWithCitationHtml(quote, parts) : undefined;
+    const ok = await copyText(text, html);
     showToast(ok ? (kind === "link" ? "Link copied" : kind === "cite" ? "Citation copied" : "Quote copied") : "Could not copy");
   }
 
@@ -711,7 +696,8 @@ export function ReadPage() {
 
   async function copyViewCitation() {
     if (!outline) return;
-    const ok = await copyText(bibliography(citeParts(currentChapter, null)));
+    const parts = citeParts(currentChapter, null);
+    const ok = await copyText(bibliography(parts), bibliographyHtml(parts));
     showToast(ok ? "Citation copied" : "Could not copy");
   }
 

@@ -3575,12 +3575,15 @@ html[data-theme="night"] .lib-era-next {
 .bible-step:hover:not(:disabled) { background: var(--panel); color: var(--accent); }
 .bible-step:disabled { opacity: 0.25; cursor: default; }
 .bible-title-wrap { position: relative; text-align: center; min-width: 0; }
-.bible-title { margin: 0; font-family: var(--serif); font-size: clamp(30px, 3.6vw, 42px); font-weight: 500; line-height: 1.15; }
+.bible-title { margin: 0; font-family: var(--serif); font-size: clamp(30px, 3.6vw, 42px); font-weight: 500; line-height: 1.15; min-height: 1.15em; }
 .bible-title-btn {
   display: inline-flex; align-items: center; gap: 12px; padding: 2px 14px; border: 0; border-radius: var(--radius);
-  background: none; color: var(--text); font: inherit; cursor: pointer;
+  background: none; color: var(--text); font: inherit; cursor: pointer; min-height: 1.15em;
 }
 .bible-title-btn:hover, .bible-title-btn[aria-expanded="true"] { background: var(--panel); }
+.bible-title-btn[aria-busy="true"] { cursor: default; }
+.bible-title-btn[aria-busy="true"]:hover { background: none; }
+.bible-title-slot { display: inline-block; min-width: 6ch; min-height: 1em; }
 .bible-title-chev {
   width: 9px; height: 9px; margin-top: -6px; border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
   transform: rotate(45deg); transition: transform 0.2s ease;

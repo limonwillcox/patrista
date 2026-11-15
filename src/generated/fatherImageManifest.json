@@ -43,6 +43,28 @@
       "attributionRequired": false
     }
   },
+  "alexander_lycopolis": {
+    "alt": "View of Asyut, the ancient Lycopolis, from the Description de l'Égypte",
+    "tile": {
+      "src": "/assets/father-img/alexander_lycopolis-240-ba9a830782.webp",
+      "srcset": "/assets/father-img/alexander_lycopolis-120-3ff676ffba.webp 120w, /assets/father-img/alexander_lycopolis-240-ba9a830782.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/alexander_lycopolis-720-1a90f886cd.webp",
+      "srcset": "/assets/father-img/alexander_lycopolis-360-b01f8b11b3.webp 360w, /assets/father-img/alexander_lycopolis-720-1a90f886cd.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Description de l'Égypte",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Syout_(Asy%C3%BBt)._1._Vue_des_environs_de_la_ville_pendant_l%27inondation;_2._Vue_d%27un_pont_situ%C3%A9_%C3%A0_l%27entr%C3%A9e_de_la_ville_(NYPL_b14212718-1268714).jpg",
+      "attributionRequired": false
+    }
+  },
   "ambrose": {
     "alt": "Portrait of Ambrose of Milan",
     "tile": {
@@ -63,6 +85,28 @@
       "licenseUrl": "",
       "source": "https://commons.wikimedia.org/wiki/File:AmbroseOfMilan%20(cropped).jpg",
       "attributionRequired": false
+    }
+  },
+  "anatolius": {
+    "alt": "Roman arch at Laodicea in Syria, the city where Anatolius was bishop",
+    "tile": {
+      "src": "/assets/father-img/anatolius-240-8ff1838e8c.webp",
+      "srcset": "/assets/father-img/anatolius-120-e45bf85b04.webp 120w, /assets/father-img/anatolius-240-8ff1838e8c.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/anatolius-360-241cb441ba.webp",
+      "srcset": "/assets/father-img/anatolius-360-241cb441ba.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Dosseman",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Latakia_Tetraporticus_4035.jpg",
+      "attributionRequired": true
     }
   },
   "aphrahat": {
@@ -109,6 +153,94 @@
       "attributionRequired": false
     }
   },
+  "apollonius": {
+    "alt": "Library of Celsus at Ephesus",
+    "tile": {
+      "src": "/assets/father-img/apollonius-240-c5778c9c52.webp",
+      "srcset": "/assets/father-img/apollonius-120-fbb9c389ae.webp 120w, /assets/father-img/apollonius-240-c5778c9c52.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/apollonius-720-9d79a46a9e.webp",
+      "srcset": "/assets/father-img/apollonius-360-dd9ce9e5d5.webp 360w, /assets/father-img/apollonius-720-9d79a46a9e.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Benh Lieu Song",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ephesus_Celsus_Library_Fa%C3%A7ade.jpg",
+      "attributionRequired": true
+    }
+  },
+  "apostolic": {
+    "alt": "Papyrus leaf of the Didache, fourth century (Oxyrhynchus 1782)",
+    "tile": {
+      "src": "/assets/father-img/apostolic-240-cf86fee9fa.webp",
+      "srcset": "/assets/father-img/apostolic-120-b4b75c5a51.webp 120w, /assets/father-img/apostolic-240-cf86fee9fa.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/apostolic-720-9c73f7c82b.webp",
+      "srcset": "/assets/father-img/apostolic-360-4ee495ecad.webp 360w, /assets/father-img/apostolic-720-9c73f7c82b.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown (4th-century papyrus)",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:POxy_1782_a.jpg",
+      "attributionRequired": false
+    }
+  },
+  "archelaus": {
+    "alt": "Title page of the Acts of Archelaus, 1906 edition",
+    "tile": {
+      "src": "/assets/father-img/archelaus-240-52cbdb5e6d.webp",
+      "srcset": "/assets/father-img/archelaus-120-a0c3443125.webp 120w, /assets/father-img/archelaus-240-52cbdb5e6d.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/archelaus-720-b1e3591d61.webp",
+      "srcset": "/assets/father-img/archelaus-360-89882bdea6.webp 360w, /assets/father-img/archelaus-720-b1e3591d61.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown",
+      "license": "CC0",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Frontispiece_of_the_Acta_Archelai_by_Hegemonius,_1906_edition.jpg",
+      "attributionRequired": false
+    }
+  },
+  "aristo_pella": {
+    "alt": "Ruins of Pella in Jordan",
+    "tile": {
+      "src": "/assets/father-img/aristo_pella-240-84db7827ae.webp",
+      "srcset": "/assets/father-img/aristo_pella-120-583ebff8ba.webp 120w, /assets/father-img/aristo_pella-240-84db7827ae.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/aristo_pella-720-f85a3139a8.webp",
+      "srcset": "/assets/father-img/aristo_pella-360-fd32c4cfcc.webp 360w, /assets/father-img/aristo_pella-720-f85a3139a8.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Mohammad hajeer",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Archaeological_Ruins_of_Tabaqat_Fahl_(Pella)_44.jpg",
+      "attributionRequired": true
+    }
+  },
   "arnobius": {
     "alt": "Portrait of Arnobius of Sicca",
     "tile": {
@@ -129,6 +261,28 @@
       "licenseUrl": "",
       "source": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%80%D0%BD%D0%BE%D0%B1%D0%B8%D0%B9%20%D0%A1%D1%82%D0%B0%D1%80%D1%88%D0%B8%D0%B9%20-Arnobius%20of%20Sicca.jpg",
       "attributionRequired": false
+    }
+  },
+  "asterius_urbanus": {
+    "alt": "Epitaph of Abercius of Hieropolis, to whom the books against the Montanists were addressed",
+    "tile": {
+      "src": "/assets/father-img/asterius_urbanus-240-1feed66bc6.webp",
+      "srcset": "/assets/father-img/asterius_urbanus-120-2472033f39.webp 120w, /assets/father-img/asterius_urbanus-240-1feed66bc6.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/asterius_urbanus-360-bdfd3fab38.webp",
+      "srcset": "/assets/father-img/asterius_urbanus-360-bdfd3fab38.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Fabrizio Garrisi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Cippo_di_Abercio,_fine_II_-_inizi_III_sec._-FG3.jpg",
+      "attributionRequired": true
     }
   },
   "athanasius": {
@@ -447,6 +601,28 @@
       "licenseUrl": "",
       "source": "https://commons.wikimedia.org/wiki/File:Dionisii%20alek.jpg",
       "attributionRequired": false
+    }
+  },
+  "dionysius_corinth": {
+    "alt": "Temple of Apollo at Corinth",
+    "tile": {
+      "src": "/assets/father-img/dionysius_corinth-240-15f29dd657.webp",
+      "srcset": "/assets/father-img/dionysius_corinth-120-274990afb6.webp 120w, /assets/father-img/dionysius_corinth-240-15f29dd657.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/dionysius_corinth-720-fe0097d783.webp",
+      "srcset": "/assets/father-img/dionysius_corinth-360-625aaa1a77.webp 360w, /assets/father-img/dionysius_corinth-720-fe0097d783.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Berthold Werner",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Korinth_BW_2017-10-10_10-55-28.jpg",
+      "attributionRequired": true
     }
   },
   "dionysius_rome": {
@@ -887,6 +1063,28 @@
       "attributionRequired": false
     }
   },
+  "malchion": {
+    "alt": "Street scene of Antioch from the Yakto mosaic, fifth century",
+    "tile": {
+      "src": "/assets/father-img/malchion-240-0c3791a84e.webp",
+      "srcset": "/assets/father-img/malchion-120-a417c6d98d.webp 120w, /assets/father-img/malchion-240-0c3791a84e.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/malchion-720-0667f7c2ac.webp",
+      "srcset": "/assets/father-img/malchion-360-3648aed7df.webp 360w, /assets/father-img/malchion-720-0667f7c2ac.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Carole Raddato",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Yakto_mosaic_border_depicting_scenes_of_everyday_life_in_Antioch_and_nearby_Daphne,_from_the_5th-century_Yakto_mosaic_found_near_Antakya,_Hatay_Archaeology_Museum_(52278622455).jpg",
+      "attributionRequired": true
+    }
+  },
   "mathetes": {
     "alt": "Portrait of Mathetes (to Diognetus)",
     "tile": {
@@ -902,6 +1100,28 @@
       "height": 336
     },
     "credit": null
+  },
+  "maximus_jerusalem": {
+    "alt": "Jerusalem on the Madaba mosaic map, sixth century",
+    "tile": {
+      "src": "/assets/father-img/maximus_jerusalem-240-0f4d8424bb.webp",
+      "srcset": "/assets/father-img/maximus_jerusalem-120-f4275971da.webp 120w, /assets/father-img/maximus_jerusalem-240-0f4d8424bb.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/maximus_jerusalem-720-f18e048a21.webp",
+      "srcset": "/assets/father-img/maximus_jerusalem-360-c474aee57f.webp 360w, /assets/father-img/maximus_jerusalem-720-f18e048a21.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Dosseman",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Madaba_map_Jerusalem_1377.jpg",
+      "attributionRequired": true
+    }
   },
   "melito": {
     "alt": "Portrait of Melito of Sardis",
@@ -995,6 +1215,28 @@
     },
     "credit": null
   },
+  "pamphilus": {
+    "alt": "Portrait of Pamphilus of Caesarea",
+    "tile": {
+      "src": "/assets/father-img/pamphilus-240-d4e360ee75.webp",
+      "srcset": "/assets/father-img/pamphilus-120-c26c185819.webp 120w, /assets/father-img/pamphilus-240-d4e360ee75.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/pamphilus-360-7e6375610b.webp",
+      "srcset": "/assets/father-img/pamphilus-360-7e6375610b.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Saint_Pamphilus.jpg",
+      "attributionRequired": false
+    }
+  },
   "pantaenus": {
     "alt": "Portrait of Pantaenus",
     "tile": {
@@ -1083,6 +1325,50 @@
       "attributionRequired": false
     }
   },
+  "phileas": {
+    "alt": "Papyrus of the Acts of Phileas, fourth century (Chester Beatty Library)",
+    "tile": {
+      "src": "/assets/father-img/phileas-240-b64a5c014c.webp",
+      "srcset": "/assets/father-img/phileas-120-0f88ae6502.webp 120w, /assets/father-img/phileas-240-b64a5c014c.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/phileas-720-21ed8ee670.webp",
+      "srcset": "/assets/father-img/phileas-360-2f30ed0542.webp 360w, /assets/father-img/phileas-720-21ed8ee670.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown (4th-century papyrus)",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Acts_of_Phileas_and_a_Greek_Psalter_(CBL_BP_XV._f.4r).jpg",
+      "attributionRequired": false
+    }
+  },
+  "pierius": {
+    "alt": "Ruins of late Roman Alexandria at Kom el-Dikka",
+    "tile": {
+      "src": "/assets/father-img/pierius-240-fb94b90b9b.webp",
+      "srcset": "/assets/father-img/pierius-120-774750c68b.webp 120w, /assets/father-img/pierius-240-fb94b90b9b.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/pierius-720-7d7fd3591d.webp",
+      "srcset": "/assets/father-img/pierius-360-e07ef6eafe.webp 360w, /assets/father-img/pierius-720-7d7fd3591d.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Institute for the Study of the Ancient World",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kom_el_Dikka_(II)_(6761932613).jpg",
+      "attributionRequired": true
+    }
+  },
   "polycarp": {
     "alt": "Portrait of Polycarp of Smyrna",
     "tile": {
@@ -1102,6 +1388,28 @@
       "license": "CC0",
       "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "source": "https://commons.wikimedia.org/wiki/File:Polycarp%20of%20Smyrna2.jpg",
+      "attributionRequired": false
+    }
+  },
+  "polycrates": {
+    "alt": "Tomb of the apostle John at Ephesus",
+    "tile": {
+      "src": "/assets/father-img/polycrates-240-e45e46e4ff.webp",
+      "srcset": "/assets/father-img/polycrates-120-13aa90e1f3.webp 120w, /assets/father-img/polycrates-240-e45e46e4ff.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/polycrates-720-55ec2436a3.webp",
+      "srcset": "/assets/father-img/polycrates-360-de6ad09c32.webp 360w, /assets/father-img/polycrates-720-55ec2436a3.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Tomb_of_Saint_John_the_Apostle.jpg",
       "attributionRequired": false
     }
   },
@@ -1127,6 +1435,28 @@
       "attributionRequired": false
     }
   },
+  "rhodon": {
+    "alt": "The Good Shepherd, wall painting in the Catacomb of Priscilla at Rome",
+    "tile": {
+      "src": "/assets/father-img/rhodon-240-6399f677fc.webp",
+      "srcset": "/assets/father-img/rhodon-120-945ee469fd.webp 120w, /assets/father-img/rhodon-240-6399f677fc.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/rhodon-355-60105c4327.webp",
+      "srcset": "/assets/father-img/rhodon-355-60105c4327.webp 355w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Joseph Wilpert",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Good_Shepherd_Catacomb_of_Priscilla.jpg",
+      "attributionRequired": false
+    }
+  },
   "rufinus": {
     "alt": "Portrait of Rufinus of Aquileia",
     "tile": {
@@ -1147,6 +1477,28 @@
       "licenseUrl": "",
       "source": "https://commons.wikimedia.org/wiki/File:Rufinus%20Aquileiensis.jpg",
       "attributionRequired": false
+    }
+  },
+  "serapion": {
+    "alt": "Portrait of Serapion of Antioch",
+    "tile": {
+      "src": "/assets/father-img/serapion-240-bae4263d05.webp",
+      "srcset": "/assets/father-img/serapion-120-9cf0903dfd.webp 120w, /assets/father-img/serapion-240-bae4263d05.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/serapion-360-4bca205270.webp",
+      "srcset": "/assets/father-img/serapion-360-4bca205270.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Joanbanjo",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:San_Serapi%C3%B3n_de_Antioqu%C3%ADa_(cropped).JPG",
+      "attributionRequired": true
     }
   },
   "socrates": {
@@ -1257,6 +1609,50 @@
       "attributionRequired": true
     }
   },
+  "theognostus": {
+    "alt": "Photius’s notice of Theognostus in a sixteenth-century manuscript of the Bibliotheca",
+    "tile": {
+      "src": "/assets/father-img/theognostus-240-2b4437d0f5.webp",
+      "srcset": "/assets/father-img/theognostus-120-a9327ab2dc.webp 120w, /assets/father-img/theognostus-240-2b4437d0f5.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/theognostus-360-fff32c7801.webp",
+      "srcset": "/assets/father-img/theognostus-360-fff32c7801.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Wlbw68",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%B5%D0%BE%D0%B3%D0%BD%D0%BE%D1%81%D1%82_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D0%B4%D1%80%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9.png",
+      "attributionRequired": true
+    }
+  },
+  "theonas": {
+    "alt": "Ruins at Alexandria on the site of the Church of Theonas, drawn by Cassas about 1785",
+    "tile": {
+      "src": "/assets/father-img/theonas-240-20882c06a4.webp",
+      "srcset": "/assets/father-img/theonas-120-4021eac83c.webp 120w, /assets/father-img/theonas-240-20882c06a4.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/theonas-720-2d11f2af54.webp",
+      "srcset": "/assets/father-img/theonas-360-6ca786736f.webp 360w, /assets/father-img/theonas-720-2d11f2af54.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Louis-François Cassas",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Vue_des_Ruines_de_la_Grande_Mosqu%C3%A9e_Dgiami_el_Garbie,_Autrement_Mosqu%C3%A9e_des_Mille_et_une_Colonnes_%C3%A0_Alexandrie_-_L.-F._Cassas_f._;_Piranesi_-_btv1b100610627_(1_of_2).jpg",
+      "attributionRequired": false
+    }
+  },
   "theophilus": {
     "alt": "Portrait of Theophilus of Antioch",
     "tile": {
@@ -1276,6 +1672,28 @@
       "license": "Public domain",
       "licenseUrl": "",
       "source": "https://commons.wikimedia.org/wiki/File:Theophilus%20Antiochenus.png",
+      "attributionRequired": false
+    }
+  },
+  "theophilus_caesarea": {
+    "alt": "Roman aqueduct at Caesarea in Palestine",
+    "tile": {
+      "src": "/assets/father-img/theophilus_caesarea-240-ac0156d8d6.webp",
+      "srcset": "/assets/father-img/theophilus_caesarea-120-25cd7a45ec.webp 120w, /assets/father-img/theophilus_caesarea-240-ac0156d8d6.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/theophilus_caesarea-720-bdeb79c7fc.webp",
+      "srcset": "/assets/father-img/theophilus_caesarea-360-5b4a681435.webp 360w, /assets/father-img/theophilus_caesarea-720-bdeb79c7fc.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Mark87",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Caesarea_Maritima_aqueduct.jpg",
       "attributionRequired": false
     }
   },

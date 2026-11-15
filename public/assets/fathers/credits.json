@@ -29,6 +29,17 @@
       "zoom": 0.5
     }
   },
+  "alexander_lycopolis": {
+    "title": "Alexander of Lycopolis",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/41/Syout_%28Asy%C3%BBt%29._1._Vue_des_environs_de_la_ville_pendant_l%27inondation%3B_2._Vue_d%27un_pont_situ%C3%A9_%C3%A0_l%27entr%C3%A9e_de_la_ville_%28NYPL_b14212718-1268714%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Syout (Asyût). 1. Vue des environs de la ville pendant l'inondation; 2. Vue d'un pont situé à l'entrée de la ville (NYPL b14212718-1268714).jpg",
+    "artist": "Description de l'Égypte",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Syout_(Asy%C3%BBt)._1._Vue_des_environs_de_la_ville_pendant_l%27inondation;_2._Vue_d%27un_pont_situ%C3%A9_%C3%A0_l%27entr%C3%A9e_de_la_ville_(NYPL_b14212718-1268714).jpg",
+    "alt": "View of Asyut, the ancient Lycopolis, from the Description de l'Égypte"
+  },
   "ambrose": {
     "title": "Ambrose",
     "source": "https://upload.wikimedia.org/wikipedia/commons/7/74/AmbroseOfMilan_%28cropped%29.jpg",
@@ -43,6 +54,17 @@
       "y": 0.45,
       "zoom": 0.8
     }
+  },
+  "anatolius": {
+    "title": "Anatolius of Laodicea",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/73/Latakia_Tetraporticus_4035.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Latakia Tetraporticus 4035.jpg",
+    "artist": "Dosseman",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Latakia_Tetraporticus_4035.jpg",
+    "alt": "Roman arch at Laodicea in Syria, the city where Anatolius was bishop"
   },
   "aphrahat": {
     "title": "Aphrahat",
@@ -74,6 +96,60 @@
       "zoom": 0.3
     }
   },
+  "apollonius": {
+    "title": "Apollonius of Ephesus",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/8/84/Ephesus_Celsus_Library_Fa%C3%A7ade.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Ephesus Celsus Library Façade.jpg",
+    "artist": "Benh Lieu Song",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ephesus_Celsus_Library_Fa%C3%A7ade.jpg",
+    "alt": "Library of Celsus at Ephesus"
+  },
+  "apostolic": {
+    "title": "Anonymous Early Writings",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/b/b4/POxy_1782_a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:POxy 1782 a.jpg",
+    "artist": "Unknown (4th-century papyrus)",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:POxy_1782_a.jpg",
+    "alt": "Papyrus leaf of the Didache, fourth century (Oxyrhynchus 1782)",
+    "focus": {
+      "x": 0.7,
+      "y": 0.3,
+      "zoom": 0.39
+    }
+  },
+  "archelaus": {
+    "title": "Archelaus",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/1/18/Frontispiece_of_the_Acta_Archelai_by_Hegemonius%2C_1906_edition.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Frontispiece of the Acta Archelai by Hegemonius, 1906 edition.jpg",
+    "artist": "Unknown",
+    "license": "CC0",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Frontispiece_of_the_Acta_Archelai_by_Hegemonius,_1906_edition.jpg",
+    "alt": "Title page of the Acts of Archelaus, 1906 edition",
+    "focus": {
+      "x": 0.5,
+      "y": 0.24,
+      "zoom": 1
+    }
+  },
+  "aristo_pella": {
+    "title": "Aristo of Pella",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/22/Archaeological_Ruins_of_Tabaqat_Fahl_%28Pella%29_44.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Archaeological Ruins of Tabaqat Fahl (Pella) 44.jpg",
+    "artist": "Mohammad hajeer",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Archaeological_Ruins_of_Tabaqat_Fahl_(Pella)_44.jpg",
+    "alt": "Ruins of Pella in Jordan"
+  },
   "arnobius": {
     "title": "Arnobius",
     "source": "https://upload.wikimedia.org/wikipedia/commons/4/4c/%D0%90%D1%80%D0%BD%D0%BE%D0%B1%D0%B8%D0%B9_%D0%A1%D1%82%D0%B0%D1%80%D1%88%D0%B8%D0%B9_-Arnobius_of_Sicca.jpg",
@@ -88,6 +164,17 @@
       "y": 0.2,
       "zoom": 0.45
     }
+  },
+  "asterius_urbanus": {
+    "title": "Asterius Urbanus",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Cippo_di_Abercio%2C_fine_II_-_inizi_III_sec._-FG3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Cippo di Abercio, fine II - inizi III sec. -FG3.jpg",
+    "artist": "Fabrizio Garrisi",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Cippo_di_Abercio,_fine_II_-_inizi_III_sec._-FG3.jpg",
+    "alt": "Epitaph of Abercius of Hieropolis, to whom the books against the Montanists were addressed"
   },
   "athanasius": {
     "title": "Athanasius of Alexandria",
@@ -313,6 +400,17 @@
       "y": 0.12,
       "zoom": 0.4
     }
+  },
+  "dionysius_corinth": {
+    "title": "Dionysius of Corinth",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Korinth_BW_2017-10-10_10-55-28.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Korinth BW 2017-10-10 10-55-28.jpg",
+    "artist": "Berthold Werner",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Korinth_BW_2017-10-10_10-55-28.jpg",
+    "alt": "Temple of Apollo at Corinth"
   },
   "dionysius_rome": {
     "title": "Dionysius of Rome",
@@ -629,6 +727,17 @@
       "zoom": 0.5
     }
   },
+  "malchion": {
+    "title": "Malchion of Antioch",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/29/Yakto_mosaic_border_depicting_scenes_of_everyday_life_in_Antioch_and_nearby_Daphne%2C_from_the_5th-century_Yakto_mosaic_found_near_Antakya%2C_Hatay_Archaeology_Museum_%2852278622455%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Yakto mosaic border depicting scenes of everyday life in Antioch and nearby Daphne, from the 5th-century Yakto mosaic found near Antakya, Hatay Archaeology Museum (52278622455).jpg",
+    "artist": "Carole Raddato",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Yakto_mosaic_border_depicting_scenes_of_everyday_life_in_Antioch_and_nearby_Daphne,_from_the_5th-century_Yakto_mosaic_found_near_Antakya,_Hatay_Archaeology_Museum_(52278622455).jpg",
+    "alt": "Street scene of Antioch from the Yakto mosaic, fifth century"
+  },
   "mathetes": {
     "title": "Mathetes",
     "source": "provided by site owner",
@@ -643,6 +752,17 @@
       "y": 0.14,
       "zoom": 0.2
     }
+  },
+  "maximus_jerusalem": {
+    "title": "Maximus of Jerusalem",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/49/Madaba_map_Jerusalem_1377.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Madaba map Jerusalem 1377.jpg",
+    "artist": "Dosseman",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Madaba_map_Jerusalem_1377.jpg",
+    "alt": "Jerusalem on the Madaba mosaic map, sixth century"
   },
   "melito": {
     "title": "Melito of Sardis",
@@ -719,6 +839,21 @@
       "zoom": 0.3
     }
   },
+  "pamphilus": {
+    "title": "Pamphilus of Caesarea",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Saint_Pamphilus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Saint Pamphilus.jpg",
+    "artist": "Unknown",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Saint_Pamphilus.jpg",
+    "focus": {
+      "x": 0.42,
+      "y": 0.33,
+      "zoom": 0.26
+    }
+  },
   "pantaenus": {
     "title": "Pantaenus",
     "source": "https://upload.wikimedia.org/wikipedia/commons/e/e7/H._Pantenus_van_Alexandri%C3%AB%2C_kerkvader_Pantenus_Catechist_t%27Alexandri%C3%ABn%2C_Syn_Schoolampt_oeffenende_%28titel_op_object%29%2C_RP-P-1896-A-19368-1269.jpg",
@@ -779,6 +914,28 @@
       "zoom": 0.2
     }
   },
+  "phileas": {
+    "title": "Phileas of Thmuis",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Acts_of_Phileas_and_a_Greek_Psalter_%28CBL_BP_XV._f.4r%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Acts of Phileas and a Greek Psalter (CBL BP XV. f.4r).jpg",
+    "artist": "Unknown (4th-century papyrus)",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Acts_of_Phileas_and_a_Greek_Psalter_(CBL_BP_XV._f.4r).jpg",
+    "alt": "Papyrus of the Acts of Phileas, fourth century (Chester Beatty Library)"
+  },
+  "pierius": {
+    "title": "Pierius of Alexandria",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Kom_el_Dikka_%28II%29_%286761932613%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Kom el Dikka (II) (6761932613).jpg",
+    "artist": "Institute for the Study of the Ancient World",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Kom_el_Dikka_(II)_(6761932613).jpg",
+    "alt": "Ruins of late Roman Alexandria at Kom el-Dikka"
+  },
   "polycarp": {
     "title": "Polycarp",
     "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Polycarp_of_Smyrna2.jpg/330px-Polycarp_of_Smyrna2.jpg",
@@ -793,6 +950,17 @@
       "y": 0.2,
       "zoom": 0.45
     }
+  },
+  "polycrates": {
+    "title": "Polycrates of Ephesus",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/74/Tomb_of_Saint_John_the_Apostle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Tomb of Saint John the Apostle.jpg",
+    "artist": "Unknown",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Tomb_of_Saint_John_the_Apostle.jpg",
+    "alt": "Tomb of the apostle John at Ephesus"
   },
   "quadratus": {
     "title": "Quadratus of Athens",
@@ -809,6 +977,17 @@
       "zoom": 0.2
     }
   },
+  "rhodon": {
+    "title": "Rhodon",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/90/Good_Shepherd_Catacomb_of_Priscilla.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Good Shepherd Catacomb of Priscilla.jpg",
+    "artist": "Joseph Wilpert",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Good_Shepherd_Catacomb_of_Priscilla.jpg",
+    "alt": "The Good Shepherd, wall painting in the Catacomb of Priscilla at Rome"
+  },
   "rufinus": {
     "title": "Tyrannius Rufinus",
     "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Rufinus_Aquileiensis.jpg/330px-Rufinus_Aquileiensis.jpg",
@@ -822,6 +1001,21 @@
       "x": 0.42,
       "y": 0.15,
       "zoom": 0.4
+    }
+  },
+  "serapion": {
+    "title": "Serapion of Antioch",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/ca/San_Serapi%C3%B3n_de_Antioqu%C3%ADa_%28cropped%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:San Serapión de Antioquía (cropped).JPG",
+    "artist": "Joanbanjo",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:San_Serapi%C3%B3n_de_Antioqu%C3%ADa_(cropped).JPG",
+    "focus": {
+      "x": 0.56,
+      "y": 0.26,
+      "zoom": 0.36
     }
   },
   "socrates": {
@@ -914,6 +1108,28 @@
       "zoom": 0.5
     }
   },
+  "theognostus": {
+    "title": "Theognostus of Alexandria",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/ca/%D0%A4%D0%B5%D0%BE%D0%B3%D0%BD%D0%BE%D1%81%D1%82_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D0%B4%D1%80%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Феогност Алексндрийский.png",
+    "artist": "Wlbw68",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%B5%D0%BE%D0%B3%D0%BD%D0%BE%D1%81%D1%82_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D0%B4%D1%80%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9.png",
+    "alt": "Photius’s notice of Theognostus in a sixteenth-century manuscript of the Bibliotheca"
+  },
+  "theonas": {
+    "title": "Theonas of Alexandria",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/73/Vue_des_Ruines_de_la_Grande_Mosqu%C3%A9e_Dgiami_el_Garbie%2C_Autrement_Mosqu%C3%A9e_des_Mille_et_une_Colonnes_%C3%A0_Alexandrie_-_L.-F._Cassas_f._%3B_Piranesi_-_btv1b100610627_%281_of_2%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Vue des Ruines de la Grande Mosquée Dgiami el Garbie, Autrement Mosquée des Mille et une Colonnes à Alexandrie - L.-F. Cassas f. ; Piranesi - btv1b100610627 (1 of 2).jpg",
+    "artist": "Louis-François Cassas",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Vue_des_Ruines_de_la_Grande_Mosqu%C3%A9e_Dgiami_el_Garbie,_Autrement_Mosqu%C3%A9e_des_Mille_et_une_Colonnes_%C3%A0_Alexandrie_-_L.-F._Cassas_f._;_Piranesi_-_btv1b100610627_(1_of_2).jpg",
+    "alt": "Ruins at Alexandria on the site of the Church of Theonas, drawn by Cassas about 1785"
+  },
   "theophilus": {
     "title": "Theophilus of Antioch",
     "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Theophilus_Antiochenus.png/330px-Theophilus_Antiochenus.png",
@@ -928,6 +1144,17 @@
       "y": 0.18,
       "zoom": 0.45
     }
+  },
+  "theophilus_caesarea": {
+    "title": "Theophilus of Caesarea",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/0/07/Caesarea_Maritima_aqueduct.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "file": "File:Caesarea Maritima aqueduct.jpg",
+    "artist": "Mark87",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Caesarea_Maritima_aqueduct.jpg",
+    "alt": "Roman aqueduct at Caesarea in Palestine"
   },
   "venantius": {
     "title": "Venantius Fortunatus",

@@ -191,8 +191,8 @@ describe("father directory HTML", () => {
 describe("father portrait fallback", () => {
   it("uses Christ Pantocrator for fathers without a portrait", async () => {
     const { fatherImage } = await import("../src/lib/fatherImages");
-    // Every named Father has a portrait now; the anonymous Apostolic Fathers group and unknown ids do not.
-    expect(fatherImage("apostolic")?.alt).toBe("Christ Pantocrator");
+    // Every author has an image of their own now (a likeness, or a manuscript or place tied to them); unknown ids do not.
+    expect(fatherImage("apostolic")?.alt).toContain("Didache");
     expect(fatherImage("no-such-father")?.alt).toBe("Christ Pantocrator");
     expect(fatherImage("augustine")?.alt).toContain("Augustine");
   });

@@ -1,4 +1,34 @@
 {
+  "alexander_alexandria": {
+    "title": "Alexander of Alexandria",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Veljusa_Monastery_St._Alexander_of_Alexandria.jpg",
+    "file": "File:Veljusa Monastery St. Alexander of Alexandria.jpg",
+    "artist": "Unknown (Veljusa Monastery fresco)",
+    "license": "Free Art License",
+    "licenseUrl": "http://artlibre.org/licence/lal/en",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Veljusa%20Monastery%20St.%20Alexander%20of%20Alexandria.jpg",
+    "focus": {
+      "x": 0.48,
+      "y": 0.38,
+      "zoom": 0.55
+    }
+  },
+  "alexander_jerusalem": {
+    "title": "Alexander of Jerusalem",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/3/36/Alexander_of_Jerusalem.jpg",
+    "file": "File:Alexander of Jerusalem.jpg",
+    "artist": "Unknown (15th century)",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Alexander%20of%20Jerusalem.jpg",
+    "focus": {
+      "x": 0.47,
+      "y": 0.42,
+      "zoom": 0.5
+    }
+  },
   "ambrose": {
     "title": "Ambrose",
     "source": "https://upload.wikimedia.org/wikipedia/commons/7/74/AmbroseOfMilan_%28cropped%29.jpg",
@@ -27,6 +57,21 @@
       "x": 0.27,
       "y": 0.6,
       "zoom": 0.35
+    }
+  },
+  "apollinaris_hierapolis": {
+    "title": "Apollinaris of Hierapolis",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/57/Apollinaris_Claudius_Apolinaris_episcopus_%28titel_op_object%29_Liber_Chronicarum_%28serietitel%29%2C_RP-P-2016-49-78-10.jpg",
+    "file": "File:Apollinaris Claudius Apolinaris episcopus (titel op object) Liber Chronicarum (serietitel), RP-P-2016-49-78-10.jpg",
+    "artist": "Rijksmuseum",
+    "license": "CC0",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Apollinaris%20Claudius%20Apolinaris%20episcopus%20(titel%20op%20object)%20Liber%20Chronicarum%20(serietitel)%2C%20RP-P-2016-49-78-10.jpg",
+    "focus": {
+      "x": 0.43,
+      "y": 0.33,
+      "zoom": 0.3
     }
   },
   "arnobius": {
@@ -269,6 +314,21 @@
       "zoom": 0.4
     }
   },
+  "dionysius_rome": {
+    "title": "Dionysius of Rome",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Pope_Dionysius.jpg",
+    "file": "File:Pope Dionysius.jpg",
+    "artist": "Unknown (Sistine Chapel fresco)",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Pope%20Dionysius.jpg",
+    "focus": {
+      "x": 0.5,
+      "y": 0.36,
+      "zoom": 0.3
+    }
+  },
   "ephraim": {
     "title": "Ephrem the Syrian",
     "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Mor_Ephrem_icon.jpg/330px-Mor_Ephrem_icon.jpg",
@@ -372,6 +432,21 @@
       "x": 0.4,
       "y": 0.2,
       "zoom": 0.45
+    }
+  },
+  "hegesippus": {
+    "title": "Hegesippus",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/58/Hegesippus_Egesippus_Nuremberg_Chronicle_cropped.png",
+    "file": "File:Hegesippus Egesippus Nuremberg Chronicle cropped.png",
+    "artist": "Michel Wolgemut (workshop)",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hegesippus%20Egesippus%20Nuremberg%20Chronicle%20cropped.png",
+    "focus": {
+      "x": 0.53,
+      "y": 0.32,
+      "zoom": 0.35
     }
   },
   "hermas": {
@@ -494,6 +569,21 @@
       "zoom": 0.7
     }
   },
+  "julius_africanus": {
+    "title": "Julius Africanus",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/6/67/Sextus_Julius_Africanus_Julius_aphricanus_%28titel_op_object%29_Liber_Chronicarum_%28serietitel%29%2C_RP-P-2016-49-79-4.jpg",
+    "file": "File:Sextus Julius Africanus Julius aphricanus (titel op object) Liber Chronicarum (serietitel), RP-P-2016-49-79-4.jpg",
+    "artist": "Rijksmuseum",
+    "license": "CC0",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Sextus%20Julius%20Africanus%20Julius%20aphricanus%20(titel%20op%20object)%20Liber%20Chronicarum%20(serietitel)%2C%20RP-P-2016-49-79-4.jpg",
+    "focus": {
+      "x": 0.48,
+      "y": 0.38,
+      "zoom": 0.32
+    }
+  },
   "justin": {
     "title": "Justin Martyr",
     "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg/330px-Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg",
@@ -552,6 +642,21 @@
       "x": 0.33,
       "y": 0.14,
       "zoom": 0.2
+    }
+  },
+  "melito": {
+    "title": "Melito of Sardis",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/1/17/H._Melito_van_Sardes%2C_kerkvader_Melito_Bisschop_van_Sardis._Onderwysende_inde_Cristelyke_Godsdienst_%28titel_op_object%29%2C_RP-P-1896-A-19368-1267.jpg",
+    "file": "File:H. Melito van Sardes, kerkvader Melito Bisschop van Sardis. Onderwysende inde Cristelyke Godsdienst (titel op object), RP-P-1896-A-19368-1267.jpg",
+    "artist": "Rijksmuseum",
+    "license": "CC0",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:H.%20Melito%20van%20Sardes%2C%20kerkvader%20Melito%20Bisschop%20van%20Sardis.%20Onderwysende%20inde%20Cristelyke%20Godsdienst%20(titel%20op%20object)%2C%20RP-P-1896-A-19368-1267.jpg",
+    "focus": {
+      "x": 0.51,
+      "y": 0.32,
+      "zoom": 0.28
     }
   },
   "methodius": {
@@ -614,6 +719,21 @@
       "zoom": 0.3
     }
   },
+  "pantaenus": {
+    "title": "Pantaenus",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/e/e7/H._Pantenus_van_Alexandri%C3%AB%2C_kerkvader_Pantenus_Catechist_t%27Alexandri%C3%ABn%2C_Syn_Schoolampt_oeffenende_%28titel_op_object%29%2C_RP-P-1896-A-19368-1269.jpg",
+    "file": "File:H. Pantenus van Alexandrië, kerkvader Pantenus Catechist t'Alexandriën, Syn Schoolampt oeffenende (titel op object), RP-P-1896-A-19368-1269.jpg",
+    "artist": "Rijksmuseum",
+    "license": "CC0",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:H.%20Pantenus%20van%20Alexandri%C3%AB%2C%20kerkvader%20Pantenus%20Catechist%20t'Alexandri%C3%ABn%2C%20Syn%20Schoolampt%20oeffenende%20(titel%20op%20object)%2C%20RP-P-1896-A-19368-1269.jpg",
+    "focus": {
+      "x": 0.5,
+      "y": 0.38,
+      "zoom": 0.28
+    }
+  },
   "pantocrator": {
     "title": "Christ Pantocrator (Saint Catherine's Monastery, Sinai)",
     "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Spas_vsederzhitel_sinay.jpg",
@@ -644,6 +764,21 @@
       "zoom": 0.4
     }
   },
+  "peter_alexandria": {
+    "title": "Peter of Alexandria",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Peter_of_Alexandria.jpg/960px-Peter_of_Alexandria.jpg",
+    "file": "File:Peter of Alexandria.jpg",
+    "artist": "Georgios Foukas",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Peter%20of%20Alexandria.jpg",
+    "focus": {
+      "x": 0.29,
+      "y": 0.23,
+      "zoom": 0.2
+    }
+  },
   "polycarp": {
     "title": "Polycarp",
     "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Polycarp_of_Smyrna2.jpg/330px-Polycarp_of_Smyrna2.jpg",
@@ -657,6 +792,21 @@
       "x": 0.43,
       "y": 0.2,
       "zoom": 0.45
+    }
+  },
+  "quadratus": {
+    "title": "Quadratus of Athens",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Quadratus_of_Athens_from_Apostolici.jpg",
+    "file": "File:Quadratus of Athens from Apostolici.jpg",
+    "artist": "Michael Burghers",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Quadratus%20of%20Athens%20from%20Apostolici.jpg",
+    "focus": {
+      "x": 0.49,
+      "y": 0.146,
+      "zoom": 0.2
     }
   },
   "rufinus": {
@@ -777,6 +927,36 @@
       "x": 0.55,
       "y": 0.18,
       "zoom": 0.45
+    }
+  },
+  "venantius": {
+    "title": "Venantius Fortunatus",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Venantius_Fortunatus_miniature.JPG/500px-Venantius_Fortunatus_miniature.JPG",
+    "file": "File:Venantius Fortunatus miniature.JPG",
+    "artist": "Unknown (c. 1100)",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "attributionRequired": false,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Venantius%20Fortunatus%20miniature.JPG",
+    "focus": {
+      "x": 0.62,
+      "y": 0.3,
+      "zoom": 0.4
+    }
+  },
+  "victorinus": {
+    "title": "Victorinus of Pettau",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/23/Victorinus_%28cropped%29.jpg",
+    "file": "File:Victorinus (cropped).jpg",
+    "artist": "Jakob Brollo",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "attributionRequired": true,
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Victorinus%20(cropped).jpg",
+    "focus": {
+      "x": 0.57,
+      "y": 0.13,
+      "zoom": 0.3
     }
   },
   "vincent": {

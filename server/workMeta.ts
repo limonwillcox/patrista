@@ -294,6 +294,53 @@ export const WORK_META: Record<string, WorkMeta> = {
   "vision-of-paul": {
     authorship: "spurious",
     attribution: "Pseudonymous apocalypse (late 4th c.)"
+  },
+  "letter-of-the-churches-of-vienne-and-lyons": {
+    attribution: "The churches of Vienne and Lyons, on their martyrs of 177; preserved by Eusebius",
+    by: "the Churches of Vienne and Lyons",
+    group: true
+  },
+
+  // --- Minor ante-Nicene writers (ANF VI–VIII) ---
+  "narrative-of-events-happening-in-persia-on-the-birth-of-christ": {
+    authorship: "spurious",
+    attribution: "Anonymous (5th or 6th c.); printed under the name of Julius Africanus, but not his"
+  },
+  "passion-of-st-symphorosa-and-her-seven-sons": {
+    authorship: "spurious",
+    attribution: "Anonymous martyr act; the ascription to Julius Africanus is not accepted"
+  },
+  "paschal-canon": {
+    authorship: "disputed",
+    attribution: "Survives only in Latin; whether this text is Anatolius’s own Paschal treatise is disputed"
+  },
+  "epistle-to-lucianus-the-chief-chamberlain": {
+    authorship: "spurious",
+    attribution: "Generally held to be a 17th-century forgery, not a letter of Theonas"
+  },
+  "exposition-of-the-chapters-of-the-acts-of-the-apostles": {
+    authorship: "disputed",
+    attribution: "Ascribed to Pamphilus; also handed down under the name of Euthalius"
+  },
+  "acts-of-the-disputation-with-the-heresiarch-manes": {
+    attribution: "Hegemonius (4th c.), who presents it as the record of a debate between Bishop Archelaus and Mani",
+    by: "Hegemonius"
+  },
+  "genuine-acts-of-peter": {
+    authorship: "anonymous",
+    attribution: "Anonymous later account of Peter’s martyrdom, known in the Latin of Anastasius the Librarian (9th c.)"
+  },
+  "extant-writings-of-asterius-urbanus": {
+    authorship: "anonymous",
+    attribution: "An anonymous writer against the Montanists (c. 192), quoted by Eusebius; the name Asterius Urbanus is a later guess"
+  },
+  "on-matter": {
+    authorship: "disputed",
+    attribution: "Quoted by Eusebius as the work of Maximus; the same text stands in Methodius, On Free Will"
+  },
+  "remains-of-melito": {
+    authorship: "disputed",
+    attribution: "Melito of Sardis (d. c. 180) for the Greek fragments; the Syriac discourse to Antoninus and The Key are later works under his name"
   }
 };
 

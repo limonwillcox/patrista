@@ -177,6 +177,19 @@ const WORK_SHORT: Record<string, { short: string; chapter?: string; prose?: bool
   "Discourse on the End of the World and Antichrist": { short: "End of the World and Antichrist" },
   "Against Eunomius (Books I-XII)": { short: "Against Eunomius" },
   "Discourse to the Greeks Concerning Hades": { short: "Discourse on Hades" },
+  // Minor ante-Nicene writers (Nov 2026): fragment titles that ran past TITLE_MAX with the author's name.
+  "The Acts of the Disputation with the Heresiarch Manes": { short: "Disputation with Manes" },
+  "Fragments of the Chronography": { short: "Chronography Fragments" },
+  "Commentary on the Apocalypse": { short: "Commentary on the Apocalypse", chapter: "On the Apocalypse" },
+  "Epistles on the Arian Heresy": { short: "Epistles on the Arian Heresy", chapter: "On the Arian Heresy" },
+  "Narrative of Events Happening in Persia on the Birth of Christ": { short: "Events in Persia on the Birth of Christ" },
+  "Fragments of the Disputation of Jason and Papiscus": { short: "Disputation of Jason and Papiscus" },
+  "Fragments of the Commentaries on the Acts of the Church": { short: "Commentaries on the Acts of the Church" },
+  "Fragments of the Books on Arithmetic": { short: "Fragments on Arithmetic" },
+  "Fragments of a Letter to the Roman Church": { short: "Letter to the Roman Church" },
+  "Epistle to Victor and the Roman Church": { short: "Epistle to Victor of Rome" },
+  "Epistle to Meletius, Bishop of Lycopolis": { short: "Epistle to Meletius" },
+  "Epistle on the Question of the Passover": { short: "On the Question of the Passover" },
   // 2 Clement; the bare catalog title "The Homily" read as just "Homily".
   "The Homily": { short: "Second Clement (An Ancient Homily)", chapter: "Second Clement", prose: "homily known as Second Clement" }
 };
@@ -219,7 +232,8 @@ function clean(text: string): string {
 /** Opening-text cleanup on top of clean(): drop bracketed editorial text and leading verse/section numbers. */
 function cleanProse(text: string, keepBrackets = false): string {
   let t = clean(text);
-  t = keepBrackets ? t.replace(/[\[\]]/g, "") : t.replace(/\s*\[[^\]]*\]/g, "");
+  // A bracket left without its partner (Victorinus closes each quoted verse with "]") goes too.
+  t = keepBrackets ? t.replace(/[\[\]]/g, "") : t.replace(/\s*\[[^\]]*\]/g, "").replace(/[\[\]]/g, "");
   // Editorial lead-ins such as Cyprian's "Argument.—" (from "Argument.--").
   t = t.replace(/^[\s,.;:—–-]+/, "");
   t = t.replace(/^\s*(?:Argument|Argt|Summary|Analysis)(?:\s+[IVXL]+)?(?:\.\s*[—:]?|\s*[—:])\s*/, "");

@@ -176,7 +176,8 @@ async function main() {
     const heroSrc = heroFiles[heroFiles.length - 1];
     const url = (name) => "/assets/father-img/" + name;
     manifest[id] = {
-      alt: "Portrait of " + (names[id] || credits[id]?.title || id),
+      // A row with its own alt is not a likeness (a manuscript, a place): say what the picture shows.
+      alt: credits[id]?.alt || "Portrait of " + (names[id] || credits[id]?.title || id),
       tile: {
         src: url(tileSrc.name),
         srcset: tileFiles.map((file) => url(file.name) + " " + file.width + "w").join(", "),

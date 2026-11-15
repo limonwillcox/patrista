@@ -58,7 +58,7 @@ export function creditHtml(credit: FatherImageCredit | null, className: string):
   const via = credit.source
     ? '<a href="' + escapeHtml(credit.source) + '">Wikimedia Commons</a>'
     : "Wikimedia Commons";
-  return '<p class="' + className + '">Portrait: ' + artist + ", " + license + ", via " + via + ".</p>";
+  return '<p class="' + className + '">Image: ' + artist + ", " + license + ", via " + via + ".</p>";
 }
 
 function factsHtml(dates: string, office: string, region: string): string {

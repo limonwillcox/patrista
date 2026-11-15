@@ -83,7 +83,7 @@ function CreditLine({ credit, className }: { credit: FatherImageCredit | null; c
   if (!credit || !credit.attributionRequired) return null;
   return (
     <p className={className}>
-      Portrait: {credit.artist || "Unknown artist"},{" "}
+      Image: {credit.artist || "Unknown artist"},{" "}
       {credit.licenseUrl ? <a href={credit.licenseUrl}>{credit.license || "license"}</a> : credit.license || "license"},
       via {credit.source ? <a href={credit.source}>Wikimedia Commons</a> : "Wikimedia Commons"}.
     </p>

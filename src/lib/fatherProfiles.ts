@@ -11,6 +11,12 @@ export type FatherProfile = {
   kind?: "person" | "document" | "collection";
 };
 
+/**
+ * Writers whose work survives here only as fragments, mostly quoted by Eusebius. They are listed
+ * together after the centuries so the century grids keep to the Fathers with whole works.
+ */
+export const FRAGMENTS_SECTION = "Known from Fragments";
+
 export const FATHER_PROFILES: Record<string, FatherProfile> = {
   clement_rome: {
     office: "Bishop of Rome (by tradition)",
@@ -388,6 +394,236 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
     paragraphs: [
       "This shelf holds a mixed collection of anonymous and pseudonymous writings, from the first century to the ninth, printed with the Ante-Nicene Fathers. They are not by one author, and each work’s page gives its own date and what is known of its origin.",
       "Some are early, such as the homily known as Second Clement and the Apology of Aristides. Others are much later: the Apostolic Constitutions (c. 380), Greek apocalypses of the Byzantine period, the Pseudo-Isidorian Decretals (9th century), and Jewish writings such as the Testament of Abraham that Christians preserved."
+    ]
+  },
+  // --- Minor ante-Nicene writers (ANF VI–VIII). Most are known only from fragments, chiefly in Eusebius. ---
+  quadratus: {
+    office: "Christian apologist",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Quadratus (fl. c. 125) wrote the earliest known defence of Christianity, addressed to the emperor Hadrian. Eusebius calls him a disciple of the apostles; whether he was also the bishop of Athens of that name is uncertain.",
+      "One sentence of the Apology survives, quoted by Eusebius. It says that some of those whom the Saviour healed and raised were still living in the writer’s own day."
+    ]
+  },
+  aristo_pella: {
+    office: "Christian apologist",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Aristo of Pella (fl. c. 140) was a Jewish Christian from Pella, east of the Jordan. Eusebius cites him for the story of the Bar Kokhba war and Hadrian’s edict against the Jews.",
+      "He is credited with the Disputation of Jason and Papiscus, a lost dialogue in which a Jewish Christian persuades an Alexandrian Jew from the Scriptures that Jesus is the Christ. Only a few lines and later descriptions remain."
+    ]
+  },
+  dionysius_corinth: {
+    office: "Bishop of Corinth",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Dionysius (fl. c. 170) was bishop of Corinth. He wrote letters of counsel to churches from Sparta and Athens to Crete, Pontus, and Rome, which were gathered into a collection.",
+      "Eusebius preserves a few passages of his letter to the Roman church. They thank Rome for its gifts to other churches, say that Clement’s letter was still read at Corinth, and state that Peter and Paul both taught in Italy and died there."
+    ]
+  },
+  melito: {
+    office: "Bishop of Sardis",
+    paragraphs: [
+      "Melito (d. c. 180) was bishop of Sardis in Asia Minor. Polycrates of Ephesus counts him among the great lights of Asia who kept Easter on the fourteenth day of the moon.",
+      "He addressed an apology to Marcus Aurelius and drew up the earliest Christian list of the books of the Old Testament, after a journey to Palestine. Only fragments are printed here; several pieces under his name, among them the Syriac discourse and The Key, are later."
+    ]
+  },
+  hegesippus: {
+    office: "Church chronicler",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Hegesippus (c. 110–c. 180) was probably a Jewish Christian from the East. He travelled by way of Corinth to Rome, noting in each church its succession of bishops and its agreement in teaching.",
+      "His five books of Memoirs are lost. Eusebius quotes their accounts of the death of James the Lord’s brother, of the kinsmen of Jesus brought before Domitian, and of the first sects."
+    ]
+  },
+  apollinaris_hierapolis: {
+    office: "Bishop of Hierapolis",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Claudius Apollinaris (fl. c. 175) was bishop of Hierapolis in Phrygia, the city of Papias a generation before. He addressed a defence of the faith to Marcus Aurelius and wrote against the Montanists.",
+      "His books are lost. The few lines that survive speak of the Passover and of the legion whose prayers were said to have brought rain."
+    ]
+  },
+  rhodon: {
+    office: "Christian teacher at Rome",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Rhodon (fl. c. 180) came from Asia Minor and studied at Rome under Tatian. He wrote against Marcion’s followers and on the six days of creation.",
+      "Eusebius quotes his account of how the Marcionites had split into parties, and of his own debate with the aged Apelles, who held that those who hope in the Crucified will be saved if they are found in good works."
+    ]
+  },
+  theophilus_caesarea: {
+    office: "Bishop of Caesarea",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Theophilus (fl. c. 190) was bishop of Caesarea in Palestine. With Narcissus of Jerusalem he presided over a synod on the date of Easter.",
+      "A few lines of the synod’s letter survive in Eusebius. They ask that copies be sent to every church, and say that Palestine and Alexandria keep the feast on the same day."
+    ]
+  },
+  maximus_jerusalem: {
+    office: "Christian writer",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Maximus (fl. late 2nd c.) is named by Eusebius as a writer of the time of Commodus and Severus. Later tradition made him a bishop of Jerusalem.",
+      "Eusebius quotes a long passage under his name on the origin of evil and on whether matter is uncreated. The same passage is found in Methodius, On Free Will, so its author is disputed."
+    ]
+  },
+  polycrates: {
+    office: "Bishop of Ephesus",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Polycrates (c. 130–c. 196) was bishop of Ephesus, the eighth bishop in his own family. He led the churches of Asia in the dispute over the date of Easter.",
+      "His letter to Victor of Rome defends the Asian custom of keeping the feast on the fourteenth day of the moon. He appeals to the apostles Philip and John, to Polycarp, and to Melito, all buried in Asia."
+    ]
+  },
+  pantaenus: {
+    office: "Teacher at Alexandria",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Pantaenus (d. c. 200) was a Stoic philosopher who became a Christian and headed the school for catechumens at Alexandria. Eusebius reports that he travelled as far as India to preach.",
+      "He was the teacher of Clement of Alexandria, who calls him the best of his masters. He left almost nothing in writing; two short remarks on Scripture are preserved by Clement and by Maximus the Confessor."
+    ]
+  },
+  asterius_urbanus: {
+    office: "Writer against the Montanists",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Asterius Urbanus is the name the older editions gave to an anonymous writer of Asia Minor (c. 192). The name comes from a phrase in the text itself, which most scholars now take to refer to a Montanist collection of oracles and not to the author, whose own name is unknown.",
+      "His three books against the New Prophecy, addressed to Avircius Marcellus, are lost. Eusebius quotes their account of how Montanus began to prophesy and of the deaths of his first followers."
+    ]
+  },
+  apollonius: {
+    office: "Writer against the Montanists",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Apollonius (fl. c. 200–210) was a churchman of Asia Minor, by later tradition of Ephesus. He wrote about forty years after Montanus first prophesied.",
+      "His book is lost. The passages Eusebius quotes attack the conduct of the Montanist prophets: their taking of gifts, their paid preachers, and their claims to be martyrs."
+    ]
+  },
+  serapion: {
+    office: "Bishop of Antioch",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Serapion (d. c. 211) was bishop of Antioch from about 190. He wrote against the Montanists and to Christians who had wavered under persecution.",
+      "His best-known letter is to the church at Rhossus. He had at first let them read the Gospel of Peter, then examined it, found teaching in it that he could not accept, and withdrew his leave."
+    ]
+  },
+  julius_africanus: {
+    office: "Christian chronographer",
+    paragraphs: [
+      "Julius Africanus (c. 160–c. 240) was a soldier, a traveller, and a man of letters who lived at Emmaus (Nicopolis) in Palestine. He served the emperor Severus Alexander, for whom he arranged a library at Rome.",
+      "His Chronography, in five books, was the first Christian history of the world from the creation; later chroniclers built on it. Two letters survive: one to Origen doubting the story of Susanna, and one to Aristides reconciling the genealogies of Jesus in Matthew and Luke."
+    ]
+  },
+  alexander_jerusalem: {
+    office: "Bishop of Jerusalem",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Alexander (d. 251) was first a bishop in Cappadocia and then bishop of Jerusalem, where he founded a library that Eusebius later used. He had studied at Alexandria under Pantaenus and Clement.",
+      "He was a friend and defender of Origen, whom he let preach while still a layman. He died in prison at Caesarea in the persecution of Decius. Fragments of four letters remain."
+    ]
+  },
+  dionysius_rome: {
+    office: "Bishop of Rome",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Dionysius (d. 268) was bishop of Rome from 259, after the persecution of Valerian. He reorganised the Roman church and sent help to the churches of Cappadocia after a Gothic raid.",
+      "When Dionysius of Alexandria was accused of dividing the Godhead, a Roman synod answered. The surviving passage, kept by Athanasius, rejects both the Sabellian merging of Father and Son and any talk of three separate gods."
+    ]
+  },
+  malchion: {
+    office: "Presbyter of Antioch",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Malchion (fl. c. 268) was a presbyter of Antioch and the head of a school of rhetoric there. At the synod of 268 he questioned Paul of Samosata, the bishop of Antioch, and exposed his teaching.",
+      "The synod deposed Paul and sent a letter to the bishops of Rome and Alexandria, which Malchion is said to have drafted. Parts of that letter and of the debate survive."
+    ]
+  },
+  archelaus: {
+    office: "Bishop in Mesopotamia",
+    paragraphs: [
+      "Archelaus (fl. c. 277) appears as a bishop of Carchar in Mesopotamia who met Mani in public debate and defeated him. Outside this account nothing is known of him.",
+      "The Acts of the Disputation were written in the fourth century, probably by one Hegemonius, and survive in an old Latin translation. They are the earliest full Christian report of Mani’s life and teaching, and later writers against the Manichaeans drew on them."
+    ]
+  },
+  theognostus: {
+    office: "Teacher at Alexandria",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Theognostus (fl. c. 265–282) taught at the school of Alexandria in the generation after Origen and Dionysius. He followed Origen closely.",
+      "His Hypotyposes, in seven books, set out Christian doctrine in order; Photius read them and summarised their contents. Athanasius quotes him with approval on the Son’s being from the substance of the Father. Three short passages survive."
+    ]
+  },
+  anatolius: {
+    office: "Bishop of Laodicea",
+    paragraphs: [
+      "Anatolius (d. c. 283) was an Alexandrian, learned in arithmetic, geometry, astronomy, and philosophy, whom his fellow citizens asked to found a school of Aristotle’s teaching. He became bishop of Laodicea in Syria about 268.",
+      "He wrote on the reckoning of Easter and proposed a nineteen-year cycle; Eusebius quotes a passage. The Paschal Canon printed under his name survives only in Latin, and its authenticity is disputed."
+    ]
+  },
+  theonas: {
+    office: "Bishop of Alexandria",
+    paragraphs: [
+      "Theonas (d. 300) was bishop of Alexandria from about 282. In his time the first church building in the city is said to have been raised, and Pierius and Achillas taught there.",
+      "No genuine writing of his is known. The letter to Lucianus, the emperor’s chamberlain, on how Christians at court should behave, was published in the seventeenth century and is generally held to be a forgery of that date."
+    ]
+  },
+  victorinus: {
+    office: "Bishop of Pettau",
+    paragraphs: [
+      "Victorinus (d. c. 304) was bishop of Pettau in Pannonia, now Ptuj in Slovenia. He died a martyr in the persecution of Diocletian.",
+      "He was the first to write commentaries on Scripture in Latin, drawing on Papias, Irenaeus, Hippolytus, and Origen. His commentary on the Apocalypse survives, in part as revised by Jerome, together with a short piece on the days of creation."
+    ]
+  },
+  alexander_lycopolis: {
+    office: "Philosopher",
+    paragraphs: [
+      "Alexander of Lycopolis (fl. c. 300) was a Platonist philosopher of Upper Egypt. Later tradition called him a bishop, but his book reads as the work of a pagan who respected the simple moral teaching of the Christians.",
+      "His treatise against the Manichaeans is one of the earliest descriptions of their system by an outsider. It argues from philosophy, not from Scripture, that their account of matter, of the sun and moon, and of Christ cannot stand."
+    ]
+  },
+  phileas: {
+    office: "Bishop of Thmuis",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Phileas (d. c. 306) was a wealthy and learned man who became bishop of Thmuis in the Nile Delta. He was beheaded at Alexandria in the Great Persecution.",
+      "From prison he wrote to his flock about the tortures the martyrs of Alexandria endured; Eusebius quotes the letter. With three other imprisoned bishops he also wrote to Meletius of Lycopolis, rebuking him for ordaining in other bishops’ dioceses."
+    ]
+  },
+  pamphilus: {
+    office: "Presbyter of Caesarea",
+    paragraphs: [
+      "Pamphilus (d. 309) was a presbyter of Caesarea in Palestine. He built up the library that Origen had begun there, copied and corrected manuscripts of Scripture, and taught Eusebius, who took the name “Eusebius of Pamphilus” in his honour.",
+      "In prison he wrote, with Eusebius, a Defence of Origen, of which the first book survives in Latin. He was martyred in 309. The summary of the chapters of Acts printed here is ascribed to him, though it is also handed down under another name."
+    ]
+  },
+  pierius: {
+    office: "Presbyter of Alexandria",
+    section: FRAGMENTS_SECTION,
+    paragraphs: [
+      "Pierius (d. after 309) was a presbyter of Alexandria and head of its school under Bishop Theonas. He was famed for his learning, his preaching, and his poverty, and was called “the younger Origen.”",
+      "He taught Pamphilus and is said to have spent his last years in Rome. His sermons are lost; a few remarks survive in Jerome and in Photius, who read a volume of twelve discourses."
+    ]
+  },
+  peter_alexandria: {
+    office: "Bishop of Alexandria",
+    paragraphs: [
+      "Peter (d. 311) became bishop of Alexandria in 300, after heading its school. He led the church through the Great Persecution and was beheaded in 311; the Egyptian church calls him “the seal of the martyrs.”",
+      "His Canonical Epistle of 306 sets the terms on which Christians who had lapsed under persecution might be restored. It became part of the canon law of the Eastern churches. During his time in hiding, Meletius of Lycopolis began the schism that bears his name."
+    ]
+  },
+  alexander_alexandria: {
+    office: "Bishop of Alexandria",
+    paragraphs: [
+      "Alexander (d. 328) was bishop of Alexandria from about 313. When his presbyter Arius taught that the Son was a creature, Alexander called a synod of Egyptian bishops, which condemned Arius about 320.",
+      "His two long letters warn other bishops against Arius and set out the faith that the Council of Nicaea confirmed in 325, where Alexander was a leading figure. His deacon and successor was Athanasius."
+    ]
+  },
+  venantius: {
+    office: "Bishop of Poitiers and poet",
+    paragraphs: [
+      "Venantius Fortunatus (c. 530–c. 609) was an Italian poet, educated at Ravenna, who settled in Gaul. He became chaplain to the convent of Queen Radegund at Poitiers and, late in life, bishop of the city.",
+      "He wrote the hymns Vexilla regis and Pange lingua for the arrival of a relic of the cross, and many occasional poems and saints’ lives. The Easter poem printed here was long copied among the works of Lactantius."
     ]
   },
   unknown: {

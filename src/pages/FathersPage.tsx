@@ -5,7 +5,14 @@ import { HERO_SIZES, TILE_SIZES, fatherImage, type FatherImage, type FatherImage
 import { Bookcase } from "../components/shelf/Bookcase";
 import { JOURNEYS, type Journey } from "../data/journeys";
 import { webglAvailable } from "../three/support";
-import { SECTION_NOTES, fatherEntry, fatherSections, sectionMark, type FatherEntry } from "../lib/fathersDirectory";
+import {
+  FRAGMENTS_SECTION_ID,
+  SECTION_NOTES,
+  fatherEntry,
+  fatherSections,
+  sectionMark,
+  type FatherEntry
+} from "../lib/fathersDirectory";
 import { centuryBlocks } from "../lib/centuries";
 import { readLinks, type HistoryEra } from "../../server/churchHistory";
 import { formatWords } from "../lib/keyWorks";
@@ -76,7 +83,7 @@ function CreditLine({ credit, className }: { credit: FatherImageCredit | null; c
   if (!credit || !credit.attributionRequired) return null;
   return (
     <p className={className}>
-      {credit.artist || "Unknown artist"},{" "}
+      Portrait: {credit.artist || "Unknown artist"},{" "}
       {credit.licenseUrl ? <a href={credit.licenseUrl}>{credit.license || "license"}</a> : credit.license || "license"},
       via {credit.source ? <a href={credit.source}>Wikimedia Commons</a> : "Wikimedia Commons"}.
     </p>
@@ -220,7 +227,6 @@ function FatherProfile({ catalog, authorId }: { catalog: LoadedCatalog; authorId
         <div className="fathers-hero-inner">
           <div className="fathers-hero-photo-wrap">
             <Portrait image={image} variant="hero" eager />
-            <CreditLine credit={image?.credit ?? null} className="fathers-hero-credit" />
           </div>
           <div className="fathers-hero-copy">
             <p className="fathers-back">
@@ -256,6 +262,8 @@ function FatherProfile({ catalog, authorId }: { catalog: LoadedCatalog; authorId
         {before ? <NeighbourLink father={before} label="Earlier" /> : <span />}
         {after ? <NeighbourLink father={after} label="Later" /> : <span />}
       </nav>
+      {/* The portrait's credit sits at the foot of the page, out of the way of the portrait. */}
+      <CreditLine credit={image?.credit ?? null} className="fathers-credit" />
     </div>
   );
 }
@@ -374,7 +382,12 @@ function FathersIndex({ catalog }: { catalog: LoadedCatalog }) {
                   <p className="fx-century-meta">
                     {[
                       section.fathers.length
-                        ? section.fathers.length + (section.fathers.length === 1 ? " Father" : " Fathers")
+                        ? section.fathers.length +
+                          (section.id === FRAGMENTS_SECTION_ID
+                            ? " writers"
+                            : section.fathers.length === 1
+                              ? " Father"
+                              : " Fathers")
                         : "",
                       workCount ? workCount + (workCount === 1 ? " work" : " works") : "",
                       section.events.length
@@ -387,7 +400,20 @@ function FathersIndex({ catalog }: { catalog: LoadedCatalog }) {
                   {SECTION_NOTES[section.id] ? <p className="fx-century-note">{SECTION_NOTES[section.id]}</p> : null}
                 </div>
               </header>
-              {section.fathers.length ? (
+              {section.id === FRAGMENTS_SECTION_ID ? (
+                <ul className="fathers-list">
+                  {section.fathers.map((father) => (
+                    <li key={father.id}>
+                      <Link className="fathers-list-link" to={fatherProfilePath(father.id)}>
+                        <span className="fathers-list-name">{father.name}</span>
+                        <span className="fathers-list-meta">
+                          {[father.office, father.dates].filter(Boolean).join(" · ")}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : section.fathers.length ? (
                 <ul className="fathers-grid">
                   {section.fathers.map((father) => {
                     const image = fatherImage(father.id);
@@ -409,7 +435,6 @@ function FathersIndex({ catalog }: { catalog: LoadedCatalog }) {
                             ) : null}
                           </p>
                         </Link>
-                        <CreditLine credit={image?.credit ?? null} className="fathers-tile-credit" />
                       </li>
                     );
                   })}

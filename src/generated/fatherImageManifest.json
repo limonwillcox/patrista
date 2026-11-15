@@ -1,4 +1,48 @@
 {
+  "alexander_alexandria": {
+    "alt": "Portrait of Alexander of Alexandria",
+    "tile": {
+      "src": "/assets/father-img/alexander_alexandria-240-c993e7ded5.webp",
+      "srcset": "/assets/father-img/alexander_alexandria-120-8e8e7c53a4.webp 120w, /assets/father-img/alexander_alexandria-240-c993e7ded5.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/alexander_alexandria-296-c1f7faaa8e.webp",
+      "srcset": "/assets/father-img/alexander_alexandria-296-c1f7faaa8e.webp 296w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown (Veljusa Monastery fresco)",
+      "license": "Free Art License",
+      "licenseUrl": "http://artlibre.org/licence/lal/en",
+      "source": "https://commons.wikimedia.org/wiki/File:Veljusa%20Monastery%20St.%20Alexander%20of%20Alexandria.jpg",
+      "attributionRequired": true
+    }
+  },
+  "alexander_jerusalem": {
+    "alt": "Portrait of Alexander of Jerusalem",
+    "tile": {
+      "src": "/assets/father-img/alexander_jerusalem-240-575cb4024f.webp",
+      "srcset": "/assets/father-img/alexander_jerusalem-120-0bf127185a.webp 120w, /assets/father-img/alexander_jerusalem-240-575cb4024f.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/alexander_jerusalem-312-e18567af90.webp",
+      "srcset": "/assets/father-img/alexander_jerusalem-312-e18567af90.webp 312w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown (15th century)",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Alexander%20of%20Jerusalem.jpg",
+      "attributionRequired": false
+    }
+  },
   "ambrose": {
     "alt": "Portrait of Ambrose of Milan",
     "tile": {
@@ -40,6 +84,28 @@
       "license": "No restrictions",
       "licenseUrl": "https://www.flickr.com/commons/usage/",
       "source": "https://commons.wikimedia.org/wiki/File:Les%20Vies%20des%20P%C3%A8res%20des%20d%C3%A9serts%20d'Orient%20-%20leur%20doctrine%20spirituelle%20et%20leur%20discipline%20monastique%20(1886)%20(14590545527).jpg",
+      "attributionRequired": false
+    }
+  },
+  "apollinaris_hierapolis": {
+    "alt": "Portrait of Claudius Apollinaris",
+    "tile": {
+      "src": "/assets/father-img/apollinaris_hierapolis-240-e8c12068f6.webp",
+      "srcset": "/assets/father-img/apollinaris_hierapolis-120-77a17caf56.webp 120w, /assets/father-img/apollinaris_hierapolis-240-e8c12068f6.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/apollinaris_hierapolis-360-9656449bce.webp",
+      "srcset": "/assets/father-img/apollinaris_hierapolis-360-9656449bce.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Rijksmuseum",
+      "license": "CC0",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Apollinaris%20Claudius%20Apolinaris%20episcopus%20(titel%20op%20object)%20Liber%20Chronicarum%20(serietitel)%2C%20RP-P-2016-49-78-10.jpg",
       "attributionRequired": false
     }
   },
@@ -362,7 +428,7 @@
     }
   },
   "dionysius": {
-    "alt": "Portrait of Dionysius",
+    "alt": "Portrait of Dionysius of Alexandria",
     "tile": {
       "src": "/assets/father-img/dionysius-240-a7abe524bf.webp",
       "srcset": "/assets/father-img/dionysius-120-d1c4c18c48.webp 120w, /assets/father-img/dionysius-240-a7abe524bf.webp 240w",
@@ -380,6 +446,28 @@
       "license": "Public domain",
       "licenseUrl": "",
       "source": "https://commons.wikimedia.org/wiki/File:Dionisii%20alek.jpg",
+      "attributionRequired": false
+    }
+  },
+  "dionysius_rome": {
+    "alt": "Portrait of Dionysius of Rome",
+    "tile": {
+      "src": "/assets/father-img/dionysius_rome-120-851d24135c.webp",
+      "srcset": "/assets/father-img/dionysius_rome-120-851d24135c.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/dionysius_rome-222-50ce9ad389.webp",
+      "srcset": "/assets/father-img/dionysius_rome-222-50ce9ad389.webp 222w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown (Sistine Chapel fresco)",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Pope%20Dionysius.jpg",
       "attributionRequired": false
     }
   },
@@ -522,6 +610,28 @@
       "license": "Public domain",
       "licenseUrl": "",
       "source": "https://commons.wikimedia.org/wiki/File:Grigorii%20chudotvoretz.jpg",
+      "attributionRequired": false
+    }
+  },
+  "hegesippus": {
+    "alt": "Portrait of Hegesippus",
+    "tile": {
+      "src": "/assets/father-img/hegesippus-240-02d56d41a0.webp",
+      "srcset": "/assets/father-img/hegesippus-120-0b283d96ef.webp 120w, /assets/father-img/hegesippus-240-02d56d41a0.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/hegesippus-720-10af664955.webp",
+      "srcset": "/assets/father-img/hegesippus-360-20eb7749fb.webp 360w, /assets/father-img/hegesippus-720-10af664955.webp 720w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Michel Wolgemut (workshop)",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Hegesippus%20Egesippus%20Nuremberg%20Chronicle%20cropped.png",
       "attributionRequired": false
     }
   },
@@ -689,6 +799,28 @@
       "attributionRequired": false
     }
   },
+  "julius_africanus": {
+    "alt": "Portrait of Julius Africanus",
+    "tile": {
+      "src": "/assets/father-img/julius_africanus-240-bd2b08c761.webp",
+      "srcset": "/assets/father-img/julius_africanus-120-780ead3080.webp 120w, /assets/father-img/julius_africanus-240-bd2b08c761.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/julius_africanus-360-6e6bd972aa.webp",
+      "srcset": "/assets/father-img/julius_africanus-360-6e6bd972aa.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Rijksmuseum",
+      "license": "CC0",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Sextus%20Julius%20Africanus%20Julius%20aphricanus%20(titel%20op%20object)%20Liber%20Chronicarum%20(serietitel)%2C%20RP-P-2016-49-79-4.jpg",
+      "attributionRequired": false
+    }
+  },
   "justin": {
     "alt": "Portrait of Justin Martyr",
     "tile": {
@@ -771,6 +903,28 @@
     },
     "credit": null
   },
+  "melito": {
+    "alt": "Portrait of Melito of Sardis",
+    "tile": {
+      "src": "/assets/father-img/melito-240-fd526f386a.webp",
+      "srcset": "/assets/father-img/melito-120-4242aec1ac.webp 120w, /assets/father-img/melito-240-fd526f386a.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/melito-360-b9e05ca6e4.webp",
+      "srcset": "/assets/father-img/melito-360-b9e05ca6e4.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Rijksmuseum",
+      "license": "CC0",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:H.%20Melito%20van%20Sardes%2C%20kerkvader%20Melito%20Bisschop%20van%20Sardis.%20Onderwysende%20inde%20Cristelyke%20Godsdienst%20(titel%20op%20object)%2C%20RP-P-1896-A-19368-1267.jpg",
+      "attributionRequired": false
+    }
+  },
   "methodius": {
     "alt": "Portrait of Methodius of Olympus",
     "tile": {
@@ -841,6 +995,28 @@
     },
     "credit": null
   },
+  "pantaenus": {
+    "alt": "Portrait of Pantaenus",
+    "tile": {
+      "src": "/assets/father-img/pantaenus-240-627cd57214.webp",
+      "srcset": "/assets/father-img/pantaenus-120-9fcb368024.webp 120w, /assets/father-img/pantaenus-240-627cd57214.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/pantaenus-360-6723080c56.webp",
+      "srcset": "/assets/father-img/pantaenus-360-6723080c56.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Rijksmuseum",
+      "license": "CC0",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:H.%20Pantenus%20van%20Alexandri%C3%AB%2C%20kerkvader%20Pantenus%20Catechist%20t'Alexandri%C3%ABn%2C%20Syn%20Schoolampt%20oeffenende%20(titel%20op%20object)%2C%20RP-P-1896-A-19368-1269.jpg",
+      "attributionRequired": false
+    }
+  },
   "pantocrator": {
     "alt": "Portrait of Christ Pantocrator (Saint Catherine's Monastery, Sinai)",
     "tile": {
@@ -885,6 +1061,28 @@
       "attributionRequired": false
     }
   },
+  "peter_alexandria": {
+    "alt": "Portrait of Peter of Alexandria",
+    "tile": {
+      "src": "/assets/father-img/peter_alexandria-120-4e55123f06.webp",
+      "srcset": "/assets/father-img/peter_alexandria-120-4e55123f06.webp 120w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/peter_alexandria-296-534ec1c3fc.webp",
+      "srcset": "/assets/father-img/peter_alexandria-296-534ec1c3fc.webp 296w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Georgios Foukas",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Peter%20of%20Alexandria.jpg",
+      "attributionRequired": false
+    }
+  },
   "polycarp": {
     "alt": "Portrait of Polycarp of Smyrna",
     "tile": {
@@ -904,6 +1102,28 @@
       "license": "CC0",
       "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "source": "https://commons.wikimedia.org/wiki/File:Polycarp%20of%20Smyrna2.jpg",
+      "attributionRequired": false
+    }
+  },
+  "quadratus": {
+    "alt": "Portrait of Quadratus of Athens",
+    "tile": {
+      "src": "/assets/father-img/quadratus-240-bc9bb6adf2.webp",
+      "srcset": "/assets/father-img/quadratus-120-ea73321c22.webp 120w, /assets/father-img/quadratus-240-bc9bb6adf2.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/quadratus-360-d6ae22dbf7.webp",
+      "srcset": "/assets/father-img/quadratus-360-d6ae22dbf7.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Michael Burghers",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Quadratus%20of%20Athens%20from%20Apostolici.jpg",
       "attributionRequired": false
     }
   },
@@ -1016,7 +1236,7 @@
     }
   },
   "theodoret": {
-    "alt": "Portrait of Theodoret of Cyrus",
+    "alt": "Portrait of Theodoret of Cyrrhus",
     "tile": {
       "src": "/assets/father-img/theodoret-240-7545227439.webp",
       "srcset": "/assets/father-img/theodoret-120-b97c752d6b.webp 120w, /assets/father-img/theodoret-240-7545227439.webp 240w",
@@ -1057,6 +1277,50 @@
       "licenseUrl": "",
       "source": "https://commons.wikimedia.org/wiki/File:Theophilus%20Antiochenus.png",
       "attributionRequired": false
+    }
+  },
+  "venantius": {
+    "alt": "Portrait of Venantius Fortunatus",
+    "tile": {
+      "src": "/assets/father-img/venantius-240-809fb155d9.webp",
+      "srcset": "/assets/father-img/venantius-120-aaef8c940f.webp 120w, /assets/father-img/venantius-240-809fb155d9.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/venantius-360-bf898f2452.webp",
+      "srcset": "/assets/father-img/venantius-360-bf898f2452.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Unknown (c. 1100)",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Venantius%20Fortunatus%20miniature.JPG",
+      "attributionRequired": false
+    }
+  },
+  "victorinus": {
+    "alt": "Portrait of Victorinus of Pettau",
+    "tile": {
+      "src": "/assets/father-img/victorinus-240-5ec7a3ad2f.webp",
+      "srcset": "/assets/father-img/victorinus-120-ade5e34766.webp 120w, /assets/father-img/victorinus-240-5ec7a3ad2f.webp 240w",
+      "width": 120,
+      "height": 120
+    },
+    "hero": {
+      "src": "/assets/father-img/victorinus-360-f3f807f6ee.webp",
+      "srcset": "/assets/father-img/victorinus-360-f3f807f6ee.webp 360w",
+      "width": 489,
+      "height": 336
+    },
+    "credit": {
+      "artist": "Jakob Brollo",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Victorinus%20(cropped).jpg",
+      "attributionRequired": true
     }
   },
   "vincent": {

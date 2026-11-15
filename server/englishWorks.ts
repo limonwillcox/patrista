@@ -43,6 +43,8 @@ export type EnglishWorkSpec = {
   bareHeadings?: boolean;
   /** Use the unitRe match itself as the heading (e.g. an epistle title) instead of "Book N". */
   keepUnitLabel?: boolean;
+  /** Chapter headings take no "Book N ·" prefix: the work has no books, only a line that happens to open with "book xv.". */
+  noBookLabels?: boolean;
   /** Fixed headings for the units in order (e.g. two recensions marked only by a title line). */
   unitTitles?: string[];
   /**
@@ -382,6 +384,76 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
   // Column-start "Book IV. [3480]" only: footnote lines "book iv. …" had made two stray units.
   "five-books-against-marcion": { chunk: "book", unitRe: /^ {3}Book ([IVX]+)\.(?:\s*\[\d+\])?\s*$/m, expectUnits: 5 },
   "memoirs-of-edessa": { chunk: "section", endAt: /^\s*Remains of the Second and Third Centuries\s*$/m },
+  // --- Works cut out of the volume dumps in Nov 2026 (scripts/english-by-father/split-minor-fathers.mjs) ---
+  // NPNF2 XII: 173 letters. Some headings carry a note number ("Letter XVII [201] .") or cover several letters
+  // that the editor only summarises ("Letters LV. to LVIII."). A cross-reference ("Letter XII. chap. 3") is no heading.
+  "leo-letters": {
+    markAbridged: true,
+    chunk: "letter",
+    unitRe: /^ {3}(Letters? [IVXLC]+\.?(?: (?:to|and) [IVXLC]+\.?)?)(?:\s*\[\d+\])?\s*\.?\s*$/m,
+    keepUnitLabel: true
+  },
+  // ANF VI: the Acts run in 55 numbered sections ("12. When Turbo had made this statement…"), then a fragment
+  // of the same disputation preserved by Cyril of Jerusalem.
+  // The fragment numbers its own three paragraphs 1–3; they stay in its text. A note that opens a line with
+  // "book xv., tells us…" is no book heading (noBookLabels).
+  "acts-of-the-disputation-with-the-heresiarch-manes": {
+    chunk: "chapter",
+    unitRe:
+      /^ {3}(?:(\d+)\. (?!Archelaus said to Manes: Give us|Then Manes made the following reply|But even although \[\d+\] we should)(?=[A-Z"])|(A Fragment of the Same Disputation)\.)/m,
+    bareHeadings: true,
+    noBookLabels: true
+  },
+  // ANF VI: pieces headed "I.--To Alexander, Bishop of the City of Constantinople."
+  "epistles-on-the-arian-heresy": { chunk: "chapter", unitRe: /^ {3,4}([IVX]+\.--[^\n]+)$/m, keepUnitLabel: true },
+  "fragments-of-peter-of-alexandria": { chunk: "chapter", unitRe: /^ {3,4}([IVX]+\.--[^\n]+)$/m, keepUnitLabel: true },
+  // Fifteen canons, each followed by the comments of Balsamon and Zonaras.
+  "peter-alexandria-the-canonical-epistle": {
+    chunk: "chapter",
+    unitRe: /^ {3}(Canon [IVX]+)\.\s*$/m,
+    keepUnitLabel: true,
+    bareHeadings: true,
+    expectUnits: 15
+  },
+  // Nineteen numbered fragments ("XIII. [1105]").
+  "fragments-of-the-chronography": {
+    chunk: "chapter",
+    unitRe: /^ {3,4}([IVX]+)\. \[\d+\]\s*$/m,
+    unitTitles: Array.from({ length: 19 }, (_x, i) => "Fragment " + toRoman(i + 1)),
+    expectUnits: 19
+  },
+  // ANF VII: Victorinus comments chapter by chapter ("From the First Chapter."), verse numbers inside.
+  "commentary-on-the-apocalypse": {
+    chunk: "chapter",
+    unitRe: /^\s*(From the [A-Z][A-Za-z -]+ Chapters?)\.(?:\s*\[\d+\])?\s*$/m,
+    keepUnitLabel: true,
+    bareHeadings: true
+  },
+  // ANF VIII: a Syriac discourse and five Syriac pieces (I–VI), then nine Greek and Latin fragments (I–IX).
+  "remains-of-melito": {
+    chunk: "chapter",
+    unitRe: /^ {3}([IVX]+)\.(?: \[\d+\])?\s*$/m,
+    keepRepeatedLabels: true,
+    dropParas: /^Fragments\.$/,
+    unitTitles: [
+      "A Discourse in the Presence of Antoninus Caesar",
+      "From the Discourse on Soul and Body",
+      "From the Discourse on the Cross",
+      "On Faith",
+      "Syriac Fragment V",
+      "Syriac Fragment VI",
+      "From the Work on the Passover",
+      "From the Apology Addressed to Marcus Aurelius Antoninus",
+      "From the Same Apology",
+      "From the Book of Extracts",
+      "From the Catena on Genesis",
+      "Two Scholia on Genesis 22:13",
+      "On the Nature of Christ",
+      "From the Oration on Our Lord's Passion",
+      "From The Key"
+    ],
+    expectUnits: 15
+  },
   "testaments-of-the-twelve-patriarchs": { chunk: "section" },
   // Two-level (Book > Chapter). For a "Chapter bug" work, add `subChapters: true` (or a custom RegExp).
   // Column-start "Book IV." (optionally "[674]") only, so a wrapped "Book V." mid-text is not a unit.
@@ -827,6 +899,39 @@ const AUTHOR_META: Record<string, AuthorMeta> = {
     deathYear: 100,
     bio: "Jewish historian of the first century. His Antiquities and Wars are primary sources for Second Temple Judaism and the Jewish War against Rome."
   },
+  // --- Minor ante-Nicene writers of ANF VI, VII and VIII (added Nov 2026). Most survive only in fragments. ---
+  quadratus: { name: "Quadratus of Athens", dates: "fl. c. 125", era: "ante-nicene", region: "Greece", deathYear: 129, bio: "" },
+  aristo_pella: { name: "Aristo of Pella", dates: "fl. c. 140", era: "ante-nicene", region: "Palestine", deathYear: 140, bio: "" },
+  dionysius_corinth: { name: "Dionysius of Corinth", dates: "fl. c. 170", era: "ante-nicene", region: "Greece", deathYear: 171, bio: "" },
+  melito: { name: "Melito of Sardis", dates: "d. c. 180", era: "ante-nicene", region: "Asia Minor", deathYear: 180, bio: "" },
+  hegesippus: { name: "Hegesippus", dates: "c. 110–c. 180", era: "ante-nicene", region: "Palestine / Rome", deathYear: 180, bio: "" },
+  apollinaris_hierapolis: { name: "Claudius Apollinaris", dates: "fl. c. 175", era: "ante-nicene", region: "Asia Minor", deathYear: 180, bio: "" },
+  rhodon: { name: "Rhodon", dates: "fl. c. 180", era: "ante-nicene", region: "Rome", deathYear: 185, bio: "" },
+  theophilus_caesarea: { name: "Theophilus of Caesarea", dates: "fl. c. 190", era: "ante-nicene", region: "Palestine", deathYear: 195, bio: "" },
+  maximus_jerusalem: { name: "Maximus of Jerusalem", dates: "fl. late 2nd c.", era: "ante-nicene", region: "Palestine", deathYear: 196, bio: "" },
+  polycrates: { name: "Polycrates of Ephesus", dates: "c. 130–c. 196", era: "ante-nicene", region: "Asia Minor", deathYear: 196, bio: "" },
+  pantaenus: { name: "Pantaenus", dates: "d. c. 200", era: "ante-nicene", region: "Egypt", deathYear: 200, bio: "" },
+  asterius_urbanus: { name: "Asterius Urbanus", dates: "fl. c. 192", era: "ante-nicene", region: "Asia Minor", deathYear: 200, bio: "" },
+  apollonius: { name: "Apollonius of Ephesus", dates: "fl. c. 200–210", era: "ante-nicene", region: "Asia Minor", deathYear: 210, bio: "" },
+  serapion: { name: "Serapion of Antioch", dates: "d. c. 211", era: "ante-nicene", region: "Syria", deathYear: 211, bio: "" },
+  julius_africanus: { name: "Julius Africanus", dates: "c. 160–c. 240", era: "ante-nicene", region: "Palestine", deathYear: 240, bio: "" },
+  alexander_jerusalem: { name: "Alexander of Jerusalem", dates: "d. 251", era: "ante-nicene", region: "Cappadocia / Palestine", deathYear: 251, bio: "" },
+  dionysius_rome: { name: "Dionysius of Rome", dates: "d. 268", era: "ante-nicene", region: "Rome", deathYear: 268, bio: "" },
+  malchion: { name: "Malchion of Antioch", dates: "fl. c. 268", era: "ante-nicene", region: "Syria", deathYear: 272, bio: "" },
+  archelaus: { name: "Archelaus", dates: "fl. c. 277", era: "ante-nicene", region: "Mesopotamia", deathYear: 280, bio: "" },
+  theognostus: { name: "Theognostus of Alexandria", dates: "fl. c. 270", era: "ante-nicene", region: "Egypt", deathYear: 282, bio: "" },
+  anatolius: { name: "Anatolius of Laodicea", dates: "d. c. 283", era: "ante-nicene", region: "Egypt / Syria", deathYear: 283, bio: "" },
+  theonas: { name: "Theonas of Alexandria", dates: "d. 300", era: "ante-nicene", region: "Egypt", deathYear: 300, bio: "" },
+  victorinus: { name: "Victorinus of Pettau", dates: "d. c. 304", era: "ante-nicene", region: "Pannonia", deathYear: 304, bio: "" },
+  alexander_lycopolis: { name: "Alexander of Lycopolis", dates: "fl. c. 300", era: "ante-nicene", region: "Egypt", deathYear: 305, bio: "" },
+  phileas: { name: "Phileas of Thmuis", dates: "d. c. 306", era: "ante-nicene", region: "Egypt", deathYear: 306, bio: "" },
+  pamphilus: { name: "Pamphilus of Caesarea", dates: "d. 309", era: "ante-nicene", region: "Palestine", deathYear: 309, bio: "" },
+  pierius: { name: "Pierius of Alexandria", dates: "d. after 309", era: "ante-nicene", region: "Egypt", deathYear: 310, bio: "" },
+  peter_alexandria: { name: "Peter of Alexandria", dates: "d. 311", era: "ante-nicene", region: "Egypt", deathYear: 311, bio: "" },
+  // Alexander presided over the church of Alexandria at Nicaea; his surviving letters (c. 320–324) come before it.
+  alexander_alexandria: { name: "Alexander of Alexandria", dates: "d. 328", era: "ante-nicene", region: "Egypt", deathYear: 328, bio: "" },
+  // ANF VII prints his Easter poem among the poems once ascribed to Lactantius.
+  venantius: { name: "Venantius Fortunatus", dates: "c. 530–c. 609", era: "post-nicene", region: "Gaul", deathYear: 609, bio: "" },
   unknown: { name: "Unknown / Collected", dates: "", era: "ante-nicene", region: "Various", deathYear: 150, bio: "" }
 };
 
@@ -1243,7 +1348,9 @@ export function discoverEnglishWorkSpecs(root: string): EnglishWorkSpec[] {
 
       const series = meta.series || "Schaff";
       const path = ["Fathers", "English", folder, file].join("/");
-      const translator = translatorFrom(raw);
+      // A "# translator:" header names the translator when the volume credits him only at the head of a
+      // section the extract was cut out of (split-minor-fathers.mjs).
+      const translator = translatorFrom(raw) || (meta.translator || "").trim();
       const edition = editionFrom(meta.source);
       const base: EnglishWorkSpec = {
         id,
@@ -1877,7 +1984,7 @@ function parseEnglishWorkFlat(spec: EnglishWorkSpec, root: string): { work: Work
     }
       let bookLabel = "";
       // A heading taken whole from the text needs no "Book N ·" (council volumes cite "Book XLIV." in notes).
-      for (let b = spec.keepUnitLabel ? -1 : bookMarks.length - 1; b >= 0; b--) {
+      for (let b = spec.keepUnitLabel || spec.noBookLabels ? -1 : bookMarks.length - 1; b >= 0; b--) {
         if (bookMarks[b].index <= marks[i].index) {
           bookLabel = romanOrNum(bookMarks[b].label);
           break;

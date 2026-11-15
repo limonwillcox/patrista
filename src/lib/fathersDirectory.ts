@@ -1,7 +1,7 @@
 import type { Author } from "../../server/types";
 import { deathCentury } from "../../server/shelf";
 import { centuryChapterTitle } from "./journal";
-import { FATHER_PROFILES, type FatherProfile } from "./fatherProfiles";
+import { FATHER_PROFILES, FRAGMENTS_SECTION, type FatherProfile } from "./fatherProfiles";
 
 export type FatherEntry = {
   id: string;
@@ -41,6 +41,8 @@ export const SECTION_NOTES: Record<string, string> = {
   "century-9": "After the Fathers: Cyril and Methodius carry the faith to the Slavs, and the Photian schism strains Rome and Constantinople.",
   "century-11":
     "The mutual excommunications of 1054, later taken as the symbol of the schism between East and West, close the story this library tells.",
+  "known-from-fragments":
+    "Writers from the second century to the early fourth whose books are lost. What survives is what later authors quoted, most of it in Eusebius’s Church History.",
   councils: "The creeds and canons of the ecumenical councils, from Nicaea in 325 onward."
 };
 
@@ -115,12 +117,21 @@ export function fatherSections(authors: Author[]): FatherSection[] {
       title: centuryHeading(n),
       fathers: fathers.sort(byDeathThenName)
     }));
-  for (const [title, fathers] of named) {
+  // The fragment writers follow the centuries; the councils stay last.
+  const order = (title: string) => (title === FRAGMENTS_SECTION ? 0 : 1);
+  for (const [title, fathers] of [...named].sort((a, b) => order(a[0]) - order(b[0]))) {
     sections.push({
-      id: title.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+      id: sectionId(title),
       title,
       fathers: fathers.sort(byDeathThenName)
     });
   }
   return sections;
 }
+
+function sectionId(title: string): string {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
+/** The section listed as plain names rather than portrait tiles. */
+export const FRAGMENTS_SECTION_ID = sectionId(FRAGMENTS_SECTION);

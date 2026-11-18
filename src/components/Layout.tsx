@@ -1,3 +1,4 @@
+import { useBookmarks } from "../lib/bookmarks";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { parseQuery } from "../../server/query";
@@ -51,6 +52,8 @@ const SearchIcon = (
 /** The ⋯ menu: the pages and settings that do not need a tab of their own. */
 function SiteMenu() {
   const { theme, setTheme, font, setFont } = useApp();
+  // Shown once the reader has kept a place, so the menu stays short for everyone else.
+  const hasBookmarks = useBookmarks().length > 0;
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const location = useLocation();
@@ -97,6 +100,11 @@ function SiteMenu() {
           <Link className="site-menu-item" to="/fixes">
             Feedback
           </Link>
+          {hasBookmarks ? (
+            <Link className="site-menu-item" to="/bookmarks">
+              Bookmarks
+            </Link>
+          ) : null}
           <AccountLink kind="menu" />
           <div className="site-menu-sep" role="separator" />
           <div className="site-menu-row">
@@ -132,6 +140,7 @@ function SiteMenu() {
  */
 function HeaderTools() {
   const { theme, setTheme, font, setFont } = useApp();
+  const hasBookmarks = useBookmarks().length > 0;
   const night = theme === "night";
   return (
     <div className="header-tools">
@@ -141,6 +150,11 @@ function HeaderTools() {
       <Link className="header-link" to="/fixes">
         Feedback
       </Link>
+      {hasBookmarks ? (
+        <Link className="header-link" to="/bookmarks">
+          Bookmarks
+        </Link>
+      ) : null}
       <AccountLink kind="header" />
       <span className="header-sep" aria-hidden="true" />
       <div className="header-size" role="group" aria-label="Text size">

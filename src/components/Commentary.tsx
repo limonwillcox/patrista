@@ -3,7 +3,8 @@ import { fetchVerseLinks, type Link as CommentaryLink } from "../api/links";
 import { fetchChapterCitations, type ChapterCitations } from "../api/scripture";
 import { fetchStories } from "../api/stories";
 import { useApp } from "../context/AppContext";
-import { storyAt, storyChapters, storyRange, type Story } from "../lib/stories";
+import { shareOrCopy, shareToast, verseShareText } from "../lib/share";
+import { storyAt, storyChapters, storyKicker, storyKind, storyRange, type Story } from "../lib/stories";
 import { commentaryPassages, mergeCites, mergeSources, storyPassages, Thread, type CitingPassage } from "./FathersThread";
 
 function titleCase(id: string): string {
@@ -29,6 +30,8 @@ export function Commentary({
   counts,
   onPickVerse,
   onClose,
+  verseText,
+  translation,
   className
 }: {
   book: string;
@@ -45,8 +48,12 @@ export function Commentary({
   onPickVerse: (n: number) => void;
   /** Phones: close the sheet. */
   onClose?: () => void;
+  /** The words of the verses, so the reference can be shared with them. */
+  verseText?: string[];
+  /** The translation's short name ("KJV"), named when the verse is shared. */
+  translation?: string;
 }) {
-  const { catalog } = useApp();
+  const { catalog, showToast } = useApp();
   const last = toVerse && toVerse > verse ? toVerse : verse;
   const verses = useMemo(() => Array.from({ length: last - verse + 1 }, (_, i) => verse + i), [verse, last]);
   /** Per verse, the commentary links on it. Undefined while loading. */
@@ -118,6 +125,24 @@ export function Commentary({
       .sort((a, b) => a - b);
   }, [counts, verse, verses.length]);
 
+  const reference = bookName + " " + chapter + ":" + verse + (last > verse ? "–" + last : "");
+  /** The verse's own page: the Bible open on it. */
+  const verseUrl =
+    (typeof window === "undefined" ? "" : window.location.origin) +
+    "/bible?book=" + encodeURIComponent(book) + "&chapter=" + chapter + "&verse=" + verse;
+  const subject = bookName ? { reference, url: verseUrl } : undefined;
+  async function shareVerse() {
+    const said = shareToast(
+      await shareOrCopy({
+        title: reference,
+        text: verseText?.some(Boolean) ? verseShareText(verseText, reference, translation) : reference,
+        url: verseUrl
+      })
+    );
+    if (said) showToast(said);
+  }
+  const kind = story ? storyKind(book, story.story) : "story";
+
   return (
     <section className={"cm" + (className ? " " + className : "")} aria-labelledby="cm-title">
       <header className="cm-head">
@@ -139,11 +164,20 @@ export function Commentary({
             </p>
           ) : null}
         </div>
-        {onClose ? (
-          <button type="button" className="icon-btn cm-close" aria-label="Close commentary" onClick={onClose}>
-            ×
-          </button>
-        ) : null}
+        <div className="cm-head-tools">
+          {bookName ? (
+            <button type="button" className="icon-btn cm-share" aria-label={"Share " + reference} title="Share this verse" onClick={() => void shareVerse()}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M12 15V3M7.5 7.5 12 3l4.5 4.5M5 12v7a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 19v-7" />
+              </svg>
+            </button>
+          ) : null}
+          {onClose ? (
+            <button type="button" className="icon-btn cm-close" aria-label="Close commentary" onClick={onClose}>
+              ×
+            </button>
+          ) : null}
+        </div>
       </header>
 
       {loading ? (
@@ -168,18 +202,18 @@ export function Commentary({
         </div>
       ) : (
         <div className="cm-list cm-thread">
-          <Thread passages={passages} showVerses={verses.length > 1} />
+          <Thread passages={passages} showVerses={verses.length > 1} subject={subject} />
         </div>
       )}
 
       {story && onStory.length ? (
         <section className="cm-story" aria-labelledby="cm-story-title">
-          <p className="cm-kicker">The Fathers on the story</p>
+          <p className="cm-kicker">{storyKicker(kind)}</p>
           <h3 id="cm-story-title" className="cm-story-title">
             {story.story.title} <span>{storyRange(bookName, story.story)}</span>
           </h3>
           <div className="cm-thread">
-            <Thread passages={onStory} showVerses of="story" />
+            <Thread passages={onStory} showVerses of={kind} subject={subject} />
           </div>
         </section>
       ) : null}

@@ -134,8 +134,10 @@ export function BookSpine({
         ["--tone" as string]: String(0.84 + hashOf(work.id + "~", 9) * 0.035)
       }}
       aria-label={work.title + (byline ? " — " + byline : "")}
-      onMouseEnter={() => boxRef.current && onSelect(boxRef.current)}
-      onMouseLeave={onDeselect}
+      // Only a mouse points at a book. A finger's tap would also raise it, the page would change under
+      // the tap, and a phone then holds the click back: the book blinked and wanted a second tap.
+      onPointerEnter={(e) => e.pointerType === "mouse" && boxRef.current && onSelect(boxRef.current)}
+      onPointerLeave={(e) => e.pointerType === "mouse" && onDeselect()}
       onFocus={() => boxRef.current && onSelect(boxRef.current)}
       onBlur={onDeselect}
       onClick={onClick}

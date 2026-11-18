@@ -28,25 +28,29 @@ describe("Fathers tab path", () => {
 });
 
 describe("father sections", () => {
-  it("groups by century, orders by death year, and puts Councils last", () => {
+  it("shelves the Apostolic Fathers first, then groups by century, and puts Councils last", () => {
     const sections = fatherSections([
       author({ id: "augustine", name: "Augustine of Hippo", deathYear: 430 }),
       author({ id: "jerome", name: "Jerome", deathYear: 420 }),
       author({ id: "ignatius", name: "Ignatius of Antioch", deathYear: 110 }),
       author({ id: "clement_rome", name: "Clement of Rome", deathYear: 99 }),
       author({ id: "councils", name: "Ecumenical Councils", deathYear: 451 }),
-      author({ id: "polycarp", name: "Polycarp of Smyrna", deathYear: 155 })
+      author({ id: "polycarp", name: "Polycarp of Smyrna", deathYear: 155 }),
+      author({ id: "justin", name: "Justin Martyr", deathYear: 165 })
     ]);
     expect(sections.map((s) => s.title)).toEqual([
-      "First Century",
+      "Apostolic Fathers",
       "Second Century",
       "Fifth Century",
       "Councils"
     ]);
+    expect(sections[0].id).toBe("century-1");
     expect(centuryHeading(4)).toBe("Fourth Century");
+    // Ignatius and Polycarp died in the second century, but they are Apostolic Fathers.
+    expect(sections[0].fathers.map((f) => f.id)).toEqual(["clement_rome", "ignatius", "polycarp"]);
+    expect(sections[0].fathers[1].office).toBe("Bishop of Antioch");
     const second = sections.find((s) => s.title === "Second Century");
-    expect(second?.fathers.map((f) => f.id)).toEqual(["ignatius", "polycarp"]);
-    expect(second?.fathers[0].office).toBe("Bishop of Antioch");
+    expect(second?.fathers.map((f) => f.id)).toEqual(["justin"]);
     const fifth = sections.find((s) => s.title === "Fifth Century");
     expect(fifth?.fathers.map((f) => f.name)).toEqual(["Jerome", "Augustine of Hippo"]);
     expect(sections.at(-1)?.id).toBe("councils");
@@ -73,10 +77,10 @@ describe("father sections", () => {
       author({ id: "quadratus", name: "Quadratus", deathYear: 130 }),
       author({ id: "pierius", name: "Pierius", deathYear: 310 }),
       author({ id: "melito", name: "Melito of Sardis", deathYear: 180 }),
-      author({ id: "polycarp", name: "Polycarp of Smyrna", deathYear: 155 })
+      author({ id: "justin", name: "Justin Martyr", deathYear: 165 })
     ]);
     expect(sections.map((s) => s.id)).toEqual(["century-2", "known-from-fragments", "councils"]);
-    expect(sections[0].fathers.map((f) => f.id)).toEqual(["polycarp", "melito"]);
+    expect(sections[0].fathers.map((f) => f.id)).toEqual(["justin", "melito"]);
     expect(sections[1].fathers.map((f) => f.id)).toEqual(["quadratus", "pierius"]);
   });
 

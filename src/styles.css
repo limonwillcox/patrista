@@ -5450,3 +5450,41 @@ body:has(.mv) .shelf-3d { visibility: hidden; }
 .kjv-note-part + .kjv-note-part { margin-top: 0.4em; }
 .kjv-note-part.is-american,
 .kjv-note-part.is-subscription { color: var(--muted); font-style: italic; }
+
+/* The study sheet on a phone: the tabs stay at the top with the way out beside them. The verse heading */
+/* scrolls away with the text; left sticky it slid under the tabs and showed half of itself. */
+.cm-sheet-panel .cm-head { position: static; }
+.side-tabs-close { flex: none; margin-left: auto; align-self: center; font-size: 22px; }
+.cm-head-tools { display: flex; align-items: center; gap: 6px; flex: none; }
+.cm-share { color: var(--muted); }
+.cm-share:hover, .cm-share:focus-visible { color: var(--accent); }
+
+/* Bookmarks: the ribbon beside a chapter, and the page that lists what was kept. */
+.bookmark-btn {
+  display: inline-grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 0; border-radius: 50%;
+  background: none; color: var(--muted); cursor: pointer; vertical-align: middle;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.bookmark-btn:hover { background: var(--panel); color: var(--text); }
+.bookmark-btn:focus-visible { outline: none; box-shadow: var(--ring); }
+.bookmark-btn.is-on { color: var(--accent); }
+.bookmarks-list { list-style: none; margin: 18px 0 0; padding: 0; border-top: 1px solid var(--border); }
+.bookmarks-list li { display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border); }
+.bookmarks-link { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; padding: 12px 4px; color: var(--text); text-decoration: none; }
+.bookmarks-link:hover { text-decoration: none; }
+.bookmarks-link:hover .bookmarks-title { color: var(--accent); }
+.bookmarks-title { font-family: var(--serif); font-size: 19px; line-height: 1.3; }
+.bookmarks-note { font-family: var(--sans); font-size: 13px; color: var(--muted); }
+.bookmarks-remove { flex: none; font-size: 20px; color: var(--muted); }
+.bookmarks-hint { margin-top: 22px; font-family: var(--sans); font-size: 14px; color: var(--muted); }
+.link-btn { padding: 0; border: 0; background: none; color: var(--link); font: inherit; cursor: pointer; text-decoration: underline; }
+
+/* The highlight bar: pressed, never selected; on a phone the swatches are big enough for a thumb. */
+.hl-bar { align-items: center; user-select: none; -webkit-user-select: none; touch-action: manipulation; }
+.read-bookmark { margin-left: 4px; width: 28px; height: 28px; }
+@media (hover: none) {
+  .hl-bar { padding: 8px; gap: 8px; border-radius: 10px; }
+  .hl-bar button { width: 28px; height: 28px; }
+  .hl-bar .hl-action { width: auto; font-size: 13px; line-height: 28px; }
+  .para .w { cursor: pointer; }
+}

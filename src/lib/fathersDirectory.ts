@@ -54,7 +54,25 @@ export function sectionMark(sectionId: string): string {
   return m ? ROMAN[Number(m[1])] || m[1] : "✠";
 }
 
+/**
+ * The writers scholarship calls the Apostolic Fathers. They are shelved together in the first
+ * section, even those who died after AD 100, and the Second Century begins after them.
+ */
+export const APOSTOLIC_FATHERS = new Set([
+  "clement_rome",
+  "barnabas",
+  "didache",
+  "ignatius",
+  "papias",
+  "hermas",
+  "mathetes",
+  "polycarp"
+]);
+
+export const APOSTOLIC_FATHERS_TITLE = "Apostolic Fathers";
+
 export function centuryHeading(n: number): string {
+  if (n === 1) return APOSTOLIC_FATHERS_TITLE;
   const titled = centuryChapterTitle(n);
   const split = titled.indexOf(":");
   return split === -1 ? titled : titled.slice(0, split);
@@ -95,7 +113,7 @@ function byDeathThenName(a: FatherEntry, b: FatherEntry): number {
 /** Named shelves after the centuries. Other Authors holds heretics, outsiders, and heavily disputed writers. */
 const NAMED_SECTION_ORDER = [FRAGMENTS_SECTION, "Councils", "Other Authors"];
 
-/** Century sections in order, then Known from Fragments, then Councils, then Other Authors. */
+/** The Apostolic Fathers, then the centuries in order, then Known from Fragments, then Councils, then Other Authors. */
 export function fatherSections(authors: Author[]): FatherSection[] {
   const centuries = new Map<number, FatherEntry[]>();
   const named = new Map<string, FatherEntry[]>();
@@ -108,7 +126,7 @@ export function fatherSections(authors: Author[]): FatherSection[] {
       named.set(profile.section, list);
       continue;
     }
-    const n = deathCentury(author.deathYear);
+    const n = APOSTOLIC_FATHERS.has(author.id) ? 1 : deathCentury(author.deathYear);
     const list = centuries.get(n) ?? [];
     list.push(entry);
     centuries.set(n, list);

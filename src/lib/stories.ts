@@ -71,3 +71,39 @@ export function storyWhere(points: [number, number][], story: Story): string {
   }
   return parts.join(", ");
 }
+
+/** What a section of the Bible is, for the heading over the Fathers' words on it. */
+export type StoryKind = "story" | "parable" | "passage";
+
+/** The books that tell a story. The law, the poets, the prophets and the letters teach: their sections are passages. */
+const NARRATIVE_BOOKS = new Set("gn ex nm js jud rt 1sm 2sm 1kgs 2kgs 1ch 2ch ezr ne et dn jn mt mk lk jo act".split(" "));
+
+/** Teaching inside the story books, the long discourses: [book, first chapter, first verse, last chapter, last verse]. */
+const DISCOURSES: [string, number, number, number, number][] = [
+  ["mt", 5, 1, 7, 29],
+  ["mt", 10, 5, 10, 42],
+  ["mt", 18, 1, 18, 35],
+  ["mt", 23, 1, 25, 46],
+  ["mk", 13, 1, 13, 37],
+  ["lk", 6, 17, 6, 49],
+  ["lk", 21, 5, 21, 38],
+  ["jo", 13, 31, 17, 26]
+];
+
+/**
+ * A parable is named as one. A section of a letter, a psalm, a prophet or one of the Lord's discourses
+ * is a passage. The rest, in the books that narrate, are stories.
+ */
+export function storyKind(book: string, s: Story): StoryKind {
+  if (/\bparables?\b/i.test(s.title)) return "parable";
+  if (!NARRATIVE_BOOKS.has(book)) return "passage";
+  const taught = DISCOURSES.some(
+    ([b, c0, v0, c1, v1]) => b === book && !before(s.fromChapter, s.fromVerse, c0, v0) && !before(c1, v1, s.toChapter, s.toVerse)
+  );
+  return taught ? "passage" : "story";
+}
+
+/** The line over the Fathers' words on a section: "The Fathers on the story", "… on this parable", "… on this passage". */
+export function storyKicker(kind: StoryKind): string {
+  return kind === "story" ? "The Fathers on the story" : "The Fathers on this " + kind;
+}

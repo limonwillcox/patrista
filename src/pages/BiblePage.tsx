@@ -1,4 +1,13 @@
-import { Fragment, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
+import {
+  Fragment,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type PointerEvent as ReactPointerEvent,
+  type TouchEvent as ReactTouchEvent
+} from "react";
 import { useSearchParams } from "react-router-dom";
 import { saveLastBible } from "../lib/lastRead";
 import { fetchBibleChapter, fetchBibleManifest, type BibleChapterPayload, type BibleManifestBook } from "../api/client";
@@ -16,6 +25,11 @@ import { HIGHLIGHT_COLORS, setHighlight, useHighlights, verseKey, verseNoteId } 
 import { loadNoteHtml, noteIsEmpty } from "../lib/readerNotes";
 import { WordPanel } from "../components/WordPanel";
 import { storedBibleTranslation, setStoredBibleTranslation } from "../lib/prefs";
+import { BookmarkButton } from "../components/BookmarkButton";
+import { useApp } from "../context/AppContext";
+import { bibleBookmarkId } from "../lib/bookmarks";
+import { shareOrCopy, shareToast, verseShareText } from "../lib/share";
+import { SWIPE_EDGE_PX, swipeDirection } from "../lib/swipe";
 
 /** Below this width the study panel is a sheet that opens from the bottom, not a column. */
 const SHEET_QUERY = "(max-width: 1099px)";
@@ -87,6 +101,7 @@ function versesIn(range: Range): number[] {
 }
 
 export function BiblePage() {
+  const { showToast } = useApp();
   const [params, setParams] = useSearchParams();
   const book = params.get("book") || "jo";
   const chapter = Math.max(1, Number(params.get("chapter") || 1));
@@ -115,7 +130,19 @@ export function BiblePage() {
   const [cxFocus, setCxFocus] = useState<CxFocus | null>(null);
   const focusOn = (f: Omit<CxFocus, "n">) => setCxFocus((old) => ({ ...f, n: Math.max(Date.now(), (old?.n ?? 0) + 1) }));
   /** The "Connections" button shown beside a text selection. */
-  const [selTip, setSelTip] = useState<{ x: number; y: number; from: number; to: number; codes: string[]; text?: string } | null>(null);
+  const [selTip, setSelTip] = useState<{
+    x: number;
+    y: number;
+    from: number;
+    to: number;
+    codes: string[];
+    text?: string;
+    /** Under the selection, not over it: a phone puts its own Copy menu above the words. */
+    below?: boolean;
+  } | null>(null);
+  const tipRef = useRef<HTMLDivElement>(null);
+  /** What last touched the page: a finger's selection ends with no mouse-up. */
+  const lastPointer = useRef("mouse");
   /** The verse whose margin note is open for writing. */
   const [noteOpen, setNoteOpen] = useState<number | null>(null);
   const [, setNoteTick] = useState(0);
@@ -239,6 +266,36 @@ export function BiblePage() {
     document.addEventListener("mouseup", up);
     return () => document.removeEventListener("mouseup", up);
   }, []);
+  // A finger selects with a long press and lifts with no mouse-up, so on a phone the toolbar follows
+  // the selection itself, a moment after it has stopped changing.
+  useEffect(() => {
+    let timer = 0;
+    const onDown = (e: PointerEvent) => {
+      lastPointer.current = e.pointerType || "mouse";
+    };
+    const onChange = () => {
+      if (lastPointer.current === "mouse") return;
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        const sel = window.getSelection();
+        if (sel && !sel.isCollapsed) void textUp.current();
+      }, 350);
+    };
+    document.addEventListener("pointerdown", onDown, true);
+    document.addEventListener("selectionchange", onChange);
+    return () => {
+      window.clearTimeout(timer);
+      document.removeEventListener("pointerdown", onDown, true);
+      document.removeEventListener("selectionchange", onChange);
+    };
+  }, []);
+  // Keep the whole toolbar on the screen: near an edge it moves in rather than being cut off.
+  useLayoutEffect(() => {
+    const el = tipRef.current;
+    if (!el || !selTip) return;
+    const half = el.offsetWidth / 2;
+    el.style.left = Math.min(Math.max(selTip.x, half + 6), Math.max(half + 6, window.innerWidth - half - 6)) + "px";
+  }, [selTip]);
   useEffect(() => {
     setSelTip(null);
     setSpan(null);
@@ -384,7 +441,50 @@ export function BiblePage() {
       codes = [...new Set(words.map((w) => codeFor(tokens, w, 0)).filter((c): c is string => !!c && /^[GH]\d+$/.test(c)))];
     }
     // One word selected: keep it, so Connections is headed by that word, not the Greek or Hebrew word's usual gloss.
-    setSelTip({ x: rect.left + rect.width / 2, y: rect.top, from, to, codes, text: words.length === 1 ? words[0] : undefined });
+    const touch = lastPointer.current !== "mouse";
+    setSelTip({
+      x: rect.left + rect.width / 2,
+      y: touch ? rect.bottom : rect.top,
+      below: touch,
+      from,
+      to,
+      codes,
+      text: words.length === 1 ? words[0] : undefined
+    });
+  }
+
+  /** Hand the verses to the system share sheet, or copy them where there is none. */
+  async function shareVerses(from: number, to: number) {
+    const reference = bookName + " " + chapter + ":" + from + (to > from ? "–" + to : "");
+    const url =
+      window.location.origin +
+      "/bible?book=" + encodeURIComponent(book) + "&chapter=" + chapter + "&verse=" + from +
+      (translation !== "kjv" ? "&version=" + encodeURIComponent(translation) : "");
+    const text = verseShareText(payload?.verses.slice(from - 1, to) ?? [], reference, activeTranslation?.abbreviation);
+    setSelTip(null);
+    window.getSelection()?.removeAllRanges();
+    const said = shareToast(await shareOrCopy({ title: reference, text, url }));
+    if (said) showToast(said);
+  }
+
+  // A flick across the text turns the chapter, as the arrows do.
+  const swipe = useRef<{ x: number; y: number; t: number } | null>(null);
+  function onTouchStart(e: ReactTouchEvent) {
+    const t = e.touches[0];
+    const busy = (e.target as Element).closest?.(".cx-seltip, .book-picker, .verse-margin-note, select, input, textarea");
+    const edge = t.clientX < SWIPE_EDGE_PX || t.clientX > window.innerWidth - SWIPE_EDGE_PX;
+    swipe.current = e.touches.length === 1 && !busy && !edge ? { x: t.clientX, y: t.clientY, t: Date.now() } : null;
+  }
+  function onTouchEnd(e: ReactTouchEvent) {
+    const from = swipe.current;
+    swipe.current = null;
+    const t = e.changedTouches[0];
+    if (!from || !t || e.touches.length) return;
+    const dir = swipeDirection(t.clientX - from.x, t.clientY - from.y, Date.now() - from.t);
+    // Words being selected are being marked, not turned past.
+    if (!dir || window.getSelection()?.toString().trim()) return;
+    const to = dir === "next" ? next : prev;
+    if (to) go(to);
   }
 
   function openConnections(from: number, to: number, codes: string[] = [], text?: string) {
@@ -443,7 +543,7 @@ export function BiblePage() {
   const where = word?.where ?? (bookName ? bookName + " " + chapter + ":" + (word?.verse ?? verse) : "");
   const study =
     panel === "word" ? (
-      <WordPanel word={word?.text ?? null} code={word?.code} where={where} onClose={isSheet ? () => setSheetOpen(false) : undefined} />
+      <WordPanel word={word?.text ?? null} code={word?.code} where={where} />
     ) : panel === "connections" ? (
       <ConnectionsPanel
         book={book}
@@ -454,7 +554,6 @@ export function BiblePage() {
           setWord({ text, code, verse, where: at });
           setPanel("word");
         }}
-        onClose={isSheet ? () => setSheetOpen(false) : undefined}
       />
     ) : (
       <Commentary
@@ -464,7 +563,8 @@ export function BiblePage() {
         verse={verse}
         withStory
         counts={counts ?? null}
-        onClose={isSheet ? () => setSheetOpen(false) : undefined}
+        verseText={payload ? [payload.verses[verse - 1] ?? ""] : undefined}
+        translation={activeTranslation?.abbreviation}
         onPickVerse={(n) => {
           setVerse(n);
           document.getElementById("v-" + n)?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -483,6 +583,12 @@ export function BiblePage() {
         Connections
         {span && span.from !== span.to ? <span>{span.from + "–" + span.to}</span> : null}
       </button>
+      {isSheet ? (
+        // The sheet's one way out stays in view, on the row that stays at the top.
+        <button type="button" className="icon-btn side-tabs-close" aria-label="Close" onClick={() => setSheetOpen(false)}>
+          ×
+        </button>
+      ) : null}
     </div>
   );
   const columns =
@@ -495,7 +601,7 @@ export function BiblePage() {
   return (
     <div className={"bible-page is-" + view}>
       <div className="bible-layout" ref={layoutRef} style={isSheet ? undefined : { gridTemplateColumns: columns }}>
-        <div className="bible-main" hidden={!isSheet && view === "study"}>
+        <div className="bible-main" hidden={!isSheet && view === "study"} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
           <header className="bible-head">
             <button
               type="button"
@@ -564,6 +670,16 @@ export function BiblePage() {
                     <span aria-hidden="true">{payload.sections.find((s) => s.id === section)?.label ?? "Whole chapter"}</span>
                   </label>
                 ) : null}
+                {headingReady ? (
+                  <BookmarkButton
+                    mark={{
+                      id: bibleBookmarkId(book, chapter),
+                      title: bookName + " " + chapter,
+                      note: "Bible",
+                      path: "/bible?book=" + encodeURIComponent(book) + "&chapter=" + chapter
+                    }}
+                  />
+                ) : null}
               </div>
             </div>
             <button
@@ -588,7 +704,14 @@ export function BiblePage() {
                 onKeyUp={(e) => e.shiftKey && onTextMouseUp()}
               >
                 {selTip ? (
-                  <div className="cx-seltip" role="toolbar" aria-label="Mark these verses" style={{ left: selTip.x, top: selTip.y }} onMouseDown={(e) => e.preventDefault()}>
+                  <div
+                    ref={tipRef}
+                    className={"cx-seltip" + (selTip.below ? " is-below" : "")}
+                    role="toolbar"
+                    aria-label="Mark these verses"
+                    style={{ left: selTip.x, top: selTip.y }}
+                    onMouseDown={(e) => e.preventDefault()}
+                  >
                     {HIGHLIGHT_COLORS.map((color) => (
                       <button
                         key={color}
@@ -612,9 +735,10 @@ export function BiblePage() {
                         onClick={() => {
                           setHighlight(book, chapter, selTip.from, selTip.to, null);
                           setSelTip(null);
+                          window.getSelection()?.removeAllRanges();
                         }}
                       >
-                        ×
+                        Clear
                       </button>
                     ) : null}
                     <button
@@ -626,6 +750,9 @@ export function BiblePage() {
                       }}
                     >
                       Note
+                    </button>
+                    <button type="button" onClick={() => void shareVerses(selTip.from, selTip.to)}>
+                      Share
                     </button>
                     <button type="button" onClick={() => openConnections(selTip.from, selTip.to, selTip.codes, selTip.text)}>
                       Connections

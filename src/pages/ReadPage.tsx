@@ -16,6 +16,8 @@ import { chapterNumberForSlug, chapterPublicPath, parseFatherChapterPath } from 
 import { chapterAtReadingLine } from "../lib/readDocks";
 import { OriginalParas, TranslationParas, type ParaMenuTarget } from "../components/reader/Paragraphs";
 import { copyText } from "../lib/clipboard";
+import { BookmarkButton } from "../components/BookmarkButton";
+import { workBookmarkId } from "../lib/bookmarks";
 import { bibliography, bibliographyHtml, editionFor, hashChapter, hashParagraph, paraAnchor, quoteWithCitation, quoteWithCitationHtml, shareText, translatorFor } from "../lib/readAnchors";
 import { saintName } from "../lib/saintName";
 import { attributionText, citationAuthor, hasAttribution } from "../../server/workMeta";
@@ -233,7 +235,18 @@ export function ReadPage() {
   const inflightRef = useRef<Set<number>>(new Set());
   const inflightPromises = useRef(new Map<number, Promise<void>>());
   const generationRef = useRef(0);
-  const [hl, setHl] = useState<{ x: number; y: number; para: HTMLElement; range: Range } | null>(null);
+  const [hl, setHl] = useState<{
+    x: number;
+    y: number;
+    para: HTMLElement;
+    range: Range;
+    /** A highlight that was pressed, with no words selected: it can be recoloured or taken off. */
+    mark?: HTMLElement;
+    /** The selection touches words already highlighted, so Remove is offered. */
+    canClear: boolean;
+  } | null>(null);
+  /** What last touched the page: a finger's selection ends with no mouse-up. */
+  const lastPointer = useRef("mouse");
   const [currentChapter, setCurrentChapter] = useState(1);
   const jumpedRef = useRef<string | null>(null);
   const pendingJump = useRef<number | null>(null);
@@ -573,39 +586,92 @@ export function ReadPage() {
     [findTerm]
   );
 
-  function onMouseUp(e: React.MouseEvent) {
-    if (document.body.classList.contains("read-dict-pick")) return;
-    if ((e.target as HTMLElement).closest("#hlBar")) return;
+  const isMark = (el: Element) => HL_COLORS.some((c) => el.classList.contains(c));
+  /** Keep the bar on the screen: it is about 250px wide. */
+  const barX = (x: number) => Math.max(8, Math.min(x, window.innerWidth - 258));
+
+  /**
+   * Open the highlight bar for the words selected. A mouse gives the point it was let go at; a finger
+   * gives none, and the bar goes under the words, clear of the phone's own Copy menu above them.
+   * Returns false when nothing in one paragraph is selected.
+   */
+  function barForSelection(point?: { x: number; y: number }): boolean {
     const sel = window.getSelection();
-    if (!sel || sel.isCollapsed || !sel.rangeCount) {
-      setHl(null);
-      return;
-    }
+    if (!sel || sel.isCollapsed || !sel.rangeCount) return false;
     const range = sel.getRangeAt(0);
     const startEl = range.startContainer.nodeType === 1 ? (range.startContainer as Element) : range.startContainer.parentElement;
     const endEl = range.endContainer.nodeType === 1 ? (range.endContainer as Element) : range.endContainer.parentElement;
     const para = startEl?.closest?.(".para") as HTMLElement | null;
     const para2 = endEl?.closest?.(".para") as HTMLElement | null;
-    if (!para || para !== para2) {
-      setHl(null);
-      return;
-    }
+    if (!para || para !== para2) return false;
+    const rect = range.getBoundingClientRect();
     setHl({
       para,
       range: range.cloneRange(),
-      x: Math.min(Math.max(8, e.clientX), window.innerWidth - 320),
-      y: Math.max(78, e.clientY - 44)
+      canClear: Array.from(para.querySelectorAll(".w")).some((el) => isMark(el) && range.intersectsNode(el)),
+      x: barX(point ? point.x : rect.left + rect.width / 2 - 125),
+      y: point ? Math.max(78, point.y - 44) : Math.min(rect.bottom + 10, window.innerHeight - 52)
     });
+    return true;
   }
+
+  function onMouseUp(e: React.MouseEvent) {
+    if (document.body.classList.contains("read-dict-pick")) return;
+    if ((e.target as HTMLElement).closest("#hlBar")) return;
+    if (barForSelection(lastPointer.current === "mouse" ? { x: e.clientX, y: e.clientY } : undefined)) return;
+    // A press on words already highlighted, with nothing selected: offer to recolour or remove them.
+    const mark = (e.target as HTMLElement).closest?.(".para .w") as HTMLElement | null;
+    const para = mark?.closest(".para") as HTMLElement | null;
+    if (mark && para && isMark(mark)) {
+      const range = document.createRange();
+      range.selectNodeContents(mark);
+      const box = mark.getBoundingClientRect();
+      setHl({ para, range, mark, canClear: true, x: barX(e.clientX - 60), y: Math.max(78, box.top - 44) });
+      return;
+    }
+    setHl(null);
+  }
+
+  // A finger selects with a long press and lifts with no mouse-up, so on a phone the bar follows the
+  // selection itself, a moment after it has stopped changing.
+  const barRef = useRef(barForSelection);
+  barRef.current = barForSelection;
+  useEffect(() => {
+    let timer = 0;
+    const onDown = (e: PointerEvent) => {
+      lastPointer.current = e.pointerType || "mouse";
+    };
+    const onChange = () => {
+      if (lastPointer.current === "mouse" || document.body.classList.contains("read-dict-pick")) return;
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        const sel = window.getSelection();
+        if (sel && !sel.isCollapsed) barRef.current();
+      }, 350);
+    };
+    document.addEventListener("pointerdown", onDown, true);
+    document.addEventListener("selectionchange", onChange);
+    return () => {
+      window.clearTimeout(timer);
+      document.removeEventListener("pointerdown", onDown, true);
+      document.removeEventListener("selectionchange", onChange);
+    };
+  }, []);
 
   function applyHighlight(color: string) {
     if (!hl || !outline) return;
     if (!color) {
-      hl.para.querySelectorAll(".w").forEach((el) => {
+      // Take off the highlight that was pressed, or every highlight the selection touches.
+      const marks = hl.mark ? [hl.mark] : Array.from(hl.para.querySelectorAll<HTMLElement>(".w")).filter((el) => isMark(el) && hl.range.intersectsNode(el));
+      marks.forEach((el) => {
         const text = document.createTextNode(el.textContent || "");
         el.parentNode?.replaceChild(text, el);
       });
       hl.para.normalize();
+    } else if (hl.mark) {
+      // A pressed highlight changes colour in place.
+      HL_COLORS.forEach((c) => hl.mark?.classList.remove(c));
+      hl.mark.classList.add(color);
     } else {
       try {
         const span = document.createElement("span");
@@ -697,6 +763,22 @@ export function ReadPage() {
     await shareQuote(quote, parts);
   }
 
+  /** The chapter in view as a place to come back to. */
+  function bookmarkOf(chapter: number) {
+    const meta = outline?.chapters.find((c) => c.chapter === chapter);
+    const many = (outline?.chapters.length ?? 0) > 1;
+    const workId = outline?.work.id ?? "";
+    return {
+      id: workBookmarkId(workId, many ? chapter : 1),
+      title: (outline?.work.title ?? "") + (many && meta?.heading ? " — " + meta.heading : ""),
+      note: outline?.author.name ?? "",
+      path:
+        outline && many && meta?.slug
+          ? chapterPublicPath(outline.author.id, workId, meta.slug)
+          : readPath(workId) + (many ? "#ch-" + chapter : "")
+    };
+  }
+
   async function copyViewCitation() {
     if (!outline) return;
     const parts = citeParts(currentChapter, null);
@@ -763,6 +845,7 @@ export function ReadPage() {
             <Link className="read-print-link" to={"/print?work=" + encodeURIComponent(outline.work.id)}>
               Download PDF
             </Link>
+            <BookmarkButton className="read-bookmark" mark={bookmarkOf(currentChapter)} />
             {manuscripts?.MANUSCRIPTS[outline.work.id] ? (
               <>
                 {" · "}
@@ -826,14 +909,17 @@ export function ReadPage() {
         className={"hl-bar" + (hl ? " open" : "")}
         id="hlBar"
         style={hl ? { left: hl.x, top: hl.y } : undefined}
+        onMouseDown={(e) => e.preventDefault()}
       >
-        <button data-hl="hl-yellow" style={{ background: "#ffe566" }} title="Yellow" onClick={() => applyHighlight("hl-yellow")} />
-        <button data-hl="hl-green" style={{ background: "#7dcc70" }} title="Green" onClick={() => applyHighlight("hl-green")} />
-        <button data-hl="hl-blue" style={{ background: "#7eb6ff" }} title="Blue" onClick={() => applyHighlight("hl-blue")} />
-        <button data-hl="hl-pink" style={{ background: "#ff8fb8" }} title="Pink" onClick={() => applyHighlight("hl-pink")} />
-        <button data-hl="" style={{ background: "#fff", color: "#000" }} title="Clear" onClick={() => applyHighlight("")}>
-          ×
-        </button>
+        <button type="button" data-hl="hl-yellow" style={{ background: "#ffe566" }} title="Yellow" aria-label="Highlight yellow" onClick={() => applyHighlight("hl-yellow")} />
+        <button type="button" data-hl="hl-green" style={{ background: "#7dcc70" }} title="Green" aria-label="Highlight green" onClick={() => applyHighlight("hl-green")} />
+        <button type="button" data-hl="hl-blue" style={{ background: "#7eb6ff" }} title="Blue" aria-label="Highlight blue" onClick={() => applyHighlight("hl-blue")} />
+        <button type="button" data-hl="hl-pink" style={{ background: "#ff8fb8" }} title="Pink" aria-label="Highlight pink" onClick={() => applyHighlight("hl-pink")} />
+        {hl?.canClear ? (
+          <button type="button" className="hl-action" onClick={() => applyHighlight("")}>
+            Remove
+          </button>
+        ) : null}
         <button type="button" className="hl-action" onClick={() => void selectionAction()}>
           Share
         </button>

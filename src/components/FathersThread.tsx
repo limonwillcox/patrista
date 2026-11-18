@@ -7,6 +7,7 @@ import { useApp } from "../context/AppContext";
 import { fatherImage } from "../lib/fatherImages";
 import { englishParagraphs } from "../lib/fatherPaths";
 import { paraAnchor } from "../lib/readAnchors";
+import { quoteShareText, shareOrCopy, shareToast } from "../lib/share";
 import { inStory, storyWhere, verseRuns, type Story } from "../lib/stories";
 import { readPath } from "../lib/workSlugs";
 
@@ -49,13 +50,20 @@ export type CitingPassage = {
   commentary?: boolean;
   /** Where in a story it lands ("vv. 31–33", "7:11, 8:2", "ch. 37"), shown in place of the verses. */
   where?: string;
+  /** A commentary passage's work id, when that work is in the library. */
+  cmWork?: string;
 };
+
+/** The verse a thread is about, so a shared passage says what it is on and links back to it. */
+export type ThreadSubject = { reference: string; url: string };
 
 export const CITE_PAGE = 6;
 const REPLIES_SHOWN = 2;
 /** A commentary passage outranks a passing citation by this much. */
 const COMMENTARY_RANK = 8;
 const FOLD_AT = 360;
+/** A commentary passage shorter than this is a scrap left by the splitting of its source (`? "`). */
+const MIN_WORDS = 4;
 
 /** The Father who wrote a passage, for his portrait: given, from the work, or from a /fathers/<id>/ link. */
 function useAuthorOf(): (p: CitingPassage) => string {
@@ -135,11 +143,13 @@ function opening(text: string): string {
 
 /** The commentary collections' passages on one verse, as thread entries. */
 export function commentaryPassages(links: CommentaryLink[], verse: number, nameOf: (id: string) => string, inLibrary: (work: string) => boolean): CitingPassage[] {
-  return links.map((l) => {
-    const text = stripMarks(l.excerpt).replace(/\s+/g, " ").trim();
-    return {
+  const whole = links.map((l) => ({ l, text: stripMarks(l.excerpt).replace(/\s+/g, " ").trim() }));
+  return whole
+    .filter(({ text }) => (text.match(/[A-Za-z]{2,}/g) ?? []).length >= MIN_WORDS)
+    .map(({ l, text }) => ({
       key: "cm:" + l.id,
       url: inLibrary(l.workId) ? readPath(l.workId) : "",
+      cmWork: inLibrary(l.workId) ? l.workId : undefined,
       title: tidyTitle(l.workTitle),
       father: nameOf(l.fatherId),
       n: 1,
@@ -152,8 +162,7 @@ export function commentaryPassages(links: CommentaryLink[], verse: number, nameO
       author: l.fatherId,
       source: l.sourceUrl || undefined,
       commentary: true
-    };
-  });
+    }));
 }
 
 const words = (t: string) => t.toLowerCase().replace(/[’']/g, "").match(/[a-z]+/g) ?? [];
@@ -194,6 +203,9 @@ export function mergeSources(cites: CitingPassage[], comments: CitingPassage[], 
   kept.forEach((c, ci) => {
     const at = out.findIndex((p, i) => authors[i] === c.author && (within(citeSh[i], keptSh[ci]) >= 0.5 || within(keptSh[ci], citeSh[i]) >= 0.5));
     if (at < 0) {
+      // A one-line extract from a work the library holds, when the library's own chapter of that work
+      // already speaks on the verse: the same passage in another wording, so the library's copy stands.
+      if (!c.full && c.cmWork && out.some((p) => p.work === c.cmWork)) return;
       extra.push(c);
       return;
     }
@@ -246,7 +258,18 @@ function buildThread(passages: CitingPassage[], authorOf: (p: CitingPassage) => 
  * A list of the Fathers' words, like the comments under a post. A dropdown hears one Father; another puts
  * the most to the point first, or the earliest first.
  */
-export function Thread({ passages, showVerses, of = "verse" }: { passages: CitingPassage[]; showVerses: boolean; of?: "verse" | "story" }) {
+export function Thread({
+  passages,
+  showVerses,
+  of = "verse",
+  subject
+}: {
+  passages: CitingPassage[];
+  showVerses: boolean;
+  of?: "verse" | "story" | "passage" | "parable";
+  /** The verse the thread is on, for sharing a passage. */
+  subject?: ThreadSubject;
+}) {
   const [who, setWho] = useState("");
   const [oldest, setOldest] = useState(false);
   const [shown, setShown] = useState(CITE_PAGE);
@@ -302,8 +325,8 @@ export function Thread({ passages, showVerses, of = "verse" }: { passages: Citin
       ) : null}
       <ol className="cx-thread">
         {nodes.slice(0, shown).map((n) => (
-          <FatherComment key={n.p.key} p={n.p} authorId={n.author} showVerses={showVerses}>
-            {n.replies.length ? <Replies replies={n.replies} showVerses={showVerses} /> : null}
+          <FatherComment key={n.p.key} p={n.p} authorId={n.author} showVerses={showVerses} subject={subject}>
+            {n.replies.length ? <Replies replies={n.replies} showVerses={showVerses} subject={subject} /> : null}
           </FatherComment>
         ))}
       </ol>
@@ -317,14 +340,14 @@ export function Thread({ passages, showVerses, of = "verse" }: { passages: Citin
 }
 
 /** The replies under a comment: the first few, then the rest on request. */
-function Replies({ replies, showVerses }: { replies: ThreadNode["replies"]; showVerses: boolean }) {
+function Replies({ replies, showVerses, subject }: { replies: ThreadNode["replies"]; showVerses: boolean; subject?: ThreadSubject }) {
   const [all, setAll] = useState(false);
   const list = all ? replies : replies.slice(0, REPLIES_SHOWN);
   return (
     <>
       <ol className="cx-replies">
         {list.map((r) => (
-          <FatherComment key={r.p.key} p={r.p} authorId={r.author} showVerses={showVerses} replyTo={r.to} />
+          <FatherComment key={r.p.key} p={r.p} authorId={r.author} showVerses={showVerses} replyTo={r.to} subject={subject} />
         ))}
       </ol>
       {replies.length > list.length ? (
@@ -341,7 +364,21 @@ function Replies({ replies, showVerses }: { replies: ThreadNode["replies"]; show
  * verse, and on request the whole passage: every paragraph of the library chapter that cites it (the
  * sentence marked), or the commentary's full text. The title links to the passage in its place.
  */
-function FatherComment({ p, authorId, showVerses, replyTo, children }: { p: CitingPassage; authorId: string; showVerses: boolean; replyTo?: string; children?: ReactNode }) {
+function FatherComment({
+  p,
+  authorId,
+  showVerses,
+  replyTo,
+  subject,
+  children
+}: {
+  p: CitingPassage;
+  authorId: string;
+  showVerses: boolean;
+  replyTo?: string;
+  subject?: ThreadSubject;
+  children?: ReactNode;
+}) {
   const [open, setOpen] = useState(false);
   const [paras, setParas] = useState<string[] | null | undefined>(undefined);
   const inLibrary = !!p.work && p.chapter != null && p.paras.length > 0;
@@ -364,7 +401,19 @@ function FatherComment({ p, authorId, showVerses, replyTo, children }: { p: Citi
   const href = p.url + (first != null && p.chapter != null ? "#" + paraAnchor(p.chapter, first + 1) : "");
   const img = fatherImage(authorId);
   // Only a Father in the library has a page to go to.
-  const { catalog } = useApp();
+  const { catalog, showToast } = useApp();
+  /** Share the words shown: the passage in its place when the library holds it, or the verse it is on. */
+  async function share() {
+    const link = p.url ? window.location.origin + href : (subject?.url ?? window.location.href);
+    const said = shareToast(
+      await shareOrCopy({
+        title: p.father + (subject ? " on " + subject.reference : ""),
+        text: quoteShareText(p.excerpt, p.father, p.title, subject?.reference),
+        url: link
+      })
+    );
+    if (said) showToast(said);
+  }
   const profile = authorId && catalog?.authors.some((a) => a.id === authorId) ? "/fathers/" + authorId + "/" : null;
   const avatar = img ? (
     <img className="cx-avatar" src={img.tile.src} srcSet={img.tile.srcset} sizes="40px" alt="" width={40} height={40} loading="lazy" />
@@ -389,11 +438,8 @@ function FatherComment({ p, authorId, showVerses, replyTo, children }: { p: Citi
     <Link className="cx-comment-src" to={href} title="Read it in its place">
       {p.title}
     </Link>
-  ) : p.source ? (
-    <a className="cx-comment-src" href={p.source} target="_blank" rel="noreferrer" title="Not in the library: read it at the source">
-      {p.title} ↗
-    </a>
   ) : (
+    // A passage the library does not hold stays on the page: its words open here, with no link away.
     <span className="cx-comment-src">{p.title}</span>
   );
   let text: ReactNode;
@@ -438,11 +484,16 @@ function FatherComment({ p, authorId, showVerses, replyTo, children }: { p: Citi
           ) : null}
         </div>
         {text}
-        {canOpen ? (
-          <button type="button" className="cx-comment-more" aria-expanded={open} onClick={() => setOpen(!open)}>
-            {open ? "Show less" : "Read more"}
+        <div className="cx-comment-actions">
+          {canOpen ? (
+            <button type="button" className="cx-comment-more" aria-expanded={open} onClick={() => setOpen(!open)}>
+              {open ? "Show less" : "Read more"}
+            </button>
+          ) : null}
+          <button type="button" className="cx-comment-more cx-comment-share" aria-label={"Share this passage of " + p.father} onClick={() => void share()}>
+            Share
           </button>
-        ) : null}
+        </div>
         {children}
       </div>
     </li>

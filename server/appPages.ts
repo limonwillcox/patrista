@@ -68,6 +68,13 @@ export const APP_PAGES: AppPage[] = [
     noindex: true
   },
   {
+    path: "/bookmarks",
+    title: "Bookmarks — Patrista",
+    description: "The chapters of the Bible and of the Church Fathers you have kept to come back to.",
+    bodyHtml: '<div class="prose"><h1>Bookmarks</h1></div>',
+    noindex: true
+  },
+  {
     path: "/types",
     title: "Types of Christ in Scripture — Patrista",
     description:

@@ -155,12 +155,14 @@ describe("packShelves", () => {
 });
 
 describe("deathCentury", () => {
-  it("rounds up to the century and clamps the band range", () => {
+  it("rounds up to the century", () => {
     expect(deathCentury(96)).toBe(1);
     expect(deathCentury(100)).toBe(1);
     expect(deathCentury(101)).toBe(2);
     expect(deathCentury(430)).toBe(5);
     expect(deathCentury(749)).toBe(8);
+    expect(deathCentury(893)).toBe(9);
+    expect(deathCentury(1003)).toBe(11);
     expect(spineBandPlace(1)).toBe("upper");
     expect(spineBandPlace(5)).toBe("upper");
     expect(spineBandPlace(7)).toBe("lower");

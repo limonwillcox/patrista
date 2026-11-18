@@ -34,7 +34,11 @@ const AUTHOR_SHORT: Record<string, string> = {
   "Socrates Scholasticus": "Socrates",
   "Theodoret of Cyrrhus": "Theodoret",
   "Theodoret of Cyrus": "Theodoret",
-  "Theophilus of Antioch": "Theophilus"
+  "Theophilus of Antioch": "Theophilus",
+  "Aristides of Athens": "Aristides",
+  "Aristo of Pella": "Aristo",
+  "Dionysius of Corinth": "Dionysius",
+  "Quadratus of Athens": "Quadratus"
 };
 
 /**
@@ -183,10 +187,20 @@ const WORK_SHORT: Record<string, { short: string; chapter?: string; prose?: bool
   "Commentary on the Apocalypse": { short: "Commentary on the Apocalypse", chapter: "On the Apocalypse" },
   "Epistles on the Arian Heresy": { short: "Epistles on the Arian Heresy", chapter: "On the Arian Heresy" },
   "Narrative of Events Happening in Persia on the Birth of Christ": { short: "Events in Persia on the Birth of Christ" },
-  "Fragments of the Disputation of Jason and Papiscus": { short: "Disputation of Jason and Papiscus" },
-  "Fragments of the Commentaries on the Acts of the Church": { short: "Commentaries on the Acts of the Church" },
+  "Fragments of the Disputation of Jason and Papiscus": {
+    short: "Disputation of Jason and Papiscus",
+    chapter: "Jason and Papiscus"
+  },
+  "Fragments of the Commentaries on the Acts of the Church": {
+    short: "Commentaries on the Acts of the Church",
+    chapter: "Memoirs"
+  },
+  "The Demonstration of the Apostolic Preaching": { short: "Demonstration of the Preaching" },
   "Fragments of the Books on Arithmetic": { short: "Fragments on Arithmetic" },
-  "Fragments of a Letter to the Roman Church": { short: "Letter to the Roman Church" },
+  "Fragments of a Letter to the Roman Church": {
+    short: "Letter to the Roman Church",
+    chapter: "Letter to Rome"
+  },
   "Epistle to Victor and the Roman Church": { short: "Epistle to Victor of Rome" },
   "Epistle to Meletius, Bishop of Lycopolis": { short: "Epistle to Meletius" },
   "Epistle on the Question of the Passover": { short: "On the Question of the Passover" },

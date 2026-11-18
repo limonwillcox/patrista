@@ -6,6 +6,7 @@ package-lock.json
 scripts/shots/
 scripts/latin-library/cache/
 data/links/cache/
+data/pd-english-sources/cache/
 data/clavis/*.sqlite
 data/clavis/*.sqlite-*
 data/clavis/bodies/

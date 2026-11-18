@@ -1037,7 +1037,26 @@ const AUTHOR_META: Record<string, AuthorMeta> = {
   alexander_alexandria: { name: "Alexander of Alexandria", dates: "d. 328", era: "ante-nicene", region: "Egypt", deathYear: 328, bio: "" },
   // ANF VII prints his Easter poem among the poems once ascribed to Lactantius.
   venantius: { name: "Venantius Fortunatus", dates: "c. 530–c. 609", era: "post-nicene", region: "Gaul", deathYear: 609, bio: "" },
-  unknown: { name: "Unknown / Collected", dates: "", era: "ante-nicene", region: "Various", deathYear: 150, bio: "" }
+  unknown: { name: "Unknown / Collected", dates: "", era: "ante-nicene", region: "Various", deathYear: 150, bio: "" },
+  // --- PD English sources outside Schaff (added Nov 2026 from data/pd-english-sources). ---
+  philo: { name: "Philo of Alexandria", dates: "c. 20 BC–c. AD 50", era: "ante-nicene", region: "Egypt", deathYear: 50, bio: "" },
+  odes_solomon: { name: "Odes of Solomon", dates: "late 1st–2nd c.", era: "ante-nicene", region: "Syria", deathYear: 125, bio: "" },
+  didascalia: { name: "Didascalia Apostolorum", dates: "3rd c.", era: "ante-nicene", region: "Syria", deathYear: 230, bio: "" },
+  pseudepigrapha: { name: "Old Testament Pseudepigrapha", dates: "c. 200 BC–AD 100", era: "ante-nicene", region: "Various", deathYear: 100, bio: "" },
+  macarius_egyptian: { name: "Macarius the Egyptian", dates: "c. 300–391", era: "post-nicene", region: "Egypt", deathYear: 391, bio: "" },
+  egeria: { name: "Egeria", dates: "fl. c. 381–384", era: "post-nicene", region: "Spain / Gaul", deathYear: 400, bio: "" },
+  macarius_magnes: { name: "Macarius Magnes", dates: "fl. c. 400", era: "post-nicene", region: "Asia Minor", deathYear: 410, bio: "" },
+  palladius: { name: "Palladius of Helenopolis", dates: "c. 363–c. 430", era: "post-nicene", region: "Galatia / Egypt", deathYear: 430, bio: "" },
+  cyril_alexandria: { name: "Cyril of Alexandria", dates: "c. 376–444", era: "post-nicene", region: "Egypt", deathYear: 444, bio: "" },
+  narsai: { name: "Narsai", dates: "c. 399–c. 502", era: "post-nicene", region: "Nisibis (Persia)", deathYear: 502, bio: "" },
+  philoxenus: { name: "Philoxenus of Mabbug", dates: "c. 440–523", era: "post-nicene", region: "Syria", deathYear: 523, bio: "" },
+  dionysius_areopagite: { name: "Pseudo-Dionysius the Areopagite", dates: "fl. c. 500", era: "post-nicene", region: "Syria", deathYear: 530, bio: "" },
+  severus_antioch: { name: "Severus of Antioch", dates: "c. 465–538", era: "post-nicene", region: "Syria", deathYear: 538, bio: "" },
+  gildas: { name: "Gildas the Wise", dates: "c. 500–c. 570", era: "post-nicene", region: "Britain", deathYear: 570, bio: "" },
+  john_ephesus: { name: "John of Ephesus", dates: "c. 507–c. 588", era: "post-nicene", region: "Syria / Constantinople", deathYear: 588, bio: "" },
+  evagrius_scholasticus: { name: "Evagrius Scholasticus", dates: "c. 536–c. 594", era: "post-nicene", region: "Syria", deathYear: 594, bio: "" },
+  john_nikiu: { name: "John of Nikiu", dates: "fl. c. 690", era: "post-nicene", region: "Egypt", deathYear: 700, bio: "" },
+  bede: { name: "The Venerable Bede", dates: "c. 672–735", era: "post-nicene", region: "England", deathYear: 735, bio: "" }
 };
 
 const BOOK_NUM = "([IVXLCDM]+|\\d+|First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth)";

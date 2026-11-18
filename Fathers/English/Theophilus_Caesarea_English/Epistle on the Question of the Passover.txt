@@ -1,0 +1,28 @@
+# source: Fathers/English/ANF/Volume VIII.   The Twelve Patriarchs, Excerpts and Epistles, The Clementia, Apocrypha, Decretals, Memoirs of Edessa and Syriac Documents, Remains of the First Ages
+# series: ANF
+# volume: Volume VIII.
+# father: Theophilus_Caesarea
+# work: Epistle on the Question of the Passover
+# latin_match_candidate: (none)
+# translator: B. P. Pratten
+# extracted: 2026-11-14
+# note: Public-domain Schaff English extract. Volume archives retained under ANF/NPNF1/NPNF2.
+   From His Epistle on the Question of the Passover, Written in the Name
+   of the Synod of CÃ¦sarea. [3785]
+
+   Endeavour also to send abroad copies of our epistle among all the
+   churches, so that those who easily deceive their own souls may not be
+   able to lay the blame on us.  We would have you know, too, that in
+   Alexandria [3786] also they observe the festival on the same day as
+   ourselves.  For the Paschal letters are sent from us to them, and from
+   them to us:  so that we observe the holy day in unison and together.
+
+   ------------------------
+     __________________________________________________________________
+
+   [3784] See (Polycrates) p. 773, supra, and Eusebius, H. E., book v.
+   cap. xxiii., etc., pp. 222-226.
+
+   [3785] In Eusebius, Hist. Eccl., v. 25.
+
+   [3786] [Note, the authority of Alexandria is quoted, not that of Rome.]

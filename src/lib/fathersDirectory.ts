@@ -1,7 +1,7 @@
 import type { Author } from "../../server/types";
 import { deathCentury } from "../../server/shelf";
 import { centuryChapterTitle } from "./journal";
-import { FATHER_PROFILES, type FatherProfile } from "./fatherProfiles";
+import { FATHER_PROFILES, FRAGMENTS_SECTION, type FatherProfile } from "./fatherProfiles";
 
 export type FatherEntry = {
   id: string;
@@ -41,6 +41,8 @@ export const SECTION_NOTES: Record<string, string> = {
   "century-9": "After the Fathers: Cyril and Methodius carry the faith to the Slavs, and the Photian schism strains Rome and Constantinople.",
   "century-11":
     "The mutual excommunications of 1054, later taken as the symbol of the schism between East and West, close the story this library tells.",
+  "known-from-fragments":
+    "Writers from the second century to the early fourth whose books are lost. What survives is what later authors quoted, most of it in Eusebius’s Church History.",
   councils: "The creeds and canons of the ecumenical councils, from Nicaea in 325 onward."
 };
 
@@ -91,9 +93,9 @@ function byDeathThenName(a: FatherEntry, b: FatherEntry): number {
 }
 
 /** Named shelves after the centuries. Other Authors holds heretics, outsiders, and heavily disputed writers. */
-const NAMED_SECTION_ORDER = ["Councils", "Other Authors"];
+const NAMED_SECTION_ORDER = [FRAGMENTS_SECTION, "Councils", "Other Authors"];
 
-/** Century sections in order, then Councils, then Other Authors. */
+/** Century sections in order, then Known from Fragments, then Councils, then Other Authors. */
 export function fatherSections(authors: Author[]): FatherSection[] {
   const centuries = new Map<number, FatherEntry[]>();
   const named = new Map<string, FatherEntry[]>();
@@ -118,17 +120,23 @@ export function fatherSections(authors: Author[]): FatherSection[] {
       title: centuryHeading(n),
       fathers: fathers.sort(byDeathThenName)
     }));
-  const namedSections = [...named.entries()].sort((a, b) => {
-    const ra = NAMED_SECTION_ORDER.indexOf(a[0]);
-    const rb = NAMED_SECTION_ORDER.indexOf(b[0]);
-    return (ra === -1 ? NAMED_SECTION_ORDER.length : ra) - (rb === -1 ? NAMED_SECTION_ORDER.length : rb);
-  });
-  for (const [title, fathers] of namedSections) {
+  const rank = (title: string) => {
+    const at = NAMED_SECTION_ORDER.indexOf(title);
+    return at === -1 ? NAMED_SECTION_ORDER.length : at;
+  };
+  for (const [title, fathers] of [...named].sort((a, b) => rank(a[0]) - rank(b[0]))) {
     sections.push({
-      id: title.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+      id: sectionId(title),
       title,
       fathers: fathers.sort(byDeathThenName)
     });
   }
   return sections;
 }
+
+function sectionId(title: string): string {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
+/** The section listed as plain names rather than portrait tiles. */
+export const FRAGMENTS_SECTION_ID = sectionId(FRAGMENTS_SECTION);

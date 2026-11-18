@@ -67,6 +67,19 @@ describe("father sections", () => {
     expect(sections.at(-1)?.fathers.map((f) => f.id)).toEqual(["josephus", "tatian", "tertullian", "novatian"]);
   });
 
+  it("lists the fragment writers in their own section, after the centuries and before the Councils", () => {
+    const sections = fatherSections([
+      author({ id: "councils", name: "Ecumenical Councils", deathYear: 451 }),
+      author({ id: "quadratus", name: "Quadratus", deathYear: 130 }),
+      author({ id: "pierius", name: "Pierius", deathYear: 310 }),
+      author({ id: "melito", name: "Melito of Sardis", deathYear: 180 }),
+      author({ id: "polycarp", name: "Polycarp of Smyrna", deathYear: 155 })
+    ]);
+    expect(sections.map((s) => s.id)).toEqual(["century-2", "known-from-fragments", "councils"]);
+    expect(sections[0].fathers.map((f) => f.id)).toEqual(["polycarp", "melito"]);
+    expect(sections[1].fathers.map((f) => f.id)).toEqual(["quadratus", "pierius"]);
+  });
+
   it("still lists a father who has no profile copy", () => {
     const sections = fatherSections([
       author({ id: "new_father", name: "New Father", deathYear: 250, region: "Egypt", bio: "A short life." })

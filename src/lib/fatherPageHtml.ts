@@ -6,7 +6,7 @@ import { readLinks, type HistoryEra } from "../../server/churchHistory";
 import { centuryBlocks } from "./centuries";
 import { escapeHtml } from "./fatherPaths";
 import { readPath } from "./workSlugs";
-import { fatherEntry, fatherSections, type FatherSection } from "./fathersDirectory";
+import { FRAGMENTS_SECTION_ID, fatherEntry, fatherSections, type FatherSection } from "./fathersDirectory";
 import { HERO_SIZES, TILE_SIZES, fatherImageFrom, type FatherImage, type FatherImageCredit, type FatherImageMap } from "./fatherImages";
 import { adDates } from "./adDates";
 import { answerFirstBio, fatherProfilePath } from "./fatherPageMeta";
@@ -59,7 +59,7 @@ export function creditHtml(credit: FatherImageCredit | null, className: string):
   const via = credit.source
     ? '<a href="' + escapeHtml(credit.source) + '">Wikimedia Commons</a>'
     : "Wikimedia Commons";
-  return '<p class="' + className + '">' + artist + ", " + license + ", via " + via + ".</p>";
+  return '<p class="' + className + '">Image: ' + artist + ", " + license + ", via " + via + ".</p>";
 }
 
 function factsHtml(dates: string, office: string, region: string): string {
@@ -116,13 +116,38 @@ export function renderFathersIndexBody(authors: Author[], images: FatherImageMap
   const sections = centuryBlocks(authors);
   const eager = eagerFatherIds(sections);
   const blocks = sections.map((section) => {
+    const heading =
+      '<section class="fathers-section" aria-labelledby="' +
+      escapeHtml(section.id) +
+      '"><div class="fathers-section-inner">' +
+      '<h2 id="' +
+      escapeHtml(section.id) +
+      '" class="fathers-century">' +
+      escapeHtml(section.title) +
+      "</h2>";
+    if (section.id === FRAGMENTS_SECTION_ID) {
+      // The fragment writers are a plain list of names: no portrait tiles.
+      const rows = section.fathers
+        .map(
+          (father) =>
+            '<li><a class="fathers-list-link" href="' +
+            escapeHtml(fatherProfilePath(father.id)) +
+            '"><span class="fathers-list-name">' +
+            escapeHtml(father.name) +
+            '</span> <span class="fathers-list-meta">' +
+            escapeHtml([father.office, father.dates].filter(Boolean).join(" · ")) +
+            "</span></a></li>"
+        )
+        .join("\n");
+      return heading + '<ul class="fathers-list">' + rows + "</ul></div></section>";
+    }
     const cards = section.fathers
       .map((father) => {
         const image = fatherImageFrom(images, father.id);
         const portrait = image
           ? portraitImgHtml(image, "tile", eager.has(father.id))
           : "";
-        const credit = creditHtml(image?.credit ?? null, "fathers-tile-credit");
+        // No licence line under a tile: the credit is on the Father's own page.
         return (
           '<li class="fathers-card">' +
           '<a class="fathers-card-link" href="' +
@@ -135,20 +160,12 @@ export function renderFathersIndexBody(authors: Author[], images: FatherImageMap
           '<p class="fathers-office">' +
           escapeHtml(father.office) +
           "</p></a>" +
-          credit +
           "</li>"
         );
       })
       .join("\n");
     return (
-      '<section class="fathers-section" aria-labelledby="' +
-      escapeHtml(section.id) +
-      '"><div class="fathers-section-inner">' +
-      '<h2 id="' +
-      escapeHtml(section.id) +
-      '" class="fathers-century">' +
-      escapeHtml(section.title) +
-      "</h2>" +
+      heading +
       (cards ? '<ul class="fathers-grid">' + cards + "</ul>" : "") +
       eventsHtml(section.events, catalog) +
       "</div></section>"
@@ -172,7 +189,8 @@ export function renderFatherProfileBody(
   const bio = answerFirstBio(entry.paragraphs);
   const image = fatherImageFrom(images, author.id);
   const portrait = image ? portraitImgHtml(image, "hero", true) : "";
-  const credit = creditHtml(image?.credit ?? null, "fathers-hero-credit");
+  // The credit goes at the foot of the page, not over the portrait.
+  const credit = creditHtml(image?.credit ?? null, "fathers-credit");
   // Same shelves as the bookcase: key works first, then one list per kind of writing.
   const writings = shelfGroups(works)
     .map(
@@ -204,7 +222,7 @@ export function renderFatherProfileBody(
   return [
     '<div class="fathers-page fathers-page--profile">',
     '<header class="fathers-hero"><div class="fathers-hero-inner">',
-    '<div class="fathers-hero-photo-wrap">' + portrait + credit + "</div>",
+    '<div class="fathers-hero-photo-wrap">' + portrait + "</div>",
     '<div class="fathers-hero-copy">',
     '<p class="fathers-back"><a href="/fathers/">Fathers</a></p>',
     "<h1>" + escapeHtml(entry.name) + "</h1>",
@@ -218,6 +236,7 @@ export function renderFatherProfileBody(
       ? '<h2 class="fathers-writings-title">Writings</h2>' + writings
       : "",
     "</div></article>",
+    credit,
     "</div>"
   ]
     .filter(Boolean)

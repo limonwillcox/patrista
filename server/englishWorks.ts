@@ -759,6 +759,111 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
     keepUnitLabel: true,
     expectUnits: 9
   },
+  // --- Nov 2026 audit of authors with one or two works (scripts/english-by-father/split-small-authors.mjs) ---
+  // ANF I: fifty-five numbered fragments, once shown as the tail of Against Heresies V.36.
+  "fragments-from-the-lost-writings-of-irenaeus": {
+    chunk: "chapter",
+    unitRe: /^ {2}([IVXL]+)\.\s*$/m,
+    unitTitles: Array.from({ length: 55 }, (_x, i) => "Fragment " + toRoman(i + 1)),
+    expectUnits: 55
+  },
+  // ANF II: twelve numbered fragments, once shown as the tail of the Address to the Greeks, chapter XLII.
+  "fragments-of-tatian": {
+    chunk: "chapter",
+    unitRe: /^ {6}([IVX]+)\.\s*$/m,
+    unitTitles: Array.from({ length: 12 }, (_x, i) => "Fragment " + toRoman(i + 1)),
+    expectUnits: 12
+  },
+  // ANF IX: the two manuscripts' opening notes, the fifty-five sections of the harmony, and the subscriptions.
+  // Verse numbers are written "(12)" in the file, so "[12]" is always a footnote.
+  diatessaron: {
+    chunk: "chapter",
+    unitRe: /^ {3}(Introductory Notes|Section [IVXL]+|Subscriptions)\.\s*$/m,
+    keepUnitLabel: true,
+    bareHeadings: true,
+    dropParas: /^The Text of the Diatessaron\.$/,
+    expectUnits: 57
+  },
+  // NPNF2 III. The file opens with the short Apology to Anastasius (now a work of its own) and then gives
+  // the two books against Jerome, which is the text this work has always shown. Display title only: the id stays.
+  "rufinus-apology-in-defence-of-himself": { title: "Apology Against Jerome" },
+  // The apology, then the letter Anastasius wrote to John of Jerusalem about Rufinus, as NPNF prints them.
+  "apology-to-anastasius": {
+    chunk: "chapter",
+    unitRe: /^ {3}(Rufinus' Apology in Defence of Himself\.|The Letter of Anastasius,)\s*$/m,
+    unitTitles: ["Apology to Anastasius", "The Letter of Anastasius to John, Bishop of Jerusalem"],
+    expectUnits: 2
+  },
+  // One piece; the lines of its title page are not text.
+  "on-the-adulteration-of-the-works-of-origen": {
+    chunk: "blob",
+    dropParas: /^(?:Rufinus's Epilogue to Pamphilus the Martyr's Apology for Origen|otherwise|The Book Concerning the Adulteration of the Works of Origen\.)$/
+  },
+  // Each preface is a unit. Its heading is the line that opens the file or follows a rule of underscores
+  // (a line that opens "[2777]" there is a footnote); a heading that wraps takes its second line.
+  prefaces: {
+    chunk: "chapter",
+    unitRe:
+      /(?:(?<![\s\S])|(?<=_{10,}[ \t]*\n[ \t]*\n)) {3}((?!\[)[^\n]*[^\n.\s][ \t]*\n {3}(?!-)\S[^\n]*|(?!\[)[^\n]+)$/m,
+    unitTitles: [
+      "Preface to the Commentary on the Benedictions of the Twelve Patriarchs",
+      "Preface to Book II of the Benedictions",
+      "Preface to the Translation of Pamphilus' Defence of Origen",
+      "Preface to the Translation of Origen's Peri Archon",
+      "Preface to Book III of the Peri Archon",
+      "Preface to the Books of Recognitions of St. Clement",
+      "Preface to the Translation of the Sayings of Xystus",
+      "Preface to the Two Books of Ecclesiastical History Added to Eusebius",
+      "Preface to the Translation of Origen's Commentary on Psalms 36, 37 and 38",
+      "Preface to the Translation of Origen's Commentary on the Epistle to the Romans",
+      "Peroration to the Translation of Origen's Commentary on the Epistle to the Romans",
+      "Preface to Origen's Homilies on Numbers"
+    ],
+    expectUnits: 12
+  },
+  // NPNF2 VII: the Procatechesis and the eighteen lectures, each a unit (they were cut every forty paragraphs).
+  "catechetical-lectures": {
+    chunk: "chapter",
+    unitRe: /^ {3}(PROCATECHESIS,|FIRST CATECHETICAL LECTURE|Lecture [IVX]+\.)\s*$/m,
+    dropParas: /^(?:OR,|PROLOGUE TO THE CATECHETICAL LECTURES OF OUR HOLY FATHER,|CYRIL, ARCHBISHOP OF JERUSALEM\.|of|Our Holy Father Cyril,|Archbishop of Jerusalem,)$/,
+    unitTitles: [
+      "Procatechesis",
+      "Lecture I — To Those Who Are to Be Enlightened",
+      "Lecture II — On Repentance and Remission of Sins, and Concerning the Adversary",
+      "Lecture III — On Baptism",
+      "Lecture IV — On the Ten Points of Doctrine",
+      "Lecture V — Of Faith",
+      "Lecture VI — Concerning the Unity of God",
+      "Lecture VII — The Father",
+      "Lecture VIII — Almighty",
+      "Lecture IX — On the Words, Maker of Heaven and Earth, and of All Things Visible and Invisible",
+      "Lecture X — On the Clause, And in One Lord Jesus Christ",
+      "Lecture XI — On the Words, the Only-Begotten Son of God, Begotten of the Father Very God Before All Ages, by Whom All Things Were Made",
+      "Lecture XII — On the Words Incarnate, and Made Man",
+      "Lecture XIII — On the Words, Crucified and Buried",
+      "Lecture XIV — On the Words, And Rose Again from the Dead on the Third Day, and Ascended into the Heavens, and Sat on the Right Hand of the Father",
+      "Lecture XV — On the Clause, And Shall Come in Glory to Judge the Quick and the Dead; Of Whose Kingdom There Shall Be No End",
+      "Lecture XVI — On the Article, And in One Holy Ghost, the Comforter, Which Spake in the Prophets",
+      "Lecture XVII — Continuation of the Discourse on the Holy Ghost",
+      "Lecture XVIII — On the Words, And in One Holy Catholic Church, and in the Resurrection of the Flesh, and the Life Everlasting"
+    ],
+    expectUnits: 19
+  },
+  // The five lectures to the newly baptized, numbered on from the eighteen.
+  "mystagogical-lectures": {
+    chunk: "chapter",
+    unitRe: /^ {3}(Lecture [IVX]+)\.\s*$/m,
+    unitTitles: [
+      "Lecture XIX — First Lecture on the Mysteries",
+      "Lecture XX — On the Mysteries II: Of Baptism",
+      "Lecture XXI — On the Mysteries III: On Chrism",
+      "Lecture XXII — On the Mysteries IV: On the Body and Blood of Christ",
+      "Lecture XXIII — On the Mysteries V: On the Sacred Liturgy and Communion"
+    ],
+    expectUnits: 5
+  },
+  // Books I-VIII are NPNF2 XII, Books IX-XIV NPNF2 XIII; the file's "# source" names only the first.
+  "selected-epistles": { edition: "Nicene and Post-Nicene Fathers, Series II, vols. XII–XIII" },
   // 2 Clement (ANF VII "An Ancient Homily"): twenty chapters, as the duplicate "homily" work had them.
   "clement-rome-the-homily": {
     chunk: "chapter",

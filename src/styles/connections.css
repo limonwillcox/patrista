@@ -107,7 +107,7 @@ html[data-theme="night"] { --cx-type: #e2b85a; }
 .cx-comment-src { min-width: 0; font-size: 0.76rem; color: var(--muted); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .cx-comment-src:hover { color: var(--link); text-decoration: underline; }
 .cx-comment-v { font-size: 0.76rem; color: var(--muted); }
-.cx-comment-text { margin: 3px 0 0; font-family: var(--serif); font-size: 0.95rem; line-height: 1.55; color: var(--text); }
+.cx-comment-text { margin: 3px 0 0; font-family: var(--serif); font-size: var(--read-size); line-height: 1.75; color: var(--text); }
 .cx-comment-text.is-full p { margin: 0 0 8px; }
 .cx-comment-text mark { background: var(--hl-gold); color: inherit; border-radius: 2px; padding: 0 1px; }
 .cx-comment-more { margin-top: 2px; border: 0; background: none; padding: 0; font: 600 0.78rem var(--sans); color: var(--muted); cursor: pointer; }
@@ -117,7 +117,7 @@ html[data-theme="night"] { --cx-type: #e2b85a; }
 .cx-comment.is-reply { grid-template-columns: 28px minmax(0, 1fr); gap: 8px; padding: 8px 0 0; border-top: 0; }
 .cx-comment.is-reply .cx-avatar { width: 28px; height: 28px; }
 .cx-comment.is-reply .cx-comment-head b, .cx-comment.is-reply .cx-comment-father { font-size: 0.92rem; }
-.cx-comment.is-reply .cx-comment-text { font-size: 0.92rem; }
+.cx-comment.is-reply .cx-comment-text { font-size: var(--read-size); }
 .cx-reply-to { font-size: 0.78rem; font-weight: 600; color: var(--accent); cursor: help; }
 .cx-replies-more { margin: 6px 0 0 36px; }
 /* "Cited together by…": the same thread, set in under the pattern. */
@@ -251,3 +251,20 @@ body:has(.bible-verses.is-picking) ::selection { background: transparent; color:
   font: 0.82rem/1.45 var(--sans); color: var(--muted); cursor: text;
 }
 .kjv-note-label { font-weight: 700; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 4px; }
+
+/* The mark toolbar on a phone: under the words (the phone's own Copy menu sits above them), never wider */
+/* than the screen, and its buttons are pressed, not selected. */
+.cx-seltip { width: max-content; max-width: calc(100vw - 12px); flex-wrap: wrap; justify-content: center; user-select: none; -webkit-user-select: none; touch-action: manipulation; }
+.cx-seltip.is-below { transform: translate(-50%, 10px); border-radius: 20px; }
+.cx-seltip .hl-clear { font-size: 0.84rem; line-height: inherit; padding: 4px 10px; }
+@media (hover: none) {
+  .cx-seltip button { padding: 7px 11px; }
+  .cx-seltip .hl-swatch { width: 26px; height: 26px; padding: 0; }
+  /* A highlighted verse keeps its pen in view, so the highlight can be taken off again. */
+  .bible-verse[class*=" hl-"] .verse-pen { opacity: 0.8; }
+}
+
+/* Under a Father's words: Read more, and Share. */
+.cx-comment-actions { display: flex; align-items: center; gap: 14px; margin-top: 2px; }
+.cx-comment-actions .cx-comment-more { margin-top: 0; }
+span.cx-comment-src:hover { color: var(--muted); text-decoration: none; }

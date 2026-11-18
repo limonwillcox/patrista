@@ -74,6 +74,8 @@ describe("father directory copy", () => {
     expect(fatherProfileTitle("Augustine of Hippo", "354–430")).toBe(
       "Augustine of Hippo (354–430): Life and Writings"
     );
+    // A long written-out date would push the title past what search results show: it gives way.
+    expect(fatherProfileTitle("Papias of Hierapolis", "fl. early 2nd century AD")).toBe("Papias of Hierapolis: Life and Writings");
     expect(fatherProfilePath("augustine")).toBe("/fathers/augustine/");
     expect(FATHERS_INDEX_PATH).toBe("/fathers/");
     expect(lifeDatesFrom("354–430")).toEqual({ birthDate: "354", deathDate: "430" });
@@ -120,7 +122,7 @@ describe("father directory HTML", () => {
     expect(body.match(/<h1[\s>]/g)).toHaveLength(1);
     expect(body).toContain("<h1>Augustine of Hippo</h1>");
     expect(body).toContain("was bishop of Hippo");
-    expect(body).toContain("<dt>Dates</dt><dd>354–430</dd>");
+    expect(body).toContain("<dt>Dates</dt><dd>AD 354–430</dd>");
     expect(body).toContain("<dt>Role</dt><dd>Bishop of Hippo</dd>");
     expect(body).toContain("<dt>Region</dt><dd>North Africa</dd>");
     expect(body).not.toContain("<dt>See</dt>");

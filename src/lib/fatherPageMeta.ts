@@ -13,9 +13,14 @@ export function fatherProfilePath(authorId: string): string {
 
 export function fatherProfileTitle(name: string, dates: string): string {
   const when = dates.trim();
-  const head = when ? name + " (" + when + ")" : name;
-  return head + ": Life and Writings";
+  const tail = ": Life and Writings";
+  const full = (when ? name + " (" + when + ")" : name) + tail;
+  // Search results cut a title near 60 characters (the build's SEO check fails past it). A long date
+  // written out ("fl. early 2nd century AD") gives way; the name and what the page holds stay.
+  return full.length > FATHER_TITLE_MAX ? name + tail : full;
 }
+
+export const FATHER_TITLE_MAX = 60;
 
 export type LifeDates = { birthDate?: string; deathDate?: string };
 

@@ -22,6 +22,8 @@ import {
   workSeoTitle
 } from "../src/lib/seoMeta";
 import { attributionLabel, shortAuthor, workMeta } from "./workMeta";
+import { adDates } from "../src/lib/adDates";
+import { authorShareImage } from "../src/lib/fatherImages";
 
 export const SITEMAP_URL_LIMIT = 50_000;
 
@@ -283,7 +285,7 @@ export function workCreditHtml(author: Author, work: Pick<Work, "id" | "authorsh
     );
   } else {
     lines.push(
-      "<p>" + escapeHtml(author.name) + (author.dates ? " (" + escapeHtml(author.dates) + ")" : "") + "</p>"
+      "<p>" + escapeHtml(author.name) + (author.dates ? " (" + escapeHtml(adDates(author.dates)) + ")" : "") + "</p>"
     );
   }
   const credit = [work.translator ? "Translated by " + work.translator + "." : "", work.edition ? "From " + work.edition + "." : ""]
@@ -432,7 +434,8 @@ export function renderWorkPage(opts: {
       title,
       description,
       jsonLd: ld,
-      bodyHtml: body.join("\n")
+      bodyHtml: body.join("\n"),
+      ogImage: authorShareImage(opts.origin, opts.author.id)
     });
     return { html, path, chapterPaths: split ? refs.map((r) => r.path) : [] };
   }
@@ -471,6 +474,8 @@ export type PrerenderOpts = {
   description: string;
   jsonLd?: unknown;
   extraHead?: string;
+  /** Father's portrait for the link card. Absent, the site image is used. */
+  ogImage?: { url: string; width: number; height: number } | null;
   /** The picture shown when the page's link is pasted somewhere, from the site root. Default: the site's own. */
   imagePath?: string;
 };
@@ -478,7 +483,9 @@ export type PrerenderOpts = {
 /** Fill the Vite shell (dist/index.html) with crawlable body copy. */
 export function prerenderShell(indexHtml: string, origin: string, opts: PrerenderOpts): string {
   const canonical = origin + opts.canonicalPath;
-  const image = origin + (opts.imagePath || "/og-image.png");
+  const image = opts.ogImage?.url || origin + (opts.imagePath || "/og-image.png");
+  const imageWidth = opts.ogImage?.width || 1200;
+  const imageHeight = opts.ogImage?.height || 630;
   const headParts = [
     '    <link rel="canonical" href="' + escapeHtml(canonical) + '" />',
     '    <meta property="og:type" content="article" />',
@@ -486,8 +493,8 @@ export function prerenderShell(indexHtml: string, origin: string, opts: Prerende
     '    <meta property="og:title" content="' + escapeHtml(opts.title) + '" />',
     '    <meta property="og:description" content="' + escapeHtml(opts.description) + '" />',
     '    <meta property="og:image" content="' + escapeHtml(image) + '" />',
-    '    <meta property="og:image:width" content="1200" />',
-    '    <meta property="og:image:height" content="630" />',
+    '    <meta property="og:image:width" content="' + imageWidth + '" />',
+    '    <meta property="og:image:height" content="' + imageHeight + '" />',
     '    <meta name="twitter:card" content="summary_large_image" />',
     '    <meta name="twitter:image" content="' + escapeHtml(image) + '" />'
   ];
@@ -680,6 +687,7 @@ export function writeFatherPages(
         canonicalPath: ref.path,
         title: chapterSeoTitle(ref.n, payload.work.title, payload.author, payload.work.id),
         description,
+        ogImage: authorShareImage(origin, payload.author.id),
         bodyHtml: renderChapterBody({
           authorName: shortAuthor(payload.work, payload.author) || payload.author.name,
           workTitle: payload.work.title,

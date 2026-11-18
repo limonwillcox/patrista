@@ -1,0 +1,1010 @@
+# source: Fathers/English/NPNF2/Volume III.   Theodoret, Jerome and Gennadius, Rufinus and Jerome
+# series: NPNF2
+# volume: Volume III.
+# father: Rufinus
+# work: Prefaces
+# latin_match_candidate: (none)
+# translator: William Henry Fremantle
+# extracted: 2026-11-17 (lines 42769-43137, 43624-43811, 56277-56723 of the volume; scripts/english-by-father/split-small-authors.mjs)
+# note: Public-domain Fremantle / Schaff English translation of the prefaces Rufinus set before his own works and his translations, in the order NPNF prints them.
+   Preface to the Commentary on the Benedictions of the Twelve Patriarchs.
+
+   --------------
+
+   Rufinus had arrived with Melania, in Italy, in the spring of 397, after
+   a stay in the East of some 25 years. They had visited Paulinus at Nola,
+   and had been entertained by him with the highest honours. Melania
+   probably remained in Campania, where she had property, engaged in
+   family affairs; but Rufinus set out for Rome. He stopped, however, for
+   some months at the monastery of Pinetum near Terracina, with his friend
+   Urseius the Abbot.
+
+   His work on Jacob's Benedictions on his sons in Gen. xlix was
+   occasioned by the following letter from Paulinus, who alludes to it in
+   writing to Sulpicius Severus (Ep. xxviii). "I have written a short note
+   to the Presbyter Rufinus, the companion of the saintly Melania in her
+   spiritual journey, a truly holy and truly learned man, and one united
+   with me on this account in the closest affection." The work itself,
+   being an Exposition of Scripture, is not given, but only the Preface.
+
+   Paulinus to his brother Rufinus, all best wishes. [2772]
+
+   1. Even a short letter from one so likeminded as yourself is a great
+   refreshment, like the dew which revives a thirsty field when the rivers
+   are low. But while I confess that I have been refreshed by this letter
+   which, though short, is still from you, and is sent by the servant of
+   our common children, yet I have been troubled at hearing that all at
+   once through the disquiet of your anxiety and the uncertainty caused by
+   delay, you have determined that you must go to Rome. May the Lord grant
+   you to receive joy in the Lord from what we are doing: so that, as now
+   we share in your anxiety, so we may rejoice in your joy, and that we
+   may still have some beginnings of hope that we may enjoy your presence,
+   when you begin to see clearly your way and the will of the Lord
+   concerning you.
+
+   2. You are kind enough, with that affection which makes you love me as
+   yourself, to desire that I should take up more seriously the study of
+   Greek literature. I acknowledge the kindness which dictates this wish;
+   but I am unable to give it effect, unless, through God's blessing on my
+   earnest desires, I should have the happiness of your company for a
+   longer time. How can I gain any proficiency in a foreign tongue in the
+   absence of him who might teach me what I do not know? I think that, in
+   the matter of the translation of St. Clement, [2773] besides the other
+   defects of my abilities, you noticed this especially as showing the
+   weakness caused by my want of practice, that where I had been unable to
+   understand the words or to express them accurately, I have translated
+   them according to my idea of their drift, or, to speak more truly, set
+   down what I thought ought to be there. All the more therefore do I need
+   that, through God's mercy, I may have your company in fuller measure;
+   for that will be like wealth to the poor or like gathering the crumbs
+   which fall from the rich man's table with the eager appetite of the
+   bondman's heart.
+
+   3. At the moment when I was writing these words my eye fell upon a
+   passage of Scripture, occurring in a portion which I had set down for
+   reading, namely that in which Judah is blessed by Jacob; and I
+   determined after a time to knock at the door of your mind, for which
+   the Lord had given me this most timely occasion. I beg you, if you love
+   me, or rather because you love me so greatly, to write and say how you
+   understand this blessing of the Patriarchs; and, if there are some
+   things in it which are worth knowing but hard to understand, impart to
+   me also the knowledge of them; especially of that passage which says:
+   "Binding his colt to the vine and his ass's [2774] colt to the
+   haircloth." [2775] Tell me what is the colt and the ass's colt, and why
+   his colt is to be bound to the vine, but the ass's colt to the hair
+   cloth.
+
+   The answer of Rufinus forms the Preface to his Exposition of the
+   Benedictions.
+
+   1. The more I excuse myself to you, and the more I assert that I am
+   unable to respond to your inquiries, the more instant you become in
+   your requests, and the harder become your demands: you treat me as you
+   would an ox whose laziness you have discovered, and prick his flanks
+   and back as he stops and turns back with goads of ever increasing
+   sharpness. I must point out to you, therefore, that, even if I am able
+   to bow my neck low so as just to drag the heavy yoke which you lay upon
+   me, yet I have no chance of bursting at a rapid pace into the open and
+   wide-spreading plains through a form of speech which flows at large and
+   pours itself forth over far-extending space. Bear with me therefore if
+   my resolution has been but tardily fulfilled, and if I come up only at
+   a feeble pace to the point to which you call me.
+
+   2. You ask me how the passage in Genesis is to be understood in which
+   Israel the father of the patriarchs is represented as predicting what
+   he saw would happen to each of his sons, and says of Judah, amongst
+   other things: "Binding his colt to the vine, and his ass's colt to the
+   tendril of the vine." You write it "and his ass's colt to the
+   haircloth" (cilicium); but in the Greek it stands: kai te heliki ton
+   polon tes onou autou. The Greeks call by the name helika(twist) not the
+   sprigs of the vine (as our copies have it) but those sickle-like shoots
+   [2776] by which it supports itself on branches of trees or poles or the
+   supports of the kind which I think the farmers call goatikins; [2777]
+   so that the vine is made safe by these clinging shoots from all danger
+   of falling, and the tendril can either become loaded with grapes or
+   grow out in unfettered length. I think therefore that this very word
+   (helici), like some others, must have been set down a long time ago in
+   the Latin versions, and that it was afterwards supposed by
+   unintelligent copyists that by helici, hair-cloth (cilicium) must be
+   meant.
+
+   3. It is easy in this way to emend the mistakes of the translation; but
+   it is not so easy to find out the meaning of the expression itself
+   unless we take into consideration the whole passage. But the treatment
+   of this passage would be placed in a fuller and clearer light if we
+   could go back to the beginning of the whole of these Benedictions. But
+   this implies no small amount of leisure and of time; or, to speak in a
+   more Christian sense, it demands a mind illuminated by the Holy Spirit.
+   My talent is but slight, and there are many demands on my time; and my
+   friends are urging me to comply with their requests about Origen.
+   [2778] But, so far as these circumstances admit, and so great a matter
+   can be treated with brevity, I will state at once what appears to me
+   the true meaning of this passage, for the love with which you bid me
+   trust you in everything, and without prejudice to the judgment of
+   others, who may have something better to say about it.
+     __________________________________________________________________
+
+   [2772] Salutem, a word implying well-being generally as well as health.
+
+   [2773] That is, the Recognitions. See the Preface to Rufinus'
+   Translation in this volume, with the explanatory note prefixed to it.
+
+   [2774] Gen. xlix. ii
+
+   [2775] This is a mistaken reading (though said by Vallarsi to be
+   accepted by both Ambrose and Augustin), Cilicium for heliki. Rufinus
+   adopts the latter. "Binding his ass's colt to the tendril of the vine."
+
+   [2776] The word in the text rucinnulos is unknown in Latin. The most
+   likely conjecture as to the right reading is ruscarias quibus (that is
+   ruscarias falculas--sickles for weeding out butcher's broom, as
+   mentioned by Cato and Varro).
+
+   [2777] Capreolos. Properly little goats, thus used for the props, the
+   fork of which resembled the horns of the goat. The word is also used
+   for the tendrils of the vine, and is by some derived from capio.
+
+   [2778] That is about the translation of the Peri 'Archon. See the
+   Preface to this further on.
+     __________________________________________________________________
+
+   Preface to Book II.
+
+   Rufinus, as we see by his Preface to the former book, considered it
+   unsatisfactory to expound the Blessing upon Judah apart from those on
+   his brethren. Paulinus therefore, taking the occasion of their common
+   friend Cerealis' journey to Rome, sends the following letter to induce
+   Rufinus to expound the remaining Benedictions.
+
+   Paulinus to his brother Rufinus, all good wishes.
+
+   1. Although our son Cerealis declared to me that it was uncertain
+   whether, in returning as he now does to St. Peter, [2779] he would be
+   able to visit you, yet it appears to me that it would be blamable in me
+   and vexatious to you were I not to write to you by him in whom you have
+   a part as well as I. It seems to me preferable to lose some letter
+   paper by his not visiting you rather than to lose credit with you as I
+   think I should do by his visiting you without it: and therefore I have
+   entrusted this letter, I will not say to chance, but to faith: for I
+   believe that the Lord will direct to you the way both of our son and of
+   my letter; since to those who long for good all will turn to good; and
+   indeed he longs for you as you ought to be longed for by one who
+   understands the good he may gain from your society. I believe that this
+   longing of his in a good matter will not be lost, according to his
+   faith and piety: and therefore I have confidence that he will reach you
+   and abide with you, and that I shall see the saving help of the Lord
+   doubled towards you, since in him you will have the accession of a good
+   son and pupil and assistant, and he will find in you a father and
+   teacher of all good things given to him from the Lord, who will add to
+   the efficacy and power of his prayers the strength of spiritual grace.
+   As to myself, though I have the assurance that when you return to the
+   East you will be unwilling to depart without visiting me, yet my sins
+   make me fear that the daughter of Babylon, may turn you away from me. I
+   pray therefore with earnest longings to the Lord that he would give me
+   not according to my deserts but according to my desire and may direct
+   your course to me in the way of peace; for such as do not walk in that
+   way are reprobate and condemned and incapable of truly longing for your
+   presence.
+
+   2. But now for the business part of my letter. I charge you, with the
+   importunity, with which I am in the habit of knocking at your door even
+   in the middle of the night, being driven by fear of a refusal to the
+   modest attitude of a supplicant, to show me kindness once more, and to
+   expound the Benedictions on the twelve Patriarchs. You have already
+   made a beginning with the prophecy relating to Judah, and have given,
+   according to the precept, a threefold interpretation of it. I now beg
+   you to expound the prophecy as it relates to each of the sons of Judah:
+   so that I may myself become possessed of the truth by your means, and
+   may also gain through your help the favor and the praise which will
+   accrue to me; for I shall thus be able to make answer to those who have
+   thought well to consult me on the difficulties of this passage of
+   Scripture not with foolish words drawn from my own understanding but
+   with divine truth flowing from your inspiration.
+
+   ------------------------
+
+   Rufinus, though at this time busy with his larger works, the
+   translations of Pamphilus' defence of Origen, and Origen's Peri
+   'Archon, and, though about to set out for Rome, lost no time in
+   composing the work which Paulinus demanded, and sent it him with the
+   following letter.
+
+   Rufinus to His Brother Paulinus, the Man of God, with All Good Wishes.
+
+   1. Though our common son Cerealis did not visit me, he felt what pain
+   he would cause me if he delayed my reception of your letter, and
+   forwarded it to me. In reading it I felt, as usual, a continual
+   increase in my yearning towards you: but I found towards its close a
+   request from which I have frequently begged you to excuse me--I mean
+   the request which you make that I should write something in answer to
+   your questions as to the interpretation of passages of Scripture. I
+   thought that I should lead you to desist from these questions by the
+   writings I have once and again sent you, which have given evidence of
+   my ignorance and of the roughness of my speech.
+
+   2. But since you still are not weary of commanding me, I have at once,
+   to the best of my powers, added to what I had written at your desire on
+   the Benediction of Judah the comments on the remaining eleven
+   patriarchs. I acted like the man in the parable of the two sons. I
+   thought that I should thus best fulfil the father's will: and though
+   when he ordered me to go into the vineyard I had said I will not go,
+   yet after a while I went. If, as I grant, there is some rashness in the
+   fact that with so little capacity we attempt such a great task, I would
+   say, with submission to you, that this must be most justly imputed to
+   you, since, through your excessive love for me you do not see that my
+   measure of knowledge, as of other virtues, is but slight. I wrote this
+   work in the days of Lent, while I was staying in the monastery of
+   Pinetum, and I wrote it for you. But I found it impossible to conceal
+   this poor work from the brethren who were there: and they, considering
+   that a thing which had been honoured by your approval must be of great
+   importance, extorted from me the permission to copy it for themselves.
+   Thus, while you demand from me food for yourself you give refreshment
+   to others also. Farewell, and be in peace, my most loving brother, most
+   true worshipper of God, and an Israelite in whom there is no guile. I
+   entreat you who are so full of the grace of God to hold me still in
+   remembrance.
+     __________________________________________________________________
+
+   [2779] That is to Rome.
+     __________________________________________________________________
+
+   Translation of Pamphilus' Defence of Origen.
+
+   Written at Pinetum a.d. 397.
+
+   While Rufinus was staying at Pinetum, a Christian named Macarius [2780]
+   sought his advice and assistance. He was engaged in a controversy with
+   the Mathematici, a class of men who had deserted the scientific studies
+   from which they took their name, and had turned to astrology and a
+   belief in Fatalism. Macarius, having heard of Origen's greatness in the
+   region of Christian speculation, earnestly desired some knowledge of
+   his writings: but was unable to attain it through ignorance of Greek.
+   He declared to Rufinus that he had had a dream in which he saw a ship
+   laden with Eastern merchandize arriving in Italy, and that it was
+   declared to him that this ship would contain the means of attaining the
+   knowledge he desired. The coming of Rufinus seemed to him the
+   fulfilment of his dream, and he earnestly besought him to impart to him
+   some of the treasures of his Greek learning, and especially to
+   translate for him Origen's great speculative work, the Peri 'Archon,
+   that is On First Principles. [2781] Rufinus hesitated, knowing that
+   there was a strong prejudice against Origen, and that he was looked on,
+   especially in the West, as a heretic, though his writings were little
+   known there. He yielded, however, to the solicitations of Macarius: but
+   to guard against the imputation of heresy, he undertook three
+   preliminary works. First, he translated the Apology of the Martyr
+   Pamphilus for Origen; secondly, he wrote a short treatise on the
+   Adulteration by heretics of the works of Origen; and, thirdly, in
+   translating the Peri 'Archon he prefixed to it an elaborate Preface in
+   justification of his course in translating the work. All these
+   documents became the subject of vehement controversy which found its
+   expression in the letter of Jerome to his friends at Rome, and the
+   Apologies of Rufinus and Jerome translated in this volume.
+
+   The Apology of Pamphilus for Origen forms the sixth book of a work
+   undertaken by him in connexion with Eusebius of Cæsarea, the Church
+   Historian. Pamphilus was a great collector of books, and a learned man,
+   but Eusebius was the chief writer. Pamphilus was put to death in the
+   last persecution, that under Galerius; and Eusebius having at a later
+   time fallen under suspicion of Arianism, it was attempted by those who
+   disliked Origen, to dissociate Pamphilus from all connexion with the
+   work. There seems however no reason to doubt, notwithstanding Jerome's
+   violent protestations, that Pamphilus was associated with Eusebius
+   throughout the work, and that he actually wrote the sixth book. The
+   translation of this Apology was made first, and sent out with a Preface
+   which runs as follows:
+
+   You have been moved by your desire to know the truth, Macarius, who are
+   "a man greatly beloved," [2782] to make a request of me, which will
+   bring you the blessing attached to the knowledge of the truth; but it
+   will win for me the greatest indignation on the part of those who
+   consider themselves aggrieved whenever any one does not think evil of
+   Origen. It is true that it is not my opinion about him that you have
+   asked for, but that of the holy martyr Pamphilus; and you have
+   requested to have the book which he is said to have written in his
+   defence in Greek translated for you into Latin: nevertheless I do not
+   doubt that there will be some who will think themselves aggrieved if I
+   say anything in his defence even in the words of another man. I beg
+   them to do nothing in the spirit of presumption and of prejudice; and,
+   since we must all stand before the judgment seat of Christ, not to
+   refuse to hear the truth spoken, lest haply they should do wrong
+   through ignorance. Let them consider that to wound the consciences of
+   their weaker brethren by false accusations is to sin against Christ;
+   and therefore let them not lend their ears to the accusers, nor seek an
+   account of another man's faith from a third party, especially when an
+   opportunity is given them for gaining personal and direct knowledge,
+   and the substance and quality of each man's faith is to be known by his
+   own confession. For so the Scripture says: [2783] "With the heart man
+   believeth unto righteousness, and with the mouth confession is made
+   unto salvation": and: [2784] "By his words shall each man be justified,
+   and by his word shall he be condemned." The opinions of Origen in the
+   various parts of Scripture are clearly set forth in the present work:
+   as to the cause of our finding certain places in which he contradicts
+   himself, an explanation will be offered in the short document
+   subjoined. [2785] But as for myself, I hold that which has been handed
+   down to us from the holy fathers, namely, that the Holy Trinity is
+   coeternal, and of a single nature, virtue and substance; that the Son
+   of God in these last times has been made man, has suffered for our
+   transgressions and rose again from the dead in the very flesh in which
+   he suffered, and thereby imparted the hope of the resurrection to the
+   whole race of mankind. When we speak of the resurrection of the flesh,
+   we do so, not with any subterfuges, as is slanderously reported by
+   certain persons; we believe that it is this very flesh in which we are
+   now living which will rise again, not one kind of flesh instead of
+   another, nor another body than the body of this flesh. When we speak of
+   the body rising we do so in the words of the apostle; for he himself
+   made use of this word: and when we speak of the flesh, our confession
+   is that of the Creed. It is an absurd invention of maliciousness to
+   think that the human body is different from the flesh. However, whether
+   we speak of that which is to rise, according to the common faith, as
+   the flesh, or, according to the Apostle, as the body, this we must
+   believe, that according to the clear statement of the Apostle, that
+   which shall rise shall rise in power and in glory; it will rise an
+   incorruptible and a spiritual body: for "corruption cannot inherit
+   incorruption." We must maintain this preëminence of the body, or flesh,
+   which is to be: but, with this proviso, we must hold that the
+   resurrection of the flesh is perfect and entire; we must on the one
+   hand maintain the identity of the flesh, while on the other we must not
+   detract from the dignity and glory of the incorruptible and spiritual
+   body. For so the Scripture speaks. This is what is preached by the
+   reverend Bishop John at Jerusalem; this we with him both confess and
+   hold. If any one either believes or teaches otherwise, or insinuates
+   that we believe differently from the exposition of our faith, let him
+   be anathema. Let this then be taken as a record of our belief by any
+   who desire to know it. Whatever we read and whatever we do is in
+   accordance with this account of our faith; we follow the words of the
+   Apostle, [2786] "proving all things, holding fast that which is good,
+   avoiding every form of evil." [2787] "And as many as walk by this rule,
+   peace be upon them and upon the Israel of God."
+     __________________________________________________________________
+
+   [2780] See the account in Rufinus' Apology I. 11.
+
+   [2781] The word may also mean On beginnings, or On Principalities and
+   Powers: these ideas being connected together in the speculation of the
+   Alexandrian theology.
+
+   [2782] Daniel x. 11, ix. 23. The name Macarius means Blessed.
+
+   [2783] Rom. x. 10
+
+   [2784] Matt. xii. 37
+
+   [2785] See the Epilogue, infra.
+
+   [2786] 1 Thess. v. 21, 22
+
+   [2787] Gal. vi. 16
+     __________________________________________________________________
+
+   Preface to the Translations of Origen's Books Peri 'Archon
+
+   ------------------------
+
+   Addressed to Macarius, at Pinetum, a.d. 397.
+
+   ------------------------
+
+   The Translation of the two first Books of the Peri 'Archon was issued
+   soon after, or contemporaneously with the Apology of Pamphilus. The
+   Preface to them was intended to remove prejudices by showing that
+   Jerome (who though not named is clearly described) had been Rufinus'
+   precursor in translating Origen. The compliments paid to Jerome were no
+   doubt sincere: but the use made of his previous action can hardly be
+   justified. Rufinus knew well that Jerome's view of Origen had to some
+   extent altered, that a disagreeable controversy had sprung up at
+   Jerusalem about him, in which he and Jerome had taken opposite sides:
+   and that the animosity aroused by this had with the greatest difficulty
+   been allayed, and a reconciliation effected at the moment when he had
+   quitted Palestine. This Preface with the Translation of the Peri
+   'Archon was the most immediate cause of the violent controversy and the
+   final estrangement between Rufinus and Jerome.
+
+   I am aware that a great many of our brethren were incited by their
+   longing for Scriptural knowledge to demand from various men who were
+   versed in Greek literature that they would give the works of Origen to
+   men who used the Latin tongue, and thus make him a Roman. Among these
+   was that brother and associate of mine to whom this request was made by
+   bishop Damasus, and who when he translated the two homilies on the Song
+   of Songs from Greek into Latin prefixed to the work a preface [2804] so
+   full of beauty and so magnificent that he awoke in every one the desire
+   of reading Origen and eagerly investigating his works. He said that to
+   the soul of that great man the words might well be applied: [2805] "The
+   King has brought me into his chamber": and he declared that Origen in
+   his other books had surpassed all other men, but in this had surpassed
+   himself. What he promises in this Preface is, indeed, that he will give
+   to Roman ears not only these books but many others of Origen. But I
+   find that he is so enamoured of his own style that he pursues a still
+   more ambitious object, namely, that he should be the creator of the
+   book, not merely its translator. I am then following out a task begun
+   by him and commended by his example; but it is out of my power to set
+   forth the words of this great man with a force and an eloquence like
+   his: and I have therefore to fear that it may happen through my fault
+   that the man whom he justly commends as a teacher of the church both in
+   knowledge and in wisdom second only to the Apostles may be thought to
+   have a far lower rank through my poverty of language. When I reflected
+   on this I was inclined to keep silence, and not to assent to the
+   brethren who were constantly adjuring me to make the translation. But
+   your influence is such, my most faithful brother Macarius, that even
+   the consciousness of my unfitness is not sufficient to make me resist.
+   I have therefore yielded to your importunity though it was against my
+   resolution, so that I might no longer be exposed to the demands of a
+   severe taskmaster; but I have done so on this condition and on this
+   understanding, that in making the translation I should follow as far as
+   possible the method of my predecessors, and especially of him of whom I
+   have already made mention. He, after translating into Latin above
+   seventy of the books of Origen which he called Homiletics, and also a
+   certain number of the "Tomes," proceeded to purge and pare away in his
+   translation all the causes of stumbling which are to be found in the
+   Greek works; and this he did in such a way that the Latin reader will
+   find nothing in them which jars with our faith. In his steps,
+   therefore, I follow, not, indeed, with the power of eloquence which is
+   his, but, as far as may be, in his rules and method, that is, taking
+   care not to promulgate those things which are found in the books of
+   Origen to be discrepant and contradictory to one another. The cause of
+   these variations I have set forth very fully for your information in
+   the Apology which Pamphilus wrote for the books of Origen, to which I
+   have appended a very short treatise [2806] showing by proofs which seem
+   to me quite clear that his books have been in very many cases falsified
+   by heretical and ill-disposed persons. This is especially the case with
+   the books which you now require me to translate, namely, the Peri
+   'Archon, which may be rendered either Concerning First Principles or
+   Concerning Principalities. These books are in truth, apart from these
+   questions, exceedingly obscure and difficult; for in them he discusses
+   matters over which the philosophers have spent their whole lives
+   without any result. But our Christian thinker has done all that lay in
+   his power to turn to purposes of sound religion the belief in a creator
+   and the order of the created world which they had made subservient to
+   their false religion. Wherever therefore I have found in his books
+   anything contrary to the truth concerning the Trinity which he has in
+   other places spoken of in a strictly orthodox sense, I have either
+   omitted it as a foreign and not genuine expression or set it down in
+   terms agreeing with the rule of faith which we find him constantly
+   assenting to. There are things, no doubt, which he has developed in
+   somewhat obscure language, wishing to pass rapidly over them, and as
+   addressing those who have experience and knowledge of such matters; in
+   these cases I have made the passage plain by adding words which I had
+   read in other books of his where the matter was more fully treated. I
+   have done this in the interest of clearness: but I have put in nothing
+   of my own; I have only given him back his own words, though taken from
+   other passages. I have explained this in the Preface, so that those who
+   calumniate us should not think that they had found in this fresh
+   material for their charges. But let them take heed what they are about
+   in their perversity and contentiousness. As for me, I have not
+   undertaken this laborious task (in which I trust that God will be my
+   helper in answer to your prayers) for the sake of shutting the mouths
+   of calumnious men, but with the view of supplying material for the
+   increase of real knowledge to those who desired it. This only I require
+   of every man who undertakes to copy out these books or to read them, in
+   the sight of God the Father, the Son, and the Holy Ghost, and adjure
+   him by our faith in the coming kingdom, by the assurance of the
+   resurrection of the dead, by the eternal fire which is prepared for the
+   devil and his angels (even as he trusts that he shall not possess as
+   his eternal inheritance that place where there is weeping and gnashing
+   of teeth, and where their fire will not be quenched and their worm will
+   not die) that he should neither add nor take away, that he should
+   neither insert nor change, anything in that which is written but that
+   he should compare his copy with that from which it is copied and
+   correct it critically letter for letter, and that he should not keep by
+   him a copy which has not received correction or criticism, lest, if his
+   copy is not thus distinct, the difficulty of the meaning may beget a
+   still greater obscurity in the mind of the readers.
+     __________________________________________________________________
+
+   [2804] Translated among Jerome's works in this Series.
+
+   [2805] Cant. i. 4
+
+   [2806] See the Translation in this Volume.
+     __________________________________________________________________
+
+   Preface to Book III. of the Peri 'Archon
+
+   ------------------------
+
+   Rufinus had now come to Rome. The translation of B. III. and IV. had
+   been made probably at Pinetum early in 398. He was already aware of the
+   strong feelings aroused by his Translation of B. I. and II., and he
+   complains that parts of his work were obtained by Jerome's friends
+   while still uncorrected, and used to his discredit (Apol. i, 18-21, ii,
+   44); but he continued the work, prefixing to it the following Preface
+   as his justification.
+
+   Reader, remember me in your sacred moments of prayer, that I may be a
+   worthy follower of the Spirit. It was you, Macarius, by whose
+   instigation, I might say by whose compulsion, I translated the two
+   first books of the Peri 'Archon. I did it during Lent; and at that time
+   your near presence, my Christian brother, and your fuller leisure,
+   forced me also into fuller diligence. But now that you are living at
+   the opposite end of Rome from me, and my taskmaster pays his visits
+   more seldom, I have taken longer in unfolding the sense of the two last
+   books. You will remember that in my former preface I gave you warning
+   that some people would be full of indignation when they found that I
+   had no harm to say of Origen: and this, as I think you have found, has
+   not been long in coming to pass. But if those demons who excite men's
+   tongues to evil speaking, have been already set on fire by that first
+   part of the work, though in it the author had not yet fully laid bare
+   their devices, what will be the effect of this second part, in which he
+   is going to disclose all the secret labyrinths through which they creep
+   into the hearts of men and deceive the hearts of the weak and the
+   frail? You will see disorder springing up on all sides, and party
+   spirit will be raised, and an outcry will spread all through the town,
+   and Origen will be summoned to the bar and condemned for his attempt to
+   dispel the darkness of ignorance by the light of the Gospel's lamp. But
+   all this will matter very little to those who are endeavouring to hold
+   fast the sound form of the catholic faith while exercising their minds
+   in the study of divine things.
+
+   I think it necessary, however, to remind you of the principle which I
+   acted upon in reference to the former books, and which I have observed
+   in the present case also, namely, not to set down in my translation
+   things evidently contradictory to our belief and to the author's
+   opinions as elsewhere expressed, but to pass them over as not genuine
+   but inserted by others. On the other hand I have not, either in the
+   former books or in these, omitted the novel opinions which he has
+   expressed about the formation of the reasonable creation, considering
+   that it is not in such things that the faith mainly consists, but that
+   what he is aiming at is merely knowledge and the exercise of the
+   faculties, and that possibly there may be certain heresies which may
+   have to be answered in this way. Only, in cases where he may have
+   chosen to repeat in these later books what he had said before in the
+   earlier, I have thought it expedient to cut out certain portions for
+   the sake of brevity.
+
+   Those whose object in reading these books is to gain knowledge, not to
+   disparage their author, would do well to seek the aid of men more
+   skilled than themselves in interpreting them. For it is an absurd thing
+   to get grammarians to explain to us the fictions of the poets' writings
+   and the laughable stories of the comedians, and yet to think that books
+   which speak of God and the celestial powers, and the whole universe,
+   and which discuss all the errors of pagan philosophy and of heretical
+   pravity are things which any one can understand without a teacher to
+   explain them. In this way it comes to pass that men prefer to remain in
+   ignorance and to pronounce rash judgments on things which are difficult
+   and obscure rather than to gain an understanding of them by diligent
+   study.
+     __________________________________________________________________
+
+   The Preface to the Books of Recognitions of St. Clement.
+
+   Addressed to Bishop Gaudentius.
+
+   (For the occasion and date [3434] of this work see the Prolegomena, p.
+   412.)
+
+   ------------------------
+
+   You possess so much vigour of character, my dear Gaudentius, you who
+   are so signal an ornament of our teachers, or as I would rather say,
+   you have the grace of the Spirit in so large a measure, that even what
+   you say in the way of daily conversation, or of addresses that you
+   preach in church, [3435] ought to be consigned in writing and handed
+   down for the instruction of posterity. But I am far less quick, my
+   native talent being but slender, and old age is already making me
+   sluggish and slow; and this work is nothing but the payment of a debt
+   due to the command laid upon me by the virgin Sylvia whose memory I
+   revere. She it was who demanded of me, as you have now done by the
+   right of heirship, to translate Clement into our language. The debt is
+   paid at last, though after many delays. It is a part of the booty, and
+   in my opinion no small one, which I have carried off from the libraries
+   of the Greeks, and which I am collecting for the use and advantage of
+   our countrymen. I have no food of my own to bring them, and I must
+   import their nourishment from abroad. However, foreign goods are apt to
+   appear sweeter; and sometimes they are really more useful. Moreover,
+   almost anything which brings healing to our bodies or is a defence
+   against disease or an antidote to poison comes from abroad. Judæa sends
+   us the distillation of the balsam tree, Crete the leaf of the
+   dictamnus, Arabia her aromatic flowers, and India the crop of the
+   spikenard. These goods come to us, no doubt, in a less perfect
+   condition than those which our own fields produce, but they preserve
+   intact their pleasant scent and their healing power. Therefore, my
+   friend who are as my own soul, I present to you Clement returning to
+   Rome. I present him dressed in a Latin garb. Do not think it strange if
+   the aspect which his eloquence presents is less bright than it might
+   be. It makes no difference if only the meaning is felt to be the same.
+
+   These are foreign wares, then, which I am importing at a great expense
+   of labour; and I have still to see whether our countrymen will regard
+   with gratitude one who is bringing them the spoils (spolia) of his
+   warfare, and who is unlocking with the key of our language a treasure
+   house hitherto concealed, though he does it with the utmost good will.
+   I only trust that God may look favourably on your good wishes, so that
+   my present may not be met in any quarter by evil eyes and envious
+   looks; and that we may not witness that extremely monstrous phenomenon,
+   expressions of illwill on the part of those on whom the gift is
+   conferred, while those from whom it is taken part with it ungrudgingly.
+   It is but right that you, who have read this work in the Greek should
+   point out to others the design of my translation--unless indeed, you
+   feel that in some respects I have not observed the right method of
+   rendering the original. You are, I believe well aware that there are
+   two Greek editions of this work of Clement, his Recognitions; that
+   there are two sets of books, which in some few cases differ from each
+   other though the bulk of the narrative is the same. For instance, the
+   last part of the work, that which gives an account of the
+   transformation of Simon Magus, exists in one of these, while in the
+   other it is entirely absent. On the other hand there are some things,
+   such as the dissertation on the unbegotten and the begotten God, and a
+   few others, which, though they are found in both editions, are, to say
+   the least of them, beyond my understanding; and these I have preferred
+   to leave others to deal with rather than to present them in an
+   inadequate manner. As to the rest, I have taken pains not to swerve,
+   even in the slightest degree from either the sense or the diction; and
+   this, though it makes the expression less ornate, renders it more
+   faithful.
+
+   There is a letter in which this same Clement writing to James the
+   Lord's brother, gives an account of the death of Peter, and says that
+   he has left him as his successor, as ruler and teacher of the church;
+   and further incorporates a whole scheme of ecclesiastical government.
+   This I have not prefixed to the work, both because it is later in point
+   of time, and because it has been previously translated and published by
+   me. Nevertheless, there is a point which would perhaps seem
+   inconsistent with facts were I to place the translation of it in this
+   work, but which I do not consider to involve an impossibility. It is
+   this. Linus and Cletus were Bishops of the city of Rome before Clement.
+   How then, some men ask, can Clement in his letter to James say that
+   Peter passed over to him his position as a church-teacher. [3436] The
+   explanation of this point, as I understand, is as follows. Linus and
+   Cletus were, no doubt, Bishops in the city of Rome before Clement, but
+   this was in Peter's life-time; that is, they took charge of the
+   episcopal work, while he discharged the duties of the apostolate. He is
+   known to have done the same thing at Cæsarea; for there, though he was
+   himself on the spot, yet he had at his side Zacchæus whom he had
+   ordained as Bishop. Thus we may see how both things may be true; namely
+   how they stand as predecessors of Clement in the list of Bishops, and
+   yet how Clement after the death of Peter became his successor in the
+   teacher's chair. But it is time that we should pay attention to the
+   beginning of Clement's own narrative, which he addresses to James the
+   Lord's brother.
+     __________________________________________________________________
+
+   [3434] The date is after the Peroration to the Epistle to the Romans
+   (see p. 568); but it seemed better not to divide the Prefaces, etc., to
+   the translations of Origen's Commentaries.
+
+   [3435] Si quid in Ecclesia declamatur.
+
+   [3436] Cathedram docendi.
+     __________________________________________________________________
+
+   Preface to the Translation of the Sayings of Xystus.
+
+   Composed at Aquileia about the year 307 a.d.
+
+   (For the questions relating to Xystus see the Prolegomena, p. 412.)
+
+   ------------------------
+
+   Rufinus to Apronianus, his own friend.
+
+   I know that, just as the sheep come gladly when their own shepherd
+   calls them, so in matters of religion men attend most gladly to the
+   admonitions of a teacher who speaks their own language: and therefore,
+   my very dear Apronianus, when that pious lady who is my daughter but
+   now your sister in Christ, had laid her commands on me to compose for
+   her a treatise of such a nature that its understanding should not
+   require any great effort, I translated into Latin in a very open and
+   plain style the work of Xystus, who is said to be the same man who at
+   Rome is called Sixtus, and who gained the glory of being both bishop
+   and martyr. I think that, when she reads this, she will find it
+   expressed with such brevity that a vast meaning is unfolded in each
+   several line, with such power that a sentence only a line long would
+   suffice for a whole life's training, and yet with such simplicity that
+   one who looked over the shoulder of a girl as she read it might
+   question whether I were not quite weak in intellect. And the whole work
+   is so concise that it would be possible for her never to let go of it.
+   The entire book would hardly be bigger than the finger ring of one of
+   our ancestors. And indeed it seems but right that one who has learnt
+   through the word of God to count as dross the ornaments of the world
+   should now receive at my hands by way of ornament a necklace of the
+   word and of wisdom. For the present let this little book serve for a
+   ring and be kept constantly in the hands: but it will not be long
+   before it will penetrate into the treasure house and be wholly laid up
+   in the heart, and bring forth from its innermost chamber the germs of
+   instruction and of a participation in all good works. I have added
+   further a few choice sayings addressed by a pious father to his son,
+   but all so succinct that the whole of this little work may rightly be
+   called in Greek the Enchiridion [3437] or in Latin the Annulus. [3438]
+     __________________________________________________________________
+
+   [3437] A thing held in the hand.
+
+   [3438] A ring.
+     __________________________________________________________________
+
+   Preface to the Two Books of Ecclesiastical History, Added by Rufinus to
+   His Translation of Eusebius.
+
+   Addressed to Chromatius, Bishop of Aquileia, a.d. 401.
+
+   (For the occasion of writing, and the date, see Prolegomena, p. 412.)
+
+   ------------------------
+
+   It is the custom, they say, of skilful physicians, when they perceive
+   that some epidemic disease is near at hand in one of our cities, to
+   provide some kind of medicine, whether solid or liquid, which men may
+   use as a preventative to defend themselves from the destruction which
+   is hanging over them. You have imitated this method of the doctors, my
+   venerable Father, Chromatius, at the moment when the gates of Italy
+   were broken through by Alaric the commander of the Goths, and thus a
+   disease and plague poured in upon us, which made havoc of the fields
+   and cattle and men throughout the land. You then sought a remedy
+   against the cruelty and destruction, so that the minds of men which
+   were languishing might be drawn away from the contagion of the
+   prevailing malady, and might preserve their balance through an interest
+   in better pursuits. This you have done by enjoining on me the task of
+   translating into Latin the ecclesiastical history which was written in
+   the Greek language by that most learned man, Eusebius of Cæsarea. You
+   thought that the mind of those who heard it read to them might be so
+   held fast by it that, in its eager desire for the knowledge of past
+   events, it might to some extent become oblivious of their actual
+   sufferings. I tried to excuse myself from the task, as being, through
+   my weakness unequal to it, and as having in the lapse of years lost the
+   use of the Latin tongue. But I reflected that your commands were not to
+   be divaricated from your position in the Apostolic order. For, at the
+   time when the multitude in the desert were hungering, and the Lord said
+   to his Apostles, "Give ye them to eat," Philip who was one of them
+   instead of bringing out the loaves which were hid in the wallet of the
+   Apostles, said that there was a little lad there who had five loaves
+   and two fishes. He knew that the exhibition of the divine virtue would
+   be none the less brilliant if the ministry of some of the little ones
+   were used in its fulfilment. He modestly excused his action by adding,
+   "What are these among so many?" So that the divine power might be more
+   conspicuous through the difficult and desperate circumstances in which
+   it acted. I felt that, since you were a scion of the Apostolic order,
+   you had possibly acted in remembrance of Philip's example, and that,
+   when you saw that the time was come for the multitudes to be fed, you
+   had engaged the services of a little lad who might be able to
+   contribute, twice told, the five loaves [3439] which he had received,
+   but who further, to fulfil the Gospel type, might add two small fishes
+   [3440] which he had captured by his own efforts. I have therefore made
+   the attempt to execute what you had ordered, having the assurance that
+   the deficiency of my inexperience would be excused on account of the
+   authority of him who gave the command.
+
+   I must point out the course I have taken in reference to the tenth book
+   of this work. As it stands in the Greek, it has little to do with the
+   process of events. All but a small part of it is taken up with
+   discussions tending to the praise of particular Bishops, and adds
+   nothing to our knowledge of facts. I have therefore left out all this
+   superfluous matter; and, whatever in it belonged to genuine history I
+   have added to the ninth book, with which I have made his history close.
+   The tenth and eleventh books I have myself compiled, partly from the
+   traditions of the former generation, partly from facts within my own
+   memory; and these I have added to the previous books, like the two
+   fishes to the loaves. If you bestow your approval and benediction upon
+   them, I shall have a sure confidence that they will suffice for the
+   multitude. The work as now completed contains the events from the
+   Ascension of the Saviour to the present time; my own two books those
+   from the days of Constantine when the persecution came to an end on to
+   the death of the Emperor Theodosius.
+
+   ------------------------
+
+   The following note occurs at the end of the ninth book of Rufinus'
+   Latin Version of Eusebius.
+
+   Thus far Eusebius has given us the record of the history. As to the
+   subsequent events, as they have followed on up to the present time, as
+   I have found them recorded in the writings of the last generation, or
+   so far as they are covered by my own knowledge, I will add them,
+   obeying, as best I may, in this point also the commands of our father
+   in God. [3441]
+     __________________________________________________________________
+
+   [3439] That is, the ten books of Eusebius' History.
+
+   [3440] That is, the two books added by Rufinus.
+
+   [3441] Chromatius.
+     __________________________________________________________________
+
+   Rufinus' Preface to the Translation of Origen's Commentary on Psalms
+   36, 37, and 38.
+
+   Addressed to Apronianus, [3442] either at Rome or at Aquileia, between
+   a.d. 398 and a.d. 407.
+
+   ------------------------
+
+   The whole exposition of the thirty-sixth, thirty-seventh and
+   thirty-eighth Psalms is ethical in its character, being designed to
+   enforce more correct methods of life; and teaches at one time the way
+   of conversion and repentance, at another that of purification and of
+   progress. I have therefore thought it well to translate it into Latin
+   for you, my dearest son Apronianus, having first arranged it in nine of
+   the short sermons which are called in Greek Homilies, and incorporated
+   it into one whole; and thus this discourse which in all its parts aims
+   at the correction and the advancement of the moral life, is collected
+   into a single volume. My translation will at all events be of use so
+   far as to put the reader without effort in possession of the meaning of
+   the author, which is here fully laid open, and to bring home to him the
+   simplicity of life which he enjoins with clearness of thought and in
+   simple words; and thus the voice of prophecy may reach not men alone
+   but also god-fearing women, and lend subtlety to the minds of the
+   simple. Yet I fear that pious lady, who is my daughter but your sister
+   in Christ, may think that she owes me no thanks for my work if it
+   brings her nothing but puzzling thoughts and thorny questions: for the
+   human body could hardly hold together if divine providence had formed
+   it of bones and muscles alone without blending with them the ease and
+   grace of the softer tissues.
+     __________________________________________________________________
+
+   [3442] A Roman noble converted by Rufinus and Melania, with the latter
+   of whom he was connected.
+     __________________________________________________________________
+
+   Rufinus' Preface to the Translation of Origen's Commentary on the
+   Epistle to the Romans.
+
+   Addressed to Heraclius at Aquileia about a.d. 407.
+
+   ------------------------
+
+   My intention was to press the shore of the quiet land in the little
+   bark in which I was sailing, and to draw out a few little fishes from
+   the pools of Greece: but you have compelled me, brother Heraclius, to
+   give my sails to the wind and go forth into the deep sea; you persuade
+   me to leave the work which lay before me in the translation of the
+   homilies written by the Man of Adamant [3443] in his old age, and to
+   open to you the fifteen volumes in which he discussed the Epistle of
+   Paul to the Romans. In these books, while he aims at representing the
+   Apostle's thoughts, he is carried away into a sea of such depth that
+   one who follows him into it may well be afraid of being drowned in the
+   greatness of his thoughts as in the vastness of the waves. Then also
+   you do not consider this, that my breath is but scanty for filling a
+   grand trumpet of eloquence like his. And beyond all these difficulties
+   is this, that the books themselves have been interpolated. In almost
+   all the libraries (I grant that no one can tell how it happened) some
+   of the volumes are absent from the body of the work; and to supply
+   these, and to restore the continuity of the work in the Latin version
+   is beyond my talent, but would be, as you must know when you make your
+   demand, a special gift of God. You add, however, so that nothing may be
+   wanting to the labour I am undertaking, that I had better abbreviate
+   this whole body of fifteen volumes, which in the Greek reaches to the
+   length of forty thousand lines or more, and bring it within moderate
+   compass. Your injunctions are hard indeed, and might be thought to be
+   imposed by one who did not care to consider what the burden of such a
+   work must be. I will, however, attempt it, hoping that through your
+   prayers, and the favour of the Lord, what seems impossible to man may
+   become possible. But we will now, if you please, listen to the Preface
+   which Origen himself prefixes to the work on which he was entering.
+     __________________________________________________________________
+
+   [3443] Or man of steel: (it might also be translated, The indomitable);
+   a name given to Origen, an account of the greatness of his labours. It
+   is said by Westcott (Dict. of Xtn. Biog. "Origen") to have been adopted
+   by Origen himself, and to form part of his real name.
+     __________________________________________________________________
+
+   The Peroration of Rufinus Appended to His Translation of Origen's
+   Commentary on the Epistle to the Romans.
+
+   Addressed to Heraclius at Aquileia, probably about 407.
+
+   ------------------------
+
+   A satisfactory conclusion has now, I trust, been reached of the
+   Commentary on the Epistle to the Romans, the writing of which has been
+   a work of very great labour and time. I confess, my most loving brother
+   Heraclius, that in the attempt to respond to your request I have almost
+   forgotten the precept; "Do not lift a burden above your strength." Even
+   in the other translations of Origen's works into Latin, which were made
+   because you earnestly requested it, or rather exacted it as a
+   journeyman's task, the labour was very great; for I made it my object
+   to supplement what Origen spoke extempore in the lecture room of the
+   church; for his aim there was the application of the subject for the
+   sake of edification rather than the exposition of the text. This I have
+   done in the case of the Homilies, and the short lectures on Genesis and
+   Exodus, and especially in those on the book of Leviticus, where he
+   spoke in a hortatory manner, whereas my translation takes the form of
+   an exposition. This duty of supplying what was wanted I took up because
+   I thought that the practice of agitating questions and then leaving
+   them unsolved, which he frequently adopts in his homiletic mode of
+   speaking, might prove distasteful to the Latin reader. The works upon
+   Jesus Nave [3444] and the book of Judges and the thirty-sixth,
+   thirty-seventh and thirty-eighth Psalms, I translated simply as I found
+   them, with no great labour. While then in the other cases which I have
+   mentioned above, I employed much labour in supplying what Origen had
+   omitted, in this work on the Epistle to the Romans the labour that fell
+   on me for the causes described in the Preface was immense and full of
+   complexity. But there will have been nothing but pleasure in these
+   labours, provided only that my experience in other cases, of
+   ill-disposed minds requiting my toils and vigils with contumely, be not
+   repeated and that I do not gain for my studies the reward of detraction
+   and for my labour a conspiracy to ruin me. For in dealing with these
+   men I have to undergo a new form of accusation. They say to me; When
+   you write these things, in which are found many pieces the composition
+   of which is due to yourself, you should place your own name in the
+   title, and let it run thus: The books of Rufinus' commentary on (for
+   instance) the Epistle to the Romans;' for so, they say, in the case of
+   profane writers, the name in the title is not that of the Greek author
+   who is translated but of the Latin author who translates him. But all
+   this complaisance, by which the works are ascribed to me, is caused not
+   by love to me but by hatred to the author. I am much more observant of
+   my conscience than of my reputation; it may be apparent that I have
+   added some things to supply what was wanting; and that I have
+   abbreviated what was too lengthy; but to steal the title from the man
+   who laid the foundations on which the building has been reared is what
+   I cannot think right. It must be, I grant, in the discretion of the
+   reader, when he has examined the work, to ascribe the work to any one
+   he thinks right; but my intention has been not to seek the applause of
+   students but the good of those who wish to be edified.
+
+   I shall turn next to the work which was long ago imposed upon me but
+   now is demanded with still greater vehemence by the Bishop Gaudentius,
+   namely to turn into Latin the books called the Recognition of Clement
+   the Bishop of Rome, the successor and companion of the Apostles. In
+   this work I well know that, to judge by the ordinary rule, I shall have
+   labour upon labour. In this case I will do what my friends desire, I
+   will put my own name in the title of the work, though I shall have that
+   of the author also. It shall be called Rufinus's Clement. If the Lord
+   enable me to fulfil this task, I shall afterwards return to that which
+   you desire, and say something, God willing, on the books of Numbers or
+   of Deuteronomy (for this alone is wanting to my whole work on the
+   Heptateuch): or else I shall write what I can, the Lord being my guide,
+   on the remaining epistles of the Apostle Paul.
+     __________________________________________________________________
+
+   [3444] Joshua.
+     __________________________________________________________________
+
+   Preface to Origen's Homilies on Numbers.
+
+   Addressed to Ursacius. [3445] Written in 410. [3446]
+
+   ------------------------
+
+   My dear brother, I might rightly address you in the words of the
+   blessed master, "You do well, dearest Donatus, in reminding me of
+   this;" for I well remember my promise that I would collect all that
+   Adamantius wrote in his old age on the Law of Moses, and translate it
+   into Latin for the use of our people. But, as he says, the season was
+   not seasonable for the fulfilment of my promise, but was full of storm
+   and confusion. How can the pen move freely when a man is in fear of the
+   missiles of the enemy, when he has before his eyes the devastation of
+   cities and country, when he has to fly from dangers of the sea, and
+   there is no safety even in exile? As you yourself saw, the Barbarian
+   was within sight of us; he had set fire to the city of Rhegium, and our
+   only protection against him was the very narrow sea which separates the
+   soil of Italy from Sicily. In such a position, what leisure could there
+   be for writing, and especially for translating, a work in which one's
+   duty is not to develop one's own opinions but to express those of
+   another? However, when there was a quiet night, and our minds were
+   relieved from the fear of an attack by the enemy, and we got at least
+   some little leisure for thought, I set to work, as a solace from our
+   troubles, and to relieve the burden of our pilgrimage, to gather into
+   one and arrange all that Origen had written on the book of Numbers,
+   whether in the way of homilies or in writings such as are called
+   Excerpts, [3447] and to translate them into the Roman tongue. You urged
+   me to do this, Ursacius, and aided me with all your might, indeed, so
+   eager were you, that you thought the youth who acted as secretary too
+   slow in the execution of his office. I wish, however, to point out to
+   you, my brother, that the object of this method of studying scripture
+   is not to deal with each clause separately, as you find done in
+   commentaries, but to open up a path for the understanding, so that the
+   reader may not be made negligent, but as it is written [3448] may "stir
+   up his own spirit" and draw out the meaning, and, when he has heard the
+   good word, may add to it by his own wisdom. In this way I have tried to
+   give all the expositions which you desired; and now of all the writings
+   that I have found upon the Law the short comments upon Deuteronomy
+   alone are wanting; these, if God so will, and if he restores my
+   eye-sight, I hope to add to the body of the work. Indeed, my very
+   loving son Pinianus, whose truly Christian company I have joined in
+   their flight because of my delight in their chaste conversation,
+   requires yet other tasks from me. But do you and he join your prayers
+   that the Lord may be present with us, and may give peace in our time,
+   and shew mercy to those who are in trouble, and make our work fruitful
+   for the edification of the reader.
+     __________________________________________________________________
+
+   [3445] Nothing more is known of Ursacius than is to be gathered from
+   the mention of him here.
+
+   [3446] The date is fixed by the burning of Rhegium by Alaric, who
+   intended to invade Sicily, but his transports were scattered by a storm
+   and he himself died soon after. See Gibbon ch. xxxi.
+
+   [3447] Apparently a longer style of note.
+
+   [3448] Possibly from Ps. lxxvii. 7

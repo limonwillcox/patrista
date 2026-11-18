@@ -1,8 +1,8 @@
-import { BIBLE_HIGHLIGHTS_KEY, NOTE_PREFIX, SAVED_CONNECTIONS_KEY, WORK_HIGHLIGHTS_PREFIX } from "../../server/syncKeys";
+import { BIBLE_HIGHLIGHTS_KEY, BOOKMARKS_KEY, NOTE_PREFIX, SAVED_CONNECTIONS_KEY, WORK_HIGHLIGHTS_PREFIX } from "../../server/syncKeys";
 
 /**
  * Two browsers changed the same marks before either heard from the other. Join them so nothing a
- * reader made is lost: highlights and saved connections are united, two different notes are put
+ * reader made is lost: highlights, bookmarks and saved connections are united, two different notes are put
  * one after the other. `local` is this browser's value, `remote` the account's; null means deleted.
  */
 export function mergeMarks(key: string, local: string | null, remote: string | null): string | null {
@@ -12,6 +12,16 @@ export function mergeMarks(key: string, local: string | null, remote: string | n
   try {
     if (key === BIBLE_HIGHLIGHTS_KEY) {
       return JSON.stringify({ ...(JSON.parse(remote) as object), ...(JSON.parse(local) as object) });
+    }
+    if (key === BOOKMARKS_KEY) {
+      // Every place once, the newer copy of each, newest first (the same join as src/lib/bookmarks.ts).
+      type Mark = { id: string; at?: number };
+      const by = new Map<string, Mark>();
+      for (const b of [...(JSON.parse(remote) as Mark[]), ...(JSON.parse(local) as Mark[])]) {
+        const have = by.get(b.id);
+        if (!have || (b.at || 0) >= (have.at || 0)) by.set(b.id, b);
+      }
+      return JSON.stringify([...by.values()].sort((a, b) => (b.at || 0) - (a.at || 0)));
     }
     if (key === SAVED_CONNECTIONS_KEY) {
       type Saved = { a: unknown; b: unknown };
@@ -61,6 +71,7 @@ export function countMarks(storage: Pick<Storage, "length" | "key" | "getItem">)
     const key = storage.key(i) || "";
     try {
       if (key === BIBLE_HIGHLIGHTS_KEY) n += Object.keys(JSON.parse(storage.getItem(key) || "{}") as object).length;
+      else if (key === BOOKMARKS_KEY) n += (JSON.parse(storage.getItem(key) || "[]") as unknown[]).length;
       else if (key.startsWith(WORK_HIGHLIGHTS_PREFIX)) n += ((JSON.parse(storage.getItem(key) || "{}") as { list?: unknown[] }).list || []).length;
       else if (key.startsWith(NOTE_PREFIX)) n += 1;
     } catch {

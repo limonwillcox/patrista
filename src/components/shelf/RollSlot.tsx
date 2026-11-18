@@ -47,8 +47,10 @@ export function RollSlot({
         ["--rh" as string]: String(0.58 + hashOf(work.id, 6) * 0.02),
         ["--rw" as string]: 36 + hashOf(work.id + "~", 5) * 2 + "px"
       }}
-      onMouseEnter={() => bodyRef.current && onSelect(bodyRef.current)}
-      onMouseLeave={onDeselect}
+      // Only a mouse points at a book. A finger's tap would also raise it, the page would change under
+      // the tap, and a phone then holds the click back: the book blinked and wanted a second tap.
+      onPointerEnter={(e) => e.pointerType === "mouse" && bodyRef.current && onSelect(bodyRef.current)}
+      onPointerLeave={(e) => e.pointerType === "mouse" && onDeselect()}
       onFocus={() => bodyRef.current && onSelect(bodyRef.current)}
       onBlur={onDeselect}
       onClick={onClick}

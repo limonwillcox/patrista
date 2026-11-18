@@ -31,6 +31,7 @@ const about = page(() => import("./pages/AboutPage").then((m) => m.AboutPage));
 const privacy = page(() => import("./pages/PrivacyPage").then((m) => m.PrivacyPage));
 const give = page(() => import("./pages/GivePage").then((m) => m.GivePage));
 const fixes = page(() => import("./pages/FixesPage").then((m) => m.FixesPage));
+const bookmarks = page(() => import("./pages/BookmarksPage").then((m) => m.BookmarksPage));
 
 const BY_NAME: Record<string, Loader> = {
   read: read.load,
@@ -45,7 +46,8 @@ const BY_NAME: Record<string, Loader> = {
   about: about.load,
   privacy: privacy.load,
   give: give.load,
-  fixes: fixes.load
+  fixes: fixes.load,
+  bookmarks: bookmarks.load
 };
 
 /** The file for the page at this address, if it has one of its own. Mirrors the routes below. */
@@ -109,6 +111,7 @@ export function App() {
             <Route path="/privacy" element={<privacy.Page />} />
             <Route path="/give" element={<give.Page />} />
             <Route path="/fixes" element={<fixes.Page />} />
+            <Route path="/bookmarks" element={<bookmarks.Page />} />
             <Route path="*" element={<CatchAll />} />
           </Routes>
         </Suspense>

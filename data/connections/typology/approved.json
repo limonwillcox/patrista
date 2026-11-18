@@ -140,11 +140,11 @@
     "work": "catechetical-lectures",
     "quote": "the festival of the Passover, the typical formerly, but now the true",
     "passage": "Exodus 12",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-11/",
-    "chapter": 11,
-    "para": 22,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-15/",
+    "chapter": 15,
+    "para": 15,
     "version": "schaff",
-    "candidate": "catechetical-lectures/11/schaff/22"
+    "candidate": "catechetical-lectures/15/schaff/15"
    },
    {
     "father": "clement_alexandria",
@@ -1202,14 +1202,14 @@
    {
     "father": "irenaeus",
     "lang": "en",
-    "work": "against-heresies",
+    "work": "fragments-from-the-lost-writings-of-irenaeus",
     "quote": "no untrue type of the Word made flesh (enupostatou)",
     "passage": "Numbers 27:18",
-    "page": "/fathers/irenaeus/against-heresies/chapter-168/",
-    "chapter": 168,
-    "para": 43,
+    "page": "/fathers/irenaeus/fragments-from-the-lost-writings-of-irenaeus/chapter-19/",
+    "chapter": 19,
+    "para": 0,
     "version": "schaff",
-    "candidate": "against-heresies/168/schaff/43"
+    "candidate": "fragments-from-the-lost-writings-of-irenaeus/19/schaff/0"
    },
    {
     "father": "clement_alexandria",
@@ -1349,11 +1349,11 @@
     "work": "catechetical-lectures",
     "quote": "And Jesus the son of Nave was in many things a type of Him",
     "passage": "Joshua 1",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-8/",
-    "chapter": 8,
-    "para": 2,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-11/",
+    "chapter": 11,
+    "para": 12,
     "version": "schaff",
-    "candidate": "catechetical-lectures/8/schaff/2"
+    "candidate": "catechetical-lectures/11/schaff/12"
    },
    {
     "father": "eusebius",
@@ -1962,9 +1962,9 @@
     "passage": "Exodus 12-14",
     "page": "/fathers/cyril_jerusalem/mystagogical-lectures/chapter-1/",
     "chapter": 1,
-    "para": 4,
+    "para": 3,
     "version": "schaff",
-    "candidate": "mystagogical-lectures/1/schaff/4"
+    "candidate": "mystagogical-lectures/1/schaff/3"
    },
    {
     "father": "cyprian",
@@ -2792,11 +2792,11 @@
     "work": "catechetical-lectures",
     "quote": "This was the figure which Moses completed by fixing the serpent to a cross",
     "passage": "Numbers 21:8-9",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-10/",
-    "chapter": 10,
-    "para": 24,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-14/",
+    "chapter": 14,
+    "para": 22,
     "version": "schaff",
-    "candidate": "catechetical-lectures/10/schaff/24"
+    "candidate": "catechetical-lectures/14/schaff/22"
    },
    {
     "father": "john_damascus",
@@ -3190,9 +3190,9 @@
     "passage": "Exodus 12",
     "page": "/fathers/cyril_jerusalem/mystagogical-lectures/chapter-1/",
     "chapter": 1,
-    "para": 5,
+    "para": 4,
     "version": "schaff",
-    "candidate": "mystagogical-lectures/1/schaff/5"
+    "candidate": "mystagogical-lectures/1/schaff/4"
    },
    {
     "father": "lactantius",
@@ -6009,14 +6009,14 @@
    {
     "father": "irenaeus",
     "lang": "en",
-    "work": "against-heresies",
+    "work": "fragments-from-the-lost-writings-of-irenaeus",
     "quote": "for He was prefigured in Joseph",
     "passage": "Genesis 37",
-    "page": "/fathers/irenaeus/against-heresies/chapter-168/",
-    "chapter": 168,
-    "para": 39,
+    "page": "/fathers/irenaeus/fragments-from-the-lost-writings-of-irenaeus/chapter-17/",
+    "chapter": 17,
+    "para": 0,
     "version": "schaff",
-    "candidate": "against-heresies/168/schaff/39"
+    "candidate": "fragments-from-the-lost-writings-of-irenaeus/17/schaff/0"
    },
    {
     "father": "ambrose",
@@ -7335,11 +7335,11 @@
     "work": "catechetical-lectures",
     "quote": "For Christ is a High Priest like Aaron",
     "passage": "Exodus 28",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-8/",
-    "chapter": 8,
-    "para": 2,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-11/",
+    "chapter": 11,
+    "para": 12,
     "version": "schaff",
-    "candidate": "catechetical-lectures/8/schaff/2"
+    "candidate": "catechetical-lectures/11/schaff/12"
    },
    {
     "father": "ambrose",
@@ -7371,11 +7371,11 @@
     "work": "catechetical-lectures",
     "quote": "He, then, who for the sake of the typical high-priest gave fruit supernaturally to the rod, would He not for the sake of the true High-Priest grant to the Virgin to bear a child?",
     "passage": "Numbers 17:8",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-9/",
-    "chapter": 9,
-    "para": 34,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-13/",
+    "chapter": 13,
+    "para": 32,
     "version": "schaff",
-    "candidate": "catechetical-lectures/9/schaff/34"
+    "candidate": "catechetical-lectures/13/schaff/32"
    },
    {
     "father": "augustine",
@@ -8078,11 +8078,11 @@
     "work": "catechetical-lectures",
     "quote": "The wood in Moses' case sweetened the water; and from the side of Jesus the water flowed upon the wood",
     "passage": "Exodus 15:25",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-10/",
-    "chapter": 10,
-    "para": 24,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-14/",
+    "chapter": 14,
+    "para": 22,
     "version": "schaff",
-    "candidate": "catechetical-lectures/10/schaff/24"
+    "candidate": "catechetical-lectures/14/schaff/22"
    }
   ],
   "passages": [
@@ -9394,11 +9394,11 @@
     "work": "catechetical-lectures",
     "quote": "I know, he says, that I am a type of Him, who is to be laid in the Sepulchre hewn out of the rock",
     "passage": "Jonah 2:6",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-11/",
-    "chapter": 11,
-    "para": 33,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-15/",
+    "chapter": 15,
+    "para": 26,
     "version": "schaff",
-    "candidate": "catechetical-lectures/11/schaff/33"
+    "candidate": "catechetical-lectures/15/schaff/26"
    },
    {
     "father": "cyril_jerusalem",
@@ -9406,11 +9406,11 @@
     "work": "catechetical-lectures",
     "quote": "for he was a type of Christ, who was to descend into Hades",
     "passage": "Jonah 2",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-11/",
-    "chapter": 11,
-    "para": 33,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-15/",
+    "chapter": 15,
+    "para": 26,
     "version": "schaff",
-    "candidate": "catechetical-lectures/11/schaff/33"
+    "candidate": "catechetical-lectures/15/schaff/26"
    },
    {
     "father": "jerome",
@@ -10245,11 +10245,11 @@
     "work": "catechetical-lectures",
     "quote": "(but what sort of lamb? let John the Baptist interpret it, when he says, Behold the Lamb of God, that taketh away the sin of the world.)",
     "passage": "Jeremiah 11:19",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-10/",
-    "chapter": 10,
-    "para": 23,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-14/",
+    "chapter": 14,
+    "para": 21,
     "version": "schaff",
-    "candidate": "catechetical-lectures/10/schaff/23"
+    "candidate": "catechetical-lectures/14/schaff/21"
    },
    {
     "father": "tertullian",
@@ -13785,14 +13785,14 @@
    {
     "father": "irenaeus",
     "lang": "en",
-    "work": "against-heresies",
+    "work": "fragments-from-the-lost-writings-of-irenaeus",
     "quote": "the Lord instituted a new oblation in the new covenant, according to [the declaration of] Malachi the prophet",
     "passage": "Malachi 1:11",
-    "page": "/fathers/irenaeus/against-heresies/chapter-168/",
-    "chapter": 168,
-    "para": 80,
+    "page": "/fathers/irenaeus/fragments-from-the-lost-writings-of-irenaeus/chapter-37/",
+    "chapter": 37,
+    "para": 0,
     "version": "schaff",
-    "candidate": "against-heresies/168/schaff/80"
+    "candidate": "fragments-from-the-lost-writings-of-irenaeus/37/schaff/0"
    }
   ],
   "passages": [
@@ -16395,11 +16395,11 @@
     "work": "catechetical-lectures",
     "quote": "that His body according to the Gospel bore the figure of bread",
     "passage": "Jeremiah 11:19",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-10/",
-    "chapter": 10,
-    "para": 23,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-14/",
+    "chapter": 14,
+    "para": 21,
     "version": "schaff",
-    "candidate": "catechetical-lectures/10/schaff/23"
+    "candidate": "catechetical-lectures/14/schaff/21"
    },
    {
     "father": "tertullian",
@@ -16448,11 +16448,11 @@
     "work": "catechetical-lectures",
     "quote": "On each occasion life comes by means of wood. For in the time of Noe the preservation of life was by an ark of wood",
     "passage": "Genesis 6-8",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-10/",
-    "chapter": 10,
-    "para": 24,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-14/",
+    "chapter": 14,
+    "para": 22,
     "version": "schaff",
-    "candidate": "catechetical-lectures/10/schaff/24"
+    "candidate": "catechetical-lectures/14/schaff/22"
    },
    {
     "father": "augustine",
@@ -16661,13 +16661,13 @@
    {
     "father": "irenaeus",
     "lang": "en",
-    "work": "against-heresies",
+    "work": "fragments-from-the-lost-writings-of-irenaeus",
     "quote": "so is that ark declared a type of the body of Christ, which is both pure and immaculate",
-    "page": "/fathers/irenaeus/against-heresies/chapter-168/",
-    "chapter": 168,
-    "para": 102,
+    "page": "/fathers/irenaeus/fragments-from-the-lost-writings-of-irenaeus/chapter-48/",
+    "chapter": 48,
+    "para": 0,
     "version": "schaff",
-    "candidate": "against-heresies/168/schaff/102"
+    "candidate": "fragments-from-the-lost-writings-of-irenaeus/48/schaff/0"
    },
    {
     "father": "hippolytus",
@@ -17825,11 +17825,11 @@
     "work": "catechetical-lectures",
     "quote": "Lamenting then he says, The breath of our countenance, Christ the Lord was taken in our corruptions",
     "passage": "Lamentations 4:20",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-10/",
-    "chapter": 10,
-    "para": 11,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-14/",
+    "chapter": 14,
+    "para": 9,
     "version": "schaff",
-    "candidate": "catechetical-lectures/10/schaff/11"
+    "candidate": "catechetical-lectures/14/schaff/9"
    }
   ],
   "passages": [
@@ -18338,11 +18338,11 @@
     "work": "catechetical-lectures",
     "quote": "And that it was Life, which hung on the Cross, Moses says, weeping, And thy life shall be hanging before thine eyes",
     "passage": "Deuteronomy 28:66",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-10/",
-    "chapter": 10,
-    "para": 23,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-14/",
+    "chapter": 14,
+    "para": 21,
     "version": "schaff",
-    "candidate": "catechetical-lectures/10/schaff/23"
+    "candidate": "catechetical-lectures/14/schaff/21"
    }
   ],
   "passages": [
@@ -18609,9 +18609,9 @@
     "passage": "Exodus 14",
     "page": "/fathers/cyril_jerusalem/mystagogical-lectures/chapter-1/",
     "chapter": 1,
-    "para": 5,
+    "para": 4,
     "version": "schaff",
-    "candidate": "mystagogical-lectures/1/schaff/5"
+    "candidate": "mystagogical-lectures/1/schaff/4"
    },
    {
     "father": "augustine",
@@ -19054,11 +19054,11 @@
     "work": "catechetical-lectures",
     "quote": "And because His flesh, this veil, was dishonoured, therefore the",
     "passage": "Exodus 26:31-33",
-    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-10/",
-    "chapter": 10,
-    "para": 36,
+    "page": "/fathers/cyril_jerusalem/catechetical-lectures/chapter-14/",
+    "chapter": 14,
+    "para": 34,
     "version": "schaff",
-    "candidate": "catechetical-lectures/10/schaff/36"
+    "candidate": "catechetical-lectures/14/schaff/34"
    },
    {
     "father": "theodoret",

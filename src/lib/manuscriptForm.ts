@@ -28,6 +28,7 @@ export const WORK_YEAR: Readonly<Record<string, number>> = {
   homily: 150,
   // The miscellaneous Apostolic shelf runs from the first century to the ninth.
   "apology-of-aristides": 140,
+  "demonstration-of-the-apostolic-preaching": 180,
   "apocalypse-of-peter": 135,
   "gospel-of-peter": 150,
   "testament-of-abraham": 120,

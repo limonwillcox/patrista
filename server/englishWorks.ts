@@ -511,7 +511,8 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
     unitRe: /^\s*Translated from the (Greek|Syriac)\.\s*$/m,
     unitTitles: ["Greek (Barlaam and Josaphat)", "Syriac"],
     subChapters: /^([IVXL]+)\.\s/,
-    subChapterHidden: true
+    subChapterHidden: true,
+    translator: "D. M. Kay"
   },
   "passion-of-the-scillitan-martyrs": {
     chunk: "chapter",
@@ -767,6 +768,44 @@ const SPEC_OVERRIDES: Record<string, Partial<EnglishWorkSpec>> = {
     unitTitles: Array.from({ length: 55 }, (_x, i) => "Fragment " + toRoman(i + 1)),
     expectUnits: 55
   },
+  // Robinson 1920 (SPCK) from the Armenian; 100 numbered chapters.
+  "demonstration-of-the-apostolic-preaching": {
+    chunk: "chapter",
+    unitRe: /^(\d+)\.\s/m,
+    translator: "J. Armitage Robinson",
+    dropFootnotes: true,
+    bareHeadings: true,
+    expectUnits: 100
+  },
+  // ANF VIII: four extracts from the Memoirs (Hypomnemata), mostly via Eusebius.
+  "fragments-of-the-commentaries-on-the-acts-of-the-church": {
+    chunk: "chapter",
+    unitRe: /^ {3}(I\.|Concerning the Relatives of Our Saviour\.|Concerning the Martyrdom of Symeon the son of Clopas, Bishop of|Concerning His Journey to Rome, and the Jewish Sects\.)/m,
+    unitTitles: [
+      "The Martyrdom of James",
+      "The Relatives of Our Saviour",
+      "The Martyrdom of Symeon son of Clopas",
+      "Journey to Rome and the Jewish Sects"
+    ],
+    expectUnits: 4
+  },
+  // ANF VIII: four passages of the letter to the Roman church, from Eusebius, Church History 4.23.
+  "fragments-of-a-letter-to-the-roman-church": {
+    chunk: "chapter",
+    unitRe: /^ {3}([IV]+)\.\s*$/m,
+    unitTitles: ["Fragment I", "Fragment II", "Fragment III", "Fragment IV"],
+    expectUnits: 4
+  },
+  // ANF VIII: testimonia to the lost Dialogue of Jason and Papiscus, not the dialogue itself.
+  "fragments-of-the-disputation-of-jason-and-papiscus": {
+    chunk: "chapter",
+    unitRe: /^ {3}((?:From|Perhaps from|Concerning) the (?:Disputation of Jason and Papiscus|Same Work))\.\s*$/m,
+    keepUnitLabel: true,
+    keepRepeatedLabels: true,
+    expectUnits: 5
+  },
+  // ANF IV: forty-one chapters of the Ostia dialogue.
+  octavius: { chunk: "chapter", expectUnits: 41 },
   // ANF II: twelve numbered fragments, once shown as the tail of the Address to the Greeks, chapter XLII.
   "fragments-of-tatian": {
     chunk: "chapter",
@@ -967,6 +1006,7 @@ const AUTHOR_META: Record<string, AuthorMeta> = {
   tatian: { name: "Tatian", dates: "fl. mid-2nd c.", era: "ante-nicene", region: "Syria", deathYear: 170, bio: "" },
   theophilus: { name: "Theophilus of Antioch", dates: "fl. late 2nd c.", era: "ante-nicene", region: "Syria", deathYear: 185, bio: "" },
   athenagoras: { name: "Athenagoras", dates: "fl. late 2nd c.", era: "ante-nicene", region: "Athens", deathYear: 180, bio: "" },
+  aristides: { name: "Aristides of Athens", dates: "fl. c. 125–140", era: "ante-nicene", region: "Athens", deathYear: 140, bio: "" },
   clement_alexandria: { name: "Clement of Alexandria", dates: "c. 150–c. 215", era: "ante-nicene", region: "Egypt", deathYear: 215, bio: "" },
   origen: { name: "Origen", dates: "c. 185–c. 254", era: "ante-nicene", region: "Egypt / Palestine", deathYear: 254, bio: "" },
   hippolytus: { name: "Hippolytus", dates: "c. 170–c. 235", era: "ante-nicene", region: "Rome", deathYear: 235, bio: "" },

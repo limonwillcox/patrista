@@ -23,6 +23,7 @@
     <script>
       // Old /fathers/ URLs that moved: when this shell is served for a path that is not its own canonical
       // page (the host's fallback), look the path up in /legacy-redirects/<author>.json and forward.
+      // Cloudflare Pages also 301s these in functions/fathers/[[path]].ts; this is the JS fallback.
       // Keys follow legacyRedirectKey() in src/lib/legacyRedirects.ts: no trailing slash, no ".html".
       (function () {
         var path = location.pathname;

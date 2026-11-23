@@ -98,6 +98,7 @@ describe("chapter slugs", () => {
       chapterSlug: "homily-xc"
     });
     expect(parseFatherChapterPath(path.replace(/\/$/, ""))?.chapterSlug).toBe("homily-xc");
+    expect(workPublicPath("chrysostom", "homilies-on-matthew")).toBe("/fathers/chrysostom/homilies-on-matthew");
     expect(parseFatherChapterPath(workPublicPath("chrysostom", "homilies-on-matthew"))).toBeNull();
   });
 
@@ -106,6 +107,7 @@ describe("chapter slugs", () => {
     expect(matchPath(pattern, "/fathers/augustine/confessions/book-ii/")?.params.chapterSlug).toBe("book-ii");
     expect(matchPath(pattern, "/fathers/augustine/confessions/book-ii")?.params.chapterSlug).toBe("book-ii");
     expect(matchPath(pattern, "/fathers/augustine/confessions.html")).toBeNull();
+    expect(matchPath("/fathers/:authorId/:workId", "/fathers/augustine/confessions")?.params.workId).toBe("confessions");
   });
 });
 
@@ -134,7 +136,7 @@ describe("static chapter and work pages", () => {
     const page = renderWorkPage({ origin, author, work: work(2), chapters, indexHtml: shell });
     expect(page.html).toContain('src="/app.js"');
     expect(page.html).toContain("Opening of the first homily.");
-    expect(page.html).toContain('rel="canonical" href="https://patrista.com/fathers/chrysostom/homilies-on-matthew.html"');
+    expect(page.html).toContain('rel="canonical" href="https://patrista.com/fathers/chrysostom/homilies-on-matthew"');
     expect(page.html).not.toContain("location.replace");
     expect(page.html).not.toContain("Start reading");
   });
@@ -186,7 +188,7 @@ describe("static chapter and work pages", () => {
     expect(html).toContain("Second homily sentence two.");
     expect(html).not.toContain("Opening of the first homily.");
     expect(html).toContain('rel="prev"');
-    expect(html).toContain(">Contents</a>");
+    expect(html).toContain('href="/fathers/chrysostom/homilies-on-matthew">Contents</a>');
     expect(html).toContain('rel="prev">Chapter 1</a>');
     expect(html).not.toContain('rel="next"');
     expect(html).toContain('"@type":"Chapter"');
@@ -219,13 +221,13 @@ describe("static chapter and work pages", () => {
       work: { ...work(1, 9000), id: "on-the-lapsed", author: "cyprian", title: "On the Lapsed" },
       chapters: [only]
     });
-    expect(page.path).toBe("/fathers/cyprian/on-the-lapsed.html");
+    expect(page.path).toBe("/fathers/cyprian/on-the-lapsed");
     expect(page.chapterPaths).toHaveLength(0);
     expect(page.html).toContain("Treatise III. The lapsed are called back.");
     expect(page.html).not.toContain("Start reading");
     expect(page.html).not.toMatch(/<details class="chapter-index">/);
     expect(page.html.match(/<h1[\s>]/g)).toHaveLength(1);
-    expect(page.html).toContain('rel="canonical" href="https://patrista.com/fathers/cyprian/on-the-lapsed.html"');
+    expect(page.html).toContain('rel="canonical" href="https://patrista.com/fathers/cyprian/on-the-lapsed"');
   });
 
   it("flags artificial parts, large unsplit works, and skipped unit numbers", () => {
@@ -300,11 +302,11 @@ describe("home, read shell, and sitemap", () => {
   });
 
   it("serves /read as noindex and rewrites the canonical for a work", () => {
-    const shell = renderReadShell(SHELL, { "on-the-lapsed": "https://patrista.com/fathers/cyprian/on-the-lapsed.html" }, "https://patrista.com/fathers/");
+    const shell = renderReadShell(SHELL, { "on-the-lapsed": "https://patrista.com/fathers/cyprian/on-the-lapsed" }, "https://patrista.com/fathers/");
     expect(shell).toContain('<meta name="robots" content="noindex" />');
     expect(shell).toContain('href="https://patrista.com/fathers/"');
     const html = applyReadCanonical(shell, "on-the-lapsed", readCanonMap(shell));
-    expect(html).toContain('href="https://patrista.com/fathers/cyprian/on-the-lapsed.html"');
+    expect(html).toContain('href="https://patrista.com/fathers/cyprian/on-the-lapsed"');
     expect(html).toContain('content="noindex"');
   });
 

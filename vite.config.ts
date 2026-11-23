@@ -43,6 +43,8 @@ import { writeSearchIndex } from "./server/searchIndex";
 import { writeScriptureIndex } from "./server/scriptureIndex";
 import { APP_PAGES } from "./server/appPages";
 import { writeTypeSharePages } from "./server/typeSharePages";
+import { SITE_ORIGIN } from "./src/lib/siteOrigin";
+import { LEGACY_REDIRECTS_DIR, lookupLegacyRedirect } from "./src/lib/legacyRedirects";
 
 const root = dirname(fileURLToPath(import.meta.url));
 
@@ -54,8 +56,6 @@ const MIME: Record<string, string> = {
   ".webp": "image/webp",
   ".ico": "image/x-icon"
 };
-
-const SITE_ORIGIN = "https://patrista.com";
 
 /**
  * Emit a crawlable page from the built shell. React replaces #root when it
@@ -153,6 +153,72 @@ function installReadCanonicalMiddleware(server: { middlewares: { stack: { route:
   });
 }
 
+/**
+ * Vite preview does not apply Cloudflare pretty-URLs or Pages Functions. Mirror both so a local
+ * preview can check work-page 200s and old-slug 301s against dist/.
+ */
+function installFathersPreviewMiddleware(server: {
+  middlewares: { stack: { route: string; handle: (req: IncomingMessage, res: ServerResponse, next: () => void) => void }[] };
+}): void {
+  const dist = join(root, "dist");
+  const maps = new Map<string, Record<string, string>>();
+  function authorMap(author: string): Record<string, string> {
+    const cached = maps.get(author);
+    if (cached) return cached;
+    const file = join(dist, LEGACY_REDIRECTS_DIR, author + ".json");
+    const map = existsSync(file) ? (JSON.parse(readFileSync(file, "utf8")) as Record<string, string>) : {};
+    maps.set(author, map);
+    return map;
+  }
+  server.middlewares.stack.unshift({
+    route: "",
+    handle(req, res, next) {
+      if (req.method !== "GET" && req.method !== "HEAD") return next();
+      const raw = req.url || "/";
+      const q = raw.indexOf("?");
+      const pathname = decodeURIComponent(q === -1 ? raw : raw.slice(0, q));
+      const search = q === -1 ? "" : raw.slice(q);
+      if (pathname.startsWith("/fathers/")) {
+        const author = pathname.split("/")[2];
+        if (author) {
+          const to = lookupLegacyRedirect(pathname, authorMap(author));
+          if (to) {
+            res.statusCode = 301;
+            res.setHeader("Location", to + search);
+            res.end();
+            return;
+          }
+        }
+      }
+      if (/^\/fathers\/[^/]+\/[^/]+\.html$/.test(pathname)) {
+        const dest = pathname.slice(0, -".html".length);
+        const file = join(dist, pathname.replace(/^\//, ""));
+        if (existsSync(file) && statSync(file).isFile()) {
+          res.statusCode = 301;
+          res.setHeader("Location", dest + search);
+          res.end();
+          return;
+        }
+      }
+      if (!pathname.endsWith("/") && !pathname.endsWith(".html")) {
+        const file = join(dist, pathname.replace(/^\//, "") + ".html");
+        if (existsSync(file) && statSync(file).isFile()) {
+          const html = readFileSync(file);
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "text/html; charset=utf-8");
+          if (req.method === "HEAD") {
+            res.end();
+            return;
+          }
+          res.end(html);
+          return;
+        }
+      }
+      next();
+    }
+  });
+}
+
 let fatherExtrasWritten = false;
 /** Set from the resolved config. The dev server also calls closeBundle when it restarts. */
 let isBuild = false;
@@ -187,9 +253,13 @@ function extrasPlugin() {
     configurePreviewServer(server: { middlewares: Parameters<typeof serveAssets>[0] }) {
       serveAssets(server.middlewares);
       return () => {
-        installReadCanonicalMiddleware(
-          server as { middlewares: Parameters<typeof serveAssets>[0] & Parameters<typeof installReadCanonicalMiddleware>[0]["middlewares"] }
-        );
+        const preview = server as {
+          middlewares: Parameters<typeof serveAssets>[0] &
+            Parameters<typeof installReadCanonicalMiddleware>[0]["middlewares"] &
+            Parameters<typeof installFathersPreviewMiddleware>[0]["middlewares"];
+        };
+        installFathersPreviewMiddleware(preview);
+        installReadCanonicalMiddleware(preview);
       };
     },
     async closeBundle() {
@@ -248,7 +318,11 @@ function extrasPlugin() {
       ];
       // Renamed works: keep old static URLs working. Each old Didache chapter URL goes straight to its
       // numbered page (/fathers/didache/didache/chapter-<N>/), not through a second stub hop.
-      redirectLines.push("/fathers/didache/teaching-of-the-twelve-apostles.html  /fathers/didache/didache.html  301");
+      const didachePage = workPublicPath("didache", "didache");
+      redirectLines.push(
+        "/fathers/didache/teaching-of-the-twelve-apostles.html  " + didachePage + "  301",
+        "/fathers/didache/teaching-of-the-twelve-apostles  " + didachePage + "  301"
+      );
       const didache = getWork("didache");
       if (didache && didache.chapters.length > 1) {
         const numbered = assignChapterSlugs(didache.chapters);
@@ -261,10 +335,22 @@ function extrasPlugin() {
           }
         }
       }
-      redirectLines.push("/fathers/didache/teaching-of-the-twelve-apostles/*  /fathers/didache/didache.html  301");
+      redirectLines.push("/fathers/didache/teaching-of-the-twelve-apostles/*  " + didachePage + "  301");
       // Works filed under the wrong Father: each old URL gets a 301 and a stub page (GitHub Pages
       // ignores _redirects), pointing at the same chapter of the copy that stays.
       clearLegacyRedirects();
+      addLegacyRedirect("/fathers/didache/teaching-of-the-twelve-apostles", didachePage);
+      if (didache && didache.chapters.length > 1) {
+        const numbered = assignChapterSlugs(didache.chapters);
+        const legacy = legacyChapterSlugs(didache.chapters);
+        const oldBase = "/fathers/didache/teaching-of-the-twelve-apostles/";
+        for (const ch of didache.chapters) {
+          const target = chapterPublicPath("didache", "didache", numbered.get(ch.chapter)!);
+          for (const slug of new Set([legacy.get(ch.chapter)!, numbered.get(ch.chapter)!])) {
+            addLegacyRedirect(oldBase + slug + "/", target);
+          }
+        }
+      }
       for (const move of MOVED_WORKS) {
         const target = getWork(move.to.work);
         if (!target || target.author.id !== move.to.author) throw new Error("moved work: no " + move.to.author + "/" + move.to.work);
@@ -300,6 +386,9 @@ function extrasPlugin() {
           seen.add(from);
           addLegacyRedirect(from, to);
           redirectLines.push(from + "  " + to + "  301");
+          if (!from.endsWith("/") && !from.endsWith(".html")) {
+            redirectLines.push(from + ".html  " + to + "  301");
+          }
         }
       }
       const sitemapUrls = [
@@ -434,7 +523,16 @@ function extrasPlugin() {
         return existsSync(join(dist, decodeURIComponent(to).slice(1)));
       });
       writeFileSync(join(dist, "_redirects"), kept.join("\n") + "\n");
-      console.log("[redirects] " + kept.length + " rules (" + (redirectLines.length - kept.length) + " dropped)");
+      const dynamic = kept.filter((line) => /[:*]/.test(line.split(/\s+/)[0] || "")).length;
+      console.log(
+        "[redirects] " +
+          kept.length +
+          " rules (" +
+          (redirectLines.length - kept.length) +
+          " dropped; " +
+          dynamic +
+          " dynamic). Old chapter URLs 301 via functions/fathers/[[path]].ts, not this file."
+      );
       if (process.env.SKIP_SEARCH_INDEX) {
         console.log("[search] skipped (SKIP_SEARCH_INDEX)");
       } else {

@@ -10,7 +10,8 @@ import {
   escapeHtml,
   legacyChapterSlugs,
   slugifyHeading,
-  workPublicPath
+  workPublicPath,
+  workStaticRel
 } from "../src/lib/fatherPaths";
 import {
   chapterSeoDescription,
@@ -652,7 +653,8 @@ export function writeFatherPages(
       chapters: payload.chapters,
       indexHtml
     });
-    const workFile = join(dist, page.path.replace(/^\//, ""));
+    // Public URL is extensionless; Cloudflare pretty-URLs this .html file to that address with a 200.
+    const workFile = join(dist, page.path.replace(/^\//, "") + ".html");
     mkdirSync(dirname(workFile), { recursive: true });
     writeFileSync(workFile, page.html);
     urls.push(origin + page.path);
@@ -848,14 +850,14 @@ export function renderStubPage(absoluteUrl: string, path: string): string {
 /**
  * Short reader paths (e.g. /augustines-confessions, the Read tab's default) have no file of their own,
  * so GitHub Pages answered them with 404.html and an HTTP 404. Give each one a copy of its work page:
- * full text in the HTML, and the canonical still points at /fathers/<author>/<work>.html.
+ * full text in the HTML, and the canonical still points at /fathers/<author>/<work>.
  */
 export function writeReadPathAliases(dist: string, catalog: Catalog, readPaths: Record<string, string>): string[] {
   const written: string[] = [];
   for (const [workId, path] of Object.entries(readPaths)) {
     const work = catalog.works.find((w) => w.id === workId);
     if (!work) continue;
-    const source = join(dist, "fathers", work.author, workId + ".html");
+    const source = join(dist, workStaticRel(work.author, workId));
     if (!existsSync(source)) continue;
     const target = join(dist, path.replace(/^\/+/, "").replace(/\/+$/, "") + ".html");
     mkdirSync(dirname(target), { recursive: true });

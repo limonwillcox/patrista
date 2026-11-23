@@ -15,6 +15,7 @@ describe("site tabs", () => {
     expect(siteTab("/augustines-confessions")).toBe("study");
     expect(siteTab("/fathers/augustine/confessions/chapter-1/")).toBe("study");
     expect(siteTab("/fathers/augustine/confessions.html")).toBe("study");
+    expect(siteTab("/fathers/augustine/confessions")).toBe("study");
     expect(siteTab("/study")).toBe("study");
   });
 

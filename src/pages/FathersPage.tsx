@@ -28,6 +28,7 @@ import {
   fatherProfileTitle,
   fathersIndexJsonLd
 } from "../lib/fatherPageMeta";
+import { SITE_ORIGIN } from "../lib/siteOrigin";
 import sameAsData from "../data/fatherSameAs.json";
 
 const SAME_AS = sameAsData as Record<string, string[]>;
@@ -108,6 +109,17 @@ function Facts({ dates, office, region }: { dates: string; office: string; regio
   );
 }
 
+function setMeta(property: string, content: string): HTMLMetaElement {
+  const found = document.querySelector('meta[property="' + property + '"]');
+  const el = found instanceof HTMLMetaElement ? found : document.createElement("meta");
+  if (el !== found) {
+    el.setAttribute("property", property);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+  return el;
+}
+
 function setHead(title: string, description: string, canonicalHref: string) {
   document.title = title;
   const meta = document.querySelector('meta[name="description"]');
@@ -119,6 +131,7 @@ function setHead(title: string, description: string, canonicalHref: string) {
     document.head.appendChild(canonical);
   }
   canonical.setAttribute("href", canonicalHref);
+  setMeta("og:url", canonicalHref);
 }
 
 export function FathersPage() {
@@ -134,12 +147,14 @@ export function FathersPage() {
   }, [authorId]);
 
   useEffect(() => {
-    const origin = window.location.origin;
+    const origin = SITE_ORIGIN;
     const prevTitle = document.title;
     const meta = document.querySelector('meta[name="description"]');
     const prevDescription = meta?.getAttribute("content") ?? "";
     const existingCanonical = document.querySelector('link[rel="canonical"]');
     const prevCanonical = existingCanonical?.getAttribute("href") ?? "";
+    const existingOg = document.querySelector('meta[property="og:url"]');
+    const prevOg = existingOg?.getAttribute("content") ?? "";
     let title = FATHERS_INDEX_TITLE;
     let description = FATHERS_INDEX_DESCRIPTION;
     let canonicalHref = origin + FATHERS_INDEX_PATH;
@@ -189,6 +204,9 @@ export function FathersPage() {
       const link = document.querySelector('link[rel="canonical"]');
       if (!existingCanonical) link?.remove();
       else if (link) link.setAttribute("href", prevCanonical);
+      const og = document.querySelector('meta[property="og:url"]');
+      if (!existingOg) og?.remove();
+      else if (og) og.setAttribute("content", prevOg);
       script?.remove();
     };
   }, [authorId, catalog]);

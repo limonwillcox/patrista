@@ -55,7 +55,7 @@ function loaderFor(pathname: string): Loader | null {
   if (staticWorkId(pathname)) return read.load;
   const parts = pathname.replace(/\/+$/, "").split("/").slice(1);
   if (parts[0] === "embed") return embedTypes.load;
-  if (parts[0] === "fathers") return parts.length === 4 ? read.load : null;
+  if (parts[0] === "fathers") return parts.length === 3 || parts.length === 4 ? read.load : null;
   if (parts[0] === "church-history") return parts.length === 1 ? history.load : null;
   return parts.length === 1 ? (BY_NAME[parts[0]] ?? null) : null;
 }
@@ -95,6 +95,7 @@ export function App() {
             <Route path="/augustines-confessions" element={<read.Page />} />
             <Route path="/fathers" element={<FathersPage />} />
             <Route path="/fathers/:authorId" element={<FathersPage />} />
+            <Route path="/fathers/:authorId/:workId" element={<read.Page />} />
             <Route path="/fathers/:authorId/:workId/:chapterSlug" element={<read.Page />} />
             <Route path="/bible" element={<bible.Page />} />
             <Route path="/search" element={<search.Page />} />
@@ -142,7 +143,7 @@ function LibraryRedirect() {
   return <Navigate to={author ? "/fathers/" + encodeURIComponent(author) + "/" : "/fathers/"} replace />;
 }
 
-/** Static work URLs (/fathers/<author>/<work>.html) are the reader for that work; anything else goes home. */
+/** Static work URLs (/fathers/<author>/<work> or .html) are the reader for that work; anything else goes home. */
 function CatchAll() {
   const location = useLocation();
   if (staticWorkId(location.pathname)) return <read.Page />;

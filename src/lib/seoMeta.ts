@@ -1,6 +1,7 @@
 /** Static-page <title> and meta description rules (SEO desk spec, Oct 2026). */
 
 import { COLLECTION_SHELVES, workMeta, type WorkMeta } from "../../server/workMeta";
+import { firstSentence, workOverview } from "./workOverviews";
 
 export const TITLE_TARGET = 60;
 export const TITLE_MAX = 60;
@@ -488,6 +489,19 @@ export function unitNoun(headings: string[]): UnitNoun {
   return ({ Book: "books", Homily: "homilies", Letter: "letters", Sermon: "sermons" } as Record<string, UnitNoun>)[top] ?? "chapters";
 }
 
+/** Meta description from an Overview: the first sentence when it fits, else a fitted lede from the text. */
+export function descriptionFromOverview(text: string): string {
+  const sentence = firstSentence(text);
+  if (sentence.length >= DESCRIPTION_MIN && sentence.length <= DESCRIPTION_MAX) {
+    return /[.!?]$/.test(sentence) ? sentence : sentence + ".";
+  }
+  const source = sentence.length > DESCRIPTION_MAX ? sentence : text;
+  // finish() adds "." or "…"; leave one character for it.
+  const lede = fitLede(source, DESCRIPTION_MAX - 1, DESCRIPTION_MIN);
+  if (lede.lede.length >= DESCRIPTION_MIN) return finish(lede);
+  return "";
+}
+
 export function workSeoDescription(opts: {
   authorName: AuthorRef;
   workTitle: string;
@@ -498,6 +512,11 @@ export function workSeoDescription(opts: {
   series?: string;
   opening?: string;
 }): string {
+  const overviewText = opts.workId ? workOverview(opts.workId)?.text : "";
+  if (overviewText) {
+    const fromOverview = descriptionFromOverview(overviewText);
+    if (fromOverview) return fromOverview;
+  }
   const build = (who: string, nav: boolean) =>
     opts.units > 1
       ? "Read " + who + " free online. Full text, all " + opts.units + " " + opts.noun + (nav ? ", with chapter-by-chapter navigation." : ".")

@@ -22,6 +22,7 @@ import {
   workSeoDescription,
   workSeoTitle
 } from "../src/lib/seoMeta";
+import { workOverviewFirstSentence, workOverviewHtml, workOverviewScript } from "../src/lib/workOverviews";
 import { attributionLabel, shortAuthor, workMeta } from "./workMeta";
 import { adDates } from "../src/lib/adDates";
 import { authorShareImage } from "../src/lib/fatherImages";
@@ -250,6 +251,8 @@ export function bookJsonLd(opts: {
   );
   if (author) book.author = author;
   if (opts.translator) book.translator = { "@type": "Person", name: opts.translator };
+  const description = opts.workId ? workOverviewFirstSentence(opts.workId) : "";
+  if (description) book.description = description;
   if (opts.parts.length) {
     book.hasPart = opts.parts.map((part) => ({
       "@type": "Chapter",
@@ -349,10 +352,13 @@ const WORK_PAGE_CSS = [
   ".start-reading{display:inline-block;margin:8px 0 16px;padding:12px 20px;background:#952004;color:#fff;font-family:system-ui,sans-serif;font-size:16px;font-weight:700;border-radius:3px;text-decoration:none}",
   ".start-reading:hover{background:#6f1602;color:#fff}",
   ".chapter-index{margin:8px 0 0;max-width:36rem}",
-  ".chapter-index>summary{cursor:pointer;list-style:none;font-family:system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#666;user-select:none}",
-  ".chapter-index>summary::-webkit-details-marker{display:none}",
-  '.chapter-index>summary::before{content:"▸";display:inline-block;width:1em;color:#952004;transition:transform .12s ease}',
-  ".chapter-index[open]>summary::before{transform:rotate(90deg)}",
+  ".work-overview{margin:8px 0 12px;max-width:36rem}",
+  ".chapter-index>summary,.work-overview>summary{cursor:pointer;list-style:none;font-family:system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#666;user-select:none}",
+  ".chapter-index>summary::-webkit-details-marker,.work-overview>summary::-webkit-details-marker{display:none}",
+  '.chapter-index>summary::before,.work-overview>summary::before{content:"▸";display:inline-block;width:1em;color:#952004;transition:transform .12s ease}',
+  ".chapter-index[open]>summary::before,.work-overview[open]>summary::before{transform:rotate(90deg)}",
+  ".work-overview>p{margin:8px 0 0;font-size:15px;line-height:1.55}",
+  ".work-overview-facts{font-family:system-ui,sans-serif;font-size:13px;color:#666;font-style:italic}",
   ".chapter-index-list{display:block;margin:8px 0 0;padding:4px 0;border:1px solid #d9d9d9;max-height:11em;overflow:auto}",
   ".chapter-index-list a{display:block;height:2.2em;line-height:2.2em;padding:0 10px;font-family:system-ui,sans-serif;font-size:14px;color:#1a1a1a;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
   ".chapter-index-list a:hover{background:#f6f6f6;color:#952004}"
@@ -401,6 +407,8 @@ export function renderWorkPage(opts: {
   );
   body.push("<h1>" + escapeHtml(opts.work.title) + "</h1>");
   body.push(workCreditHtml(opts.author, opts.work));
+  const overviewHtml = workOverviewHtml(opts.work.id);
+  if (overviewHtml) body.push(overviewHtml);
   if (split) {
     const first = refs[0]!;
     body.push('<details class="chapter-index">');
@@ -428,6 +436,7 @@ export function renderWorkPage(opts: {
     body.push("</div>");
     body.push(notesHtml(opts.chapters[0]));
   }
+  if (overviewHtml) body.push(workOverviewScript());
 
   if (opts.indexHtml) {
     const html = prerenderShell(opts.indexHtml, opts.origin, {

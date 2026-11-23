@@ -4,8 +4,7 @@ import type { Author, Catalog } from "../../server/types";
 import { attributionLabel, authorLine, type Authorship } from "../../server/workMeta";
 import { readLinks, type HistoryEra } from "../../server/churchHistory";
 import { centuryBlocks } from "./centuries";
-import { escapeHtml } from "./fatherPaths";
-import { readPath } from "./workSlugs";
+import { escapeHtml, workPublicPath } from "./fatherPaths";
 import { FRAGMENTS_SECTION_ID, fatherEntry, fatherSections, type FatherSection } from "./fathersDirectory";
 import { HERO_SIZES, TILE_SIZES, fatherImageFrom, type FatherImage, type FatherImageCredit, type FatherImageMap } from "./fatherImages";
 import { adDates } from "./adDates";
@@ -212,7 +211,15 @@ export function renderFatherProfileBody(
               : line !== author.name
                 ? ' <span class="fathers-attribution">' + escapeHtml(line) + "</span>"
                 : "";
-            return '<li><a href="' + escapeHtml(readPath(work.id)) + '">' + escapeHtml(work.title) + "</a>" + note + "</li>";
+            return (
+              '<li><a href="' +
+              escapeHtml(workPublicPath(author.id, work.id)) +
+              '">' +
+              escapeHtml(work.title) +
+              "</a>" +
+              note +
+              "</li>"
+            );
           })
           .join("\n") +
         "</ul>"

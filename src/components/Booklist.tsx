@@ -2,6 +2,7 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { previewCatalog, type CatalogPreviewGroup } from "../lib/catalogPreview";
 import { useApp } from "../context/AppContext";
+import { workPublicPath } from "../lib/fatherPaths";
 import { bibleHref } from "../lib/lastRead";
 import { attributionLabel } from "../../server/workMeta";
 
@@ -132,7 +133,7 @@ const WorksColumn = memo(function WorksColumn({
           </div>
           {g.works.map((w) => (
             <div key={w.id}>
-              <Link className="work-link" to={"/read?work=" + w.id} onClick={onOpenWork}>
+              <Link className="work-link" to={workPublicPath(g.author.id, w.id)} onClick={onOpenWork}>
                 <strong>{w.title}</strong>{" "}
                 <span className="meta">
                   ({w.short} · {w.series}

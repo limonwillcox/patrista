@@ -5,7 +5,7 @@ import sharp from "sharp";
 import { describe, expect, it } from "vitest";
 import type { Meta, TypeEntry } from "../src/api/connections";
 import { describeShare, embedCode, hexColor, shareCardSvg, typeSlug, wrapTitle } from "../src/lib/typeShare";
-import { writeTypeSharePages } from "../server/typeSharePages";
+import { typeTitle, writeTypeSharePages } from "../server/typeSharePages";
 
 const meta = JSON.parse(readFileSync("public/connections/meta.json", "utf8")) as Meta;
 const types = JSON.parse(readFileSync("public/connections/types.json", "utf8")) as TypeEntry[];
@@ -70,6 +70,19 @@ describe("the picture", () => {
   });
 });
 
+describe("typeTitle", () => {
+  it("drops · Patrista and keeps Types of Christ inside 60 characters", () => {
+    const abraham = types.find((t) => t.label === "Abraham → the believing nations")!;
+    expect(typeTitle(abraham)).toBe("Abraham → the believing nations · Types of Christ");
+    expect(typeTitle(abraham).length).toBeLessThanOrEqual(60);
+    expect(typeTitle(abraham)).not.toContain("Patrista");
+    for (const t of types) {
+      expect(typeTitle(t).length, t.id).toBeLessThanOrEqual(60);
+      expect(typeTitle(t), t.id).not.toContain("Patrista");
+    }
+  });
+});
+
 describe("writeTypeSharePages", () => {
   it("writes a page and a 1200 × 630 picture for every type", async () => {
     const dist = mkdtempSync(join(tmpdir(), "patrista-share-"));
@@ -82,6 +95,8 @@ describe("writeTypeSharePages", () => {
       const html = readFileSync(join(dist, "types", "abraham-offering-isaac", "index.html"), "utf8");
       expect(html).toContain('<meta property="og:image" content="https://patrista.com/share/types/abraham-offering-isaac.png" />');
       expect(html).toContain('<link rel="canonical" href="https://patrista.com/types/abraham-offering-isaac/" />');
+      expect(html).toContain("<title>" + typeTitle(isaac) + "</title>");
+      expect(html).not.toMatch(/<title>[^<]*Patrista/);
       expect(html).toContain("<h1>");
       const png = join(dist, "share", "types", "abraham-offering-isaac.png");
       expect(existsSync(png)).toBe(true);

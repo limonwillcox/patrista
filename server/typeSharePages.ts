@@ -24,9 +24,9 @@ const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replac
 /** "Lactantius, *The Divine Institutes* 91.12 — “…”" without the emphasis marks. */
 const plain = (s: string) => s.replace(/\*/g, "");
 
-/** The page title, inside the 60 characters a search result shows. */
+/** The page title, inside the 60 characters a search result shows. No "Patrista" except the homepage. */
 export function typeTitle(t: TypeEntry): string {
-  for (const tail of [" · Types of Christ · Patrista", " · Patrista", ""]) {
+  for (const tail of [" · Types of Christ", ""]) {
     if (t.label.length + tail.length <= 60) return t.label + tail;
   }
   return t.label.slice(0, 59).replace(/\s+\S*$/, "") + "…";

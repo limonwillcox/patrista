@@ -157,6 +157,7 @@ describe("static chapter and work pages", () => {
     }));
     const body = renderChapterBody({
       authorName: author.name,
+      authorPath: "/fathers/chrysostom/",
       workTitle: "Homilies on Matthew",
       workPath: page.path,
       chapter: chapters[1],
@@ -183,7 +184,11 @@ describe("static chapter and work pages", () => {
     expect(html).toContain("<title>Chapter 2 - Homilies on Matthew by Chrysostom</title>");
     expect(html).toContain('rel="canonical" href="https://patrista.com/fathers/chrysostom/homilies-on-matthew/chapter-2/"');
     expect(html.match(/<h1[\s>]/g)).toHaveLength(1);
+    expect(html).toContain(
+      '<p class="static-kicker"><a href="/fathers/chrysostom/">John Chrysostom</a> | <a href="/fathers/chrysostom/homilies-on-matthew">Homilies on Matthew</a></p>'
+    );
     expect(html).toContain("<h1>Homily II</h1>");
+    expect(html.indexOf("static-kicker")).toBeLessThan(html.indexOf("<h1>Homily II</h1>"));
     expect(html).toContain("Second homily sentence one.");
     expect(html).toContain("Second homily sentence two.");
     expect(html).not.toContain("Opening of the first homily.");
@@ -211,6 +216,38 @@ describe("static chapter and work pages", () => {
     expect(page.html).toContain(">Chapter 2</a>");
     expect(page.html).not.toContain(">Homily I</a>");
     expect(page.html).not.toContain('<nav class="static-toc"');
+  });
+
+  it("puts Author | Work above the chapter heading, with the author linked", () => {
+    const body = renderChapterBody({
+      authorName: "Augustine of Hippo",
+      authorPath: "/fathers/augustine/",
+      workTitle: "The Confessions",
+      workPath: "/fathers/augustine/confessions",
+      chapter: passage(8, "Book VIII", ["The garden at Milan."]),
+      prev: null,
+      next: null
+    });
+    expect(body).toContain(
+      '<p class="static-kicker"><a href="/fathers/augustine/">Augustine of Hippo</a> | <a href="/fathers/augustine/confessions">The Confessions</a></p>'
+    );
+    expect(body).toContain("<h1>Book VIII</h1>");
+    expect(body.indexOf("static-kicker")).toBeLessThan(body.indexOf("<h1>Book VIII</h1>"));
+    expect(body).not.toContain(" · ");
+  });
+
+  it("names anonymous works as Anonymous | Work with no author link", () => {
+    const body = renderChapterBody({
+      authorName: "Anonymous",
+      authorPath: null,
+      workTitle: "Didache",
+      workPath: "/fathers/didache/didache",
+      chapter: passage(1, "Chapter I", ["The two ways."]),
+      prev: null,
+      next: null
+    });
+    expect(body).toContain('<p class="static-kicker">Anonymous | <a href="/fathers/didache/didache">Didache</a></p>');
+    expect(body).not.toMatch(/<a href="\/fathers\/didache\/">Anonymous/);
   });
 
   it("keeps a single passage on the work page", () => {

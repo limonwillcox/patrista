@@ -11,13 +11,26 @@ export function fatherProfilePath(authorId: string): string {
   return "/fathers/" + encodeURIComponent(authorId) + "/";
 }
 
-export function fatherProfileTitle(name: string, dates: string): string {
+export function fatherProfileTitle(
+  name: string,
+  dates: string,
+  kind?: "person" | "document" | "collection"
+): string {
   const when = dates.trim();
-  const tail = ": Life and Writings";
-  const full = (when ? name + " (" + when + ")" : name) + tail;
+  // Document and collection hubs (Didache, Barnabas, councils, anonymous shelves) are not a life.
+  const tail = kind && kind !== "person" ? ": Text and Background" : ": Life and Writings";
+  const titled = (dates: string) => (dates ? name + " (" + dates + ")" : name) + tail;
+  const full = titled(when);
   // Search results cut a title near 60 characters (the build's SEO check fails past it). A long date
   // written out ("fl. early 2nd century AD") gives way; the name and what the page holds stay.
-  return full.length > FATHER_TITLE_MAX ? name + tail : full;
+  if (full.length <= FATHER_TITLE_MAX) return full;
+  // adDates expands "c." to "century/centuries AD"; compact it so a date can still fit (#304 Didache).
+  const compact = when.replace(/\bcenturies AD\b/g, "c. AD").replace(/\bcentury AD\b/g, "c. AD");
+  if (compact !== when) {
+    const shorter = titled(compact);
+    if (shorter.length <= FATHER_TITLE_MAX) return shorter;
+  }
+  return name + tail;
 }
 
 export const FATHER_TITLE_MAX = 60;

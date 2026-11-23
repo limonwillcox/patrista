@@ -5,7 +5,10 @@ import { staticWorkId } from "../src/lib/workSlugs";
 describe("father work links open the reader", () => {
   it("reads the work id from static work URLs", () => {
     expect(staticWorkId("/fathers/josephus/antiquities-of-the-jews.html")).toBe("antiquities-of-the-jews");
+    expect(staticWorkId("/fathers/josephus/antiquities-of-the-jews")).toBe("antiquities-of-the-jews");
+    expect(staticWorkId("/fathers/josephus/antiquities-of-the-jews/")).toBe("antiquities-of-the-jews");
     expect(staticWorkId("/fathers/didache/teaching-of-the-twelve-apostles.html")).toBe("didache");
+    expect(staticWorkId("/fathers/didache/teaching-of-the-twelve-apostles")).toBe("didache");
     expect(staticWorkId("/fathers/josephus/")).toBeNull();
     expect(staticWorkId("/fathers/josephus/wars-of-the-jews/book-i/")).toBeNull();
   });

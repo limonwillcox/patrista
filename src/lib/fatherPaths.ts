@@ -63,8 +63,17 @@ export function chapterNumberForSlug(
   return null;
 }
 
+/**
+ * Canonical public URL for a work page. Cloudflare Pages pretty-URLs `work.html` to this
+ * extensionless address with a 200; the `.html` form 308s onto it.
+ */
 export function workPublicPath(authorId: string, workId: string): string {
-  return "/fathers/" + encodeURIComponent(authorId) + "/" + encodeURIComponent(workId) + ".html";
+  return "/fathers/" + encodeURIComponent(authorId) + "/" + encodeURIComponent(workId);
+}
+
+/** dist-relative HTML file the host pretty-URLs to workPublicPath. */
+export function workStaticRel(authorId: string, workId: string): string {
+  return "fathers/" + encodeURIComponent(authorId) + "/" + encodeURIComponent(workId) + ".html";
 }
 
 export function chapterPublicPath(authorId: string, workId: string, slug: string): string {

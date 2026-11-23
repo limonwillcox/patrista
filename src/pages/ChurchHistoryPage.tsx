@@ -10,6 +10,7 @@ import {
   CHURCH_HISTORY_INTRO_TITLE
 } from "../../server/churchHistory";
 import { useApp } from "../context/AppContext";
+import { SITE_ORIGIN } from "../lib/siteOrigin";
 
 /**
  * Point the document title, meta description and canonical at this route, and
@@ -40,12 +41,24 @@ function useDocumentMeta(title: string, description: string, canonical: string):
     const prevHref = link.getAttribute("href");
     link.setAttribute("href", canonical);
 
+    const foundOg = document.head.querySelector('meta[property="og:url"]');
+    const og = foundOg instanceof HTMLMetaElement ? foundOg : document.createElement("meta");
+    const madeOg = og !== foundOg;
+    if (madeOg) {
+      og.setAttribute("property", "og:url");
+      document.head.appendChild(og);
+    }
+    const prevOg = og.getAttribute("content");
+    og.setAttribute("content", canonical);
+
     return () => {
       document.title = prevTitle;
       if (madeDesc) desc.remove();
       else if (prevDesc !== null) desc.setAttribute("content", prevDesc);
       if (madeLink) link.remove();
       else if (prevHref !== null) link.setAttribute("href", prevHref);
+      if (madeOg) og.remove();
+      else if (prevOg !== null) og.setAttribute("content", prevOg);
     };
   }, [title, description, canonical]);
 }
@@ -114,8 +127,7 @@ export function ChurchHistoryPage() {
     return () => io.disconnect();
   }, [navigate]);
 
-  const origin = typeof window === "undefined" ? "https://patrista.com" : window.location.origin;
-  useDocumentMeta(CHURCH_HISTORY_INTRO_TITLE, CHURCH_HISTORY_INTRO_DESCRIPTION, origin + CHURCH_HISTORY_CANONICAL_PATH);
+  useDocumentMeta(CHURCH_HISTORY_INTRO_TITLE, CHURCH_HISTORY_INTRO_DESCRIPTION, SITE_ORIGIN + CHURCH_HISTORY_CANONICAL_PATH);
 
   return (
     <div className="ch-page ch-page--cinematic">

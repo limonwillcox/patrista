@@ -7,7 +7,8 @@ import { DESCRIPTION_HARD_MAX, DESCRIPTION_MIN, TITLE_MAX } from "../src/lib/seo
 export type SeoAuditResult = { checked: number; stubs: number; errors: string[] };
 
 const CHAPTER_PATH = /^\/fathers\/([^/]+)\/([^/]+)\/([^/]+)\/$/;
-const WORK_PATH = /^\/fathers\/[^/]+\/[^/]+\.html$/;
+const WORK_FILE = /^\/fathers\/[^/]+\/[^/]+\.html$/;
+const WORK_PATH = /^\/fathers\/[^/]+\/[^/]+$/;
 
 /**
  * Old chapter URLs that must keep resolving, worked out here rather than taken from the page
@@ -47,10 +48,12 @@ function decode(s: string): string {
   return s.replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
 }
 
-/** URL path a dist file is served at. */
+/** URL path a dist file is served at (Cloudflare Pages pretty-URLs work.html to /work). */
 function servedPath(dist: string, file: string): string {
   const rel = "/" + relative(dist, file).split(sep).join("/");
-  return rel.endsWith("/index.html") ? rel.slice(0, -"index.html".length) : rel;
+  if (rel.endsWith("/index.html")) return rel.slice(0, -"index.html".length);
+  if (WORK_FILE.test(rel)) return rel.slice(0, -".html".length);
+  return rel;
 }
 
 /**

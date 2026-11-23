@@ -87,9 +87,12 @@ export function workIdForReadPath(pathname: string): string | null {
   return null;
 }
 
-/** Work id for a static work page like /fathers/<author>/<work>.html, else null. */
+/**
+ * Work id for a static work page: /fathers/<author>/<work>, with or without `.html` or a trailing
+ * slash. Chapter paths (four segments) and author hubs (two) return null.
+ */
 export function staticWorkId(pathname: string): string | null {
-  const m = pathname.match(/^\/fathers\/[^/]+\/([^/]+)\.html$/);
+  const m = pathname.match(/^\/fathers\/[^/]+\/([^/]+?)(?:\.html)?\/?$/);
   return m ? resolveWorkId(decodeURIComponent(m[1])) : null;
 }
 

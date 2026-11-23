@@ -21,6 +21,7 @@ describe("Fathers tab path", () => {
     expect(isFathersTabPath("/fathers/augustine/")).toBe(true);
     expect(isFathersTabPath("/fathers/augustine/confessions/book-1")).toBe(false);
     expect(isFathersTabPath("/fathers/augustine/confessions.html")).toBe(false);
+    expect(isFathersTabPath("/fathers/augustine/confessions")).toBe(false);
     expect(isFathersTabPath("/read")).toBe(false);
     expect(matchPath("/fathers", "/fathers/")).not.toBeNull();
     expect(matchPath("/fathers/:authorId", "/fathers/augustine/")).not.toBeNull();

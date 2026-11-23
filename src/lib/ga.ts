@@ -7,14 +7,23 @@ export function gtagScriptSrc(id = GA_MEASUREMENT_ID): string {
   return GTAG_JS_HOST + id;
 }
 
+export type GtagFn = (...args: unknown[]) => void;
+
+export type PageViewLoc = {
+  pathname: string;
+  search: string;
+  href: string;
+  title?: string;
+};
+
 /**
  * Official gtag.js snippet for the page <head>. `async` so it does not block
  * rendering. No consent UI. Ads/signals off; GA4 already anonymizes IPs.
  *
- * The first HTML load sends page_view from `config`. Client-side route changes
- * use the History API, so GA4 enhanced measurement (history-change page views,
- * on by default) sends the next page_view with the new page_path / page_location.
- * Do not also send page_view from the React app — that would double-count.
+ * `config` keeps the default send_page_view so the first HTML load is counted.
+ * Later client-side route changes are sent by trackSpaPageView (skip the first
+ * React mount). Do not also enable GA4 "Page changes based on browser history
+ * events" or those navigations will double-count.
  */
 export function gtagHeadSnippet(id = GA_MEASUREMENT_ID): string {
   return [
@@ -42,4 +51,20 @@ export function injectGtagHead(html: string, snippet = gtagHeadSnippet()): strin
   if (gtagSnippetCount(html) > 0) return html;
   if (!html.includes("</head>")) throw new Error("google-analytics: no </head>");
   return html.replace("</head>", snippet + "\n  </head>");
+}
+
+export function pageViewParams(loc: PageViewLoc): Record<string, string> {
+  const params: Record<string, string> = {
+    page_path: loc.pathname + loc.search,
+    page_location: loc.href
+  };
+  if (loc.title) params.page_title = loc.title;
+  return params;
+}
+
+/** One page_view for an SPA route change. No-op when gtag is not on the page. */
+export function trackSpaPageView(gtag: GtagFn | undefined, loc: PageViewLoc): boolean {
+  if (typeof gtag !== "function") return false;
+  gtag("event", "page_view", pageViewParams(loc));
+  return true;
 }

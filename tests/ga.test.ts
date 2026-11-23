@@ -6,7 +6,9 @@ import {
   gtagHeadSnippet,
   gtagScriptSrc,
   gtagSnippetCount,
-  injectGtagHead
+  injectGtagHead,
+  pageViewParams,
+  trackSpaPageView
 } from "../src/lib/ga";
 
 const SHELL = `<!DOCTYPE html>
@@ -68,5 +70,32 @@ describe("GA4 gtag snippet", () => {
     expect(vite).toContain("googleAnalytics()");
     expect(vite).toMatch(/name:\s*"google-analytics"/);
     expect(vite).toMatch(/apply:\s*"build"/);
+  });
+
+  it("sends one SPA page_view with page_path and page_location, and no-ops without gtag", () => {
+    const loc = {
+      pathname: "/types",
+      search: "?type=abraham-offering-isaac",
+      href: "https://patrista.com/types?type=abraham-offering-isaac",
+      title: "Types of Christ"
+    };
+    expect(pageViewParams(loc)).toEqual({
+      page_path: "/types?type=abraham-offering-isaac",
+      page_location: "https://patrista.com/types?type=abraham-offering-isaac",
+      page_title: "Types of Christ"
+    });
+    const calls: unknown[][] = [];
+    expect(trackSpaPageView((...args) => calls.push(args), loc)).toBe(true);
+    expect(calls).toEqual([["event", "page_view", pageViewParams(loc)]]);
+    expect(trackSpaPageView(undefined, loc)).toBe(false);
+  });
+
+  it("records SPA route changes from the app after the HTML tag's first page_view", () => {
+    const app = readFileSync("src/App.tsx", "utf8");
+    const hook = readFileSync("src/lib/useGaPageViews.ts", "utf8");
+    expect(app).toContain("useGaPageViews()");
+    expect(hook).toContain("skipFirst");
+    expect(hook).toContain("import.meta.env.PROD");
+    expect(hook).toContain("trackSpaPageView");
   });
 });

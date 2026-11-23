@@ -76,6 +76,16 @@ describe("father directory copy", () => {
     );
     // A long written-out date would push the title past what search results show: it gives way.
     expect(fatherProfileTitle("Papias of Hierapolis", "fl. early 2nd century AD")).toBe("Papias of Hierapolis: Life and Writings");
+    // Document and collection hubs are not a life (#304). Compact "centuries AD" so the date still fits in 60 chars.
+    expect(fatherProfileTitle("Didache", "late 1st–early 2nd centuries AD", "document")).toBe(
+      "Didache (late 1st–early 2nd c. AD): Text and Background"
+    );
+    expect(fatherProfileTitle("Barnabas (Epistle)", "c. AD 96–135", "document")).toBe(
+      "Barnabas (Epistle) (c. AD 96–135): Text and Background"
+    );
+    expect(fatherProfileTitle("Ecumenical Councils", "AD 325–787", "collection")).toBe(
+      "Ecumenical Councils (AD 325–787): Text and Background"
+    );
     expect(fatherProfilePath("augustine")).toBe("/fathers/augustine/");
     expect(FATHERS_INDEX_PATH).toBe("/fathers/");
     expect(lifeDatesFrom("354–430")).toEqual({ birthDate: "354", deathDate: "430" });
@@ -87,6 +97,30 @@ describe("father directory copy", () => {
     expect(lifeDatesFrom("fl. c. 96")).toEqual({});
     expect(lifeDatesFrom("fl. 3rd–5th c.")).toEqual({});
   });
+
+  it("uses Text and Background for document and collection hubs, Life and Writings for people", async () => {
+    const { FATHER_PROFILES } = await import("../src/lib/fatherProfiles");
+    const { adDates } = await import("../src/lib/adDates");
+    const { getCatalog } = await import("../server/api");
+    const catalog = getCatalog();
+    const kinds = { document: 0, collection: 0, person: 0 };
+    for (const author of catalog.authors) {
+      const kind = FATHER_PROFILES[author.id]?.kind;
+      const title = fatherProfileTitle(author.name, adDates(author.dates), kind);
+      expect(title.length, author.id + ": " + title).toBeLessThanOrEqual(60);
+      if (kind && kind !== "person") {
+        expect(title, author.id).toContain(": Text and Background");
+        expect(title, author.id).not.toContain("Life and Writings");
+        kinds[kind] += 1;
+      } else {
+        expect(title, author.id).toContain(": Life and Writings");
+        kinds.person += 1;
+      }
+    }
+    expect(kinds.document).toBeGreaterThan(0);
+    expect(kinds.collection).toBeGreaterThan(0);
+    expect(kinds.person).toBeGreaterThan(0);
+  }, 60_000);
 
   it("emits exact redirects for the index and each profile, and leaves work files alone", () => {
     expect(fatherDirectoryRedirects(["augustine"])).toEqual([
@@ -126,8 +160,10 @@ describe("father directory HTML", () => {
     expect(body).toContain("<dt>Role</dt><dd>Bishop of Hippo</dd>");
     expect(body).toContain("<dt>Region</dt><dd>North Africa</dd>");
     expect(body).not.toContain("<dt>See</dt>");
-    expect(body).toContain('href="/augustines-confessions"');
-    expect(body).toContain('href="/read?work=city-of-god"');
+    expect(body).toContain('href="/fathers/augustine/confessions"');
+    expect(body).toContain('href="/fathers/augustine/city-of-god"');
+    expect(body).not.toContain("/read?work=");
+    expect(body).not.toContain("/augustines-confessions");
     expect(body).not.toContain(".html\"");
     expect(body).toContain('alt="Portrait of Augustine of Hippo"');
     expect(body).toContain('loading="eager" fetchpriority="high"');

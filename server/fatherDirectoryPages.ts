@@ -70,7 +70,7 @@ export function writeFatherDirectoryPages(
     const description = fatherProfileDescription(bio.lede || entry.name);
     const html = prerenderShell(indexHtml, origin, {
       canonicalPath: path,
-      title: fatherProfileTitle(entry.name, adDates(entry.dates)),
+      title: fatherProfileTitle(entry.name, adDates(entry.dates), FATHER_PROFILES[author.id]?.kind),
       description,
       bodyHtml: renderFatherProfileBody(author, works, images),
       ogImage: authorShareImage(origin, author.id),

@@ -172,7 +172,7 @@ export function FathersPage() {
       if (author) {
         const entry = fatherEntry(author, FATHER_PROFILES[author.id]);
         const bio = answerFirstBio(entry.paragraphs);
-        title = fatherProfileTitle(entry.name, adDates(entry.dates));
+        title = fatherProfileTitle(entry.name, adDates(entry.dates), FATHER_PROFILES[author.id]?.kind);
         description = fatherProfileDescription(bio.lede || entry.name);
         const path = fatherProfilePath(author.id);
         canonicalHref = origin + path;

@@ -1,5 +1,6 @@
 import { useRef, type MouseEvent } from "react";
 import type { Author, Work } from "../../../server/types";
+import { workPublicPath } from "../../lib/fatherPaths";
 import { hasAttribution, shortAuthor } from "../../../server/workMeta";
 
 function hashOf(id: string, mod: number): number {
@@ -40,7 +41,7 @@ export function RollSlot({
   return (
     <a
       className={"lib-roll" + (selected ? " is-selected" : "")}
-      href={"/read?work=" + encodeURIComponent(work.id)}
+      href={workPublicPath(author.id, work.id)}
       aria-label={work.title + (byline ? " — " + byline : "")}
       style={{
         // Rolls differ a little in height and girth, as real ones do.

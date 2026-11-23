@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { defaultBinWidthPx, spineBandPlace, type ShelfPeriodId, type SpineBin } from "../../../server/shelf";
 import type { Author, Work } from "../../../server/types";
+import { workPublicPath } from "../../lib/fatherPaths";
 import { manuscriptForm } from "../../lib/manuscriptForm";
 import { hasAttribution, shortAuthor } from "../../../server/workMeta";
 
@@ -89,7 +90,7 @@ export function BookSpine({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
-  const href = "/read?work=" + encodeURIComponent(work.id);
+  const href = workPublicPath(author.id, work.id);
   // A work the shelf Father did not (certainly) write names its real author, or none.
   const byline = hasAttribution(work) ? shortAuthor(work, author) : author.name;
   // Before about 300 a codex had a soft leather cover wrapped round it, not stiff boards.

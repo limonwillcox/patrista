@@ -299,6 +299,8 @@ export function workCreditHtml(author: Author, work: Pick<Work, "id" | "authorsh
 export function renderChapterBody(opts: {
   /** Author named in the kicker: the attributed author's short name for a work the shelf Father did not write. */
   authorName: string;
+  /** Hub path for the named author; omit for anonymous works (no author link). */
+  authorPath?: string | null;
   workTitle: string;
   workPath: string;
   chapter: Passage;
@@ -313,12 +315,15 @@ export function renderChapterBody(opts: {
   if (opts.next) {
     links.push('<a href="' + escapeHtml(opts.next.path) + '" rel="next">' + escapeHtml(opts.next.label) + "</a>");
   }
+  const author = opts.authorPath
+    ? '<a href="' + escapeHtml(opts.authorPath) + '">' + escapeHtml(opts.authorName) + "</a>"
+    : escapeHtml(opts.authorName);
   return [
     '<article class="static-chapter">',
     '<nav class="static-pager" aria-label="Chapter">' + links.join("\n") + "</nav>",
     '<p class="static-kicker">' +
-      escapeHtml(opts.authorName) +
-      ' · <a href="' +
+      author +
+      ' | <a href="' +
       escapeHtml(opts.workPath) +
       '">' +
       escapeHtml(opts.workTitle) +
@@ -685,13 +690,18 @@ export function writeFatherPages(
       const extra: string[] = [];
       if (prev) extra.push('    <link rel="prev" href="' + escapeHtml(origin + prev.path) + '" />');
       if (next) extra.push('    <link rel="next" href="' + escapeHtml(origin + next.path) + '" />');
+      const authorName = shortAuthor(payload.work, payload.author) || payload.author.name;
       const html = prerenderShell(indexHtml, origin, {
         canonicalPath: ref.path,
         title: chapterSeoTitle(ref.n, payload.work.title, payload.author, payload.work.id),
         description,
         ogImage: authorShareImage(origin, payload.author.id),
         bodyHtml: renderChapterBody({
-          authorName: shortAuthor(payload.work, payload.author) || payload.author.name,
+          authorName,
+          authorPath:
+            authorName.toLowerCase() === "anonymous"
+              ? null
+              : "/fathers/" + encodeURIComponent(payload.author.id) + "/",
           workTitle: payload.work.title,
           workPath: page.path,
           chapter,

@@ -74,5 +74,56 @@
   "josephus": [
     "https://en.wikipedia.org/wiki/Josephus",
     "https://www.wikidata.org/wiki/Q134461"
+  ],
+  "philo": [
+    "https://en.wikipedia.org/wiki/Philo"
+  ],
+  "odes_solomon": [
+    "https://en.wikipedia.org/wiki/Odes_of_Solomon"
+  ],
+  "didascalia": [
+    "https://en.wikipedia.org/wiki/Didascalia_Apostolorum"
+  ],
+  "macarius_egyptian": [
+    "https://en.wikipedia.org/wiki/Macarius_of_Egypt"
+  ],
+  "egeria": [
+    "https://en.wikipedia.org/wiki/Egeria_(pilgrim)"
+  ],
+  "macarius_magnes": [
+    "https://en.wikipedia.org/wiki/Macarius_Magnes"
+  ],
+  "palladius": [
+    "https://en.wikipedia.org/wiki/Palladius_of_Galatia"
+  ],
+  "cyril_alexandria": [
+    "https://en.wikipedia.org/wiki/Cyril_of_Alexandria"
+  ],
+  "narsai": [
+    "https://en.wikipedia.org/wiki/Narsai"
+  ],
+  "philoxenus": [
+    "https://en.wikipedia.org/wiki/Philoxenus_of_Mabbug"
+  ],
+  "dionysius_areopagite": [
+    "https://en.wikipedia.org/wiki/Pseudo-Dionysius_the_Areopagite"
+  ],
+  "severus_antioch": [
+    "https://en.wikipedia.org/wiki/Severus_of_Antioch"
+  ],
+  "gildas": [
+    "https://en.wikipedia.org/wiki/Gildas"
+  ],
+  "john_ephesus": [
+    "https://en.wikipedia.org/wiki/John_of_Ephesus"
+  ],
+  "evagrius_scholasticus": [
+    "https://en.wikipedia.org/wiki/Evagrius_Scholasticus"
+  ],
+  "john_nikiu": [
+    "https://en.wikipedia.org/wiki/John_of_Nikiu"
+  ],
+  "bede": [
+    "https://en.wikipedia.org/wiki/Bede"
   ]
 }

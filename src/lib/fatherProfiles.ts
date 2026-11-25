@@ -636,5 +636,137 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
     paragraphs: [
       "This shelf holds works that cannot be assigned to one father with confidence. Each work’s page gives what is known of its date and author."
     ]
+  },
+  // --- Added Nov 2026 from the public-domain English source catalog (data/pd-english-sources). ---
+  philo: {
+    office: "Jewish philosopher",
+    section: "Other Authors",
+    paragraphs: [
+      "Philo of Alexandria (c. 20 BC–c. AD 50) was a Jewish philosopher of the great Alexandrian community. He led its embassy to the emperor Gaius in 39–40, and he read Israel’s Scripture through the language of Greek philosophy.",
+      "His treatises expound the books of Moses allegorically, and his picture of the divine Word (Logos) gave the church fathers a vocabulary they would make their own. Clement, Origen, and Eusebius quote him constantly; Jerome counted him almost among the church’s writers. C. D. Yonge’s four-volume translation is printed here."
+    ]
+  },
+  odes_solomon: {
+    office: "Early Christian hymnbook",
+    kind: "document",
+    paragraphs: [
+      "The Odes of Solomon are forty-two anonymous hymns, probably composed in Syriac in the late first or second century. They bear Solomon’s name after the manner of the biblical psalms and songs, but they are Christian through and through: joyful, baptismal, and full of the Word made flesh.",
+      "They were lost for centuries until J. Rendel Harris identified a Syriac manuscript of them in 1909. The translation printed here is from the Harris–Mingana edition of 1916–1920."
+    ]
+  },
+  didascalia: {
+    office: "Church order",
+    kind: "document",
+    paragraphs: [
+      "The Didascalia Apostolorum, or Teaching of the Apostles, is an anonymous church order composed in Syria in the third century, claiming the authority of the apostles. It instructs bishops in judging, almsgiving, worship, and the care of widows and orphans, and it argues against keeping the ceremonial law.",
+      "The Greek original is lost; the work survives whole in Syriac, with parts in Latin, and a later Ethiopic form. Its fourth-century reviser swallowed it whole into the Apostolic Constitutions. Both the Syriac text (tr. Gibson) and the Ethiopic form (tr. Harden) are printed here."
+    ]
+  },
+  pseudepigrapha: {
+    office: "Jewish writings the church read",
+    section: "Other Authors",
+    kind: "collection",
+    paragraphs: [
+      "These are Jewish books written roughly between 200 BC and AD 100 under the names of the patriarchs: Enoch, the Jubilees retelling of Genesis, and the Secrets of Enoch. They are not by their namesakes, and most churches did not finally receive them as Scripture.",
+      "The early church read them seriously all the same. The Epistle of Jude quotes the Book of Enoch by name, Barnabas cites it as Scripture, and Tertullian defended it; the Ethiopian church canonizes both Enoch and Jubilees to this day. R. H. Charles’s standard translations are printed here."
+    ]
+  },
+  macarius_egyptian: {
+    office: "Monk of Scetis",
+    paragraphs: [
+      "Macarius the Egyptian (c. 300–391), called the Great, was a camel-driver’s son who withdrew to the desert of Scetis about 330 and became one of the most revered of the Desert Fathers. Ordained presbyter, he guided the monks there for sixty years.",
+      "The Fifty Spiritual Homilies handed down under his name are the classic of early monastic teaching on the heart, prayer, and the indwelling Spirit. Scholars judge them to come from a Syrian or Mesopotamian circle rather than from Macarius himself, but the church has read them under his name since the fifth century."
+    ]
+  },
+  egeria: {
+    office: "Pilgrim",
+    paragraphs: [
+      "Egeria (also written Etheria) was a woman, probably a nun from Spain or Gaul, who made a three-year pilgrimage to the East around 381–384 and wrote an account of it for her sisters at home.",
+      "Her Pilgrimage describes Sinai, the holy places, Edessa, and above all the daily and festal worship of the church of Jerusalem, which she records service by service. It is the most detailed picture that survives of fourth-century liturgy, written in the lively Latin of a traveller rather than a scholar."
+    ]
+  },
+  macarius_magnes: {
+    office: "Apologist",
+    paragraphs: [
+      "Macarius Magnes (fl. c. 400) is the otherwise little-known author of the Apocriticus, an apology in which a Christian answers a pagan philosopher’s objections to the Gospels and the apostles. He is sometimes identified with a bishop Macarius of Magnesia.",
+      "The pagan’s objections are the treasure of the book: they are generally held to preserve, at second hand, the lost work of Porphyry against the Christians. The surviving books are translated by T. W. Crafer."
+    ]
+  },
+  palladius: {
+    office: "Bishop of Helenopolis",
+    paragraphs: [
+      "Palladius (c. 363–c. 430) was a Galatian monk who spent years among the ascetics of Egypt as a disciple of Evagrius of Pontus, and later became bishop of Helenopolis in Bithynia. Exiled for defending John Chrysostom, he wrote a Dialogue on his teacher’s life.",
+      "His Lausiac History, written about 420 for the chamberlain Lausus, is the firsthand classic of the Desert Fathers. The Syriac tradition expanded it into the Paradise of the Holy Fathers, which is printed here in Budge’s translation alongside the Greek form and the Dialogue."
+    ]
+  },
+  cyril_alexandria: {
+    office: "Patriarch of Alexandria",
+    paragraphs: [
+      "Cyril (c. 376–444) was patriarch of Alexandria from 412. When Nestorius of Constantinople objected to calling Mary Theotokos — God-bearer — Cyril led the opposition, and at the Council of Ephesus (431) his teaching that the incarnate Word is one person prevailed.",
+      "He was as much an exegete as a controversialist: his commentaries on John and on Luke work through the Gospels verse by verse. The anti-Nestorian treatises, the Scholia on the Incarnation, and the dialogue That Christ is One state the Christology the later councils presupposed."
+    ]
+  },
+  narsai: {
+    office: "Teacher of Nisibis",
+    paragraphs: [
+      "Narsai (c. 399–c. 502) was the great poet-theologian of the Church of the East. Head of the school of Edessa, he fled when that school was closed to his tradition and refounded it at Nisibis in Persia, where he taught for decades. His church calls him “the Harp of the Spirit.”",
+      "He wrote metrical homilies by the hundred; those translated here expound the mysteries of baptism and the eucharist, and they are a chief witness to the East Syrian liturgy as the fifth century knew it."
+    ]
+  },
+  philoxenus: {
+    office: "Bishop of Mabbug",
+    paragraphs: [
+      "Philoxenus (c. 440–523) was bishop of Mabbug (Hierapolis) in Syria and, with Severus of Antioch, a leader of the church that rejected the Council of Chalcedon. He sponsored a revision of the Syriac New Testament and died in exile.",
+      "His thirteen Discourses are not controversy but spiritual teaching: on faith, simplicity, the fear of God, renunciation, and the war with gluttony and fornication, addressed to monks beginning the ascetic life. They are among the masterpieces of Syriac prose."
+    ]
+  },
+  dionysius_areopagite: {
+    office: "Unknown mystical theologian",
+    paragraphs: [
+      "The writings handed down under the name of Dionysius the Areopagite, Paul’s Athenian convert (Acts 17:34), were in fact composed around 500, probably in Syria, by an author who has never been identified. The apostolic name gave them an authority that lasted a thousand years.",
+      "On the Divine Names considers what the names of God do and do not say of him; the brief Mystical Theology teaches the way of unknowing, into the darkness where God is. Maximus the Confessor, John of Damascus, and the medieval West all built on these pages."
+    ]
+  },
+  severus_antioch: {
+    office: "Patriarch of Antioch",
+    paragraphs: [
+      "Severus (c. 465–538) was patriarch of Antioch from 512 to 518, when the emperor Justin’s turn to Chalcedon drove him into Egyptian exile. The foremost theologian of the miaphysites, he taught one incarnate nature of the Word while condemning Eutyches; the Syriac Orthodox church reveres him as a father.",
+      "His Greek was burned by imperial order, so his vast correspondence and his hymns survive in Syriac. The Sixth Book of the Select Letters, a further collection of his letters, his hymnbook, and an early biography ascribed to Athanasius of Antioch are printed here."
+    ]
+  },
+  gildas: {
+    office: "Monk of Britain",
+    paragraphs: [
+      "Gildas (c. 500–c. 570), called the Wise, is the one British writer whose voice survives from the age after Rome withdrew. A monk, he later founded the monastery of Rhuys in Brittany, where tradition says he died.",
+      "On the Ruin of Britain is a prophet’s rebuke in the manner of Jeremiah: it tells the island’s calamities — invasion, the Saxon revolt, the victory at Mount Badon — only to arraign Britain’s kings and clergy by the word of Scripture. It is the chief written source for fifth- and sixth-century Britain."
+    ]
+  },
+  john_ephesus: {
+    office: "Historian of the Syriac church",
+    paragraphs: [
+      "John of Ephesus (c. 507–c. 588) was a Syriac monk from Amida whom the emperor Justinian employed to convert the pagans of Asia Minor, and whom the miaphysites counted a bishop. He spent his last years in and out of prison in the Chalcedonian persecutions.",
+      "His Lives of the Eastern Saints are fifty-eight portraits of the holy men and women of his own country and time — stylites, wandering brothers, deaconesses — written from personal knowledge. They are history from inside the Syrian village and monastery."
+    ]
+  },
+  evagrius_scholasticus: {
+    office: "Church historian",
+    paragraphs: [
+      "Evagrius Scholasticus (c. 536–c. 594) was a lawyer of Antioch who served its patriarch Gregory and twice held imperial honors. He saw the earthquakes, plague, and Persian wars he describes.",
+      "His Ecclesiastical History in six books carries the story from the Council of Ephesus (431) to 594, continuing Socrates, Sozomen, and Theodoret. It is the last of the ancient Greek church histories, and a Chalcedonian’s fair-minded record of a divided East."
+    ]
+  },
+  john_nikiu: {
+    office: "Bishop of Nikiu",
+    paragraphs: [
+      "John (fl. c. 690) was bishop of Nikiu in the Egyptian Delta and an administrator of the Coptic church’s monasteries a generation after the Arab conquest of Egypt.",
+      "His Chronicle runs from the creation to his own lifetime, and its final chapters are the only substantial account of the conquest of Egypt (639–642) by a writer who lived under it. Written in Greek and Coptic, it survives only in an Ethiopic version, translated here by R. H. Charles."
+    ]
+  },
+  bede: {
+    office: "Monk of Jarrow",
+    paragraphs: [
+      "Bede (c. 672–735) entered the monastery of Wearmouth–Jarrow in Northumbria as a boy of seven and never left it: “I have devoted my energies,” he wrote, “to the study of the Scriptures, observing monastic discipline, and singing the daily services in church; study, teaching, and writing have always been my delight.”",
+      "The Ecclesiastical History of the English Nation (731) tells how the English peoples came to Christ, from Augustine’s landing in Kent through the age of Cuthbert. It earned him the name of father of English history; within a century the church called him the Venerable."
+    ]
   }
 };

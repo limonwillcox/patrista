@@ -12,6 +12,7 @@ describe("in-app work chapter index", () => {
     expect(src).not.toContain("start-reading");
     expect(src).not.toContain('className="chapter-index"');
     expect(src).toContain("<ChapterDock");
+    expect(src).toContain("<WorkOverview");
   });
 
   it("mounts ChapterDock in a shared read-docks stack and drops inert toolbar nav", () => {

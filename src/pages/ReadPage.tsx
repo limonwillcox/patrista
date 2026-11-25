@@ -7,6 +7,7 @@ import { fetchChapter, fetchWork } from "../api/client";
 import { ChapterDock } from "../components/ChapterDock";
 import { DictionaryDock } from "../components/DictionaryDock";
 import { HardcoverDock } from "../components/HardcoverDock";
+import { WorkOverview } from "../components/WorkOverview";
 import { ManuscriptButton } from "../components/manuscript/ManuscriptButton";
 import { useManuscripts } from "../lib/useManuscripts";
 import { DockNotch } from "../components/DockNotch";
@@ -869,6 +870,7 @@ export function ReadPage() {
           </div>
         ) : null}
       </div>
+      <WorkOverview workId={outline.work.id} />
       {outline.chapters.map((p) => {
         const passage = texts.get(p.chapter);
         return (

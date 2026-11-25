@@ -1403,7 +1403,12 @@ button.read-download-item { appearance: none; }
   margin: 8px 0 0;
   max-width: 36rem;
 }
-.chapter-index > summary {
+.work-overview {
+  margin: 0 0 12px;
+  max-width: 36rem;
+}
+.chapter-index > summary,
+.work-overview > summary {
   cursor: pointer;
   list-style: none;
   font-family: var(--sans);
@@ -1414,15 +1419,29 @@ button.read-download-item { appearance: none; }
   color: var(--muted);
   user-select: none;
 }
-.chapter-index > summary::-webkit-details-marker { display: none; }
-.chapter-index > summary::before {
+.chapter-index > summary::-webkit-details-marker,
+.work-overview > summary::-webkit-details-marker { display: none; }
+.chapter-index > summary::before,
+.work-overview > summary::before {
   content: "▸";
   display: inline-block;
   width: 1em;
   color: var(--burgundy);
   transition: transform 0.12s ease;
 }
-.chapter-index[open] > summary::before { transform: rotate(90deg); }
+.chapter-index[open] > summary::before,
+.work-overview[open] > summary::before { transform: rotate(90deg); }
+.work-overview > p {
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.work-overview-facts {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+}
 .chapter-index-list {
   display: block;
   margin: 8px 0 0;

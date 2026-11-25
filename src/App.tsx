@@ -1,6 +1,7 @@
 import { lazy, Suspense, type ComponentType } from "react";
 import { Navigate, Route, Routes, useLocation, useParams, useSearchParams } from "react-router-dom";
 import { staticWorkId } from "./lib/workSlugs";
+import { useGaPageViews } from "./lib/useGaPageViews";
 import { Layout } from "./components/Layout";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { FathersPage } from "./pages/FathersPage";
@@ -70,6 +71,7 @@ export function preloadPage(pathname: string): Promise<unknown> {
 }
 
 export function App() {
+  useGaPageViews();
   const { pathname } = useLocation();
   // A diagram framed on another site: no header, nothing but the diagram.
   if (pathname.startsWith("/embed/")) {

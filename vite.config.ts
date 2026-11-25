@@ -44,6 +44,7 @@ import { writeScriptureIndex } from "./server/scriptureIndex";
 import { APP_PAGES } from "./server/appPages";
 import { writeTypeSharePages } from "./server/typeSharePages";
 import { SITE_ORIGIN } from "./src/lib/siteOrigin";
+import { injectGtagHead } from "./src/lib/ga";
 import { LEGACY_REDIRECTS_DIR, lookupLegacyRedirect } from "./src/lib/legacyRedirects";
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -569,8 +570,23 @@ function preloadCatalog(): Plugin {
   };
 }
 
+/**
+ * Production HTML only. The empty Vite shell is copied into 404.html / give.html and filled by
+ * prerender, so one insert here is one Google tag on every page the site serves. Dev (`pnpm
+ * dev`) never runs this, so local clicks do not land in the live property.
+ */
+function googleAnalytics(): Plugin {
+  return {
+    name: "google-analytics",
+    apply: "build",
+    transformIndexHtml(html) {
+      return injectGtagHead(html);
+    }
+  };
+}
+
 export default defineConfig({
-  plugins: [stripCliShebang(), react(), fathersApiPlugin(), extrasPlugin(), preloadCatalog()],
+  plugins: [stripCliShebang(), react(), fathersApiPlugin(), extrasPlugin(), preloadCatalog(), googleAnalytics()],
   build: {
     // Maps are fetched only when someone opens the browser's developer tools.
     sourcemap: true

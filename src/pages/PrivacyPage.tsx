@@ -28,9 +28,9 @@ export function PrivacyPage() {
         <section className="about-block">
           <h1 className="about-q">Privacy</h1>
           <p>
-            Patrista is free to read without an account. We do not run ads, we do not use cookies to follow you, and we
-            do not sell or share anything about you. Cloudflare, the company that hosts the site, counts page visits
-            for us without cookies and without identifying anyone.
+            Patrista is free to read without an account. We do not run ads, and we do not sell or share anything about
+            you. We use Google Analytics to count visits. It sets cookies, and we don't use it for ads. Cloudflare, the
+            company that hosts the site, counts page visits for us without cookies and without identifying anyone.
           </p>
         </section>
 

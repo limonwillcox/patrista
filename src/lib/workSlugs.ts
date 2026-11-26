@@ -54,7 +54,9 @@ export const MOVED_WORKS: MovedWork[] = [
     to: { author: "basil", work: "basil-letters" },
     oldChapters: 1,
     chapters: { 1: 92 }
-  }
+  },
+  // Aristides was printed in ANF IX with the miscellaneous Apostolic pieces; he has his own shelf.
+  { from: { author: "apostolic", work: "apology-of-aristides" }, to: { author: "aristides", work: "apology-of-aristides" } }
 ];
 
 /**

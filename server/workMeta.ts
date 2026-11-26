@@ -264,9 +264,6 @@ export const WORK_META: Record<string, WorkMeta> = {
     authorship: "anonymous",
     attribution: "Anonymous Greek apocalypse (9th c.?)"
   },
-  "apology-of-aristides": {
-    attribution: "Aristides of Athens (2nd c.)"
-  },
   decretals: {
     authorship: "spurious",
     attribution: "Pseudo-Isidorian forgeries (9th c.) in the names of early popes",

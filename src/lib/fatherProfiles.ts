@@ -99,6 +99,13 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
       "The Plea answers the charges of atheism, cannibalism, and incest. A treatise On the Resurrection, which argues that God can raise the body he made, is ascribed to him in the manuscripts, though some scholars date it later."
     ]
   },
+  aristides: {
+    office: "Christian apologist",
+    paragraphs: [
+      "Aristides of Athens (fl. c. 125–140) was a Christian philosopher who addressed an apology to the emperor, Hadrian or Antoninus Pius. Eusebius places him with Quadratus among the earliest defenders of the faith.",
+      "The Apology survives in a Syriac version and in a Greek recension woven into the romance of Barlaam and Josaphat. It divides mankind into barbarians, Greeks, Jews, and Christians, and commends the Christians’ way of life."
+    ]
+  },
   theophilus: {
     office: "Bishop of Antioch",
     paragraphs: [
@@ -397,7 +404,7 @@ export const FATHER_PROFILES: Record<string, FatherProfile> = {
     kind: "collection",
     paragraphs: [
       "This shelf holds a mixed collection of anonymous and pseudonymous writings, from the first century to the ninth, printed with the Ante-Nicene Fathers. They are not by one author, and each work’s page gives its own date and what is known of its origin.",
-      "Some are early, such as the homily known as Second Clement and the Apology of Aristides. Others are much later: the Apostolic Constitutions (c. 380), Greek apocalypses of the Byzantine period, the Pseudo-Isidorian Decretals (9th century), and Jewish writings such as the Testament of Abraham that Christians preserved."
+      "Some are early, such as the homily known as Second Clement. Others are much later: the Apostolic Constitutions (c. 380), Greek apocalypses of the Byzantine period, the Pseudo-Isidorian Decretals (9th century), and Jewish writings such as the Testament of Abraham that Christians preserved."
     ]
   },
   // --- Minor ante-Nicene writers (ANF VI–VIII). Most are known only from fragments, chiefly in Eusebius. ---
